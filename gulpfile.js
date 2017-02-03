@@ -1,20 +1,20 @@
-var gulp = require('gulp'),
-    configLocal = require('./gulp-config.json'),
-    merge = require('merge'),
-    sass = require('gulp-sass'),
-    cleanCSS = require('gulp-clean-css'),
-    bower = require('bower'),
-    uglify = require('gulp-uglify'),
-    rename = require('gulp-rename'),
-    jshint = require('gulp-jshint'),
-    jshintStylish = require('jshint-stylish'),
-    scsslint = require('gulp-scss-lint'),
+var bower = require('bower'),
+    browserSync = require('browser-sync').create(),
+    gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
-    browserify = require('browserify'),
-    browserSync = require('browser-sync').create();
+    cleanCSS = require('gulp-clean-css'),
+    include = require('gulp-include'),
+    jshint = require('gulp-jshint'),
+    rename = require('gulp-rename'),
+    sass = require('gulp-sass'),
+    scsslint = require('gulp-scss-lint'),
+    uglify = require('gulp-uglify'),
+    jshintStylish = require('jshint-stylish'),
+    merge = require('merge');
 
 
-var configDefault = {
+var configLocal = require('./gulp-config.json'),
+    configDefault = {
       src: {
         scssPath: './src/scss',
         jsPath:   './src/js',
@@ -33,23 +33,29 @@ var configDefault = {
 
 
 //
-// Bower
+// Installation of components/dependencies
 //
 
+// Bower
 gulp.task('bower', function() {
-  return bower.commands.update()
-    .on('end', function() {
-
-      // TODO add custom fonts from components?
-      // gulp.src(config.bowerPath + '/path/to/component/fonts/*/*')
-      //   .pipe(gulp.dest(config.dist.fontPath));
-
-      // TODO add custom fonts from src directory?
-      // gulp.src(config.src.fontPath + '/path/to/fonts/*')
-      //   .pipe(gulp.dest(config.dist.fontPath + '/font-name'));
-
-    });
+  return bower.commands.install()
+    .pipe(gulp.dest(config.bowerPath));
 });
+
+// Web font processing
+gulp.task('fonts', ['bower'], function() {
+  // TODO add custom fonts from components?
+  // gulp.src(config.bowerPath + '/path/to/component/fonts/*/*')
+  //   .pipe(gulp.dest(config.dist.fontPath));
+
+  // TODO add custom fonts from src directory?
+  // gulp.src(config.src.fontPath + '/path/to/fonts/*')
+  //   .pipe(gulp.dest(config.dist.fontPath + '/font-name'));
+  return;
+});
+
+// Run all component-related tasks
+gulp.task('components', ['bower', 'fonts']);
 
 
 //
@@ -65,7 +71,7 @@ gulp.task('scss-lint', function() {
 });
 
 // Compile scss files
-gulp.task('scss', function() {
+function scssBuild() {
   return gulp.src(config.src.scssPath + '/framework.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(cleanCSS())
@@ -73,13 +79,16 @@ gulp.task('scss', function() {
       // Supported browsers added in package.json ("browserslist")
       cascade: false
     }))
-    .pipe(rename('style.min.css'))
+    .pipe(rename('framework.min.css'))
     .pipe(gulp.dest(config.dist.cssPath))
     .pipe(browserSync.stream());
-});
+}
+gulp.task('scss-build', scssBuild); // to be run on `gulp watch`; does not require update of Bower packages
+gulp.task('scss-build-default', ['components'], scssBuild); // to be run on `gulp default`; requires update of Bower packages before running
 
 // All css-related tasks
-gulp.task('css', ['scss-lint', 'scss']);
+gulp.task('css', ['scss-lint', 'scss-build']);
+gulp.task('css-default', ['scss-lint', 'scss-build-default']);
 
 
 //
@@ -94,18 +103,22 @@ gulp.task('js-lint', function() {
     .pipe(jshint.reporter('fail'));
 });
 
-// Concat (with Browserify) and uglify js files.
-gulp.task('js', function() {
-  return browserify(config.src.jsPath + '/framework.js')
-    .bundle()
-    .pipe(source('framework.min.js'))
+// Concat and uglify js files.
+function jsBuild() {
+  return gulp.src(config.src.jsPath + '/framework.js')
+    .pipe(include())
+      .on('error', console.log)
     .pipe(uglify())
+    .pipe(rename('framework.min.js'))
     .pipe(gulp.dest(config.dist.jsPath))
     .pipe(browserSync.stream());
-});
+}
+gulp.task('js-build', jsBuild); // to be run on `gulp watch`; does not require update of Bower packages
+gulp.task('js-build-default', ['components'], jsBuild); // to be run on `gulp default`; requires update of Bower packages before running
 
 // All js-related tasks
-gulp.task('js', ['js-lint', 'js']);
+gulp.task('js', ['js-lint', 'js-build']);
+gulp.task('js-default', ['js-lint', 'js-build-default']);
 
 
 //
@@ -128,4 +141,4 @@ gulp.task('watch', function() {
 //
 // Default task
 //
-gulp.task('default', ['bower', 'css', 'js']);
+gulp.task('default', ['components', 'css-default', 'js-default']);
