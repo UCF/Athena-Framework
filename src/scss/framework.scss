@@ -8,14 +8,7 @@
 // Import vendor assets
 //
 
-// Cherry-pick desired Bootstrap resets and features
-@import '../../bower_components/bootstrap/scss/variables';
-@import '../../bower_components/bootstrap/scss/mixins';
-@import '../../bower_components/bootstrap/scss/normalize';
-@import '../../bower_components/bootstrap/scss/print';
-@import '../../bower_components/bootstrap/scss/bootstrap-reboot';
-@import '../../bower_components/bootstrap/scss/bootstrap-grid';
-@import '../../bower_components/bootstrap/scss/utilities';
+@import '../../bower_components/bootstrap/scss/bootstrap';
 
 
 //
