@@ -195,8 +195,8 @@ $sizes: (
 // Settings for the `<body>` element.
 
 $body-bg:       $white;
-$body-color:    $gray-dark;
-$inverse-bg:    $gray-dark;
+$body-color:    $black; // modified
+$inverse-bg:    $brand-inverse; // modified
 $inverse-color: $gray-lighter;
 
 
@@ -204,7 +204,7 @@ $inverse-color: $gray-lighter;
 //
 // Style anchor elements.
 
-$link-color:            $brand-complementary;
+$link-color:            $brand-complementary; // modified
 $link-decoration:       none;
 $link-hover-color:      darken($link-color, 15%);
 $link-hover-decoration: underline;
@@ -257,7 +257,7 @@ $grid-gutter-widths: (
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-sans-serif: 'Gotham SSm A', 'Gotham SSm B', 'Montserrat', 'Helvetica Neue', Arial, sans-serif; // modified
 $font-family-serif:      Georgia, "Times New Roman", Times, serif;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 $font-family-base:       $font-family-sans-serif;
@@ -282,7 +282,7 @@ $font-size-h6: 1rem;
 
 $headings-margin-bottom: ($spacer / 2);
 $headings-font-family:   inherit;
-$headings-font-weight:   500;
+$headings-font-weight:   600;
 $headings-line-height:   1.1;
 $headings-color:         inherit;
 
@@ -291,10 +291,10 @@ $display2-size: 5.5rem;
 $display3-size: 4.5rem;
 $display4-size: 3.5rem;
 
-$display1-weight:     300;
-$display2-weight:     300;
-$display3-weight:     300;
-$display4-weight:     300;
+$display1-weight:     600;
+$display2-weight:     600;
+$display3-weight:     600;
+$display4-weight:     600;
 $display-line-height: $headings-line-height;
 
 $lead-font-size:   1.25rem;
@@ -380,7 +380,7 @@ $btn-box-shadow:                 inset 0 1px 0 rgba($white,.15), 0 1px 1px rgba(
 $btn-focus-box-shadow:           0 0 0 2px rgba($brand-primary, .25);
 $btn-active-box-shadow:          inset 0 3px 5px rgba($black,.125);
 
-$btn-primary-color:              $black;
+$btn-primary-color:              $black; // modified
 $btn-primary-bg:                 $brand-primary;
 $btn-primary-border:             $btn-primary-bg;
 
@@ -681,7 +681,7 @@ $pagination-hover-color:               $link-hover-color;
 $pagination-hover-bg:                  $gray-lighter;
 $pagination-hover-border:              #ddd;
 
-$pagination-active-color:              $black;
+$pagination-active-color:              $black; // modified
 $pagination-active-bg:                 $brand-primary;
 $pagination-active-border:             $brand-primary;
 
