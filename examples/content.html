@@ -6,6 +6,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <!-- TODO: update cloud.typography css key to a production-ready project, with no legacy support enabled -->
+  <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/730568/757444/css/fonts.css">
   <link rel="stylesheet" href="../dist/css/framework.min.css">
 </head>
 
@@ -18,13 +20,14 @@
       <a class="navbar-brand" href="../">Athena Project</a>
       <div class="collapse navbar-collapse" id="main-nav">
         <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="./installation.html">Getting Started</a></li>
           <li class="nav-item active"><a class="nav-link" href="./content.html">Content</a></li>
           <li class="nav-item"><a class="nav-link" href="./components.html">Components</a></li>
         </ul>
       </div>
   </nav>
   <div class="container">
-    <div class="row mt-4 mb-4">
+    <div class="row mt-4 mb-5">
       <div class="col-md-8">
         <div class="jumbotron h-100">
           <h1>Content</h1>
@@ -44,6 +47,17 @@
         </div>
       </div>
     </div>
+
+    <h2>Typography</h2>
+    <p>
+      Keeping in line with UCF's brand guidelines, Athena's base font family is <strong>Gotham</strong>.  For users that cannot subscribe to <a href="http://www.typography.com/cloud/welcome/">Cloud.typography's webfont services</a>, a fallback font specifically for Athena can be used instead.  Please see the <a href="installation.html#webfont-configuration">installation/getting started page</a> for more information.
+    </p>
+    <p>
+      Note that Athena does not provide webfonts out of the box; it is your responsibility to install them on your site using either a Cloud.typography CSS key, or the fallback webfont <code>&lt;link&gt;</code> tag provided on the installation page.
+    </p>
+
+    <hr class="mt-4 mb-4">
+
     <h2>Headings</h2><hr>
     <h1>Heading</h1>
     <h2>Heading</h2>

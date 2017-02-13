@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <title>Installation and Getting Started - Athena Project</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <!-- TODO: update cloud.typography css key to a production-ready project, with no legacy support enabled -->
+  <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/730568/757444/css/fonts.css">
+  <link rel="stylesheet" href="../dist/css/framework.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <button class="navbar-toggle navbar-toggler-right" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="../">Athena Project</a>
+      <div class="collapse navbar-collapse" id="main-nav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active"><a class="nav-link" href="./installation.html">Getting Started</a></li>
+          <li class="nav-item"><a class="nav-link" href="./content.html">Content</a></li>
+          <li class="nav-item"><a class="nav-link" href="./components.html">Components</a></li>
+        </ul>
+      </div>
+  </nav>
+  <div class="container">
+    <div class="row mt-4 mb-5">
+      <div class="col-md-8">
+        <div class="jumbotron h-100">
+          <h1>Getting Started</h1>
+          <p class="lead">
+            Installation instructions and a basic setup guide for Athena.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4 mt-xs-2">
+        <div class="card card-outline-primary h-100">
+          <div class="card-block">
+            <h2 class="card-title">Want to contribute?</h2>
+            <p class="card-text">If you're interested in contributing the Athena Project, please feel free to visit our GitHub Page and send us
+              a message.</p>
+            <a href="https://github.com/UCF/Athena-Project/" class="btn btn-success" target="_blank">GitHub Project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert alert-warning mt-5 mb-5 p-4">
+      <h2 class="h5">A Note About Bootstrap:</h2> Athena is a complete replacement for <a class="alert-link" href="https://getbootstrap.com/">Bootstrap</a>.  If you are already using Bootstrap on an existing project and want to use Athena instead, you should remove Bootstrap's CSS and Javascript completely.  Athena is designed to run as a completely standalone framework.
+    </div>
+
+    <h2 id="quick-start">Quick Start</h2>
+    <p>
+      To quickly add all of Athena's features to your project, add the following to your pages:
+    </p>
+    <ol>
+      <li>
+        <p>
+          <strong>Add webfonts:</strong> Add a <code>&lt;link&gt;</code> tag into the document <code>&lt;head&gt;</code> before all other stylesheets to apply custom webfonts to the page.  If you're using Cloud.typography, this is the CSS Key that is provided whenever you create a new project.  See the <a href="#webfont-configuration">webfont configuration section</a> for information on setting up a Cloud.typography project for use with Athena.
+        </p>
+        <p>
+          To use the fallback sans-serif font library, use the following <code>&lt;link&gt;</code> tag:
+        </p>
+        <div class="card card-outline-secondary mt-3 mb-3">
+          <div class="card-block">
+            <pre><code>&lt;link rel="stylesheet" href="TODO/webfont-fallback.css"&gt;</code></pre>
+          </div>
+        </div>
+      </li>
+      <li>
+        <p>
+          <strong>Add framework stylesheet:</strong> Copy the <code>&lt;link&gt;</code> tag below and paste it into the document <code>&lt;head&gt;</code> immediately after the Cloud.typography/fallback font <code>&lt;link&gt;</code> tag:
+        </p>
+        <div class="card card-outline-secondary mt-3 mb-3">
+          <div class="card-block">
+            <pre><code>&lt;link rel="stylesheet" href="TODO/framework.min.css"&gt;</code></pre>
+          </div>
+        </div>
+      </li>
+      <li>
+        <p>
+          <strong>Add JavaScript:</strong> Add our JavaScript plugins, jQuery, and Tether near the end of your pages, right before the closing <code>&lt;/body&gt;</code> tag. Be sure to place jQuery and Tether first, as our code depends on them. While we use jQuery's slim build in our docs, the full version is also supported.
+        </p>
+        <div class="card card-outline-secondary mt-3 mb-3">
+          <div class="card-block">
+            <pre><code>&lt;script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;script src="TODO/framework.min.js"&gt;&lt;/script&gt;</code></pre>
+          </div>
+        </div>
+      </li>
+    </ol>
+
+    <h2 id="webfont-configuration" class="mt-5">Webfont Configuration</h2>
+    <p>
+      The preferred sans-serif font family for Athena is <strong>Gotham</strong>.  Gotham can be installed in your project via the <a href="http://www.typography.com/cloud/welcome/">Cloud.typography service.</a>
+    </p>
+    <div class="alert alert-danger p-4">
+      <h3 class="h5">Gotham Licensing for the Web</h3>
+      Any existing print license for Gotham usage, whether purchased via the <a class="alert-link" href="https://cstore.ucf.edu/gotham/">UCF Computer Store</a> or separately, <a class="alert-link" href="https://www.typography.com/faq/question.php?faqID=15" target="_blank">does not cover usage of webfonts</a>.  To use Gotham on the web, <strong>you must register for the Cloud.typography service.</strong>  Do not attempt to self-host Gotham font files online; doing so will breach the university's font license agreement.
+    </div>
+    <p>
+      For base support with Athena, we recommend configuring your Cloud.typography project to include the following fonts/weights:
+    </p>
+    <ul>
+      <li>Gotham ScreenSmart Light</li>
+      <li>Gotham ScreenSmart Light Italic</li>
+      <li>Gotham ScreenSmart Book</li>
+      <li>Gotham ScreenSmart Book Italic</li>
+      <li>Gotham ScreenSmart Bold</li>
+      <li>Gotham ScreenSmart Bold Italic</li>
+      <li>Gotham ScreenSmart Black</li>
+      <li>Gotham ScreenSmart Black Italic</li>
+    </ul>
+    <p>
+      Because Athena does not support older browsers, enabling Legacy Support is not necessary and is not recommended.
+    </p>
+    <p>
+      More weights can be added as needed per-project, however, we don't recommend usage of Gotham ScreenSmart Extra Light due to readability concerns.
+    </p>
+    <p>
+      Avoid adding webfonts that aren't needed for your project; as the number of fonts in a project increases, the average load time for the font project increases.
+    </p>
+
+    <h3 class="mt-4">Using Fallback Webfonts</h3>
+    <p>
+      UCF Marketing provides a fallback sans-serif webfont, based on the free font family <a href="https://www.fontsquirrel.com/fonts/montserrat" target="_blank">Montserrat</a>, intended specifically for use with Athena.  This font should only be used for web projects when registering to use Gotham on the web is not possible.  <strong>Do not use this font for any other purpose besides as a web font.</strong>
+    </p>
+    <p>
+      The fallback sans-serif webfont comes prepackaged with light, book, semi-bold, bold, extra-bold, and black font weights.
+    </p>
+    <p>
+      See the <a href="#quick-start">Quick Start</a> section for fallback webfont installation instructions.
+    </p>
+
+
+    <h2 id="custom-builds" class="mt-5">Custom Builds</h2>
+    <p>
+      TODO information about building with Sass
+    </p>
+
+  </div>
+</body>
+
+</html>
