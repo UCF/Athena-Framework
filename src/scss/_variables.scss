@@ -262,10 +262,11 @@ $font-family-serif:      Georgia, "Times New Roman", Times, serif;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 $font-family-base:       $font-family-sans-serif;
 
-$font-size-base: 1rem; // Assumes the browser default, typically `16px`
 $font-size-lg:   1.25rem;
+$font-size-md:   1rem; // custom
 $font-size-sm:   .875rem;
 $font-size-xs:   .75rem;
+$font-size-base: $font-size-md; // modified, moved
 
 $font-weight-normal: normal;
 $font-weight-bold: bold;
@@ -279,6 +280,12 @@ $font-size-h3: 1.75rem;
 $font-size-h4: 1.5rem;
 $font-size-h5: 1.25rem;
 $font-size-h6: 1rem;
+$font-size-h1-xs: 2rem; // custom
+$font-size-h2-xs: 1.7rem; // custom
+$font-size-h3-xs: 1.45rem; // custom
+$font-size-h4-xs: 1.2rem; // custom
+$font-size-h5-xs: 1rem; // custom
+$font-size-h6-xs: .75rem; // custom
 
 $headings-margin-bottom: ($spacer / 2);
 $headings-font-family:   inherit;
@@ -290,6 +297,14 @@ $display1-size: 6rem;
 $display2-size: 5.5rem;
 $display3-size: 4.5rem;
 $display4-size: 3.5rem;
+$display1-size-sm: 5rem; // custom
+$display2-size-sm: 4.5rem; // custom
+$display3-size-sm: 3.5rem; // custom
+$display4-size-sm: 2.5rem; // custom
+$display1-size-xs: 14vw; // custom
+$display2-size-xs: 12vw; // custom
+$display3-size-xs: 9.5vw; // custom
+$display4-size-xs: 7vw; // custom
 
 $display1-weight:     600;
 $display2-weight:     600;
