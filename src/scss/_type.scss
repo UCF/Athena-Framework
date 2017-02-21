@@ -73,7 +73,7 @@ h6,
 
   // Serif font family overrides
   &.font-serif {
-    font-size: ($lead-font-size-xs) * 1.05;
+    font-size: ($lead-font-size-xs) * 1.2;
     line-height: 1.375;
 
     @include media-breakpoint-up(md) {
@@ -84,7 +84,7 @@ h6,
 
   // Slab serif font family overrides
   &.font-slab-serif {
-    font-size: ($lead-font-size-xs) * 1.1;
+    font-size: ($lead-font-size-xs) * 1.25;
     line-height: 1.35;
 
     @include media-breakpoint-up(md) {
