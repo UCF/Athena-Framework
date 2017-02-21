@@ -8,6 +8,30 @@ body {
 
 
 //
+// Font family classes
+//
+
+.font-sans-serif {
+  font-family: $font-family-sans-serif;
+}
+
+.font-serif {
+  font-family: $font-family-serif;
+}
+
+.font-slab-serif {
+  font-family: $font-family-slab-serif;
+}
+
+.font-condensed {
+  font-family: $font-family-condensed;
+  // scss-lint:disable ImportantRule
+  font-weight: normal !important; // We only support one weight of Knockout--forcing !important here is necessary.
+  // scss-lint:enable ImportantRule
+}
+
+
+//
 // Headings
 //
 
@@ -18,6 +42,24 @@ h1,
   @include media-breakpoint-up(md) {
     font-size: $font-size-h1;
   }
+
+  // Slab serif font family overrides
+  &.font-slab-serif {
+    font-size: $font-size-h1-xs * 1.15;
+
+    @include media-breakpoint-up(md) {
+      font-size: $font-size-h1 * 1.15;
+    }
+  }
+
+  // Condensed font family overrides
+  &.font-condensed {
+    font-size: $font-size-h1-xs * 1.75;
+
+    @include media-breakpoint-up(md) {
+      font-size: $font-size-h1 * 1.75;
+    }
+  }
 }
 
 h2,
@@ -26,6 +68,24 @@ h2,
 
   @include media-breakpoint-up(md) {
     font-size: $font-size-h2;
+  }
+
+  // Slab serif font family overrides
+  &.font-slab-serif {
+    font-size: $font-size-h2-xs * 1.15;
+
+    @include media-breakpoint-up(md) {
+      font-size: $font-size-h2 * 1.15;
+    }
+  }
+
+  // Condensed font family overrides
+  &.font-condensed {
+    font-size: $font-size-h2-xs * 1.75;
+
+    @include media-breakpoint-up(md) {
+      font-size: $font-size-h2 * 1.75;
+    }
   }
 }
 
@@ -36,6 +96,24 @@ h3,
   @include media-breakpoint-up(md) {
     font-size: $font-size-h3;
   }
+
+  // Slab serif font family overrides
+  &.font-slab-serif {
+    font-size: $font-size-h3-xs * 1.15;
+
+    @include media-breakpoint-up(md) {
+      font-size: $font-size-h3 * 1.15;
+    }
+  }
+
+  // Condensed font family overrides
+  &.font-condensed {
+    font-size: $font-size-h3-xs * 1.75;
+
+    @include media-breakpoint-up(md) {
+      font-size: $font-size-h3 * 1.75;
+    }
+  }
 }
 
 h4,
@@ -44,6 +122,24 @@ h4,
 
   @include media-breakpoint-up(md) {
     font-size: $font-size-h4;
+  }
+
+  // Slab serif font family overrides
+  &.font-slab-serif {
+    font-size: $font-size-h4-xs * 1.15;
+
+    @include media-breakpoint-up(md) {
+      font-size: $font-size-h4 * 1.15;
+    }
+  }
+
+  // Condensed font family overrides
+  &.font-condensed {
+    font-size: $font-size-h4-xs * 1.75;
+
+    @include media-breakpoint-up(md) {
+      font-size: $font-size-h4 * 1.75;
+    }
   }
 }
 
@@ -54,6 +150,24 @@ h5,
   @include media-breakpoint-up(md) {
     font-size: $font-size-h5;
   }
+
+  // Slab serif font family overrides
+  &.font-slab-serif {
+    font-size: $font-size-h5-xs * 1.15;
+
+    @include media-breakpoint-up(md) {
+      font-size: $font-size-h5 * 1.15;
+    }
+  }
+
+  // Condensed font family overrides
+  &.font-condensed {
+    font-size: $font-size-h5-xs * 1.75;
+
+    @include media-breakpoint-up(md) {
+      font-size: $font-size-h5 * 1.75;
+    }
+  }
 }
 
 h6,
@@ -62,6 +176,24 @@ h6,
 
   @include media-breakpoint-up(md) {
     font-size: $font-size-h6;
+  }
+
+  // Slab serif font family overrides
+  &.font-slab-serif {
+    font-size: $font-size-h6-xs * 1.15;
+
+    @include media-breakpoint-up(md) {
+      font-size: $font-size-h6 * 1.15;
+    }
+  }
+
+  // Condensed font family overrides
+  &.font-condensed {
+    font-size: $font-size-h6-xs * 1.75;
+
+    @include media-breakpoint-up(md) {
+      font-size: $font-size-h6 * 1.75;
+    }
   }
 }
 
@@ -161,30 +293,6 @@ h6,
 
 
 //
-// Font family classes
-//
-
-.font-sans-serif {
-  font-family: $font-family-sans-serif;
-}
-
-.font-serif {
-  font-family: $font-family-serif;
-}
-
-.font-slab-serif {
-  font-family: $font-family-slab-serif;
-}
-
-.font-condensed {
-  font-family: $font-family-condensed;
-  // scss-lint:disable ImportantRule
-  font-weight: normal !important; // We only support one weight of Knockout--forcing !important here is necessary.
-  // scss-lint:enable ImportantRule
-}
-
-
-//
 // Lead text
 //
 
@@ -197,22 +305,22 @@ h6,
 
   // Serif font family overrides
   &.font-serif {
-    font-size: ($lead-font-size-xs) * 1.2;
+    font-size: $lead-font-size-xs * 1.2;
     line-height: 1.375;
 
     @include media-breakpoint-up(md) {
-      font-size: ($lead-font-size) * 1.1;
+      font-size: $lead-font-size * 1.1;
       line-height: 1.4;
     }
   }
 
   // Slab serif font family overrides
   &.font-slab-serif {
-    font-size: ($lead-font-size-xs) * 1.25;
+    font-size: $lead-font-size-xs * 1.25;
     line-height: 1.35;
 
     @include media-breakpoint-up(md) {
-      font-size: ($lead-font-size) * 1.2;
+      font-size: $lead-font-size * 1.2;
       line-height: 1.325;
     }
   }
@@ -234,22 +342,22 @@ h6,
 
   // Serif font family overrides
   &.font-serif {
-    font-size: ($blockquote-font-size) * 1.15;
+    font-size: $blockquote-font-size * 1.15;
     line-height: 1.375;
 
     @include media-breakpoint-up(md) {
-      font-size: ($blockquote-font-size-md) * 1.1;
+      font-size: $blockquote-font-size-md * 1.1;
       line-height: 1.4;
     }
   }
 
   // Slab serif font family overrides
   &.font-slab-serif {
-    font-size: ($blockquote-font-size) * 1.25;
+    font-size: $blockquote-font-size * 1.25;
     line-height: 1.35;
 
     @include media-breakpoint-up(md) {
-      font-size: ($blockquote-font-size-md) * 1.2;
+      font-size: $blockquote-font-size-md * 1.2;
       line-height: 1.325;
     }
   }
@@ -257,10 +365,10 @@ h6,
 
 .blockquote-footer {
   font-family: $font-family-sans-serif;
-  font-size: ($blockquote-font-size) * .75;
+  font-size: $blockquote-font-size * .75;
 
   @include media-breakpoint-up(md) {
-    font-size: ($blockquote-font-size-md) * .75;
+    font-size: $blockquote-font-size-md * .75;
   }
 
   &::before {
