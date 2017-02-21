@@ -312,8 +312,9 @@ $display3-weight:     600;
 $display4-weight:     600;
 $display-line-height: $headings-line-height;
 
-$lead-font-size:   1.25rem;
-$lead-font-weight: 300;
+$lead-font-size:    1.4rem; // modified
+$lead-font-size-xs: 1.15rem; // custom
+$lead-font-weight:  400; // modified
 
 $small-font-size: 80%;
 
