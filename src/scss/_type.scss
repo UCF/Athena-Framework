@@ -433,3 +433,28 @@ h6,
     color: $white;
   }
 }
+
+
+//
+// Horizontal rules (dividers)
+//
+
+.hr-2 {
+  border-width: $border-width-thicker;
+}
+
+.hr-3 {
+  border-width: $border-width-thickest;
+}
+
+.hr-black {
+  border-top-color: $black;
+}
+
+.hr-white {
+  border-top-color: $white;
+}
+
+.hr-primary {
+  border-top-color: $brand-primary;
+}
