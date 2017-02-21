@@ -1,0 +1,38 @@
+//
+// Basic Bootstrap table
+//
+
+.table {
+  thead th {
+    border-top: 0 solid transparent;
+  }
+}
+
+
+//
+// Zebra-striped table
+//
+
+.table-striped {
+  th,
+  td {
+    border-top: 0 solid transparent;
+  }
+
+  thead th {
+    border-bottom: 0 solid transparent;
+  }
+}
+
+
+//
+// Inverse styles
+//
+
+.table-inverse {
+  th,
+  td,
+  thead th {
+    border-color: $gray; // Not sure why this isn't a unique variable in Bootstrap...
+  }
+}

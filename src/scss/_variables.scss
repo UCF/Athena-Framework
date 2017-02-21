@@ -181,6 +181,7 @@ $spacers: (
   )
 );
 $border-width: 1px;
+$border-width-thicker: 3px; // custom
 
 // This variable affects the `.h-*` and `.w-*` classes.
 $sizes: (
@@ -373,11 +374,11 @@ $table-sm-cell-padding:         .3rem;
 
 $table-bg:                      transparent;
 
-$table-inverse-bg:              $gray-dark;
+$table-inverse-bg:              $black; // modified
 $table-inverse-color:           $body-bg;
 
-$table-bg-accent:               rgba($black,.05);
-$table-bg-hover:                rgba($black,.075);
+$table-bg-accent:               $ucf-gold-lightest; // modified
+$table-bg-hover:                lighten($ucf-gold-lighter, 10%); // modified
 $table-bg-active:               $table-bg-hover;
 
 $table-head-bg:                 $gray-lighter;

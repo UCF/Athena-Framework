@@ -268,7 +268,7 @@ h6,
     bottom: 0;
     content: '';
     display: block;
-    height: 3px; // TODO should border thicknesses be defined via variables?
+    height: $border-width-thicker;
     min-width: 2rem;
     position: absolute;
     width: 1em;
