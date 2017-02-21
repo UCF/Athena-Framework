@@ -26,6 +26,14 @@
 
 
 //
+// Hover effect
+//
+// Placed here since it has to come after the potential zebra striping
+
+
+
+
+//
 // Inverse styles
 //
 
@@ -33,6 +41,32 @@
   th,
   td,
   thead th {
-    border-color: $gray; // Not sure why this isn't a unique variable in Bootstrap...
+    border-color: $table-inverse-border-color;
+  }
+
+  // Bordered version
+  &.table-bordered {
+    border-color: $table-inverse-border-color;
+
+    th,
+    td {
+      border-color: $table-inverse-border-color;
+    }
+  }
+
+  // Zebra-striped table
+  &.table-striped {
+    tbody tr:nth-of-type(odd) {
+      background-color: $table-inverse-bg-accent;
+    }
+  }
+
+  // Placed here since it has to come after the potential zebra striping
+  &.table-hover {
+    tbody tr {
+      @include hover {
+        background-color: $table-inverse-bg-hover;
+      }
+    }
   }
 }

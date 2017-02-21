@@ -377,6 +377,10 @@ $table-bg:                      transparent;
 
 $table-inverse-bg:              $black; // modified
 $table-inverse-color:           $body-bg;
+$table-inverse-bg-accent:       $gray-dark; // custom
+$table-inverse-bg-hover:        $gray; // custom
+$table-inverse-bg-active:       $table-inverse-bg-hover; // custom
+$table-inverse-border-color:    $gray; // custom
 
 $table-bg-accent:               $ucf-gold-lightest; // modified
 $table-bg-hover:                lighten($ucf-gold-lighter, 10%); // modified
