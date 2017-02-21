@@ -1,7 +1,3 @@
-//
-// Modify various font sizes per-breakpoint
-//
-
 body {
   font-size: $font-size-sm;
 
@@ -9,6 +5,11 @@ body {
     font-size: $font-size-md;
   }
 }
+
+
+//
+// Headings
+//
 
 h1,
 .h1 {
@@ -64,35 +65,10 @@ h6,
   }
 }
 
-.lead {
-  font-size: $lead-font-size-xs;
 
-  @include media-breakpoint-up(md) {
-    font-size: $lead-font-size;
-  }
-
-  // Serif font family overrides
-  &.font-serif {
-    font-size: ($lead-font-size-xs) * 1.2;
-    line-height: 1.375;
-
-    @include media-breakpoint-up(md) {
-      font-size: ($lead-font-size) * 1.1;
-      line-height: 1.4;
-    }
-  }
-
-  // Slab serif font family overrides
-  &.font-slab-serif {
-    font-size: ($lead-font-size-xs) * 1.25;
-    line-height: 1.35;
-
-    @include media-breakpoint-up(md) {
-      font-size: ($lead-font-size) * 1.2;
-      line-height: 1.325;
-    }
-  }
-}
+//
+// Display headings
+//
 
 .display-1 {
   font-size: $display1-size-xs;
@@ -144,6 +120,47 @@ h6,
 
 
 //
+// Underline emphasis headings (TODO can these be named something more semantic?)
+//
+
+%heading-underline {
+  // scss-lint:disable ImportantRule
+  font-family: $font-family-sans-serif !important; // This class is opinionated--we *always* want to display this heading using Gotham
+  // scss-lint:enable ImportantRule
+  margin-bottom: $headings-margin-bottom * 2;
+  padding-bottom: .65rem;
+  position: relative;
+  text-transform: uppercase;
+
+  &::after {
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 3px; // TODO should border thicknesses be defined via variables?
+    min-width: 2rem;
+    position: absolute;
+    width: 1em;
+  }
+}
+
+.heading-underline {
+  @extend %heading-underline;
+
+  &::after {
+    background-color: $brand-primary;
+  }
+}
+
+.heading-underline-inverse {
+  @extend %heading-underline;
+
+  &::after {
+    background-color: $white;
+  }
+}
+
+
+//
 // Font family classes
 //
 
@@ -164,6 +181,41 @@ h6,
   // scss-lint:disable ImportantRule
   font-weight: normal !important; // We only support one weight of Knockout--forcing !important here is necessary.
   // scss-lint:enable ImportantRule
+}
+
+
+//
+// Lead text
+//
+
+.lead {
+  font-size: $lead-font-size-xs;
+
+  @include media-breakpoint-up(md) {
+    font-size: $lead-font-size;
+  }
+
+  // Serif font family overrides
+  &.font-serif {
+    font-size: ($lead-font-size-xs) * 1.2;
+    line-height: 1.375;
+
+    @include media-breakpoint-up(md) {
+      font-size: ($lead-font-size) * 1.1;
+      line-height: 1.4;
+    }
+  }
+
+  // Slab serif font family overrides
+  &.font-slab-serif {
+    font-size: ($lead-font-size-xs) * 1.25;
+    line-height: 1.35;
+
+    @include media-breakpoint-up(md) {
+      font-size: ($lead-font-size) * 1.2;
+      line-height: 1.325;
+    }
+  }
 }
 
 
