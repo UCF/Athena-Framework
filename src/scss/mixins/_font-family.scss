@@ -1,0 +1,104 @@
+//
+// Heading font size overrides, by font family
+//
+@mixin font-family-heading-variant($size-ratio: 1, $font-utility-class: '') {
+  h1,
+  .h1 {
+    &#{$font-utility-class} {
+      font-size: $font-size-h1 * $size-ratio;
+
+      @include media-breakpoint-up(md) {
+        font-size: $font-size-h1-md * $size-ratio;
+      }
+    }
+  }
+
+  h2,
+  .h2 {
+    &#{$font-utility-class} {
+      font-size: $font-size-h2 * $size-ratio;
+
+      @include media-breakpoint-up(md) {
+        font-size: $font-size-h2-md * $size-ratio;
+      }
+    }
+  }
+
+  h3,
+  .h3 {
+    &#{$font-utility-class} {
+      font-size: $font-size-h3 * $size-ratio;
+
+      @include media-breakpoint-up(md) {
+        font-size: $font-size-h3-md * $size-ratio;
+      }
+    }
+  }
+
+  h4,
+  .h4 {
+    &#{$font-utility-class} {
+      font-size: $font-size-h4 * $size-ratio;
+
+      @include media-breakpoint-up(md) {
+        font-size: $font-size-h4-md * $size-ratio;
+      }
+    }
+  }
+
+  h5,
+  .h5 {
+    &#{$font-utility-class} {
+      font-size: $font-size-h5 * $size-ratio;
+
+      @include media-breakpoint-up(md) {
+        font-size: $font-size-h5-md * $size-ratio;
+      }
+    }
+  }
+
+  h6,
+  .h6 {
+    &#{$font-utility-class} {
+      font-size: $font-size-h6 * $size-ratio;
+
+      @include media-breakpoint-up(md) {
+        font-size: $font-size-h6-md * $size-ratio;
+      }
+    }
+  }
+}
+
+
+//
+// Lead text overrides, by font family
+//
+@mixin font-family-lead-variant($font-size-base, $font-size-md, $line-height, $font-utility-class: '') {
+  .lead {
+    &#{$font-utility-class} {
+      font-size: $font-size-base;
+      line-height: $line-height;
+
+      @include media-breakpoint-up(md) {
+        font-size: $font-size-md;
+      }
+    }
+  }
+}
+
+
+//
+// Blockquote text overrides, by font family
+//
+@mixin font-family-blockquote-variant($font-size-base, $font-size-md, $line-height, $font-utility-class: '') {
+  .blockquote {
+    &#{$font-utility-class} {
+      font-size: $font-size-base;
+      line-height: $line-height;
+
+      @include media-breakpoint-up(md) {
+        font-size: $font-size-md;
+      }
+    }
+  }
+}

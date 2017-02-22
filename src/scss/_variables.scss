@@ -291,6 +291,10 @@ $font-size-h4-md: 1.5rem; // custom
 $font-size-h5-md: 1.25rem; // custom
 $font-size-h6-md: 1rem; // custom
 
+$font-serif-heading-size-ratio:      1.1; // custom
+$font-slab-serif-heading-size-ratio: 1.15; // custom
+$font-condensed-heading-size-ratio:  1.75; // custom
+
 $headings-margin-bottom: ($spacer / 2);
 $headings-font-family:   inherit;
 $headings-font-weight:   600;
@@ -319,6 +323,14 @@ $display-line-height: $headings-line-height;
 $lead-font-size:    1rem; // modified
 $lead-font-size-md: 1.4rem; // custom
 $lead-font-weight:  400; // modified
+$lead-line-height:  $line-height-base; // custom variable, but copied behavior from Bootstrap
+
+$font-serif-lead-size:         $lead-font-size * 1.2; // custom
+$font-serif-lead-size-md:      $lead-font-size-md * 1.14; // custom
+$font-slab-serif-lead-size:    $lead-font-size * 1.25; // custom
+$font-slab-serif-lead-size-md: $lead-font-size-md * 1.2; // custom
+$font-serif-lead-line-height:      1.325; // custom
+$font-slab-serif-lead-line-height: 1.325; // custom
 
 $small-font-size: 80%;
 
@@ -331,6 +343,14 @@ $blockquote-font-size:    $lead-font-size; // modified
 $blockquote-font-size-md: $lead-font-size-md; // custom
 $blockquote-border-color: transparent; // modified
 $blockquote-border-width: 0; // modified
+$blockquote-line-height: $line-height-base; // custom variable, but copied behavior from Bootstrap
+
+$font-serif-blockquote-size:         $font-serif-lead-size; // custom
+$font-serif-blockquote-size-md:      $font-serif-lead-size-md; // custom
+$font-slab-serif-blockquote-size:    $font-slab-serif-lead-size; // custom
+$font-slab-serif-blockquote-size-md: $font-slab-serif-lead-size-md; // custom
+$font-serif-blockquote-line-height:      $font-serif-lead-line-height; // custom
+$font-slab-serif-blockquote-line-height: $font-slab-serif-lead-line-height; // custom
 
 $hr-border-color: rgba($black, .1);
 $hr-border-width: $border-width;

@@ -11,221 +11,17 @@ body {
 // Headings
 //
 
-h1,
-.h1 {
-  font-size: $font-size-h1;
+// Base heading overrides (just applies base breakpoint-specific font sizing)
+@include font-family-heading-variant();
 
-  @include media-breakpoint-up(md) {
-    font-size: $font-size-h1-md;
-  }
+// Serif overrides
+@include font-family-heading-variant($font-serif-heading-size-ratio, '.font-serif');
 
-  // Serif font family overrides
-  &.font-serif {
-    font-size: $font-size-h1 * 1.1;
+// Slab serif overrides
+@include font-family-heading-variant($font-slab-serif-heading-size-ratio, '.font-slab-serif');
 
-    @include media-breakpoint-up(md) {
-      font-size: $font-size-h1-md * 1.1;
-    }
-  }
-
-  // Slab serif font family overrides
-  &.font-slab-serif {
-    font-size: $font-size-h1 * 1.15;
-
-    @include media-breakpoint-up(md) {
-      font-size: $font-size-h1-md * 1.15;
-    }
-  }
-
-  // Condensed font family overrides
-  &.font-condensed {
-    font-size: $font-size-h1 * 1.75;
-
-    @include media-breakpoint-up(md) {
-      font-size: $font-size-h1-md * 1.75;
-    }
-  }
-}
-
-h2,
-.h2 {
-  font-size: $font-size-h2;
-
-  @include media-breakpoint-up(md) {
-    font-size: $font-size-h2-md;
-  }
-
-  // Serif font family overrides
-  &.font-serif {
-    font-size: $font-size-h2 * 1.1;
-
-    @include media-breakpoint-up(md) {
-      font-size: $font-size-h2-md * 1.1;
-    }
-  }
-
-  // Slab serif font family overrides
-  &.font-slab-serif {
-    font-size: $font-size-h2 * 1.15;
-
-    @include media-breakpoint-up(md) {
-      font-size: $font-size-h2-md * 1.15;
-    }
-  }
-
-  // Condensed font family overrides
-  &.font-condensed {
-    font-size: $font-size-h2 * 1.75;
-
-    @include media-breakpoint-up(md) {
-      font-size: $font-size-h2-md * 1.75;
-    }
-  }
-}
-
-h3,
-.h3 {
-  font-size: $font-size-h3;
-
-  @include media-breakpoint-up(md) {
-    font-size: $font-size-h3-md;
-  }
-
-  // Serif font family overrides
-  &.font-serif {
-    font-size: $font-size-h3 * 1.1;
-
-    @include media-breakpoint-up(md) {
-      font-size: $font-size-h3-md * 1.1;
-    }
-  }
-
-  // Slab serif font family overrides
-  &.font-slab-serif {
-    font-size: $font-size-h3 * 1.15;
-
-    @include media-breakpoint-up(md) {
-      font-size: $font-size-h3-md * 1.15;
-    }
-  }
-
-  // Condensed font family overrides
-  &.font-condensed {
-    font-size: $font-size-h3 * 1.75;
-
-    @include media-breakpoint-up(md) {
-      font-size: $font-size-h3-md * 1.75;
-    }
-  }
-}
-
-h4,
-.h4 {
-  font-size: $font-size-h4;
-
-  @include media-breakpoint-up(md) {
-    font-size: $font-size-h4-md;
-  }
-
-  // Serif font family overrides
-  &.font-serif {
-    font-size: $font-size-h4 * 1.1;
-
-    @include media-breakpoint-up(md) {
-      font-size: $font-size-h4-md * 1.1;
-    }
-  }
-
-  // Slab serif font family overrides
-  &.font-slab-serif {
-    font-size: $font-size-h4 * 1.15;
-
-    @include media-breakpoint-up(md) {
-      font-size: $font-size-h4-md * 1.15;
-    }
-  }
-
-  // Condensed font family overrides
-  &.font-condensed {
-    font-size: $font-size-h4 * 1.75;
-
-    @include media-breakpoint-up(md) {
-      font-size: $font-size-h4-md * 1.75;
-    }
-  }
-}
-
-h5,
-.h5 {
-  font-size: $font-size-h5;
-
-  @include media-breakpoint-up(md) {
-    font-size: $font-size-h5-md;
-  }
-
-  // Serif font family overrides
-  &.font-serif {
-    font-size: $font-size-h5 * 1.1;
-
-    @include media-breakpoint-up(md) {
-      font-size: $font-size-h5-md * 1.1;
-    }
-  }
-
-  // Slab serif font family overrides
-  &.font-slab-serif {
-    font-size: $font-size-h5 * 1.15;
-
-    @include media-breakpoint-up(md) {
-      font-size: $font-size-h5-md * 1.15;
-    }
-  }
-
-  // Condensed font family overrides
-  &.font-condensed {
-    font-size: $font-size-h5 * 1.75;
-
-    @include media-breakpoint-up(md) {
-      font-size: $font-size-h5-md * 1.75;
-    }
-  }
-}
-
-h6,
-.h6 {
-  font-size: $font-size-h6;
-
-  @include media-breakpoint-up(md) {
-    font-size: $font-size-h6-md;
-  }
-
-  // Serif font family overrides
-  &.font-serif {
-    font-size: $font-size-h6 * 1.1;
-
-    @include media-breakpoint-up(md) {
-      font-size: $font-size-h6-md * 1.1;
-    }
-  }
-
-  // Slab serif font family overrides
-  &.font-slab-serif {
-    font-size: $font-size-h6 * 1.15;
-
-    @include media-breakpoint-up(md) {
-      font-size: $font-size-h6-md * 1.15;
-    }
-  }
-
-  // Condensed font family overrides
-  &.font-condensed {
-    font-size: $font-size-h6 * 1.75;
-
-    @include media-breakpoint-up(md) {
-      font-size: $font-size-h6-md * 1.75;
-    }
-  }
-}
+// Condensed overrides
+@include font-family-heading-variant($font-condensed-heading-size-ratio, '.font-condensed');
 
 
 //
@@ -326,33 +122,31 @@ h6,
 // Lead text
 //
 
-.lead {
-  font-size: $lead-font-size;
+// Base .lead overrides (just applies breakpoint-specific font sizing)
+@include font-family-lead-variant(
+  $lead-font-size,
+  $lead-font-size-md,
+  $lead-line-height
+);
 
-  @include media-breakpoint-up(md) {
-    font-size: $lead-font-size-md;
-  }
+// Serif .lead overrides
+@include font-family-lead-variant(
+  $font-serif-lead-size,
+  $font-serif-lead-size-md,
+  $font-serif-lead-line-height,
+  '.font-serif'
+);
 
-  // Serif font family overrides
-  &.font-serif {
-    font-size: $lead-font-size * 1.2;
-    line-height: 1.325;
+// Slab serif .lead overrides
+@include font-family-lead-variant(
+  $font-slab-serif-lead-size,
+  $font-slab-serif-lead-size-md,
+  $font-slab-serif-lead-line-height,
+  '.font-slab-serif'
+);
 
-    @include media-breakpoint-up(md) {
-      font-size: $lead-font-size-md * 1.14;
-    }
-  }
-
-  // Slab serif font family overrides
-  &.font-slab-serif {
-    font-size: $lead-font-size * 1.25;
-    line-height: 1.325;
-
-    @include media-breakpoint-up(md) {
-      font-size: $lead-font-size-md * 1.2;
-    }
-  }
-}
+// There is intentionally not a .font-condensed variant included here;
+// Knockout is not well-suited for use in lead text
 
 
 //
@@ -360,34 +154,35 @@ h6,
 //
 
 .blockquote {
-  font-size: $blockquote-font-size;
   font-style: italic;
   padding: 1rem 0;
-
-  @include media-breakpoint-up(md) {
-    font-size: $blockquote-font-size-md;
-  }
-
-  // Serif font family overrides
-  &.font-serif {
-    font-size: $blockquote-font-size * 1.2;
-    line-height: 1.325;
-
-    @include media-breakpoint-up(md) {
-      font-size: $blockquote-font-size-md * 1.14;
-    }
-  }
-
-  // Slab serif font family overrides
-  &.font-slab-serif {
-    font-size: $blockquote-font-size * 1.25;
-    line-height: 1.325;
-
-    @include media-breakpoint-up(md) {
-      font-size: $blockquote-font-size-md * 1.2;
-    }
-  }
 }
+
+// Base .blockquote overrides (just applies breakpoint-specific font sizing)
+@include font-family-blockquote-variant(
+  $blockquote-font-size,
+  $blockquote-font-size-md,
+  $blockquote-line-height
+);
+
+// Serif .blockquote overrides
+@include font-family-blockquote-variant(
+  $font-serif-blockquote-size,
+  $font-serif-blockquote-size-md,
+  $font-serif-blockquote-line-height,
+  '.font-serif'
+);
+
+// Slab serif .blockquote overrides
+@include font-family-blockquote-variant(
+  $font-slab-serif-blockquote-size,
+  $font-slab-serif-blockquote-size-md,
+  $font-slab-serif-blockquote-line-height,
+  '.font-slab-serif'
+);
+
+// There is intentionally not a .font-condensed variant included here;
+// Knockout is not well-suited for use in blockquotes
 
 .blockquote-footer {
   font-family: $font-family-sans-serif;
