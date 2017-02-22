@@ -51,10 +51,10 @@
 
     <h2>Typography</h2>
     <p>
-      Keeping in line with UCF's brand guidelines, Athena's base font family is <strong>Gotham</strong>.  For users that cannot subscribe to <a href="http://www.typography.com/cloud/welcome/">Cloud.typography's webfont services</a>, a fallback font specifically for Athena can be used instead.  Please see the <a href="installation.html#webfont-configuration">installation/getting started page</a> for more information.
+      Keeping in line with UCF's brand guidelines, Athena's base font family is <strong>Gotham</strong>.  Please see the <a href="installation.html#webfont-configuration">installation/getting started page</a> for more information.
     </p>
     <p>
-      Note that Athena does not provide webfonts out of the box; it is your responsibility to install them on your site using either a Cloud.typography CSS key, or the fallback webfont <code>&lt;link&gt;</code> tag provided on the installation page.
+      Note that Athena does not provide webfonts out of the box; it is your responsibility to include your own Cloud.typography CSS key and configure it using the font families necessary for your project.
     </p>
 
 
@@ -777,85 +777,89 @@
     </div>
 
 
-    <h3 id="tables-bordered" class="h5">Table - Bordered</h3>
+    <h3 id="tables-bordered" class="h5">Table - Bordered (also uses <code>.table-responsive</code> wrapper)</h3>
 
     <div class="row">
       <div class="col-lg-6">
 
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Username</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@TwBootstrap</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">4</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@TwBootstrap</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
       </div>
       <div class="col-lg-6">
 
-        <table class="table table-bordered table-inverse">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Username</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@TwBootstrap</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">4</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-responsive">
+          <table class="table table-bordered table-inverse">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@TwBootstrap</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
       </div>
     </div>

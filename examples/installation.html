@@ -59,24 +59,15 @@
     <ol>
       <li>
         <p>
-          <strong>Add webfonts:</strong> Add a <code>&lt;link&gt;</code> tag into the document <code>&lt;head&gt;</code> before all other stylesheets to apply custom webfonts to the page.  If you're using Cloud.typography, this is the CSS Key that is provided whenever you create a new project.  See the <a href="#webfont-configuration">webfont configuration section</a> for information on setting up a Cloud.typography project for use with Athena.
+          <strong>Add stylesheets:</strong> Add your Cloud.typography CSS key and the Athena stylesheet before all other stylesheets.  The Cloud.typography CSS key should go immediately before the Athena stylesheet.
         </p>
         <p>
-          To use the fallback sans-serif font library, use the following <code>&lt;link&gt;</code> tag:
+          See the <a href="#webfont-configuration">webfont configuration section</a> for information on setting up a Cloud.typography project for use with Athena.
         </p>
         <div class="card card-outline-secondary mt-3 mb-3">
           <div class="card-block">
-            <pre><code>&lt;link rel="stylesheet" href="TODO/webfont-fallback.css"&gt;</code></pre>
-          </div>
-        </div>
-      </li>
-      <li>
-        <p>
-          <strong>Add framework stylesheet:</strong> Copy the <code>&lt;link&gt;</code> tag below and paste it into the document <code>&lt;head&gt;</code> immediately after the Cloud.typography/fallback font <code>&lt;link&gt;</code> tag:
-        </p>
-        <div class="card card-outline-secondary mt-3 mb-3">
-          <div class="card-block">
-            <pre><code>&lt;link rel="stylesheet" href="TODO/framework.min.css"&gt;</code></pre>
+            <pre><code>&lt;link rel="stylesheet" type="text/css" href="https://cloud.typography.com/xxxxxx/xxxxxx/css/fonts.css"&gt;
+&lt;link rel="stylesheet" href="TODO/framework.min.css"&gt;</code></pre>
           </div>
         </div>
       </li>
@@ -96,46 +87,68 @@
 
     <h2 id="webfont-configuration" class="mt-5">Webfont Configuration</h2>
     <p>
-      The preferred sans-serif font family for Athena is <strong>Gotham</strong>.  Gotham can be installed in your project via the <a href="http://www.typography.com/cloud/welcome/">Cloud.typography service.</a>
+      The sans-serif font family used in Athena is <strong>Gotham</strong>.  Gotham can be installed in your project via the <a href="http://www.typography.com/cloud/welcome/">Cloud.typography service.</a>
     </p>
     <div class="alert alert-danger p-4">
       <h3 class="h5">Gotham Licensing for the Web</h3>
-      Any existing print license for Gotham usage, whether purchased via the <a class="alert-link" href="https://cstore.ucf.edu/gotham/">UCF Computer Store</a> or separately, <a class="alert-link" href="https://www.typography.com/faq/question.php?faqID=15" target="_blank">does not cover usage of webfonts</a>.  To use Gotham on the web, <strong>you must register for the Cloud.typography service.</strong>  Do not attempt to self-host Gotham font files online; doing so will breach the university's font license agreement.
+      Any existing print license for Gotham usage, whether purchased via the <a class="alert-link" href="https://cstore.ucf.edu/gotham/">UCF Computer Store</a> or separately, <a class="alert-link" href="https://www.typography.com/faq/question.php?faqID=15" target="_blank">does not cover usage of webfonts</a>.  To use Gotham on the web, <strong>you must register for the Cloud.typography service.</strong>  Do not attempt to self-host Gotham font files online.
     </div>
+
+    <h3>Base Configuration</h3>
     <p>
-      For base support with Athena, we recommend configuring your Cloud.typography project to include the following fonts/weights:
+      For base support with Athena, your Cloud.typography project should be configured to include the following fonts/weights:
     </p>
     <ul>
-      <li>Gotham ScreenSmart Light</li>
-      <li>Gotham ScreenSmart Light Italic</li>
-      <li>Gotham ScreenSmart Book</li>
-      <li>Gotham ScreenSmart Book Italic</li>
-      <li>Gotham ScreenSmart Bold</li>
-      <li>Gotham ScreenSmart Bold Italic</li>
-      <li>Gotham ScreenSmart Black</li>
-      <li>Gotham ScreenSmart Black Italic</li>
+      <li>
+        Gotham ScreenSmart
+        <ul>
+          <li>Book</li>
+          <li>Book Italic</li>
+          <li>Bold</li>
+          <li>Bold Italic</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>Font Family Extras</h3>
+    <p>
+      To take advantage of the font family overrides available with Athena, the following fonts/weights can also be added to your Cloud.typography project <em>as needed</em>*:
+    </p>
+    <ul>
+      <li>
+        Chronicle Text Grade 3 (for <code>.font-serif</code> support)
+        <ul>
+          <li>Roman</li>
+          <li>Italic</li>
+          <li>Bold</li>
+          <li>Bold Italic</li>
+        </ul>
+      </li>
+      <li>
+        Archer (for <code>.font-slab-serif</code> support)
+        <ul>
+          <li>Book</li>
+          <li>Book Italic</li>
+          <li>Bold</li>
+          <li>Bold Italic</li>
+        </ul>
+      </li>
+      <li>
+        Knockout Regular (for <code>.font-condensed</code> support)
+        <ul>
+          <li>Knockout 49, Lightweight</li>
+        </ul>
+      </li>
     </ul>
     <p>
       Because Athena does not support older browsers, enabling Legacy Support is not necessary and is not recommended.
     </p>
     <p>
-      More weights can be added as needed per-project, however, we don't recommend usage of Gotham ScreenSmart Extra Light due to readability concerns.
+      More weights can be added as needed per-project, however, we don't recommend usage of most "thin" or "extra light" weights due to readability concerns.
     </p>
     <p>
-      Avoid adding webfonts that aren't needed for your project; as the number of fonts in a project increases, the average load time for the font project increases.
+      *<em>Avoid adding webfonts that aren't needed for your project; as the number of fonts in a project increases, the average load time for the font project increases.</em>
     </p>
-
-    <h3 class="mt-4">Using Fallback Webfonts</h3>
-    <p>
-      UCF Marketing provides a fallback sans-serif webfont, based on the free font family <a href="https://www.fontsquirrel.com/fonts/montserrat" target="_blank">Montserrat</a>, intended specifically for use with Athena.  This font should only be used for web projects when registering to use Gotham on the web is not possible.  <strong>Do not use this font for any other purpose besides as a web font.</strong>
-    </p>
-    <p>
-      The fallback sans-serif webfont comes prepackaged with light, book, semi-bold, bold, extra-bold, and black font weights.
-    </p>
-    <p>
-      See the <a href="#quick-start">Quick Start</a> section for fallback webfont installation instructions.
-    </p>
-
 
     <h2 id="custom-builds" class="mt-5">Custom Builds</h2>
     <p>
