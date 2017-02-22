@@ -297,7 +297,7 @@ $font-condensed-heading-size-ratio:  1.75; // custom
 
 $headings-margin-bottom: ($spacer / 2);
 $headings-font-family:   inherit;
-$headings-font-weight:   600;
+$headings-font-weight:   600; // modified
 $headings-line-height:   1.1;
 $headings-color:         inherit;
 
@@ -314,10 +314,10 @@ $display2-size-md: 5.5rem; // custom
 $display3-size-md: 4.5rem; // custom
 $display4-size-md: 3.5rem; // custom
 
-$display1-weight:     600;
-$display2-weight:     600;
-$display3-weight:     600;
-$display4-weight:     600;
+$display1-weight:     600; // modified
+$display2-weight:     600; // modified
+$display3-weight:     600; // modified
+$display4-weight:     600; // modified
 $display-line-height: $headings-line-height;
 
 $lead-font-size:    1rem; // modified
@@ -359,7 +359,7 @@ $mark-padding: .2em;
 
 $dt-font-weight: $font-weight-bold;
 
-$kbd-box-shadow:         inset 0 -.1rem 0 rgba($black, .25);
+$kbd-box-shadow:         inset 0 -.1rem 0 rgba($black,.25);
 $nested-kbd-font-weight: $font-weight-bold;
 
 $list-inline-padding: 5px;
