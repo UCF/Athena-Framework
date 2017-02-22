@@ -4,3 +4,9 @@
 
 # Athena-Project
 A front-end web framework for UCF websites and applications
+
+## Requirements
+- jQuery
+
+## Supported Browsers
+- See "browserslist" in package.json.  This project is not currently being developed with IE9/10 support.
