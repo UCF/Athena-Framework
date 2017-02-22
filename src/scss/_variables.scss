@@ -278,18 +278,18 @@ $font-weight-bold: bold;
 $font-weight-base: $font-weight-normal;
 $line-height-base: 1.5;
 
-$font-size-h1: 2.5rem;
-$font-size-h2: 2rem;
-$font-size-h3: 1.75rem;
-$font-size-h4: 1.5rem;
-$font-size-h5: 1.25rem;
-$font-size-h6: 1rem;
-$font-size-h1-xs: 2rem; // custom
-$font-size-h2-xs: 1.7rem; // custom
-$font-size-h3-xs: 1.45rem; // custom
-$font-size-h4-xs: 1.2rem; // custom
-$font-size-h5-xs: 1rem; // custom
-$font-size-h6-xs: .75rem; // custom
+$font-size-h1: 2rem; // modified
+$font-size-h2: 1.7rem; // modified
+$font-size-h3: 1.45rem; // modified
+$font-size-h4: 1.2rem; // modified
+$font-size-h5: 1rem; // modified
+$font-size-h6: .75rem; // modified
+$font-size-h1-md: 2.5rem; // custom
+$font-size-h2-md: 2rem; // custom
+$font-size-h3-md: 1.75rem; // custom
+$font-size-h4-md: 1.5rem; // custom
+$font-size-h5-md: 1.25rem; // custom
+$font-size-h6-md: 1rem; // custom
 
 $headings-margin-bottom: ($spacer / 2);
 $headings-font-family:   inherit;
@@ -297,18 +297,18 @@ $headings-font-weight:   600;
 $headings-line-height:   1.1;
 $headings-color:         inherit;
 
-$display1-size: 6rem;
-$display2-size: 5.5rem;
-$display3-size: 4.5rem;
-$display4-size: 3.5rem;
+$display1-size: 14vw; // modified
+$display2-size: 12vw; // modified
+$display3-size: 9.5vw; // modified
+$display4-size: 7vw; // modified
 $display1-size-sm: 5rem; // custom
 $display2-size-sm: 4.5rem; // custom
 $display3-size-sm: 3.5rem; // custom
 $display4-size-sm: 2.5rem; // custom
-$display1-size-xs: 14vw; // custom
-$display2-size-xs: 12vw; // custom
-$display3-size-xs: 9.5vw; // custom
-$display4-size-xs: 7vw; // custom
+$display1-size-md: 6rem; // custom
+$display2-size-md: 5.5rem; // custom
+$display3-size-md: 4.5rem; // custom
+$display4-size-md: 3.5rem; // custom
 
 $display1-weight:     600;
 $display2-weight:     600;
@@ -316,8 +316,8 @@ $display3-weight:     600;
 $display4-weight:     600;
 $display-line-height: $headings-line-height;
 
-$lead-font-size:    1.4rem; // modified
-$lead-font-size-xs: 1rem; // custom
+$lead-font-size:    1rem; // modified
+$lead-font-size-md: 1.4rem; // custom
 $lead-font-weight:  400; // modified
 
 $small-font-size: 80%;
@@ -327,8 +327,8 @@ $text-muted: $gray-light;
 $abbr-border-color: $gray-light;
 
 $blockquote-small-color:  $gray-light;
-$blockquote-font-size:    $font-size-base; // modified
-$blockquote-font-size-md: ($font-size-base * 1.4); // custom
+$blockquote-font-size:    $lead-font-size; // modified
+$blockquote-font-size-md: $lead-font-size-md; // custom
 $blockquote-border-color: transparent; // modified
 $blockquote-border-width: 0; // modified
 
