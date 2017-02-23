@@ -1,0 +1,16 @@
+.badge {
+  text-transform: uppercase;
+
+  // If any other pill variants are added, this selector will need to be updated
+  &:not(.badge-pill) {
+    border-radius: $badge-border-radius; // allow badge border radius to be customized outside of the global border-radius rules
+  }
+}
+
+.badge-primary {
+  color: $black;
+}
+
+.badge-complementary {
+  @include badge-variant($badge-default-bg);
+}
