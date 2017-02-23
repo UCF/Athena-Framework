@@ -91,12 +91,24 @@
 //
 // Grayscale and brand colors for use across Bootstrap.
 
+// Custom UCF Colors
+$ucf-gold:               #fc0;
+$ucf-gold-lighter:       #ffeb9b;
+$ucf-gold-lightest:      #fdf9e8;
+$ucf-gold-darker:        #b18e00;
+$ucf-gold-darkest:       #786000;
+$ucf-metalgold:          #bc9a36;
+$ucf-metalgold-lighter:  #e0ca99;
+$ucf-metalgold-lightest: #eee6cd;
+$ucf-metalgold-darker:   darken($ucf-metalgold, 5%);
+$ucf-metalgold-darkest:  darken($ucf-metalgold, 10%);
+
 // Start with assigning color names to specific hex values.
 $white:  #fff;
 $black:  #000;
 $red:    #d9534f;
 $orange: #f0ad4e;
-$yellow: #ffd500;
+$yellow: $ucf-gold; // modified
 $green:  #5cb85c;
 $blue:   #0275d8;
 $teal:   #5bc0de;
@@ -111,12 +123,13 @@ $gray-lighter:              #eceeef;
 $gray-lightest:             #f7f7f9;
 
 // Reassign color vars to semantic color scheme
-$brand-primary:             $blue;
+$brand-primary:             $ucf-gold; // modified
+$brand-complementary:       $blue; // custom
 $brand-success:             $green;
 $brand-info:                $teal;
 $brand-warning:             $orange;
 $brand-danger:              $red;
-$brand-inverse:             $gray-dark;
+$brand-inverse:             $black; // modified
 
 
 // Options
@@ -168,6 +181,8 @@ $spacers: (
   )
 );
 $border-width: 1px;
+$border-width-thicker: 3px; // custom
+$border-width-thickest: 5px; // custom
 
 // This variable affects the `.h-*` and `.w-*` classes.
 $sizes: (
@@ -177,13 +192,24 @@ $sizes: (
   100: 100%
 );
 
+// Custom - letter spacing sizing
+$letter-spacing: (
+  0: 0,
+  1: .05em,
+  2: .075em,
+  3: .1em,
+  4: .15em,
+  5: .2em
+);
+
+
 // Body
 //
 // Settings for the `<body>` element.
 
 $body-bg:       $white;
-$body-color:    $gray-dark;
-$inverse-bg:    $gray-dark;
+$body-color:    $black; // modified
+$inverse-bg:    $brand-inverse; // modified
 $inverse-color: $gray-lighter;
 
 
@@ -191,7 +217,7 @@ $inverse-color: $gray-lighter;
 //
 // Style anchor elements.
 
-$link-color:            $brand-primary;
+$link-color:            $brand-complementary; // modified
 $link-decoration:       none;
 $link-hover-color:      darken($link-color, 15%);
 $link-hover-decoration: underline;
@@ -244,15 +270,18 @@ $grid-gutter-widths: (
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-$font-family-serif:      Georgia, "Times New Roman", Times, serif;
+$font-family-sans-serif: 'Gotham SSm A', 'Gotham SSm B', 'Helvetica Neue', Arial, sans-serif; // modified
+$font-family-serif:      'Chronicle Text G3 A', 'Chronicle Text G3 B', Georgia, 'Times New Roman', Times, serif; // modified
+$font-family-slab-serif: 'Archer A', 'Archer B', serif; // custom
+$font-family-condensed:  'Knockout 49 A', 'Knockout 49 B', sans-serif; // custom
 $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 $font-family-base:       $font-family-sans-serif;
 
-$font-size-base: 1rem; // Assumes the browser default, typically `16px`
 $font-size-lg:   1.25rem;
+$font-size-md:   1rem; // custom
 $font-size-sm:   .875rem;
 $font-size-xs:   .75rem;
+$font-size-base: $font-size-md; // modified, moved
 
 $font-weight-normal: normal;
 $font-weight-bold: bold;
@@ -260,32 +289,59 @@ $font-weight-bold: bold;
 $font-weight-base: $font-weight-normal;
 $line-height-base: 1.5;
 
-$font-size-h1: 2.5rem;
-$font-size-h2: 2rem;
-$font-size-h3: 1.75rem;
-$font-size-h4: 1.5rem;
-$font-size-h5: 1.25rem;
-$font-size-h6: 1rem;
+$font-size-h1: 2rem; // modified
+$font-size-h2: 1.7rem; // modified
+$font-size-h3: 1.45rem; // modified
+$font-size-h4: 1.2rem; // modified
+$font-size-h5: 1rem; // modified
+$font-size-h6: .75rem; // modified
+$font-size-h1-md: 2.5rem; // custom
+$font-size-h2-md: 2rem; // custom
+$font-size-h3-md: 1.75rem; // custom
+$font-size-h4-md: 1.5rem; // custom
+$font-size-h5-md: 1.25rem; // custom
+$font-size-h6-md: 1rem; // custom
+
+$font-serif-heading-size-ratio:      1.1; // custom
+$font-slab-serif-heading-size-ratio: 1.15; // custom
+$font-condensed-heading-size-ratio:  1.75; // custom
 
 $headings-margin-bottom: ($spacer / 2);
 $headings-font-family:   inherit;
-$headings-font-weight:   500;
+$headings-font-weight:   600; // modified
 $headings-line-height:   1.1;
 $headings-color:         inherit;
 
-$display1-size: 6rem;
-$display2-size: 5.5rem;
-$display3-size: 4.5rem;
-$display4-size: 3.5rem;
+$display1-size: 14vw; // modified
+$display2-size: 12vw; // modified
+$display3-size: 9.5vw; // modified
+$display4-size: 7vw; // modified
+$display1-size-sm: 5rem; // custom
+$display2-size-sm: 4.5rem; // custom
+$display3-size-sm: 3.5rem; // custom
+$display4-size-sm: 2.5rem; // custom
+$display1-size-md: 6rem; // custom
+$display2-size-md: 5.5rem; // custom
+$display3-size-md: 4.5rem; // custom
+$display4-size-md: 3.5rem; // custom
 
-$display1-weight:     300;
-$display2-weight:     300;
-$display3-weight:     300;
-$display4-weight:     300;
+$display1-weight:     600; // modified
+$display2-weight:     600; // modified
+$display3-weight:     600; // modified
+$display4-weight:     600; // modified
 $display-line-height: $headings-line-height;
 
-$lead-font-size:   1.25rem;
-$lead-font-weight: 300;
+$lead-font-size:    1rem; // modified
+$lead-font-size-md: 1.4rem; // custom
+$lead-font-weight:  400; // modified
+$lead-line-height:  $line-height-base; // custom variable, but copied behavior from Bootstrap
+
+$font-serif-lead-size:         $lead-font-size * 1.2; // custom
+$font-serif-lead-size-md:      $lead-font-size-md * 1.14; // custom
+$font-slab-serif-lead-size:    $lead-font-size * 1.25; // custom
+$font-slab-serif-lead-size-md: $lead-font-size-md * 1.2; // custom
+$font-serif-lead-line-height:      1.325; // custom
+$font-slab-serif-lead-line-height: 1.325; // custom
 
 $small-font-size: 80%;
 
@@ -294,11 +350,20 @@ $text-muted: $gray-light;
 $abbr-border-color: $gray-light;
 
 $blockquote-small-color:  $gray-light;
-$blockquote-font-size:    ($font-size-base * 1.25);
-$blockquote-border-color: $gray-lighter;
-$blockquote-border-width: .25rem;
+$blockquote-font-size:    $lead-font-size; // modified
+$blockquote-font-size-md: $lead-font-size-md; // custom
+$blockquote-border-color: transparent; // modified
+$blockquote-border-width: 0; // modified
+$blockquote-line-height: $line-height-base; // custom variable, but copied behavior from Bootstrap
 
-$hr-border-color: rgba($black,.1);
+$font-serif-blockquote-size:         $font-serif-lead-size; // custom
+$font-serif-blockquote-size-md:      $font-serif-lead-size-md; // custom
+$font-slab-serif-blockquote-size:    $font-slab-serif-lead-size; // custom
+$font-slab-serif-blockquote-size-md: $font-slab-serif-lead-size-md; // custom
+$font-serif-blockquote-line-height:      $font-serif-lead-line-height; // custom
+$font-slab-serif-blockquote-line-height: $font-slab-serif-lead-line-height; // custom
+
+$hr-border-color: rgba($black, .1);
 $hr-border-width: $border-width;
 
 $mark-padding: .2em;
@@ -322,7 +387,7 @@ $border-radius:          .25rem;
 $border-radius-lg:       .3rem;
 $border-radius-sm:       .2rem;
 
-$component-active-color: $white;
+$component-active-color: $black; // modified
 $component-active-bg:    $brand-primary;
 
 $caret-width:            .3em;
@@ -341,11 +406,15 @@ $table-sm-cell-padding:         .3rem;
 
 $table-bg:                      transparent;
 
-$table-inverse-bg:              $gray-dark;
+$table-inverse-bg:              $black; // modified
 $table-inverse-color:           $body-bg;
+$table-inverse-bg-accent:       $gray-dark; // custom
+$table-inverse-bg-hover:        $gray; // custom
+$table-inverse-bg-active:       $table-inverse-bg-hover; // custom
+$table-inverse-border-color:    $gray; // custom
 
-$table-bg-accent:               rgba($black,.05);
-$table-bg-hover:                rgba($black,.075);
+$table-bg-accent:               $ucf-gold-lightest; // modified
+$table-bg-hover:                lighten($ucf-gold-lighter, 10%); // modified
 $table-bg-active:               $table-bg-hover;
 
 $table-head-bg:                 $gray-lighter;
@@ -367,7 +436,7 @@ $btn-box-shadow:                 inset 0 1px 0 rgba($white,.15), 0 1px 1px rgba(
 $btn-focus-box-shadow:           0 0 0 2px rgba($brand-primary, .25);
 $btn-active-box-shadow:          inset 0 3px 5px rgba($black,.125);
 
-$btn-primary-color:              $white;
+$btn-primary-color:              $black; // modified
 $btn-primary-bg:                 $brand-primary;
 $btn-primary-border:             $btn-primary-bg;
 
@@ -478,13 +547,13 @@ $custom-control-disabled-cursor:             $cursor-disabled;
 $custom-control-disabled-indicator-bg:       $gray-lighter;
 $custom-control-disabled-description-color:  $gray-light;
 
-$custom-control-checked-indicator-color:      $white;
+$custom-control-checked-indicator-color:      $black; // modified
 $custom-control-checked-indicator-bg:         $brand-primary;
 $custom-control-checked-indicator-box-shadow: none;
 
 $custom-control-focus-indicator-box-shadow: 0 0 0 1px $body-bg, 0 0 0 3px $brand-primary;
 
-$custom-control-active-indicator-color:      $white;
+$custom-control-active-indicator-color:      $black; // modified
 $custom-control-active-indicator-bg:         lighten($brand-primary, 35%);
 $custom-control-active-indicator-box-shadow: none;
 
@@ -668,7 +737,7 @@ $pagination-hover-color:               $link-hover-color;
 $pagination-hover-bg:                  $gray-lighter;
 $pagination-hover-border:              #ddd;
 
-$pagination-active-color:              $white;
+$pagination-active-color:              $black; // modified
 $pagination-active-bg:                 $brand-primary;
 $pagination-active-border:             $brand-primary;
 

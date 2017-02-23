@@ -1,0 +1,281 @@
+body {
+  font-size: $font-size-sm;
+
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-md;
+  }
+}
+
+
+//
+// Headings
+//
+
+// Base heading overrides (just applies base breakpoint-specific font sizing)
+@include font-family-heading-variant();
+
+// Serif overrides
+@include font-family-heading-variant($font-serif-heading-size-ratio, '.font-serif');
+
+// Slab serif overrides
+@include font-family-heading-variant($font-slab-serif-heading-size-ratio, '.font-slab-serif');
+
+// Condensed overrides
+@include font-family-heading-variant($font-condensed-heading-size-ratio, '.font-condensed');
+
+
+//
+// Display headings
+//
+
+.display-1 {
+  font-size: $display1-size;
+
+  @include media-breakpoint-up(sm) {
+    font-size: $display1-size-sm;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: $display1-size-md;
+  }
+}
+
+.display-2 {
+  font-size: $display2-size;
+
+  @include media-breakpoint-up(sm) {
+    font-size: $display2-size-sm;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: $display2-size-md;
+  }
+}
+
+.display-3 {
+  font-size: $display3-size;
+
+  @include media-breakpoint-up(sm) {
+    font-size: $display3-size-sm;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: $display3-size-md;
+  }
+}
+
+.display-4 {
+  font-size: $display4-size;
+
+  @include media-breakpoint-up(sm) {
+    font-size: $display4-size-sm;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: $display4-size-md;
+  }
+}
+
+
+//
+// Underline emphasis headings
+//
+
+%heading-underline {
+  // scss-lint:disable ImportantRule
+  font-family: $font-family-sans-serif !important; // This class is opinionated--we *always* want to display this heading using Gotham
+  // scss-lint:enable ImportantRule
+  margin-bottom: $headings-margin-bottom * 2;
+  padding-bottom: .65rem;
+  position: relative;
+  text-transform: uppercase;
+
+  &::after {
+    bottom: 0;
+    content: '';
+    display: block;
+    height: $border-width-thicker;
+    min-width: 2rem;
+    position: absolute;
+    width: 1em;
+  }
+}
+
+.heading-underline {
+  @extend %heading-underline;
+
+  &::after {
+    background-color: $brand-primary;
+  }
+}
+
+.heading-underline-inverse {
+  @extend %heading-underline;
+
+  &::after {
+    background-color: $white;
+  }
+}
+
+
+//
+// Lead text
+//
+
+// Base .lead overrides (just applies breakpoint-specific font sizing)
+@include font-family-lead-variant(
+  $lead-font-size,
+  $lead-font-size-md,
+  $lead-line-height
+);
+
+// Serif .lead overrides
+@include font-family-lead-variant(
+  $font-serif-lead-size,
+  $font-serif-lead-size-md,
+  $font-serif-lead-line-height,
+  '.font-serif'
+);
+
+// Slab serif .lead overrides
+@include font-family-lead-variant(
+  $font-slab-serif-lead-size,
+  $font-slab-serif-lead-size-md,
+  $font-slab-serif-lead-line-height,
+  '.font-slab-serif'
+);
+
+// There is intentionally not a .font-condensed variant included here;
+// Knockout is not well-suited for use in lead text
+
+
+//
+// Blockquotes
+//
+
+.blockquote {
+  font-style: italic;
+  padding: 1rem 0;
+}
+
+// Base .blockquote overrides (just applies breakpoint-specific font sizing)
+@include font-family-blockquote-variant(
+  $blockquote-font-size,
+  $blockquote-font-size-md,
+  $blockquote-line-height
+);
+
+// Serif .blockquote overrides
+@include font-family-blockquote-variant(
+  $font-serif-blockquote-size,
+  $font-serif-blockquote-size-md,
+  $font-serif-blockquote-line-height,
+  '.font-serif'
+);
+
+// Slab serif .blockquote overrides
+@include font-family-blockquote-variant(
+  $font-slab-serif-blockquote-size,
+  $font-slab-serif-blockquote-size-md,
+  $font-slab-serif-blockquote-line-height,
+  '.font-slab-serif'
+);
+
+// There is intentionally not a .font-condensed variant included here;
+// Knockout is not well-suited for use in blockquotes
+
+.blockquote-footer {
+  font-family: $font-family-sans-serif;
+  font-size: $blockquote-font-size * .75;
+
+  @include media-breakpoint-up(md) {
+    font-size: $blockquote-font-size-md * .75;
+  }
+
+  &::before {
+    content: '';
+  }
+}
+
+// Opposite alignment of blockquote
+.blockquote-reverse {
+  padding-right: 0;
+
+  .blockquote-footer {
+    &::after {
+      content: ''; // nbsp, em dash
+    }
+  }
+}
+
+%blockquote-quotation {
+  padding-bottom: 1em;
+  padding-left: 2.75em;
+  padding-right: 0;
+  padding-top: 1.5em;
+  position: relative;
+  z-index: 0;
+
+  @include media-breakpoint-up(md) {
+    padding-left: 3.75em;
+    padding-top: 2em;
+  }
+
+  &::before {
+    content: '“';
+    font-size: 5em;
+    font-style: normal;
+    font-weight: 700;
+    left: -8px;
+    line-height: 0;
+    position: absolute;
+    top: .565em;
+    z-index: -1;
+
+    @include media-breakpoint-up(md) {
+      font-size: 6em;
+      left: -5px;
+    }
+  }
+}
+
+.blockquote-quotation {
+  @extend %blockquote-quotation;
+
+  &::before {
+    color: $brand-primary;
+  }
+}
+
+.blockquote-quotation-inverse {
+  @extend %blockquote-quotation;
+
+  &::before {
+    color: $white;
+  }
+}
+
+
+//
+// Horizontal rules (dividers)
+//
+
+.hr-2 {
+  border-width: $border-width-thicker;
+}
+
+.hr-3 {
+  border-width: $border-width-thickest;
+}
+
+.hr-black {
+  border-top-color: $black;
+}
+
+.hr-white {
+  border-top-color: $white;
+}
+
+.hr-primary {
+  border-top-color: $brand-primary;
+}

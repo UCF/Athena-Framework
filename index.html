@@ -1,15 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
-    <title>UCF Web Framework</title>
+    <title>Athena Project</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <!-- TODO: update cloud.typography css key to a production-ready project, with no legacy support enabled -->
+    <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/730568/633546/css/fonts.css">
     <link rel="stylesheet" href="dist/css/framework.min.css">
   </head>
   <body>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <button class="navbar-toggle navbar-toggler-right" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="./">Athena Project</a>
+      <div class="collapse navbar-collapse" id="main-nav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="./examples/content.html">Content</a></li>
+          <li class="nav-item"><a class="nav-link" href="./examples/components.html">Components</a></li>
+        </ul>
+      </div>
+    </nav>
     <div class="container">
-      <p>TODO - convert this to some type of documentation</p>
+      <div class="row mt-4">
+        <div class="col-md-8">
+          <div class="jumbotron">
+            <h1>Athena Project</h1>
+            <p class="lead">
+              The Athena Project is a CSS and Javascript framework based heavily on Bootstrap themed and customized for use on University of Central Florida sites.
+            </p>
+            <p>The following pages, act as a set of test pages for viewing the default styles provided by Athena. They are broadly organized on the <a href="https://v4-alpha.getbootstrap.com/" target="_blank">Bootstrap 4 documentation</a> to make finding components easy.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mt-xs-2">
+          <div class="card card-outline-primary">
+            <div class="card-block">
+              <h2 class="card-title">Want to contribute?</h2>
+              <p class="card-text">If you're interested in contributing the Athena Project, please feel free to visit our GitHub Page and send us a message.</p>
+              <a href="https://github.com/UCF/Athena-Project/" class="btn btn-success" target="_blank">GitHub Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col mt-2 mt-sm-0">
+          <div class="card h-100">
+            <div class="card-block">
+              <h2 class="card-title">Content</h2>
+              <p class="card-text">
+                This page deals mainly with content markup and styles, including typography, image utilities and classes, tables and figures.
+              </p>
+              <a href="./examples/content.html" class="btn btn-primary">View Examples</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mt-2 mt-sm-0">
+          <div class="card h-100">
+            <div class="card-block">
+              <h2 class="card-title">Components</h2>
+              <p class="card-text">
+                This page demonstrates the look and feel of various display components, like alerts, buttons, and cards.
+              </p>
+              <a href="./examples/components.html" class="btn btn-primary">View Examples</a>
+            </div>
+          </div>
+        </div>
+        <div class="col mt-2 mt-sm-0">
+          <div class="card h-100">
+            <div class="card-block">
+              <h2 class="card-title">Utilities</h2>
+              <p class="card-text">
+                Demonstrates utility classes that allow for granular modification of margin, padding, position and more.
+              </p>
+              <a href="./examples/utilities.html" class="btn btn-primary disabled">View Examples</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha256-gL1ibrbVcRIHKlCO5OXOPC/lZz/gpdApgQAzskqqXp8=" crossorigin="anonymous"></script>

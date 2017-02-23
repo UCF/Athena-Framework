@@ -1,0 +1,42 @@
+//
+// Font family classes
+//
+
+.font-sans-serif {
+  font-family: $font-family-sans-serif;
+}
+
+.font-serif {
+  font-family: $font-family-serif;
+}
+
+.font-slab-serif {
+  font-family: $font-family-slab-serif;
+}
+
+.font-condensed {
+  font-family: $font-family-condensed;
+  // scss-lint:disable ImportantRule
+  font-weight: normal !important; // We only support one weight of Knockout--forcing !important here is necessary.
+  // scss-lint:enable ImportantRule
+}
+
+
+//
+// Extended font weight classes
+//
+
+.font-weight-light {
+  font-weight: 300;
+}
+
+.font-weight-black {
+  font-weight: 800;
+}
+
+
+//
+// Letter spacing utility classes
+//
+
+@include letter-spacing-variants();
