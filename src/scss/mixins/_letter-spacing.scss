@@ -1,0 +1,10 @@
+//
+// Letter-spacing utility class variants
+//
+@mixin letter-spacing-variants() {
+  @each $space, $val in $letter-spacing {
+    .letter-spacing-#{$space} {
+      letter-spacing: $val;
+    }
+  }
+}

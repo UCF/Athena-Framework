@@ -33,3 +33,10 @@
 .font-weight-black {
   font-weight: 800;
 }
+
+
+//
+// Letter spacing utility classes
+//
+
+@include letter-spacing-variants();

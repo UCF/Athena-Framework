@@ -192,6 +192,17 @@ $sizes: (
   100: 100%
 );
 
+// Custom - letter spacing sizing
+$letter-spacing: (
+  0: 0,
+  1: .05em,
+  2: .075em,
+  3: .1em,
+  4: .15em,
+  5: .2em
+);
+
+
 // Body
 //
 // Settings for the `<body>` element.
