@@ -891,11 +891,11 @@ $modal-transition:            transform .3s ease-out;
 // Define alert colors, border radius, and padding.
 
 $alert-padding-x:             1.25rem;
-$alert-padding-y:             .75rem;
+$alert-padding-y:             1.25rem; // modified
 $alert-margin-bottom:         $spacer-y;
-$alert-border-radius:         $border-radius;
+$alert-border-radius:         0; // modified
 $alert-link-font-weight:      $font-weight-bold;
-$alert-border-width:          $border-width;
+$alert-border-width:          0; // modified
 
 $alert-success-bg:            $state-success-bg;
 $alert-success-text:          $state-success-text;
