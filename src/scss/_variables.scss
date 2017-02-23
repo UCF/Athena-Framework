@@ -100,8 +100,8 @@ $ucf-gold-darkest:       #786000;
 $ucf-metalgold:          #bc9a36;
 $ucf-metalgold-lighter:  #e0ca99;
 $ucf-metalgold-lightest: #eee6cd;
-//$ucf-metalgold-darker:   ; // TODO
-//$ucf-metalgold-darkest:  ; // TODO
+$ucf-metalgold-darker:   darken($ucf-metalgold, 5%);
+$ucf-metalgold-darkest:  darken($ucf-metalgold, 10%);
 
 // Start with assigning color names to specific hex values.
 $white:  #fff;
@@ -191,6 +191,17 @@ $sizes: (
   75: 75%,
   100: 100%
 );
+
+// Custom - letter spacing sizing
+$letter-spacing: (
+  0: 0,
+  1: .05em,
+  2: .075em,
+  3: .1em,
+  4: .15em,
+  5: .2em
+);
+
 
 // Body
 //
