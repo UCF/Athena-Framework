@@ -2,7 +2,7 @@
 
 ---
 
-# Athena-Project
+# Athena-Framework
 A front-end web framework for UCF websites and applications
 
 ## Requirements
