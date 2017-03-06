@@ -26,6 +26,10 @@ var configLocal = require('./gulp-config.json'),
         fontPath: './dist/fonts'
       },
       bowerPath: './bower_components/',
+      bootstrap: {
+        scss: './bower_components/bootstrap/scss',
+        js:   './bower_components/bootstrap/dist/js'
+      },
       sync: false,
       syncTarget: 'http://localhost/'
     },
@@ -54,8 +58,16 @@ gulp.task('fonts', ['bower'], function() {
   return;
 });
 
+gulp.task('bootstrap', ['bower'], function() {
+  gulp.src(config.bootstrap.scss + '/**/*', {base: config.bootstrap.scss})
+    .pipe(gulp.dest(config.src.scssPath + '/bootstrap'));
+
+  gulp.src(config.bootstrap.js + '/bootstrap.js', {base: config.bootstrap.js})
+    .pipe(gulp.dest(config.src.jsPath + '/bootstrap'));
+});
+
 // Run all component-related tasks
-gulp.task('components', ['bower', 'fonts']);
+gulp.task('components', ['bower', 'fonts', 'bootstrap']);
 
 
 //
