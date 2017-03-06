@@ -109,7 +109,7 @@ gulp.task('css-default', ['scss-lint', 'scss-build-default']);
 
 // Run jshint on all js files in src.jsPath
 gulp.task('js-lint', function() {
-  return gulp.src([config.src.jsPath + '/**/*.js'])
+  return gulp.src([config.src.jsPath + '/*.js'])
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(jshint.reporter('fail'));
