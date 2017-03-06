@@ -1,6 +1,7 @@
 {
-  "name": "athena-project",
-  "description": "",
+  "name": "athena-framework",
+  "description": "A front-end web framework for UCF websites and applications",
+  "version": "0.1.0",
   "main": "",
   "authors": [
     "UCF Web Communications"
@@ -15,7 +16,9 @@
     "test",
     "tests"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.6"
+  },
   "devDependencies": {
     "bootstrap": "v4.0.0-alpha.6"
   }
