@@ -3,8 +3,34 @@
 //
 
 .btn {
+  border-width: $btn-border-width;
   letter-spacing: $letter-spacing-base;
   text-transform: uppercase;
+  white-space: normal; // allow multi-line buttons
+
+  @include hover {
+    border-color: transparent;
+  }
+}
+
+
+//
+// Alternate buttons
+//
+
+.btn-primary {
+  @include hover-focus {
+    color: $white;
+  }
+}
+
+.btn-outline-primary,
+.btn-outline-secondary {
+  color: $black;
+
+  @include hover-focus {
+    color: $black;
+  }
 }
 
 

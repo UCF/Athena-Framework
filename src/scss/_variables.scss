@@ -477,9 +477,11 @@ $btn-block-spacing-y:            .5rem;
 $btn-toolbar-margin:             .5rem;
 
 // Allows for customizing button radius independently from global border radius
-$btn-border-radius:              $border-radius;
-$btn-border-radius-lg:           $border-radius-lg;
-$btn-border-radius-sm:           $border-radius-sm;
+$btn-border-radius:              0; // modified
+$btn-border-radius-lg:           0; // modified
+$btn-border-radius-sm:           0; // modified
+
+$btn-border-width:               $border-width-thicker; // custom
 
 $btn-transition:                 all .2s ease-in-out;
 
