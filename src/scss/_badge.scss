@@ -1,5 +1,7 @@
 .badge {
+  letter-spacing: .1em;
   text-transform: uppercase;
+  vertical-align: baseline;
 
   // If any other pill variants are added, this selector will need to be updated
   &:not(.badge-pill) {
