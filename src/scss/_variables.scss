@@ -973,15 +973,15 @@ $figure-caption-color:     $gray-light;
 
 // Breadcrumbs
 
-$breadcrumb-font-size:          $font-size-sm; // custom
+$breadcrumb-font-size:          .8rem; // custom
 
 $breadcrumb-padding-y:          0; // modified
 $breadcrumb-padding-x:          0; // modified
 $breadcrumb-item-padding:       .5rem;
 
 $breadcrumb-bg:                 transparent; // modified
-$breadcrumb-divider-color:      lighten($gray-light, 20%);
-$breadcrumb-active-color:       $gray-dark;
+$breadcrumb-divider-color:      #999; // modified
+$breadcrumb-active-color:       #444; // modified
 $breadcrumb-divider:            '/';
 
 $breadcrumb-item-color:         $gray-light; // custom

@@ -1,8 +1,11 @@
 .breadcrumb {
   font-size: $breadcrumb-font-size;
+  letter-spacing: .1em;
+  text-transform: uppercase;
 }
 
 .breadcrumb-item {
+
   &,
   a {
     color: $breadcrumb-item-color;
@@ -14,5 +17,14 @@
     &:focus {
       color: $breadcrumb-item-color;
     }
+  }
+
+  &.active {
+    font-weight: bold;
+  }
+
+  + .breadcrumb-item::before {
+    // Unset font weight on .active divider
+    font-weight: normal;
   }
 }
