@@ -1,0 +1,21 @@
+//
+// Base styles
+//
+
+.btn {
+  letter-spacing: $letter-spacing-base;
+  text-transform: uppercase;
+}
+
+
+//
+// Complementary btn color variants
+//
+
+.btn-complementary {
+  @include button-variant($btn-complementary-color, $btn-complementary-bg, $btn-complementary-border);
+}
+
+.btn-outline-complementary {
+  @include button-outline-variant($btn-complementary-bg);
+}

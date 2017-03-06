@@ -1,6 +1,6 @@
 .badge {
   border-radius: $badge-border-radius; // allow badge border radius to be customized outside of the global border-radius rules
-  letter-spacing: .1em;
+  letter-spacing: $letter-spacing-base;
   text-transform: uppercase;
   vertical-align: baseline;
 

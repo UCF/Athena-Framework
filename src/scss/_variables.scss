@@ -201,6 +201,7 @@ $letter-spacing: (
   4: .15em,
   5: .2em
 );
+$letter-spacing-base: map-get($letter-spacing, 3);
 
 
 // Body
@@ -431,7 +432,7 @@ $table-border-color:            $gray-lighter;
 $btn-padding-x:                  1rem;
 $btn-padding-y:                  .5rem;
 $btn-line-height:                1.25;
-$btn-font-weight:                $font-weight-normal;
+$btn-font-weight:                $font-weight-bold; // modified
 $btn-box-shadow:                 inset 0 1px 0 rgba($white,.15), 0 1px 1px rgba($black,.075);
 $btn-focus-box-shadow:           0 0 0 2px rgba($brand-primary, .25);
 $btn-active-box-shadow:          inset 0 3px 5px rgba($black,.125);
@@ -439,6 +440,10 @@ $btn-active-box-shadow:          inset 0 3px 5px rgba($black,.125);
 $btn-primary-color:              $black; // modified
 $btn-primary-bg:                 $brand-primary;
 $btn-primary-border:             $btn-primary-bg;
+
+$btn-complementary-color:        $white; // custom
+$btn-complementary-bg:           $brand-complementary; // custom
+$btn-complementary-border:       $btn-complementary-bg; // custom
 
 $btn-secondary-color:            $gray-dark;
 $btn-secondary-bg:               $white;
