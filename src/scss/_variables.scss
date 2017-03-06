@@ -835,13 +835,14 @@ $popover-arrow-outer-color:           fade-in($popover-border-color, .05);
 
 // Badges
 
-$badge-default-bg:            $gray-light;
+$badge-default-bg:            $black; // modified
 $badge-primary-bg:            $brand-primary;
 $badge-complementary-bg:      $brand-complementary; // custom
 $badge-success-bg:            $brand-success;
 $badge-info-bg:               $brand-info;
 $badge-warning-bg:            $brand-warning;
 $badge-danger-bg:             $brand-danger;
+$badge-inverse-bg:            $white; // custom
 
 $badge-color:                 $white;
 $badge-link-hover-color:      $white;

@@ -1,7 +1,5 @@
 **HEADS UP: This project is under active development and should not be utilized on any new sites or applications until a stable tag is released.**
 
-Branch dependencies: content-base
-
 ---
 
 # Athena-Project

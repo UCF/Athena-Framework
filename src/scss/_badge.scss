@@ -16,3 +16,8 @@
 .badge-complementary {
   @include badge-variant($badge-complementary-bg);
 }
+
+.badge-inverse {
+  @include badge-variant($badge-inverse-bg);
+  color: $black;
+}
