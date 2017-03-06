@@ -835,19 +835,22 @@ $popover-arrow-outer-color:           fade-in($popover-border-color, .05);
 
 // Badges
 
-$badge-default-bg:            $gray-light;
+$badge-default-bg:            $black; // modified
 $badge-primary-bg:            $brand-primary;
+$badge-complementary-bg:      $brand-complementary; // custom
 $badge-success-bg:            $brand-success;
 $badge-info-bg:               $brand-info;
 $badge-warning-bg:            $brand-warning;
 $badge-danger-bg:             $brand-danger;
+$badge-inverse-bg:            $white; // custom
 
 $badge-color:                 $white;
 $badge-link-hover-color:      $white;
 $badge-font-size:             75%;
 $badge-font-weight:           $font-weight-bold;
-$badge-padding-x:             .4em;
-$badge-padding-y:             .25em;
+$badge-padding-x:             .8em; // modified
+$badge-padding-y:             .35em; // modified
+$badge-border-radius:         0; // custom
 
 $badge-pill-padding-x:        .6em;
 // Use a higher than normal value to ensure completely rounded edges when
