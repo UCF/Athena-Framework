@@ -14,5 +14,5 @@
 }
 
 .badge-complementary {
-  @include badge-variant($badge-default-bg);
+  @include badge-variant($badge-complementary-bg);
 }
