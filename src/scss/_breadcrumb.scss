@@ -1,0 +1,28 @@
+.breadcrumb {
+  font-size: $breadcrumb-font-size;
+}
+
+.breadcrumb-item {
+
+  &,
+  a {
+    color: $breadcrumb-item-color;
+  }
+
+  @at-root a#{&}, // workaround to get `a.breadcrumb-item` as a nested selector
+  a {
+    &:hover,
+    &:focus {
+      color: $breadcrumb-item-color;
+    }
+  }
+
+  &.active {
+    font-weight: bold;
+  }
+
+  + .breadcrumb-item::before {
+    // Unset font weight on .active divider
+    font-weight: normal;
+  }
+}

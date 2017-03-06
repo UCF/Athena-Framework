@@ -976,14 +976,18 @@ $figure-caption-color:     $gray-light;
 
 // Breadcrumbs
 
-$breadcrumb-padding-y:          .75rem;
-$breadcrumb-padding-x:          1rem;
+$breadcrumb-font-size:          $font-size-sm; // custom
+
+$breadcrumb-padding-y:          0; // modified
+$breadcrumb-padding-x:          0; // modified
 $breadcrumb-item-padding:       .5rem;
 
-$breadcrumb-bg:                 $gray-lighter;
-$breadcrumb-divider-color:      $gray-light;
-$breadcrumb-active-color:       $gray-light;
+$breadcrumb-bg:                 transparent; // modified
+$breadcrumb-divider-color:      #999; // modified
+$breadcrumb-active-color:       #444; // modified
 $breadcrumb-divider:            "/";
+
+$breadcrumb-item-color:         $gray-light; // custom
 
 
 // Carousel
