@@ -3,14 +3,13 @@
 }
 
 .breadcrumb-item {
-
   &,
   a {
     color: $breadcrumb-item-color;
   }
 
   @at-root a#{&}, // workaround to get `a.breadcrumb-item` as a nested selector
-  a {
+  & a {
     &:hover,
     &:focus {
       color: $breadcrumb-item-color;

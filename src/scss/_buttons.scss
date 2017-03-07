@@ -8,8 +8,18 @@
   text-transform: uppercase;
   white-space: normal; // allow multi-line buttons
 
-  @include hover {
+  &:hover,
+  &.active,
+  &:active,
+  &.focus,
+  &:focus {
     border-color: transparent;
+  }
+
+  // Fix issue in Bootstrap that applies base a:focus styles to .btn:focus
+  &:focus,
+  &.focus {
+    color: initial;
   }
 }
 
@@ -19,16 +29,67 @@
 //
 
 .btn-primary {
-  @include hover-focus {
+  &:hover,
+  &.active,
+  &:active {
     color: $white;
+  }
+}
+
+.btn-secondary {
+  border-width: 1px;
+  padding: calc(#{$btn-padding-y} + #{($btn-border-width - $border-width)}) calc(#{$btn-padding-x} + #{($btn-border-width - $border-width)});
+
+  // List of selectors will need to be modified if extra button size classes are ever added
+  &.btn-sm {
+    padding: calc(#{$btn-padding-y-sm} + #{($btn-border-width - $border-width)}) calc(#{$btn-padding-x-sm} + #{($btn-border-width - $border-width)});
+  }
+
+  &.btn-lg {
+    padding: calc(#{$btn-padding-y-lg} + #{($btn-border-width - $border-width)}) calc(#{$btn-padding-x-lg} + #{($btn-border-width - $border-width)});
   }
 }
 
 .btn-outline-primary,
 .btn-outline-secondary {
-  color: $black;
+  &,
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active {
+    color: $black;
+  }
+}
 
-  @include hover-focus {
+.btn-outline-secondary {
+  border-color: $black;
+}
+
+
+//
+// Inverse btn color variants
+//
+.btn-inverse {
+  @include button-variant($btn-inverse-color, $btn-inverse-bg, $btn-inverse-border);
+
+  &:hover,
+  &.active,
+  &:active,
+  &.focus,
+  &:focus {
+    border-color: transparent;
+  }
+}
+
+.btn-outline-inverse {
+  @include button-outline-variant($btn-inverse-bg);
+
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active {
     color: $black;
   }
 }
