@@ -34,11 +34,28 @@
   &:active {
     color: $white;
   }
+
+  &.disabled,
+  &:disabled {
+    color: $black;
+  }
 }
 
 .btn-secondary {
   border-width: 1px;
   padding: calc(#{$btn-padding-y} + #{($btn-border-width - $border-width)}) calc(#{$btn-padding-x} + #{($btn-border-width - $border-width)});
+
+  // Undo border-color:transparent on .btn-secondary disabled states
+  &:disabled,
+  &.disabled {
+    &:hover,
+    &.active,
+    &:active,
+    &.focus,
+    &:focus {
+      border-color: $btn-secondary-border;
+    }
+  }
 
   // List of selectors will need to be modified if extra button size classes are ever added
   &.btn-sm {
