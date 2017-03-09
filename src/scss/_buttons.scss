@@ -29,19 +29,6 @@
 // Alternate buttons
 //
 
-.btn-primary {
-  &:hover,
-  &.active,
-  &:active {
-    color: $white;
-  }
-
-  &.disabled,
-  &:disabled {
-    color: $black;
-  }
-}
-
 .btn-secondary {
   // Always force borders on .btn-secondary to match $border-width, despite whatever $btn-border-width is set to.
   // Adjust padding to accommodate.
@@ -174,5 +161,48 @@
 
   @include media-breakpoint-up(md) {
     font-size: $font-size-base-md * $font-size-sm / 1rem;
+  }
+}
+
+
+//
+// Misc. overrides
+//
+
+// Font color resets for .primary and contextual variants
+.btn-primary,
+.btn-success,
+.btn-info,
+.btn-warning,
+.btn-danger {
+  &:hover,
+  &.active,
+  &:active {
+    color: $white;
+  }
+
+  &.disabled,
+  &:disabled {
+    color: initial;
+  }
+}
+
+// Font color resets for outline complementary and contextual variants
+.btn-outline-complementary,
+.btn-outline-success,
+.btn-outline-info,
+.btn-outline-warning,
+.btn-outline-danger {
+  color: $black;
+
+  &:hover,
+  &.active,
+  &:active,
+  &.focus,
+  &:focus {
+    // Force !important here, in case a text color utility class is used
+    // scss-lint:disable ImportantRule
+    color: $white !important;
+    // scss-lint:enable ImportantRule
   }
 }
