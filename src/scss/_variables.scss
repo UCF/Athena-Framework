@@ -121,14 +121,18 @@ $pink:   #ff5b77;
 $purple: #613d7c;
 
 // Create grayscale
-$gray-dark:                 #292b2c;
-$gray:                      #464a4c;
-$gray-light:                #636c72;
+$gray-darkest:              #292b2c; // custom
+$gray-darker:               #464a4c; // custom
+$gray-dark:                 #636c72; // modified
+$gray:                      #999; // modified
+$gray-light:                #ccc; // modified
 $gray-lighter:              #eceeef;
 $gray-lightest:             #f7f7f9;
 
 // Reassign color vars to semantic color scheme
+$brand-default:             $gray; // custom
 $brand-primary:             $ucf-gold; // modified
+$brand-secondary:           $white; // custom
 $brand-complementary:       $blue; // custom
 $brand-success:             $green;
 $brand-info:                $teal;
@@ -216,7 +220,7 @@ $letter-spacing-base: map-get($letter-spacing, 3);
 $body-bg:       $white;
 $body-color:    $black; // modified
 $inverse-bg:    $brand-inverse; // modified
-$inverse-color: $gray-lighter;
+$inverse-color: $white; // modified
 
 
 // Links
@@ -287,7 +291,8 @@ $font-size-lg:   1.25rem;
 $font-size-md:   1rem; // custom
 $font-size-sm:   .875rem;
 $font-size-xs:   .75rem;
-$font-size-base: $font-size-md; // modified, moved
+$font-size-base:    $font-size-sm; // modified, moved
+$font-size-base-md: $font-size-md; // custom
 
 $font-weight-normal: normal;
 $font-weight-bold: bold;
@@ -351,11 +356,11 @@ $font-slab-serif-lead-line-height: 1.325; // custom
 
 $small-font-size: 80%;
 
-$text-muted: $gray-light;
+$text-muted: $gray-dark; // modified
 
-$abbr-border-color: $gray-light;
+$abbr-border-color: $gray-dark; // modified
 
-$blockquote-small-color:  $gray-light;
+$blockquote-small-color:  $gray-dark; // modified
 $blockquote-font-size:    $lead-font-size; // modified
 $blockquote-font-size-md: $lead-font-size-md; // custom
 $blockquote-border-color: transparent; // modified
@@ -414,17 +419,17 @@ $table-bg:                      transparent;
 
 $table-inverse-bg:              $black; // modified
 $table-inverse-color:           $body-bg;
-$table-inverse-bg-accent:       $gray-dark; // custom
-$table-inverse-bg-hover:        $gray; // custom
+$table-inverse-bg-accent:       $gray-darkest; // custom
+$table-inverse-bg-hover:        $gray-darker; // custom
 $table-inverse-bg-active:       $table-inverse-bg-hover; // custom
-$table-inverse-border-color:    $gray; // custom
+$table-inverse-border-color:    $gray-darker; // custom
 
 $table-bg-accent:               $ucf-gold-lightest; // modified
 $table-bg-hover:                lighten($ucf-gold-lighter, 10%); // modified
 $table-bg-active:               $table-bg-hover;
 
 $table-head-bg:                 $gray-lighter;
-$table-head-color:              $gray;
+$table-head-color:              $gray-darker; // modified
 
 $table-border-width:            $border-width;
 $table-border-color:            $gray-lighter;
@@ -441,6 +446,10 @@ $btn-font-weight:                $font-weight-bold; // modified
 $btn-box-shadow:                 inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075);
 $btn-focus-box-shadow:           0 0 0 2px rgba($brand-complementary, .25); // modified
 $btn-active-box-shadow:          inset 0 3px 5px rgba($black, .125);
+
+$btn-default-color:              $white; // custom
+$btn-default-bg:                 $brand-default; // custom
+$btn-default-border:             $btn-default-bg; // custom
 
 $btn-primary-color:              $black; // modified
 $btn-primary-bg:                 $brand-primary;
@@ -474,7 +483,7 @@ $btn-danger-color:               $white;
 $btn-danger-bg:                  $brand-danger;
 $btn-danger-border:              $btn-danger-bg;
 
-$btn-link-disabled-color:        $gray-light;
+$btn-link-disabled-color:        $gray-dark; // modified
 
 $btn-padding-x-sm:               .5rem;
 $btn-padding-y-sm:               .25rem;
@@ -504,7 +513,7 @@ $input-line-height:              1.25;
 $input-bg:                       $white;
 $input-bg-disabled:              $gray-lighter;
 
-$input-color:                    $gray;
+$input-color:                    $gray-darker; // modified
 $input-border-color:             rgba($black, .15);
 $input-btn-border-width:         $border-width; // For form controls and buttons
 $input-box-shadow:               inset 0 1px 1px rgba($black, .075);
@@ -518,7 +527,7 @@ $input-border-focus:             lighten($brand-primary, 25%);
 $input-box-shadow-focus:         $input-box-shadow, rgba($input-border-focus, .6);
 $input-color-focus:              $input-color;
 
-$input-color-placeholder:        $gray-light;
+$input-color-placeholder:        $gray-dark; // modified
 
 $input-padding-x-sm:             .5rem;
 $input-padding-y-sm:             .25rem;
@@ -526,7 +535,7 @@ $input-padding-y-sm:             .25rem;
 $input-padding-x-lg:             1.5rem;
 $input-padding-y-lg:             .75rem;
 
-$input-height:                   (($font-size-base * $input-line-height) + ($input-padding-y * 2));
+$input-height:                   (($font-size-base-md * $input-line-height) + ($input-padding-y * 2)); // modified
 $input-height-lg:                (($font-size-lg * $line-height-lg) + ($input-padding-y-lg * 2));
 $input-height-sm:                (($font-size-sm * $line-height-sm) + ($input-padding-y-sm * 2));
 
@@ -561,7 +570,7 @@ $custom-control-indicator-box-shadow: inset 0 .25rem .25rem rgba($black, .1);
 
 $custom-control-disabled-cursor:             $cursor-disabled;
 $custom-control-disabled-indicator-bg:       $gray-lighter;
-$custom-control-disabled-description-color:  $gray-light;
+$custom-control-disabled-description-color:  $gray-dark; // modified
 
 $custom-control-checked-indicator-color:      $black; // modified
 $custom-control-checked-indicator-bg:         $brand-primary;
@@ -589,7 +598,7 @@ $custom-select-padding-y:          .375rem;
 $custom-select-indicator-padding:   1rem; // Extra padding to account for the presence of the background-image based indicator
 $custom-select-line-height:         $input-line-height;
 $custom-select-color:               $input-color;
-$custom-select-disabled-color:      $gray-light;
+$custom-select-disabled-color:      $gray-dark; // modified
 $custom-select-bg:            $white;
 $custom-select-disabled-bg:   $gray-lighter;
 $custom-select-bg-size:       8px 10px; // In pixels because image dimensions
@@ -612,7 +621,7 @@ $custom-file-focus-box-shadow: 0 0 0 .075rem $white, 0 0 0 .2rem $brand-primary;
 $custom-file-padding-x:     .5rem;
 $custom-file-padding-y:     1rem;
 $custom-file-line-height:   1.5;
-$custom-file-color:         $gray;
+$custom-file-color:         $gray-darker; // modified
 $custom-file-bg:            $white;
 $custom-file-border-width:  $border-width;
 $custom-file-border-color:  $input-border-color;
@@ -654,18 +663,18 @@ $dropdown-border-width:          $border-width;
 $dropdown-divider-bg:            $gray-lighter;
 $dropdown-box-shadow:            0 .5rem 1rem rgba($black, .175);
 
-$dropdown-link-color:            $gray-dark;
-$dropdown-link-hover-color:      darken($gray-dark, 5%);
+$dropdown-link-color:            $gray-darkest; // modified
+$dropdown-link-hover-color:      darken($gray-darkest, 5%); // modified
 $dropdown-link-hover-bg:         $gray-lightest;
 
 $dropdown-link-active-color:     $component-active-color;
 $dropdown-link-active-bg:        $component-active-bg;
 
-$dropdown-link-disabled-color:   $gray-light;
+$dropdown-link-disabled-color:   $gray-dark; // modified
 
 $dropdown-item-padding-x:        1.5rem;
 
-$dropdown-header-color:          $gray-light;
+$dropdown-header-color:          $gray-dark; // modified
 
 
 // Z-index master list
@@ -717,13 +726,13 @@ $nav-item-margin:               .2rem;
 $nav-item-inline-spacer:        1rem;
 $nav-link-padding:              .5em 1em;
 $nav-link-hover-bg:             $gray-lighter;
-$nav-disabled-link-color:       $gray-light;
+$nav-disabled-link-color:       $gray-dark; // modified
 
 $nav-tabs-border-color:                       #ddd;
 $nav-tabs-border-width:                       $border-width;
 $nav-tabs-border-radius:                      $border-radius;
 $nav-tabs-link-hover-border-color:            $gray-lighter;
-$nav-tabs-active-link-hover-color:            $gray;
+$nav-tabs-active-link-hover-color:            $gray-darker; // modified
 $nav-tabs-active-link-hover-bg:               $body-bg;
 $nav-tabs-active-link-hover-border-color:     #ddd;
 $nav-tabs-justified-link-border-color:        #ddd;
@@ -757,7 +766,7 @@ $pagination-active-color:              $black; // modified
 $pagination-active-bg:                 $brand-primary;
 $pagination-active-border:             $brand-primary;
 
-$pagination-disabled-color:            $gray-light;
+$pagination-disabled-color:            $gray-dark; // modified
 $pagination-disabled-bg:               $white;
 $pagination-disabled-border:           #ddd;
 
@@ -851,8 +860,9 @@ $popover-arrow-outer-color:           fade-in($popover-border-color, .05);
 
 // Badges
 
-$badge-default-bg:            $black; // modified
+$badge-default-bg:            $brand-default; // modified
 $badge-primary-bg:            $brand-primary;
+$badge-secondary-bg:          $black; // custom
 $badge-complementary-bg:      $brand-complementary; // custom
 $badge-success-bg:            $brand-success;
 $badge-info-bg:               $brand-info;
@@ -961,12 +971,12 @@ $list-group-active-bg:           $component-active-bg;
 $list-group-active-border:       $list-group-active-bg;
 $list-group-active-text-color:   lighten($list-group-active-bg, 50%);
 
-$list-group-disabled-color:      $gray-light;
+$list-group-disabled-color:      $gray-dark; // modified
 $list-group-disabled-bg:         $list-group-bg;
 $list-group-disabled-text-color: $list-group-disabled-color;
 
-$list-group-link-color:          $gray;
-$list-group-link-heading-color:  $gray-dark;
+$list-group-link-color:          $gray-darker; // modified
+$list-group-link-heading-color:  $gray-darkest; // modified
 $list-group-link-hover-color:    $list-group-link-color;
 
 $list-group-link-active-color:   $list-group-color;
@@ -987,7 +997,7 @@ $thumbnail-transition:        all .2s ease-in-out;
 // Figures
 
 $figure-caption-font-size: 90%;
-$figure-caption-color:     $gray-light;
+$figure-caption-color:     $gray-dark; // modified
 
 
 // Breadcrumbs
@@ -1003,7 +1013,7 @@ $breadcrumb-divider-color:      #999; // modified
 $breadcrumb-active-color:       #444; // modified
 $breadcrumb-divider:            "/";
 
-$breadcrumb-item-color:         $gray-light; // custom
+$breadcrumb-item-color:         $gray-dark; // custom
 
 
 // Carousel
@@ -1030,7 +1040,7 @@ $carousel-transition:           transform .6s ease-in-out;
 
 // Close
 
-$close-font-size:             $font-size-base * 1.5;
+$close-font-size:             $font-size-base-md * 1.5; // modified
 $close-font-weight:           $font-weight-bold;
 $close-color:                 $black;
 $close-text-shadow:           0 1px 0 $white;
@@ -1045,9 +1055,9 @@ $code-color:                  #bd4147;
 $code-bg:                     $gray-lightest;
 
 $kbd-color:                   $white;
-$kbd-bg:                      $gray-dark;
+$kbd-bg:                      $gray-darkest; // modified
 
 $pre-bg:                      $gray-lightest;
-$pre-color:                   $gray-dark;
+$pre-color:                   $gray-darkest; // modified
 $pre-border-color:            #ccc;
 $pre-scrollable-max-height:   340px;

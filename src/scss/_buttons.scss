@@ -4,6 +4,7 @@
 
 .btn {
   border-width: $btn-border-width;
+  font-size: inherit; // allow font size to inherit from body
   letter-spacing: $letter-spacing-base;
   text-transform: uppercase;
   white-space: normal; // allow multi-line buttons
@@ -42,6 +43,8 @@
 }
 
 .btn-secondary {
+  // Always force borders on .btn-secondary to match $border-width, despite whatever $btn-border-width is set to.
+  // Adjust padding to accommodate.
   border-width: 1px;
   padding: calc(#{$btn-padding-y} + #{($btn-border-width - $border-width)}) calc(#{$btn-padding-x} + #{($btn-border-width - $border-width)});
 
@@ -67,26 +70,54 @@
   }
 }
 
-.btn-outline-primary,
-.btn-outline-secondary {
-  &,
+.btn-outline-primary {
+  // Apply text (instead of gold) on online-primary variant.  Allow
+  // text color utility class overrides.
+  color: $black;
+
   &:hover,
   &:focus,
   &.focus,
   &:active,
   &.active {
-    color: $black;
+    // Force !important here, in case a text color utility class is used
+    // scss-lint:disable ImportantRule
+    color: $black !important;
+    // scss-lint:enable ImportantRule
   }
 }
 
 .btn-outline-secondary {
-  border-color: $black;
+  // Modify outline-secondary variant to be black+white only
+  @include button-outline-variant($btn-secondary-color);
+
+  &:hover,
+  &.active,
+  &:active,
+  &.focus,
+  &:focus {
+    // Force !important here, in case a text color utility class is used
+    // scss-lint:disable ImportantRule
+    color: $white;
+    // scss-lint:enable ImportantRule
+  }
+}
+
+
+//
+// Default btn color variants
+// NOTE: there is intentionally no .btn-default-outline provided
+//
+
+.btn-default {
+  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
 }
 
 
 //
 // Inverse btn color variants
 //
+
 .btn-inverse {
   @include button-variant($btn-inverse-color, $btn-inverse-bg, $btn-inverse-border);
 
@@ -122,4 +153,26 @@
 
 .btn-outline-complementary {
   @include button-outline-variant($btn-complementary-bg);
+}
+
+
+//
+// Button sizes
+// (Division by 1rem allows sass arithmetic to return the correct units)
+//
+
+.btn-lg {
+  font-size: ($font-size-base * $font-size-lg) / 1rem;
+
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-base-md * $font-size-lg / 1rem;
+  }
+}
+
+.btn-sm {
+  font-size: $font-size-base * $font-size-sm / 1rem;
+
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-base-md * $font-size-sm / 1rem;
+  }
 }
