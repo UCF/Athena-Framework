@@ -452,8 +452,8 @@ $table-border-color:            $gray-lighter;
 //
 // For each of Bootstrap's buttons, define text, background and border color.
 
-$btn-padding-x:                  1.25rem;
-$btn-padding-y:                  .75rem;
+$btn-padding-x:                  1.25rem; // modified
+$btn-padding-y:                  .75rem; // modified
 $btn-line-height:                1.25;
 $btn-font-weight:                $font-weight-bold; // modified
 $btn-box-shadow:                 inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075);
@@ -480,19 +480,19 @@ $btn-inverse-color:              $brand-inverse; // custom; reversal of this and
 $btn-inverse-bg:                 $brand-inverse-color; // custom
 $btn-inverse-border:             $btn-inverse-bg; // custom
 
-$btn-info-color:                 $brand-info-color;
+$btn-info-color:                 $brand-info-color; // modified
 $btn-info-bg:                    $brand-info;
 $btn-info-border:                $btn-info-bg;
 
-$btn-success-color:              $brand-success-color;
+$btn-success-color:              $brand-success-color; // modified
 $btn-success-bg:                 $brand-success;
 $btn-success-border:             $btn-success-bg;
 
-$btn-warning-color:              $brand-warning-color;
+$btn-warning-color:              $brand-warning-color; // modified
 $btn-warning-bg:                 $brand-warning;
 $btn-warning-border:             $btn-warning-bg;
 
-$btn-danger-color:               $brand-danger-color;
+$btn-danger-color:               $brand-danger-color; // modified
 $btn-danger-bg:                  $brand-danger;
 $btn-danger-border:              $btn-danger-bg;
 
@@ -501,8 +501,8 @@ $btn-link-disabled-color:        $gray-dark; // modified
 $btn-padding-x-sm:               .5rem;
 $btn-padding-y-sm:               .25rem;
 
-$btn-padding-x-lg:               2rem;
-$btn-padding-y-lg:               1.25rem;
+$btn-padding-x-lg:               2rem; // modified
+$btn-padding-y-lg:               1.25rem; // modified
 
 $btn-block-spacing-y:            .5rem;
 $btn-toolbar-margin:             .5rem;
