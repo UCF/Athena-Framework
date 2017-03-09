@@ -98,7 +98,7 @@
   &:focus {
     // Force !important here, in case a text color utility class is used
     // scss-lint:disable ImportantRule
-    color: $white;
+    color: $white !important;
     // scss-lint:enable ImportantRule
   }
 }
