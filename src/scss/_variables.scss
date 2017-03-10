@@ -520,8 +520,8 @@ $btn-transition:                 all .2s ease-in-out;
 // Forms
 
 $input-padding-x:                .75rem;
-$input-padding-y:                $btn-padding-y; // modified
-$input-line-height:              $btn-line-height; // modified
+$input-padding-y:                .5rem;
+$input-line-height:              1.25;
 
 $input-bg:                       $white;
 $input-bg-disabled:              $gray-lighter;

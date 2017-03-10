@@ -2,13 +2,8 @@
 // Textual form controls
 //
 
-.form-control {
-  padding-bottom: calc(#{$input-padding-y} + #{$btn-border-width});
-  padding-top: calc(#{$input-padding-y} + #{$btn-border-width});
-}
-
 .form-check-input {
-  // Fix text-indent effect on label text when .form-check-input margin
-  // variables are modified from Bootstrap's defaults
-  margin-right: $form-check-input-margin-x / 2;
+  height: 1em; // for browsers that can display them a little bit larger
+  margin-right: $form-check-input-margin-x / 2; // Fix text-indent effect on label's first line
+  width: 1em; // for browsers that can display them a little bit larger
 }
