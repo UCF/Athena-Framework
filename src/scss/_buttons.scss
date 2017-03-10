@@ -1,0 +1,208 @@
+//
+// Base styles
+//
+
+.btn {
+  border-width: $btn-border-width;
+  font-size: inherit; // allow font size to inherit from body
+  letter-spacing: $letter-spacing-base;
+  text-transform: uppercase;
+  white-space: normal; // allow multi-line buttons
+
+  &:hover,
+  &.active,
+  &:active,
+  &.focus,
+  &:focus {
+    border-color: transparent;
+  }
+
+  // Fix issue in Bootstrap that applies base a:focus styles to .btn:focus
+  &:focus,
+  &.focus {
+    color: initial;
+  }
+}
+
+
+//
+// Alternate buttons
+//
+
+.btn-secondary {
+  // Always force borders on .btn-secondary to match $border-width, despite whatever $btn-border-width is set to.
+  // Adjust padding to accommodate.
+  border-width: 1px;
+  padding: calc(#{$btn-padding-y} + #{($btn-border-width - $border-width)}) calc(#{$btn-padding-x} + #{($btn-border-width - $border-width)});
+
+  // Undo border-color:transparent on .btn-secondary disabled states
+  &:disabled,
+  &.disabled {
+    &:hover,
+    &.active,
+    &:active,
+    &.focus,
+    &:focus {
+      border-color: $btn-secondary-border;
+    }
+  }
+
+  // List of selectors will need to be modified if extra button size classes are ever added
+  &.btn-sm {
+    padding: calc(#{$btn-padding-y-sm} + #{($btn-border-width - $border-width)}) calc(#{$btn-padding-x-sm} + #{($btn-border-width - $border-width)});
+  }
+
+  &.btn-lg {
+    padding: calc(#{$btn-padding-y-lg} + #{($btn-border-width - $border-width)}) calc(#{$btn-padding-x-lg} + #{($btn-border-width - $border-width)});
+  }
+}
+
+.btn-outline-primary {
+  // Apply text (instead of gold) on online-primary variant.  Allow
+  // text color utility class overrides.
+  color: $black;
+
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active {
+    // Force !important here, in case a text color utility class is used
+    // scss-lint:disable ImportantRule
+    color: $black !important;
+    // scss-lint:enable ImportantRule
+  }
+}
+
+.btn-outline-secondary {
+  // Modify outline-secondary variant to be black+white only
+  @include button-outline-variant($btn-secondary-color);
+
+  &:hover,
+  &.active,
+  &:active,
+  &.focus,
+  &:focus {
+    // Force !important here, in case a text color utility class is used
+    // scss-lint:disable ImportantRule
+    color: $white !important;
+    // scss-lint:enable ImportantRule
+  }
+}
+
+
+//
+// Default btn color variants
+// NOTE: there is intentionally no .btn-default-outline provided
+//
+
+.btn-default {
+  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+}
+
+
+//
+// Inverse btn color variants
+//
+
+.btn-inverse {
+  @include button-variant($btn-inverse-color, $btn-inverse-bg, $btn-inverse-border);
+
+  &:hover,
+  &.active,
+  &:active,
+  &.focus,
+  &:focus {
+    border-color: transparent;
+  }
+}
+
+.btn-outline-inverse {
+  @include button-outline-variant($btn-inverse-bg);
+
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active {
+    color: $black;
+  }
+}
+
+
+//
+// Complementary btn color variants
+//
+
+.btn-complementary {
+  @include button-variant($btn-complementary-color, $btn-complementary-bg, $btn-complementary-border);
+}
+
+.btn-outline-complementary {
+  @include button-outline-variant($btn-complementary-bg);
+}
+
+
+//
+// Button sizes
+// (Division by 1rem allows sass arithmetic to return the correct units)
+//
+
+.btn-lg {
+  font-size: ($font-size-base * $font-size-lg) / 1rem;
+
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-base-md * $font-size-lg / 1rem;
+  }
+}
+
+.btn-sm {
+  font-size: $font-size-base * $font-size-sm / 1rem;
+
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-base-md * $font-size-sm / 1rem;
+  }
+}
+
+
+//
+// Misc. overrides
+//
+
+// Font color resets for .primary and contextual variants
+.btn-primary,
+.btn-success,
+.btn-info,
+.btn-warning,
+.btn-danger {
+  &:hover,
+  &.active,
+  &:active {
+    color: $white;
+  }
+
+  &.disabled,
+  &:disabled {
+    color: initial;
+  }
+}
+
+// Font color resets for outline complementary and contextual variants
+.btn-outline-complementary,
+.btn-outline-success,
+.btn-outline-info,
+.btn-outline-warning,
+.btn-outline-danger {
+  color: $black;
+
+  &:hover,
+  &.active,
+  &:active,
+  &.focus,
+  &:focus {
+    // Force !important here, in case a text color utility class is used
+    // scss-lint:disable ImportantRule
+    color: $white !important;
+    // scss-lint:enable ImportantRule
+  }
+}
