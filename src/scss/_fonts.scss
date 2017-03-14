@@ -1,0 +1,11 @@
+/// League Gothic
+
+/* Regular */
+@font-face {
+  @include build-font-face('League Gothic', 'leaguegothic-italic-webfont', normal, italic);
+}
+
+/* Italic */
+@font-face {
+  @include build-font-face('League Gothic', 'leaguegothic-regular-webfont', normal, normal);
+}

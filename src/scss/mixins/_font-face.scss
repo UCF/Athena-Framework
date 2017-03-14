@@ -1,0 +1,19 @@
+//
+// Builds path to font using font path variable
+//
+@function build-font-path($name, $ext, $suffix: '') {
+  @return $athena-font-path + $name + '.' + $ext + $suffix;
+}
+
+
+@mixin build-font-face($fontFamily, $name, $style, $weight) {
+  font-family: $fontFamily;
+  src: url(build-font-path($name, 'eot'));
+  src: url(build-font-path($name, 'eot', '?#iefix')) format('embedded-opentype'),
+       url(build-font-path($name, 'woff')) format('woff'),
+       url(build-font-path($name, 'ttf')) format('truetype'),
+       url(build-font-path($name, 'svg', '#league_gothic_italicregular')) format('svg');
+
+  font-style: $style;
+  font-weight: $weight;
+}
