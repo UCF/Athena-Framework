@@ -8,7 +8,7 @@
 // Import vendor assets
 //
 
-@import '../../bower_components/bootstrap/scss/bootstrap';
+@import 'bootstrap/bootstrap';
 
 
 //
@@ -24,5 +24,6 @@
 
 @import 'badge';
 @import 'breadcrumb';
+@import 'buttons';
 
 @import 'utilities';

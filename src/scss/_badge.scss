@@ -1,6 +1,6 @@
 .badge {
   border-radius: $badge-border-radius; // allow badge border radius to be customized outside of the global border-radius rules
-  letter-spacing: .1em;
+  letter-spacing: $letter-spacing-base;
   text-transform: uppercase;
   vertical-align: baseline;
 
@@ -10,15 +10,42 @@
   }
 }
 
+
+//
+// Overrides to allow badge colors to be set via variables
+//
+
 .badge-primary {
-  color: $black;
+  color: $badge-primary-color;
+}
+
+.badge-secondary {
+  @include badge-variant($badge-secondary-bg);
+  color: $badge-secondary-color;
 }
 
 .badge-complementary {
   @include badge-variant($badge-complementary-bg);
+  color: $badge-complementary-color;
 }
 
 .badge-inverse {
   @include badge-variant($badge-inverse-bg);
-  color: $black;
+  color: $badge-inverse-color;
+}
+
+.badge-success {
+  color: $badge-success-color;
+}
+
+.badge-info {
+  color: $badge-info-color;
+}
+
+.badge-warning {
+  color: $badge-warning-color;
+}
+
+.badge-danger {
+  color: $badge-danger-color;
 }
