@@ -1,11 +1,46 @@
-/// League Gothic
+//
+// League Gothic
+//
 
-/* Regular */
+// Regular
 @font-face {
-  @include build-font-face('League Gothic', 'leaguegothic-italic-webfont', normal, italic);
+  @include build-font-face('League Gothic', 'league-gothic', 'leaguegothic-italic-webfont', normal, italic);
 }
 
-/* Italic */
+// Italic
 @font-face {
-  @include build-font-face('League Gothic', 'leaguegothic-regular-webfont', normal, normal);
+  @include build-font-face('League Gothic', 'league-gothic', 'leaguegothic-regular-webfont', normal, normal);
+}
+
+
+//
+// UCF Sans Serif Alt font
+//
+
+@font-face {
+  @include build-font-face('UCF Sans Serif Alt', 'ucf-sans-serif-alt-webfont', 'ucfsansserifalt-extralight-webfont', normal, 200);
+}
+
+@font-face {
+  @include build-font-face('UCF Sans Serif Alt', 'ucf-sans-serif-alt-webfont', 'ucfsansserifalt-light-webfont', normal, 400);
+}
+
+@font-face {
+  @include build-font-face('UCF Sans Serif Alt', 'ucf-sans-serif-alt-webfont', 'ucfsansserifalt-regular-webfont', normal, 500);
+}
+
+@font-face {
+  @include build-font-face('UCF Sans Serif Alt', 'ucf-sans-serif-alt-webfont', 'ucfsansserifalt-semibold-webfont', normal, 600);
+}
+
+@font-face {
+  @include build-font-face('UCF Sans Serif Alt', 'ucf-sans-serif-alt-webfont', 'ucfsansserifalt-bold-webfont', normal, 700);
+}
+
+@font-face {
+  @include build-font-face('UCF Sans Serif Alt', 'ucf-sans-serif-alt-webfont', 'ucfsansserifalt-extrabold-webfont', normal, 800);
+}
+
+@font-face {
+  @include build-font-face('UCF Sans Serif Alt', 'ucf-sans-serif-alt-webfont', 'ucfsansserifalt-black-webfont', normal, 900);
 }
