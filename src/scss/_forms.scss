@@ -2,6 +2,13 @@
 // Textual form controls
 //
 
+.form-control {
+  // Force an increased font size on all screen sizes--primarily to get around
+  // devices that attempt to zoom when an input with a calculated font size of
+  // < 16px is selected.
+  font-size: $font-size-base-md;
+}
+
 .form-check-input {
   height: 1em; // for browsers that can display them a little bit larger
   margin-right: $form-check-input-margin-x / 2; // Fix text-indent effect on label's first line
@@ -13,10 +20,14 @@
 // Form control sizing
 //
 .form-control-sm {
+  // Re-declare font size to override the .form-control font size override above.
+  font-size: $font-size-sm;
   line-height: $input-line-height-sm;
 }
 
 .form-control-lg {
+  // Re-declare font size to override the .form-control font size override above.
+  font-size: $font-size-lg;
   line-height: $input-line-height-lg;
 }
 
