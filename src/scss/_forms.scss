@@ -7,3 +7,69 @@
   margin-right: $form-check-input-margin-x / 2; // Fix text-indent effect on label's first line
   width: 1em; // for browsers that can display them a little bit larger
 }
+
+
+//
+// Form control sizing
+//
+.form-control-sm {
+  line-height: $input-line-height-sm;
+}
+
+.form-control-lg {
+  line-height: $input-line-height-lg;
+}
+
+
+//
+// Form validation states
+// Can't override mixin logic, so overrides get added here manually :(
+//
+.has-success {
+  // Color the label and help text
+  .form-control-feedback,
+  .form-control-label,
+  .col-form-label,
+  .form-check-label,
+  .custom-control {
+    color: $brand-success-aw;
+  }
+
+  // Set validation states also for addons
+  .input-group-addon {
+    color: $brand-success-aw;
+  }
+}
+
+.has-warning {
+  // Color the label and help text
+  .form-control-feedback,
+  .form-control-label,
+  .col-form-label,
+  .form-check-label,
+  .custom-control {
+    color: $brand-warning-aw;
+  }
+
+  // Set validation states also for addons
+  .input-group-addon {
+    color: $brand-warning-aw;
+  }
+}
+
+.has-danger {
+  // Color the label and help text
+  .form-control-feedback,
+  .form-control-label,
+  .col-form-label,
+  .form-check-label,
+  .custom-control {
+    color: $brand-danger-aw;
+  }
+
+  // Set validation states also for addons
+  .input-group-addon {
+    color: $brand-danger-aw;
+  }
+}
+
