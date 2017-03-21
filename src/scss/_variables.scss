@@ -591,10 +591,12 @@ $input-padding-y-lg:             $btn-padding-y-lg - (($font-size-base-md - $btn
 $input-padding-y-lg-md:          $btn-padding-y-lg; // custom; if anyone has any better variable name ideas, please feel free to edit...
 
 $input-height:                   (($font-size-base-md * $input-line-height) + ($input-padding-y * 2)); // modified
-$input-height-lg:                (($font-size-lg * $line-height-lg) + ($input-padding-y-lg * 2));
-$input-height-sm:                (($font-size-sm * $line-height-sm) + ($input-padding-y-sm * 2));
+$input-height-lg:                (($font-size-lg * $input-line-height) + ($input-padding-y-lg * 2)); // modified
+$input-height-sm:                (($font-size-sm * $input-line-height) + ($input-padding-y-sm * 2)); // modified
 
 $input-transition:               border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+
+$select-padding-y: .25rem; // custom
 
 $form-text-margin-top:     .25rem;
 $form-feedback-margin-top: $form-text-margin-top;
@@ -656,7 +658,7 @@ $custom-radio-radius: 50%;
 $custom-radio-checked-icon: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='#{$custom-control-checked-indicator-color}'/%3E%3C/svg%3E"), "#", "%23");
 
 $custom-select-padding-x:          .75rem;
-$custom-select-padding-y:          $input-padding-y; // modified
+$custom-select-padding-y:          $select-padding-y; // modified
 $custom-select-indicator-padding:   1rem; // Extra padding to account for the presence of the background-image based indicator
 $custom-select-line-height:         $input-line-height;
 $custom-select-color:               $input-color;
