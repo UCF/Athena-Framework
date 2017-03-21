@@ -534,6 +534,15 @@ $btn-padding-y-sm:               .25rem;
 $btn-padding-x-lg:               2rem; // modified
 $btn-padding-y-lg:               1.25rem; // modified
 
+// Custom font size variables for buttons.  These variable names are a little funky
+// but are as consistent with Bootstrap's naming conventions as possible.
+$btn-font-size:                  $font-size-base;
+$btn-font-size-md:               $font-size-base-md;
+$btn-sm-font-size:               ($font-size-base * $font-size-sm) / 1rem;
+$btn-sm-font-size-md:            ($font-size-base-md * $font-size-sm) / 1rem;
+$btn-lg-font-size:               ($font-size-base * $font-size-lg) / 1rem;
+$btn-lg-font-size-md:            ($font-size-base-md * $font-size-lg) / 1rem;
+
 $btn-block-spacing-y:            .5rem;
 $btn-toolbar-margin:             .5rem;
 
@@ -550,8 +559,9 @@ $btn-transition:                 all .2s ease-in-out;
 // Forms
 
 $input-padding-x:                .75rem;
-$input-padding-y:                .5rem;
-$input-line-height:              strip-unit($btn-line-height + $input-padding-y); // modified
+$input-padding-y:                $btn-padding-y - (($font-size-base-md - $btn-font-size) / 2); // modified
+$input-padding-y-md:             $btn-padding-y; // custom
+$input-line-height:              $btn-line-height; // modified
 
 $input-bg:                       $white;
 $input-bg-disabled:              $gray-lighter;
@@ -573,15 +583,12 @@ $input-color-focus:              $input-color;
 $input-color-placeholder:        $gray-dark; // modified
 
 $input-padding-x-sm:             .5rem;
-$input-padding-y-sm:             .25rem;
+$input-padding-y-sm:             $btn-padding-y-sm - (($font-size-base-md - $btn-font-size) / 2); // modified
+$input-padding-y-sm-md:          $btn-padding-y-sm; // custom; if anyone has any better variable name ideas, please feel free to edit...
 
 $input-padding-x-lg:             1.5rem;
-$input-padding-y-lg:             .75rem;
-
-// NOTE: the input line heights used here (and in $input-line-height) will not
-// be an exact match to button heights. Just aim to get as close as possible here.
-$input-line-height-sm:           strip-unit($btn-line-height + $input-padding-y-sm); // custom
-$input-line-height-lg:           strip-unit($btn-line-height + $input-padding-y-lg); // custom
+$input-padding-y-lg:             $btn-padding-y-lg - (($font-size-base-md - $btn-font-size) / 2); // modified
+$input-padding-y-lg-md:          $btn-padding-y-lg; // custom; if anyone has any better variable name ideas, please feel free to edit...
 
 $input-height:                   (($font-size-base-md * $input-line-height) + ($input-padding-y * 2)); // modified
 $input-height-lg:                (($font-size-lg * $line-height-lg) + ($input-padding-y-lg * 2));
