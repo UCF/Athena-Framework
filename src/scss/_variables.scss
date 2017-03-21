@@ -592,6 +592,10 @@ $input-transition:               border-color ease-in-out .15s, box-shadow ease-
 $form-text-margin-top:     .25rem;
 $form-feedback-margin-top: $form-text-margin-top;
 
+$col-form-label-padding-top: .815rem; // custom
+$col-form-label-padding-top-sm: .35rem; // custom
+$col-form-label-padding-top-lg: 1.2rem; // custom
+
 $form-check-margin-bottom:  .5rem;
 $form-check-input-gutter:   1.5rem; // modified
 $form-check-input-margin-y: .25rem;
