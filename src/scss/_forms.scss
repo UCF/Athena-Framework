@@ -18,6 +18,13 @@
   }
 }
 
+select.form-control {
+  &:not([size]):not([multiple]) {
+    // Apply calc() here to set accurate vertical padding to line up with buttons.
+    height: calc(#{$input-height} + #{($btn-border-width - $input-btn-border-width) * 2} + #{$input-btn-border-width * 2});
+  }
+}
+
 .form-check-input {
   height: 1em; // for browsers that can display them a little bit larger
   margin-right: $form-check-input-margin-x / 2; // Fix text-indent effect on label's first line
@@ -69,6 +76,13 @@
   }
 }
 
+select.form-control-sm {
+  &:not([size]):not([multiple]) {
+    // Apply calc() here to set accurate vertical padding to line up with buttons.
+    height: calc(#{$input-height-sm} + #{($btn-border-width - $input-btn-border-width) * 2} + #{$input-btn-border-width * 2});
+  }
+}
+
 .form-control-lg {
   // Re-declare font size to override the .form-control font size override above.
   font-size: $font-size-lg;
@@ -77,6 +91,22 @@
 
   @include media-breakpoint-up(md) {
     padding: calc(#{$input-padding-y-lg-md} + #{$btn-border-width - $input-btn-border-width}) $input-padding-x;
+  }
+}
+
+select.form-control-lg {
+  &:not([size]):not([multiple]) {
+    // Apply calc() here to set accurate vertical padding to line up with buttons.
+    height: calc(#{$input-height-lg} + #{($btn-border-width - $input-btn-border-width) * 2} + #{$input-btn-border-width * 2});
+  }
+}
+
+select.form-control,
+select.form-control-sm,
+select.form-control-lg {
+  &:not([size]):not([multiple]) {
+    padding-bottom: $select-padding-y;
+    padding-top: $select-padding-y;
   }
 }
 
