@@ -82,6 +82,23 @@
   }
 }
 
+//
+// Custom:
+//
+// Remove the unit of a length
+// @param {Number} $number - Number to remove unit from
+// @return {Number} - Unitless number
+//
+// https://css-tricks.com/snippets/sass/strip-unit-function/
+//
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
 
 // General variable structure
 //
@@ -140,7 +157,9 @@ $brand-warning:             $orange;
 $brand-danger:              $red;
 $brand-inverse:             $black; // modified
 
-// Custom text colors definitions for brand color scheme.
+// Custom text colors definitions for brand color scheme.  These colors are
+// intended to be used for text overlaid on components which use the respective
+// brand color as the background color.
 // These text colors exist to help modify Bootstrap components that are not
 // WGAG 2.0 AA compliant.
 $brand-default-color:       $white;
@@ -152,6 +171,17 @@ $brand-info-color:          $black;
 $brand-warning-color:       $black;
 $brand-danger-color:        $black;
 $brand-inverse-color:       $white;
+
+// Custom brand color alternates that meet white-background contrast requirements.
+$brand-default-aw:       $brand-default;
+$brand-primary-aw:       $ucf-gold-darkest;
+$brand-secondary-aw:     $gray-dark;
+$brand-complementary-aw: $brand-complementary;
+$brand-success-aw:       #477e5e;
+$brand-info-aw:          #298194;
+$brand-warning-aw:       #966e31;
+$brand-danger-aw:        #c44f38;
+$brand-inverse-aw:       $black;
 
 
 // Options
@@ -521,7 +551,7 @@ $btn-transition:                 all .2s ease-in-out;
 
 $input-padding-x:                .75rem;
 $input-padding-y:                .5rem;
-$input-line-height:              1.25;
+$input-line-height:              strip-unit($btn-line-height + $input-padding-y); // modified
 
 $input-bg:                       $white;
 $input-bg-disabled:              $gray-lighter;
@@ -531,12 +561,12 @@ $input-border-color:             rgba($black, .15);
 $input-btn-border-width:         $border-width; // For form controls and buttons
 $input-box-shadow:               inset 0 1px 1px rgba($black, .075);
 
-$input-border-radius:            $border-radius;
-$input-border-radius-lg:         $border-radius-lg;
-$input-border-radius-sm:         $border-radius-sm;
+$input-border-radius:            0; // modified
+$input-border-radius-lg:         0; // modified
+$input-border-radius-sm:         0; // modified
 
 $input-bg-focus:                 $input-bg;
-$input-border-focus:             lighten($brand-primary, 25%);
+$input-border-focus:             lighten($brand-complementary, 25%); // modified
 $input-box-shadow-focus:         $input-box-shadow, rgba($input-border-focus, .6);
 $input-color-focus:              $input-color;
 
@@ -548,6 +578,11 @@ $input-padding-y-sm:             .25rem;
 $input-padding-x-lg:             1.5rem;
 $input-padding-y-lg:             .75rem;
 
+// NOTE: the input line heights used here (and in $input-line-height) will not
+// be an exact match to button heights. Just aim to get as close as possible here.
+$input-line-height-sm:           strip-unit($btn-line-height + $input-padding-y-sm); // custom
+$input-line-height-lg:           strip-unit($btn-line-height + $input-padding-y-lg); // custom
+
 $input-height:                   (($font-size-base-md * $input-line-height) + ($input-padding-y * 2)); // modified
 $input-height-lg:                (($font-size-lg * $line-height-lg) + ($input-padding-y-lg * 2));
 $input-height-sm:                (($font-size-sm * $line-height-sm) + ($input-padding-y-sm * 2));
@@ -557,10 +592,14 @@ $input-transition:               border-color ease-in-out .15s, box-shadow ease-
 $form-text-margin-top:     .25rem;
 $form-feedback-margin-top: $form-text-margin-top;
 
+$col-form-label-padding-top: .815rem; // custom
+$col-form-label-padding-top-sm: .35rem; // custom
+$col-form-label-padding-top-lg: 1.2rem; // custom
+
 $form-check-margin-bottom:  .5rem;
-$form-check-input-gutter:   1.25rem;
+$form-check-input-gutter:   1.5rem; // modified
 $form-check-input-margin-y: .25rem;
-$form-check-input-margin-x: .25rem;
+$form-check-input-margin-x: .5rem; // modified
 
 $form-check-inline-margin-x: .75rem;
 
@@ -575,15 +614,16 @@ $custom-control-gutter:   1.5rem;
 $custom-control-spacer-x: 1rem;
 $custom-control-spacer-y: .25rem;
 
-$custom-control-indicator-size:       1rem;
-$custom-control-indicator-margin-y:   (($line-height-base * 1rem) - $custom-control-indicator-size) / -2;
-$custom-control-indicator-bg:         #ddd;
-$custom-control-indicator-bg-size:    50% 50%;
-$custom-control-indicator-box-shadow: inset 0 .25rem .25rem rgba($black, .1);
+$custom-control-indicator-size:         1rem;
+$custom-control-indicator-margin-y:     (($line-height-base * 1rem) - $custom-control-indicator-size) / -2;
+$custom-control-indicator-bg:           $white; // modified
+$custom-control-indicator-bg-size:      50% 50%;
+$custom-control-indicator-box-shadow:   inset 0 .25rem .25rem rgba($black, .1);
+$custom-control-indicator-border-color: rgba($black, .3); // custom
 
 $custom-control-disabled-cursor:             $cursor-disabled;
 $custom-control-disabled-indicator-bg:       $gray-lighter;
-$custom-control-disabled-description-color:  $gray-dark; // modified
+$custom-control-disabled-description-color:  $gray; // modified
 
 $custom-control-checked-indicator-color:      $brand-primary-color; // modified
 $custom-control-checked-indicator-bg:         $brand-primary;
@@ -592,26 +632,28 @@ $custom-control-checked-indicator-box-shadow: none;
 $custom-control-focus-indicator-box-shadow: 0 0 0 1px $body-bg, 0 0 0 3px $brand-primary;
 
 $custom-control-active-indicator-color:      $brand-primary-color; // modified
-$custom-control-active-indicator-bg:         lighten($brand-primary, 35%);
+$custom-control-active-indicator-bg:         $ucf-gold-lighter; // modified
 $custom-control-active-indicator-box-shadow: none;
 
-$custom-checkbox-radius: $border-radius;
+$custom-checkbox-radius: $input-border-radius; // modified
 $custom-checkbox-checked-icon: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$custom-control-checked-indicator-color}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E"), "#", "%23");
 
 $custom-checkbox-indeterminate-bg: $brand-primary;
+$custom-checkbox-indicator-bg-size: 75% 75%; // custom
 $custom-checkbox-indeterminate-indicator-color: $custom-control-checked-indicator-color;
 $custom-checkbox-indeterminate-icon: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath stroke='#{$custom-checkbox-indeterminate-indicator-color}' d='M0 2h4'/%3E%3C/svg%3E"), "#", "%23");
 $custom-checkbox-indeterminate-box-shadow: none;
 
+$custom-radio-indicator-bg-size: $custom-control-indicator-bg-size; // custom
 $custom-radio-radius: 50%;
 $custom-radio-checked-icon: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='#{$custom-control-checked-indicator-color}'/%3E%3C/svg%3E"), "#", "%23");
 
 $custom-select-padding-x:          .75rem;
-$custom-select-padding-y:          .375rem;
+$custom-select-padding-y:          $input-padding-y; // modified
 $custom-select-indicator-padding:   1rem; // Extra padding to account for the presence of the background-image based indicator
 $custom-select-line-height:         $input-line-height;
 $custom-select-color:               $input-color;
-$custom-select-disabled-color:      $gray-dark; // modified
+$custom-select-disabled-color:      $gray; // modified
 $custom-select-bg:            $white;
 $custom-select-disabled-bg:   $gray-lighter;
 $custom-select-bg-size:       8px 10px; // In pixels because image dimensions
@@ -619,9 +661,9 @@ $custom-select-indicator-color: #333;
 $custom-select-indicator:     str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E"), "#", "%23");
 $custom-select-border-width:  $input-btn-border-width;
 $custom-select-border-color:  $input-border-color;
-$custom-select-border-radius: $border-radius;
+$custom-select-border-radius: $input-border-radius; // modified
 
-$custom-select-focus-border-color: lighten($brand-primary, 25%);
+$custom-select-focus-border-color: $input-border-focus; // modified
 $custom-select-focus-box-shadow:   inset 0 1px 2px rgba($black, .075), 0 0 5px rgba($custom-select-focus-border-color, .5);
 
 $custom-select-sm-padding-y:  .2rem;
@@ -638,7 +680,7 @@ $custom-file-color:         $gray-darker; // modified
 $custom-file-bg:            $white;
 $custom-file-border-width:  $border-width;
 $custom-file-border-color:  $input-border-color;
-$custom-file-border-radius: $border-radius;
+$custom-file-border-radius: $input-border-radius; // modified
 $custom-file-box-shadow:    inset 0 .2rem .4rem rgba($black, .05);
 $custom-file-button-color:  $custom-file-color;
 $custom-file-button-bg:     $gray-lighter;
@@ -683,7 +725,7 @@ $dropdown-link-hover-bg:         $gray-lightest;
 $dropdown-link-active-color:     $component-active-color;
 $dropdown-link-active-bg:        $component-active-bg;
 
-$dropdown-link-disabled-color:   $gray-dark; // modified
+$dropdown-link-disabled-color:   $gray; // modified
 
 $dropdown-item-padding-x:        1.5rem;
 

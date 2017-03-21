@@ -1,0 +1,30 @@
+//
+// Checkboxes and radios
+//
+
+.custom-radio,
+.custom-checkbox {
+  // Allow custom border styles on .custom-control-indicator
+  .custom-control-input ~ .custom-control-indicator {
+    border: $input-btn-border-width solid $custom-control-indicator-border-color;
+  }
+
+  .custom-control-input:checked ~ .custom-control-indicator,
+  .custom-control-input:disabled ~ .custom-control-indicator {
+    border-color: transparent;
+  }
+}
+
+.custom-radio {
+  .custom-control-indicator {
+    // Allow more granual control of radio indicator size
+    background-size: $custom-radio-indicator-bg-size;
+  }
+}
+
+.custom-checkbox {
+  .custom-control-indicator {
+    // Allow more granual control of checkbox indicator size
+    background-size: $custom-checkbox-indicator-bg-size;
+  }
+}
