@@ -3,6 +3,7 @@
 //
 
 //=require ./bootstrap/bootstrap.js
+//=require ./objectFitPolyfill/objectFitPolyfill.min.js
 
 
 //

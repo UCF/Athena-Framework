@@ -25,7 +25,7 @@ var configLocal = require('./gulp-config.json'),
         jsPath:   './dist/js',
         fontPath: './dist/fonts'
       },
-      bowerPath: './bower_components/',
+      bowerPath: './bower_components',
       bootstrap: {
         scss: './bower_components/bootstrap/scss',
         js:   './bower_components/bootstrap/dist/js'
@@ -58,16 +58,21 @@ gulp.task('fonts', ['bower'], function() {
   return;
 });
 
-gulp.task('bootstrap', ['bower'], function() {
+gulp.task('move-components', ['bower'], function() {
+  // Bootstrap
   gulp.src(config.bootstrap.scss + '/**/*', {base: config.bootstrap.scss})
     .pipe(gulp.dest(config.src.scssPath + '/bootstrap'));
 
   gulp.src(config.bootstrap.js + '/bootstrap.js', {base: config.bootstrap.js})
     .pipe(gulp.dest(config.src.jsPath + '/bootstrap'));
+
+  // Object fit polyfill
+  gulp.src(config.bowerPath + '/objectFitPolyfill/dist/objectFitPolyfill.min.js', {base: config.bowerPath + '/objectFitPolyfill/dist'})
+    .pipe(gulp.dest(config.src.jsPath + '/objectFitPolyfill'));
 });
 
 // Run all component-related tasks
-gulp.task('components', ['bower', 'fonts', 'bootstrap']);
+gulp.task('components', ['bower', 'fonts', 'move-components']);
 
 
 //
