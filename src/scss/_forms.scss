@@ -1,0 +1,165 @@
+//
+// Textual form controls
+//
+
+.form-control {
+  // Force an increased font size on all screen sizes--primarily to get around
+  // devices that attempt to zoom when an input with a calculated font size of
+  // < 16px is selected.
+  font-size: $font-size-base-md;
+  // Apply calc() here to set accurate vertical padding to line up with buttons.
+  // We don't do this in _variables.scss because $input-padding-y is used to
+  // calculate other variable values and needs to be able to return a value in
+  // rem's.
+  padding: calc(#{$input-padding-y} + #{$btn-border-width - $input-btn-border-width}) $input-padding-x;
+
+  @include media-breakpoint-up(md) {
+    padding: calc(#{$input-padding-y-md} + #{$btn-border-width - $input-btn-border-width}) $input-padding-x;
+  }
+}
+
+select.form-control {
+  &:not([size]):not([multiple]) {
+    // Apply calc() here to set accurate vertical padding to line up with buttons.
+    height: calc(#{$input-height} + #{($btn-border-width - $input-btn-border-width) * 2} + #{$input-btn-border-width * 2});
+  }
+}
+
+.form-check-input {
+  height: 1em; // for browsers that can display them a little bit larger
+  margin-right: $form-check-input-margin-x / 2; // Fix text-indent effect on label's first line
+  width: 1em; // for browsers that can display them a little bit larger
+}
+
+
+//
+// Labels
+//
+
+// Use custom padding-top variables on .col-form-label's, since adjusting
+// input line heights from Bootstrap's defaults cause these to become misaligned.
+.col-form-label {
+  padding-top: $col-form-label-padding-top;
+
+  @include media-breakpoint-up(md) {
+    padding-top: #{strip-unit($col-form-label-padding-top) - (strip-unit($col-form-label-padding-top) * (strip-unit($font-size-base-md) - strip-unit($font-size-base)))}rem;
+  }
+}
+
+.col-form-label-sm {
+  padding-top: $col-form-label-padding-top-sm;
+
+  // media breakpoint override not needed here, as long as .form-control-sm's
+  // font size does not change between any breakpoints
+}
+
+.col-form-label-lg {
+  padding-top: $col-form-label-padding-top-lg;
+
+  @include media-breakpoint-up(md) {
+    padding-top: #{strip-unit($col-form-label-padding-top-lg) - (strip-unit($col-form-label-padding-top) * (strip-unit($font-size-base-md) - strip-unit($font-size-base)))}rem;
+  }
+}
+
+
+//
+// Form control sizing
+//
+.form-control-sm {
+  // Re-declare font size to override the .form-control font size override above.
+  font-size: $font-size-sm;
+  // Apply calc() here to set accurate vertical padding to line up with buttons.
+  padding: calc(#{$input-padding-y-sm} + #{$btn-border-width - $input-btn-border-width}) $input-padding-x;
+
+  @include media-breakpoint-up(md) {
+    padding: calc(#{$input-padding-y-sm-md} + #{$btn-border-width - $input-btn-border-width}) $input-padding-x;
+  }
+}
+
+select.form-control-sm {
+  &:not([size]):not([multiple]) {
+    // Apply calc() here to set accurate vertical padding to line up with buttons.
+    height: calc(#{$input-height-sm} + #{($btn-border-width - $input-btn-border-width) * 2} + #{$input-btn-border-width * 2});
+  }
+}
+
+.form-control-lg {
+  // Re-declare font size to override the .form-control font size override above.
+  font-size: $font-size-lg;
+  // Apply calc() here to set accurate vertical padding to line up with buttons.
+  padding: calc(#{$input-padding-y-lg} + #{$btn-border-width - $input-btn-border-width}) $input-padding-x;
+
+  @include media-breakpoint-up(md) {
+    padding: calc(#{$input-padding-y-lg-md} + #{$btn-border-width - $input-btn-border-width}) $input-padding-x;
+  }
+}
+
+select.form-control-lg {
+  &:not([size]):not([multiple]) {
+    // Apply calc() here to set accurate vertical padding to line up with buttons.
+    height: calc(#{$input-height-lg} + #{($btn-border-width - $input-btn-border-width) * 2} + #{$input-btn-border-width * 2});
+  }
+}
+
+select.form-control,
+select.form-control-sm,
+select.form-control-lg {
+  &:not([size]):not([multiple]) {
+    padding-bottom: $select-padding-y;
+    padding-top: $select-padding-y;
+  }
+}
+
+
+//
+// Form validation states
+// Can't override mixin logic, so overrides get added here manually.
+//
+.has-success {
+  // Color the label and help text
+  .form-control-feedback,
+  .form-control-label,
+  .col-form-label,
+  .form-check-label,
+  .custom-control {
+    color: $brand-success-aw;
+  }
+
+  // Set validation states also for addons
+  .input-group-addon {
+    color: $brand-success-aw;
+  }
+}
+
+.has-warning {
+  // Color the label and help text
+  .form-control-feedback,
+  .form-control-label,
+  .col-form-label,
+  .form-check-label,
+  .custom-control {
+    color: $brand-warning-aw;
+  }
+
+  // Set validation states also for addons
+  .input-group-addon {
+    color: $brand-warning-aw;
+  }
+}
+
+.has-danger {
+  // Color the label and help text
+  .form-control-feedback,
+  .form-control-label,
+  .col-form-label,
+  .form-check-label,
+  .custom-control {
+    color: $brand-danger-aw;
+  }
+
+  // Set validation states also for addons
+  .input-group-addon {
+    color: $brand-danger-aw;
+  }
+}
+
