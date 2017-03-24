@@ -4,10 +4,14 @@
 
 .btn {
   border-width: $btn-border-width;
-  font-size: inherit; // allow font size to inherit from body
+  font-size: $btn-font-size;
   letter-spacing: $letter-spacing-base;
   text-transform: uppercase;
   white-space: normal; // allow multi-line buttons
+
+  @include media-breakpoint-up(md) {
+    font-size: $btn-font-size-md;
+  }
 
   &:hover,
   &.active,
@@ -149,18 +153,18 @@
 //
 
 .btn-lg {
-  font-size: ($font-size-base * $font-size-lg) / 1rem;
+  font-size: $btn-lg-font-size;
 
   @include media-breakpoint-up(md) {
-    font-size: $font-size-base-md * $font-size-lg / 1rem;
+    font-size: $btn-lg-font-size-md;
   }
 }
 
 .btn-sm {
-  font-size: $font-size-base * $font-size-sm / 1rem;
+  font-size: $btn-sm-font-size;
 
   @include media-breakpoint-up(md) {
-    font-size: $font-size-base-md * $font-size-sm / 1rem;
+    font-size: $btn-sm-font-size-md;
   }
 }
 
