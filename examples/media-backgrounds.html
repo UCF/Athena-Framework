@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <title>Components - Athena Project</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <!-- TODO: update cloud.typography css key to a production-ready project, with no legacy support enabled -->
+  <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/730568/633546/css/fonts.css">
+  <link rel="stylesheet" href="../dist/css/framework.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <button class="navbar-toggle navbar-toggler-right" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="../">Athena Project</a>
+      <div class="collapse navbar-collapse" id="main-nav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="./content.html">Content</a></li>
+          <li class="nav-item active"><a class="nav-link" href="./components.html">Components</a></li>
+        </ul>
+      </div>
+  </nav>
+
+  <div class="jumbotron jumbotron-fluid media-background-container">
+    <img class="media-background object-fit-cover" data-object-fit="cover" src="https://placehold.it/1000x720/" srcset="https://placehold.it/1920x1080/ 1800w, https://placehold.it/1000x720/ 1000w, https://placehold.it/500x300/ 500w" alt="">
+    <div class="container">
+      <h1>Media Backgrounds <small>(using objectFitPolyfill.js for IE/Edge)</small></h1>
+      <p class="lead">View this page in IE 11 or Edge 13-14 to test the polyfill's effects.</p>
+      <p><span class="badge badge-primary mb-5">Object-fit: cover (img with srcsets)</span></p>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6">
+        <div class="jumbotron jumbotron-fluid media-background-container">
+          <img class="media-background object-fit-contain" data-object-fit="contain" src="https://placehold.it/1000x800/" alt="">
+          <p class="text-center"><span class="badge badge-primary mb-5">Object-fit: contain</span></p>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="jumbotron jumbotron-fluid media-background-container">
+          <img class="media-background object-fit-none" data-object-fit="none" src="https://placehold.it/1000x800/" alt="">
+          <p class="text-center"><span class="badge badge-primary mb-5">Object-fit: none</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6">
+        <div class="jumbotron jumbotron-fluid media-background-container">
+          <img class="media-background object-fit-scale-down" data-object-fit="scale-down" src="https://placehold.it/250x200/" alt="">
+          <p class="text-center"><span class="badge badge-primary mb-5">Object-fit: scale-down</span></p>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="jumbotron jumbotron-fluid media-background-container">
+          <img class="media-background object-fit-scale-down" data-object-fit="scale-down" src="https://placehold.it/1000x800/" alt="">
+          <p class="text-center"><span class="badge badge-primary mb-5">Object-fit: scale-down</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6">
+        <div class="jumbotron jumbotron-fluid media-background-container">
+          <picture>
+            <source srcset="https://placehold.it/1920x1080" media="(min-width: 1800px)">
+            <source srcset="https://placehold.it/500x300/" media="(max-width: 500px)">
+            <img class="media-background object-fit-cover" data-object-fit="cover" src="https://placehold.it/1000x720/" alt="">
+          </picture>
+          <p class="text-center"><span class="badge badge-primary mb-5">Object-fit: cover (picture)</span></p>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="jumbotron jumbotron-fluid media-background-container">
+          <video class="media-background object-fit-cover" data-object-fit="cover" preload="auto" autoplay="" loop="" poster="https://www.ucf.edu/wp-content/uploads/2017/01/ucf-studying.jpg">
+            <source src="https://www.ucf.edu/wp-content/uploads/2017/01/Vignette-One-02.mp4" type="video/mp4">
+          </video>
+          <p class="text-center"><span class="badge badge-primary mb-5">Object-fit: cover (video)</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="jumbotron jumbotron-fluid media-background-container">
+    <video class="media-background object-fit-cover" data-object-fit="cover" preload="auto" autoplay="" loop="" poster="https://www.ucf.edu/wp-content/uploads/2017/01/ucf-studying.jpg">
+      <source src="https://www.ucf.edu/wp-content/uploads/2017/01/Vignette-One-02.mp4" type="video/mp4">
+    </video>
+    <p class="text-center"><span class="badge badge-primary mb-5">Object-fit: cover (video)</span></p>
+    <p>tis aliquet mattis id lectus. Ut purus ipsum, posuere vitae fringilla et, gravida ac erat. Donec sem ligula, consequat ut consectetur tincidunt, convallis id nibh. Nulla sagittis rhoncus tincidunt. Suspendisse tempus dictum lectus vitae venenatis. Sed placerat tortor ultrices nunc dictum elementum.</p>
+    <p>Phasellus non imperdiet dui, eu tristique erat. Maecenas elementum consectetur orci sed lobortis. Nam non iaculis est. Nunc magna sapien, placerat quis ultricies quis, commodo nec odio. Suspendisse hendrerit gravida enim a tempor. Vivamus mi turpis, varius eget sapien ac, auctor porttitor lectus. In laoreet leo sit amet elit interdum elementum. Cras et aliquet est. Maecenas nisi urna, facilisis eget nibh vel, scelerisque fermentum sapien. Vivamus et ullamcorper turpis. Praesent in commodo dolor. Pellentesque porta vulputate nunc sed cursus.</p>
+    <p>Cras mi erat, faucibus nec semper ut, bibendum vitae mauris. Morbi gravida urna at enim consectetur, in dapibus felis consectetur. Nam ac scelerisque neque. Etiam elementum diam ex, nec interdum sem laoreet eget. Nam ullamcorper erat ex, non tincidunt mauris sollicitudin eget. Praesent eget congue enim, nec fermentum leo. Donec quis enim nec nisl posuere molestie at at elit. Sed laoreet nisl lorem, et mattis mauris ornare ac. Morbi in ullamcorper augue. Morbi non pellentesque risus. Curabitur commodo faucibus arcu non posuere. Mauris dictum sagittis libero, eu viverra tortor viverra sed. Donec vehicula gravida dolor, vel vulputate ligula dapibus a. Nullam sit amet leo a ante facilisis bibendum nec et eros.</p>
+    <p>Etiam feugiat eros ac diam feugiat hendrerit. In leo tellus, ornare vel luctus tristique, tempor ut orci. Integer lacus ante, tristique a orci a, iaculis pharetra quam. Sed ultricies urna diam, nec cursus orci vehicula non. Ut maximus tincidunt velit sed posuere. Mauris et lacinia dui. Nunc tristique ipsum metus, at ullamcorper tellus pretium ac. Vestibulum tincidunt iaculis aliquet. Mauris iaculis consequat laoreet. Duis euismod pharetra leo, ut commodo augue semper vel. Nam justo orci, iaculis non metus nec, ullamcorper lacinia ex. Vestibulum in congue ligula. Curabitur convallis tempor odio ac maximus. Curabitur ullamcorper turpis eu pharetra laoreet. Praesent vulputate lobortis aliquet. Cras rhoncus tincidunt lorem, sodales dapibus sem dignissim ac.</p>
+    <p>Vestibulum mattis tristique felis, et accumsan lectus feugiat id. Pellentesque aliquam justo enim, eget tincidunt ligula consequat hendrerit. Phasellus porta dui eget dictum porta. Quisque semper accumsan nisl. Praesent sed faucibus justo, ultricies gravida nunc. Sed at augue at nulla eleifend hendrerit. Proin rutrum egestas nulla id pellentesque. Duis consectetur sagittis neque in volutpat.</p>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha256-gL1ibrbVcRIHKlCO5OXOPC/lZz/gpdApgQAzskqqXp8=" crossorigin="anonymous"></script>
+  <script src="../dist/js/framework.min.js"></script>
+
+</body>
+
+</html>
