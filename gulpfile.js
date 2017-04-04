@@ -8,8 +8,6 @@ var bower = require('bower'),
     isFixed = require('gulp-eslint-if-fixed'),
     babel = require('gulp-babel'),
     sourcemaps = require('gulp-sourcemaps'),
-    concat = require('gulp-concat'),
-    jshint = require('gulp-jshint'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     scsslint = require('gulp-scss-lint'),
@@ -133,7 +131,6 @@ var babelBuild = function() {
       .on('error', console.log)
     .pipe(sourcemaps.init())
     .pipe(babel())
-    .pipe(concat('framework.min.js'))
     .pipe(uglify())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(config.dist.jsPath));
