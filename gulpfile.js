@@ -7,12 +7,10 @@ var bower = require('bower'),
     eslint = require('gulp-eslint'),
     isFixed = require('gulp-eslint-if-fixed'),
     babel = require('gulp-babel'),
-    sourcemaps = require('gulp-sourcemaps'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     scsslint = require('gulp-scss-lint'),
     uglify = require('gulp-uglify'),
-    jshintStylish = require('jshint-stylish'),
     merge = require('merge');
 
 
@@ -126,13 +124,11 @@ gulp.task('es-lint', function() {
 
 // Concat and uglify js files through babel
 var babelBuild = function() {
-  return gulp.src(config.src.js + '/**/*.js')
+  return gulp.src(config.src.js + '/framework.js')
     .pipe(include())
       .on('error', console.log)
-    .pipe(sourcemaps.init())
     .pipe(babel())
     .pipe(uglify())
-    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(config.dist.jsPath));
 };
 
