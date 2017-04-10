@@ -4,12 +4,13 @@ var bower = require('bower'),
     autoprefixer = require('gulp-autoprefixer'),
     cleanCSS = require('gulp-clean-css'),
     include = require('gulp-include'),
-    jshint = require('gulp-jshint'),
+    eslint = require('gulp-eslint'),
+    isFixed = require('gulp-eslint-if-fixed'),
+    babel = require('gulp-babel'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     scsslint = require('gulp-scss-lint'),
     uglify = require('gulp-uglify'),
-    jshintStylish = require('jshint-stylish'),
     merge = require('merge');
 
 
@@ -28,7 +29,7 @@ var configLocal = require('./gulp-config.json'),
       bowerPath: './bower_components',
       bootstrap: {
         scss: './bower_components/bootstrap/scss',
-        js:   './bower_components/bootstrap/dist/js'
+        js:   './bower_components/bootstrap/js/src'
       },
       sync: false,
       syncTarget: 'http://localhost/'
@@ -63,12 +64,18 @@ gulp.task('move-components', ['bower'], function() {
   gulp.src(config.bootstrap.scss + '/**/*', {base: config.bootstrap.scss})
     .pipe(gulp.dest(config.src.scssPath + '/bootstrap'));
 
-  gulp.src(config.bootstrap.js + '/bootstrap.js', {base: config.bootstrap.js})
+  gulp.src(config.bootstrap.js + '/*.js', {base: config.bootstrap.js})
     .pipe(gulp.dest(config.src.jsPath + '/bootstrap'));
 
   // Object fit polyfill
-  gulp.src(config.bowerPath + '/objectFitPolyfill/dist/objectFitPolyfill.min.js', {base: config.bowerPath + '/objectFitPolyfill/dist'})
+  gulp.src(config.bowerPath + '/objectFitPolyfill/src/objectFitPolyfill.js', {base: config.bowerPath + '/objectFitPolyfill/src'})
     .pipe(gulp.dest(config.src.jsPath + '/objectFitPolyfill'));
+
+  // Copy eslint and babel configuration files.
+  gulp.src([
+    config.bootstrap.js + '/../.babelrc',
+    config.bootstrap.js + '/../.eslintrc.json'
+  ]).pipe(gulp.dest(config.src.jsPath));
 });
 
 // Run all component-related tasks
@@ -112,30 +119,30 @@ gulp.task('css-default', ['scss-lint', 'scss-build-default']);
 // JavaScript
 //
 
-// Run jshint on all js files in src.jsPath
-gulp.task('js-lint', function() {
-  return gulp.src([config.src.jsPath + '/*.js'])
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'))
-    .pipe(jshint.reporter('fail'));
+// Run eshint on all js files in src.jsPath
+gulp.task('es-lint', function() {
+  return gulp.src(config.src.jsPath + '/**/*.js')
+    .pipe(eslint({ fix: true }))
+    .pipe(eslint.format())
+    .pipe(isFixed(config.src.jsPath));
 });
 
-// Concat and uglify js files.
-function jsBuild() {
-  return gulp.src(config.src.jsPath + '/framework.js')
+// Concat and uglify js files through babel
+var babelBuild = function() {
+  return gulp.src(config.src.js + '/framework.js')
     .pipe(include())
       .on('error', console.log)
+    .pipe(babel())
     .pipe(uglify())
-    .pipe(rename('framework.min.js'))
-    .pipe(gulp.dest(config.dist.jsPath))
-    .pipe(browserSync.stream());
-}
-gulp.task('js-build', jsBuild); // to be run on `gulp watch`; does not require update of Bower packages
-gulp.task('js-build-default', ['components'], jsBuild); // to be run on `gulp default`; requires update of Bower packages before running
+    .pipe(gulp.dest(config.dist.jsPath));
+};
+
+gulp.task('js-build', babelBuild); // to be run on `gulp watch`; does not require update of Bower packages
+gulp.task('js-build-default', ['components'], babelBuild); // to be run on `gulp default`; requires update of Bower packages before running
 
 // All js-related tasks
-gulp.task('js', ['js-lint', 'js-build']);
-gulp.task('js-default', ['js-lint', 'js-build-default']);
+gulp.task('js', ['es-lint', 'js-build']);
+gulp.task('js-default', ['es-lint', 'js-build-default']);
 
 
 //
