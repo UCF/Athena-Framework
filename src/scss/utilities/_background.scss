@@ -1,0 +1,7 @@
+//
+// Contextual backgrounds
+//
+
+@include bg-variant('.bg-default', $brand-default);
+@include bg-variant('.bg-secondary', $brand-secondary);
+@include bg-variant('.bg-complementary', $brand-complementary);
