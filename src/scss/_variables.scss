@@ -157,6 +157,19 @@ $brand-warning:             $orange;
 $brand-danger:              $red;
 $brand-inverse:             $black; // modified
 
+// Custom brand-primary color palette
+$brand-primary-darkest:  $ucf-gold-darkest;
+$brand-primary-darker:   $ucf-gold-darker;
+$brand-primary-lighter:  $ucf-gold-lighter;
+$brand-primary-lightest: $ucf-gold-lightest;
+
+// Custom brand-metallic color palette
+$brand-metallic-darkest:  $ucf-metalgold-darkest;
+$brand-metallic-darker:   $ucf-metalgold-darker;
+$brand-metallic:          $ucf-metalgold;
+$brand-metallic-lighter:  $ucf-metalgold-lighter;
+$brand-metallic-lightest: $ucf-metalgold-lightest;
+
 // Custom text colors definitions for brand color scheme.  These colors are
 // intended to be used for text overlaid on components which use the respective
 // brand color as the background color.
@@ -171,6 +184,17 @@ $brand-info-color:          $black;
 $brand-warning-color:       $black;
 $brand-danger-color:        $black;
 $brand-inverse-color:       $white;
+
+$brand-primary-darkest-color:  $white;
+$brand-primary-darker-color:   $black;
+$brand-primary-lighter-color:  $black;
+$brand-primary-lightest-color: $black;
+
+$brand-metallic-darkest-color:  $black;
+$brand-metallic-darker-color:   $black;
+$brand-metallic-color:          $black;
+$brand-metallic-lighter-color:  $black;
+$brand-metallic-lightest-color: $black;
 
 // Custom brand color alternates that meet white-background contrast requirements.
 $brand-default-aw:       $brand-default;
