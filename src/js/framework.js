@@ -14,7 +14,7 @@
 // =require ./bootstrap/tooltip.js
 // =require ./bootstrap/util.js
 
-// =require ./objectFitPolyfill/objectFitPolyfill.min.js
+// =require ./objectFitPolyfill/objectFitPolyfill.js
 
 
 //
