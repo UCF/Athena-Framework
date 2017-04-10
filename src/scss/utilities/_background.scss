@@ -1,0 +1,109 @@
+//
+// Contextual backgrounds
+//
+
+@include bg-variant('.bg-default', $brand-default);
+@include bg-variant('.bg-secondary', $brand-secondary);
+@include bg-variant('.bg-complementary', $brand-complementary);
+
+
+//
+// Extended brand backgrounds
+//
+
+@include bg-variant('.bg-primary-darkest', $brand-primary-darkest);
+@include bg-variant('.bg-primary-darker', $brand-primary-darker);
+@include bg-variant('.bg-primary-lighter', $brand-primary-lighter);
+@include bg-variant('.bg-primary-lightest', $brand-primary-lightest);
+
+@include bg-variant('.bg-metallic-darkest', $brand-metallic-darkest);
+@include bg-variant('.bg-metallic-darker', $brand-metallic-darker);
+@include bg-variant('.bg-metallic', $brand-metallic);
+@include bg-variant('.bg-metallic-lighter', $brand-metallic-lighter);
+@include bg-variant('.bg-metallic-lightest', $brand-metallic-lightest);
+
+
+//
+// Force accessible text colors on background utility classes.
+//
+// NOTE: Bootstrap intentionally does not apply text color to bg utility
+// classes for the sake of keeping the utility classes as single-purpose as
+// possible.  We are adding them to Athena for the sake of ensuring we are
+// as accessible-ready as possible, and just for convenience/fewer required
+// text utility classes to achieve a certain look.
+//
+// Text color is still overridable using .text-<context> classes (because
+// they force !important color values).
+//
+
+.bg-default {
+  color: $brand-default-color;
+}
+
+.bg-primary {
+  color: $brand-primary-color;
+}
+
+.bg-secondary {
+  color: $brand-secondary-color;
+}
+
+.bg-complementary {
+  color: $brand-complementary-color;
+}
+
+.bg-success {
+  color: $brand-success-color;
+}
+
+.bg-info {
+  color: $brand-info-color;
+}
+
+.bg-warning {
+  color: $brand-warning-color;
+}
+
+.bg-danger {
+  color: $brand-danger-color;
+}
+
+.bg-inverse {
+  color: $brand-inverse-color;
+}
+
+.bg-primary-darkest {
+  color: $brand-primary-darkest-color;
+}
+
+.bg-primary-darker {
+  color: $brand-primary-darker-color;
+}
+
+.bg-primary-lighter {
+  color: $brand-primary-lighter-color;
+}
+
+.bg-primary-lightest {
+  color: $brand-primary-lightest-color;
+}
+
+.bg-metallic-darkest {
+  color: $brand-metallic-darkest-color;
+}
+
+.bg-metallic-darker {
+  color: $brand-metallic-darker-color;
+}
+
+.bg-metallic {
+  color: $brand-metallic-color;
+}
+
+.bg-metallic-lighter {
+  color: $brand-metallic-lighter-color;
+}
+
+.bg-metallic-lightest {
+  color: $brand-metallic-lightest-color;
+}
