@@ -514,10 +514,6 @@ $btn-box-shadow:                 inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba
 $btn-focus-box-shadow:           0 0 0 2px rgba($brand-complementary, .25); // modified
 $btn-active-box-shadow:          inset 0 3px 5px rgba($black, .125);
 
-// $btn-default-color:              $brand-default-color; // custom
-// $btn-default-bg:                 $brand-default; // custom
-// $btn-default-border:             $btn-default-bg; // custom
-
 $btn-default-color:              $black; // custom
 $btn-default-bg:                 $white; // custom
 $btn-default-border:             #ccc; // custom
@@ -530,9 +526,9 @@ $btn-complementary-color:        $brand-complementary-color; // custom
 $btn-complementary-bg:           $brand-complementary; // custom
 $btn-complementary-border:       $btn-complementary-bg; // custom
 
-$btn-secondary-color:            $brand-secondary-color; // custom
-$btn-secondary-bg:               $brand-secondary; // custom
-$btn-secondary-border:           $btn-secondary-bg; // custom
+$btn-secondary-color:            $brand-secondary-color; // modified
+$btn-secondary-bg:               $brand-secondary; // modified
+$btn-secondary-border:           $btn-secondary-bg; // modified
 
 $btn-inverse-color:              $brand-inverse-color; // custom
 $btn-inverse-bg:                 $brand-inverse; // custom
