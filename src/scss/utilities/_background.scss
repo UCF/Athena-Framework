@@ -3,8 +3,9 @@
 //
 
 @include bg-variant('.bg-default', $brand-default);
-@include bg-variant('.bg-secondary', $brand-secondary);
+@include bg-variant('.bg-secondary', $brand-secondary-color); // intentionally inverted with color variable
 @include bg-variant('.bg-complementary', $brand-complementary);
+@include bg-variant('.bg-inverse', $brand-inverse-color); // override; intentionally inverted with color variable
 
 
 //
@@ -45,7 +46,7 @@
 }
 
 .bg-secondary {
-  color: $brand-secondary-color;
+  color: $brand-secondary; // intentionally inverted color variable
 }
 
 .bg-complementary {
@@ -69,7 +70,7 @@
 }
 
 .bg-inverse {
-  color: $brand-inverse-color;
+  color: $brand-inverse;  // intentionally inverted color variable
 }
 
 .bg-primary-darkest {
