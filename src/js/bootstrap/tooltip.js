@@ -1,6 +1,6 @@
 /* global Tether */
 
-import Util from './util'
+
 
 
 /**
@@ -672,4 +672,4 @@ const Tooltip = (($) => {
 
 })(jQuery)
 
-export default Tooltip
+

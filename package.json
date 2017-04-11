@@ -3,7 +3,7 @@
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-eslint": "^7.2.1",
-    "bower": "^1.6.8",
+    "bootstrap": "^4.0.0-alpha.6",
     "browser-sync": "^2.10.0",
     "eslint": "^3.19.0",
     "gulp": "~3.9.0",
@@ -22,5 +22,9 @@
   },
   "browserslist": [
     "last 2 versions"
-  ]
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "tether": "^1.4.0"
+  }
 }

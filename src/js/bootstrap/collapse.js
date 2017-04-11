@@ -1,4 +1,4 @@
-import Util from './util'
+
 
 
 /**
@@ -384,4 +384,4 @@ const Collapse = (($) => {
 
 })(jQuery)
 
-export default Collapse
+
