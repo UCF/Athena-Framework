@@ -134,7 +134,7 @@ gulp.task('es-lint', function() {
 
 // Concat and uglify js files through babel
 var babelBuild = function() {
-  return gulp.src(config.src.js + '/framework.js')
+  return gulp.src(config.src.jsPath + '/framework.js')
     .pipe(include())
       .on('error', console.log)
     .pipe(babel())
