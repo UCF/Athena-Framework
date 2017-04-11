@@ -17,11 +17,11 @@ const Popover = (($) => {
    * ------------------------------------------------------------------------
    */
 
-  const NAME                = 'popover'
-  const VERSION             = '4.0.0-alpha.6'
-  const DATA_KEY            = 'bs.popover'
-  const EVENT_KEY           = `.${DATA_KEY}`
-  const JQUERY_NO_CONFLICT  = $.fn[NAME]
+  const NAME                = 'popover';
+  const VERSION             = '4.0.0-alpha.6';
+  const DATA_KEY            = 'bs.popover';
+  const EVENT_KEY           = `.${DATA_KEY}`;
+  const JQUERY_NO_CONFLICT  = $.fn[NAME];
 
   const Default = $.extend({}, Tooltip.Default, {
     placement : 'right',
@@ -30,21 +30,21 @@ const Popover = (($) => {
     template  : '<div class="popover" role="tooltip">'
               + '<h3 class="popover-title"></h3>'
               + '<div class="popover-content"></div></div>'
-  })
+  });
 
   const DefaultType = $.extend({}, Tooltip.DefaultType, {
     content : '(string|element|function)'
-  })
+  });
 
   const ClassName = {
     FADE : 'fade',
     SHOW : 'show'
-  }
+  };
 
   const Selector = {
     TITLE   : '.popover-title',
     CONTENT : '.popover-content'
-  }
+  };
 
   const Event = {
     HIDE       : `hide${EVENT_KEY}`,
@@ -57,7 +57,7 @@ const Popover = (($) => {
     FOCUSOUT   : `focusout${EVENT_KEY}`,
     MOUSEENTER : `mouseenter${EVENT_KEY}`,
     MOUSELEAVE : `mouseleave${EVENT_KEY}`
-  }
+  };
 
 
   /**
@@ -72,54 +72,54 @@ const Popover = (($) => {
     // getters
 
     static get VERSION() {
-      return VERSION
+      return VERSION;
     }
 
     static get Default() {
-      return Default
+      return Default;
     }
 
     static get NAME() {
-      return NAME
+      return NAME;
     }
 
     static get DATA_KEY() {
-      return DATA_KEY
+      return DATA_KEY;
     }
 
     static get Event() {
-      return Event
+      return Event;
     }
 
     static get EVENT_KEY() {
-      return EVENT_KEY
+      return EVENT_KEY;
     }
 
     static get DefaultType() {
-      return DefaultType
+      return DefaultType;
     }
 
 
     // overrides
 
     isWithContent() {
-      return this.getTitle() || this._getContent()
+      return this.getTitle() || this._getContent();
     }
 
     getTipElement() {
-      return this.tip = this.tip || $(this.config.template)[0]
+      return this.tip = this.tip || $(this.config.template)[0];
     }
 
     setContent() {
-      const $tip = $(this.getTipElement())
+      const $tip = $(this.getTipElement());
 
       // we use append for html objects to maintain js events
-      this.setElementContent($tip.find(Selector.TITLE), this.getTitle())
-      this.setElementContent($tip.find(Selector.CONTENT), this._getContent())
+      this.setElementContent($tip.find(Selector.TITLE), this.getTitle());
+      this.setElementContent($tip.find(Selector.CONTENT), this._getContent());
 
-      $tip.removeClass(`${ClassName.FADE} ${ClassName.SHOW}`)
+      $tip.removeClass(`${ClassName.FADE} ${ClassName.SHOW}`);
 
-      this.cleanupTether()
+      this.cleanupTether();
     }
 
     // private
@@ -128,7 +128,7 @@ const Popover = (($) => {
       return this.element.getAttribute('data-content')
         || (typeof this.config.content === 'function' ?
               this.config.content.call(this.element) :
-              this.config.content)
+              this.config.content);
     }
 
 
@@ -136,25 +136,25 @@ const Popover = (($) => {
 
     static _jQueryInterface(config) {
       return this.each(function () {
-        let data      = $(this).data(DATA_KEY)
-        const _config = typeof config === 'object' ? config : null
+        let data      = $(this).data(DATA_KEY);
+        const _config = typeof config === 'object' ? config : null;
 
         if (!data && /destroy|hide/.test(config)) {
-          return
+          return;
         }
 
         if (!data) {
-          data = new Popover(this, _config)
-          $(this).data(DATA_KEY, data)
+          data = new Popover(this, _config);
+          $(this).data(DATA_KEY, data);
         }
 
         if (typeof config === 'string') {
           if (data[config] === undefined) {
-            throw new Error(`No method named "${config}"`)
+            throw new Error(`No method named "${config}"`);
           }
-          data[config]()
+          data[config]();
         }
-      })
+      });
     }
   }
 
@@ -165,15 +165,15 @@ const Popover = (($) => {
    * ------------------------------------------------------------------------
    */
 
-  $.fn[NAME]             = Popover._jQueryInterface
-  $.fn[NAME].Constructor = Popover
+  $.fn[NAME]             = Popover._jQueryInterface;
+  $.fn[NAME].Constructor = Popover;
   $.fn[NAME].noConflict  = function () {
-    $.fn[NAME] = JQUERY_NO_CONFLICT
-    return Popover._jQueryInterface
-  }
+    $.fn[NAME] = JQUERY_NO_CONFLICT;
+    return Popover._jQueryInterface;
+  };
 
-  return Popover
+  return Popover;
 
-})(jQuery)
+})(jQuery);
 
 

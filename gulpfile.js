@@ -66,7 +66,6 @@ gulp.task('move-components-bootstrap-scss', function() {
 // Bootstrap's grunt js build task)
 gulp.task('move-components-bootstrap-js', function() {
   return gulp.src(config.bootstrap.js + '/*.js', {base: config.bootstrap.js})
-    .pipe(replace(/^(export|import).*/gm, ''))
     .pipe(gulp.dest(config.src.jsPath + '/bootstrap'));
 });
 
@@ -114,13 +113,11 @@ gulp.task('css', ['scss-lint', 'scss-build']);
 // JavaScript
 //
 
-// Run eshint on all js files in src.jsPath. Don't perform linting on vendor
-// package files.
+// Run eshint on js files in src.jsPath
 gulp.task('es-lint', function() {
   var files = [
     '!' + config.src.jsPath + '/objectFitPolyfill/objectFitPolyfill.js',
-    '!' + config.src.jsPath + '/bootstrap/*',
-    config.src.jsPath + '/*.js',
+    config.src.jsPath + '/**/*.js',
   ];
 
   return gulp.src(files)
@@ -129,9 +126,16 @@ gulp.task('es-lint', function() {
     .pipe(isFixed(config.src.jsPath));
 });
 
+// Remove import/export statements from bootstrap js files
+gulp.task('js-build-bootstrap', function() {
+  return gulp.src(config.src.jsPath + '/bootstrap/*.js')
+    .pipe(replace(/^(export|import).*/gm, ''))
+    .pipe(gulp.dest(config.src.jsPath + '/bootstrap'));
+})
+
 // Concat and uglify js files through babel
 gulp.task('js-build', function() {
-  return gulp.src(config.src.jsPath + '/framework.min.js')
+  return gulp.src(config.src.jsPath + '/framework.js')
     .pipe(include())
       .on('error', console.log)
     .pipe(babel())
@@ -141,7 +145,9 @@ gulp.task('js-build', function() {
 })
 
 // All js-related tasks
-gulp.task('js', ['es-lint', 'js-build']);
+gulp.task('js', function() {
+  runSequence('es-lint', 'js-build-bootstrap', 'js-build');
+});
 
 
 //

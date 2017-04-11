@@ -6,13 +6,13 @@
 (function ($) {
 
   function _assignDataAttrs($bg) {
-    if ($bg.hasClass('.object-fit-contain')) {
+    if ($bg.hasClass('object-fit-contain')) {
       $bg.attr('data-object-fit', 'contain');
-    } else if ($bg.hasClass('.object-fit-fill')) {
+    } else if ($bg.hasClass('object-fit-fill')) {
       $bg.attr('data-object-fit', 'fill');
-    } else if ($bg.hasClass('.object-fit-none')) {
+    } else if ($bg.hasClass('object-fit-none')) {
       $bg.attr('data-object-fit', 'none');
-    } else if ($bg.hasClass('.object-fit-scale-down')) {
+    } else if ($bg.hasClass('object-fit-scale-down')) {
       $bg.attr('data-object-fit', 'scale-down');
     } else {
       // .object-fit-cover/default
