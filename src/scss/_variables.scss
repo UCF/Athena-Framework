@@ -149,13 +149,13 @@ $gray-lightest:             #f7f7f9;
 // Reassign color vars to semantic color scheme
 $brand-default:             $gray; // custom
 $brand-primary:             $ucf-gold; // modified
-$brand-secondary:           $white; // custom
+$brand-secondary:           $black; // custom
 $brand-complementary:       $blue; // custom
 $brand-success:             $green;
 $brand-info:                $teal;
 $brand-warning:             $orange;
 $brand-danger:              $red;
-$brand-inverse:             $black; // modified
+$brand-inverse:             $white; // modified
 
 // Custom brand-primary color palette
 $brand-primary-darkest:  $ucf-gold-darkest;
@@ -177,13 +177,13 @@ $brand-metallic-lightest: $ucf-metalgold-lightest;
 // WGAG 2.0 AA compliant.
 $brand-default-color:       $white;
 $brand-primary-color:       $black;
-$brand-secondary-color:     $black;
+$brand-secondary-color:     $white;
 $brand-complementary-color: $white;
 $brand-success-color:       $black;
 $brand-info-color:          $black;
 $brand-warning-color:       $black;
 $brand-danger-color:        $black;
-$brand-inverse-color:       $white;
+$brand-inverse-color:       $black;
 
 $brand-primary-darkest-color:  $white;
 $brand-primary-darker-color:   $black;
@@ -197,15 +197,16 @@ $brand-metallic-lighter-color:  $black;
 $brand-metallic-lightest-color: $black;
 
 // Custom brand color alternates that meet white-background contrast requirements.
+// "-aw" = "Accessible over White"
 $brand-default-aw:       $brand-default;
 $brand-primary-aw:       $ucf-gold-darkest;
-$brand-secondary-aw:     $gray-dark;
+$brand-secondary-aw:     $black;
 $brand-complementary-aw: $brand-complementary;
 $brand-success-aw:       #477e5e;
 $brand-info-aw:          #298194;
 $brand-warning-aw:       #966e31;
 $brand-danger-aw:        #c44f38;
-$brand-inverse-aw:       $black;
+$brand-inverse-aw:       $gray-dark;
 
 
 // Options
@@ -514,9 +515,9 @@ $btn-box-shadow:                 inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba
 $btn-focus-box-shadow:           0 0 0 2px rgba($brand-complementary, .25); // modified
 $btn-active-box-shadow:          inset 0 3px 5px rgba($black, .125);
 
-$btn-default-color:              $brand-default-color; // custom
-$btn-default-bg:                 $brand-default; // custom
-$btn-default-border:             $btn-default-bg; // custom
+$btn-default-color:              $black; // custom
+$btn-default-bg:                 $white; // custom
+$btn-default-border:             #ccc; // custom
 
 $btn-primary-color:              $brand-primary-color; // modified
 $btn-primary-bg:                 $brand-primary;
@@ -528,10 +529,10 @@ $btn-complementary-border:       $btn-complementary-bg; // custom
 
 $btn-secondary-color:            $brand-secondary-color; // modified
 $btn-secondary-bg:               $brand-secondary; // modified
-$btn-secondary-border:           #ccc;
+$btn-secondary-border:           $btn-secondary-bg; // modified
 
-$btn-inverse-color:              $brand-inverse; // custom; reversal of this and -color var is intentional
-$btn-inverse-bg:                 $brand-inverse-color; // custom
+$btn-inverse-color:              $brand-inverse-color; // custom
+$btn-inverse-bg:                 $brand-inverse; // custom
 $btn-inverse-border:             $btn-inverse-bg; // custom
 
 $btn-info-color:                 $brand-info-color; // modified
@@ -951,26 +952,26 @@ $popover-arrow-outer-color:           fade-in($popover-border-color, .05);
 
 $badge-default-bg:            $brand-default; // modified
 $badge-primary-bg:            $brand-primary;
-$badge-secondary-bg:          $brand-secondary-color; // custom; usage of -color var is intentional
+$badge-secondary-bg:          $brand-secondary; // custom
 $badge-complementary-bg:      $brand-complementary; // custom
 $badge-success-bg:            $brand-success;
 $badge-info-bg:               $brand-info;
 $badge-warning-bg:            $brand-warning;
 $badge-danger-bg:             $brand-danger;
-$badge-inverse-bg:            $brand-inverse-color; // custom; usage of -color var is intentional
+$badge-inverse-bg:            $brand-inverse; // custom
 
 $badge-color:                 $white; // unused in Athena in favor of per-variant color variables (below)
 
 // Custom badge color variables
 $badge-default-color:         $brand-default-color;
 $badge-primary-color:         $brand-primary-color;
-$badge-secondary-color:       $brand-secondary; // usage of non -color var is intentional
+$badge-secondary-color:       $brand-secondary-color;
 $badge-complementary-color:   $brand-complementary-color;
 $badge-success-color:         $brand-success-color;
 $badge-info-color:            $brand-info-color;
 $badge-warning-color:         $brand-warning-color;
 $badge-danger-color:          $brand-danger-color;
-$badge-inverse-color:         $brand-inverse; // usage of non -color var is intentional
+$badge-inverse-color:         $brand-inverse-color;
 
 $badge-link-hover-color:      $white;
 $badge-font-size:             75%;
