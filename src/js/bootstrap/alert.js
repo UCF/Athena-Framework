@@ -1,4 +1,4 @@
-git statimport Util from './util';
+import Util from './util';
 
 
 /**
