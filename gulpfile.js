@@ -121,7 +121,12 @@ gulp.task('css-default', ['scss-lint', 'scss-build-default']);
 
 // Run eshint on all js files in src.jsPath
 gulp.task('es-lint', function() {
-  return gulp.src(config.src.jsPath + '/**/*.js')
+  var files = [
+    '!' + config.src.jsPath + '/objectFitPolyfill/objectFitPolyfill.js',
+    config.src.jsPath + '/**/*.js',
+  ];
+
+  return gulp.src(files)
     .pipe(eslint({ fix: true }))
     .pipe(eslint.format())
     .pipe(isFixed(config.src.jsPath));
