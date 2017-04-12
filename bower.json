@@ -1,0 +1,25 @@
+{
+  "name": "Athena-Framework",
+  "description": "A front-end web framework for UCF websites and applications",
+  "main": [
+    "src/js/framework.js",
+    "src/scss/framework.scss"
+  ],
+  "authors": [
+    "UCF Web Communications"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/UCF/Athena-Framework",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">=1.9.1",
+    "tether": "^1.4.0"
+  }
+}
