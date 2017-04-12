@@ -1,4 +1,4 @@
-
+import Util from './util'
 
 
 /**
@@ -329,4 +329,4 @@ const ScrollSpy = (($) => {
 
 })(jQuery)
 
-
+export default ScrollSpy

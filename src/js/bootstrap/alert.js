@@ -1,4 +1,4 @@
-
+import Util from './util'
 
 
 /**
@@ -190,4 +190,4 @@ const Alert = (($) => {
 
 })(jQuery)
 
-
+export default Alert

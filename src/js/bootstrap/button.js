@@ -173,4 +173,4 @@ const Button = (($) => {
 
 })(jQuery)
 
-
+export default Button

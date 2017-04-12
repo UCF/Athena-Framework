@@ -12,7 +12,9 @@ var browserSync = require('browser-sync').create(),
     uglify = require('gulp-uglify'),
     replace = require('gulp-replace'),
     runSequence = require('run-sequence'),
-    merge = require('merge');
+    merge = require('merge'),
+    concat = require('gulp-concat'),
+    addsrc = require('gulp-add-src');
 
 
 var configLocal = require('./gulp-config.json'),
@@ -66,7 +68,6 @@ gulp.task('move-components-bootstrap-scss', function() {
 // Bootstrap's grunt js build task)
 gulp.task('move-components-bootstrap-js', function() {
   return gulp.src(config.bootstrap.js + '/*.js', {base: config.bootstrap.js})
-    .pipe(replace(/^(export|import).*/gm, ''))
     .pipe(gulp.dest(config.src.jsPath + '/bootstrap'));
 });
 
@@ -98,7 +99,7 @@ gulp.task('scss-build', function() {
     .pipe(rename('framework.min.css'))
     .pipe(gulp.dest(config.dist.cssPath))
     .pipe(browserSync.stream());
-  });
+});
 
 // All css-related tasks
 gulp.task('css', ['scss-lint', 'scss-build']);
@@ -108,18 +109,31 @@ gulp.task('css', ['scss-lint', 'scss-build']);
 // JavaScript
 //
 
-// Run eshint on all js files in src.jsPath. Don't perform linting on vendor
-// package files.
+// Run eshint on js files in src.jsPath. Do not perform linting
+// on vendor js files.
 gulp.task('es-lint', function() {
-  var files = [
-    '!' + config.src.jsPath + '/bootstrap/*',
-    config.src.jsPath + '/*.js',
+    var files = [
+      config.src.jsPath + '/*.js',
+      '!' + config.src.jsPath + '/_bootstrap-*.js',
   ];
-
   return gulp.src(files)
     .pipe(eslint({ fix: true }))
     .pipe(eslint.format())
     .pipe(isFixed(config.src.jsPath));
+});
+
+// Process Bootstrap js and saves it out to a single file. Handles various
+// js-related steps Bootstrap performs via its gruntfile.
+gulp.task('js-build-bootstrap', function() {
+  return gulp.src(config.src.jsPath + '/bootstrap-plugins.js')
+    .pipe(include())
+      .on('error', console.log)
+    .pipe(replace(/^(export|import).*/gm, ''))
+    .pipe(babel())
+    .pipe(addsrc.prepend(config.src.jsPath + '/_bootstrap-header.js'))
+    .pipe(addsrc.append(config.src.jsPath + '/_bootstrap-footer.js'))
+    .pipe(concat('bootstrap.js'))
+    .pipe(gulp.dest(config.src.jsPath + '/bootstrap'));
 });
 
 // Concat and uglify js files through babel
@@ -131,10 +145,12 @@ gulp.task('js-build', function() {
     .pipe(uglify())
     .pipe(rename('framework.min.js'))
     .pipe(gulp.dest(config.dist.jsPath));
-})
+});
 
 // All js-related tasks
-gulp.task('js', ['es-lint', 'js-build']);
+gulp.task('js', function() {
+  runSequence('es-lint', 'js-build-bootstrap', 'js-build');
+});
 
 
 //

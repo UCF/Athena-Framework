@@ -1,4 +1,4 @@
-
+import Util from './util'
 
 
 /**
@@ -275,4 +275,4 @@ const Tab = (($) => {
 
 })(jQuery)
 
-
+export default Tab

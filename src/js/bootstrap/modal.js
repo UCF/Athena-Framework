@@ -1,4 +1,4 @@
-
+import Util from './util'
 
 
 /**
@@ -542,4 +542,4 @@ const Modal = (($) => {
 
 })(jQuery)
 
-
+export default Modal

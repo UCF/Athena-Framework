@@ -1,4 +1,4 @@
-
+import Util from './util'
 
 
 /**
@@ -300,4 +300,4 @@ const Dropdown = (($) => {
 
 })(jQuery)
 
-
+export default Dropdown

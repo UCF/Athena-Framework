@@ -1,4 +1,4 @@
-
+import Tooltip from './tooltip'
 
 
 /**
@@ -176,4 +176,4 @@ const Popover = (($) => {
 
 })(jQuery)
 
-
+export default Popover
