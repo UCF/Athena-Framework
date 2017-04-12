@@ -64,8 +64,7 @@ gulp.task('move-components-bootstrap-scss', function() {
     .pipe(gulp.dest(config.src.scssPath + '/bootstrap'));
 });
 
-// Copy Bootstrap js files. Strip all import/export statements (similarly to
-// Bootstrap's grunt js build task)
+// Copy Bootstrap js files
 gulp.task('move-components-bootstrap-js', function() {
   return gulp.src(config.bootstrap.js + '/*.js', {base: config.bootstrap.js})
     .pipe(gulp.dest(config.src.jsPath + '/bootstrap'));
