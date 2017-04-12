@@ -1,13 +1,15 @@
 {
-  "name": "athena-framework",
+  "name": "Athena-Framework",
   "description": "A front-end web framework for UCF websites and applications",
-  "version": "0.1.0",
-  "main": "",
+  "main": [
+    "src/js/framework.js",
+    "src/scss/framework.scss"
+  ],
   "authors": [
     "UCF Web Communications"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/UCF/Athena-Framework",
   "private": true,
   "ignore": [
     "**/.*",
@@ -16,8 +18,8 @@
     "test",
     "tests"
   ],
-  "devDependencies": {
-    "bootstrap": "v4.0.0-alpha.6",
-    "objectFitPolyfill": "^2.0.3"
+  "dependencies": {
+    "jquery": ">=1.9.1",
+    "tether": "^1.4.0"
   }
 }
