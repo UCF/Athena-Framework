@@ -11,3 +11,5 @@
 //
 // Import our assets
 //
+
+// =require media-background.js
