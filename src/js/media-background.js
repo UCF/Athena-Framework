@@ -6,13 +6,13 @@
 (function ($) {
 
   function _assignDataAttrs($bg) {
-    if ($bg.hasClass('.object-fit-contain')) {
+    if ($bg.hasClass('object-fit-contain')) {
       $bg.attr('data-object-fit', 'contain');
-    } else if ($bg.hasClass('.object-fit-fill')) {
+    } else if ($bg.hasClass('object-fit-fill')) {
       $bg.attr('data-object-fit', 'fill');
-    } else if ($bg.hasClass('.object-fit-none')) {
+    } else if ($bg.hasClass('object-fit-none')) {
       $bg.attr('data-object-fit', 'none');
-    } else if ($bg.hasClass('.object-fit-scale-down')) {
+    } else if ($bg.hasClass('object-fit-scale-down')) {
       $bg.attr('data-object-fit', 'scale-down');
     } else {
       // .object-fit-cover/default
@@ -25,17 +25,21 @@
 
   $.fn.mediaBackground = function () {
 
-    // Loop through each media background and assign required data attributes
-    // for the object-fit polyfill plugin.
-    this.each(function () {
-      const $bg = $(this);
-      _assignDataAttrs($bg);
-    });
+    // Only continue if the browser requires the polyfill
+    if ('objectFit' in document.documentElement.style === false) {
 
-    // Re-trigger the object-fit polyfill plugin after all the data attributes
-    // have been assigned.
-    objectFitPolyfill();
+      // Loop through each media background and assign required data attributes
+      // for the object-fit polyfill plugin.
+      this.each(function () {
+        const $bg = $(this);
+        _assignDataAttrs($bg);
+      });
 
+      // Re-trigger the object-fit polyfill plugin after all the data attributes
+      // have been assigned.
+      objectFitPolyfill();
+
+    }
 
     return this;
 
