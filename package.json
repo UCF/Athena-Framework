@@ -1,5 +1,13 @@
 {
-  "private": true,
+  "name": "athena-framework",
+  "version": "0.1.0",
+  "author": {
+    "name": "UCF Web Communications",
+    "email": "webcom@ucf.edu",
+    "url": "https://github.com/UCF"
+  },
+  "description": "A UCF Branded web framework based on Bootstrap.",
+  "private": false,
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-eslint": "^7.2.1",
