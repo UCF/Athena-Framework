@@ -3,8 +3,6 @@
 //
 
 // =require bootstrap/bootstrap.js
-
-
 // =require ./objectFitPolyfill/objectFitPolyfill.js
 
 
