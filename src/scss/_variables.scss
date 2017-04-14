@@ -786,34 +786,51 @@ $zindex-tooltip:            1070;
 
 $navbar-border-radius:              $border-radius;
 $navbar-padding-x:                  $spacer;
-$navbar-padding-y:                  ($spacer / 2);
+$navbar-padding-y:                  0; // modified
 
-$navbar-brand-padding-y:            .25rem;
+$navbar-brand-padding-y:            .75rem; // modified
+$navbar-brand-margin-right:         2rem; // custom
+
+$navbar-link-focus-box-shadow:      $btn-focus-box-shadow; // custom
 
 $navbar-toggler-padding-x:           .75rem;
-$navbar-toggler-padding-y:           .25rem;
+$navbar-toggler-padding-y:           calc(.25rem - #{($btn-border-width - $border-width)}); // modified
 $navbar-toggler-font-size:           $font-size-lg;
 $navbar-toggler-border-radius:       $btn-border-radius;
+$navbar-toggler-margin-y:            .5rem; // custom
+$navbar-toggler-border-width:        $btn-border-width; // custom
 
-$navbar-inverse-color:                 rgba($white, .5);
-$navbar-inverse-hover-color:           rgba($white, .75);
-$navbar-inverse-active-color:          rgba($white, 1);
-$navbar-inverse-disabled-color:        rgba($white, .25);
+$navbar-inverse-color:                     $white; // modified
+$navbar-inverse-hover-color:               $navbar-inverse-color; // modified
+$navbar-inverse-hover-bg-color:            rgba($white, .3); // custom
+$navbar-inverse-active-color:              $navbar-inverse-color; // modified
+$navbar-inverse-disabled-color:            rgba($white, .3); // modified
 $navbar-inverse-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-inverse-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"), "#", "%23");
-$navbar-inverse-toggler-border:        rgba($white, .1);
+$navbar-inverse-toggler-border:            $navbar-inverse-color; // modified
+$navbar-inverse-dropdown-caret-border:     rgba($white, .5); // custom
 
-$navbar-light-color:                rgba($black, .5);
-$navbar-light-hover-color:          rgba($black, .7);
-$navbar-light-active-color:         rgba($black, .9);
-$navbar-light-disabled-color:       rgba($black, .3);
+$navbar-light-color:                     $black; // modified
+$navbar-light-hover-color:               $navbar-light-color; // modified
+$navbar-light-hover-bg-color:            rgba($black, .15); // custom
+$navbar-light-active-color:              $navbar-light-color; // modified
+$navbar-light-disabled-color:            rgba($black, .2); // modified
 $navbar-light-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"), "#", "%23");
-$navbar-light-toggler-border:       rgba($black, .1);
+$navbar-light-toggler-border:            $navbar-light-color; // modified
+$navbar-light-dropdown-caret-border:     rgba($black, .4); // custom
+
+$navbar-nav-link-font-size:         $font-size-sm; // custom
+$navbar-nav-link-line-height:       1.2; // custom
+$navbar-nav-link-padding-x:         1rem; // custom
+$navbar-nav-link-padding-y:         1.15rem; // custom
+
+$navbar-form-inline-padding-y:      $navbar-toggler-margin-y; // custom
+
 
 // Navs
 
 $nav-item-margin:               .2rem;
 $nav-item-inline-spacer:        1rem;
-$nav-link-padding:              .5em 1em;
+$nav-link-padding:              1em; // modified
 $nav-link-hover-bg:             $gray-lighter;
 $nav-disabled-link-color:       $gray-dark; // modified
 

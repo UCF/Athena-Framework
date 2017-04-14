@@ -1,0 +1,201 @@
+//
+// Navbar
+//
+
+.navbar {
+  // Allow padding around forms within navbars to be adjusted
+  .form-inline {
+    padding-bottom: $navbar-form-inline-padding-y;
+    padding-top: $navbar-form-inline-padding-y;
+  }
+}
+
+.navbar-toggleable {
+  // Make things behave the way we expect them to--vertical centering of
+  // supported inner navbar items
+  .navbar-brand,
+  .navbar-text,
+  .navbar-nav .nav-link,
+  .form-inline {
+    align-items: center;
+    display: flex;
+  }
+}
+
+
+//
+// Navbar brand
+//
+
+.navbar-brand {
+  // Apply bolding
+  font-weight: bold;
+  // Allow customization of space between .navbar-brand and other navbar items
+  margin-right: $navbar-brand-margin-right;
+  // Fix where Bootstrap doesn't properly utilize $navbar-brand-padding-y
+  padding-bottom: $navbar-brand-padding-y;
+  padding-top: $navbar-brand-padding-y;
+}
+
+
+//
+// Navbar nav
+//
+
+.navbar-nav {
+  .nav-link {
+    font-size: $navbar-nav-link-font-size;
+    font-weight: bold;
+    height: 100%;
+    letter-spacing: $letter-spacing-base;
+    line-height: $navbar-nav-link-line-height;
+    text-transform: uppercase;
+
+    &:focus,
+    &.focus {
+      box-shadow: $navbar-link-focus-box-shadow;
+      outline: 0;
+    }
+
+    .navbar-toggleable & {
+      padding: $navbar-nav-link-padding-y $navbar-nav-link-padding-x;
+    }
+  }
+}
+
+
+//
+// Responsive navbar
+//
+
+// Button for toggling the navbar when in its collapsed state
+.navbar-toggler {
+  border-width: $navbar-toggler-border-width;
+  margin-bottom: $navbar-toggler-margin-y;
+  margin-top: $navbar-toggler-margin-y;
+}
+
+
+//
+// Navbar themes
+//
+
+.navbar-light,
+.navbar-inverse {
+  .navbar-nav {
+    .nav-link.disabled {
+      &:hover,
+      &:focus {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+// Dark links against a light background
+.navbar-light {
+  // Primary color-specific overrides
+  &.bg-primary {
+    .navbar-nav {
+      .nav-link {
+        @include hover-focus {
+          color: $white;
+
+          &.dropdown-toggle::after {
+            border-top-color: $navbar-inverse-dropdown-caret-border;
+          }
+        }
+      }
+
+      .show > .nav-link,
+      .open > .nav-link,
+      .active > .nav-link,
+      .nav-link.open,
+      .nav-link:hover,
+      .nav-link.active,
+      .nav-link:active {
+        color: $white;
+      }
+
+      .show > .nav-link.dropdown-toggle::after {
+        border-top-color: $white;
+      }
+    }
+  }
+
+  // Base light navbar styles
+  .navbar-nav {
+    .dropdown-toggle::after {
+      border-top-color: $navbar-light-dropdown-caret-border;
+    }
+
+    .nav-link {
+      @include hover-focus {
+        background-color: $navbar-light-hover-bg-color;
+      }
+    }
+
+    .show > .nav-link,
+    .open > .nav-link,
+    .active > .nav-link,
+    .nav-link.open,
+    .nav-link:hover,
+    .nav-link.active,
+    .nav-link:active {
+      background-color: $navbar-light-hover-bg-color;
+    }
+
+    .show > .nav-link.dropdown-toggle::after {
+      border-top-color: $navbar-light-hover-color;
+    }
+  }
+
+  .navbar-toggler {
+    &:not(.collapsed) {
+      background-color: $navbar-light-toggler-border;
+
+      .navbar-toggler-icon {
+        background-image: $navbar-inverse-toggler-bg; // intentionally using -inverse variable here
+      }
+    }
+  }
+}
+
+// White links against a dark background
+.navbar-inverse {
+  .navbar-nav {
+    .dropdown-toggle::after {
+      border-top-color: $navbar-inverse-dropdown-caret-border;
+    }
+
+    .nav-link {
+      @include hover-focus {
+        background-color: $navbar-inverse-hover-bg-color;
+      }
+    }
+
+    .show > .nav-link,
+    .open > .nav-link,
+    .active > .nav-link,
+    .nav-link.open,
+    .nav-link:hover,
+    .nav-link.active,
+    .nav-link:active {
+      background-color: $navbar-inverse-hover-bg-color;
+    }
+
+    .dropdown.show .dropdown-toggle::after {
+      border-top-color: $navbar-inverse-hover-color;
+    }
+  }
+
+  .navbar-toggler {
+    &:not(.collapsed) {
+      background-color: $navbar-inverse-toggler-border;
+
+      .navbar-toggler-icon {
+        background-image: $navbar-light-toggler-bg; // intentionally using -light variable here
+      }
+    }
+  }
+}
