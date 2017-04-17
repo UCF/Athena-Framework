@@ -11,7 +11,7 @@
   </head>
   <body>
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-      <button class="navbar-toggle navbar-toggler-right" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <a class="navbar-brand" href="./">Athena Project</a>
@@ -19,7 +19,13 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item"><a class="nav-link" href="./examples/content.html">Content</a></li>
           <li class="nav-item"><a class="nav-link" href="./examples/components.html">Components</a></li>
-          <li class="nav-item"><a class="nav-link" href="./examples/utilities.html">Utilities</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="./examples/utilities.html" id="nav-utilities-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Utilities</a>
+            <div class="dropdown-menu" aria-labelledby="nav-utilities-link">
+              <a class="dropdown-item" href="./examples/utilities.html">Base Utilities</a>
+              <a class="dropdown-item" href="./examples/media-backgrounds.html">Media Backgrounds</a>
+            </div>
+          </li>
         </ul>
       </div>
     </nav>
