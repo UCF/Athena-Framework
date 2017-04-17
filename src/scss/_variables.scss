@@ -788,7 +788,7 @@ $navbar-border-radius:              $border-radius;
 $navbar-padding-x:                  $spacer;
 $navbar-padding-y:                  0; // modified
 
-$navbar-brand-padding-y:            .75rem; // modified
+$navbar-brand-padding-y:            1rem; // modified
 $navbar-brand-margin-right:         2rem; // custom
 
 $navbar-link-focus-box-shadow:      $btn-focus-box-shadow; // custom
@@ -797,8 +797,10 @@ $navbar-toggler-padding-x:           .75rem;
 $navbar-toggler-padding-y:           calc(.25rem - #{($btn-border-width - $border-width)}); // modified
 $navbar-toggler-font-size:           $font-size-lg;
 $navbar-toggler-border-radius:       $btn-border-radius;
-$navbar-toggler-margin-y:            .5rem; // custom
 $navbar-toggler-border-width:        $btn-border-width; // custom
+$navbar-toggler-margin-y:            calc(.825rem - #{$navbar-toggler-border-width}); // custom
+$navbar-toggler-icon-height:         2rem; // custom
+$navbar-toggler-icon-width:          2rem; // custom
 
 $navbar-inverse-color:                     $white; // modified
 $navbar-inverse-hover-color:               $navbar-inverse-color; // modified
@@ -818,10 +820,10 @@ $navbar-light-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csv
 $navbar-light-toggler-border:            $navbar-light-color; // modified
 $navbar-light-dropdown-caret-border:     rgba($black, .4); // custom
 
-$navbar-nav-link-font-size:         $font-size-sm; // custom
+$navbar-nav-link-font-size:         $font-size-xs; // custom
 $navbar-nav-link-line-height:       1.2; // custom
-$navbar-nav-link-padding-x:         1rem; // custom
-$navbar-nav-link-padding-y:         1.15rem; // custom
+$navbar-nav-link-padding-x:         .8rem; // custom
+$navbar-nav-link-padding-y:         1.5rem; // custom
 
 $navbar-form-inline-padding-y:      $navbar-toggler-margin-y; // custom
 
