@@ -820,10 +820,12 @@ $navbar-light-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csv
 $navbar-light-toggler-border:            $navbar-light-color; // modified
 $navbar-light-dropdown-caret-border:     rgba($black, .4); // custom
 
-$navbar-nav-link-font-size:         $font-size-xs; // custom
-$navbar-nav-link-line-height:       1.2; // custom
-$navbar-nav-link-padding-x:         .8rem; // custom
-$navbar-nav-link-padding-y:         1.5rem; // custom
+$navbar-nav-link-font-size:           $font-size-xs; // custom
+$navbar-nav-link-line-height:         1.2; // custom
+$navbar-nav-link-padding-x:           .8rem; // custom
+$navbar-nav-link-padding-y:           1.5rem; // custom
+$navbar-collapsed-nav-link-padding-x: ($grid-gutter-width-base / 2); // custom
+$navbar-collapsed-nav-link-padding-y: 1rem; // custom
 
 $navbar-form-inline-padding-y:      $navbar-toggler-margin-y; // custom
 

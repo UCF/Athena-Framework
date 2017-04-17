@@ -118,14 +118,45 @@
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
     &#{$infix} {
-      @include media-breakpoint-up($next) {
-        .navbar-nav .nav-link {
+      .navbar-nav .nav-link {
+        @include media-breakpoint-down($breakpoint) {
+          // Allow customizable padding specific to collapsed navbar
+          padding: $navbar-collapsed-nav-link-padding-y $navbar-collapsed-nav-link-padding-x;
+        }
+
+        @include media-breakpoint-up($next) {
           // Force nav link hover states to always consume 100% of the navbar height,
           // but only when the navbar is not collapsed
           height: 100%;
-          // Override fixed left/right padding values set by Bootstrap
-          padding-left: $navbar-nav-link-padding-x;
-          padding-right: $navbar-nav-link-padding-x;
+          // Override fixed left/right padding values set by Bootstrap.  Reset overridden
+          // vertical padding values set above.
+          padding: $navbar-nav-link-padding-y $navbar-nav-link-padding-x;
+        }
+      }
+
+      > .container .navbar-brand {
+        @include media-breakpoint-down($breakpoint) {
+          // Fixed left padding needs to be added here to match up with
+          // grid gutters
+          padding-left: ($grid-gutter-width-base / 2);
+        }
+
+        @include media-breakpoint-down(nth(map-keys($grid-breakpoints), 1)) {
+          // Unset above override at -xs
+          padding-left: 0;
+        }
+      }
+
+      .navbar-collapse {
+        &.collapse.show,
+        &.collapsing {
+          @include media-breakpoint-down($breakpoint) {
+            border-top: 1px solid;
+          }
+
+          @include media-breakpoint-up($next) {
+            border-top: 0 solid transparent;
+          }
         }
       }
     }
