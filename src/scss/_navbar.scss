@@ -54,13 +54,20 @@
 //
 
 .navbar-brand {
-  // Apply bolding
+  // Allow customization of brand font size
+  font-size: $navbar-brand-font-size;
   font-weight: bold;
+  line-height: 1.2;
   // Allow customization of space between .navbar-brand and other navbar items
   margin-right: $navbar-brand-margin-right;
   // Fix where Bootstrap doesn't properly utilize $navbar-brand-padding-y
   padding-bottom: $navbar-brand-padding-y;
   padding-top: $navbar-brand-padding-y;
+
+  @include media-breakpoint-up(sm) {
+    font-size: $navbar-brand-font-size-sm;
+    margin-right: $navbar-brand-margin-right-sm;
+  }
 }
 
 

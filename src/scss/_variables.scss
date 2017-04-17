@@ -789,7 +789,10 @@ $navbar-padding-x:                  $spacer;
 $navbar-padding-y:                  0; // modified
 
 $navbar-brand-padding-y:            1rem; // modified
-$navbar-brand-margin-right:         2rem; // custom
+$navbar-brand-margin-right:         1rem; // custom
+$navbar-brand-margin-right-sm:      2rem; // custom
+$navbar-brand-font-size:            1rem; // custom
+$navbar-brand-font-size-sm:         $font-size-lg; // custom
 
 $navbar-link-focus-box-shadow:      $btn-focus-box-shadow; // custom
 
