@@ -2,7 +2,7 @@
 <html lang="en-us">
 
 <head>
-  <title>Media Backgrounds - Athena Project</title>
+  <title>Media Backgrounds - Athena Framework</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -11,29 +11,31 @@
   <link rel="stylesheet" href="../dist/css/framework.min.css">
 </head>
 
-<body>
-  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="../">Athena Project</a>
-    <div class="collapse navbar-collapse" id="main-nav">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item"><a class="nav-link" href="./content.html">Content</a></li>
-        <li class="nav-item"><a class="nav-link" href="./components.html">Components</a></li>
-        <li class="nav-item dropdown active">
-          <a class="nav-link dropdown-toggle" href="./utilities.html" id="nav-utilities-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Utilities</a>
-          <div class="dropdown-menu" aria-labelledby="nav-utilities-link">
-            <a class="dropdown-item" href="./utilities.html">Base Utilities</a>
-            <a class="dropdown-item" href="./media-backgrounds.html">Media Backgrounds</a>
-          </div>
-        </li>
-      </ul>
+<body class="py-5">
+  <nav class="navbar fixed-top navbar-toggleable-md navbar-light bg-primary">
+    <div class="container">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="../">Athena Framework</a>
+      <div class="collapse navbar-collapse" id="main-nav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="./content.html">Content</a></li>
+          <li class="nav-item"><a class="nav-link" href="./components.html">Components</a></li>
+          <li class="nav-item dropdown active">
+            <a class="nav-link dropdown-toggle" href="./utilities.html" id="nav-utilities-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Utilities</a>
+            <div class="dropdown-menu" aria-labelledby="nav-utilities-link">
+              <a class="dropdown-item" href="./utilities.html">Base Utilities</a>
+              <a class="dropdown-item" href="./media-backgrounds.html">Media Backgrounds</a>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 
-  <div class="jumbotron jumbotron-fluid media-background-container">
+  <div class="jumbotron jumbotron-fluid media-background-container mt-4">
     <img class="media-background object-fit-cover" src="https://placehold.it/1000x720/" srcset="https://placehold.it/1920x1080/ 1800w, https://placehold.it/1000x720/ 1000w, https://placehold.it/500x300/ 500w" alt="">
     <div class="container">
       <h1>Media Backgrounds <small>(using objectFitPolyfill.js for IE/Edge)</small></h1>
