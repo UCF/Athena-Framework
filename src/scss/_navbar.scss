@@ -5,6 +5,7 @@
 .navbar {
   // TODO remove this after upgrading Bootstrap to v4 beta
   // Improvements from v4 alpha for navbar content alignment
+  align-items: center;
   flex-direction: unset;
   flex-wrap: wrap; // allow us to do the line break for collapsing content
   justify-content: space-between; // space out brand from logo
@@ -27,25 +28,21 @@
     }
   }
 
+  // Make things behave the way we expect them to--vertical centering of
+  // supported inner navbar items
+  .navbar-brand,
+  .navbar-text,
+  .navbar-nav .nav-link,
+  .form-inline {
+    align-items: center;
+    display: flex;
+  }
+
   // Allow padding around forms within navbars to be adjusted
   .form-inline {
     padding-bottom: $navbar-form-inline-padding-y;
     padding-top: $navbar-form-inline-padding-y;
   }
-}
-
-
-//
-// Make things behave the way we expect them to--vertical centering of
-// supported inner navbar items
-//
-
-.navbar-brand,
-.navbar-text,
-.navbar-nav .nav-link,
-.navbar .form-inline {
-  align-items: center;
-  display: flex;
 }
 
 
@@ -146,8 +143,12 @@
       // TODO remove after upgrading to BS4 beta
       @include media-breakpoint-up($next) {
         align-items: unset;
+        flex-wrap: nowrap;
         justify-content: flex-start;
       }
+
+      // scss-lint:disable SelectorDepth NestingDepth
+      // Nesting required to match Bootstrap selectors
 
       .navbar-nav {
         // TODO remove after upgrading to BS4 beta
@@ -183,9 +184,9 @@
         }
 
         @include media-breakpoint-up($next) {
+          align-items: center;
           display: flex;
           flex-wrap: nowrap;
-          align-items: center;
         }
 
         .navbar-brand {
@@ -200,9 +201,24 @@
             padding-left: 0;
           }
         }
+
+        .navbar-toggler {
+          @include media-breakpoint-down($breakpoint) {
+            // Fixed left padding needs to be added here to match up with
+            // grid gutters
+            margin-right: ($grid-gutter-width-base / 2);
+          }
+
+          @include media-breakpoint-down(nth(map-keys($grid-breakpoints), 1)) {
+            // Unset above override at -xs
+            margin-right: 0;
+          }
+        }
       }
 
       .navbar-collapse {
+        width: auto;
+
         &.collapse.show,
         &.collapsing {
           @include media-breakpoint-down($breakpoint) {
@@ -214,6 +230,8 @@
           }
         }
       }
+
+      // scss-lint:enable SelectorDepth NestingDepth
     }
   }
 }
@@ -225,6 +243,7 @@
 
 .navbar-light,
 .navbar-inverse {
+  // scss-lint:disable SelectorDepth NestingDepth
   .navbar-nav {
     .nav-link.disabled {
       &:hover,
@@ -233,11 +252,13 @@
       }
     }
   }
+  // scss-lint:enable SelectorDepth NestingDepth
 }
 
 // Dark links against a light background
 .navbar-light {
   // Primary color-specific overrides
+  // scss-lint:disable SelectorDepth NestingDepth
   &.bg-primary {
     .navbar-nav {
       .nav-link {
@@ -265,6 +286,7 @@
       }
     }
   }
+  // scss-lint:enable SelectorDepth NestingDepth
 
   // Base light navbar styles
   .navbar-brand {
@@ -286,6 +308,7 @@
       }
     }
 
+    // scss-lint:disable SelectorDepth NestingDepth
     .show > .nav-link,
     .open > .nav-link,
     .active > .nav-link,
@@ -299,12 +322,14 @@
     .show > .nav-link.dropdown-toggle::after {
       border-top-color: $navbar-light-hover-color;
     }
+    // scss-lint:enable SelectorDepth NestingDepth
   }
 
   .navbar-toggler {
     &:not(.collapsed) {
       background-color: $navbar-light-toggler-border;
 
+      // scss-lint:disable SelectorDepth NestingDepth
       .navbar-toggler-text {
         color: $navbar-inverse-hover-color; // intentionally using -inverse variable here
       }
@@ -312,6 +337,7 @@
       .navbar-toggler-icon {
         background-image: $navbar-inverse-toggler-bg; // intentionally using -inverse variable here
       }
+      // scss-lint:enable SelectorDepth NestingDepth
     }
   }
 }
@@ -337,6 +363,7 @@
       }
     }
 
+    // scss-lint:disable SelectorDepth NestingDepth
     .show > .nav-link,
     .open > .nav-link,
     .active > .nav-link,
@@ -350,12 +377,14 @@
     .dropdown.show .dropdown-toggle::after {
       border-top-color: $navbar-inverse-hover-color;
     }
+    // scss-lint:enable SelectorDepth NestingDepth
   }
 
   .navbar-toggler {
     &:not(.collapsed) {
       background-color: $navbar-inverse-toggler-border;
 
+      // scss-lint:disable SelectorDepth NestingDepth
       .navbar-toggler-text {
         color: $navbar-light-hover-color; // intentionally using -light variable here
       }
@@ -363,6 +392,7 @@
       .navbar-toggler-icon {
         background-image: $navbar-light-toggler-bg; // intentionally using -light variable here
       }
+      // scss-lint:enable SelectorDepth NestingDepth
     }
   }
 }
