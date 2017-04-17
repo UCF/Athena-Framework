@@ -3,6 +3,34 @@
 //
 
 .navbar {
+  > .container {
+    // TODO remove this after upgrading Bootstrap to v4 beta
+    // Bugfix from BS4 alpha-6 that causes inner navbar contents within
+    // .container's to not span the full width of the navbar
+    @include media-breakpoint-down(nth(map-keys($grid-breakpoints), 1)) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    // TODO remove this after upgrading Bootstrap to v4 beta
+    // Bugfix from Bootstrap alpha that results in extra space between
+    // .navbar-toggler and a surrounding .container in a navbar
+    .navbar-toggler-left {
+      @include media-breakpoint-down(nth(map-keys($grid-breakpoints), 1)) {
+        left: 0;
+      }
+    }
+
+    // TODO remove this after upgrading Bootstrap to v4 beta
+    // Bugfix from Bootstrap alpha that results in extra space between
+    // .navbar-toggler and a surrounding .container in a navbar
+    .navbar-toggler-right {
+      @include media-breakpoint-down(nth(map-keys($grid-breakpoints), 1)) {
+        right: 0;
+      }
+    }
+  }
+
   // Allow padding around forms within navbars to be adjusted
   .form-inline {
     padding-bottom: $navbar-form-inline-padding-y;
@@ -48,7 +76,6 @@
   .nav-link {
     font-size: $navbar-nav-link-font-size;
     font-weight: bold;
-    height: 100%;
     letter-spacing: $letter-spacing-base;
     line-height: $navbar-nav-link-line-height;
     padding: $navbar-nav-link-padding-y $navbar-nav-link-padding-x;
@@ -93,6 +120,9 @@
     &#{$infix} {
       @include media-breakpoint-up($next) {
         .navbar-nav .nav-link {
+          // Force nav link hover states to always consume 100% of the navbar height,
+          // but only when the navbar is not collapsed
+          height: 100%;
           // Override fixed left/right padding values set by Bootstrap
           padding-left: $navbar-nav-link-padding-x;
           padding-right: $navbar-nav-link-padding-x;
