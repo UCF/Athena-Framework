@@ -810,6 +810,7 @@ $navbar-inverse-disabled-color:            rgba($white, .3); // modified
 $navbar-inverse-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-inverse-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"), "#", "%23");
 $navbar-inverse-toggler-border:            $navbar-inverse-color; // modified
 $navbar-inverse-dropdown-caret-border:     rgba($white, .5); // custom
+$navbar-inverse-brand-hover-color:         rgba($white, .8); // custom
 
 $navbar-light-color:                     $black; // modified
 $navbar-light-hover-color:               $navbar-light-color; // modified
@@ -819,6 +820,7 @@ $navbar-light-disabled-color:            rgba($black, .2); // modified
 $navbar-light-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"), "#", "%23");
 $navbar-light-toggler-border:            $navbar-light-color; // modified
 $navbar-light-dropdown-caret-border:     rgba($black, .4); // custom
+$navbar-light-brand-hover-color:         rgba($black, .6); // custom
 
 $navbar-nav-link-font-size:           $font-size-xs; // custom
 $navbar-nav-link-line-height:         1.2; // custom

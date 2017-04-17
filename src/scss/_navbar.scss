@@ -74,6 +74,9 @@
 
 .navbar-nav {
   .nav-link {
+    // Mimic .btn hover transitions
+    @include transition($btn-transition);
+
     font-size: $navbar-nav-link-font-size;
     font-weight: bold;
     letter-spacing: $letter-spacing-base;
@@ -212,6 +215,14 @@
   }
 
   // Base light navbar styles
+  .navbar-brand {
+    // Allow brand hover state color to be modified separately from
+    // other link colors
+    @include hover-focus {
+      color: $navbar-light-brand-hover-color;
+    }
+  }
+
   .navbar-nav {
     .dropdown-toggle::after {
       border-top-color: $navbar-light-dropdown-caret-border;
@@ -251,6 +262,14 @@
 
 // White links against a dark background
 .navbar-inverse {
+  .navbar-brand {
+    // Allow brand hover state color to be modified separately from
+    // other link colors
+    @include hover-focus {
+      color: $navbar-inverse-brand-hover-color;
+    }
+  }
+
   .navbar-nav {
     .dropdown-toggle::after {
       border-top-color: $navbar-inverse-dropdown-caret-border;
