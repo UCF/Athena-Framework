@@ -70,8 +70,14 @@ gulp.task('move-components-bootstrap-js', function() {
     .pipe(gulp.dest(config.src.jsPath + '/bootstrap'));
 });
 
+// Copy objectFitPolyfill js
+gulp.task('move-components-objectfit', function() {
+  return gulp.src(config.packagesPath + '/objectFitPolyfill/src/objectFitPolyfill.js', {base: config.packagesPath + '/objectFitPolyfill/src'})
+    .pipe(gulp.dest(config.src.jsPath + '/objectFitPolyfill'));
+});
+
 // Run all component-related tasks
-gulp.task('components', ['move-components-fonts', 'move-components-bootstrap-scss', 'move-components-bootstrap-js']);
+gulp.task('components', ['move-components-fonts', 'move-components-bootstrap-scss', 'move-components-bootstrap-js', 'move-components-objectfit']);
 
 
 //
