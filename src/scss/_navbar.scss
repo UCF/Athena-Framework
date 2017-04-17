@@ -3,31 +3,27 @@
 //
 
 .navbar {
-  > .container {
+  // TODO remove this after upgrading Bootstrap to v4 beta
+  // Improvements from v4 alpha for navbar content alignment
+  flex-direction: unset;
+  flex-wrap: wrap; // allow us to do the line break for collapsing content
+  justify-content: space-between; // space out brand from logo
+
+  // TODO remove this after upgrading Bootstrap to v4 beta
+  > .container,
+  > .container-fluid {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
     // TODO remove this after upgrading Bootstrap to v4 beta
     // Bugfix from BS4 alpha-6 that causes inner navbar contents within
     // .container's to not span the full width of the navbar
     @include media-breakpoint-down(nth(map-keys($grid-breakpoints), 1)) {
       margin-left: 0;
       margin-right: 0;
-    }
-
-    // TODO remove this after upgrading Bootstrap to v4 beta
-    // Bugfix from Bootstrap alpha that results in extra space between
-    // .navbar-toggler and a surrounding .container in a navbar
-    .navbar-toggler-left {
-      @include media-breakpoint-down(nth(map-keys($grid-breakpoints), 1)) {
-        left: 0;
-      }
-    }
-
-    // TODO remove this after upgrading Bootstrap to v4 beta
-    // Bugfix from Bootstrap alpha that results in extra space between
-    // .navbar-toggler and a surrounding .container in a navbar
-    .navbar-toggler-right {
-      @include media-breakpoint-down(nth(map-keys($grid-breakpoints), 1)) {
-        right: 0;
-      }
+      width: 100%;
     }
   }
 
@@ -97,8 +93,16 @@
 // Responsive navbar
 //
 
+// When collapsed, prevent the toggleable navbar contents from appearing in
+// the default flexbox row orienation. Requires the use of `flex-wrap: wrap`
+// on the `.navbar` parent.
+.navbar-collapse {
+  flex-basis: 100%;
+}
+
 // Button for toggling the navbar when in its collapsed state
 .navbar-toggler {
+  align-self: unset; // TODO remove after upgrading to BS4 beta
   border-width: $navbar-toggler-border-width;
   margin-bottom: $navbar-toggler-margin-y;
   margin-top: $navbar-toggler-margin-y;
@@ -108,13 +112,14 @@
 .navbar-toggler-text {
   display: inline-block;
   font-size: $navbar-toggler-text-font-size;
+  font-weight: bold;
   text-transform: uppercase;
   vertical-align: middle;
 }
 
 // Hamburger icon within toggle button
 .navbar-toggler-icon {
-  // Allow toggler icon dimensions to be configurable (Bootstrap assignes fixed
+  // Allow toggler icon dimensions to be configurable (Bootstrap assigns fixed
   // em values here)
   height: $navbar-toggler-icon-height;
   width: $navbar-toggler-icon-width;
@@ -123,38 +128,70 @@
 
 // Generate series of `.navbar-toggleable-*` responsive classes for configuring
 // where your navbar collapses.
+//
+// TODO rename to .navbar-expand after upgrading to BS4 beta
 .navbar-toggleable {
   @each $breakpoint in map-keys($grid-breakpoints) {
     $next: breakpoint-next($breakpoint, $grid-breakpoints);
-    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints); // TODO update $breakpoint to $next on this line after upgrading to BS4 beta
 
     &#{$infix} {
-      .navbar-nav .nav-link {
-        @include media-breakpoint-down($breakpoint) {
-          // Allow customizable padding specific to collapsed navbar
-          padding: $navbar-collapsed-nav-link-padding-y $navbar-collapsed-nav-link-padding-x;
+      // TODO remove after upgrading to BS4 beta
+      @include media-breakpoint-up($next) {
+        align-items: unset;
+        justify-content: flex-start;
+      }
+
+      .navbar-nav {
+        // TODO remove after upgrading to BS4 beta
+        .dropdown-menu {
+          @include media-breakpoint-up($next) {
+            position: absolute;
+          }
         }
 
-        @include media-breakpoint-up($next) {
-          // Force nav link hover states to always consume 100% of the navbar height,
-          // but only when the navbar is not collapsed
-          height: 100%;
-          // Override fixed left/right padding values set by Bootstrap.  Reset overridden
-          // vertical padding values set above.
-          padding: $navbar-nav-link-padding-y $navbar-nav-link-padding-x;
+        .nav-link {
+          @include media-breakpoint-down($breakpoint) {
+            // Allow customizable padding specific to collapsed navbar
+            padding: $navbar-collapsed-nav-link-padding-y $navbar-collapsed-nav-link-padding-x;
+          }
+
+          @include media-breakpoint-up($next) {
+            // Force nav link hover states to always consume 100% of the navbar height,
+            // but only when the navbar is not collapsed
+            height: 100%;
+            // Override fixed left/right padding values set by Bootstrap.  Reset overridden
+            // vertical padding values set above.
+            padding: $navbar-nav-link-padding-y $navbar-nav-link-padding-x;
+          }
         }
       }
 
-      > .container .navbar-brand {
+      // TODO remove after upgrading to BS4 beta
+      > .container,
+      > .container-fluid {
         @include media-breakpoint-down($breakpoint) {
-          // Fixed left padding needs to be added here to match up with
-          // grid gutters
-          padding-left: ($grid-gutter-width-base / 2);
+          padding-left: 0;
+          padding-right: 0;
         }
 
-        @include media-breakpoint-down(nth(map-keys($grid-breakpoints), 1)) {
-          // Unset above override at -xs
-          padding-left: 0;
+        @include media-breakpoint-up($next) {
+          display: flex;
+          flex-wrap: nowrap;
+          align-items: center;
+        }
+
+        .navbar-brand {
+          @include media-breakpoint-down($breakpoint) {
+            // Fixed left padding needs to be added here to match up with
+            // grid gutters
+            padding-left: ($grid-gutter-width-base / 2);
+          }
+
+          @include media-breakpoint-down(nth(map-keys($grid-breakpoints), 1)) {
+            // Unset above override at -xs
+            padding-left: 0;
+          }
         }
       }
 
