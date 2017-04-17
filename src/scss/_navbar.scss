@@ -104,7 +104,15 @@
   margin-top: $navbar-toggler-margin-y;
 }
 
+// Custom class for descriptive text within .navbar-toggler
+.navbar-toggler-text {
+  display: inline-block;
+  font-size: $navbar-toggler-text-font-size;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
 
+// Hamburger icon within toggle button
 .navbar-toggler-icon {
   // Allow toggler icon dimensions to be configurable (Bootstrap assignes fixed
   // em values here)
@@ -253,6 +261,10 @@
     &:not(.collapsed) {
       background-color: $navbar-light-toggler-border;
 
+      .navbar-toggler-text {
+        color: $navbar-inverse-hover-color; // intentionally using -inverse variable here
+      }
+
       .navbar-toggler-icon {
         background-image: $navbar-inverse-toggler-bg; // intentionally using -inverse variable here
       }
@@ -299,6 +311,10 @@
   .navbar-toggler {
     &:not(.collapsed) {
       background-color: $navbar-inverse-toggler-border;
+
+      .navbar-toggler-text {
+        color: $navbar-light-hover-color; // intentionally using -light variable here
+      }
 
       .navbar-toggler-icon {
         background-image: $navbar-light-toggler-bg; // intentionally using -light variable here
