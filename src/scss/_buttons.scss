@@ -30,6 +30,47 @@
 
 
 //
+// Custom inverted outline button variants (for use against dark backgrounds)
+//
+// NOTE: -secondary and -inverse variants are intentionally not added, as they
+// would be redundant with our current color scheme
+//
+
+.btn-outline-i-primary {
+  @include button-outline-variant($btn-primary-bg);
+}
+
+.btn-outline-i-complementary {
+  @include button-outline-variant($btn-complementary-bg);
+}
+
+.btn-outline-i-success {
+  @include button-outline-variant($btn-success-bg);
+}
+
+.btn-outline-i-info {
+  @include button-outline-variant($btn-info-bg);
+}
+
+.btn-outline-i-warning {
+  @include button-outline-variant($btn-warning-bg);
+}
+
+.btn-outline-i-danger {
+  @include button-outline-variant($btn-danger-bg);
+}
+
+.btn-outline-i-primary,
+.btn-outline-i-complementary,
+.btn-outline-i-success,
+.btn-outline-i-info,
+.btn-outline-i-warning,
+.btn-outline-i-danger {
+  color: $brand-inverse;
+}
+
+
+//
 // Alternate button overrides
 //
 
@@ -37,7 +78,10 @@
   // Apply text (instead of gold) on online-primary variant.  Allow
   // text color utility class overrides.
   color: $black;
+}
 
+.btn-outline-primary,
+.btn-outline-i-primary {
   &:hover,
   &:focus,
   &.focus,
@@ -154,7 +198,6 @@
 
 //
 // Button sizes
-// (Division by 1rem allows sass arithmetic to return the correct units)
 //
 
 .btn-lg {
