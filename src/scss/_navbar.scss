@@ -118,6 +118,10 @@
   font-weight: bold;
   text-transform: uppercase;
   vertical-align: middle;
+
+  &:hover {
+    cursor: default;
+  }
 }
 
 // Hamburger icon within toggle button
