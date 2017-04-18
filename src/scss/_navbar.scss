@@ -139,10 +139,12 @@
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints); // TODO update $breakpoint to $next on this line after upgrading to BS4 beta
 
     &#{$infix} {
-      // Prevent navbar content from being inaccessible when it exceeds the height of the viewport
+      // Prevent navbar content from being inaccessible when it exceeds the
+      // height of the viewport
+      // NOTE: DO NOT add -webkit-overflow-scrolling: touch here--it will
+      // cause scrolling to break in iOS, likely due to z-index weirdness.
       @include media-breakpoint-down($breakpoint) {
         max-height: 100vh;
-        -webkit-overflow-scrolling: touch;
         -ms-overflow-style: none;
         overflow-y: scroll;
       }
