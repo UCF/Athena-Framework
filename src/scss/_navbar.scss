@@ -143,6 +143,7 @@
       @include media-breakpoint-down($breakpoint) {
         max-height: 100vh;
         -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: none;
         overflow-y: scroll;
       }
 
