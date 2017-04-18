@@ -2963,7 +2963,7 @@
 
     <h2>Navbars</h2>
     <p>
-      NOTE: Navbars have been modified in Athena with updates that are not currently available in the Bootstrap alpha-6.  Notably, <code>.navbar-toggler</code> is not positioned via <code>-left/right</code> classes in Athena; the toggler button is aligned by markup order.  So, to have a left-aligned toggler button, add it to your navbar before <code>.navbar-brand</code>; for a right-aligned button, add it after.
+      NOTE: Navbars have been modified in Athena with updates that are not currently available in the Bootstrap alpha-6.  Notably, <code>.navbar-toggler</code> is not positioned via <code>-left/right</code> classes in Athena; the toggler button is aligned by markup order.  Athena currently supports right-aligned toggler buttons: if they are added after a <code>.navbar-brand</code> (or other supported nested components), it will be positioned correctly without any additional markup; if the toggler button is the only child besides the collapsed content, you will need to add the <code>.ml-auto</code> class to push it to the right.  Left-aligned toggler buttons are not currently supported in Athena.
     </p>
 
     <h3 class="mt-4 mb-3">Container Options</h3>
@@ -3162,6 +3162,43 @@
               Dropdown link
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <h4 class="mt-4 mb-3">Just Navs (and toggle; no brand)</h4>
+
+  </div>
+
+  <nav class="navbar navbar-toggleable-sm navbar-light bg-faded mb-3">
+    <div class="container">
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#justNavsDropdown" aria-controls="justNavsDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="justNavsDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="justNavsDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown link
+            </a>
+            <div class="dropdown-menu" aria-labelledby="justNavsDropdownMenuLink">
               <a class="dropdown-item" href="#">Action</a>
               <a class="dropdown-item" href="#">Another action</a>
               <a class="dropdown-item" href="#">Something else here</a>
@@ -3446,27 +3483,81 @@
     </div>
   </nav>
 
+  <nav class="navbar navbar-toggleable-lg navbar-light bg-faded mb-3">
+    <div class="container">
+      <a class="navbar-brand" href="#">Navbar - with link toggler</a>
+      <a class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </a>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="navbar navbar-toggleable-lg navbar-light bg-faded mb-3">
+    <div class="container">
+      <a class="navbar-brand" href="#">Navbar - with link toggler and text</a>
+      <a class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbarTogglerDemo04" aria-controls="navbarTogglerDemo04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-text">Menu</span>
+        <span class="navbar-toggler-icon"></span>
+      </a>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo04">
+        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
   <div class="container">
 
     <h3 class="mt-4 mb-3">External Content</h3>
 
   </div>
 
-  <div class="pos-f-t">
-    <div class="collapse" id="navbarToggleExternalContent">
-      <div class="bg-inverse p-4">
-        <h4 class="text-white">Collapsed content</h4>
-        <span class="text-muted">Toggleable via the navbar brand.</span>
-      </div>
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-inverse p-4">
+      <h4 class="text-white">Collapsed content</h4>
+      <span class="text-muted">Toggleable via the navbar brand.</span>
     </div>
-    <nav class="navbar navbar-toggleable navbar-inverse bg-inverse">
-      <div class="container">
-        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-    </nav>
   </div>
+  <nav class="navbar navbar-toggleable-xs navbar-inverse bg-inverse">
+    <div class="container">
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-text">Menu</span>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
 
   <div class="container">
 
