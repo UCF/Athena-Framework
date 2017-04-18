@@ -233,6 +233,10 @@
       .navbar-collapse {
         width: auto;
 
+        @include media-breakpoint-up($next) {
+          flex: 1 1 auto;
+        }
+
         &.collapse.show,
         &.collapsing {
           @include media-breakpoint-down($breakpoint) {
