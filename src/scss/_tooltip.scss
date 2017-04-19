@@ -6,3 +6,7 @@
     font-size: $tooltip-font-size-sm;
   }
 }
+
+.tooltip-inner {
+  border-radius: $tooltip-border-radius;
+}
