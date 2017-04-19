@@ -944,9 +944,11 @@ $tooltip-max-width:           200px;
 $tooltip-color:               $white;
 $tooltip-bg:                  $black;
 $tooltip-opacity:             .9;
-$tooltip-padding-y:           3px;
-$tooltip-padding-x:           8px;
+$tooltip-padding-y:           5px;
+$tooltip-padding-x:           12px;
 $tooltip-margin:              3px;
+$tooltip-font-size:           $font-size-xs; // custom
+$tooltip-font-size-sm:        $font-size-sm; // custom
 
 $tooltip-arrow-width:         5px;
 $tooltip-arrow-color:         $tooltip-bg;
