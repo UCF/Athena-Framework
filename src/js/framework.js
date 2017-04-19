@@ -4,6 +4,7 @@
 
 // =require bootstrap/bootstrap.js
 // =require ./objectFitPolyfill/objectFitPolyfill.js
+// =require ./Stickyfill/stickyfill.js
 
 
 //
@@ -11,3 +12,4 @@
 //
 
 // =require media-background.js
+// =require sticky-top.js

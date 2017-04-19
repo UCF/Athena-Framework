@@ -76,8 +76,14 @@ gulp.task('move-components-objectfit', function() {
     .pipe(gulp.dest(config.src.jsPath + '/objectFitPolyfill'));
 });
 
+// Copy Stickyfill js
+gulp.task('move-components-stickyfill', function() {
+  return gulp.src(config.packagesPath + '/Stickyfill/dist/stickyfill.js', {base: config.packagesPath + '/Stickyfill/dist'})
+    .pipe(gulp.dest(config.src.jsPath + '/Stickyfill'));
+});
+
 // Run all component-related tasks
-gulp.task('components', ['move-components-fonts', 'move-components-bootstrap-scss', 'move-components-bootstrap-js', 'move-components-objectfit']);
+gulp.task('components', ['move-components-fonts', 'move-components-bootstrap-scss', 'move-components-bootstrap-js', 'move-components-objectfit', 'move-components-stickyfill']);
 
 
 //

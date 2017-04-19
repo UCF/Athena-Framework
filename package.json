@@ -9,6 +9,7 @@
   "description": "A UCF Branded web framework based on Bootstrap.",
   "private": false,
   "devDependencies": {
+    "Stickyfill": "github:wilddeer/stickyfill",
     "babel": "^6.23.0",
     "babel-eslint": "^7.2.1",
     "babel-plugin-transform-es2015-modules-strip": "^0.1.1",
