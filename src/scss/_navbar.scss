@@ -165,6 +165,16 @@
           }
         }
 
+        .nav-item,
+        .nav-link {
+          @include media-breakpoint-up($next) {
+            // Force nav link hover states to always consume 100% of the navbar
+            // height, but only when the navbar is not collapsed (sets default
+            // align-items: stretch)
+            display: flex;
+          }
+        }
+
         .nav-link {
           @include media-breakpoint-down($breakpoint) {
             // Allow customizable padding specific to collapsed navbar
@@ -172,9 +182,6 @@
           }
 
           @include media-breakpoint-up($next) {
-            // Force nav link hover states to always consume 100% of the navbar height,
-            // but only when the navbar is not collapsed
-            height: 100%;
             // Override fixed left/right padding values set by Bootstrap.  Reset overridden
             // vertical padding values set above.
             padding: $navbar-nav-link-padding-y $navbar-nav-link-padding-x;
