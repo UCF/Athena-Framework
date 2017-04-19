@@ -83,8 +83,7 @@
     padding: $navbar-nav-link-padding-y $navbar-nav-link-padding-x;
     text-transform: uppercase;
 
-    &:focus,
-    &.focus {
+    &:focus {
       box-shadow: $navbar-link-focus-box-shadow;
       outline: 0;
     }
@@ -109,6 +108,11 @@
   border-width: $navbar-toggler-border-width;
   margin-bottom: $navbar-toggler-margin-y;
   margin-top: $navbar-toggler-margin-y;
+
+  &:focus {
+    box-shadow: $navbar-link-focus-box-shadow;
+    outline: 0;
+  }
 }
 
 // Custom class for descriptive text within .navbar-toggler
@@ -120,7 +124,7 @@
   vertical-align: middle;
 
   &:hover {
-    cursor: default;
+    cursor: inherit;
   }
 }
 
