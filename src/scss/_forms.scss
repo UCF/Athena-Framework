@@ -16,6 +16,15 @@
   @include media-breakpoint-up(md) {
     padding: calc(#{$input-padding-y-md} + #{$btn-border-width - $input-btn-border-width}) $input-padding-x;
   }
+
+  .bg-inverse & {
+    // Reset focus/active state border
+    @include form-control-focus();
+
+    // Force a white border to prevent the appearance of a "borderless" input
+    // not matching the height of surrounding group components
+    border-color: $brand-inverse;
+  }
 }
 
 // NOTE: qualifying element necessary to match Bootstrap selector
