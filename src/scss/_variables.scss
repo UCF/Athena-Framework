@@ -1077,14 +1077,16 @@ $alert-danger-border:         $state-danger-border;
 
 // Progress bars
 
-$progress-height:               1rem;
-$progress-font-size:            .75rem;
-$progress-bg:                   $gray-lighter;
-$progress-border-radius:        $border-radius;
+$progress-height:               1.5rem; // modified
+$progress-font-size:            $font-size-xs; // modified
+$progress-bg:                   rgba(0, 0, 0, .05); // modified
+$progress-inverse-bg:           rgba(255, 255, 255, .3); // custom
+$progress-border-radius:        0; // modified
 $progress-box-shadow:           inset 0 .1rem .1rem rgba($black, .1);
-$progress-bar-color:            $white;
-$progress-bar-bg:               $brand-primary;
+$progress-bar-color:            $black; // modified
+$progress-bar-bg:               $gray-light; // modified
 $progress-bar-animation-timing: 1s linear infinite;
+$progress-bar-stripe-width:     $progress-height * 2; // custom
 
 // List group
 
