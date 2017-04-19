@@ -75,13 +75,16 @@
   .nav-link {
     // Mimic .btn hover transitions
     @include transition($btn-transition);
-
     font-size: $navbar-nav-link-font-size;
     font-weight: bold;
     letter-spacing: $letter-spacing-base;
     line-height: $navbar-nav-link-line-height;
     padding: $navbar-nav-link-padding-y $navbar-nav-link-padding-x;
     text-transform: uppercase;
+
+    @include hover-focus {
+      text-decoration: none; // unset underline
+    }
 
     &:focus {
       box-shadow: $navbar-link-focus-box-shadow;

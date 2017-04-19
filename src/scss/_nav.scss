@@ -1,0 +1,39 @@
+//
+// Base class
+//
+.nav {
+  // Mask hanging left- and right-hand .nav-link padding.
+  //
+  // Because we're using negative margins here, $nav-link-padding-x should
+  // never be a value that exceeds the current grid gutter width (to avoid
+  // horizontal scrollbars).  For that reason, $nav-link-padding-x will always
+  // be pixel-based, instead of in em's or rem's (to match gutter units).
+  margin-left: -$nav-link-padding-x;
+  margin-right: -$nav-link-padding-x;
+}
+
+.nav-link {
+  padding: $nav-link-padding-y $nav-link-padding-x;
+
+  @include hover-focus {
+    // Force underline on hover for basic nav links
+    text-decoration: underline;
+  }
+}
+
+
+//
+// Stylized nav (tabs, pills) overrides
+//
+
+.nav-tabs,
+.nav-pills {
+  margin-left: 0;
+  margin-right: 0;
+
+  .nav-link {
+    @include hover-focus {
+      text-decoration: none; // unset underline
+    }
+  }
+}
