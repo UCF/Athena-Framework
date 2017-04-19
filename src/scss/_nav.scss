@@ -37,3 +37,13 @@
     }
   }
 }
+
+// Pills
+
+.nav-pills {
+  .nav-link:not(.disabled):not(.active) {
+    @include hover-focus {
+      background-color: $nav-pills-hover-bg;
+    }
+  }
+}
