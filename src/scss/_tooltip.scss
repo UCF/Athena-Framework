@@ -1,0 +1,8 @@
+// Base class
+.tooltip {
+  font-size: $tooltip-font-size;
+
+  @include media-breakpoint-up(sm) {
+    font-size: $tooltip-font-size-sm;
+  }
+}
