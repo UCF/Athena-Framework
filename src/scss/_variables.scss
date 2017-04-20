@@ -1036,7 +1036,7 @@ $modal-content-sm-up-box-shadow: 0 5px 15px rgba($black, .5);
 
 $modal-backdrop-bg:           $black;
 $modal-backdrop-opacity:      .5;
-$modal-header-border-color:   $gray-lighter; // modified
+$modal-header-border-color:   transparent; // modified
 $modal-footer-border-color:   $modal-header-border-color;
 $modal-header-border-width:   $border-width; // modified
 $modal-footer-border-width:   $modal-header-border-width;
