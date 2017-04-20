@@ -840,23 +840,25 @@ $navbar-form-inline-padding-y:      $navbar-toggler-margin-y; // custom
 
 $nav-item-margin:               .2rem;
 $nav-item-inline-spacer:        1rem;
-$nav-link-padding:              1em; // modified
+$nav-link-padding:              .5em 1em; // unused in Athena
+$nav-link-padding-x:            $grid-gutter-width-base / 2; // custom; should not exceed the current grid gutter width (see _nav.scss)
+$nav-link-padding-y:            $grid-gutter-width-base / 4; // custom
 $nav-link-hover-bg:             $gray-lighter;
 $nav-disabled-link-color:       $gray-dark; // modified
 
-$nav-tabs-border-color:                       #ddd;
+$nav-tabs-border-color:                       $gray-light; // modified
 $nav-tabs-border-width:                       $border-width;
-$nav-tabs-border-radius:                      $border-radius;
+$nav-tabs-border-radius:                      $btn-border-radius; // modified
 $nav-tabs-link-hover-border-color:            $gray-lighter;
 $nav-tabs-active-link-hover-color:            $gray-darker; // modified
 $nav-tabs-active-link-hover-bg:               $body-bg;
-$nav-tabs-active-link-hover-border-color:     #ddd;
-$nav-tabs-justified-link-border-color:        #ddd;
-$nav-tabs-justified-active-link-border-color: $body-bg;
+$nav-tabs-active-link-hover-border-color:     $gray-light; // modified
+$nav-tabs-link-hover-bg:                      $gray-lighter; // custom
 
-$nav-pills-border-radius:     $border-radius;
+$nav-pills-border-radius:     0; // modified
 $nav-pills-active-link-color: $component-active-color;
 $nav-pills-active-link-bg:    $component-active-bg;
+$nav-pills-link-hover-bg:     $gray-lighter; // custom
 
 
 // Pagination
