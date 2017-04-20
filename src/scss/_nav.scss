@@ -19,31 +19,98 @@
     // Force underline on hover for basic nav links
     text-decoration: underline;
   }
+
+  &.active {
+    // Force underline on active state for basic nav links
+    text-decoration: underline;
+  }
 }
 
 
 //
 // Stylized nav (tabs, pills) overrides
 //
-
 .nav-tabs,
 .nav-pills {
   margin-left: 0;
   margin-right: 0;
 
+  .nav-item {
+    display: flex;
+  }
+
   .nav-link {
+    align-items: center;
+    display: flex;
+
     @include hover-focus {
+      text-decoration: none; // unset underline
+    }
+
+    &.active {
       text-decoration: none; // unset underline
     }
   }
 }
 
-// Pills
+// Tabs
+.nav-tabs {
+  .nav-item {
+    align-content: end;
+    margin-bottom: 0; // Add compatibility with non-ul tab markup
+  }
 
-.nav-pills {
+  .nav-link {
+    margin-bottom: -$nav-tabs-border-width; // Add compatibility with non-ul tab markup
+  }
+
+  // Allow customization of hover state
   .nav-link:not(.disabled):not(.active) {
     @include hover-focus {
-      background-color: $nav-pills-hover-bg;
+      background-color: $nav-tabs-link-hover-bg;
     }
+  }
+}
+
+// Pills
+.nav-pills {
+  .nav-item {
+    align-content: center;
+  }
+
+  // Allow customization of hover state
+  .nav-link:not(.disabled):not(.active) {
+    @include hover-focus {
+      background-color: $nav-pills-link-hover-bg;
+    }
+  }
+}
+
+
+//
+// Justified variants
+//
+
+.nav-fill,
+.nav-justified {
+  .nav-link {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nav-item .nav-link {
+    width: 100%;
+  }
+}
+
+.nav-fill {
+  > .nav-link {
+    flex: 1 1 auto; // Add compatibility with non-ul tab markup
+  }
+}
+
+.nav-justified {
+  > .nav-link {
+    flex: 1 1 100%; // Add compatibility with non-ul tab markup
   }
 }
