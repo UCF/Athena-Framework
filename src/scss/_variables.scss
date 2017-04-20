@@ -1026,21 +1026,26 @@ $modal-inner-padding:         15px;
 $modal-dialog-margin:         10px;
 $modal-dialog-sm-up-margin-y: 30px;
 
+$modal-border-radius:         0; // custom
+
 $modal-title-line-height:     $line-height-base;
 
 $modal-content-bg:               $white;
-$modal-content-border-color:     rgba($black, .2);
-$modal-content-border-width:     $border-width;
+$modal-content-border-color:     $gray-lighter; // modified
+$modal-content-border-width:     0; // modified
 $modal-content-xs-box-shadow:    0 3px 9px rgba($black, .5);
 $modal-content-sm-up-box-shadow: 0 5px 15px rgba($black, .5);
 
 $modal-backdrop-bg:           $black;
 $modal-backdrop-opacity:      .5;
-$modal-header-border-color:   $gray-lighter;
+$modal-header-border-color:   $gray-lighter; // modified
 $modal-footer-border-color:   $modal-header-border-color;
-$modal-header-border-width:   $modal-content-border-width;
+$modal-header-border-width:   $border-width; // modified
 $modal-footer-border-width:   $modal-header-border-width;
-$modal-header-padding:        15px;
+$modal-header-padding:        10px 15px; // modified
+$modal-footer-padding:        $modal-header-padding; // custom
+$modal-header-bg:             $modal-content-bg; // custom
+$modal-footer-bg:             $gray-lighter; // custom
 
 $modal-lg:                    800px;
 $modal-md:                    500px;
