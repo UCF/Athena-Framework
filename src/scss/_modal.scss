@@ -3,6 +3,8 @@
 //
 .modal-content {
   border-radius: $modal-border-radius;
+  // Reset text color within the modal, in case a parent element adjusts the text color
+  color: $body-color;
 }
 
 //
