@@ -1,0 +1,21 @@
+//
+// Actual modal
+//
+.modal-content {
+  border-radius: $modal-border-radius;
+}
+
+//
+// Modal header
+//
+.modal-header {
+  background-color: $modal-header-bg; // custom bg definition
+}
+
+//
+// Modal footer
+//
+.modal-footer {
+  background-color: $modal-footer-bg; // custom bg definition
+  padding: $modal-footer-padding; // Add ability to modify footer padding separately from modal body
+}
