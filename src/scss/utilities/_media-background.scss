@@ -1,4 +1,5 @@
 .media-background-container {
+  overflow: hidden; // required to fix a Chrome-specific bug with videos: https://bugs.chromium.org/p/chromium/issues/detail?id=400829
   position: relative;
   z-index: 0;
 }
