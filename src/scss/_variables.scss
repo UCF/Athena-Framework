@@ -1102,7 +1102,7 @@ $list-group-color:               $body-color;
 $list-group-bg:                  $white;
 $list-group-border-color:        rgba($black, .125);
 $list-group-border-width:        $border-width;
-$list-group-border-radius:       $border-radius;
+$list-group-border-radius:       0; // modified
 
 $list-group-item-padding-x:      1.25rem;
 $list-group-item-padding-y:      .75rem;
@@ -1111,14 +1111,14 @@ $list-group-hover-bg:            $gray-lightest;
 $list-group-active-color:        $component-active-color;
 $list-group-active-bg:           $component-active-bg;
 $list-group-active-border:       $list-group-active-bg;
-$list-group-active-text-color:   lighten($list-group-active-bg, 50%);
+$list-group-active-text-color:   $body-color; // modified
 
 $list-group-disabled-color:      $gray-dark; // modified
 $list-group-disabled-bg:         $list-group-bg;
 $list-group-disabled-text-color: $list-group-disabled-color;
 
-$list-group-link-color:          $gray-darker; // modified
-$list-group-link-heading-color:  $gray-darkest; // modified
+$list-group-link-color:          $body-color; // modified
+$list-group-link-heading-color:  $body-color; // modified
 $list-group-link-hover-color:    $list-group-link-color;
 
 $list-group-link-active-color:   $list-group-color;
