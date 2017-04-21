@@ -6,10 +6,15 @@
   text-decoration: underline;
 }
 
+
+//
+// Alternate styles
+//
+
 .alert-success {
   .alert-link {
     @include hover-focus {
-      color: lighten($state-success-text, 30%);
+      color: $brand-success-aw;
     }
   }
 }
@@ -17,7 +22,7 @@
 .alert-info {
   .alert-link {
     @include hover-focus {
-      color: lighten($state-info-text, 30%);
+      color: $brand-info-aw;
     }
   }
 }
@@ -25,7 +30,7 @@
 .alert-warning {
   .alert-link {
     @include hover-focus {
-      color: lighten($state-warning-text, 30%);
+      color: $brand-warning-aw;
     }
   }
 }
@@ -33,7 +38,7 @@
 .alert-danger {
   .alert-link {
     @include hover-focus {
-      color: lighten($state-danger-text, 30%);
+      color: $brand-danger-aw;
     }
   }
 }

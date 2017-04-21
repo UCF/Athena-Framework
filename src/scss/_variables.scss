@@ -1063,7 +1063,7 @@ $alert-padding-x:             1.25rem;
 $alert-padding-y:             1.25rem; // modified
 $alert-margin-bottom:         $spacer-y;
 $alert-border-radius:         0; // modified
-$alert-link-font-weight:      $font-weight-bold;
+$alert-link-font-weight:      $font-weight-normal; // modified
 $alert-border-width:          0; // modified
 
 $alert-success-bg:            $state-success-bg;
