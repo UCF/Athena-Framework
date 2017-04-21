@@ -1,20 +1,101 @@
-//
-// Inverse text within a card for use with dark backgrounds
+// Background variations
 //
 
+.card-default {
+  @include card-variant($brand-default, $brand-default);
+  @include card-variant-text($brand-default-color);
+}
+
+.card-primary {
+  @include card-variant-text($brand-primary-color);
+}
+
+.card-secondary {
+  @include card-variant($brand-secondary-color, $brand-secondary-color); // intentionally switching color vars
+  @include card-variant-text($brand-secondary); // intentionally switching color vars
+}
+
+.card-complementary {
+  @include card-variant($brand-complementary, $brand-complementary);
+  @include card-variant-text($brand-complementary-color);
+}
+
+.card-success {
+  @include card-variant-text($brand-success-color);
+}
+
+.card-info {
+  @include card-variant-text($brand-info-color);
+}
+
+.card-warning {
+  @include card-variant-text($brand-warning-color);
+}
+
+.card-danger {
+  @include card-variant-text($brand-danger-color);
+}
+
+// Remove all backgrounds
+.card-outline-default {
+  @include card-outline-variant($brand-default);
+}
+
+.card-outline-secondary {
+  @include card-outline-variant($btn-secondary-bg);
+}
+
+.card-outline-complementary {
+  @include card-outline-variant($btn-complementary-bg);
+}
+
+.card-outline-inverse {
+  @include card-outline-variant($btn-inverse-bg);
+  @include card-variant-text($brand-inverse); // intentionally switching color vars
+}
+
+// Inverted outline variants
+.card-outline-i-default {
+  @include card-outline-variant($brand-default);
+  @include card-variant-text($brand-inverse); // intentionally switching color vars
+}
+
+.card-outline-i-primary {
+  @include card-outline-variant($btn-primary-bg);
+  @include card-variant-text($brand-inverse); // intentionally switching color vars
+}
+
+.card-outline-i-complementary {
+  @include card-outline-variant($btn-complementary-bg);
+  @include card-variant-text($brand-inverse); // intentionally switching color vars
+}
+
+.card-outline-i-info {
+  @include card-outline-variant($btn-info-bg);
+  @include card-variant-text($brand-inverse); // intentionally switching color vars
+}
+
+.card-outline-i-success {
+  @include card-outline-variant($btn-success-bg);
+  @include card-variant-text($brand-inverse); // intentionally switching color vars
+}
+
+.card-outline-i-warning {
+  @include card-outline-variant($btn-warning-bg);
+  @include card-variant-text($brand-inverse); // intentionally switching color vars
+}
+
+.card-outline-i-danger {
+  @include card-outline-variant($btn-danger-bg);
+  @include card-variant-text($brand-inverse); // intentionally switching color vars
+}
+
+
+// Make inverse cards behave like other contextual color variants
+// (Apply bg color/border)
 .card-inverse {
-  color: $brand-inverse; // intentionally not using -color variable
-
-  .card-header,
-  .card-footer,
-  .card-title,
-  .card-link,
-  .card-text,
-  .card-subtitle,
-  .card-blockquote,
-  .card-blockquote .blockquote-footer {
-    color: $brand-inverse; // intentionally not using -color variable;
-  }
+  @include card-variant($brand-inverse-color, $brand-inverse-color); // intentionally switching color vars
+  @include card-variant-text($brand-inverse); // intentionally switching color vars
 }
 
 
