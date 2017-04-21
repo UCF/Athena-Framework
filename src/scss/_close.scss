@@ -1,0 +1,7 @@
+// button.close selector required to match Bootstrap's selector
+// scss-lint:disable QualifyingElement
+.close,
+button.close {
+  margin-left: $spacer-x; // give close button some breathing room
+}
+// scss-lint:enable QualifyingElement
