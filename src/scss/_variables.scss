@@ -639,8 +639,9 @@ $form-check-inline-margin-x: .75rem;
 
 $form-group-margin-bottom:       $spacer-y;
 
-$input-group-addon-bg:           $gray-lighter;
+$input-group-addon-bg:           transparent; // modified
 $input-group-addon-border-color: $input-border-color;
+$input-group-addon-color:        $gray; // custom
 
 $cursor-disabled:                not-allowed;
 
