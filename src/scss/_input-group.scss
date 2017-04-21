@@ -3,8 +3,12 @@
 //
 
 // TODO remove this block after upgrading to v4 beta
-.input-group-btn {
-  flex-direction: row;
+// https://github.com/twbs/bootstrap/pull/21716
+.input-group-addon,
+.input-group-btn,
+.input-group .form-control {
+  align-items: center;
+  flex-direction: unset;
 }
 
 
@@ -26,5 +30,18 @@
 
   + .input-group-addon {
     border-left-width: $input-btn-border-width;
+  }
+}
+
+
+//
+// Button input groups
+//
+
+// TODO remove this block after upgrading to v4 beta
+// https://github.com/twbs/bootstrap/pull/21716
+.input-group-btn {
+  > .btn {
+    flex: unset;
   }
 }
