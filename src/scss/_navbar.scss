@@ -82,13 +82,17 @@
     padding: $navbar-nav-link-padding-y $navbar-nav-link-padding-x;
     text-transform: uppercase;
 
-    @include hover-focus {
+    @include hover-focus-active {
       text-decoration: none; // unset underline
     }
 
     &:focus {
       box-shadow: $navbar-link-focus-box-shadow;
       outline: 0;
+    }
+
+    &.active {
+      text-decoration: none; // unset underline
     }
   }
 }
@@ -160,11 +164,88 @@
       // scss-lint:disable SelectorDepth NestingDepth
       // Nesting required to match Bootstrap selectors
 
+      // Theme-specific overrides
+
+      &.navbar-light {
+        // Primary color-specific overrides
+        &.bg-primary {
+          .navbar-nav {
+            .dropdown-item {
+              @include hover-focus {
+                @include media-breakpoint-down($breakpoint) {
+                  color: $white;
+                }
+              }
+            }
+          }
+        }
+
+        .navbar-nav {
+          .dropdown-item {
+            @include media-breakpoint-down($breakpoint) {
+              color: $navbar-light-color;
+            }
+
+            @include hover-focus {
+              @include media-breakpoint-down($breakpoint) {
+                background-color: $navbar-light-hover-bg-color;
+                color: $navbar-light-hover-color;
+              }
+            }
+
+            &.disabled {
+              @include media-breakpoint-down($breakpoint) {
+                color: $navbar-light-disabled-color;
+              }
+            }
+          }
+        }
+      }
+
+      &.navbar-inverse {
+        .navbar-nav {
+          .dropdown-item {
+            @include media-breakpoint-down($breakpoint) {
+              color: $navbar-inverse-color;
+            }
+
+            @include hover-focus {
+              @include media-breakpoint-down($breakpoint) {
+                background-color: $navbar-inverse-hover-bg-color;
+                color: $navbar-inverse-hover-color;
+              }
+            }
+
+            &.disabled {
+              @include media-breakpoint-down($breakpoint) {
+                color: $navbar-inverse-disabled-color;
+              }
+            }
+          }
+        }
+      }
+
+      // General child element overrides
+
       .navbar-nav {
-        // TODO remove block after upgrading to BS4 beta
         .dropdown-menu {
+          @include media-breakpoint-down($breakpoint) {
+            background-color: transparent;
+            border: 0 solid transparent;
+            margin-top: 0;
+          }
+
+          // TODO remove block after upgrading to BS4 beta
           @include media-breakpoint-up($next) {
             position: absolute;
+          }
+        }
+
+        .dropdown-item {
+          @include hover-focus {
+            @include media-breakpoint-down($breakpoint) {
+              background-color: transparent;
+            }
           }
         }
 
