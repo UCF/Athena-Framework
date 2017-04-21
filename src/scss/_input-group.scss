@@ -1,0 +1,47 @@
+//
+// Base styles
+//
+
+// TODO remove this block after upgrading to v4 beta
+// https://github.com/twbs/bootstrap/pull/21716
+.input-group-addon,
+.input-group-btn,
+.input-group .form-control {
+  align-items: center;
+  flex-direction: unset;
+}
+
+
+//
+// Text input groups
+//
+
+.input-group-addon {
+  border-width: 0;
+  color: $input-group-addon-color; // adjust color of this text separately from input color
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+
+  + .input-group-addon {
+    border-left-width: $input-btn-border-width;
+  }
+}
+
+
+//
+// Button input groups
+//
+
+// TODO remove this block after upgrading to v4 beta
+// https://github.com/twbs/bootstrap/pull/21716
+.input-group-btn {
+  > .btn {
+    flex: unset;
+  }
+}
