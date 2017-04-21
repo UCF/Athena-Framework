@@ -1,0 +1,30 @@
+//
+// Base styles
+//
+
+// TODO remove this block after upgrading to v4 beta
+.input-group-btn {
+  flex-direction: row;
+}
+
+
+//
+// Text input groups
+//
+
+.input-group-addon {
+  border-width: 0;
+  color: $input-group-addon-color; // adjust color of this text separately from input color
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+
+  + .input-group-addon {
+    border-left-width: $input-btn-border-width;
+  }
+}
