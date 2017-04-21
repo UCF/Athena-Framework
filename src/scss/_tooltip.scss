@@ -8,5 +8,5 @@
 }
 
 .tooltip-inner {
-  border-radius: $tooltip-border-radius;
+  @include border-radius($tooltip-border-radius); // Allow for configurable border-radius
 }
