@@ -1,0 +1,32 @@
+.pagination {
+  @include border-radius($pagination-border-radius); // allow configurable border-radius
+}
+
+.page-item {
+  &:first-child {
+    .page-link {
+      @include border-left-radius($pagination-border-radius);
+    }
+  }
+
+  &:last-child {
+    .page-link {
+      @include border-right-radius($pagination-border-radius);
+    }
+  }
+}
+
+
+//
+// Sizing
+//
+
+.pagination-lg {
+  // allow configurable border-radius
+  @include pagination-size($pagination-padding-y-lg, $pagination-padding-x-lg, $font-size-lg, $line-height-lg, $pagination-border-radius-lg);
+}
+
+.pagination-sm {
+  // allow configurable border-radius
+  @include pagination-size($pagination-padding-y-sm, $pagination-padding-x-sm, $font-size-sm, $line-height-sm, $pagination-border-radius-sm);
+}
