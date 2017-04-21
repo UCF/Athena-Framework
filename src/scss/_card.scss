@@ -1,0 +1,33 @@
+//
+// Inverse text within a card for use with dark backgrounds
+//
+
+.card-inverse {
+  color: $brand-inverse; // intentionally not using -color variable
+
+  .card-header,
+  .card-footer,
+  .card-title,
+  .card-link,
+  .card-text,
+  .card-subtitle,
+  .card-blockquote,
+  .card-blockquote .blockquote-footer {
+    color: $brand-inverse; // intentionally not using -color variable;
+  }
+}
+
+
+// Card image
+.card-img {
+  width: 100%; // TODO remove after upgrading to BS4 beta
+}
+
+// Card image caps
+.card-img-top {
+  width: 100%; // TODO remove after upgrading to BS4 beta
+}
+
+.card-img-bottom {
+  width: 100%; // TODO remove after upgrading to BS4 beta
+}

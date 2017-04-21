@@ -925,10 +925,10 @@ $state-danger-border:            darken($state-danger-bg, 5%);
 $card-spacer-x:            1.25rem;
 $card-spacer-y:            .75rem;
 $card-border-width:        1px;
-$card-border-radius:       $border-radius;
+$card-border-radius:       0; // modified
 $card-border-color:        rgba($black, .125);
-$card-border-radius-inner: calc(#{$card-border-radius} - #{$card-border-width});
-$card-cap-bg:              $gray-lightest;
+$card-border-radius-inner: 0; // modified
+$card-cap-bg:              $gray-lighter; // modified
 $card-bg:                  $white;
 
 $card-link-hover-color:    $white;
@@ -1041,13 +1041,13 @@ $modal-content-sm-up-box-shadow: 0 5px 15px rgba($black, .5);
 $modal-backdrop-bg:           $black;
 $modal-backdrop-opacity:      .5;
 $modal-header-border-color:   transparent; // modified
-$modal-footer-border-color:   $modal-header-border-color;
+$modal-footer-border-color:   $card-border-color; // modified
 $modal-header-border-width:   $border-width; // modified
 $modal-footer-border-width:   $modal-header-border-width;
 $modal-header-padding:        10px 15px; // modified
 $modal-footer-padding:        $modal-header-padding; // custom
 $modal-header-bg:             $modal-content-bg; // custom
-$modal-footer-bg:             $gray-lighter; // custom
+$modal-footer-bg:             $card-cap-bg; // custom
 
 $modal-lg:                    800px;
 $modal-md:                    500px;
