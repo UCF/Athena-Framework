@@ -11,7 +11,9 @@
 // =require ./bootstrap/util.js
 // =require ./bootstrap/alert.js
 // =require ./bootstrap/button.js
-// =require ./bootstrap/carousel.js
+
+// NOTE: Athena intentionally does not include Bootstrap's carousel component.
+
 // =require ./bootstrap/collapse.js
 // =require ./bootstrap/dropdown.js
 // =require ./bootstrap/modal.js
