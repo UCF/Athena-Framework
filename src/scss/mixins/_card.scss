@@ -1,0 +1,14 @@
+// Applies text color overrides for contextual card variants.
+@mixin card-variant-text($text-color) {
+  &,
+  .card-header,
+  .card-footer,
+  .card-title,
+  .card-link,
+  .card-text,
+  .card-subtitle,
+  .card-blockquote,
+  .card-blockquote .blockquote-footer {
+    color: $text-color;
+  }
+}
