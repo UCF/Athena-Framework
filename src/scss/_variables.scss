@@ -897,26 +897,26 @@ $jumbotron-bg:                   $gray-lighter;
 $jumbotron-border-radius:        0; // custom
 
 
-// Form states and alerts
+// States and alerts
 //
-// Define colors for form feedback states and, by default, alerts.
+// Define colors for list group contextual states and, by default, alerts.
 
-$state-success-text:             #3c763d;
-$state-success-bg:               #dff0d8;
-$state-success-border:           darken($state-success-bg, 5%);
+$state-success-text:             $black; // modified
+$state-success-bg:               #d0f1df; // modified
+$state-success-border:           $state-success-bg; // modified
 
-$state-info-text:                #31708f;
-$state-info-bg:                  #d9edf7;
-$state-info-border:              darken($state-info-bg, 7%);
+$state-info-text:                $black; // modified
+$state-info-bg:                  #dcf3f8; // modified
+$state-info-border:              $state-info-bg; // modified
 
-$state-warning-text:             #8a6d3b;
-$state-warning-bg:               #fcf8e3;
-$mark-bg:                        $state-warning-bg;
-$state-warning-border:           darken($state-warning-bg, 5%);
+$state-warning-text:             $black; // modified
+$state-warning-bg:               #f9e7c9; // modified
+$mark-bg:                        #fcf8e3; // modified
+$state-warning-border:           $state-warning-bg; // modified
 
-$state-danger-text:              #a94442;
-$state-danger-bg:                #f2dede;
-$state-danger-border:            darken($state-danger-bg, 5%);
+$state-danger-text:              $black; // modified
+$state-danger-bg:                #fecfc4; // modified
+$state-danger-border:            $state-danger-bg; // modified
 
 
 // Cards

@@ -1,0 +1,39 @@
+//
+// Base styles
+//
+
+.alert-link {
+  text-decoration: underline;
+}
+
+.alert-success {
+  .alert-link {
+    @include hover-focus {
+      color: lighten($state-success-text, 30%);
+    }
+  }
+}
+
+.alert-info {
+  .alert-link {
+    @include hover-focus {
+      color: lighten($state-info-text, 30%);
+    }
+  }
+}
+
+.alert-warning {
+  .alert-link {
+    @include hover-focus {
+      color: lighten($state-warning-text, 30%);
+    }
+  }
+}
+
+.alert-danger {
+  .alert-link {
+    @include hover-focus {
+      color: lighten($state-danger-text, 30%);
+    }
+  }
+}
