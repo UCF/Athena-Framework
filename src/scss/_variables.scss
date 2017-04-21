@@ -751,6 +751,7 @@ $dropdown-border-color:          rgba($black, .15);
 $dropdown-border-width:          $border-width;
 $dropdown-divider-bg:            $gray-lighter;
 $dropdown-box-shadow:            0 .5rem 1rem rgba($black, .175);
+$dropdown-border-radius:         0; // custom
 
 $dropdown-link-color:            $gray-darkest; // modified
 $dropdown-link-hover-color:      darken($gray-darkest, 5%); // modified
@@ -761,7 +762,8 @@ $dropdown-link-active-bg:        $component-active-bg;
 
 $dropdown-link-disabled-color:   $gray; // modified
 
-$dropdown-item-padding-x:        1.5rem;
+$dropdown-item-padding-x:        1.5em;
+$dropdown-item-padding-y:        .4em; // custom
 
 $dropdown-header-color:          $gray-dark; // modified
 
