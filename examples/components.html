@@ -519,7 +519,7 @@
 
     <h2 class="mt-4 mb-3">Cards</h2>
 
-    <div class="card" style="width: 20rem;">
+    <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="//placehold.it/318x180/" alt="Card image cap">
       <div class="card-block">
         <h4 class="card-title">Card title</h4>
@@ -760,10 +760,35 @@
     </div>
 
     <h4 class="mt-4 mb-3">Image Overlays</h4>
+    <p>While image overlays are available from Bootstrap, media backgrounds should be used instead--image overlays do not scale vertically.</p>
 
     <div class="card card-inverse">
       <img class="card-img" src="//placehold.it/767x280" alt="Card image">
       <div class="card-img-overlay">
+        <h4 class="card-title">Card title</h4>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+
+    <h4 class="mt-4 mb-3">With Media Backgrounds</h4>
+
+    <div class="card card-inverse media-background-container mb-3">
+      <img class="media-background object-fit-cover" src="//placehold.it/767x280" alt="Card image">
+      <div class="pt-3 pb-5 px-3">
+        <h4 class="card-title">Card title</h4>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+
+    <div class="card card-inverse media-background-container">
+      <picture>
+        <source class="media-background object-fit-cover" srcset="https://placehold.it/1920x1080" media="(min-width: 1800px)">
+        <source class="media-background object-fit-cover" srcset="https://placehold.it/500x300/" media="(max-width: 500px)">
+        <img class="media-background object-fit-cover" src="https://placehold.it/1000x720/" alt="">
+      </picture>
+      <div class="pt-3 pb-5 px-3">
         <h4 class="card-title">Card title</h4>
         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
@@ -775,13 +800,7 @@
 
     <h4 class="mt-4 mb-3">Inverted Text</h4>
 
-    <div class="card card-inverse" style="background-color: #333; border-color: #333;">
-      <div class="card-block">
-        <h3 class="card-title">Special title treatment</h3>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
+    <p>Note: inverted card behavior has been modified in Athena--instead of providing just white text overrides, the .card-inverse class behaves like another contextual background variant (with black background applied).  See below for all available color variants.</p>
 
     <h4 class="mt-4 mb-3">Background Variants</h4>
 
