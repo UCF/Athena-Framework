@@ -48,7 +48,7 @@
   @include card-variant-text($brand-danger-color);
 }
 
-// Remove all backgrounds
+// Outline variants
 .card-outline-default {
   @include card-outline-variant($brand-default);
 }
