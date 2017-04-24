@@ -454,7 +454,7 @@ $nested-kbd-font-weight: $font-weight-bold;
 
 $list-inline-padding: 5px;
 
-$link-transition: color .2s ease-in-out, box-shadow .2s ease-in-out; // custom
+$link-transition: color .2s ease-in-out, background-color .2s ease-in-out, box-shadow .2s ease-in-out; // custom
 $link-focus-box-shadow: 0 0 0 3px rgba($brand-complementary, .7); // custom
 
 
