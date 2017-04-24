@@ -11,4 +11,14 @@
   .card-blockquote .blockquote-footer {
     color: $text-color;
   }
+
+  .card-link {
+    color: $text-color;
+    text-decoration: underline;
+
+    @include hover-focus {
+      color: get-hover-color($text-color);
+      text-decoration: underline;
+    }
+  }
 }

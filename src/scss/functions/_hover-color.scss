@@ -1,0 +1,11 @@
+//
+// Returns a darkened color when $text-color is a light color,
+// or a lightened color when $text-color is dark.
+//
+@function get-hover-color($text-color) {
+  @if (lightness($text-color) > 50) {
+    @return darken($text-color, 25%);
+  } @else {
+    @return lighten($text-color, 40%);
+  }
+}

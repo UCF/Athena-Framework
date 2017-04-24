@@ -14,6 +14,17 @@
 .card-secondary {
   @include card-variant($brand-secondary-color, $brand-secondary-color); // intentionally switching color vars
   @include card-variant-text($brand-secondary); // intentionally switching color vars
+
+  // Unset card-variant-text() overrides (to match other light and default card variants)
+  .card-link {
+    color: $link-color;
+    text-decoration: $link-decoration;
+
+    @include hover-focus {
+      color: $link-hover-color;
+      text-decoration: none;
+    }
+  }
 }
 
 .card-complementary {
@@ -97,6 +108,23 @@
 .card-inverse {
   @include card-variant($brand-inverse-color, $brand-inverse-color); // intentionally switching color vars
   @include card-variant-text($brand-inverse); // intentionally switching color vars
+}
+
+// Add a 'faded' variant, as a quick replacement for BS3 wells
+.card-faded {
+  @include card-variant($gray-lighter, $gray-lighter);
+  @include card-variant-text($black);
+
+  // Unset card-variant-text() overrides (to match other light and default card variants)
+  .card-link {
+    color: $link-color;
+    text-decoration: $link-decoration;
+
+    @include hover-focus {
+      color: $link-hover-color;
+      text-decoration: none;
+    }
+  }
 }
 
 
