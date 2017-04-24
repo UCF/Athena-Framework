@@ -1,3 +1,16 @@
+// Add transitions on link hover.
+a,
+button {
+  @if ($enable-transitions) {
+    transition: $link-transition;
+  }
+
+  &:focus {
+    box-shadow: $link-focus-box-shadow;
+    outline: 0;
+  }
+}
+
 // Force unitalicized text
 cite {
   font-style: normal;

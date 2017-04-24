@@ -12,7 +12,11 @@
   color: $color;
 
   // Fix bug in Bootstrap where focus state does not also receive hover state styling.
-  @include hover-focus-active {
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active {
     background-color: $active-background;
     border-color: $active-border;
     color: $hover-color;
