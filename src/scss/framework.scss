@@ -61,6 +61,7 @@
 // Athena assets
 //
 
+@import 'functions';
 @import 'mixins';
 @import 'reset';
 
@@ -74,6 +75,7 @@
 @import 'custom-forms';
 @import 'nav';
 @import 'navbar';
+@import 'card';
 @import 'breadcrumb';
 @import 'pagination';
 @import 'badge';
