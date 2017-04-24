@@ -66,7 +66,7 @@
   @include card-variant-text($brand-inverse); // intentionally switching color vars
 }
 
-// Inverted outline variants
+// Outline variants
 .card-outline-i-default {
   @include card-outline-variant($brand-default);
   @include card-variant-text($brand-inverse); // intentionally switching color vars
