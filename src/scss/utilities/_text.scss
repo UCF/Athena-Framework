@@ -36,32 +36,24 @@
 
 
 // Extended text color classes
+//
+// Loops through all colors defined in $brand-colors and creates a new
+// text-emphasis variant (existing variant classes will be overridden).
+//
+// If a color has a text-color-aw value assigned to it, a new color variant
+// is created for it as well.
+//
 
-@include text-emphasis-variant('.text-default', $brand-default);
-@include text-emphasis-variant('.text-secondary', $brand-secondary);
-@include text-emphasis-variant('.text-complementary', $brand-complementary);
-@include text-emphasis-variant('.text-inverse', $brand-inverse);
+@each $color-name, $vals in $brand-colors {
+  $color: map-get($vals, 'color');
+  $text-color-aw: map-get($vals, 'text-color-aw');
 
-@include text-emphasis-variant('.text-default-aw', $brand-default-aw);
-@include text-emphasis-variant('.text-primary-aw', $brand-primary-aw);
-@include text-emphasis-variant('.text-secondary-aw', $brand-secondary-aw);
-@include text-emphasis-variant('.text-complementary-aw', $brand-complementary-aw);
-@include text-emphasis-variant('.text-success-aw', $brand-success-aw);
-@include text-emphasis-variant('.text-info-aw', $brand-info-aw);
-@include text-emphasis-variant('.text-warning-aw', $brand-warning-aw);
-@include text-emphasis-variant('.text-danger-aw', $brand-danger-aw);
-@include text-emphasis-variant('.text-inverse-aw', $brand-inverse-aw);
+  @include text-emphasis-variant('.text-#{$color-name}', $color);
 
-@include text-emphasis-variant('.text-primary-darkest', $brand-primary-darkest);
-@include text-emphasis-variant('.text-primary-darker', $brand-primary-darker);
-@include text-emphasis-variant('.text-primary-lighter', $brand-primary-lighter);
-@include text-emphasis-variant('.text-primary-lightest', $brand-primary-lightest);
-
-@include text-emphasis-variant('.text-metallic-darkest', $brand-metallic-darkest);
-@include text-emphasis-variant('.text-metallic-darker', $brand-metallic-darker);
-@include text-emphasis-variant('.text-metallic', $brand-metallic);
-@include text-emphasis-variant('.text-metallic-lighter', $brand-metallic-lighter);
-@include text-emphasis-variant('.text-metallic-lightest', $brand-metallic-lightest);
+  @if $text-color-aw {
+    @include text-emphasis-variant('.text-#{$color-name}-aw', $text-color-aw);
+  }
+}
 
 
 //
