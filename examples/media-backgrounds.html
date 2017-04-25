@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <!-- TODO: update cloud.typography css key to a production-ready project, with no legacy support enabled -->
-  <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/730568/633546/css/fonts.css">
+  <link rel="stylesheet" type="text/css" id="js-cloud-typography-link" href="https://cloud.typography.com/730568/633546/css/fonts.css" data-href="https://cloud.typography.com/730568/633546/css/fonts.css">
   <link rel="stylesheet" href="../dist/css/framework.min.css">
 </head>
 
@@ -38,6 +38,14 @@
             </div>
           </li>
         </ul>
+
+        <form class="form-inline mb-3 mb-lg-0">
+          <div class="form-check form-check-inline">
+            <label class="form-check-label form-control-sm">
+              <input class="form-check-input" type="checkbox" id="js-webfont-toggle" checked value="on"> Enable Premium Webfonts
+            </label>
+          </div>
+        </form>
       </div>
     </div>
   </nav>
@@ -124,6 +132,16 @@
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha256-gL1ibrbVcRIHKlCO5OXOPC/lZz/gpdApgQAzskqqXp8=" crossorigin="anonymous"></script>
   <script src="../dist/js/framework.min.js"></script>
+
+  <script>
+    $('#js-webfont-toggle').on('change', function() {
+      var $toggle = $(this),
+          $stylesheet = $('#js-cloud-typography-link'),
+          href = $toggle.prop('checked') ? $stylesheet.attr('data-href') : '';
+
+      $stylesheet.attr('href', href);
+    });
+  </script>
 
 </body>
 
