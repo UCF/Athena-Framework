@@ -1,0 +1,17 @@
+@keyframes progress-bar-stripes {
+  // Allow stripe width on striped bars to be adjustable
+  from { background-position: $progress-bar-stripe-width 0; }
+  to { background-position: 0 0; }
+}
+
+.progress {
+  // Add a custom inverse progress wrapper, for use against dark backgrounds
+  &.progress-inverse {
+    background-color: $progress-inverse-bg;
+  }
+}
+
+.progress-bar-striped {
+  // Allow stripe width on striped bars to be adjustable
+  background-size: $progress-bar-stripe-width $progress-bar-stripe-width;
+}

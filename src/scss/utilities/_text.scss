@@ -35,6 +35,27 @@
 }
 
 
+// Extended text color classes
+//
+// Loops through all colors defined in $brand-colors and creates a new
+// text-emphasis variant (existing variant classes will be overridden).
+//
+// If a color has a text-color-aw value assigned to it, a new color variant
+// is created for it as well.
+//
+
+@each $color-name, $vals in $brand-colors {
+  $color: map-get($vals, 'color');
+  $text-color-aw: map-get($vals, 'text-color-aw');
+
+  @include text-emphasis-variant('.text-#{$color-name}', $color);
+
+  @if $text-color-aw {
+    @include text-emphasis-variant('.text-#{$color-name}-aw', $text-color-aw);
+  }
+}
+
+
 //
 // Letter spacing utility classes
 //

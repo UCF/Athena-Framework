@@ -1,0 +1,12 @@
+// Base class
+.tooltip {
+  font-size: $tooltip-font-size;
+
+  @include media-breakpoint-up(sm) {
+    font-size: $tooltip-font-size-sm;
+  }
+}
+
+.tooltip-inner {
+  @include border-radius($tooltip-border-radius); // Allow for configurable border-radius
+}

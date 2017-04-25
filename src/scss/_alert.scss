@@ -1,0 +1,44 @@
+//
+// Base styles
+//
+
+.alert-link {
+  text-decoration: underline;
+}
+
+
+//
+// Alternate styles
+//
+
+.alert-success {
+  .alert-link {
+    @include hover-focus {
+      color: $brand-success-aw;
+    }
+  }
+}
+
+.alert-info {
+  .alert-link {
+    @include hover-focus {
+      color: $brand-info-aw;
+    }
+  }
+}
+
+.alert-warning {
+  .alert-link {
+    @include hover-focus {
+      color: $brand-warning-aw;
+    }
+  }
+}
+
+.alert-danger {
+  .alert-link {
+    @include hover-focus {
+      color: $brand-danger-aw;
+    }
+  }
+}

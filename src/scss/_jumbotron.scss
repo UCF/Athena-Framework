@@ -1,0 +1,4 @@
+.jumbotron {
+  // Allow for configurable border-radius
+  @include border-radius($jumbotron-border-radius);
+}

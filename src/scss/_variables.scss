@@ -82,6 +82,23 @@
   }
 }
 
+//
+// Custom:
+//
+// Remove the unit of a length
+// @param {Number} $number - Number to remove unit from
+// @return {Number} - Unitless number
+//
+// https://css-tricks.com/snippets/sass/strip-unit-function/
+//
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
 
 // General variable structure
 //
@@ -132,26 +149,163 @@ $gray-lightest:             #f7f7f9;
 // Reassign color vars to semantic color scheme
 $brand-default:             $gray; // custom
 $brand-primary:             $ucf-gold; // modified
-$brand-secondary:           $white; // custom
+$brand-secondary:           $black; // custom
 $brand-complementary:       $blue; // custom
 $brand-success:             $green;
 $brand-info:                $teal;
 $brand-warning:             $orange;
 $brand-danger:              $red;
-$brand-inverse:             $black; // modified
+$brand-inverse:             $white; // modified
 
-// Custom text colors definitions for brand color scheme.
+// Custom brand-primary color palette
+$brand-primary-darkest:  $ucf-gold-darkest;
+$brand-primary-darker:   $ucf-gold-darker;
+$brand-primary-lighter:  $ucf-gold-lighter;
+$brand-primary-lightest: $ucf-gold-lightest;
+
+// Custom brand-metallic color palette
+$brand-metallic-darkest:  $ucf-metalgold-darkest;
+$brand-metallic-darker:   $ucf-metalgold-darker;
+$brand-metallic:          $ucf-metalgold;
+$brand-metallic-lighter:  $ucf-metalgold-lighter;
+$brand-metallic-lightest: $ucf-metalgold-lightest;
+
+// Custom text colors definitions for brand color scheme.  These colors are
+// intended to be used for text overlaid on components which use the respective
+// brand color as the background color.
 // These text colors exist to help modify Bootstrap components that are not
 // WGAG 2.0 AA compliant.
 $brand-default-color:       $white;
 $brand-primary-color:       $black;
-$brand-secondary-color:     $black;
+$brand-secondary-color:     $white;
 $brand-complementary-color: $white;
 $brand-success-color:       $black;
 $brand-info-color:          $black;
 $brand-warning-color:       $black;
 $brand-danger-color:        $black;
-$brand-inverse-color:       $white;
+$brand-inverse-color:       $black;
+
+$brand-primary-darkest-color:  $white;
+$brand-primary-darker-color:   $black;
+$brand-primary-lighter-color:  $black;
+$brand-primary-lightest-color: $black;
+
+$brand-metallic-darkest-color:  $black;
+$brand-metallic-darker-color:   $black;
+$brand-metallic-color:          $black;
+$brand-metallic-lighter-color:  $black;
+$brand-metallic-lightest-color: $black;
+
+// Custom brand color alternates that meet white-background contrast requirements.
+// "-aw" = "Accessible over White"/"Against White"
+$brand-default-aw:       $brand-default;
+$brand-primary-aw:       $ucf-gold-darkest;
+$brand-secondary-aw:     $black;
+$brand-complementary-aw: $brand-complementary;
+$brand-success-aw:       #477e5e;
+$brand-info-aw:          #298194;
+$brand-warning-aw:       #966e31;
+$brand-danger-aw:        #c44f38;
+$brand-inverse-aw:       $gray-dark;
+
+// Custom mapping of brand color variables, for convenience
+$brand-colors-base: (
+  default: (
+    color: $brand-default,
+    text-color: $brand-default-color,
+    text-color-aw: $brand-default-aw
+  ),
+  primary: (
+    color: $brand-primary,
+    text-color: $brand-primary-color,
+    text-color-aw: $brand-primary-aw
+  ),
+  secondary: (
+    color: $brand-secondary,
+    text-color: $brand-secondary-color,
+    text-color-aw: $brand-secondary-aw
+  ),
+  complementary: (
+    color: $brand-complementary,
+    text-color: $brand-complementary-color,
+    text-color-aw: $brand-complementary-aw
+  ),
+  info: (
+    color: $brand-info,
+    text-color: $brand-info-color,
+    text-color-aw: $brand-info-aw
+  ),
+  success: (
+    color: $brand-success,
+    text-color: $brand-success-color,
+    text-color-aw: $brand-success-aw
+  ),
+  warning: (
+    color: $brand-warning,
+    text-color: $brand-warning-color,
+    text-color-aw: $brand-warning-aw
+  ),
+  danger: (
+    color: $brand-danger,
+    text-color: $brand-danger-color,
+    text-color-aw: $brand-danger-aw
+  ),
+  inverse: (
+    color: $brand-inverse,
+    text-color: $brand-inverse-color,
+    text-color-aw: $brand-inverse-aw
+  ),
+);
+
+$brand-colors-extended: (
+  primary-darkest: (
+    color: $brand-primary-darkest,
+    text-color: $brand-primary-darkest-color
+  ),
+  primary-darker: (
+    color: $brand-primary-darker,
+    text-color: $brand-primary-darker-color
+  ),
+  primary-lighter: (
+    color: $brand-primary-lighter,
+    text-color: $brand-primary-lighter-color
+  ),
+  primary-lightest: (
+    color: $brand-primary-lightest,
+    text-color: $brand-primary-lightest-color
+  ),
+  metallic-darkest: (
+    color: $brand-metallic-darkest,
+    text-color: $brand-metallic-darkest-color
+  ),
+  metallic-darker: (
+    color: $brand-metallic-darker,
+    text-color: $brand-metallic-darker-color
+  ),
+  metallic: (
+    color: $brand-metallic,
+    text-color: $brand-metallic-color
+  ),
+  metallic-lighter: (
+    color: $brand-metallic-lighter,
+    text-color: $brand-metallic-lighter-color
+  ),
+  metallic-lightest: (
+    color: $brand-metallic-lightest,
+    text-color: $brand-metallic-lightest-color
+  )
+);
+
+$brand-colors: map-merge($brand-colors-base, $brand-colors-extended);
+
+// Opacity: custom map that defines opacity variants for which background utility
+// classes should be created.  Values must be between 0-1, to be passed to rgba().
+$bg-transparencies: (
+  1: .9,
+  2: .85,
+  3: .75
+);
+
 
 
 // Options
@@ -399,6 +553,14 @@ $nested-kbd-font-weight: $font-weight-bold;
 
 $list-inline-padding: 5px;
 
+$link-transition: color .2s ease-in-out, background-color .2s ease-in-out, box-shadow .2s ease-in-out; // custom
+
+// Custom outline and box-shadow definitions for :focus states.
+// Some components use box-shadow instead of outline for defining focus.
+$focus-outline:          3px solid rgba($brand-complementary, .7);
+$focus-box-shadow:       0 0 0 3px rgba($brand-complementary, .7);
+$focus-inset-box-shadow: inset 0 0 0 2px rgba($brand-complementary, .7);
+
 
 // Components
 //
@@ -457,12 +619,13 @@ $btn-padding-y:                  .75rem; // modified
 $btn-line-height:                1.25;
 $btn-font-weight:                $font-weight-bold; // modified
 $btn-box-shadow:                 inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075);
-$btn-focus-box-shadow:           0 0 0 2px rgba($brand-complementary, .25); // modified
+$btn-focus-box-shadow:           0 0 0 transparent; // modified
+$btn-focus-outline:              $focus-outline; // custom
 $btn-active-box-shadow:          inset 0 3px 5px rgba($black, .125);
 
-$btn-default-color:              $brand-default-color; // custom
-$btn-default-bg:                 $brand-default; // custom
-$btn-default-border:             $btn-default-bg; // custom
+$btn-default-color:              $black; // custom
+$btn-default-bg:                 $white; // custom
+$btn-default-border:             #ccc; // custom
 
 $btn-primary-color:              $brand-primary-color; // modified
 $btn-primary-bg:                 $brand-primary;
@@ -474,10 +637,10 @@ $btn-complementary-border:       $btn-complementary-bg; // custom
 
 $btn-secondary-color:            $brand-secondary-color; // modified
 $btn-secondary-bg:               $brand-secondary; // modified
-$btn-secondary-border:           #ccc;
+$btn-secondary-border:           $btn-secondary-bg; // modified
 
-$btn-inverse-color:              $brand-inverse; // custom; reversal of this and -color var is intentional
-$btn-inverse-bg:                 $brand-inverse-color; // custom
+$btn-inverse-color:              $brand-inverse-color; // custom
+$btn-inverse-bg:                 $brand-inverse; // custom
 $btn-inverse-border:             $btn-inverse-bg; // custom
 
 $btn-info-color:                 $brand-info-color; // modified
@@ -504,6 +667,15 @@ $btn-padding-y-sm:               .25rem;
 $btn-padding-x-lg:               2rem; // modified
 $btn-padding-y-lg:               1.25rem; // modified
 
+// Custom font size variables for buttons.  These variable names are a little funky
+// but are as consistent with Bootstrap's naming conventions as possible.
+$btn-font-size:                  $font-size-base;
+$btn-font-size-md:               $font-size-base-md;
+$btn-sm-font-size:               ($font-size-base * $font-size-sm) / 1rem;
+$btn-sm-font-size-md:            ($font-size-base-md * $font-size-sm) / 1rem;
+$btn-lg-font-size:               ($font-size-base * $font-size-lg) / 1rem;
+$btn-lg-font-size-md:            ($font-size-base-md * $font-size-lg) / 1rem;
+
 $btn-block-spacing-y:            .5rem;
 $btn-toolbar-margin:             .5rem;
 
@@ -520,8 +692,9 @@ $btn-transition:                 all .2s ease-in-out;
 // Forms
 
 $input-padding-x:                .75rem;
-$input-padding-y:                .5rem;
-$input-line-height:              1.25;
+$input-padding-y:                $btn-padding-y - (($font-size-base-md - $btn-font-size) / 2); // modified
+$input-padding-y-md:             $btn-padding-y; // custom
+$input-line-height:              $btn-line-height; // modified
 
 $input-bg:                       $white;
 $input-bg-disabled:              $gray-lighter;
@@ -531,43 +704,52 @@ $input-border-color:             rgba($black, .15);
 $input-btn-border-width:         $border-width; // For form controls and buttons
 $input-box-shadow:               inset 0 1px 1px rgba($black, .075);
 
-$input-border-radius:            $border-radius;
-$input-border-radius-lg:         $border-radius-lg;
-$input-border-radius-sm:         $border-radius-sm;
+$input-border-radius:            0; // modified
+$input-border-radius-lg:         0; // modified
+$input-border-radius-sm:         0; // modified
 
 $input-bg-focus:                 $input-bg;
-$input-border-focus:             lighten($brand-primary, 25%);
-$input-box-shadow-focus:         $input-box-shadow, rgba($input-border-focus, .6);
+$input-border-focus:             lighten($brand-complementary, 25%); // modified
+$input-box-shadow-focus:         $focus-inset-box-shadow; // modified
 $input-color-focus:              $input-color;
 
 $input-color-placeholder:        $gray-dark; // modified
 
 $input-padding-x-sm:             .5rem;
-$input-padding-y-sm:             .25rem;
+$input-padding-y-sm:             $btn-padding-y-sm - (($font-size-sm - $btn-sm-font-size) / 2); // modified
+$input-padding-y-sm-md:          $btn-padding-y-sm; // custom; if anyone has any better variable name ideas, please feel free to edit...
 
 $input-padding-x-lg:             1.5rem;
-$input-padding-y-lg:             .75rem;
+$input-padding-y-lg:             $btn-padding-y-lg - (($font-size-lg - $btn-lg-font-size) / 2); // modified
+$input-padding-y-lg-md:          $btn-padding-y-lg; // custom; if anyone has any better variable name ideas, please feel free to edit...
 
 $input-height:                   (($font-size-base-md * $input-line-height) + ($input-padding-y * 2)); // modified
-$input-height-lg:                (($font-size-lg * $line-height-lg) + ($input-padding-y-lg * 2));
-$input-height-sm:                (($font-size-sm * $line-height-sm) + ($input-padding-y-sm * 2));
+$input-height-lg:                (($font-size-lg * $input-line-height) + ($input-padding-y-lg * 2)); // modified
+$input-height-sm:                (($font-size-sm * $input-line-height) + ($input-padding-y-sm * 2)); // modified
 
 $input-transition:               border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+
+$select-padding-y: .25rem; // custom
 
 $form-text-margin-top:     .25rem;
 $form-feedback-margin-top: $form-text-margin-top;
 
+$col-form-label-padding-top: .815rem; // custom
+$col-form-label-padding-top-sm: .35rem; // custom
+$col-form-label-padding-top-lg: 1.2rem; // custom
+
 $form-check-margin-bottom:  .5rem;
-$form-check-input-gutter:   1.25rem;
+$form-check-input-gutter:   1.5rem; // modified
 $form-check-input-margin-y: .25rem;
-$form-check-input-margin-x: .25rem;
+$form-check-input-margin-x: .5rem; // modified
 
 $form-check-inline-margin-x: .75rem;
 
 $form-group-margin-bottom:       $spacer-y;
 
-$input-group-addon-bg:           $gray-lighter;
+$input-group-addon-bg:           transparent; // modified
 $input-group-addon-border-color: $input-border-color;
+$input-group-addon-color:        $gray; // custom
 
 $cursor-disabled:                not-allowed;
 
@@ -575,43 +757,46 @@ $custom-control-gutter:   1.5rem;
 $custom-control-spacer-x: 1rem;
 $custom-control-spacer-y: .25rem;
 
-$custom-control-indicator-size:       1rem;
-$custom-control-indicator-margin-y:   (($line-height-base * 1rem) - $custom-control-indicator-size) / -2;
-$custom-control-indicator-bg:         #ddd;
-$custom-control-indicator-bg-size:    50% 50%;
-$custom-control-indicator-box-shadow: inset 0 .25rem .25rem rgba($black, .1);
+$custom-control-indicator-size:         1rem;
+$custom-control-indicator-margin-y:     (($line-height-base * 1rem) - $custom-control-indicator-size) / -2;
+$custom-control-indicator-bg:           $white; // modified
+$custom-control-indicator-bg-size:      50% 50%;
+$custom-control-indicator-box-shadow:   inset 0 .25rem .25rem rgba($black, .1);
+$custom-control-indicator-border-color: rgba($black, .3); // custom
 
 $custom-control-disabled-cursor:             $cursor-disabled;
 $custom-control-disabled-indicator-bg:       $gray-lighter;
-$custom-control-disabled-description-color:  $gray-dark; // modified
+$custom-control-disabled-description-color:  $gray; // modified
 
 $custom-control-checked-indicator-color:      $brand-primary-color; // modified
 $custom-control-checked-indicator-bg:         $brand-primary;
 $custom-control-checked-indicator-box-shadow: none;
 
-$custom-control-focus-indicator-box-shadow: 0 0 0 1px $body-bg, 0 0 0 3px $brand-primary;
+$custom-control-focus-indicator-box-shadow: 0 0 0 1px $body-bg, $focus-box-shadow; // modified
 
 $custom-control-active-indicator-color:      $brand-primary-color; // modified
-$custom-control-active-indicator-bg:         lighten($brand-primary, 35%);
+$custom-control-active-indicator-bg:         $ucf-gold-lighter; // modified
 $custom-control-active-indicator-box-shadow: none;
 
-$custom-checkbox-radius: $border-radius;
+$custom-checkbox-radius: $input-border-radius; // modified
 $custom-checkbox-checked-icon: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$custom-control-checked-indicator-color}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E"), "#", "%23");
 
 $custom-checkbox-indeterminate-bg: $brand-primary;
+$custom-checkbox-indicator-bg-size: 75% 75%; // custom
 $custom-checkbox-indeterminate-indicator-color: $custom-control-checked-indicator-color;
 $custom-checkbox-indeterminate-icon: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath stroke='#{$custom-checkbox-indeterminate-indicator-color}' d='M0 2h4'/%3E%3C/svg%3E"), "#", "%23");
 $custom-checkbox-indeterminate-box-shadow: none;
 
+$custom-radio-indicator-bg-size: $custom-control-indicator-bg-size; // custom
 $custom-radio-radius: 50%;
 $custom-radio-checked-icon: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='#{$custom-control-checked-indicator-color}'/%3E%3C/svg%3E"), "#", "%23");
 
 $custom-select-padding-x:          .75rem;
-$custom-select-padding-y:          .375rem;
+$custom-select-padding-y:          $select-padding-y; // modified
 $custom-select-indicator-padding:   1rem; // Extra padding to account for the presence of the background-image based indicator
 $custom-select-line-height:         $input-line-height;
 $custom-select-color:               $input-color;
-$custom-select-disabled-color:      $gray-dark; // modified
+$custom-select-disabled-color:      $gray; // modified
 $custom-select-bg:            $white;
 $custom-select-disabled-bg:   $gray-lighter;
 $custom-select-bg-size:       8px 10px; // In pixels because image dimensions
@@ -619,17 +804,17 @@ $custom-select-indicator-color: #333;
 $custom-select-indicator:     str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E"), "#", "%23");
 $custom-select-border-width:  $input-btn-border-width;
 $custom-select-border-color:  $input-border-color;
-$custom-select-border-radius: $border-radius;
+$custom-select-border-radius: $input-border-radius; // modified
 
-$custom-select-focus-border-color: lighten($brand-primary, 25%);
-$custom-select-focus-box-shadow:   inset 0 1px 2px rgba($black, .075), 0 0 5px rgba($custom-select-focus-border-color, .5);
+$custom-select-focus-border-color: lighten($brand-complementary, 25%); // modified
+$custom-select-focus-box-shadow:   $input-box-shadow-focus; // modified
 
 $custom-select-sm-padding-y:  .2rem;
 $custom-select-sm-font-size:  75%;
 
 $custom-file-height:           2.5rem;
 $custom-file-width:            14rem;
-$custom-file-focus-box-shadow: 0 0 0 .075rem $white, 0 0 0 .2rem $brand-primary;
+$custom-file-focus-box-shadow: 0 0 0 .075rem $white, 0 0 0 .2rem $brand-complementary; // modified
 
 $custom-file-padding-x:     .5rem;
 $custom-file-padding-y:     1rem;
@@ -638,7 +823,7 @@ $custom-file-color:         $gray-darker; // modified
 $custom-file-bg:            $white;
 $custom-file-border-width:  $border-width;
 $custom-file-border-color:  $input-border-color;
-$custom-file-border-radius: $border-radius;
+$custom-file-border-radius: $input-border-radius; // modified
 $custom-file-box-shadow:    inset 0 .2rem .4rem rgba($black, .05);
 $custom-file-button-color:  $custom-file-color;
 $custom-file-button-bg:     $gray-lighter;
@@ -675,6 +860,7 @@ $dropdown-border-color:          rgba($black, .15);
 $dropdown-border-width:          $border-width;
 $dropdown-divider-bg:            $gray-lighter;
 $dropdown-box-shadow:            0 .5rem 1rem rgba($black, .175);
+$dropdown-border-radius:         0; // custom
 
 $dropdown-link-color:            $gray-darkest; // modified
 $dropdown-link-hover-color:      darken($gray-darkest, 5%); // modified
@@ -683,9 +869,10 @@ $dropdown-link-hover-bg:         $gray-lightest;
 $dropdown-link-active-color:     $component-active-color;
 $dropdown-link-active-bg:        $component-active-bg;
 
-$dropdown-link-disabled-color:   $gray-dark; // modified
+$dropdown-link-disabled-color:   $gray; // modified
 
-$dropdown-item-padding-x:        1.5rem;
+$dropdown-item-padding-x:        1.5em;
+$dropdown-item-padding-y:        .4em; // custom
 
 $dropdown-header-color:          $gray-dark; // modified
 
@@ -708,52 +895,78 @@ $zindex-tooltip:            1070;
 
 // Navbar
 
-$navbar-border-radius:              $border-radius;
 $navbar-padding-x:                  $spacer;
-$navbar-padding-y:                  ($spacer / 2);
+$navbar-padding-y:                  0; // modified
 
-$navbar-brand-padding-y:            .25rem;
+$navbar-brand-padding-y:            1rem; // modified
+$navbar-brand-margin-right:         1rem; // custom
+$navbar-brand-margin-right-sm:      2rem; // custom
+$navbar-brand-font-size:            1rem; // custom
+$navbar-brand-font-size-sm:         $font-size-lg; // custom
 
 $navbar-toggler-padding-x:           .75rem;
-$navbar-toggler-padding-y:           .25rem;
+$navbar-toggler-padding-y:           calc(.25rem - #{($btn-border-width - $border-width)}); // modified
 $navbar-toggler-font-size:           $font-size-lg;
 $navbar-toggler-border-radius:       $btn-border-radius;
+$navbar-toggler-border-width:        $btn-border-width; // custom
+$navbar-toggler-margin-y:            calc(.825rem - #{$navbar-toggler-border-width}); // custom
+$navbar-toggler-icon-height:         2rem; // custom
+$navbar-toggler-icon-width:          2rem; // custom
+$navbar-toggler-text-font-size:      .6rem; // custom
 
-$navbar-inverse-color:                 rgba($white, .5);
-$navbar-inverse-hover-color:           rgba($white, .75);
-$navbar-inverse-active-color:          rgba($white, 1);
-$navbar-inverse-disabled-color:        rgba($white, .25);
+$navbar-inverse-color:                     $white; // modified
+$navbar-inverse-hover-color:               $navbar-inverse-color; // modified
+$navbar-inverse-hover-bg-color:            rgba($white, .3); // custom
+$navbar-inverse-active-color:              $navbar-inverse-color; // modified
+$navbar-inverse-disabled-color:            rgba($white, .3); // modified
 $navbar-inverse-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-inverse-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"), "#", "%23");
-$navbar-inverse-toggler-border:        rgba($white, .1);
+$navbar-inverse-toggler-border:            $navbar-inverse-color; // modified
+$navbar-inverse-dropdown-caret-border:     rgba($white, .5); // custom
+$navbar-inverse-brand-hover-color:         rgba($white, .8); // custom
 
-$navbar-light-color:                rgba($black, .5);
-$navbar-light-hover-color:          rgba($black, .7);
-$navbar-light-active-color:         rgba($black, .9);
-$navbar-light-disabled-color:       rgba($black, .3);
+$navbar-light-color:                     $black; // modified
+$navbar-light-hover-color:               $navbar-light-color; // modified
+$navbar-light-hover-bg-color:            rgba($black, .15); // custom
+$navbar-light-active-color:              $navbar-light-color; // modified
+$navbar-light-disabled-color:            rgba($black, .2); // modified
 $navbar-light-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"), "#", "%23");
-$navbar-light-toggler-border:       rgba($black, .1);
+$navbar-light-toggler-border:            $navbar-light-color; // modified
+$navbar-light-dropdown-caret-border:     rgba($black, .4); // custom
+$navbar-light-brand-hover-color:         rgba($black, .6); // custom
+
+$navbar-nav-link-font-size:           $font-size-xs; // custom
+$navbar-nav-link-line-height:         1.2; // custom
+$navbar-nav-link-padding-x:           .8rem; // custom
+$navbar-nav-link-padding-y:           1.5rem; // custom
+$navbar-collapsed-nav-link-padding-x: ($grid-gutter-width-base / 2); // custom
+$navbar-collapsed-nav-link-padding-y: 1rem; // custom
+
+$navbar-form-inline-padding-y:      $navbar-toggler-margin-y; // custom
+
 
 // Navs
 
 $nav-item-margin:               .2rem;
 $nav-item-inline-spacer:        1rem;
-$nav-link-padding:              .5em 1em;
-$nav-link-hover-bg:             $gray-lighter;
+$nav-link-padding:              .5em 1em; // unused in Athena
+$nav-link-padding-x:            $grid-gutter-width-base / 2; // custom; should not exceed the current grid gutter width (see _nav.scss)
+$nav-link-padding-y:            $grid-gutter-width-base / 4; // custom
+$nav-link-hover-bg:             rgba($black, .1); // modified
 $nav-disabled-link-color:       $gray-dark; // modified
 
-$nav-tabs-border-color:                       #ddd;
+$nav-tabs-border-color:                       $gray-light; // modified
 $nav-tabs-border-width:                       $border-width;
-$nav-tabs-border-radius:                      $border-radius;
+$nav-tabs-border-radius:                      $btn-border-radius; // modified
 $nav-tabs-link-hover-border-color:            $gray-lighter;
 $nav-tabs-active-link-hover-color:            $gray-darker; // modified
 $nav-tabs-active-link-hover-bg:               $body-bg;
-$nav-tabs-active-link-hover-border-color:     #ddd;
-$nav-tabs-justified-link-border-color:        #ddd;
-$nav-tabs-justified-active-link-border-color: $body-bg;
+$nav-tabs-active-link-hover-border-color:     $gray-light; // modified
+$nav-tabs-link-hover-bg:                      $nav-link-hover-bg; // custom
 
-$nav-pills-border-radius:     $border-radius;
+$nav-pills-border-radius:     0; // modified
 $nav-pills-active-link-color: $component-active-color;
 $nav-pills-active-link-bg:    $component-active-bg;
+$nav-pills-link-hover-bg:     $nav-link-hover-bg; // custom
 
 
 // Pagination
@@ -770,6 +983,9 @@ $pagination-color:                     $link-color;
 $pagination-bg:                        $white;
 $pagination-border-width:              $border-width;
 $pagination-border-color:              #ddd;
+$pagination-border-radius:             0; // custom
+$pagination-border-radius-lg:          0; // custom
+$pagination-border-radius-sm:          0; // custom
 
 $pagination-hover-color:               $link-hover-color;
 $pagination-hover-bg:                  $gray-lighter;
@@ -779,7 +995,7 @@ $pagination-active-color:              $brand-primary-color; // modified
 $pagination-active-bg:                 $brand-primary;
 $pagination-active-border:             $brand-primary;
 
-$pagination-disabled-color:            $gray-dark; // modified
+$pagination-disabled-color:            $gray; // modified
 $pagination-disabled-bg:               $white;
 $pagination-disabled-border:           #ddd;
 
@@ -788,28 +1004,29 @@ $pagination-disabled-border:           #ddd;
 
 $jumbotron-padding:              2rem;
 $jumbotron-bg:                   $gray-lighter;
+$jumbotron-border-radius:        0; // custom
 
 
-// Form states and alerts
+// States and alerts
 //
-// Define colors for form feedback states and, by default, alerts.
+// Define colors for list group contextual states and, by default, alerts.
 
-$state-success-text:             #3c763d;
-$state-success-bg:               #dff0d8;
-$state-success-border:           darken($state-success-bg, 5%);
+$state-success-text:             $black; // modified
+$state-success-bg:               #d0f1df; // modified
+$state-success-border:           $state-success-bg; // modified
 
-$state-info-text:                #31708f;
-$state-info-bg:                  #d9edf7;
-$state-info-border:              darken($state-info-bg, 7%);
+$state-info-text:                $black; // modified
+$state-info-bg:                  #dcf3f8; // modified
+$state-info-border:              $state-info-bg; // modified
 
-$state-warning-text:             #8a6d3b;
-$state-warning-bg:               #fcf8e3;
-$mark-bg:                        $state-warning-bg;
-$state-warning-border:           darken($state-warning-bg, 5%);
+$state-warning-text:             $black; // modified
+$state-warning-bg:               #f9e7c9; // modified
+$mark-bg:                        #fcf8e3; // modified
+$state-warning-border:           $state-warning-bg; // modified
 
-$state-danger-text:              #a94442;
-$state-danger-bg:                #f2dede;
-$state-danger-border:            darken($state-danger-bg, 5%);
+$state-danger-text:              $black; // modified
+$state-danger-bg:                #fecfc4; // modified
+$state-danger-border:            $state-danger-bg; // modified
 
 
 // Cards
@@ -817,10 +1034,10 @@ $state-danger-border:            darken($state-danger-bg, 5%);
 $card-spacer-x:            1.25rem;
 $card-spacer-y:            .75rem;
 $card-border-width:        1px;
-$card-border-radius:       $border-radius;
+$card-border-radius:       0; // modified
 $card-border-color:        rgba($black, .125);
-$card-border-radius-inner: calc(#{$card-border-radius} - #{$card-border-width});
-$card-cap-bg:              $gray-lightest;
+$card-border-radius-inner: 0; // modified
+$card-cap-bg:              $gray-lighter; // modified
 $card-bg:                  $white;
 
 $card-link-hover-color:    $white;
@@ -840,9 +1057,12 @@ $tooltip-max-width:           200px;
 $tooltip-color:               $white;
 $tooltip-bg:                  $black;
 $tooltip-opacity:             .9;
-$tooltip-padding-y:           3px;
-$tooltip-padding-x:           8px;
+$tooltip-padding-y:           5px;
+$tooltip-padding-x:           12px;
 $tooltip-margin:              3px;
+$tooltip-font-size:           $font-size-xs; // custom
+$tooltip-font-size-sm:        $font-size-sm; // custom
+$tooltip-border-radius:       0; // custom
 
 $tooltip-arrow-width:         5px;
 $tooltip-arrow-color:         $tooltip-bg;
@@ -875,26 +1095,26 @@ $popover-arrow-outer-color:           fade-in($popover-border-color, .05);
 
 $badge-default-bg:            $brand-default; // modified
 $badge-primary-bg:            $brand-primary;
-$badge-secondary-bg:          $brand-secondary-color; // custom; usage of -color var is intentional
+$badge-secondary-bg:          $brand-secondary; // custom
 $badge-complementary-bg:      $brand-complementary; // custom
 $badge-success-bg:            $brand-success;
 $badge-info-bg:               $brand-info;
 $badge-warning-bg:            $brand-warning;
 $badge-danger-bg:             $brand-danger;
-$badge-inverse-bg:            $brand-inverse-color; // custom; usage of -color var is intentional
+$badge-inverse-bg:            $brand-inverse; // custom
 
 $badge-color:                 $white; // unused in Athena in favor of per-variant color variables (below)
 
 // Custom badge color variables
 $badge-default-color:         $brand-default-color;
 $badge-primary-color:         $brand-primary-color;
-$badge-secondary-color:       $brand-secondary; // usage of non -color var is intentional
+$badge-secondary-color:       $brand-secondary-color;
 $badge-complementary-color:   $brand-complementary-color;
 $badge-success-color:         $brand-success-color;
 $badge-info-color:            $brand-info-color;
 $badge-warning-color:         $brand-warning-color;
 $badge-danger-color:          $brand-danger-color;
-$badge-inverse-color:         $brand-inverse; // usage of non -color var is intentional
+$badge-inverse-color:         $brand-inverse-color;
 
 $badge-link-hover-color:      $white;
 $badge-font-size:             75%;
@@ -917,21 +1137,26 @@ $modal-inner-padding:         15px;
 $modal-dialog-margin:         10px;
 $modal-dialog-sm-up-margin-y: 30px;
 
+$modal-border-radius:         0; // custom
+
 $modal-title-line-height:     $line-height-base;
 
 $modal-content-bg:               $white;
-$modal-content-border-color:     rgba($black, .2);
-$modal-content-border-width:     $border-width;
+$modal-content-border-color:     $gray-lighter; // modified
+$modal-content-border-width:     0; // modified
 $modal-content-xs-box-shadow:    0 3px 9px rgba($black, .5);
 $modal-content-sm-up-box-shadow: 0 5px 15px rgba($black, .5);
 
 $modal-backdrop-bg:           $black;
 $modal-backdrop-opacity:      .5;
-$modal-header-border-color:   $gray-lighter;
-$modal-footer-border-color:   $modal-header-border-color;
-$modal-header-border-width:   $modal-content-border-width;
+$modal-header-border-color:   transparent; // modified
+$modal-footer-border-color:   $card-border-color; // modified
+$modal-header-border-width:   $border-width; // modified
 $modal-footer-border-width:   $modal-header-border-width;
-$modal-header-padding:        15px;
+$modal-header-padding:        10px 15px; // modified
+$modal-footer-padding:        $modal-header-padding; // custom
+$modal-header-bg:             $modal-content-bg; // custom
+$modal-footer-bg:             $card-cap-bg; // custom
 
 $modal-lg:                    800px;
 $modal-md:                    500px;
@@ -948,7 +1173,7 @@ $alert-padding-x:             1.25rem;
 $alert-padding-y:             1.25rem; // modified
 $alert-margin-bottom:         $spacer-y;
 $alert-border-radius:         0; // modified
-$alert-link-font-weight:      $font-weight-bold;
+$alert-link-font-weight:      $font-weight-normal; // modified
 $alert-border-width:          0; // modified
 
 $alert-success-bg:            $state-success-bg;
@@ -970,14 +1195,16 @@ $alert-danger-border:         $state-danger-border;
 
 // Progress bars
 
-$progress-height:               1rem;
-$progress-font-size:            .75rem;
-$progress-bg:                   $gray-lighter;
-$progress-border-radius:        $border-radius;
+$progress-height:               1.5rem; // modified
+$progress-font-size:            $font-size-xs; // modified
+$progress-bg:                   rgba($black, .05); // modified
+$progress-inverse-bg:           rgba($white, .3); // custom
+$progress-border-radius:        0; // modified
 $progress-box-shadow:           inset 0 .1rem .1rem rgba($black, .1);
-$progress-bar-color:            $white;
-$progress-bar-bg:               $brand-primary;
+$progress-bar-color:            $black; // modified
+$progress-bar-bg:               $gray-light; // modified
 $progress-bar-animation-timing: 1s linear infinite;
+$progress-bar-stripe-width:     $progress-height * 2; // custom
 
 // List group
 
@@ -985,7 +1212,7 @@ $list-group-color:               $body-color;
 $list-group-bg:                  $white;
 $list-group-border-color:        rgba($black, .125);
 $list-group-border-width:        $border-width;
-$list-group-border-radius:       $border-radius;
+$list-group-border-radius:       0; // modified
 
 $list-group-item-padding-x:      1.25rem;
 $list-group-item-padding-y:      .75rem;
@@ -994,14 +1221,14 @@ $list-group-hover-bg:            $gray-lightest;
 $list-group-active-color:        $component-active-color;
 $list-group-active-bg:           $component-active-bg;
 $list-group-active-border:       $list-group-active-bg;
-$list-group-active-text-color:   lighten($list-group-active-bg, 50%);
+$list-group-active-text-color:   $body-color; // modified
 
 $list-group-disabled-color:      $gray-dark; // modified
 $list-group-disabled-bg:         $list-group-bg;
 $list-group-disabled-text-color: $list-group-disabled-color;
 
-$list-group-link-color:          $gray-darker; // modified
-$list-group-link-heading-color:  $gray-darkest; // modified
+$list-group-link-color:          $body-color; // modified
+$list-group-link-heading-color:  $body-color; // modified
 $list-group-link-hover-color:    $list-group-link-color;
 
 $list-group-link-active-color:   $list-group-color;

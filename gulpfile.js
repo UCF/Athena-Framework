@@ -1,16 +1,20 @@
-var bower = require('bower'),
-    browserSync = require('browser-sync').create(),
+var browserSync = require('browser-sync').create(),
     gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     cleanCSS = require('gulp-clean-css'),
     include = require('gulp-include'),
-    jshint = require('gulp-jshint'),
+    eslint = require('gulp-eslint'),
+    isFixed = require('gulp-eslint-if-fixed'),
+    babel = require('gulp-babel'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     scsslint = require('gulp-scss-lint'),
     uglify = require('gulp-uglify'),
-    jshintStylish = require('jshint-stylish'),
-    merge = require('merge');
+    replace = require('gulp-replace'),
+    runSequence = require('run-sequence'),
+    merge = require('merge'),
+    concat = require('gulp-concat'),
+    addsrc = require('gulp-add-src');
 
 
 var configLocal = require('./gulp-config.json'),
@@ -25,10 +29,10 @@ var configLocal = require('./gulp-config.json'),
         jsPath:   './dist/js',
         fontPath: './dist/fonts'
       },
-      bowerPath: './bower_components/',
+      packagesPath: './node_modules',
       bootstrap: {
-        scss: './bower_components/bootstrap/scss',
-        js:   './bower_components/bootstrap/dist/js'
+        scss: './node_modules/bootstrap/scss',
+        js:   './node_modules/bootstrap/js/src'
       },
       sync: false,
       syncTarget: 'http://localhost/'
@@ -40,34 +44,46 @@ var configLocal = require('./gulp-config.json'),
 // Installation of components/dependencies
 //
 
-// Bower
-gulp.task('bower', function() {
-  return bower.commands.install()
-    .pipe(gulp.dest(config.bowerPath));
-});
-
 // Web font processing
-gulp.task('fonts', ['bower'], function() {
+gulp.task('move-components-fonts', function() {
   // TODO add custom fonts from components?
-  // gulp.src(config.bowerPath + '/path/to/component/fonts/*/*')
+  // CREATE SEPARATE TASK THAT RETURNS A STREAM:
+  // return gulp.src(config.packagesPath + '/path/to/component/fonts/*/*')
   //   .pipe(gulp.dest(config.dist.fontPath));
 
   // TODO add custom fonts from src directory?
-  // gulp.src(config.src.fontPath + '/path/to/fonts/*')
+  // CREATE SEPARATE TASK THAT RETURNS A STREAM:
+  // return gulp.src(config.src.fontPath + '/path/to/fonts/*')
   //   .pipe(gulp.dest(config.dist.fontPath + '/font-name'));
   return;
 });
 
-gulp.task('bootstrap', ['bower'], function() {
-  gulp.src(config.bootstrap.scss + '/**/*', {base: config.bootstrap.scss})
+// Copy Bootstrap scss files
+gulp.task('move-components-bootstrap-scss', function() {
+  return gulp.src(config.bootstrap.scss + '/**/*', {base: config.bootstrap.scss})
     .pipe(gulp.dest(config.src.scssPath + '/bootstrap'));
+});
 
-  gulp.src(config.bootstrap.js + '/bootstrap.js', {base: config.bootstrap.js})
+// Copy Bootstrap js files
+gulp.task('move-components-bootstrap-js', function() {
+  return gulp.src(config.bootstrap.js + '/*.js', {base: config.bootstrap.js})
     .pipe(gulp.dest(config.src.jsPath + '/bootstrap'));
 });
 
+// Copy objectFitPolyfill js
+gulp.task('move-components-objectfit', function() {
+  return gulp.src(config.packagesPath + '/objectFitPolyfill/src/objectFitPolyfill.js', {base: config.packagesPath + '/objectFitPolyfill/src'})
+    .pipe(gulp.dest(config.src.jsPath + '/objectFitPolyfill'));
+});
+
+// Copy Stickyfill js
+gulp.task('move-components-stickyfill', function() {
+  return gulp.src(config.packagesPath + '/Stickyfill/dist/stickyfill.js', {base: config.packagesPath + '/Stickyfill/dist'})
+    .pipe(gulp.dest(config.src.jsPath + '/Stickyfill'));
+});
+
 // Run all component-related tasks
-gulp.task('components', ['bower', 'fonts', 'bootstrap']);
+gulp.task('components', ['move-components-fonts', 'move-components-bootstrap-scss', 'move-components-bootstrap-js', 'move-components-objectfit', 'move-components-stickyfill']);
 
 
 //
@@ -83,7 +99,7 @@ gulp.task('scss-lint', function() {
 });
 
 // Compile scss files
-function scssBuild() {
+gulp.task('scss-build', function() {
   return gulp.src(config.src.scssPath + '/framework.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(cleanCSS())
@@ -94,43 +110,58 @@ function scssBuild() {
     .pipe(rename('framework.min.css'))
     .pipe(gulp.dest(config.dist.cssPath))
     .pipe(browserSync.stream());
-}
-gulp.task('scss-build', scssBuild); // to be run on `gulp watch`; does not require update of Bower packages
-gulp.task('scss-build-default', ['components'], scssBuild); // to be run on `gulp default`; requires update of Bower packages before running
+});
 
 // All css-related tasks
 gulp.task('css', ['scss-lint', 'scss-build']);
-gulp.task('css-default', ['scss-lint', 'scss-build-default']);
 
 
 //
 // JavaScript
 //
 
-// Run jshint on all js files in src.jsPath
-gulp.task('js-lint', function() {
-  return gulp.src([config.src.jsPath + '/*.js'])
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'))
-    .pipe(jshint.reporter('fail'));
+// Run eshint on js files in src.jsPath. Do not perform linting
+// on vendor js files.
+gulp.task('es-lint', function() {
+    var files = [
+      config.src.jsPath + '/*.js',
+      '!' + config.src.jsPath + '/_bootstrap-*.js',
+  ];
+  return gulp.src(files)
+    .pipe(eslint({ fix: true }))
+    .pipe(eslint.format())
+    .pipe(isFixed(config.src.jsPath));
 });
 
-// Concat and uglify js files.
-function jsBuild() {
+// Process Bootstrap js and saves it out to a single file. Handles various
+// js-related steps Bootstrap performs via its gruntfile.
+gulp.task('js-build-bootstrap', function() {
+  return gulp.src(config.src.jsPath + '/bootstrap-plugins.js')
+    .pipe(include())
+      .on('error', console.log)
+    .pipe(replace(/^(export|import).*/gm, ''))
+    .pipe(babel())
+    .pipe(addsrc.prepend(config.src.jsPath + '/_bootstrap-header.js'))
+    .pipe(addsrc.append(config.src.jsPath + '/_bootstrap-footer.js'))
+    .pipe(concat('bootstrap.js'))
+    .pipe(gulp.dest(config.src.jsPath + '/bootstrap'));
+});
+
+// Concat and uglify js files through babel
+gulp.task('js-build', function() {
   return gulp.src(config.src.jsPath + '/framework.js')
     .pipe(include())
       .on('error', console.log)
+    .pipe(babel())
     .pipe(uglify())
     .pipe(rename('framework.min.js'))
-    .pipe(gulp.dest(config.dist.jsPath))
-    .pipe(browserSync.stream());
-}
-gulp.task('js-build', jsBuild); // to be run on `gulp watch`; does not require update of Bower packages
-gulp.task('js-build-default', ['components'], jsBuild); // to be run on `gulp default`; requires update of Bower packages before running
+    .pipe(gulp.dest(config.dist.jsPath));
+});
 
 // All js-related tasks
-gulp.task('js', ['js-lint', 'js-build']);
-gulp.task('js-default', ['js-lint', 'js-build-default']);
+gulp.task('js', function() {
+  runSequence('es-lint', 'js-build-bootstrap', 'js-build');
+});
 
 
 //
@@ -153,4 +184,7 @@ gulp.task('watch', function() {
 //
 // Default task
 //
-gulp.task('default', ['components', 'css-default', 'js-default']);
+gulp.task('default', function() {
+  // Make sure 'components' completes before 'css' or 'js' are allowed to run
+  runSequence('components', ['css', 'js']);
+});

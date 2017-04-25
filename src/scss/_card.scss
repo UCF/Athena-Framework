@@ -1,0 +1,139 @@
+//
+// Background variations
+//
+
+.card-default {
+  @include card-variant($brand-default, $brand-default);
+  @include card-variant-text($brand-default-color);
+}
+
+.card-primary {
+  @include card-variant-text($brand-primary-color);
+}
+
+.card-secondary {
+  @include card-variant($brand-secondary-color, $brand-secondary-color); // intentionally switching color vars
+  @include card-variant-text($brand-secondary); // intentionally switching color vars
+
+  // Unset card-variant-text() overrides (to match other light and default card variants)
+  .card-link {
+    color: $link-color;
+    text-decoration: $link-decoration;
+
+    @include hover-focus {
+      color: $link-hover-color;
+      text-decoration: none;
+    }
+  }
+}
+
+.card-complementary {
+  @include card-variant($brand-complementary, $brand-complementary);
+  @include card-variant-text($brand-complementary-color);
+}
+
+.card-success {
+  @include card-variant-text($brand-success-color);
+}
+
+.card-info {
+  @include card-variant-text($brand-info-color);
+}
+
+.card-warning {
+  @include card-variant-text($brand-warning-color);
+}
+
+.card-danger {
+  @include card-variant-text($brand-danger-color);
+}
+
+// Outline variants
+.card-outline-default {
+  @include card-outline-variant($brand-default);
+}
+
+.card-outline-secondary {
+  @include card-outline-variant($btn-secondary-bg);
+}
+
+.card-outline-complementary {
+  @include card-outline-variant($btn-complementary-bg);
+}
+
+.card-outline-inverse {
+  @include card-outline-variant($btn-inverse-bg);
+  @include card-variant-text($brand-inverse); // intentionally switching color vars
+}
+
+// Inverted outline variants
+.card-outline-i-default {
+  @include card-outline-variant($brand-default);
+  @include card-variant-text($brand-inverse); // intentionally switching color vars
+}
+
+.card-outline-i-primary {
+  @include card-outline-variant($btn-primary-bg);
+  @include card-variant-text($brand-inverse); // intentionally switching color vars
+}
+
+.card-outline-i-complementary {
+  @include card-outline-variant($btn-complementary-bg);
+  @include card-variant-text($brand-inverse); // intentionally switching color vars
+}
+
+.card-outline-i-info {
+  @include card-outline-variant($btn-info-bg);
+  @include card-variant-text($brand-inverse); // intentionally switching color vars
+}
+
+.card-outline-i-success {
+  @include card-outline-variant($btn-success-bg);
+  @include card-variant-text($brand-inverse); // intentionally switching color vars
+}
+
+.card-outline-i-warning {
+  @include card-outline-variant($btn-warning-bg);
+  @include card-variant-text($brand-inverse); // intentionally switching color vars
+}
+
+.card-outline-i-danger {
+  @include card-outline-variant($btn-danger-bg);
+  @include card-variant-text($brand-inverse); // intentionally switching color vars
+}
+
+
+// Make inverse cards behave like other contextual color variants
+// (Apply bg color/border)
+.card-inverse {
+  @include card-variant($brand-inverse-color, $brand-inverse-color); // intentionally switching color vars
+  @include card-variant-text($brand-inverse); // intentionally switching color vars
+}
+
+// Add a 'faded' variant, as a quick replacement for BS3 wells
+.card-faded {
+  @include card-variant($gray-lighter, $gray-lighter);
+  @include card-variant-text($black);
+
+  // Unset card-variant-text() overrides (to match other light and default card variants)
+  .card-link {
+    color: $link-color;
+    text-decoration: $link-decoration;
+
+    @include hover-focus {
+      color: $link-hover-color;
+      text-decoration: none;
+    }
+  }
+}
+
+
+//
+// Card image
+//
+.card-img,
+.card-img-top,
+.card-img-bottom {
+  min-height: 1px; // fixes IE11 bug where img height doesn't scale properly. https://github.com/philipwalton/flexbugs/issues/75
+  width: 100%; // TODO remove after upgrading to BS4 beta
+}

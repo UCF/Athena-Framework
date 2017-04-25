@@ -1,0 +1,44 @@
+//
+// Loops through all brand colors and extended colors, creates new bg
+// utility classes for each and forces accessible text colors on them.
+//
+// NOTE: Bootstrap intentionally does not apply text color to bg utility
+// classes for the sake of keeping the utility classes as single-purpose as
+// possible.  We are adding them to Athena for the sake of ensuring we are
+// as accessible-ready as possible, and just for convenience/fewer required
+// text utility classes to achieve a certain look.
+//
+// Text color is still overridable using .text-<context> classes (because
+// they force !important color values).
+//
+
+@each $color-name, $vals in $brand-colors {
+  $color: map-get($vals, 'color');
+  $text-color: map-get($vals, 'text-color');
+
+  // We intentionally invert the $color and $text-color variables
+  // for the 'secondary' and 'inverse' colors
+  @if $color-name == 'secondary' or $color-name == 'inverse' {
+    $color: map-get($vals, 'text-color');
+    $text-color: map-get($vals, 'color');
+  }
+
+  // Create or override contextual background variant
+  @include bg-variant('.bg-#{$color-name}', $color);
+
+  // Force accessible text color on background variant class
+  .bg-#{$color-name} {
+    color: $text-color;
+  }
+
+  // Create transparent variants
+  @each $t-key, $t-val in $bg-transparencies {
+    // Create contextual background variant
+    @include bg-variant('.bg-#{$color-name}-t-#{$t-key}', rgba($color, $t-val));
+
+    // Force accessible text color on background variant class
+    .bg-#{$color-name}-t-#{$t-key} {
+      color: $text-color;
+    }
+  }
+}
