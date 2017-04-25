@@ -2,6 +2,20 @@
 // Checkboxes and radios
 //
 
+.custom-control-input {
+  &:checked ~ .custom-control-indicator {
+    // Fix where Bootstrap calls box-shadow(), preventing outline replacements
+    // from taking effect when $enable-shadows is false
+    box-shadow: $custom-control-checked-indicator-box-shadow;
+  }
+
+  &:active ~ .custom-control-indicator {
+    // Fix where Bootstrap calls box-shadow(), preventing outline replacements
+    // from taking effect when $enable-shadows is false
+    box-shadow: $custom-control-active-indicator-box-shadow;
+  }
+}
+
 .custom-radio,
 .custom-checkbox {
   // Allow custom border styles on .custom-control-indicator
@@ -26,5 +40,31 @@
   .custom-control-indicator {
     // Allow more granual control of checkbox indicator size
     background-size: $custom-checkbox-indicator-bg-size;
+  }
+}
+
+
+//
+// Select
+//
+
+.custom-select {
+  &:focus {
+    // Fix where Bootstrap calls box-shadow(), preventing outline replacements
+    // from taking effect when $enable-shadows is false
+    box-shadow: $custom-select-focus-box-shadow;
+  }
+}
+
+
+//
+// File
+//
+
+.custom-file-input {
+  &:focus ~ .custom-file-control {
+    // Fix where Bootstrap calls box-shadow(), preventing outline replacements
+    // from taking effect when $enable-shadows is false
+    box-shadow: $custom-file-focus-box-shadow;
   }
 }

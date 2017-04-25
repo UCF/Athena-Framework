@@ -454,6 +454,14 @@ $nested-kbd-font-weight: $font-weight-bold;
 
 $list-inline-padding: 5px;
 
+$link-transition: color .2s ease-in-out, background-color .2s ease-in-out, box-shadow .2s ease-in-out; // custom
+
+// Custom outline and box-shadow definitions for :focus states.
+// Some components use box-shadow instead of outline for defining focus.
+$focus-outline:          3px solid rgba($brand-complementary, .7);
+$focus-box-shadow:       0 0 0 3px rgba($brand-complementary, .7);
+$focus-inset-box-shadow: inset 0 0 0 2px rgba($brand-complementary, .7);
+
 
 // Components
 //
@@ -512,7 +520,8 @@ $btn-padding-y:                  .75rem; // modified
 $btn-line-height:                1.25;
 $btn-font-weight:                $font-weight-bold; // modified
 $btn-box-shadow:                 inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075);
-$btn-focus-box-shadow:           0 0 0 2px rgba($brand-complementary, .25); // modified
+$btn-focus-box-shadow:           0 0 0 transparent; // modified
+$btn-focus-outline:              $focus-outline; // custom
 $btn-active-box-shadow:          inset 0 3px 5px rgba($black, .125);
 
 $btn-default-color:              $black; // custom
@@ -602,7 +611,7 @@ $input-border-radius-sm:         0; // modified
 
 $input-bg-focus:                 $input-bg;
 $input-border-focus:             lighten($brand-complementary, 25%); // modified
-$input-box-shadow-focus:         $input-box-shadow, rgba($input-border-focus, .6);
+$input-box-shadow-focus:         $focus-inset-box-shadow; // modified
 $input-color-focus:              $input-color;
 
 $input-color-placeholder:        $gray-dark; // modified
@@ -664,7 +673,7 @@ $custom-control-checked-indicator-color:      $brand-primary-color; // modified
 $custom-control-checked-indicator-bg:         $brand-primary;
 $custom-control-checked-indicator-box-shadow: none;
 
-$custom-control-focus-indicator-box-shadow: 0 0 0 1px $body-bg, 0 0 0 3px $brand-primary;
+$custom-control-focus-indicator-box-shadow: 0 0 0 1px $body-bg, $focus-box-shadow; // modified
 
 $custom-control-active-indicator-color:      $brand-primary-color; // modified
 $custom-control-active-indicator-bg:         $ucf-gold-lighter; // modified
@@ -698,15 +707,15 @@ $custom-select-border-width:  $input-btn-border-width;
 $custom-select-border-color:  $input-border-color;
 $custom-select-border-radius: $input-border-radius; // modified
 
-$custom-select-focus-border-color: $input-border-focus; // modified
-$custom-select-focus-box-shadow:   inset 0 1px 2px rgba($black, .075), 0 0 5px rgba($custom-select-focus-border-color, .5);
+$custom-select-focus-border-color: lighten($brand-complementary, 25%); // modified
+$custom-select-focus-box-shadow:   $input-box-shadow-focus; // modified
 
 $custom-select-sm-padding-y:  .2rem;
 $custom-select-sm-font-size:  75%;
 
 $custom-file-height:           2.5rem;
 $custom-file-width:            14rem;
-$custom-file-focus-box-shadow: 0 0 0 .075rem $white, 0 0 0 .2rem $brand-primary;
+$custom-file-focus-box-shadow: 0 0 0 .075rem $white, 0 0 0 .2rem $brand-complementary; // modified
 
 $custom-file-padding-x:     .5rem;
 $custom-file-padding-y:     1rem;
@@ -796,8 +805,6 @@ $navbar-brand-margin-right-sm:      2rem; // custom
 $navbar-brand-font-size:            1rem; // custom
 $navbar-brand-font-size-sm:         $font-size-lg; // custom
 
-$navbar-link-focus-box-shadow:      $btn-focus-box-shadow; // custom
-
 $navbar-toggler-padding-x:           .75rem;
 $navbar-toggler-padding-y:           calc(.25rem - #{($btn-border-width - $border-width)}); // modified
 $navbar-toggler-font-size:           $font-size-lg;
@@ -845,7 +852,7 @@ $nav-item-inline-spacer:        1rem;
 $nav-link-padding:              .5em 1em; // unused in Athena
 $nav-link-padding-x:            $grid-gutter-width-base / 2; // custom; should not exceed the current grid gutter width (see _nav.scss)
 $nav-link-padding-y:            $grid-gutter-width-base / 4; // custom
-$nav-link-hover-bg:             $gray-lighter;
+$nav-link-hover-bg:             rgba($black, .1); // modified
 $nav-disabled-link-color:       $gray-dark; // modified
 
 $nav-tabs-border-color:                       $gray-light; // modified
@@ -855,12 +862,12 @@ $nav-tabs-link-hover-border-color:            $gray-lighter;
 $nav-tabs-active-link-hover-color:            $gray-darker; // modified
 $nav-tabs-active-link-hover-bg:               $body-bg;
 $nav-tabs-active-link-hover-border-color:     $gray-light; // modified
-$nav-tabs-link-hover-bg:                      $gray-lighter; // custom
+$nav-tabs-link-hover-bg:                      $nav-link-hover-bg; // custom
 
 $nav-pills-border-radius:     0; // modified
 $nav-pills-active-link-color: $component-active-color;
 $nav-pills-active-link-bg:    $component-active-bg;
-$nav-pills-link-hover-bg:     $gray-lighter; // custom
+$nav-pills-link-hover-bg:     $nav-link-hover-bg; // custom
 
 
 // Pagination
@@ -1091,8 +1098,8 @@ $alert-danger-border:         $state-danger-border;
 
 $progress-height:               1.5rem; // modified
 $progress-font-size:            $font-size-xs; // modified
-$progress-bg:                   rgba(0, 0, 0, .05); // modified
-$progress-inverse-bg:           rgba(255, 255, 255, .3); // custom
+$progress-bg:                   rgba($black, .05); // modified
+$progress-inverse-bg:           rgba($white, .3); // custom
 $progress-border-radius:        0; // modified
 $progress-box-shadow:           inset 0 .1rem .1rem rgba($black, .1);
 $progress-bar-color:            $black; // modified

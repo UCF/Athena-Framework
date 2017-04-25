@@ -87,7 +87,7 @@
     }
 
     &:focus {
-      box-shadow: $navbar-link-focus-box-shadow;
+      // Unset for navbar links
       outline: 0;
     }
 
@@ -116,8 +116,7 @@
   margin-bottom: $navbar-toggler-margin-y;
   margin-top: $navbar-toggler-margin-y;
 
-  &:focus {
-    box-shadow: $navbar-link-focus-box-shadow;
+  &:not(.collapsed):focus {
     outline: 0;
   }
 }
