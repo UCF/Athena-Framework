@@ -17,6 +17,12 @@
     padding: calc(#{$input-padding-y-md} + #{$btn-border-width - $input-btn-border-width}) $input-padding-x;
   }
 
+  // Fix where Bootstrap calls box-shadow(), preventing outline replacements
+  // from taking effect when $enable-shadows is false
+  &:focus {
+    box-shadow: $input-box-shadow-focus;
+  }
+
   .bg-inverse & {
     // Reset focus/active state border
     @include form-control-focus();

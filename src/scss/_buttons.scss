@@ -13,112 +13,27 @@
     font-size: $btn-font-size-md;
   }
 
-  &:hover,
-  &.active,
-  &:active,
-  &.focus,
-  &:focus {
-    border-color: transparent;
-  }
-
-  // Fix issue in Bootstrap that applies base a:focus styles to .btn:focus
   &:focus,
   &.focus {
-    color: initial;
+    outline: $btn-focus-outline;
   }
 }
 
 
 //
-// Custom inverted outline button variants (for use against dark backgrounds)
-//
-// NOTE: -secondary and -inverse variants are intentionally not added, as they
-// would be redundant with our current color scheme
+// Color variants
 //
 
-.btn-outline-i-primary {
-  @include button-outline-variant($btn-primary-bg);
-}
-
-.btn-outline-i-complementary {
-  @include button-outline-variant($btn-complementary-bg);
-}
-
-.btn-outline-i-success {
-  @include button-outline-variant($btn-success-bg);
-}
-
-.btn-outline-i-info {
-  @include button-outline-variant($btn-info-bg);
-}
-
-.btn-outline-i-warning {
-  @include button-outline-variant($btn-warning-bg);
-}
-
-.btn-outline-i-danger {
-  @include button-outline-variant($btn-danger-bg);
-}
-
-.btn-outline-i-primary,
-.btn-outline-i-complementary,
-.btn-outline-i-success,
-.btn-outline-i-info,
-.btn-outline-i-warning,
-.btn-outline-i-danger {
-  color: $brand-inverse;
-}
-
-
-//
-// Alternate button overrides
-//
-
-.btn-outline-primary {
-  // Apply text (instead of gold) on online-primary variant.  Allow
-  // text color utility class overrides.
-  color: $black;
-}
-
-.btn-outline-primary,
-.btn-outline-i-primary {
-  &:hover,
-  &:focus,
-  &.focus,
-  &:active,
-  &.active {
-    // Force !important here, in case a text color utility class is used
-    // scss-lint:disable ImportantRule
-    color: $black !important;
-    // scss-lint:enable ImportantRule
-  }
-}
-
-
-//
-// Custom default button styles
-//
-
+// Custom default button for Athena
 // NOTE: there is intentionally no .btn-default-outline provided
 .btn-default {
   @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+  @include button-variant-overrides($btn-default-color, $btn-default-bg, $btn-default-border);
 
   // Always force borders on .btn-default to match $border-width, despite whatever $btn-border-width is set to.
   // Adjust padding to accommodate.
   border-width: 1px;
   padding: calc(#{$btn-padding-y} + #{($btn-border-width - $border-width)}) calc(#{$btn-padding-x} + #{($btn-border-width - $border-width)});
-
-  // Undo border-color:transparent on .btn-default disabled states
-  &:disabled,
-  &.disabled {
-    &:hover,
-    &.active,
-    &:active,
-    &.focus,
-    &:focus {
-      border-color: $btn-default-border;
-    }
-  }
 
   // List of selectors will need to be modified if extra button size classes are ever added
   &.btn-sm {
@@ -130,42 +45,13 @@
   }
 }
 
-
-//
-// Inverse btn color variants
-//
-
-.btn-inverse {
-  @include button-variant($btn-inverse-color, $btn-inverse-bg, $btn-inverse-border);
-
-  &:hover,
-  &.active,
-  &:active,
-  &.focus,
-  &:focus {
-    border-color: transparent;
-  }
+.btn-primary {
+  @include button-variant-overrides($btn-primary-color, $btn-primary-bg, $btn-primary-border, $white);
 }
-
-.btn-outline-inverse {
-  @include button-outline-variant($btn-inverse-bg);
-
-  &:hover,
-  &:focus,
-  &.focus,
-  &:active,
-  &.active {
-    color: $black;
-  }
-}
-
-
-//
-// Secondary btn color variants
-//
 
 .btn-secondary {
   @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+  @include button-variant-overrides($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 
   &:hover,
   &:focus,
@@ -178,21 +64,117 @@
   }
 }
 
-.btn-outline-secondary {
-  @include button-outline-variant($btn-secondary-bg);
+// Custom complementary button variant for Athena
+.btn-complementary {
+  @include button-variant($btn-complementary-color, $btn-complementary-bg, $btn-complementary-border);
+  @include button-variant-overrides($btn-complementary-color, $btn-complementary-bg, $btn-complementary-border);
+}
+
+.btn-info {
+  @include button-variant-overrides($btn-info-color, $btn-info-bg, $btn-info-border, $white);
+}
+
+.btn-success {
+  @include button-variant-overrides($btn-success-color, $btn-success-bg, $btn-success-border, $white);
+}
+
+.btn-warning {
+  @include button-variant-overrides($btn-warning-color, $btn-warning-bg, $btn-warning-border, $white);
+}
+
+.btn-danger {
+  @include button-variant-overrides($btn-danger-color, $btn-danger-bg, $btn-danger-border, $white);
+}
+
+.btn-inverse {
+  @include button-variant($btn-inverse-color, $btn-inverse-bg, $btn-inverse-border);
+  @include button-variant-overrides($btn-inverse-color, $btn-inverse-bg, $btn-inverse-border);
+
+  &:hover,
+  &.active,
+  &:active,
+  &.focus,
+  &:focus {
+    border-color: transparent;
+  }
 }
 
 
 //
-// Complementary btn color variants
+// Outline button variants
 //
 
-.btn-complementary {
-  @include button-variant($btn-complementary-color, $btn-complementary-bg, $btn-complementary-border);
+.btn-outline-primary {
+  @include button-outline-variant-overrides($black, $btn-primary-bg, $btn-primary-border);
+}
+
+.btn-outline-secondary {
+  @include button-outline-variant($btn-secondary-bg);
+  @include button-outline-variant-overrides($black, $btn-secondary-bg, $btn-secondary-border, $white);
 }
 
 .btn-outline-complementary {
   @include button-outline-variant($btn-complementary-bg);
+  @include button-outline-variant-overrides($black, $btn-complementary-bg, $btn-complementary-border, $white);
+}
+
+.btn-outline-inverse {
+  @include button-outline-variant($btn-inverse-bg);
+  @include button-outline-variant-overrides($white, $btn-inverse-bg, $btn-inverse-border, $black);
+}
+
+.btn-outline-info {
+  @include button-outline-variant-overrides($black, $btn-info-bg, $btn-info-border, $white);
+}
+
+.btn-outline-success {
+  @include button-outline-variant-overrides($black, $btn-success-bg, $btn-success-border, $white);
+}
+
+.btn-outline-warning {
+  @include button-outline-variant-overrides($black, $btn-warning-bg, $btn-warning-border, $white);
+}
+
+.btn-outline-danger {
+  @include button-outline-variant-overrides($black, $btn-danger-bg, $btn-danger-border, $white);
+}
+
+
+//
+// Custom inverted outline button variants (for use against dark backgrounds)
+//
+// NOTE: -secondary and -inverse variants are intentionally not added, as they
+// would be redundant with our current color scheme
+//
+
+.btn-outline-i-primary {
+  @include button-outline-variant($btn-primary-bg);
+  @include button-outline-variant-overrides($brand-inverse, $btn-primary-bg, $btn-primary-border, $black);
+}
+
+.btn-outline-i-complementary {
+  @include button-outline-variant($btn-complementary-bg);
+  @include button-outline-variant-overrides($brand-inverse, $btn-complementary-bg, $btn-complementary-border);
+}
+
+.btn-outline-i-success {
+  @include button-outline-variant($btn-success-bg);
+  @include button-outline-variant-overrides($brand-inverse, $btn-success-bg, $btn-success-border);
+}
+
+.btn-outline-i-info {
+  @include button-outline-variant($btn-info-bg);
+  @include button-outline-variant-overrides($brand-inverse, $btn-info-bg, $btn-info-border);
+}
+
+.btn-outline-i-warning {
+  @include button-outline-variant($btn-warning-bg);
+  @include button-outline-variant-overrides($brand-inverse, $btn-warning-bg, $btn-warning-border);
+}
+
+.btn-outline-i-danger {
+  @include button-outline-variant($btn-danger-bg);
+  @include button-outline-variant-overrides($brand-inverse, $btn-danger-bg, $btn-danger-border);
 }
 
 
@@ -221,21 +203,16 @@
 // Misc. overrides
 //
 
-// Font color resets for .primary and contextual variants
-.btn-primary,
-.btn-success,
-.btn-info,
-.btn-warning,
-.btn-danger {
+// Force black text for primary outline buttons
+.btn-outline-primary,
+.btn-outline-i-primary {
   &:hover,
-  &.active,
-  &:active {
-    color: $white;
-  }
-
-  &.disabled,
-  &:disabled {
-    color: initial;
+  &:active,
+  &.active {
+    // Force !important here, in case a text color utility class is used
+    // scss-lint:disable ImportantRule
+    color: $black !important;
+    // scss-lint:enable ImportantRule
   }
 }
 
@@ -245,13 +222,9 @@
 .btn-outline-info,
 .btn-outline-warning,
 .btn-outline-danger {
-  color: $black;
-
   &:hover,
   &.active,
-  &:active,
-  &.focus,
-  &:focus {
+  &:active {
     // Force !important here, in case a text color utility class is used
     // scss-lint:disable ImportantRule
     color: $white !important;

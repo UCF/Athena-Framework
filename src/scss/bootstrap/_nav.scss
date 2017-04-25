@@ -57,6 +57,10 @@
     color: $nav-tabs-active-link-hover-color;
     background-color: $nav-tabs-active-link-hover-bg;
     border-color: $nav-tabs-active-link-hover-border-color $nav-tabs-active-link-hover-border-color $nav-tabs-active-link-hover-bg;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   .dropdown-menu {
