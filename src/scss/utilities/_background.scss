@@ -1,31 +1,6 @@
 //
-// Contextual backgrounds
-//
-
-@include bg-variant('.bg-default', $brand-default);
-@include bg-variant('.bg-secondary', $brand-secondary-color); // intentionally inverted with color variable
-@include bg-variant('.bg-complementary', $brand-complementary);
-@include bg-variant('.bg-inverse', $brand-inverse-color); // override; intentionally inverted with color variable
-
-
-//
-// Extended brand backgrounds
-//
-
-@include bg-variant('.bg-primary-darkest', $brand-primary-darkest);
-@include bg-variant('.bg-primary-darker', $brand-primary-darker);
-@include bg-variant('.bg-primary-lighter', $brand-primary-lighter);
-@include bg-variant('.bg-primary-lightest', $brand-primary-lightest);
-
-@include bg-variant('.bg-metallic-darkest', $brand-metallic-darkest);
-@include bg-variant('.bg-metallic-darker', $brand-metallic-darker);
-@include bg-variant('.bg-metallic', $brand-metallic);
-@include bg-variant('.bg-metallic-lighter', $brand-metallic-lighter);
-@include bg-variant('.bg-metallic-lightest', $brand-metallic-lightest);
-
-
-//
-// Force accessible text colors on background utility classes.
+// Loops through all brand colors and extended colors, creates new bg
+// utility classes for each and forces accessible text colors on them.
 //
 // NOTE: Bootstrap intentionally does not apply text color to bg utility
 // classes for the sake of keeping the utility classes as single-purpose as
@@ -37,74 +12,33 @@
 // they force !important color values).
 //
 
-.bg-default {
-  color: $brand-default-color;
-}
+@each $color-name, $vals in $brand-colors {
+  $color: map-get($vals, 'color');
+  $text-color: map-get($vals, 'text-color');
 
-.bg-primary {
-  color: $brand-primary-color;
-}
+  // We intentionally invert the $color and $text-color variables
+  // for the 'secondary' and 'inverse' colors
+  @if $color-name == 'secondary' or $color-name == 'inverse' {
+    $color: map-get($vals, 'text-color');
+    $text-color: map-get($vals, 'color');
+  }
 
-.bg-secondary {
-  color: $brand-secondary; // intentionally inverted color variable
-}
+  // Create or override contextual background variant
+  @include bg-variant('.bg-#{$color-name}', $color);
 
-.bg-complementary {
-  color: $brand-complementary-color;
-}
+  // Force accessible text color on background variant class
+  .bg-#{$color-name} {
+    color: $text-color;
+  }
 
-.bg-success {
-  color: $brand-success-color;
-}
+  // Create transparent variants
+  @each $t-key, $t-val in $bg-transparencies {
+    // Create contextual background variant
+    @include bg-variant('.bg-#{$color-name}-t-#{$t-key}', rgba($color, $t-val));
 
-.bg-info {
-  color: $brand-info-color;
-}
-
-.bg-warning {
-  color: $brand-warning-color;
-}
-
-.bg-danger {
-  color: $brand-danger-color;
-}
-
-.bg-inverse {
-  color: $brand-inverse;  // intentionally inverted color variable
-}
-
-.bg-primary-darkest {
-  color: $brand-primary-darkest-color;
-}
-
-.bg-primary-darker {
-  color: $brand-primary-darker-color;
-}
-
-.bg-primary-lighter {
-  color: $brand-primary-lighter-color;
-}
-
-.bg-primary-lightest {
-  color: $brand-primary-lightest-color;
-}
-
-.bg-metallic-darkest {
-  color: $brand-metallic-darkest-color;
-}
-
-.bg-metallic-darker {
-  color: $brand-metallic-darker-color;
-}
-
-.bg-metallic {
-  color: $brand-metallic-color;
-}
-
-.bg-metallic-lighter {
-  color: $brand-metallic-lighter-color;
-}
-
-.bg-metallic-lightest {
-  color: $brand-metallic-lightest-color;
+    // Force accessible text color on background variant class
+    .bg-#{$color-name}-t-#{$t-key} {
+      color: $text-color;
+    }
+  }
 }

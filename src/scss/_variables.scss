@@ -197,7 +197,7 @@ $brand-metallic-lighter-color:  $black;
 $brand-metallic-lightest-color: $black;
 
 // Custom brand color alternates that meet white-background contrast requirements.
-// "-aw" = "Accessible over White"
+// "-aw" = "Accessible over White"/"Against White"
 $brand-default-aw:       $brand-default;
 $brand-primary-aw:       $ucf-gold-darkest;
 $brand-secondary-aw:     $black;
@@ -207,6 +207,105 @@ $brand-info-aw:          #298194;
 $brand-warning-aw:       #966e31;
 $brand-danger-aw:        #c44f38;
 $brand-inverse-aw:       $gray-dark;
+
+// Custom mapping of brand color variables, for convenience
+$brand-colors-base: (
+  default: (
+    color: $brand-default,
+    text-color: $brand-default-color,
+    text-color-aw: $brand-default-aw
+  ),
+  primary: (
+    color: $brand-primary,
+    text-color: $brand-primary-color,
+    text-color-aw: $brand-primary-aw
+  ),
+  secondary: (
+    color: $brand-secondary,
+    text-color: $brand-secondary-color,
+    text-color-aw: $brand-secondary-aw
+  ),
+  complementary: (
+    color: $brand-complementary,
+    text-color: $brand-complementary-color,
+    text-color-aw: $brand-complementary-aw
+  ),
+  info: (
+    color: $brand-info,
+    text-color: $brand-info-color,
+    text-color-aw: $brand-info-aw
+  ),
+  success: (
+    color: $brand-success,
+    text-color: $brand-success-color,
+    text-color-aw: $brand-success-aw
+  ),
+  warning: (
+    color: $brand-warning,
+    text-color: $brand-warning-color,
+    text-color-aw: $brand-warning-aw
+  ),
+  danger: (
+    color: $brand-danger,
+    text-color: $brand-danger-color,
+    text-color-aw: $brand-danger-aw
+  ),
+  inverse: (
+    color: $brand-inverse,
+    text-color: $brand-inverse-color,
+    text-color-aw: $brand-inverse-aw
+  ),
+);
+
+$brand-colors-extended: (
+  primary-darkest: (
+    color: $brand-primary-darkest,
+    text-color: $brand-primary-darkest-color
+  ),
+  primary-darker: (
+    color: $brand-primary-darker,
+    text-color: $brand-primary-darker-color
+  ),
+  primary-lighter: (
+    color: $brand-primary-lighter,
+    text-color: $brand-primary-lighter-color
+  ),
+  primary-lightest: (
+    color: $brand-primary-lightest,
+    text-color: $brand-primary-lightest-color
+  ),
+  metallic-darkest: (
+    color: $brand-metallic-darkest,
+    text-color: $brand-metallic-darkest-color
+  ),
+  metallic-darker: (
+    color: $brand-metallic-darker,
+    text-color: $brand-metallic-darker-color
+  ),
+  metallic: (
+    color: $brand-metallic,
+    text-color: $brand-metallic-color
+  ),
+  metallic-lighter: (
+    color: $brand-metallic-lighter,
+    text-color: $brand-metallic-lighter-color
+  ),
+  metallic-lightest: (
+    color: $brand-metallic-lightest,
+    text-color: $brand-metallic-lightest-color
+  )
+);
+
+$brand-colors: map-merge($brand-colors-base, $brand-colors-extended);
+
+// Opacity: custom map that defines opacity variants for which background utility
+// classes should be created.  Values must be between 0-1, to be passed to rgba().
+$bg-transparencies: (
+  1: .9,
+  2: .85,
+  3: .75
+);
+
 
 
 // Options
