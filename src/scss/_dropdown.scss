@@ -3,6 +3,11 @@
   to { opacity: 1; }
 }
 
+// On active and open, don't show outline
+.show .dropdown-toggle {
+  outline: 0;
+}
+
 // Links, buttons, and more within the dropdown menu
 .dropdown-item {
   // Add a proper vertical padding variable
