@@ -12,6 +12,11 @@
   @include media-breakpoint-up(md) {
     font-size: $btn-font-size-md;
   }
+
+  &:focus,
+  &.focus {
+    outline: $btn-focus-outline;
+  }
 }
 
 
