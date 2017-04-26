@@ -64,6 +64,13 @@
     margin-bottom: -$nav-tabs-border-width; // Add compatibility with non-ul tab markup
   }
 
+  .nav-link.active,
+  .nav-item.show .nav-link {
+    &:focus {
+      outline: 0;
+    }
+  }
+
   // Allow customization of hover state
   .nav-link:not(.disabled):not(.active) {
     @include hover-focus {
