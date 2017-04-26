@@ -70,9 +70,47 @@
     ================================================
     -->
 
-    <h2>Borders</h2>
+    <h2 class="mb-3">Borders</h2>
 
-    TODO
+    <h3 class="mb-3">Border</h3>
+
+    <div class="row">
+      <div class="col-lg-2">
+        <div class="card card-outline-secondary mb-3 p-4 text-center border-0">
+          ...
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <div class="card card-outline-secondary mb-3 p-4 text-center border-top-0">
+          ...
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <div class="card card-outline-secondary mb-3 p-4 text-center border-right-0">
+          ...
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <div class="card card-outline-secondary mb-3 p-4 text-center border-bottom-0">
+          ...
+        </div>
+      </div>
+      <div class="col-lg-2">
+        <div class="card card-outline-secondary mb-3 p-4 text-center border-left-0">
+          ...
+        </div>
+      </div>
+    </div>
+
+    <h3 class="mt-4 mb-3">Border-radius</h3>
+
+    <img src="//placehold.it/75x75" alt="..." class="rounded">
+    <img src="//placehold.it/75x75" alt="..." class="rounded-top">
+    <img src="//placehold.it/75x75" alt="..." class="rounded-right">
+    <img src="//placehold.it/75x75" alt="..." class="rounded-bottom">
+    <img src="//placehold.it/75x75" alt="..." class="rounded-left">
+    <img src="//placehold.it/75x75" alt="..." class="rounded-circle">
+    <img src="//placehold.it/75x75" alt="..." class="rounded-0">
 
 
     <hr class="mt-5 mb-5">
@@ -86,7 +124,10 @@
 
     <h2 class="mb-4">Clearfix</h2>
 
-    TODO
+    <div class="bg-info clearfix">
+      <button class="btn btn-secondary float-left">Example Button floated left</button>
+      <button class="btn btn-secondary float-right">Example Button floated right</button>
+    </div>
 
 
     <hr class="mt-5 mb-5">
@@ -98,9 +139,19 @@
     ================================================
     -->
 
-    <h2>Close Icon</h2>
+    <h2 class="mb-4">Close Icon</h2>
 
-    TODO
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-block">
+            <button type="button" class="close" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
     <hr class="mt-5 mb-5">
@@ -433,7 +484,7 @@
     ================================================
     -->
 
-    <h2>Flexbox</h2>
+    <h2 class="mb-3">Flexbox</h2>
 
     TODO
 
@@ -447,9 +498,21 @@
     ================================================
     -->
 
-    <h2>Display Property</h2>
+    <h2 class="mb-3">Display Property</h2>
 
-    TODO
+    <div class="d-inline bg-success">Inline</div>
+    <div class="d-inline bg-success">Inline</div>
+
+    <span class="d-block bg-primary my-3">Block</span>
+
+    <div class="d-inline-block bg-warning">
+      <h3>inline-block</h3>
+      Boot that strap!
+    </div>
+    <div class="d-inline-block bg-warning">
+      <h3>inline-block</h3>
+      Strap that boot!
+    </div>
 
 
     <hr class="mt-5 mb-5">
@@ -461,9 +524,11 @@
     ================================================
     -->
 
-    <h2>Image Replacement (hide text)</h2>
+    <h2 class="mb-3">Image Replacement (hide text)</h2>
 
-    TODO
+    <p>(View source--heading below this paragraph should be hidden.)</p>
+
+    <h1 class="text-hide">Custom heading</h1>
 
 
     <hr class="mt-5 mb-5">
@@ -475,9 +540,12 @@
     ================================================
     -->
 
-    <h2>Invisible Content</h2>
+    <h2 class="mb-3">Invisible Content</h2>
 
-    TODO
+    <div class="bg-faded">
+      <p>(Inspect element below--it should consume space but not be visible.)</p>
+      <div class="invisible bg-inverse p-4">...</div>
+    </div>
 
 
     <hr class="mt-5 mb-5">
@@ -489,9 +557,13 @@
     ================================================
     -->
 
-    <h2>Position</h2>
+    <h2 class="mb-3">Position</h2>
 
-    TODO
+    <h3 class="mt-4 mb-3"><a href="./navbar-fixed-top.html">Fixed Top</a></h3>
+
+    <h3 class="mt-4 mb-3"><a href="./navbar-fixed-bottom.html">Fixed Bottom</a></h3>
+
+    <h3 class="mt-4 mb-3"><a href="./navbar-sticky-top.html">Sticky Top</a></h3>
 
 
     <hr class="mt-5 mb-5">
@@ -503,9 +575,47 @@
     ================================================
     -->
 
-    <h2>Responsive Helpers</h2>
+    <h2 class="mb-3">Responsive Helpers</h2>
 
-    TODO
+    <h3 class="mb-3">Responsive Embeds</h3>
+
+    <div class="row">
+      <div class="col-md-3">
+        <!-- 21:9 aspect ratio -->
+        <div class="embed-responsive embed-responsive-21by9">
+          <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/Q6fPluFl_Ts?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <!-- 16:9 aspect ratio -->
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/Q6fPluFl_Ts?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <!-- 4:3 aspect ratio -->
+        <div class="embed-responsive embed-responsive-4by3">
+          <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/Q6fPluFl_Ts?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <!-- 1:1 aspect ratio -->
+        <div class="embed-responsive embed-responsive-1by1">
+          <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/Q6fPluFl_Ts?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="mb-3">Responsive Floats</h3>
+
+    <div class="float-left">Float left on all viewport sizes</div><br>
+    <div class="float-right">Float right on all viewport sizes</div><br>
+    <div class="float-none">Don't float on all viewport sizes</div><br>
+
+    <div class="float-sm-left">Float left on viewports sized SM (small) or wider</div><br>
+    <div class="float-md-left">Float left on viewports sized MD (medium) or wider</div><br>
+    <div class="float-lg-left">Float left on viewports sized LG (large) or wider</div><br>
+    <div class="float-xl-left">Float left on viewports sized XL (extra-large) or wider</div><br>
 
 
     <hr class="mt-5 mb-5">
@@ -517,9 +627,13 @@
     ================================================
     -->
 
-    <h2>Screenreaders</h2>
+    <h2 class="mb-3">Screenreaders</h2>
 
-    TODO
+    <p>(Try tabbing to the links below to test)</p>
+
+    <a class="sr-only" href="#">I'm only visible to screenreaders.</a>
+
+    <a class="sr-only sr-only-focusable" href="#">I'm visible to screenreaders but am also visible when focused.</a>
 
 
     <hr class="mt-5 mb-5">
@@ -531,9 +645,25 @@
     ================================================
     -->
 
-    <h2>Sizing</h2>
+    <h2 class="mb-3">Sizing</h2>
 
-    TODO
+    <div class="w-25 p-3 mb-2 bg-faded">Width 25%</div>
+    <div class="w-50 p-3 mb-2 bg-faded">Width 50%</div>
+    <div class="w-75 p-3 mb-2 bg-faded">Width 75%</div>
+    <div class="w-100 p-3 mb-2 bg-faded">Width 100%</div>
+
+    <div class="bg-faded mb-3" style="height: 100px;">
+      <div class="h-25 d-inline-block bg-default" style="width: 120px;">Height 25%</div>
+      <div class="h-50 d-inline-block bg-default" style="width: 120px;">Height 50%</div>
+      <div class="h-75 d-inline-block bg-default" style="width: 120px;">Height 75%</div>
+      <div class="h-100 d-inline-block bg-default" style="width: 120px;">Height 100%</div>
+    </div>
+
+    <img class="mw-100 mb-2" src="//placehold.it/1600x300" alt="Max-width 100%">
+
+    <div class="bg-faded mb-3" style="height: 100px;">
+      <div class="mh-100 bg-primary" style="width: 100px; height: 200px;">Max-height 100%</div>
+    </div>
 
 
     <hr class="mt-5 mb-5">
@@ -545,9 +675,13 @@
     ================================================
     -->
 
-    <h2>Spacing</h2>
+    <h2 class="mb-3">Spacing</h2>
 
-    TODO
+    <p>(See Bootstrap docs for full explanation of margin/padding spacer classes)</p>
+
+    <div class="bg-default text-center mx-auto" style="width: 200px;">
+      Centered element
+    </div>
 
 
     <hr class="mt-5 mb-5">
@@ -559,9 +693,124 @@
     ================================================
     -->
 
-    <h2>Typography</h2>
+    <h2 class="mb-3">Typography</h2>
 
-    TODO
+    <h3 class="mt-4 mb-3">Justified Text</h3>
+
+    <p class="text-justify">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
+
+    <h3 class="mt-4 mb-3">No-wrap Text</h3>
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card mb-3">
+          <div class="card-block text-nowrap">
+            Curabitur blandit tempus ardua ridiculus sed magna.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="mt-4 mb-3">Text Alignment</h3>
+
+    <p class="text-left">Left aligned text on all viewport sizes.</p>
+    <p class="text-center">Center aligned text on all viewport sizes.</p>
+    <p class="text-right">Right aligned text on all viewport sizes.</p>
+
+    <br>
+
+    <p class="text-sm-left">Left aligned text on viewports sized SM (small) or wider.</p>
+    <p class="text-md-left">Left aligned text on viewports sized MD (medium) or wider.</p>
+    <p class="text-lg-left">Left aligned text on viewports sized LG (large) or wider.</p>
+    <p class="text-xl-left">Left aligned text on viewports sized XL (extra-large) or wider.</p>
+
+    <h3 class="mt-4 mb-3">Text Transform</h3>
+
+    <p class="text-lowercase">Lowercased text.</p>
+    <p class="text-uppercase">Uppercased text.</p>
+    <p class="text-capitalize">CapiTaliZed text.</p>
+
+    <h3 class="mt-4 mb-3">Font Weight/Style</h3>
+
+    <p class="font-weight-light">Light weight text (only supported by default/sans-serif font, when the relevant font weight is loaded).</p>
+    <p class="font-weight-bold">Bold text.</p>
+    <p class="font-weight-black">Black weight text (only supported by default/sans-serif font, when the relevant font weight is loaded).</p>
+    <p class="font-weight-normal">Normal weight text.</p>
+    <p class="font-italic">Italic text.</p>
+
+    <h3 class="mt-4 mb-3">Font Family</h3>
+
+    <p class="font-sans-serif"><strong>Sans serif:</strong> Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum.</p>
+    <p class="font-serif"><strong>Serif:</strong> Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum.</p>
+    <p class="font-slab-serif"><strong>Slab serif:</strong> Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum.</p>
+    <p class="font-condensed"><strong>Condensed:</strong> Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum.</p>
+
+    <h3 class="mt-4 mb-3">Letter Spacing</h3>
+
+    <div class="row">
+      <div class="col-lg-4">
+
+        <h1 class="text-uppercase letter-spacing-0">Heading</h1>
+        <h1 class="text-uppercase letter-spacing-1">Heading</h1>
+        <h1 class="text-uppercase letter-spacing-2">Heading</h1>
+        <h1 class="text-uppercase letter-spacing-3">Heading</h1>
+        <h1 class="text-uppercase letter-spacing-4">Heading</h1>
+        <h1 class="text-uppercase letter-spacing-5">Heading</h1>
+
+      </div>
+      <div class="col-lg-4">
+
+        <h2 class="text-uppercase letter-spacing-0">Heading</h2>
+        <h2 class="text-uppercase letter-spacing-1">Heading</h2>
+        <h2 class="text-uppercase letter-spacing-2">Heading</h2>
+        <h2 class="text-uppercase letter-spacing-3">Heading</h2>
+        <h2 class="text-uppercase letter-spacing-4">Heading</h2>
+        <h2 class="text-uppercase letter-spacing-5">Heading</h2>
+
+      </div>
+      <div class="col-lg-4">
+
+        <h3 class="text-uppercase letter-spacing-0">Heading</h3>
+        <h3 class="text-uppercase letter-spacing-1">Heading</h3>
+        <h3 class="text-uppercase letter-spacing-2">Heading</h3>
+        <h3 class="text-uppercase letter-spacing-3">Heading</h3>
+        <h3 class="text-uppercase letter-spacing-4">Heading</h3>
+        <h3 class="text-uppercase letter-spacing-5">Heading</h3>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+
+        <h4 class="text-uppercase letter-spacing-0">Heading</h4>
+        <h4 class="text-uppercase letter-spacing-1">Heading</h4>
+        <h4 class="text-uppercase letter-spacing-2">Heading</h4>
+        <h4 class="text-uppercase letter-spacing-3">Heading</h4>
+        <h4 class="text-uppercase letter-spacing-4">Heading</h4>
+        <h4 class="text-uppercase letter-spacing-5">Heading</h4>
+
+      </div>
+      <div class="col-lg-4">
+
+        <h5 class="text-uppercase letter-spacing-0">Heading</h5>
+        <h5 class="text-uppercase letter-spacing-1">Heading</h5>
+        <h5 class="text-uppercase letter-spacing-2">Heading</h5>
+        <h5 class="text-uppercase letter-spacing-3">Heading</h5>
+        <h5 class="text-uppercase letter-spacing-4">Heading</h5>
+        <h5 class="text-uppercase letter-spacing-5">Heading</h5>
+
+      </div>
+      <div class="col-lg-4">
+
+        <h6 class="text-uppercase letter-spacing-0">Heading</h6>
+        <h6 class="text-uppercase letter-spacing-1">Heading</h6>
+        <h6 class="text-uppercase letter-spacing-2">Heading</h6>
+        <h6 class="text-uppercase letter-spacing-3">Heading</h6>
+        <h6 class="text-uppercase letter-spacing-4">Heading</h6>
+        <h6 class="text-uppercase letter-spacing-5">Heading</h6>
+
+      </div>
+    </div>
 
 
     <hr class="mt-5 mb-5">
@@ -573,9 +822,29 @@
     ================================================
     -->
 
-    <h2>Vertical Align</h2>
+    <h2 class="mb-3">Vertical Align</h2>
 
-    TODO
+    <span class="align-baseline">baseline</span>
+    <span class="align-top">top</span>
+    <span class="align-middle">middle</span>
+    <span class="align-bottom">bottom</span>
+    <span class="align-text-top">text-top</span>
+    <span class="align-text-bottom">text-bottom</span>
+
+    <br>
+
+    <table class="mt-4" style="height: 100px;">
+      <tbody>
+        <tr>
+          <td class="align-baseline">baseline</td>
+          <td class="align-top">top</td>
+          <td class="align-middle">middle</td>
+          <td class="align-bottom">bottom</td>
+          <td class="align-text-top">text-top</td>
+          <td class="align-text-bottom">text-bottom</td>
+        </tr>
+      </tbody>
+    </table>
 
 
   </div>
