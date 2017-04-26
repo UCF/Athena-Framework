@@ -45,18 +45,32 @@ var configLocal = require('./gulp-config.json'),
 //
 
 // Web font processing
-gulp.task('move-components-fonts', function() {
-  // TODO add custom fonts from components?
-  // CREATE SEPARATE TASK THAT RETURNS A STREAM:
-  // return gulp.src(config.packagesPath + '/path/to/component/fonts/*/*')
-  //   .pipe(gulp.dest(config.dist.fontPath));
-
-  // TODO add custom fonts from src directory?
-  // CREATE SEPARATE TASK THAT RETURNS A STREAM:
-  // return gulp.src(config.src.fontPath + '/path/to/fonts/*')
-  //   .pipe(gulp.dest(config.dist.fontPath + '/font-name'));
-  return;
+gulp.task('move-components-font-sans-serif', function() {
+  return gulp.src([
+    config.src.fontPath + '/ucf-sans-serif-alt/*',
+    '!' + config.src.fontPath + '/ucf-sans-serif-alt/generator_config.txt'
+  ])
+    .pipe(gulp.dest(config.dist.fontPath + '/ucf-sans-serif-alt'));
 });
+
+gulp.task('move-components-font-condensed', function() {
+  return gulp.src([
+    config.src.fontPath + '/ucf-condensed-alt/*',
+    '!' + config.src.fontPath + '/ucf-condensed-alt/generator_config.txt'
+  ])
+    .pipe(gulp.dest(config.dist.fontPath + '/ucf-condensed-alt'));
+});
+
+gulp.task('move-components-font-slab-serif', function() {
+  return gulp.src([config.src.fontPath + '/tulia/*'])
+    .pipe(gulp.dest(config.dist.fontPath + '/tulia'));
+});
+
+gulp.task('move-components-fonts', [
+  'move-components-font-sans-serif',
+  'move-components-font-condensed',
+  'move-components-font-slab-serif'
+]);
 
 // Copy Bootstrap scss files
 gulp.task('move-components-bootstrap-scss', function() {
@@ -83,7 +97,13 @@ gulp.task('move-components-stickyfill', function() {
 });
 
 // Run all component-related tasks
-gulp.task('components', ['move-components-fonts', 'move-components-bootstrap-scss', 'move-components-bootstrap-js', 'move-components-objectfit', 'move-components-stickyfill']);
+gulp.task('components', [
+  'move-components-fonts',
+  'move-components-bootstrap-scss',
+  'move-components-bootstrap-js',
+  'move-components-objectfit',
+  'move-components-stickyfill'
+]);
 
 
 //
@@ -99,18 +119,48 @@ gulp.task('scss-lint', function() {
 });
 
 // Compile scss files
-gulp.task('scss-build', function() {
-  return gulp.src(config.src.scssPath + '/framework.scss')
+function buildCSS(src, filename, dest) {
+  dest = dest || config.dist.cssPath;
+
+  return gulp.src(src)
     .pipe(sass().on('error', sass.logError))
     .pipe(cleanCSS())
     .pipe(autoprefixer({
       // Supported browsers added in package.json ("browserslist")
       cascade: false
     }))
-    .pipe(rename('framework.min.css'))
-    .pipe(gulp.dest(config.dist.cssPath))
+    .pipe(rename(filename))
+    .pipe(gulp.dest(dest))
     .pipe(browserSync.stream());
+}
+
+gulp.task('scss-build-webfont-base', function() {
+  return buildCSS(config.src.scssPath + '/webfonts-base.scss', 'webfonts-base.min.css');
 });
+
+gulp.task('scss-build-webfont-extended-sans', function() {
+  return buildCSS(config.src.scssPath + '/webfonts-extended-sans.scss', 'webfonts-extended-sans.min.css');
+});
+
+gulp.task('scss-build-webfont-extended', function() {
+  return buildCSS(config.src.scssPath + '/webfonts-extended.scss', 'webfonts-extended.min.css');
+});
+
+gulp.task('scss-build-webfont-all', function() {
+  return buildCSS(config.src.scssPath + '/webfonts-all.scss', 'webfonts-all.min.css');
+});
+
+gulp.task('scss-build-framework', function() {
+  return buildCSS(config.src.scssPath + '/framework.scss', 'framework.min.css');
+});
+
+gulp.task('scss-build', [
+  'scss-build-webfont-base',
+  'scss-build-webfont-extended-sans',
+  'scss-build-webfont-extended',
+  'scss-build-webfont-all',
+  'scss-build-framework'
+]);
 
 // All css-related tasks
 gulp.task('css', ['scss-lint', 'scss-build']);
