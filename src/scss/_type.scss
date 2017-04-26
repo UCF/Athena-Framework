@@ -225,7 +225,7 @@ body {
     content: '“';
     // Always use arial here for consistency across font family overrides
     font-family: Arial, sans-serif;
-    font-size: 5.4em;
+    font-size: 5.4rem;
     font-style: normal;
     font-weight: 600;
     left: -5px;
@@ -235,7 +235,7 @@ body {
     z-index: -1;
 
     @include media-breakpoint-up(md) {
-      font-size: 6.75em;
+      font-size: 9.25rem;
       left: -8px;
       top: .545em;
     }
