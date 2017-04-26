@@ -62,7 +62,10 @@ gulp.task('move-components-font-condensed', function() {
 });
 
 gulp.task('move-components-font-slab-serif', function() {
-  return gulp.src([config.src.fontPath + '/tulia/*'])
+  return gulp.src([
+    config.src.fontPath + '/tulia/*',
+    '!' + config.src.fontPath + '/tulia/generator_config.txt'
+  ])
     .pipe(gulp.dest(config.dist.fontPath + '/tulia'));
 });
 
