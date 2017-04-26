@@ -134,33 +134,11 @@ function buildCSS(src, filename, dest) {
     .pipe(browserSync.stream());
 }
 
-gulp.task('scss-build-webfont-base', function() {
-  return buildCSS(config.src.scssPath + '/webfonts-base.scss', 'webfonts-base.min.css');
-});
-
-gulp.task('scss-build-webfont-extended-sans', function() {
-  return buildCSS(config.src.scssPath + '/webfonts-extended-sans.scss', 'webfonts-extended-sans.min.css');
-});
-
-gulp.task('scss-build-webfont-extended', function() {
-  return buildCSS(config.src.scssPath + '/webfonts-extended.scss', 'webfonts-extended.min.css');
-});
-
-gulp.task('scss-build-webfont-all', function() {
-  return buildCSS(config.src.scssPath + '/webfonts-all.scss', 'webfonts-all.min.css');
-});
-
 gulp.task('scss-build-framework', function() {
   return buildCSS(config.src.scssPath + '/framework.scss', 'framework.min.css');
 });
 
-gulp.task('scss-build', [
-  'scss-build-webfont-base',
-  'scss-build-webfont-extended-sans',
-  'scss-build-webfont-extended',
-  'scss-build-webfont-all',
-  'scss-build-framework'
-]);
+gulp.task('scss-build', ['scss-build-framework']);
 
 // All css-related tasks
 gulp.task('css', ['scss-lint', 'scss-build']);
