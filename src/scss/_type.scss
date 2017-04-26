@@ -223,18 +223,21 @@ body {
 
   &::before {
     content: '“';
-    font-size: 5em;
+    // Always use arial here for consistency across font family overrides
+    font-family: Arial, sans-serif;
+    font-size: 5.4rem;
     font-style: normal;
-    font-weight: 700;
-    left: -8px;
+    font-weight: 600;
+    left: -5px;
     line-height: 0;
     position: absolute;
     top: .565em;
     z-index: -1;
 
     @include media-breakpoint-up(md) {
-      font-size: 6em;
-      left: -5px;
+      font-size: 9.25rem;
+      left: -8px;
+      top: .545em;
     }
   }
 }
