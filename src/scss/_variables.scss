@@ -452,7 +452,6 @@ $font-family-serif:      'Chronicle Text G3 A', 'Chronicle Text G3 B', Georgia, 
 $font-family-slab-serif: 'Archer A', 'Archer B', 'UCF Slab Serif Alt', serif; // custom
 $font-family-condensed:  'Knockout 49 A', 'Knockout 49 B', 'UCF Condensed Alt', sans-serif; // custom
 $font-family-monospace:  Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-$font-family-glyphs:     Arial, sans-serif; // custom
 $font-family-base:       $font-family-sans-serif;
 
 $font-size-lg:   1.25rem;
@@ -541,6 +540,8 @@ $font-slab-serif-blockquote-size:    $font-slab-serif-lead-size; // custom
 $font-slab-serif-blockquote-size-md: $font-slab-serif-lead-size-md; // custom
 $font-serif-blockquote-line-height:      $font-serif-lead-line-height; // custom
 $font-slab-serif-blockquote-line-height: $font-slab-serif-lead-line-height; // custom
+
+$blockquote-quotation-mark-font-family: Arial, sans-serif; // custom
 
 $hr-border-color: rgba($black, .1);
 $hr-border-width: $border-width;
@@ -1293,8 +1294,9 @@ $carousel-transition:           transform .6s ease-in-out;
 
 // Close
 
-$close-font-size:             $font-size-base * 2; // modified
-$close-font-size-md:          $font-size-base-md * 2; // modified
+$close-font-family:           Verdana, sans-serif; // custom
+$close-font-size:             $font-size-base * 1.65; // modified
+$close-font-size-md:          $font-size-base-md * 1.65; // modified
 $close-font-weight:           $font-weight-normal; // modified
 $close-color:                 $black;
 $close-text-shadow:           none; // modified

@@ -1,9 +1,18 @@
 .close {
-  // Always use system fonts here for consistency across font family overrides
-  font-family: $font-family-glyphs;
+  // Allow font family to be set separately
+  font-family: $close-font-family;
   line-height: .8;
 
   @include media-breakpoint-up(md) {
     font-size: $close-font-size-md;
   }
 }
+
+
+// button.close selector required to match Bootstrap's selector
+// scss-lint:disable QualifyingElement
+.close,
+button.close {
+  margin-left: $spacer-x; // give close button some breathing room
+}
+// scss-lint:enable QualifyingElement
