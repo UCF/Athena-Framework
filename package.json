@@ -8,6 +8,10 @@
   },
   "description": "A front-end web framework for UCF websites and applications",
   "private": false,
+  "files": [
+    "dist",
+    "src"
+  ],
   "devDependencies": {
     "Stickyfill": "github:wilddeer/stickyfill",
     "babel": "^6.23.0",

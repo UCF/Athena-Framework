@@ -14,11 +14,12 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    ".npmignore",
     "bower_components",
     "test",
     "tests",
     "package.json",
+    "gulpfile.js",
+    "gulp-config.template.json",
     "index.html",
     "examples"
   ],
