@@ -8,6 +8,22 @@
 
 
 //
+// Dismissible alerts
+//
+
+.alert-dismissible {
+  // button.close selector required to match Bootstrap's selector
+  // scss-lint:disable QualifyingElement
+  .close,
+  button.close {
+    margin-left: 0;
+    padding: $alert-padding-y $alert-padding-x $spacer-y $spacer-x;
+  }
+  // scss-lint:enable QualifyingElement
+}
+
+
+//
 // Alternate styles
 //
 

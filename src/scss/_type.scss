@@ -223,8 +223,8 @@ body {
 
   &::before {
     content: '“';
-    // Always use arial here for consistency across font family overrides
-    font-family: Arial, sans-serif;
+    // Allow font family for quotation marks to be set separately
+    font-family: $blockquote-quotation-mark-font-family;
     font-size: 5.4rem;
     font-style: normal;
     font-weight: 600;
