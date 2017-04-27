@@ -109,6 +109,7 @@
 // Variables related to the build
 $build-bootstrap: true;
 
+
 // Colors
 //
 // Grayscale and brand colors for use across Bootstrap.
@@ -391,6 +392,13 @@ $inverse-bg:    $brand-inverse; // modified
 $inverse-color: $brand-inverse-color; // modified
 
 
+//
+// UCF Header settings
+//
+
+$ucf-header-height: 50px; // custom
+
+
 // Links
 //
 // Style anchor elements.
@@ -443,6 +451,7 @@ $grid-gutter-widths: (
   lg: $grid-gutter-width-base,
   xl: $grid-gutter-width-base
 );
+
 
 // Fonts
 //
@@ -884,15 +893,16 @@ $dropdown-header-color:          $gray-dark; // modified
 // Warning: Avoid customizing these values. They're used for a bird's eye view
 // of components dependent on the z-axis and are designed to all work together.
 
-$zindex-dropdown-backdrop:  990;
-$zindex-navbar:             1000;
-$zindex-dropdown:           1000;
-$zindex-fixed:              1030;
-$zindex-sticky:             1030;
-$zindex-modal-backdrop:     1040;
-$zindex-modal:              1050;
-$zindex-popover:            1060;
-$zindex-tooltip:            1070;
+$z-index-ucf-header:        10000; // custom
+$zindex-dropdown-backdrop:  10010;
+$zindex-navbar:             10020;
+$zindex-dropdown:           10030;
+$zindex-fixed:              10040;
+$zindex-sticky:             10040;
+$zindex-modal-backdrop:     10050;
+$zindex-modal:              10060;
+$zindex-popover:            10070;
+$zindex-tooltip:            10080;
 
 
 // Navbar
