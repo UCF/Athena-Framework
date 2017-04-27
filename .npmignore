@@ -23,7 +23,6 @@ Thumbs.db
 
 # npm, bower, and other dependencies
 node_modules
-.npmignore
 bower.json
 bower_components
 gulp-config.json
