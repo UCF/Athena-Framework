@@ -6,7 +6,7 @@
     "email": "webcom@ucf.edu",
     "url": "https://github.com/UCF"
   },
-  "description": "A UCF Branded web framework based on Bootstrap.",
+  "description": "A front-end web framework for UCF websites and applications",
   "private": false,
   "devDependencies": {
     "Stickyfill": "github:wilddeer/stickyfill",
