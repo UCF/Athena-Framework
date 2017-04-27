@@ -1,7 +1,9 @@
-// button.close selector required to match Bootstrap's selector
-// scss-lint:disable QualifyingElement
-.close,
-button.close {
-  margin-left: $spacer-x; // give close button some breathing room
+.close {
+  // Always use system fonts here for consistency across font family overrides
+  font-family: $font-family-glyphs;
+  line-height: .8;
+
+  @include media-breakpoint-up(md) {
+    font-size: $close-font-size-md;
+  }
 }
-// scss-lint:enable QualifyingElement

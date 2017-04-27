@@ -223,8 +223,8 @@ body {
 
   &::before {
     content: '“';
-    // Always use arial here for consistency across font family overrides
-    font-family: Arial, sans-serif;
+    // Always use system fonts here for consistency across font family overrides
+    font-family: $font-family-glyphs;
     font-size: 5.4rem;
     font-style: normal;
     font-weight: 600;
