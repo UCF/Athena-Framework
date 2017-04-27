@@ -493,8 +493,367 @@
     -->
 
     <h2 class="mb-3">Flexbox</h2>
+    <p>
+      Note: responsive variations for each flexbox utility class are not included here.  See the <a href="https://v4-alpha.getbootstrap.com/utilities/flexbox/">Bootstrap docs</a> for available responsive options.
+    </p>
 
-    TODO
+
+    <h3 class="mt-4 mb-3">Enable Flex Behaviors</h3>
+
+    <div class="d-flex p-2 bg-default mb-2">I'm a flexbox container!</div>
+
+    <div class="d-inline-flex p-2 bg-default mb-4">I'm an inline flexbox container!</div>
+
+
+    <h3 class="mb-3">Direction</h3>
+
+    <div class="d-flex flex-row mb-2 p-2 bg-inverse">
+      <div class="p-2 bg-default">Flex item 1</div>
+      <div class="p-2 bg-default">Flex item 2</div>
+      <div class="p-2 bg-default">Flex item 3</div>
+    </div>
+    <div class="d-flex flex-row-reverse mb-4 p-2 bg-inverse">
+      <div class="p-2 bg-default">Flex item 1</div>
+      <div class="p-2 bg-default">Flex item 2</div>
+      <div class="p-2 bg-default">Flex item 3</div>
+    </div>
+
+    <div class="d-flex flex-column mb-2 p-2 bg-inverse">
+      <div class="p-2 bg-default mb-2">Flex item 1</div>
+      <div class="p-2 bg-default mb-2">Flex item 2</div>
+      <div class="p-2 bg-default">Flex item 3</div>
+    </div>
+    <div class="d-flex flex-column-reverse p-2 bg-inverse">
+      <div class="p-2 bg-default">Flex item 1</div>
+      <div class="p-2 bg-default mb-2">Flex item 2</div>
+      <div class="p-2 bg-default mb-2">Flex item 3</div>
+    </div>
+
+
+    <h3 class="mt-4 mb-3">Justify Content</h3>
+
+    <div class="d-flex justify-content-start p-2 bg-inverse mb-2">
+      <div class="p-2 bg-default">Flex item 1</div>
+      <div class="p-2 bg-default">Flex item 2</div>
+      <div class="p-2 bg-default">Flex item 3</div>
+    </div>
+    <div class="d-flex justify-content-end p-2 bg-inverse mb-2">
+      <div class="p-2 bg-default">Flex item 1</div>
+      <div class="p-2 bg-default">Flex item 2</div>
+      <div class="p-2 bg-default">Flex item 3</div>
+    </div>
+    <div class="d-flex justify-content-center p-2 bg-inverse mb-2">
+      <div class="p-2 bg-default">Flex item 1</div>
+      <div class="p-2 bg-default">Flex item 2</div>
+      <div class="p-2 bg-default">Flex item 3</div>
+    </div>
+    <div class="d-flex justify-content-between p-2 bg-inverse mb-2">
+      <div class="p-2 bg-default">Flex item 1</div>
+      <div class="p-2 bg-default">Flex item 2</div>
+      <div class="p-2 bg-default">Flex item 3</div>
+    </div>
+    <div class="d-flex justify-content-around p-2 bg-inverse mb-2">
+      <div class="p-2 bg-default">Flex item 1</div>
+      <div class="p-2 bg-default">Flex item 2</div>
+      <div class="p-2 bg-default">Flex item 3</div>
+    </div>
+
+
+    <h3 class="mt-4 mb-3">Align Items</h3>
+
+    <div class="d-flex align-items-start p-2 bg-inverse mb-2" style="height: 100px;">
+      <div class="p-2 bg-default">Flex item 1</div>
+      <div class="p-2 bg-default">Flex item 2</div>
+      <div class="p-2 bg-default">Flex item 3</div>
+    </div>
+    <div class="d-flex align-items-end p-2 bg-inverse mb-2" style="height: 100px;">
+      <div class="p-2 bg-default">Flex item 1</div>
+      <div class="p-2 bg-default">Flex item 2</div>
+      <div class="p-2 bg-default">Flex item 3</div>
+    </div>
+    <div class="d-flex align-items-center p-2 bg-inverse mb-2" style="height: 100px;">
+      <div class="p-2 bg-default">Flex item 1</div>
+      <div class="p-2 bg-default">Flex item 2</div>
+      <div class="p-2 bg-default">Flex item 3</div>
+    </div>
+    <div class="d-flex align-items-baseline p-2 bg-inverse mb-2" style="height: 100px;">
+      <div class="p-2 bg-default">Flex item 1</div>
+      <div class="p-2 bg-default">Flex item 2</div>
+      <div class="p-2 bg-default">Flex item 3</div>
+    </div>
+    <div class="d-flex align-items-stretch p-2 bg-inverse mb-2" style="height: 100px;">
+      <div class="p-2 bg-default">Flex item 1</div>
+      <div class="p-2 bg-default">Flex item 2</div>
+      <div class="p-2 bg-default">Flex item 3</div>
+    </div>
+
+
+    <h3 class="mt-4 mb-3">Align Self</h3>
+
+    <div class="d-flex p-2 bg-inverse mb-2" style="height: 100px;">
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default align-self-start">Aligned flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+    </div>
+
+    <div class="d-flex p-2 bg-inverse mb-2" style="height: 100px;">
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default align-self-end">Aligned flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+    </div>
+
+    <div class="d-flex p-2 bg-inverse mb-2" style="height: 100px;">
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default align-self-center">Aligned flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+    </div>
+
+    <div class="d-flex p-2 bg-inverse mb-2" style="height: 100px;">
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default align-self-baseline">Aligned flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+    </div>
+
+    <div class="d-flex p-2 bg-inverse mb-2" style="height: 100px;">
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default align-self-stretch">Aligned flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+    </div>
+
+
+    <h3 class="mt-4 mb-3">Auto Margins</h3>
+
+    <h4 class="mb-3">With Justify-Content</h4>
+
+    <div class="d-flex justify-content-end p-2 bg-inverse mb-2">
+      <div class="mr-auto p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+    </div>
+
+    <div class="d-flex justify-content-start p-2 bg-inverse">
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="ml-auto p-2 bg-default">Flex item</div>
+    </div>
+
+    <h4 class="mt-4 mb-3">With Align-Items</h4>
+
+    <div class="d-flex align-items-start flex-column p-2 bg-inverse mb-2" style="height: 200px;">
+      <div class="mb-auto p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+    </div>
+
+    <div class="d-flex align-items-end flex-column p-2 bg-inverse" style="height: 200px;">
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="mt-auto p-2 bg-default">Flex item</div>
+    </div>
+
+
+    <h3 class="mt-4 mb-3">Wrap</h3>
+
+    <div class="d-flex flex-nowrap p-2 bg-inverse mb-2">
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+    </div>
+
+    <div class="d-flex flex-wrap p-2 bg-inverse mb-2">
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+    </div>
+
+    <div class="d-flex flex-wrap-reverse p-2 bg-inverse mb-2">
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+    </div>
+
+
+    <h3 class="mt-4 mb-3">Order</h3>
+
+    <div class="d-flex flex-nowrap p-2 bg-inverse mb-2">
+      <div class="flex-last p-2 bg-default">First flex item</div>
+      <div class="p-2 bg-default">Second flex item</div>
+      <div class="flex-first p-2 bg-default">Third flex item</div>
+    </div>
+
+
+    <h3 class="mt-4 mb-3">Align Content</h3>
+
+    <div class="d-flex flex-wrap align-content-start p-2 bg-inverse mb-2" style="height: 200px;">
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+    </div>
+
+    <div class="d-flex flex-wrap align-content-end p-2 bg-inverse mb-2" style="height: 200px;">
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+    </div>
+
+    <div class="d-flex flex-wrap align-content-center p-2 bg-inverse mb-2" style="height: 200px;">
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+    </div>
+
+    <div class="d-flex flex-wrap align-content-between p-2 bg-inverse mb-2" style="height: 200px;">
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+    </div>
+
+    <div class="d-flex flex-wrap align-content-around p-2 bg-inverse mb-2" style="height: 200px;">
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+    </div>
+
+    <div class="d-flex flex-wrap align-content-stretch p-2 bg-inverse mb-2" style="height: 200px;">
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+      <div class="p-2 bg-default">Flex item</div>
+    </div>
 
 
     <hr class="mt-5 mb-5">
@@ -554,6 +913,20 @@
       <p>(Inspect element below--it should consume space but not be visible.)</p>
       <div class="invisible bg-inverse p-4">...</div>
     </div>
+
+
+    <hr class="mt-5 mb-5">
+
+
+    <!--
+    ================================================
+    MEDIA BACKGROUNDS
+    ================================================
+    -->
+
+    <h2 class="mb-3">Media Backgrounds</h2>
+
+    <h3 class="mt-4 mb-3"><a href="./media-backgrounds.html">View Examples</a></h3>
 
 
     <hr class="mt-5 mb-5">
@@ -755,70 +1128,12 @@
 
     <h3 class="mt-4 mb-3">Letter Spacing</h3>
 
-    <div class="row">
-      <div class="col-lg-4">
-
-        <h1 class="text-uppercase letter-spacing-0">Heading</h1>
-        <h1 class="text-uppercase letter-spacing-1">Heading</h1>
-        <h1 class="text-uppercase letter-spacing-2">Heading</h1>
-        <h1 class="text-uppercase letter-spacing-3">Heading</h1>
-        <h1 class="text-uppercase letter-spacing-4">Heading</h1>
-        <h1 class="text-uppercase letter-spacing-5">Heading</h1>
-
-      </div>
-      <div class="col-lg-4">
-
-        <h2 class="text-uppercase letter-spacing-0">Heading</h2>
-        <h2 class="text-uppercase letter-spacing-1">Heading</h2>
-        <h2 class="text-uppercase letter-spacing-2">Heading</h2>
-        <h2 class="text-uppercase letter-spacing-3">Heading</h2>
-        <h2 class="text-uppercase letter-spacing-4">Heading</h2>
-        <h2 class="text-uppercase letter-spacing-5">Heading</h2>
-
-      </div>
-      <div class="col-lg-4">
-
-        <h3 class="text-uppercase letter-spacing-0">Heading</h3>
-        <h3 class="text-uppercase letter-spacing-1">Heading</h3>
-        <h3 class="text-uppercase letter-spacing-2">Heading</h3>
-        <h3 class="text-uppercase letter-spacing-3">Heading</h3>
-        <h3 class="text-uppercase letter-spacing-4">Heading</h3>
-        <h3 class="text-uppercase letter-spacing-5">Heading</h3>
-
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-4">
-
-        <h4 class="text-uppercase letter-spacing-0">Heading</h4>
-        <h4 class="text-uppercase letter-spacing-1">Heading</h4>
-        <h4 class="text-uppercase letter-spacing-2">Heading</h4>
-        <h4 class="text-uppercase letter-spacing-3">Heading</h4>
-        <h4 class="text-uppercase letter-spacing-4">Heading</h4>
-        <h4 class="text-uppercase letter-spacing-5">Heading</h4>
-
-      </div>
-      <div class="col-lg-4">
-
-        <h5 class="text-uppercase letter-spacing-0">Heading</h5>
-        <h5 class="text-uppercase letter-spacing-1">Heading</h5>
-        <h5 class="text-uppercase letter-spacing-2">Heading</h5>
-        <h5 class="text-uppercase letter-spacing-3">Heading</h5>
-        <h5 class="text-uppercase letter-spacing-4">Heading</h5>
-        <h5 class="text-uppercase letter-spacing-5">Heading</h5>
-
-      </div>
-      <div class="col-lg-4">
-
-        <h6 class="text-uppercase letter-spacing-0">Heading</h6>
-        <h6 class="text-uppercase letter-spacing-1">Heading</h6>
-        <h6 class="text-uppercase letter-spacing-2">Heading</h6>
-        <h6 class="text-uppercase letter-spacing-3">Heading</h6>
-        <h6 class="text-uppercase letter-spacing-4">Heading</h6>
-        <h6 class="text-uppercase letter-spacing-5">Heading</h6>
-
-      </div>
-    </div>
+    <p class="text-uppercase letter-spacing-0">Ambitioni dedisse scripsisse iudicaretur</p>
+    <p class="text-uppercase letter-spacing-1">Ambitioni dedisse scripsisse iudicaretur</p>
+    <p class="text-uppercase letter-spacing-2">Ambitioni dedisse scripsisse iudicaretur</p>
+    <p class="text-uppercase letter-spacing-3">Ambitioni dedisse scripsisse iudicaretur</p>
+    <p class="text-uppercase letter-spacing-4">Ambitioni dedisse scripsisse iudicaretur</p>
+    <p class="text-uppercase letter-spacing-5">Ambitioni dedisse scripsisse iudicaretur</p>
 
 
     <hr class="mt-5 mb-5">
