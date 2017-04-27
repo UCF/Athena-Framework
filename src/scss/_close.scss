@@ -1,3 +1,14 @@
+.close {
+  // Allow font family to be set separately
+  font-family: $close-font-family;
+  line-height: .8;
+
+  @include media-breakpoint-up(md) {
+    font-size: $close-font-size-md;
+  }
+}
+
+
 // button.close selector required to match Bootstrap's selector
 // scss-lint:disable QualifyingElement
 .close,

@@ -541,6 +541,8 @@ $font-slab-serif-blockquote-size-md: $font-slab-serif-lead-size-md; // custom
 $font-serif-blockquote-line-height:      $font-serif-lead-line-height; // custom
 $font-slab-serif-blockquote-line-height: $font-slab-serif-lead-line-height; // custom
 
+$blockquote-quotation-mark-font-family: Arial, sans-serif; // custom
+
 $hr-border-color: rgba($black, .1);
 $hr-border-width: $border-width;
 
@@ -1292,10 +1294,12 @@ $carousel-transition:           transform .6s ease-in-out;
 
 // Close
 
-$close-font-size:             $font-size-base-md * 1.5; // modified
-$close-font-weight:           $font-weight-bold;
+$close-font-family:           Verdana, sans-serif; // custom
+$close-font-size:             $font-size-base * 1.65; // modified
+$close-font-size-md:          $font-size-base-md * 1.65; // custom
+$close-font-weight:           $font-weight-normal; // modified
 $close-color:                 $black;
-$close-text-shadow:           0 1px 0 $white;
+$close-text-shadow:           none; // modified
 
 
 // Code
