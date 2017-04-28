@@ -1,5 +1,5 @@
 {
-  "name": "Athena-Framework",
+  "name": "athena-framework",
   "description": "A front-end web framework for UCF websites and applications",
   "main": [
     "src/js/framework.js",
@@ -16,7 +16,12 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "package.json",
+    "gulpfile.js",
+    "gulp-config.template.json",
+    "index.html",
+    "examples"
   ],
   "dependencies": {
     "jquery": ">=1.9.1",
