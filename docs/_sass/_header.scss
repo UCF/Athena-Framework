@@ -33,6 +33,10 @@
       color: #000;
       overflow: hidden;
 
+      background: transparent;
+      color: #efefef;
+      border: solid 1px #efefef;
+
       .card-block {
         z-index: 2;
       }
@@ -55,6 +59,7 @@
       font-weight: normal;
       left: 93%;
       margin: -203px 0 0 -160px;
+      opacity: .1;
       position: absolute;
       text-decoration: inherit;
       top: 80%;
