@@ -29,7 +29,17 @@
     </header>
     <main>
         <article class="py-4 container">
-            {{ content }}
+            <div class="row">
+                <div class="col-md-8">
+                    {{ content }}
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        <li><a href="/getting-started/">Overview</a></li>
+                        <li><a href="/getting-started/download">Download</a></li>
+                    </ul>
+                </div>
+            </div>
         </article>
     </main>
     {% include footer.html %}
