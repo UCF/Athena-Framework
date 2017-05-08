@@ -33,7 +33,6 @@ The source code and files are available to clone, download, or view on the <a hr
 
 <pre><code>├── src/
    ├── fonts/…
-   │   └── framework.min.css
    ├── js/…
    └── scss/
    │   ├── …
@@ -42,7 +41,8 @@ The source code and files are available to clone, download, or view on the <a hr
    │   ├── _breadcrumb.scss
    │   ├── _buttons.scss
    │   ├── _card.scss
-   │   ├── etc…
+   │   ├── …
+   │   └── framework.scss
 </code></pre>
 
 <hr />
