@@ -6,10 +6,11 @@ subtitle: An overview of Athena, including how to download and use it, some basi
 
 # Installation
 
-<hr>
+Installing the Athena Framework is as simple as adding the CSS and JS files to your project.
+
+<hr />
 
 ## Minified files
-Installing the Athena Framework is as simple as adding the CSS and JS files to your project.
 
 After <a href="{{ "/getting-started/download/" | prepend: site.baseurl }}">downloading and extracting the Athena-Framework,</a> add the CSS, JS and Font files to your project's static assets folder.
 

@@ -5,11 +5,10 @@
         </button>
         <a class="navbar-brand" href="{{ "/" | prepend: site.baseurl }}">Athena Framework</a>
 
-
       <ul class="navbar-nav mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="{{ "/getting-started/" | prepend: site.baseurl }}">Getting Started</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ "/getting-started/download/" | prepend: site.baseurl }}">Download</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ "/getting-started/installation/" | prepend: site.baseurl }}">Installation</a></li>
+        <li class="nav-item{% if page.title == 'Getting Started' %} active{% endif %}"><a class="nav-link" href="{{ "/getting-started/" | prepend: site.baseurl }}">Getting Started</a></li>
+        <li class="nav-item{% if page.title == 'Download' %} active{% endif %}"><a class="nav-link" href="{{ "/getting-started/download/" | prepend: site.baseurl }}">Download</a></li>
+        <li class="nav-item{% if page.title == 'Install' %} active{% endif %}"><a class="nav-link" href="{{ "/getting-started/install/" | prepend: site.baseurl }}">Install</a></li>
       </ul>
     </div>
 </nav>
