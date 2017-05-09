@@ -27,15 +27,11 @@
     }
 
     .card.github {
-      background: #e6e6e6;
-      border-radius: 5px;
-      border: 0;
-      color: #000;
-      overflow: hidden;
-
       background: transparent;
-      color: #efefef;
+      border-radius: 5px;
       border: solid 1px #efefef;
+      color: #efefef;
+      overflow: hidden;
 
       .card-block {
         z-index: 2;

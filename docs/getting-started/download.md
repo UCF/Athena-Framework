@@ -5,7 +5,7 @@ subtitle: An overview of Athena, including how to download and use it, some basi
 ---
 
 # Download
-The Athena Framework is avaailable to download in a few ways, depeneding on your needs.
+The Athena Framework is available to download in a few ways, depending on your needs.
 
 <a href="https://github.com/UCF/Athena-Framework/archive/v1.0.0-alpha.zip">Download Athena Framework v1.0.0-alpha</a> <span class="badge badge-primary">alpha</span>
 
