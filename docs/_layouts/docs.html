@@ -34,25 +34,15 @@
                     {{ content }}
                 </div>
                 <div class="col-md-4">
-                    <ul>
-                        <li><a href="/getting-started/">Overview</a></li>
-                        <li><a href="/getting-started/download">Download</a></li>
-                        <li><a href="/getting-started/installation">Installation</a></li>
-                    </ul>
+                  <ul class="nav side-nav flex-column mb-3">
+                      <li class="nav-item"><a class="nav-link" href="/getting-started/">Overview</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/getting-started/download">Download</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/getting-started/installation">Installation</a></li>
+                  </ul>
                 </div>
             </div>
         </article>
     </main>
     {% include footer.html %}
-
-<!--     <script>
-    $('#js-webfont-toggle').on('change', function() {
-      var $toggle = $(this),
-          $stylesheet = $('#js-webfont-link'),
-          href = $toggle.prop('checked') ? $stylesheet.attr('data-href-premium') : $stylesheet.attr('data-href-fallback');
-
-      $stylesheet.attr('href', href);
-    });
-    </script> -->
 </body>
 </html>
