@@ -33,7 +33,7 @@ ___
 Athena's source files are available in the `/src/` folder
 
 ### NPM
-If you are using <a href="https://www.npmjs.com/">NPM</a> with your project, you can add Athena as a dependency by running `npm install athena-framework --save` in the root of your project, or by adding Athena it to your package.json file and running `npm install`. Make sure you also include jQuery and Tether.
+If you are using <a href="https://www.npmjs.com/">NPM</a> with your project, you can add Athena as a dependency by running `npm install UCF/Athena-Framework --save` in the root of your project, or by adding Athena to your package.json file and running `npm install`. Make sure you also include jQuery and Tether.
 
 **package.json**
 <pre><code>{
@@ -46,7 +46,7 @@ If you are using <a href="https://www.npmjs.com/">NPM</a> with your project, you
 }</code></pre>
 
 ### Bower
-If you are using the <a href="https://bower.io/">Bower</a> package manager, you can add Athena as a depency by running `bower install athena-framework --save` or by adding Athena to you `bower.json` file and running `bower install`. As with NPM, ensure you also include jQuery and Tether.
+If you are using the <a href="https://bower.io/">Bower</a> package manager, you can add Athena as a dependency by running `bower install UCF/Athena-Framework --save` or by adding Athena to you `bower.json` file and running `bower install`. As with NPM, ensure you also include jQuery and Tether.
 
 **bower.json**
 <pre><code>{
@@ -79,7 +79,7 @@ ___
 
 ## Webfonts &amp; Configuration
 
-Athena is built to utilize premium fonts provided by the <a href="http://www.typography.com/cloud/welcome/">Cloud.typography service</a> by default, with webfont fallbacks (available in the `/src/fonts/` directory). If neither Cloud.Typography or webfont fallbacks are utilized, Athena will default to use appropriate system fonts.
+Athena is built to utilize premium fonts provided by the <a href="http://www.typography.com/cloud/welcome/">Cloud.typography service</a> by default, with webfont fallbacks (available in the `/dist/fonts/` directory). If neither Cloud.Typography or webfont fallbacks are utilized, Athena will default to use appropriate system fonts.
 
 ### Included Fonts
 
@@ -93,9 +93,11 @@ To utilize fallback webfonts, copy the `/fonts/` directory (from the `/src/fonts
  └── js/
 </code></pre>
 
-### Cloud.Typography Premium Font Configuration
+### Cloud.typography Premium Font Configuration
 
-The sans-serif font family used in Athena is **Gotham**. Gotham can be installed in your project via the <a href="http://www.typography.com/cloud/welcome/">Cloud.typography service.</a>
+While Athena provides fallback webfonts out-of-the-box, the preferred font families for Athena are only available via the <a href="http://www.typography.com/cloud/welcome/">Cloud.typography service</a>. Athena users are responsible for creating their own Cloud.typography accounts and maintaining their subscriptions to the service.
+
+The sans-serif font family used in Athena is **Gotham**.
 
 #### Gotham Licensing for the Web
 

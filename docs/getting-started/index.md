@@ -18,10 +18,14 @@ To quickly add all of Athena's features to your project, add the following to yo
 
 Add your Cloud.typography CSS key and the Athena stylesheet before all other stylesheets. The Cloud.typography CSS key should go immediately before the Athena stylesheet.
 
-See the webfont configuration section for information on setting up a Cloud.typography project for use with Athena.
-
 <pre><code>&lt;link rel="stylesheet" type="text/css" href="https://cloud.typography.com/xxxxxx/xxxxxx/css/fonts.css"&gt;
 &lt;link rel="stylesheet" href="/css/framework.min.css"&gt;</code></pre>
+
+___
+
+**Note: Cloud.typography fonts are optional.** If Cloud.typography is not utilized, fallback fonts provided by Athena will be used. See the <a href="{{ "/getting-started/install/" | prepend: site.baseurl }}#webfonts--configuration">webfont configuration</a> section for information on setting up a Cloud.typography project for use with Athena.
+
+___
 
 ### Add JavaScript
 
