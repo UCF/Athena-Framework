@@ -6,7 +6,6 @@
 
 .docs {
   .header {
-    @include gradient-directional($black, $gray-darker, 165deg);
     padding-bottom: 2rem;
     padding-top: 2rem;
 
@@ -23,14 +22,14 @@
       font-weight: 400;
       line-height: 1.2;
       padding-bottom: 15px;
-      text-transform: none !important;
+      text-transform: none;
     }
 
     .card.github {
       background: transparent;
-      border-radius: 5px;
-      border: solid 1px #efefef;
-      color: #efefef;
+      @include border-radius(.25rem);
+      border: solid 1px $gray-lighter;
+      color: $gray-lighter;
       overflow: hidden;
 
       .card-block {
@@ -47,7 +46,7 @@
     }
 
     .card.github:after {
-      color: #d2d2d2;
+      color: $gray-lighter;
       content: "\f09b";
       font-family: FontAwesome;
       font-size: 219px;

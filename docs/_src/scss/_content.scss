@@ -33,9 +33,18 @@
   }
 
   pre {
-    background: #ececec;
-    border-radius: 5px;
-    padding: 15px 15px;
-  }
+    @include border-radius(.25rem);
+    background: $gray-lighter;
+    padding: .10rem;
 
+    strike {
+      background: #ffecec;
+      color: #bd4147;
+    }
+
+    .highlight {
+      background: #eaffea;
+    }
+
+  }
 }
