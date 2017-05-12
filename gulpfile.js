@@ -14,7 +14,9 @@ var browserSync = require('browser-sync').create(),
     runSequence = require('run-sequence'),
     merge = require('merge'),
     concat = require('gulp-concat'),
-    addsrc = require('gulp-add-src');
+    addsrc = require('gulp-add-src'),
+    childProc = require('child_process'),
+    gutil = require('gulp-util');
 
 
 var configLocal = require('./gulp-config.json'),
@@ -176,6 +178,28 @@ gulp.task('files-gh-pages', function() {
 
 gulp.task('gh-pages', ['scss-gh-pages', 'files-gh-pages']);
 
+gulp.task('jekyll-serve', function() {
+  gulp.watch(config.docs.scss + '/**/*.scss', ['scss-gh-pages']);
+
+  process.chdir('./docs');
+
+  const jekyll = childProc.spawn('jekyll', [
+    'serve',
+    '--watch',
+    '--incremental',
+    '--drafts'
+  ]);
+
+  const jekyllLogger = (buffer) => {
+    buffer.toString()
+      .split(/\n/)
+      .forEach((message) => gutil.log('JekyllL ' + message));
+  };
+
+  jekyll.stdout.on('data', jekyllLogger);
+  jekyll.stderr.on('data', jekyllLogger);
+});
+
 //
 // JavaScript
 //
@@ -240,6 +264,7 @@ gulp.task('watch', function() {
   gulp.watch(config.src.jsPath + '/**/*.js', ['js']).on('change', browserSync.reload);
 });
 
+gulp.task('watch-jekyll', ['watch', 'jekyll-serve']);
 
 //
 // Default task
