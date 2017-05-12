@@ -29,6 +29,12 @@ var configLocal = require('./gulp-config.json'),
         jsPath:   './dist/js',
         fontPath: './dist/fonts'
       },
+      docs: {
+        cssPath: './docs/res/css',
+        fontPath: './docs/res/fonts',
+        jsPath: './docs/res/js',
+        scssPath: './docs/_src/scss'
+      },
       packagesPath: './node_modules',
       bootstrap: {
         scss: './node_modules/bootstrap/scss',
@@ -146,6 +152,29 @@ gulp.task('scss-build', ['scss-build-framework']);
 // All css-related tasks
 gulp.task('css', ['scss-lint', 'scss-build']);
 
+
+// GitHub Pages Build
+gulp.task('scss-gh-pages', function() {
+  gulp.src(config.docs.scssPath + '/style.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(cleanCSS())
+    .pipe(autoprefixer({
+      // Supported browsers added in package.json ("browserslist")
+      cascade: false
+    }))
+    .pipe(rename('style.min.css'))
+    .pipe(gulp.dest(config.docs.cssPath))
+});
+
+gulp.task('files-gh-pages', function() {
+  gulp.src(config.dist.fontPath + '/**/*')
+    .pipe(gulp.dest(config.docs.fontPath));
+
+  gulp.src(config.dist.jsPath + '/**/*')
+    .pipe(gulp.dest(config.docs.jsPath));
+});
+
+gulp.task('gh-pages', ['scss-gh-pages', 'files-gh-pages']);
 
 //
 // JavaScript
