@@ -28,53 +28,17 @@ body {
 // Display headings
 //
 
-.display-1 {
-  font-size: $display1-size;
+// Base heading overrides (just applies base breakpoint-specific font sizing)
+@include font-family-display-variant();
 
-  @include media-breakpoint-up(sm) {
-    font-size: $display1-size-sm;
-  }
+// Serif overrides
+@include font-family-display-variant($font-serif-heading-size-ratio, '.font-serif');
 
-  @include media-breakpoint-up(md) {
-    font-size: $display1-size-md;
-  }
-}
+// Slab serif overrides
+@include font-family-display-variant($font-slab-serif-heading-size-ratio, '.font-slab-serif');
 
-.display-2 {
-  font-size: $display2-size;
-
-  @include media-breakpoint-up(sm) {
-    font-size: $display2-size-sm;
-  }
-
-  @include media-breakpoint-up(md) {
-    font-size: $display2-size-md;
-  }
-}
-
-.display-3 {
-  font-size: $display3-size;
-
-  @include media-breakpoint-up(sm) {
-    font-size: $display3-size-sm;
-  }
-
-  @include media-breakpoint-up(md) {
-    font-size: $display3-size-md;
-  }
-}
-
-.display-4 {
-  font-size: $display4-size;
-
-  @include media-breakpoint-up(sm) {
-    font-size: $display4-size-sm;
-  }
-
-  @include media-breakpoint-up(md) {
-    font-size: $display4-size-md;
-  }
-}
+// Condensed overrides
+@include font-family-display-variant($font-condensed-heading-size-ratio, '.font-condensed');
 
 
 //
