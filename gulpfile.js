@@ -14,7 +14,9 @@ var browserSync = require('browser-sync').create(),
     runSequence = require('run-sequence'),
     merge = require('merge'),
     concat = require('gulp-concat'),
-    addsrc = require('gulp-add-src');
+    addsrc = require('gulp-add-src'),
+    childProc = require('child_process'),
+    gutil = require('gulp-util');
 
 
 var configLocal = require('./gulp-config.json'),
@@ -28,6 +30,12 @@ var configLocal = require('./gulp-config.json'),
         cssPath:  './dist/css',
         jsPath:   './dist/js',
         fontPath: './dist/fonts'
+      },
+      docs: {
+        cssPath: './docs/res/css',
+        fontPath: './docs/res/fonts',
+        jsPath: './docs/res/js',
+        scssPath: './docs/_src/scss'
       },
       packagesPath: './node_modules',
       bootstrap: {
@@ -147,6 +155,51 @@ gulp.task('scss-build', ['scss-build-framework']);
 gulp.task('css', ['scss-lint', 'scss-build']);
 
 
+// GitHub Pages Build
+gulp.task('scss-gh-pages', function() {
+  gulp.src(config.docs.scssPath + '/style.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(cleanCSS())
+    .pipe(autoprefixer({
+      // Supported browsers added in package.json ("browserslist")
+      cascade: false
+    }))
+    .pipe(rename('style.min.css'))
+    .pipe(gulp.dest(config.docs.cssPath))
+});
+
+gulp.task('files-gh-pages', function() {
+  gulp.src(config.dist.fontPath + '/**/*')
+    .pipe(gulp.dest(config.docs.fontPath));
+
+  gulp.src(config.dist.jsPath + '/**/*')
+    .pipe(gulp.dest(config.docs.jsPath));
+});
+
+gulp.task('gh-pages', ['scss-gh-pages', 'files-gh-pages']);
+
+gulp.task('jekyll-serve', function() {
+  gulp.watch(config.docs.scss + '/**/*.scss', ['scss-gh-pages']);
+
+  process.chdir('./docs');
+
+  const jekyll = childProc.spawn('jekyll', [
+    'serve',
+    '--watch',
+    '--incremental',
+    '--drafts'
+  ]);
+
+  const jekyllLogger = (buffer) => {
+    buffer.toString()
+      .split(/\n/)
+      .forEach((message) => gutil.log('JekyllL ' + message));
+  };
+
+  jekyll.stdout.on('data', jekyllLogger);
+  jekyll.stderr.on('data', jekyllLogger);
+});
+
 //
 // JavaScript
 //
@@ -211,6 +264,7 @@ gulp.task('watch', function() {
   gulp.watch(config.src.jsPath + '/**/*.js', ['js']).on('change', browserSync.reload);
 });
 
+gulp.task('watch-jekyll', ['watch', 'jekyll-serve']);
 
 //
 // Default task
