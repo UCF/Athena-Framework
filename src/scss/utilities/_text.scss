@@ -23,6 +23,17 @@
 
 
 //
+// Extended text-transform classes
+//
+
+.text-transform-none {
+  // scss-lint:disable ImportantRule
+  text-transform: none !important;
+  // scss-lint:enable ImportantRule
+}
+
+
+//
 // Extended font weight classes
 //
 
