@@ -46,7 +46,7 @@
     "last 2 versions"
   ],
   "dependencies": {
-    "jquery": "^3.2.1",
+    "jquery": ">=1.9.1",
     "tether": "^1.4.0"
   }
 }
