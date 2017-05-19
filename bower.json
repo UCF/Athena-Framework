@@ -21,7 +21,8 @@
     "gulpfile.js",
     "gulp-config.template.json",
     "index.html",
-    "examples"
+    "examples",
+    "docs"
   ],
   "dependencies": {
     "jquery": ">=1.9.1",

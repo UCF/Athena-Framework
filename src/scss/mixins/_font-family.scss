@@ -71,6 +71,68 @@
 
 
 //
+// Display heading font size overrides, by font family
+//
+@mixin font-family-display-variant($size-ratio: 1, $font-utility-class: '') {
+  .display-1 {
+    &#{$font-utility-class} {
+      font-size: $display1-size * $size-ratio;
+
+      @include media-breakpoint-up(sm) {
+        font-size: $display1-size-sm * $size-ratio;
+      }
+
+      @include media-breakpoint-up(md) {
+        font-size: $display1-size-md * $size-ratio;
+      }
+    }
+  }
+
+  .display-2 {
+    &#{$font-utility-class} {
+      font-size: $display2-size * $size-ratio;
+
+      @include media-breakpoint-up(sm) {
+        font-size: $display2-size-sm * $size-ratio;
+      }
+
+      @include media-breakpoint-up(md) {
+        font-size: $display2-size-md * $size-ratio;
+      }
+    }
+  }
+
+  .display-3 {
+    &#{$font-utility-class} {
+      font-size: $display3-size * $size-ratio;
+
+      @include media-breakpoint-up(sm) {
+        font-size: $display3-size-sm * $size-ratio;
+      }
+
+      @include media-breakpoint-up(md) {
+        font-size: $display3-size-md * $size-ratio;
+      }
+    }
+  }
+
+  .display-4 {
+    &#{$font-utility-class} {
+      font-size: $display4-size * $size-ratio;
+
+      @include media-breakpoint-up(sm) {
+        font-size: $display4-size-sm * $size-ratio;
+      }
+
+      @include media-breakpoint-up(md) {
+        font-size: $display4-size-md * $size-ratio;
+      }
+    }
+  }
+}
+
+
+//
 // Lead text overrides, by font family
 //
 @mixin font-family-lead-variant($font-size-base, $font-size-md, $line-height, $font-utility-class: '') {
