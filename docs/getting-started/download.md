@@ -5,10 +5,10 @@ subtitle: Installation instructions and a basic setup guide for Athena.
 ---
 
 ## Download
-The Athena Framework is available to download in a few ways. We host our code on github, so it is available under the TODO license. A zipped archive of the latest release is available below.
+The Athena Framework is available to download in a few ways. We host our code on Github, so it is available under the TODO license. A zipped archive of the latest release is available below.
 
 ### Latest Release
-<a href="https://github.com/UCF/Athena-Framework/archive/v1.0.0-alpha.zip">Download Athena Framework v1.0.0-alpha</a> <span class="badge badge-primary">alpha</span>
+<a href="https://github.com/UCF/Athena-Framework/archive/v1.0.0-alpha.1.zip">Download Athena Framework v1.0.0-alpha.1</a> <span class="badge badge-primary">alpha</span>
 
 ### Github
 You can also clone a copy of the git project to your local computer:

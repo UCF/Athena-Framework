@@ -33,7 +33,7 @@ Add our JavaScript plugins, jQuery, and Tether near the end of your pages, right
 
 <pre><code>&lt;script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"&gt;&lt;/script&gt;
 &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"&gt;&lt;/script&gt;
-&lt;script src="/css/framework.min.css"&gt;&lt;/script&gt;</code></pre>
+&lt;script src="/js/framework.min.js"&gt;&lt;/script&gt;</code></pre>
 
 ___
 
