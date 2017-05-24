@@ -103,6 +103,7 @@ gulp.task('move-components-bootstrap-js', function() {
     .pipe(gulp.dest(config.src.jsPath + '/bootstrap'));
 });
 
+<<<<<<< HEAD
 // Copy Bootstrap's license block comment for css and save to a new file
 gulp.task('move-components-bootstrap-license-css', function() {
   var sampleFile = fs.readFileSync(config.bootstrap.base + '/dist/css/bootstrap.min.css', {base: config.bootstrap.base}).toString(),
@@ -121,6 +122,13 @@ gulp.task('move-components-bootstrap-license-js', function() {
   if (!comment) { return; }
 
   return fs.writeFileSync(config.src.jsPath + '/bootstrap/_bootstrap-license.js', comment);
+=======
+// Copy Bootstrap license
+gulp.task('move-components-bootstrap-license', function() {
+  return gulp.src(config.bootstrap.base + '/LICENSE', {base: config.bootstrap.base})
+    .pipe(gulp.dest(config.src.jsPath + '/bootstrap'))
+    .pipe(gulp.dest(config.src.scssPath + '/bootstrap'));
+>>>>>>> Added license for framework and docs; added bootstrap license in relevant src/ directories; added docs attribution to footer template
 });
 
 // Copy objectFitPolyfill js
@@ -140,8 +148,12 @@ gulp.task('components', [
   'move-components-fonts',
   'move-components-bootstrap-scss',
   'move-components-bootstrap-js',
+<<<<<<< HEAD
   'move-components-bootstrap-license-css',
   'move-components-bootstrap-license-js',
+=======
+  'move-components-bootstrap-license',
+>>>>>>> Added license for framework and docs; added bootstrap license in relevant src/ directories; added docs attribution to footer template
   'move-components-objectfit',
   'move-components-stickyfill'
 ]);
@@ -169,7 +181,11 @@ function getAthenaYearRange() {
 }
 
 function getAthenaHeader() {
+<<<<<<< HEAD
   return ['/*!',
+=======
+  return ['/**',
+>>>>>>> Added license for framework and docs; added bootstrap license in relevant src/ directories; added docs attribution to footer template
   ' * Athena Framework <%= config.pkg.version %> (<%= config.pkg.homepage %>)',
   ' * Copyright <%= config.prj.yearRange %> <%= config.pkg.author.name %>',
   ' * Licensed under <%= config.pkg.license %>',
@@ -177,6 +193,7 @@ function getAthenaHeader() {
   ''].join('\n');
 }
 
+<<<<<<< HEAD
 function getLicenseComment(fileString) {
   var regex = /\/\*(\*(?!\/)|[^*])*\*\//,
       comment = regex.exec(fileString);
@@ -189,6 +206,8 @@ function getLicenseComment(fileString) {
   }
 }
 
+=======
+>>>>>>> Added license for framework and docs; added bootstrap license in relevant src/ directories; added docs attribution to footer template
 
 //
 // CSS
@@ -203,10 +222,16 @@ gulp.task('scss-lint', function() {
 });
 
 // Compile scss files
+<<<<<<< HEAD
 function buildCSS(src, filename, dest, applyHeader, doBrowserSync) {
   dest = dest || config.dist.cssPath;
   appleHeader = applyHeader || false;
   doBrowserSync = doBrowserSync || false;
+=======
+function buildCSS(src, filename, dest, applyHeader) {
+  dest = dest || config.dist.cssPath;
+  appleHeader = applyHeader || false;
+>>>>>>> Added license for framework and docs; added bootstrap license in relevant src/ directories; added docs attribution to footer template
 
   return gulp.src(src)
     .pipe(sass().on('error', sass.logError))
@@ -222,7 +247,11 @@ function buildCSS(src, filename, dest, applyHeader, doBrowserSync) {
 }
 
 gulp.task('scss-build-framework', function() {
+<<<<<<< HEAD
   return buildCSS(config.src.scssPath + '/framework.scss', 'framework.min.css', config.dist.cssPath, true, true);
+=======
+  return buildCSS(config.src.scssPath + '/framework.scss', 'framework.min.css', config.dist.cssPath, true);
+>>>>>>> Added license for framework and docs; added bootstrap license in relevant src/ directories; added docs attribution to footer template
 });
 
 gulp.task('scss-build', ['scss-build-framework']);
@@ -309,7 +338,11 @@ gulp.task('js-build', function() {
     .pipe(include())
       .on('error', console.log)
     .pipe(babel())
+<<<<<<< HEAD
     .pipe(uglify( { output: { comments: /^(!|\---)/ } } )) // try to preserve headers from objectFitPolyfill
+=======
+    .pipe(uglify())
+>>>>>>> Added license for framework and docs; added bootstrap license in relevant src/ directories; added docs attribution to footer template
     .pipe(header(config.prj.header, { config: config }))
     .pipe(rename('framework.min.js'))
     .pipe(gulp.dest(config.dist.jsPath));
