@@ -16,7 +16,11 @@ var browserSync = require('browser-sync').create(),
     concat = require('gulp-concat'),
     addsrc = require('gulp-add-src'),
     childProc = require('child_process'),
-    gutil = require('gulp-util');
+    header = require('gulp-header'),
+    footer = require('gulp-footer'),
+    gulpif = require('gulp-if'),
+    gutil = require('gulp-util'),
+    fs = require('fs');
 
 
 var configLocal = require('./gulp-config.json'),
@@ -39,8 +43,14 @@ var configLocal = require('./gulp-config.json'),
       },
       packagesPath: './node_modules',
       bootstrap: {
+        base: './node_modules/bootstrap',
         scss: './node_modules/bootstrap/scss',
         js:   './node_modules/bootstrap/js/src'
+      },
+      pkg: getAthenaPackage(),
+      prj: {
+        yearRange: getAthenaYearRange(),
+        header: getAthenaHeader()
       },
       sync: false,
       syncTarget: 'http://localhost/'
@@ -95,6 +105,13 @@ gulp.task('move-components-bootstrap-js', function() {
     .pipe(gulp.dest(config.src.jsPath + '/bootstrap'));
 });
 
+// Copy Bootstrap license
+gulp.task('move-components-bootstrap-license', function() {
+  return gulp.src(config.bootstrap.base + '/LICENSE', {base: config.bootstrap.base})
+    .pipe(gulp.dest(config.src.jsPath + '/bootstrap'))
+    .pipe(gulp.dest(config.src.scssPath + '/bootstrap'));
+});
+
 // Copy objectFitPolyfill js
 gulp.task('move-components-objectfit', function() {
   return gulp.src(config.packagesPath + '/objectFitPolyfill/src/objectFitPolyfill.js', {base: config.packagesPath + '/objectFitPolyfill/src'})
@@ -112,9 +129,41 @@ gulp.task('components', [
   'move-components-fonts',
   'move-components-bootstrap-scss',
   'move-components-bootstrap-js',
+  'move-components-bootstrap-license',
   'move-components-objectfit',
   'move-components-stickyfill'
 ]);
+
+
+//
+// Header/metadata appending
+//
+
+function getAthenaPackage() {
+  return JSON.parse(fs.readFileSync('./package.json'));
+}
+
+function getAthenaYearRange() {
+  var year = '',
+      startYear = 2017,
+      currentYear = new Date().getFullYear();
+  if (startYear == currentYear) {
+    year += startYear;
+  }
+  else {
+    year += startYear + '-' + currentYear;
+  }
+  return year;
+}
+
+function getAthenaHeader() {
+  return ['/**',
+  ' * Athena Framework <%= config.pkg.version %> (<%= config.pkg.homepage %>)',
+  ' * Copyright <%= config.prj.yearRange %> <%= config.pkg.author.name %>',
+  ' * Licensed under <%= config.pkg.license %>',
+  ' */',
+  ''].join('\n');
+}
 
 
 //
@@ -130,8 +179,9 @@ gulp.task('scss-lint', function() {
 });
 
 // Compile scss files
-function buildCSS(src, filename, dest) {
+function buildCSS(src, filename, dest, applyHeader) {
   dest = dest || config.dist.cssPath;
+  appleHeader = applyHeader || false;
 
   return gulp.src(src)
     .pipe(sass().on('error', sass.logError))
@@ -140,13 +190,14 @@ function buildCSS(src, filename, dest) {
       // Supported browsers added in package.json ("browserslist")
       cascade: false
     }))
+    .pipe(gulpif(applyHeader, header(config.prj.header, { config: config })))
     .pipe(rename(filename))
     .pipe(gulp.dest(dest))
     .pipe(browserSync.stream());
 }
 
 gulp.task('scss-build-framework', function() {
-  return buildCSS(config.src.scssPath + '/framework.scss', 'framework.min.css');
+  return buildCSS(config.src.scssPath + '/framework.scss', 'framework.min.css', config.dist.cssPath, true);
 });
 
 gulp.task('scss-build', ['scss-build-framework']);
@@ -155,7 +206,10 @@ gulp.task('scss-build', ['scss-build-framework']);
 gulp.task('css', ['scss-lint', 'scss-build']);
 
 
+//
 // GitHub Pages Build
+//
+
 gulp.task('scss-gh-pages', function() {
   gulp.src(config.docs.scssPath + '/style.scss')
     .pipe(sass().on('error', sass.logError))
@@ -200,6 +254,7 @@ gulp.task('jekyll-serve', function() {
   jekyll.stderr.on('data', jekyllLogger);
 });
 
+
 //
 // JavaScript
 //
@@ -238,6 +293,7 @@ gulp.task('js-build', function() {
       .on('error', console.log)
     .pipe(babel())
     .pipe(uglify())
+    .pipe(header(config.prj.header, { config: config }))
     .pipe(rename('framework.min.js'))
     .pipe(gulp.dest(config.dist.jsPath));
 });

@@ -7,11 +7,13 @@
     "url": "https://github.com/UCF"
   },
   "description": "A front-end web framework for UCF websites and applications",
+  "homepage": "https://ucf.github.io/Athena-Framework",
   "private": false,
   "repository": {
-      "type": "git",
-      "url": "UCF/Athena-Framework"
+    "type": "git",
+    "url": "UCF/Athena-Framework"
   },
+  "license": "MIT",
   "files": [
     "dist",
     "src"
@@ -25,6 +27,7 @@
     "browser-sync": "^2.10.0",
     "child_process": "^1.0.2",
     "eslint": "^3.19.0",
+    "fs": "0.0.1-security",
     "gulp": "~3.9.0",
     "gulp-add-src": "^0.2.0",
     "gulp-autoprefixer": "^4.0.0",
@@ -33,6 +36,9 @@
     "gulp-concat": "^2.6.1",
     "gulp-eslint": "^3.0.1",
     "gulp-eslint-if-fixed": "^1.0.0",
+    "gulp-footer": "^1.0.5",
+    "gulp-header": "^1.8.8",
+    "gulp-if": "^2.0.2",
     "gulp-include": "^2.3.1",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
