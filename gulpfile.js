@@ -13,8 +13,6 @@ var browserSync = require('browser-sync').create(),
     replace = require('gulp-replace'),
     runSequence = require('run-sequence'),
     merge = require('merge'),
-    concat = require('gulp-concat'),
-    addsrc = require('gulp-add-src'),
     childProc = require('child_process'),
     header = require('gulp-header'),
     footer = require('gulp-footer'),
@@ -280,9 +278,9 @@ gulp.task('js-build-bootstrap', function() {
       .on('error', console.log)
     .pipe(replace(/^(export|import).*/gm, ''))
     .pipe(babel())
-    .pipe(addsrc.prepend(config.src.jsPath + '/_bootstrap-header.js'))
-    .pipe(addsrc.append(config.src.jsPath + '/_bootstrap-footer.js'))
-    .pipe(concat('bootstrap.js'))
+    .pipe(header(fs.readFileSync(config.src.jsPath + '/_bootstrap-header.js')))
+    .pipe(footer(fs.readFileSync(config.src.jsPath + '/_bootstrap-footer.js')))
+    .pipe(rename('bootstrap.js'))
     .pipe(gulp.dest(config.src.jsPath + '/bootstrap'));
 });
 
