@@ -326,8 +326,13 @@ gulp.task('js-build-bootstrap', function() {
       .on('error', console.log)
     .pipe(replace(/^(export|import).*/gm, ''))
     .pipe(babel())
+<<<<<<< HEAD
     .pipe(header(fs.readFileSync(config.src.jsPath + '/bootstrap/_bootstrap-header.js')))
     .pipe(footer(fs.readFileSync(config.src.jsPath + '/bootstrap/_bootstrap-footer.js')))
+=======
+    .pipe(header(fs.readFileSync(config.src.jsPath + '/_bootstrap-header.js')))
+    .pipe(footer(fs.readFileSync(config.src.jsPath + '/_bootstrap-footer.js')))
+>>>>>>> Updated js-build-bootstrap to use gulp-header, gulp-footer
     .pipe(rename('bootstrap.js'))
     .pipe(gulp.dest(config.src.jsPath + '/bootstrap'));
 });
