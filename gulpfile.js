@@ -217,7 +217,7 @@ gulp.task('scss-gh-pages', function() {
       cascade: false
     }))
     .pipe(rename('style.min.css'))
-    .pipe(gulp.dest(config.docs.cssPath))
+    .pipe(gulp.dest(config.docs.cssPath));
 });
 
 gulp.task('files-gh-pages', function() {
