@@ -1,14 +1,18 @@
 ---
 layout: docs
-title: Getting Started
-subtitle: Installation instructions and a basic setup guide for Athena.
+title: Installation
+description: Download Bootstrap's compiled CSS and JavaScript, source code, or include it with your favorite package manager.
+group: getting-started
 ---
-
-## Installation
 
 Installing the Athena Framework is as simple as adding the CSS and JS files to your project.
 
 ___
+
+## Contents
+
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}
 
 ## Minified Files
 
@@ -16,15 +20,17 @@ After <a href="{{ "/getting-started/download/" | prepend: site.baseurl }}">downl
 
 Include Athena's CSS in the <code>&lt;head&gt;</code> of your project, before any additional CSS files:
 
-<pre><code>&lt;link rel="stylesheet" href="/css/framework.min.css"&gt;
-</code></pre>
+{% highlight html %}
+<link rel="stylesheet" href="/css/framework.min.css">
+{% endhighlight %}
 
 Athena's Javascript should be added before the closing <code>&lt;/body&gt;</code> tag. <a href="https://jquery.com/">jQuery</a> and <a href="http://tether.io/">Tether</a> are required dependencies for Athena, so be sure to include those before the Athena JS.
 
-<pre><code>&lt;script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="/js/framework.min.js"&gt;&lt;/script&gt;
-</code></pre>
+{% highlight html %}
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script type="text/javascript" src="/js/framework.min.js"></script>
+{% endhighlight %}
 
 ___
 
@@ -65,14 +71,14 @@ ___
 Athena is a complete replacement for Bootstrap. If you are already using Bootstrap on an existing project and want to use Athena instead, you should remove Bootstrap’s CSS and Javascript completely. Athena is designed to run as a completely standalone framework.
 
 <pre><code><strike>&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;</strike>
-<span class="highlight">&lt;link rel="stylesheet" href="/css/framework.min.css"&gt;</span>
+<span class="highlight-code">&lt;link rel="stylesheet" href="/css/framework.min.css"&gt;</span>
 
 &hellip;
 
 &lt;script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"&gt;&lt;/script&gt;
 <strike>&lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"&gt;</strike>
-<span class="highlight">&lt;script type="text/javascript" src="/js/framework.min.js"&gt;&lt;/script&gt;</span>
+<span class="highlight-code">&lt;script type="text/javascript" src="/js/framework.min.js"&gt;&lt;/script&gt;</span>
 </code></pre>
 
 ___

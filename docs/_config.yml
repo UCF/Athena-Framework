@@ -27,6 +27,9 @@ markdown: kramdown
 permalink: /:title/
 gems:
   - jekyll-feed
+  - jekyll-redirect-from
 exclude:
   - Gemfile
   - Gemfile.lock
+
+current_version: v1.0.0-alpha

@@ -32,18 +32,19 @@
     }
   }
 
-  pre {
+  pre, figure.highlight {
     @include border-radius(.25rem);
     background: $gray-lighter;
-    padding: .10rem;
+    padding: 1.5rem;
 
     strike {
       background: #ffecec;
       color: #bd4147;
     }
 
-    .highlight {
+    .highlight-code {
       background: #eaffea;
+      padding: 0;
     }
 
   }

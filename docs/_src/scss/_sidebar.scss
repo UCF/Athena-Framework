@@ -1,0 +1,22 @@
+.bd-sidenav {
+  margin-left: 0;
+
+  li {
+    display: block;
+    padding: .25rem .75rem;
+
+    a {
+      color: $gray;
+    }
+
+    &.active.bd-sidenav-active a {
+      font-weight: 500;
+      color: $blue;
+    }
+  }
+}
+
+.bd-toc-item.active {
+  margin-bottom: 0;
+}
+
