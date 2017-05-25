@@ -193,7 +193,7 @@ gulp.task('jekyll-serve', function() {
   const jekyllLogger = (buffer) => {
     buffer.toString()
       .split(/\n/)
-      .forEach((message) => gutil.log('JekyllL ' + message));
+      .forEach((message) => gutil.log('Jekyll - ' + message));
   };
 
   jekyll.stdout.on('data', jekyllLogger);

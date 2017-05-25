@@ -1,0 +1,15 @@
+- title: Getting started
+  pages:
+    - title: Introduction
+    - title: Download
+    - title: Install
+    - title: Browsers & devices
+    - title: JavaScript
+    - title: Options
+    - title: Build tools
+    - title: Best practices
+    - title: Accessibility
+
+# - title: More
+#   pages:
+#     - title: Differences

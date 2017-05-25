@@ -1,11 +1,18 @@
 ---
 layout: docs
-title: Getting Started
-subtitle: Installation instructions and a basic setup guide for Athena.
+title: Download
+description: Download Bootstrap's compiled CSS and JavaScript, source code, or include it with your favorite package manager.
+group: getting-started
 ---
 
-## Download
 The Athena Framework is available to download in a few ways. We host our code on Github, so it is available under the TODO license. A zipped archive of the latest release is available below.
+
+___
+
+## Contents
+
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}
 
 ### Latest Release
 <a href="https://github.com/UCF/Athena-Framework/archive/v1.0.0-alpha.1.zip">Download Athena Framework v1.0.0-alpha.1</a> <span class="badge badge-primary">alpha</span>

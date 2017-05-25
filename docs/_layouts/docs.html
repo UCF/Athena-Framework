@@ -7,22 +7,10 @@
         <div class="container">
             <div class="row">
               <div class="col-md-8">
-                <div class="title-container">
-                    <h1 class="display-2 text-white font-condensed mb-4">{{ page.title }}</h1>
-                    {% if page.subtitle %}
-                        <span class="subtitle text-white heading-underline" style="text-transform: none;">{{ page.subtitle }}</span>
-                    {% endif %}
-                </div>
+                {% include page-headers.html %}
               </div>
               <div class="col-md-4">
-                <div class="card github">
-                  <div class="card-block">
-                    <h2 class="card-title">Want to contribute?</h2>
-                    <p class="card-text">If you're interested in contributing to the Athena Framework, please feel free to visit our GitHub Page and send us
-                      a message.</p>
-                    <a href="https://github.com/UCF/Athena-Framework/" class="btn btn-primary btn-sm" target="_blank">GitHub Page</a>
-                  </div>
-                </div>
+                {% include contribute.html %}
               </div>
             </div>
         </div>
@@ -31,14 +19,11 @@
         <article class="py-4 container">
             <div class="row">
                 <div class="col-md-8">
+                    <h1>{{ page.title }}</h1>
                     {{ content }}
                 </div>
                 <div class="col-md-4">
-                  <ul class="nav side-nav flex-column mb-3">
-                      <li class="nav-item"><a class="nav-link" href="{{ "/getting-started/" | prepend: site.baseurl }}">Getting Started</a></li>
-                      <li class="nav-item"><a class="nav-link" href="{{ "/getting-started/download/" | prepend: site.baseurl }}">Download</a></li>
-                      <li class="nav-item"><a class="nav-link" href="{{ "/getting-started/install/" | prepend: site.baseurl }}">Install</a></li>
-                  </ul>
+                  {% include nav-docs.html %}
                 </div>
             </div>
         </article>
