@@ -103,6 +103,26 @@ gulp.task('move-components-bootstrap-js', function() {
     .pipe(gulp.dest(config.src.jsPath + '/bootstrap'));
 });
 
+// Copy Bootstrap's license block comment for css and save to a new file
+gulp.task('move-components-bootstrap-license-css', function() {
+  var sampleFile = fs.readFileSync(config.bootstrap.base + '/dist/css/bootstrap.min.css', {base: config.bootstrap.base}).toString(),
+      comment = getLicenseComment(sampleFile);
+
+  if (!comment) { return; }
+
+  return fs.writeFileSync(config.src.scssPath + '/bootstrap/_bootstrap-license.css', comment);
+});
+
+// Copy Bootstrap's license block comment for js and save to a new file
+gulp.task('move-components-bootstrap-license-js', function() {
+  var sampleFile = fs.readFileSync(config.bootstrap.base + '/dist/js/bootstrap.min.js', {base: config.bootstrap.base}).toString();
+      comment = getLicenseComment(sampleFile);
+
+  if (!comment) { return; }
+
+  return fs.writeFileSync(config.src.jsPath + '/bootstrap/_bootstrap-license.js', comment);
+});
+
 // Copy objectFitPolyfill js
 gulp.task('move-components-objectfit', function() {
   return gulp.src(config.packagesPath + '/objectFitPolyfill/src/objectFitPolyfill.js', {base: config.packagesPath + '/objectFitPolyfill/src'})
@@ -120,6 +140,8 @@ gulp.task('components', [
   'move-components-fonts',
   'move-components-bootstrap-scss',
   'move-components-bootstrap-js',
+  'move-components-bootstrap-license-css',
+  'move-components-bootstrap-license-js',
   'move-components-objectfit',
   'move-components-stickyfill'
 ]);
@@ -153,6 +175,18 @@ function getAthenaHeader() {
   ' * Licensed under <%= config.pkg.license %>',
   ' */',
   ''].join('\n');
+}
+
+function getLicenseComment(fileString) {
+  var regex = /\/\*(\*(?!\/)|[^*])*\*\//,
+      comment = regex.exec(fileString);
+
+  if (!comment || !comment[0]) {
+    return false;
+  }
+  else {
+    return comment[0];
+  }
 }
 
 
@@ -270,8 +304,8 @@ gulp.task('js-build-bootstrap', function() {
       .on('error', console.log)
     .pipe(replace(/^(export|import).*/gm, ''))
     .pipe(babel())
-    .pipe(header(fs.readFileSync(config.src.jsPath + '/_bootstrap-header.js')))
-    .pipe(footer(fs.readFileSync(config.src.jsPath + '/_bootstrap-footer.js')))
+    .pipe(header(fs.readFileSync(config.src.jsPath + '/bootstrap/_bootstrap-header.js')))
+    .pipe(footer(fs.readFileSync(config.src.jsPath + '/bootstrap/_bootstrap-footer.js')))
     .pipe(rename('bootstrap.js'))
     .pipe(gulp.dest(config.src.jsPath + '/bootstrap'));
 });
