@@ -203,9 +203,10 @@ gulp.task('scss-lint', function() {
 });
 
 // Compile scss files
-function buildCSS(src, filename, dest, applyHeader) {
+function buildCSS(src, filename, dest, applyHeader, doBrowserSync) {
   dest = dest || config.dist.cssPath;
   appleHeader = applyHeader || false;
+  doBrowserSync = doBrowserSync || false;
 
   return gulp.src(src)
     .pipe(sass().on('error', sass.logError))
@@ -217,11 +218,11 @@ function buildCSS(src, filename, dest, applyHeader) {
     .pipe(gulpif(applyHeader, header(config.prj.header, { config: config })))
     .pipe(rename(filename))
     .pipe(gulp.dest(dest))
-    .pipe(browserSync.stream());
+    .pipe(gulpif(doBrowserSync, browserSync.stream()));
 }
 
 gulp.task('scss-build-framework', function() {
-  return buildCSS(config.src.scssPath + '/framework.scss', 'framework.min.css', config.dist.cssPath, true);
+  return buildCSS(config.src.scssPath + '/framework.scss', 'framework.min.css', config.dist.cssPath, true, true);
 });
 
 gulp.task('scss-build', ['scss-build-framework']);
@@ -235,15 +236,7 @@ gulp.task('css', ['scss-lint', 'scss-build']);
 //
 
 gulp.task('scss-gh-pages', function() {
-  gulp.src(config.docs.scssPath + '/style.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(cleanCSS())
-    .pipe(autoprefixer({
-      // Supported browsers added in package.json ("browserslist")
-      cascade: false
-    }))
-    .pipe(rename('style.min.css'))
-    .pipe(gulp.dest(config.docs.cssPath));
+  return buildCSS(config.docs.scssPath + '/style.scss', 'style.min.css', config.docs.cssPath, true, false);
 });
 
 gulp.task('files-gh-pages', function() {
