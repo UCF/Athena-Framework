@@ -252,6 +252,7 @@ gulp.task('scss-lint', function() {
 
 // Compile scss files
 <<<<<<< HEAD
+<<<<<<< HEAD
 function buildCSS(src, filename, dest, applyHeader, doBrowserSync) {
   dest = dest || config.dist.cssPath;
   appleHeader = applyHeader || false;
@@ -261,6 +262,12 @@ function buildCSS(src, filename, dest, applyHeader) {
   dest = dest || config.dist.cssPath;
   appleHeader = applyHeader || false;
 >>>>>>> Added license for framework and docs; added bootstrap license in relevant src/ directories; added docs attribution to footer template
+=======
+function buildCSS(src, filename, dest, applyHeader, doBrowserSync) {
+  dest = dest || config.dist.cssPath;
+  appleHeader = applyHeader || false;
+  doBrowserSync = doBrowserSync || false;
+>>>>>>> Updated docs css to inject athena's header comment block
 
   return gulp.src(src)
     .pipe(sass().on('error', sass.logError))
@@ -277,10 +284,14 @@ function buildCSS(src, filename, dest, applyHeader) {
 
 gulp.task('scss-build-framework', function() {
 <<<<<<< HEAD
+<<<<<<< HEAD
   return buildCSS(config.src.scssPath + '/framework.scss', 'framework.min.css', config.dist.cssPath, true, true);
 =======
   return buildCSS(config.src.scssPath + '/framework.scss', 'framework.min.css', config.dist.cssPath, true);
 >>>>>>> Added license for framework and docs; added bootstrap license in relevant src/ directories; added docs attribution to footer template
+=======
+  return buildCSS(config.src.scssPath + '/framework.scss', 'framework.min.css', config.dist.cssPath, true, true);
+>>>>>>> Updated docs css to inject athena's header comment block
 });
 
 gulp.task('scss-build', ['scss-build-framework']);
@@ -295,6 +306,7 @@ gulp.task('css', ['scss-lint', 'scss-build']);
 
 gulp.task('scss-gh-pages', function() {
 <<<<<<< HEAD
+<<<<<<< HEAD
   return buildCSS(config.docs.scssPath + '/style.scss', 'style.min.css', config.docs.cssPath, true, false);
 =======
   gulp.src(config.docs.scssPath + '/style.scss')
@@ -307,6 +319,9 @@ gulp.task('scss-gh-pages', function() {
     .pipe(rename('style.min.css'))
     .pipe(gulp.dest(config.docs.cssPath));
 >>>>>>> Missing semicolon
+=======
+  return buildCSS(config.docs.scssPath + '/style.scss', 'style.min.css', config.docs.cssPath, true, false);
+>>>>>>> Updated docs css to inject athena's header comment block
 });
 
 gulp.task('files-gh-pages', function() {
