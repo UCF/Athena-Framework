@@ -104,6 +104,7 @@ gulp.task('move-components-bootstrap-js', function() {
 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Copy Bootstrap's license block comment for css and save to a new file
 gulp.task('move-components-bootstrap-license-css', function() {
   var sampleFile = fs.readFileSync(config.bootstrap.base + '/dist/css/bootstrap.min.css', {base: config.bootstrap.base}).toString(),
@@ -131,6 +132,8 @@ gulp.task('move-components-bootstrap-license', function() {
 >>>>>>> Added license for framework and docs; added bootstrap license in relevant src/ directories; added docs attribution to footer template
 });
 
+=======
+>>>>>>> Removed bootstrap license document copying in favor of updating minifiers to include important comments
 // Copy objectFitPolyfill js
 gulp.task('move-components-objectfit', function() {
   return gulp.src(config.packagesPath + '/objectFitPolyfill/src/objectFitPolyfill.js', {base: config.packagesPath + '/objectFitPolyfill/src'})
@@ -149,11 +152,14 @@ gulp.task('components', [
   'move-components-bootstrap-scss',
   'move-components-bootstrap-js',
 <<<<<<< HEAD
+<<<<<<< HEAD
   'move-components-bootstrap-license-css',
   'move-components-bootstrap-license-js',
 =======
   'move-components-bootstrap-license',
 >>>>>>> Added license for framework and docs; added bootstrap license in relevant src/ directories; added docs attribution to footer template
+=======
+>>>>>>> Removed bootstrap license document copying in favor of updating minifiers to include important comments
   'move-components-objectfit',
   'move-components-stickyfill'
 ]);
@@ -182,10 +188,14 @@ function getAthenaYearRange() {
 
 function getAthenaHeader() {
 <<<<<<< HEAD
+<<<<<<< HEAD
   return ['/*!',
 =======
   return ['/**',
 >>>>>>> Added license for framework and docs; added bootstrap license in relevant src/ directories; added docs attribution to footer template
+=======
+  return ['/*!',
+>>>>>>> Removed bootstrap license document copying in favor of updating minifiers to include important comments
   ' * Athena Framework <%= config.pkg.version %> (<%= config.pkg.homepage %>)',
   ' * Copyright <%= config.prj.yearRange %> <%= config.pkg.author.name %>',
   ' * Licensed under <%= config.pkg.license %>',
@@ -356,10 +366,14 @@ gulp.task('js-build', function() {
       .on('error', console.log)
     .pipe(babel())
 <<<<<<< HEAD
+<<<<<<< HEAD
     .pipe(uglify( { output: { comments: /^(!|\---)/ } } )) // try to preserve headers from objectFitPolyfill
 =======
     .pipe(uglify())
 >>>>>>> Added license for framework and docs; added bootstrap license in relevant src/ directories; added docs attribution to footer template
+=======
+    .pipe(uglify( { output: { comments: /^(!|\---)/ } } )) // try to preserve headers from objectFitPolyfill
+>>>>>>> Removed bootstrap license document copying in favor of updating minifiers to include important comments
     .pipe(header(config.prj.header, { config: config }))
     .pipe(rename('framework.min.js'))
     .pipe(gulp.dest(config.dist.jsPath));
