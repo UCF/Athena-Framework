@@ -105,6 +105,9 @@ gulp.task('move-components-bootstrap-js', function() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Updated bootstrap license comments to pull directly from bootstrap source files; added missing license comment for bootstrap css
 // Copy Bootstrap's license block comment for css and save to a new file
 gulp.task('move-components-bootstrap-license-css', function() {
   var sampleFile = fs.readFileSync(config.bootstrap.base + '/dist/css/bootstrap.min.css', {base: config.bootstrap.base}).toString(),
@@ -123,6 +126,7 @@ gulp.task('move-components-bootstrap-license-js', function() {
   if (!comment) { return; }
 
   return fs.writeFileSync(config.src.jsPath + '/bootstrap/_bootstrap-license.js', comment);
+<<<<<<< HEAD
 =======
 // Copy Bootstrap license
 gulp.task('move-components-bootstrap-license', function() {
@@ -134,6 +138,10 @@ gulp.task('move-components-bootstrap-license', function() {
 
 =======
 >>>>>>> Removed bootstrap license document copying in favor of updating minifiers to include important comments
+=======
+});
+
+>>>>>>> Updated bootstrap license comments to pull directly from bootstrap source files; added missing license comment for bootstrap css
 // Copy objectFitPolyfill js
 gulp.task('move-components-objectfit', function() {
   return gulp.src(config.packagesPath + '/objectFitPolyfill/src/objectFitPolyfill.js', {base: config.packagesPath + '/objectFitPolyfill/src'})
@@ -153,6 +161,7 @@ gulp.task('components', [
   'move-components-bootstrap-js',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   'move-components-bootstrap-license-css',
   'move-components-bootstrap-license-js',
 =======
@@ -160,6 +169,10 @@ gulp.task('components', [
 >>>>>>> Added license for framework and docs; added bootstrap license in relevant src/ directories; added docs attribution to footer template
 =======
 >>>>>>> Removed bootstrap license document copying in favor of updating minifiers to include important comments
+=======
+  'move-components-bootstrap-license-css',
+  'move-components-bootstrap-license-js',
+>>>>>>> Updated bootstrap license comments to pull directly from bootstrap source files; added missing license comment for bootstrap css
   'move-components-objectfit',
   'move-components-stickyfill'
 ]);
@@ -204,6 +217,9 @@ function getAthenaHeader() {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Updated bootstrap license comments to pull directly from bootstrap source files; added missing license comment for bootstrap css
 function getLicenseComment(fileString) {
   var regex = /\/\*(\*(?!\/)|[^*])*\*\//,
       comment = regex.exec(fileString);
@@ -216,8 +232,11 @@ function getLicenseComment(fileString) {
   }
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> Added license for framework and docs; added bootstrap license in relevant src/ directories; added docs attribution to footer template
+=======
+>>>>>>> Updated bootstrap license comments to pull directly from bootstrap source files; added missing license comment for bootstrap css
 
 //
 // CSS
@@ -349,12 +368,17 @@ gulp.task('js-build-bootstrap', function() {
     .pipe(replace(/^(export|import).*/gm, ''))
     .pipe(babel())
 <<<<<<< HEAD
+<<<<<<< HEAD
     .pipe(header(fs.readFileSync(config.src.jsPath + '/bootstrap/_bootstrap-header.js')))
     .pipe(footer(fs.readFileSync(config.src.jsPath + '/bootstrap/_bootstrap-footer.js')))
 =======
     .pipe(header(fs.readFileSync(config.src.jsPath + '/_bootstrap-header.js')))
     .pipe(footer(fs.readFileSync(config.src.jsPath + '/_bootstrap-footer.js')))
 >>>>>>> Updated js-build-bootstrap to use gulp-header, gulp-footer
+=======
+    .pipe(header(fs.readFileSync(config.src.jsPath + '/bootstrap/_bootstrap-header.js')))
+    .pipe(footer(fs.readFileSync(config.src.jsPath + '/bootstrap/_bootstrap-footer.js')))
+>>>>>>> Updated bootstrap license comments to pull directly from bootstrap source files; added missing license comment for bootstrap css
     .pipe(rename('bootstrap.js'))
     .pipe(gulp.dest(config.src.jsPath + '/bootstrap'));
 });
