@@ -103,13 +103,6 @@ gulp.task('move-components-bootstrap-js', function() {
     .pipe(gulp.dest(config.src.jsPath + '/bootstrap'));
 });
 
-// Copy Bootstrap license
-gulp.task('move-components-bootstrap-license', function() {
-  return gulp.src(config.bootstrap.base + '/LICENSE', {base: config.bootstrap.base})
-    .pipe(gulp.dest(config.src.jsPath + '/bootstrap'))
-    .pipe(gulp.dest(config.src.scssPath + '/bootstrap'));
-});
-
 // Copy objectFitPolyfill js
 gulp.task('move-components-objectfit', function() {
   return gulp.src(config.packagesPath + '/objectFitPolyfill/src/objectFitPolyfill.js', {base: config.packagesPath + '/objectFitPolyfill/src'})
@@ -127,7 +120,6 @@ gulp.task('components', [
   'move-components-fonts',
   'move-components-bootstrap-scss',
   'move-components-bootstrap-js',
-  'move-components-bootstrap-license',
   'move-components-objectfit',
   'move-components-stickyfill'
 ]);
@@ -155,7 +147,7 @@ function getAthenaYearRange() {
 }
 
 function getAthenaHeader() {
-  return ['/**',
+  return ['/*!',
   ' * Athena Framework <%= config.pkg.version %> (<%= config.pkg.homepage %>)',
   ' * Copyright <%= config.prj.yearRange %> <%= config.pkg.author.name %>',
   ' * Licensed under <%= config.pkg.license %>',
@@ -290,7 +282,7 @@ gulp.task('js-build', function() {
     .pipe(include())
       .on('error', console.log)
     .pipe(babel())
-    .pipe(uglify())
+    .pipe(uglify( { output: { comments: /^(!|\---)/ } } )) // try to preserve headers from objectFitPolyfill
     .pipe(header(config.prj.header, { config: config }))
     .pipe(rename('framework.min.js'))
     .pipe(gulp.dest(config.dist.jsPath));
