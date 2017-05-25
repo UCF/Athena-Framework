@@ -265,7 +265,19 @@ gulp.task('css', ['scss-lint', 'scss-build']);
 //
 
 gulp.task('scss-gh-pages', function() {
+<<<<<<< HEAD
   return buildCSS(config.docs.scssPath + '/style.scss', 'style.min.css', config.docs.cssPath, true, false);
+=======
+  gulp.src(config.docs.scssPath + '/style.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(cleanCSS())
+    .pipe(autoprefixer({
+      // Supported browsers added in package.json ("browserslist")
+      cascade: false
+    }))
+    .pipe(rename('style.min.css'))
+    .pipe(gulp.dest(config.docs.cssPath));
+>>>>>>> Missing semicolon
 });
 
 gulp.task('files-gh-pages', function() {
