@@ -26,13 +26,13 @@
   // Create or override contextual background variant
   @include bg-variant('.bg-#{$color-name}', $color);
 
+  // Force accessible text color on background variant class
   .bg-#{$color-name} {
-    // Force accessible text color on background variant class
     color: $text-color;
   }
 
+  // Add opt-in link color/style overrides
   @if $color-name != 'secondary' {
-    // Add opt-in link color/style overrides
     .bg-#{$color-name}-link {
       color: $text-color;
       text-decoration: underline;
