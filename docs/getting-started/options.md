@@ -1,29 +1,30 @@
 ---
 layout: docs
 title: Customization options
-description: Customize Bootstrap with Sass variables, easily toggling global preferences with a quick recompile.
+description: Customize Athena with Sass variables, easily toggling global preferences with a quick recompile.
 group: getting-started
 ---
 
-Customize Bootstrap 4 with our built-in custom variables file and easily toggle global CSS preferences with new `$enable-*` Sass variables. Override a variable's value and recompile with `npm run test` as needed.
+Customize Athena's CSS with Sass variables, easily toggling global preferences with a quick recompile.
 
 ## Customizing variables
 
-Bootstrap 4 ships with a `_custom.scss` file for easy overriding of default variables in `/scss/_variables.scss`. Copy and paste relevant lines from there into the `_custom.scss` file, modify the values, and recompile your Sass to change our default values. **Be sure to remove the `!default` flag from override values.**
+Unlike Bootstrap 4, Athena doesn't provide a `_custom.scss` file; instead, Athena's source files are expected to be included into projects that require manual builds using [properly-ordered .scss and .js file imports](../build-tools).
+
+To apply your own custom overrides to Athena, copy and paste relevant lines from Athena's `_variables.scss` into your project's unique `_variables.scss` file, modify the values, and recompile your Sass to change our default values. **Be sure to remove the `!default` flag from override values.**
 
 For example, to change out the `background-color` and `color` for the `<body>`, you'd do the following:
 
 {% highlight scss %}
-// Bootstrap overrides
-//
-// Copy variables from `_variables.scss` to this file to override default values
-// without modifying source files.
+// my-project's _variables.scss
 
 $body-bg:    $gray-dark;
 $body-color: $gray-light;
 {% endhighlight %}
 
 Do the same for any variable you need to override, including the global options listed below.
+
+Note that Athena provides other additional variables not provided by Bootstrap; particularly, Athena allows for greater component-specific customization of border-radius values.  See Athena's _variables.scss for the full list of variables; any variables unique to Athena will be marked with a 'custom' comment.
 
 ## Global options
 
@@ -39,3 +40,4 @@ You can find and customize these variables for key global options in our `_varia
 | `$enable-hover-media-query` | `true` or `false` (default)        | ...                                                                                    |
 | `$enable-grid-classes`      | `true` (default) or `false`        | Enables the generation of CSS classes for the grid system (e.g., `.container`, `.row`, `.col-md-1`, etc.).     |
 | `$enable-print-styles`      | `true` (default) or `false`        | Enables styles for optimizing printing.                                |
+| `$athena-font-path`         | '../fonts/' (default)              | Modifies the relative path where fallback font files are stored. Note that this path is relative to the _compiled css directory_. |
