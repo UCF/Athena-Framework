@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Download
-description: Download Bootstrap's compiled CSS and JavaScript, source code, or include it with your favorite package manager.
+description: Download Athena's compiled CSS and JavaScript, source code, or include it with your favorite package manager.
 group: getting-started
 ---
 
-The Athena Framework is available to download in a few ways. We host our code on Github, so it is available under the TODO license. A zipped archive of the latest release is available below.
+The Athena Framework is available to download in a few ways. The framework is hosted on Github as an open-source project under the MIT license. Additionally, a zipped archive of the latest release is available below.
 
 ___
 
@@ -15,7 +15,7 @@ ___
 {:toc}
 
 ### Latest Release
-<a href="https://github.com/UCF/Athena-Framework/archive/v1.0.0-alpha.1.zip">Download Athena Framework v1.0.0-alpha.1</a> <span class="badge badge-primary">alpha</span>
+<a href="https://github.com/UCF/Athena-Framework/archive/v1.0.0-beta.zip">Download Athena Framework v1.0.0-beta</a> <span class="badge badge-primary">beta</span>
 
 ### Github
 You can also clone a copy of the git project to your local computer:
@@ -30,7 +30,7 @@ The project folder will contain minified files as well as source code (Athena is
 Projects that need to extend Athena and/or reference Athena's Sass variables should utilize the source code files in /src/. Projects that just need to include Athena without modifications can use the already-minified files in /dist/. See the <a href="{{ "/getting-started/install/" | prepend: site.baseurl }}">Installation instructions</a> for more details.
 
 ### Minified, pre-compiled, assets
-The download includes ready-to-use CSS, Javascript, and webfont files. These can be found in the <code>/dist/</code> folder.
+The download includes ready-to-use CSS, JavaScript, and webfont files. These can be found in the <code>/dist/</code> folder.
 
 <pre><code>├── dist/
    ├── css/

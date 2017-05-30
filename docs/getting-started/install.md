@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Installation
-description: Download Bootstrap's compiled CSS and JavaScript, source code, or include it with your favorite package manager.
+description: Download Athena's compiled CSS and JavaScript, source code, or include it with your favorite package manager.
 group: getting-started
 ---
 
@@ -24,7 +24,7 @@ Include Athena's CSS in the <code>&lt;head&gt;</code> of your project, before an
 <link rel="stylesheet" href="/css/framework.min.css">
 {% endhighlight %}
 
-Athena's Javascript should be added before the closing <code>&lt;/body&gt;</code> tag. <a href="https://jquery.com/">jQuery</a> and <a href="http://tether.io/">Tether</a> are required dependencies for Athena, so be sure to include those before the Athena JS.
+Athena's JavaScript should be added before the closing <code>&lt;/body&gt;</code> tag. <a href="https://jquery.com/">jQuery</a> and <a href="http://tether.io/">Tether</a> are required dependencies for Athena, so be sure to include those before the Athena JS.
 
 {% highlight html %}
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
@@ -36,10 +36,10 @@ ___
 
 ## Source Files
 
-Athena's source files are available in the `/src/` folder
+Athena's source files are available in the `/src/` folder.
 
 ### NPM
-If you are using <a href="https://www.npmjs.com/">NPM</a> with your project, you can add Athena as a dependency by running `npm install UCF/Athena-Framework --save` in the root of your project, or by adding Athena to your package.json file and running `npm install`. Make sure you also include jQuery and Tether.
+If you are using <a href="https://www.npmjs.com/">NPM</a> with your project, you can add Athena as a dependency by running `npm install ucf-athena-framework --save` in the root of your project, or by adding ucf-athena-framework to your package.json file and running `npm install`. Make sure you also include jQuery and Tether.
 
 **package.json**
 <pre><code>{
@@ -47,12 +47,12 @@ If you are using <a href="https://www.npmjs.com/">NPM</a> with your project, you
   "dependencies": {
     "jquery": "^3.2.1",
     "tether": "^1.4.0"
-    "athena-framework": "github:UCF/Athena-Framework"
+    "ucf-athena-framework": "^1.0.0-beta"
   }
 }</code></pre>
 
 ### Bower
-If you are using the <a href="https://bower.io/">Bower</a> package manager, you can add Athena as a dependency by running `bower install UCF/Athena-Framework --save` or by adding Athena to you `bower.json` file and running `bower install`. As with NPM, ensure you also include jQuery and Tether.
+If you are using the <a href="https://bower.io/">Bower</a> package manager, you can add Athena as a dependency by running `bower install ucf-athena-framework --save` or by adding ucf-athena-framework to your `bower.json` file and running `bower install`. As with NPM, ensure you also include jQuery and Tether.
 
 **bower.json**
 <pre><code>{
@@ -60,7 +60,7 @@ If you are using the <a href="https://bower.io/">Bower</a> package manager, you 
   "dependencies": {
     "jquery": ">=1.9.1",
     "tether": "^1.4.0",
-    "git://github.com/UCF/Athena-Framework": "v1.0.0-alpha"
+    "ucf-athena-framework": "^1.0.0-beta"
   }
 }</code></pre>
 
@@ -68,7 +68,7 @@ ___
 
 ## Adding to Existing Project Using Bootstrap
 
-Athena is a complete replacement for Bootstrap. If you are already using Bootstrap on an existing project and want to use Athena instead, you should remove Bootstrap’s CSS and Javascript completely. Athena is designed to run as a completely standalone framework.
+Athena is a complete replacement for Bootstrap. If you are already using Bootstrap on an existing project and want to use Athena instead, you should remove Bootstrap's CSS and JavaScript completely. Athena is designed to run as a completely standalone framework.
 
 <pre><code><strike>&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;</strike>
 <span class="highlight-code">&lt;link rel="stylesheet" href="/css/framework.min.css"&gt;</span>

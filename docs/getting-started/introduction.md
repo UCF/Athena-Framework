@@ -1,12 +1,12 @@
 ---
 layout: docs
 title: Introduction
-description: Get started with Bootstrap using the Bootstrap CDN and a template starter page.
+description: Get started with Athena using the Athena CDN and a template starter page.
 group: getting-started
 redirect_from: "/getting-started/"
 ---
 
-The Athena Framework is a front-end framework built and used by the <a href="//brand.ucf.edu">UCF Marketing Team</a> to create responsive websites and web applications for <a href="//ucf.edu">UCF</a>. Based on <a href="//v4-alpha.getbootstrap.com">Bootstrap 4,</a> the framework includes most of the functionality developers and content editors have come to expect of Bootstrap. In addition, base Bootstrap styles have been updated to conform to the UCF Brand by default, with additional variants for flexibility.
+The Athena Framework is a front-end framework built and used by the <a href="//brand.ucf.edu">UCF Marketing Team</a> to create responsive websites and web applications for <a href="//ucf.edu">UCF</a>. Based on <a href="//v4-alpha.getboostrap.com">Bootstrap 4,</a> the framework includes most of the functionality developers and content editors have come to expect of Bootstrap. In addition, base Bootstrap styles have been updated to conform to the UCF brand by default, with additional variants for flexibility.
 
 ___
 
@@ -15,7 +15,7 @@ ___
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
-## A Note about Bootstrap
+## A Note about Athena
 
 Athena is a complete replacement for <a class="alert-link" href="https://getbootstrap.com/">Bootstrap</a>.  If you are already using Bootstrap on an existing project and want to use Athena instead, you should remove Bootstrap's CSS and Javascript completely.  Athena is designed to run as a completely standalone framework.
 
