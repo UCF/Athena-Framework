@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "ucf-athena-framework",
+=======
+  "name": "athena-framework",
+>>>>>>> Updated bower.json to allow the repo to be published publically; updated version number in package.json
   "version": "v1.0.0-alpha.2",
   "author": {
     "name": "UCF Web Communications",
