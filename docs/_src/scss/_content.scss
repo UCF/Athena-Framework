@@ -1,38 +1,6 @@
 .docs {
-  main {
-    hr {
-      margin: 2rem 0 1rem 0;
-    }
-
-    h1 {
-      font-size: 2rem;
-      margin-top: 1.5rem;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      margin-top: 2.5rem;
-
-      &:first-child {
-        margin-top: 1.5rem;
-      }
-    }
-
-    h3 {
-      font-size: 1.25rem;
-      margin-top: 2.25rem;
-    }
-
-    h4 {
-      font-size: 1rem;
-    }
-
-    h5 {
-      font-size: 0.75rem;
-    }
-  }
-
-  pre, figure.highlight {
+  pre,
+  figure.highlight {
     @include border-radius(.25rem);
     background: $gray-lighter;
     padding: 1.5rem;
