@@ -46,6 +46,7 @@ body {
 //
 
 %heading-underline {
+  display: block; // Element must be block-level to display the underline correctly cross-browser
   // scss-lint:disable ImportantRule
   font-family: $font-family-sans-serif !important; // This class is opinionated--we *always* want to display this heading using Gotham
   // scss-lint:enable ImportantRule

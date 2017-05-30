@@ -2,10 +2,22 @@
     <div class="container">
         <div class="row">
             <div class="col self-align-left">
-                <p>Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and <a href="https://github.com/UCF/Athena-Framework">the Athena Framework</a>.{% if site.current_version %}<br />{{ site.current_version }}{% endif %}</p>
+                <p>
+                  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and <a href="https://github.com/UCF/Athena-Framework">the Athena Framework</a>.
+                  <br>
+                  Documentation adapted from <a href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.
+                </p>
+                <p class="mb-0">
+                  Code licensed <a href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
+                </p>
             </div>
             <div class="col self-align-right">
-                <a class="float-right" href="https://github.com/UCF/" target="_blank"><span class="fa fa-github"></span> UCF GitHub</a>
+              <p class="text-right">
+                {% if site.current_version %}Current version: <strong>{{ site.current_version }}</strong>.{% endif %}
+              </p>
+              <p class="text-right">
+                <a href="https://github.com/UCF/" target="_blank"><span class="fa fa-github"></span> UCF GitHub</a>
+              </p>
             </div>
         </div>
     </div>

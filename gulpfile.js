@@ -13,10 +13,12 @@ var browserSync = require('browser-sync').create(),
     replace = require('gulp-replace'),
     runSequence = require('run-sequence'),
     merge = require('merge'),
-    concat = require('gulp-concat'),
-    addsrc = require('gulp-add-src'),
     childProc = require('child_process'),
-    gutil = require('gulp-util');
+    header = require('gulp-header'),
+    footer = require('gulp-footer'),
+    gulpif = require('gulp-if'),
+    gutil = require('gulp-util'),
+    fs = require('fs');
 
 
 var configLocal = require('./gulp-config.json'),
@@ -39,8 +41,14 @@ var configLocal = require('./gulp-config.json'),
       },
       packagesPath: './node_modules',
       bootstrap: {
+        base: './node_modules/bootstrap',
         scss: './node_modules/bootstrap/scss',
         js:   './node_modules/bootstrap/js/src'
+      },
+      pkg: getAthenaPackage(),
+      prj: {
+        yearRange: getAthenaYearRange(),
+        header: getAthenaHeader()
       },
       sync: false,
       syncTarget: 'http://localhost/'
@@ -95,6 +103,26 @@ gulp.task('move-components-bootstrap-js', function() {
     .pipe(gulp.dest(config.src.jsPath + '/bootstrap'));
 });
 
+// Copy Bootstrap's license block comment for css and save to a new file
+gulp.task('move-components-bootstrap-license-css', function() {
+  var sampleFile = fs.readFileSync(config.bootstrap.base + '/dist/css/bootstrap.min.css', {base: config.bootstrap.base}).toString(),
+      comment = getLicenseComment(sampleFile);
+
+  if (!comment) { return; }
+
+  return fs.writeFileSync(config.src.scssPath + '/bootstrap/_bootstrap-license.css', comment);
+});
+
+// Copy Bootstrap's license block comment for js and save to a new file
+gulp.task('move-components-bootstrap-license-js', function() {
+  var sampleFile = fs.readFileSync(config.bootstrap.base + '/dist/js/bootstrap.min.js', {base: config.bootstrap.base}).toString();
+      comment = getLicenseComment(sampleFile);
+
+  if (!comment) { return; }
+
+  return fs.writeFileSync(config.src.jsPath + '/bootstrap/_bootstrap-license.js', comment);
+});
+
 // Copy objectFitPolyfill js
 gulp.task('move-components-objectfit', function() {
   return gulp.src(config.packagesPath + '/objectFitPolyfill/src/objectFitPolyfill.js', {base: config.packagesPath + '/objectFitPolyfill/src'})
@@ -112,9 +140,54 @@ gulp.task('components', [
   'move-components-fonts',
   'move-components-bootstrap-scss',
   'move-components-bootstrap-js',
+  'move-components-bootstrap-license-css',
+  'move-components-bootstrap-license-js',
   'move-components-objectfit',
   'move-components-stickyfill'
 ]);
+
+
+//
+// Header/metadata appending
+//
+
+function getAthenaPackage() {
+  return JSON.parse(fs.readFileSync('./package.json'));
+}
+
+function getAthenaYearRange() {
+  var year = '',
+      startYear = 2017,
+      currentYear = new Date().getFullYear();
+  if (startYear == currentYear) {
+    year += startYear;
+  }
+  else {
+    year += startYear + '-' + currentYear;
+  }
+  return year;
+}
+
+function getAthenaHeader() {
+  return ['/*!',
+  ' * Athena Framework <%= config.pkg.version %> (<%= config.pkg.homepage %>)',
+  ' * Copyright <%= config.prj.yearRange %> <%= config.pkg.author.name %>',
+  ' * Licensed under <%= config.pkg.license %>',
+  ' */',
+  ''].join('\n');
+}
+
+function getLicenseComment(fileString) {
+  var regex = /\/\*(\*(?!\/)|[^*])*\*\//,
+      comment = regex.exec(fileString);
+
+  if (!comment || !comment[0]) {
+    return false;
+  }
+  else {
+    return comment[0];
+  }
+}
 
 
 //
@@ -130,8 +203,10 @@ gulp.task('scss-lint', function() {
 });
 
 // Compile scss files
-function buildCSS(src, filename, dest) {
+function buildCSS(src, filename, dest, applyHeader, doBrowserSync) {
   dest = dest || config.dist.cssPath;
+  appleHeader = applyHeader || false;
+  doBrowserSync = doBrowserSync || false;
 
   return gulp.src(src)
     .pipe(sass().on('error', sass.logError))
@@ -140,13 +215,14 @@ function buildCSS(src, filename, dest) {
       // Supported browsers added in package.json ("browserslist")
       cascade: false
     }))
+    .pipe(gulpif(applyHeader, header(config.prj.header, { config: config })))
     .pipe(rename(filename))
     .pipe(gulp.dest(dest))
-    .pipe(browserSync.stream());
+    .pipe(gulpif(doBrowserSync, browserSync.stream()));
 }
 
 gulp.task('scss-build-framework', function() {
-  return buildCSS(config.src.scssPath + '/framework.scss', 'framework.min.css');
+  return buildCSS(config.src.scssPath + '/framework.scss', 'framework.min.css', config.dist.cssPath, true, true);
 });
 
 gulp.task('scss-build', ['scss-build-framework']);
@@ -155,17 +231,12 @@ gulp.task('scss-build', ['scss-build-framework']);
 gulp.task('css', ['scss-lint', 'scss-build']);
 
 
+//
 // GitHub Pages Build
+//
+
 gulp.task('scss-gh-pages', function() {
-  gulp.src(config.docs.scssPath + '/style.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(cleanCSS())
-    .pipe(autoprefixer({
-      // Supported browsers added in package.json ("browserslist")
-      cascade: false
-    }))
-    .pipe(rename('style.min.css'))
-    .pipe(gulp.dest(config.docs.cssPath))
+  return buildCSS(config.docs.scssPath + '/style.scss', 'style.min.css', config.docs.cssPath, true, false);
 });
 
 gulp.task('files-gh-pages', function() {
@@ -200,6 +271,7 @@ gulp.task('jekyll-serve', function() {
   jekyll.stderr.on('data', jekyllLogger);
 });
 
+
 //
 // JavaScript
 //
@@ -225,9 +297,9 @@ gulp.task('js-build-bootstrap', function() {
       .on('error', console.log)
     .pipe(replace(/^(export|import).*/gm, ''))
     .pipe(babel())
-    .pipe(addsrc.prepend(config.src.jsPath + '/_bootstrap-header.js'))
-    .pipe(addsrc.append(config.src.jsPath + '/_bootstrap-footer.js'))
-    .pipe(concat('bootstrap.js'))
+    .pipe(header(fs.readFileSync(config.src.jsPath + '/bootstrap/_bootstrap-header.js')))
+    .pipe(footer(fs.readFileSync(config.src.jsPath + '/bootstrap/_bootstrap-footer.js')))
+    .pipe(rename('bootstrap.js'))
     .pipe(gulp.dest(config.src.jsPath + '/bootstrap'));
 });
 
@@ -237,7 +309,8 @@ gulp.task('js-build', function() {
     .pipe(include())
       .on('error', console.log)
     .pipe(babel())
-    .pipe(uglify())
+    .pipe(uglify( { output: { comments: /^(!|\---)/ } } )) // try to preserve headers from objectFitPolyfill
+    .pipe(header(config.prj.header, { config: config }))
     .pipe(rename('framework.min.js'))
     .pipe(gulp.dest(config.dist.jsPath));
 });
