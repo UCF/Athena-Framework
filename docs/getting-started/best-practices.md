@@ -16,4 +16,4 @@ We've designed and developed Athena to work in a number of environments. Here ar
 - Working with Sass files
 - Building new CSS components
 - Working with flexbox
-- Ask in [Slack](https://ucf-wp.slack.com/messages/#prj-athena-framework/)
+- Ask in [Slack]({{ site.slack }})
