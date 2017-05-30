@@ -10,7 +10,7 @@
   ],
   "license": "MIT",
   "homepage": "https://github.com/UCF/Athena-Framework",
-  "private": true,
+  "private": false,
   "ignore": [
     "**/.*",
     "node_modules",

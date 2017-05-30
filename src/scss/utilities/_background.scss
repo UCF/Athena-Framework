@@ -31,6 +31,18 @@
     color: $text-color;
   }
 
+  // Add opt-in link color/style overrides
+  @if $color-name != 'secondary' {
+    .bg-#{$color-name}-link {
+      color: $text-color;
+      text-decoration: underline;
+
+      @include hover-focus {
+        color: get-hover-color($text-color);
+      }
+    }
+  }
+
   // Create transparent variants
   @each $t-key, $t-val in $bg-transparencies {
     // Create contextual background variant
