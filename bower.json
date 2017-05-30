@@ -1,5 +1,5 @@
 {
-  "name": "athena-framework",
+  "name": "ucf-athena-framework",
   "description": "A front-end web framework for UCF websites and applications",
   "main": [
     "src/js/framework.js",
@@ -10,7 +10,7 @@
   ],
   "license": "MIT",
   "homepage": "https://github.com/UCF/Athena-Framework",
-  "private": true,
+  "private": false,
   "ignore": [
     "**/.*",
     "node_modules",
