@@ -21,6 +21,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ucf
 github_username:  UCF
+github: https://github.com/ucf/athena-framework/
+slack: https://ucf-wp.slack.com/messages/#prj-athena-framework/
 
 # Build settings
 markdown: kramdown

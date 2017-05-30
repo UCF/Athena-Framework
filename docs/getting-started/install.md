@@ -5,7 +5,7 @@ description: Download Athena's compiled CSS and JavaScript, source code, or incl
 group: getting-started
 ---
 
-Installing the Athena Framework is as simple as adding the CSS and JS files to your project.
+In most cases, installing the Athena Framework is as simple as adding the CSS, JS, and font files to your project.
 
 ___
 
@@ -14,61 +14,29 @@ ___
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
-## Minified Files
+___
 
-After <a href="{{ "/getting-started/download/" | prepend: site.baseurl }}">downloading and extracting the Athena-Framework,</a> add the CSS, JS and Font files from the `/dist/` directory to your project's static assets folder.
+## Installing Minified Files
 
-Include Athena's CSS in the <code>&lt;head&gt;</code> of your project, before any additional CSS files:
+After <a href="{{ "/getting-started/download/" | prepend: site.baseurl }}">downloading and extracting the Athena-Framework,</a> add the CSS, JS and font files from the `dist/` directory to somewhere within your project. You'll need to maintain the directory structure of the `dist/` folder's contents, since fallback font includes are imported using a relative, fixed path.
 
-{% highlight html %}
-<link rel="stylesheet" href="/css/framework.min.css">
-{% endhighlight %}
-
-Athena's JavaScript should be added before the closing <code>&lt;/body&gt;</code> tag. <a href="https://jquery.com/">jQuery</a> and <a href="http://tether.io/">Tether</a> are required dependencies for Athena, so be sure to include those before the Athena JS.
-
-{% highlight html %}
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-<script type="text/javascript" src="/js/framework.min.js"></script>
-{% endhighlight %}
+For more information on embedding Athena's styles and scripts into your project's templates, or for instructions on installing CDN assets, see the [Quick Start]({{ "/getting-started/introduction/#quick-start" | prepend: site.baseurl }}) instructions.
 
 ___
 
-## Source Files
+## Using Source Files
 
-Athena's source files are available in the `/src/` folder.
+Athena's source files are available in the `/src/` folder. We recommend using Athena's source files instead of pre-minified files for projects that need to modify, extend, or build off of Athena, and/or in cases where you wish to take advantage of Athena's predefined variables and mixins.
 
-### NPM
-If you are using <a href="https://www.npmjs.com/">NPM</a> with your project, you can add Athena as a dependency by running `npm install ucf-athena-framework --save` in the root of your project, or by adding ucf-athena-framework to your package.json file and running `npm install`. Make sure you also include jQuery and Tether.
-
-**package.json**
-<pre><code>{
-  &hellip;
-  "dependencies": {
-    "jquery": "^3.2.1",
-    "tether": "^1.4.0"
-    "ucf-athena-framework": "^1.0.0-beta"
-  }
-}</code></pre>
-
-### Bower
-If you are using the <a href="https://bower.io/">Bower</a> package manager, you can add Athena as a dependency by running `bower install ucf-athena-framework --save` or by adding ucf-athena-framework to your `bower.json` file and running `bower install`. As with NPM, ensure you also include jQuery and Tether.
-
-**bower.json**
-<pre><code>{
-  &hellip;
-  "dependencies": {
-    "jquery": ">=1.9.1",
-    "tether": "^1.4.0",
-    "ucf-athena-framework": "^1.0.0-beta"
-  }
-}</code></pre>
+See the [Build Tools instructions]({{ "/getting-started/build-tools/" | prepend: site.baseurl }}) for more information on how to utilize these files in your workflow.
 
 ___
 
 ## Adding to Existing Project Using Bootstrap
 
 Athena is a complete replacement for Bootstrap. If you are already using Bootstrap on an existing project and want to use Athena instead, you should remove Bootstrap's CSS and JavaScript completely. Athena is designed to run as a completely standalone framework.
+
+If you're upgrading from Bootstrap 3, be sure to check out the [Migration Guide]({{ "/migration" | prepend: site.baseurl }}) for the full list of differences between Bootstrap and Athena.
 
 <pre><code><strike>&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;</strike>
 <span class="highlight-code">&lt;link rel="stylesheet" href="/css/framework.min.css"&gt;</span>
@@ -142,8 +110,3 @@ More weights can be added as needed per-project, however, we don't recommend usa
 
 *&#42;Avoid adding webfonts that aren't needed for your project; as the number of fonts in a project increases, the average load time for the font project increases.*
 
-___
-
-
-## CDN Coming Soon
-**Looking for a CDN link?** The Athena Framework will be available through a CDN soon.
