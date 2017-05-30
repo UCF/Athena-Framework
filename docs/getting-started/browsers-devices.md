@@ -14,13 +14,13 @@ Athena supports a wide variety of modern browsers and devices, and some older on
 
 ## Supported browsers
 
-Athena supports the **latest, stable releases** of all major browsers and platforms. On Windows, **we support Internet Explorer 10-11 / Microsoft Edge**.
+Athena supports the **latest two stable releases** of all major browsers and platforms. On Windows, **we support Internet Explorer 10-11 and the two latest versions of Edge**.
 
 Alternative browsers which use the latest version of WebKit, Blink, or Gecko, whether directly or via the platform's web view API, are not explicitly supported. However, Athena should (in most cases) display and function correctly in these browsers as well. More specific support information is provided below.
 
 ### Mobile devices
 
-Generally speaking, Athena supports the latest versions of each major platform's default browsers. Note that proxy browsers (such as Opera Mini, Opera Mobile's Turbo mode, UC Browser Mini, Amazon Silk) are not supported.
+Generally speaking, Athena supports the latest two versions of each major platform's default browsers. Note that proxy browsers (such as Opera Mini, Opera Mobile's Turbo mode, UC Browser Mini, Amazon Silk) are not supported.
 
 <table class="table table-bordered table-striped table-responsive">
   <thead>
@@ -36,34 +36,34 @@ Generally speaking, Athena supports the latest versions of each major platform's
   <tbody>
     <tr>
       <th scope="row">Android</th>
-      <td class="text-success">Supported</td>
-      <td class="text-success">Supported</td>
-      <td class="text-muted">N/A</td>
-      <td class="text-success">Android v5.0+ supported</td>
-      <td class="text-muted">N/A</td>
+      <td class="text-success-aw">Supported</td>
+      <td class="text-success-aw">Supported</td>
+      <td>N/A</td>
+      <td class="text-success-aw">Android v5.0+ supported</td>
+      <td>N/A</td>
     </tr>
     <tr>
       <th scope="row">iOS</th>
-      <td class="text-success">Supported</td>
-      <td class="text-success">Supported</td>
-      <td class="text-success">Supported</td>
-      <td class="text-muted">N/A</td>
-      <td class="text-muted">N/A</td>
+      <td class="text-success-aw">Supported</td>
+      <td class="text-success-aw">Supported</td>
+      <td class="text-success-aw">Supported</td>
+      <td>N/A</td>
+      <td>N/A</td>
     </tr>
     <tr>
       <th scope="row">Windows 10 Mobile</th>
-      <td class="text-muted">N/A</td>
-      <td class="text-muted">N/A</td>
-      <td class="text-muted">N/A</td>
-      <td class="text-muted">N/A</td>
-      <td class="text-success">Supported</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td class="text-success-aw">Supported</td>
     </tr>
   </tbody>
 </table>
 
 ### Desktop browsers
 
-Similarly, the latest versions of most desktop browsers are supported.
+Similarly, the latest two versions of most desktop browsers are supported.
 
 <table class="table table-bordered table-striped table-responsive">
   <thead>
@@ -80,28 +80,26 @@ Similarly, the latest versions of most desktop browsers are supported.
   <tbody>
     <tr>
       <th scope="row">Mac</th>
-      <td class="text-success">Supported</td>
-      <td class="text-success">Supported</td>
-      <td class="text-muted">N/A</td>
-      <td class="text-muted">N/A</td>
-      <td class="text-success">Supported</td>
-      <td class="text-success">Supported</td>
+      <td class="text-success-aw">Supported</td>
+      <td class="text-success-aw">Supported</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td class="text-success-aw">Supported</td>
+      <td class="text-success-aw">Supported</td>
     </tr>
     <tr>
       <th scope="row">Windows</th>
-      <td class="text-success">Supported</td>
-      <td class="text-success">Supported</td>
-      <td class="text-success">Supported, IE10+</td>
-      <td class="text-success">Supported</td>
-      <td class="text-success">Supported</td>
-      <td class="text-danger">Not supported</td>
+      <td class="text-success-aw">Supported</td>
+      <td class="text-success-aw">Supported</td>
+      <td class="text-success-aw">Supported, IE10+</td>
+      <td class="text-success-aw">Supported</td>
+      <td class="text-success-aw">Supported</td>
+      <td class="text-danger-aw">Not supported</td>
     </tr>
   </tbody>
 </table>
 
-For Firefox, in addition to the latest normal stable release, we also support the latest [Extended Support Release (ESR)](https://www.mozilla.org/en-US/firefox/organizations/faq/) version of Firefox.
-
-Unofficially, Athena should look and behave well enough in Chromium and Chrome for Linux, Firefox for Linux, and Internet Explorer 9, though they are not officially supported.
+Unofficially, Athena should look and behave well enough in Chromium and Chrome for Linux and Firefox for Linux, though they are not officially supported.
 
 For a list of some of the browser bugs that Athena has to grapple with, see the [Bootstrap wall of browser bugs](http://getbootstrap.com/browser-bugs/).
 
