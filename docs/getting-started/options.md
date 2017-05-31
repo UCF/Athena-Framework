@@ -9,7 +9,7 @@ Customize Athena's CSS with Sass variables, easily toggling global preferences w
 
 ## Customizing variables
 
-Unlike Bootstrap 4, Athena doesn't provide a `_custom.scss` file; instead, Athena's source files are expected to be included into projects that require manual builds using [properly-ordered .scss and .js file imports](../build-tools).
+Unlike Bootstrap 4, Athena doesn't provide a `_custom.scss` file; instead, Athena's source files are expected to be included into projects that require manual builds using [properly-ordered .scss and .js file imports]({{ "/getting-started/build-tools" | prepend: site.baseurl }}).
 
 To apply your own custom overrides to Athena, copy and paste relevant lines from Athena's `_variables.scss` into your project's unique `_variables.scss` file, modify the values, and recompile your Sass to change our default values. **Be sure to remove the `!default` flag from override values.**
 
@@ -24,7 +24,7 @@ $body-color: $gray-light;
 
 Do the same for any variable you need to override, including the global options listed below.
 
-Note that Athena provides other additional variables not provided by Bootstrap; particularly, Athena allows for greater component-specific customization of border-radius values.  See Athena's _variables.scss for the full list of variables; any variables unique to Athena will be marked with a 'custom' comment.
+Note that Athena provides other additional variables not provided by Bootstrap; particularly, Athena allows for greater component-specific customization of border-radius values.  See Athena's `_variables.scss` for the full list of variables; any variables unique to Athena will be marked with a `custom` comment.
 
 ## Global options
 
