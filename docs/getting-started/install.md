@@ -18,7 +18,7 @@ ___
 
 ## Installing Minified Files
 
-After <a href="{{ "/getting-started/download/" | prepend: site.baseurl }}">downloading and extracting the Athena-Framework,</a> add the CSS, JS and font files from the `dist/` directory to somewhere within your project. You'll need to maintain the directory structure of the `dist/` folder's contents, since fallback font includes are imported using a relative, fixed path.
+After <a href="{{ "/getting-started/download/" | prepend: site.baseurl }}">downloading and extracting the Athena-Framework,</a> add the CSS, JS and font files from the `/dist/` directory to somewhere within your project. You'll need to maintain the directory structure of the `/dist/` folder's contents, since fallback font includes are imported using a relative, fixed path; see the [Included Fonts](#included-fonts) section for more information.
 
 For more information on embedding Athena's styles and scripts into your project's templates, or for instructions on installing CDN assets, see the [Quick Start]({{ "/getting-started/introduction/#quick-start" | prepend: site.baseurl }}) instructions.
 
@@ -53,11 +53,11 @@ ___
 
 ## Webfonts &amp; Configuration
 
-Athena is built to utilize premium fonts provided by the <a href="http://www.typography.com/cloud/welcome/">Cloud.typography service</a> by default, with webfont fallbacks (available in the `/dist/fonts/` directory). If neither Cloud.Typography or webfont fallbacks are utilized, Athena will default to use appropriate system fonts.
+Athena is built to utilize premium fonts provided by the <a href="http://www.typography.com/cloud/welcome/">Cloud.typography service</a> by default, with webfont fallbacks (available in the `/dist/fonts/` directory). If neither Cloud.typography or webfont fallbacks are utilized, Athena will default to use appropriate system fonts.
 
-### Included Fonts
+### Included Fallback Fonts
 
-To utilize fallback webfonts, copy the `/fonts/` directory (from the `/src/fonts/` in the project files) to the same `/src/` folder you added the CSS and JS files. The CSS is built to include webfonts from that directory.
+To utilize fallback webfonts, copy the `/fonts/` directory (from the `/dist/fonts/` in the framework's files) to the same folder in your project that you added the framework's CSS and JS files to. The framework's CSS is built to include webfonts from that directory. Alternatively, you can pick a custom location for the fallback fonts directory within your project, as long as you modify the `$athena-font-path` Sass variable and recompile.
 
 <pre><code> ├── css/
 <strong> ├── fonts/
@@ -73,9 +73,15 @@ While Athena provides fallback webfonts out-of-the-box, the preferred font famil
 
 The sans-serif font family used in Athena is **Gotham**.
 
+{% callout danger %}
 #### Gotham Licensing for the Web
-
-Any existing print license for Gotham usage, whether purchased via the <a class="alert-link" href="https://cstore.ucf.edu/gotham/">UCF Computer Store</a> or separately, <a class="alert-link" href="https://www.typography.com/faq/question.php?faqID=15" target="_blank">does not cover usage of webfonts</a>.  To use Gotham on the web, ***you must register for the Cloud.typography service.***  Do not attempt to self-host Gotham font files online.
+<p>
+    Any existing print license for Gotham usage, whether purchased via the <a href="https://cstore.ucf.edu/gotham/">UCF Computer Store</a> or separately, <a href="https://www.typography.com/faq/question.php?faqID=15" target="_blank">does not cover usage of webfonts</a>.
+</p>
+<p class="mb-0">
+    To use Gotham on the web, <em>you must register for the Cloud.typography service.</em><br><strong>Do not attempt to self-host Gotham font files online.</strong>
+</p>
+{% endcallout %}
 
 #### Base Configuration
 
@@ -108,5 +114,6 @@ Because Athena does not support older browsers, enabling Legacy Support is not n
 
 More weights can be added as needed per-project, however, we don't recommend usage of most "thin" or "extra light" weights due to readability concerns.
 
-*&#42;Avoid adding webfonts that aren't needed for your project; as the number of fonts in a project increases, the average load time for the font project increases.*
-
+{% callout info %}
+<strong>*Note:</strong> Avoid adding webfonts that aren't needed for your project; as the number of fonts in a project increases, the average load time for the font project increases.
+{% endcallout %}

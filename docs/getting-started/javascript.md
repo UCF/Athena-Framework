@@ -50,11 +50,9 @@ $('#myModal').on('show.bs.modal', function (e) {
 
 We also believe you should be able to use all Athena plugins purely through the JavaScript API. All public APIs are single, chainable methods, and return the collection acted upon.
 
-___
-
-**Note: Programmatic API applies to plugins ported from Bootstrap only.** Athena-specific plugins (`mediaBackground` and `stickyTop`) don't currently expose a constructor, `noConflict` method, custom events, version number or have any configurable options.
-
-___
+{% callout info %}
+<strong>Note: Programmatic API applies to plugins ported from Bootstrap only.</strong> Athena-specific plugins (`mediaBackground` and `stickyTop`) don't currently expose a constructor, `noConflict` method, custom events, version number or have any configurable options.
+{% endcallout %}
 
 {% highlight js %}
 $('.btn.danger').button('toggle').addClass('fat')
