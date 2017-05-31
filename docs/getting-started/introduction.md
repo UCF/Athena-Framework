@@ -28,9 +28,9 @@ ___
 
 To quickly add all of Athena's features to your project, add the following to your pages:
 
-<div class="alert alert-info" role="alert">
-    <strong>CDN Coming Soon:</strong> Looking for a CDN link? The Athena Framework will be available through a CDN soon.
-</div>
+{% callout info %}
+<strong>CDN Coming Soon:</strong> Looking for a CDN link? The Athena Framework will be available through a CDN soon.
+{% endcallout %}
 
 ### Add stylesheets
 
@@ -41,9 +41,9 @@ Add your Cloud.typography CSS key** and the Athena stylesheet before all other s
 <link rel="stylesheet" href="/css/framework.min.css">
 {% endhighlight %}
 
-<div class="alert alert-info" role="alert">
-    <strong>**Note: Cloud.typography fonts are optional.</strong> If Cloud.typography is not utilized, fallback fonts provided by Athena will be used. See the <a href="{{ "/getting-started/install/" | prepend: site.baseurl }}#webfonts--configuration">webfont configuration</a> section for information on setting up a Cloud.typography project for use with Athena.
-</div>
+{% callout info %}
+<strong>**Note: Cloud.typography fonts are optional.</strong> If Cloud.typography is not utilized, fallback fonts provided by Athena will be used. See the <a href="{{ "/getting-started/install/" | prepend: site.baseurl }}#webfonts--configuration">webfont configuration</a> section for information on setting up a Cloud.typography project for use with Athena.
+{% endcallout %}
 
 ### Add JavaScript
 
