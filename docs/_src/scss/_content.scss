@@ -1,27 +1,38 @@
-.docs {
+.bd-content {
 
-  h2,
-  .h2 {
+  > h1 {
+    font-size: 2rem;
+  }
+
+  > h2 {
+    font-size: 1.5rem;
     margin-top: 2.5rem;
   }
 
-  h3,
-  .h3 {
+  > h3 {
+    font-size: 1.25rem;
     margin-top: 2rem;
   }
 
-  h4,
-  .h4 {
+  > h4 {
+    font-size: 1rem;
     margin-top: 1.75rem;
   }
 
-  h5,
-  .h5 {
+  > h5 {
+    font-size: .75rem;
     margin-top: 1.25rem;
   }
 
-  pre,
-  figure.highlight {
+  > hr {
+    @include media-breakpoint-up(md) {
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+    }
+  }
+
+  > pre,
+  > figure.highlight {
     @include border-radius(.25rem);
     background: $gray-lighter;
     padding: 1.5rem;
