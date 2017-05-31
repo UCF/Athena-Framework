@@ -26,7 +26,7 @@ ___
 
 ## Using Source Files
 
-Athena's source files are available in the `/src/` folder. We recommend using Athena's source files instead of pre-minified files for projects that need to modify, extend, or build off of Athena, and/or in cases where you wish to take advantage of Athena's predefined variables and mixins.
+Athena's source files are available in the `/src/` folder. We recommend using Athena's source files instead of pre-minified files for projects that need to extend or build off of Athena, and/or in cases where you wish to take advantage of Athena's predefined variables and mixins.
 
 See the [Build Tools instructions]({{ "/getting-started/build-tools/" | prepend: site.baseurl }}) for more information on how to utilize these files in your workflow.
 
