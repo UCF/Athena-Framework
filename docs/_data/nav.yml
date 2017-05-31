@@ -10,6 +10,13 @@
     - title: Best practices
     - title: Accessibility
 
+- title: Layout
+  pages:
+    - title: Overview
+    - title: Grid
+    - title: Media object
+    - title: Utilities for layout
+
 # - title: More
 #   pages:
 #     - title: Differences
