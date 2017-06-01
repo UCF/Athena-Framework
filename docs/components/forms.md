@@ -5,7 +5,7 @@ description: Examples and usage guidelines for form controls, form layouts, and 
 group: components
 ---
 
-Bootstrap provides several form control styles, layout options, and custom components for creating a wide variety of forms.
+Athena provides several form control styles, layout options, and custom components for creating a wide variety of forms.
 
 ## Contents
 
@@ -14,9 +14,9 @@ Bootstrap provides several form control styles, layout options, and custom compo
 
 ## Form controls
 
-Bootstrap's form controls expand on [our Rebooted form styles]({{ site.baseurl }}/content/reboot/#forms) with classes. Use these classes to opt into their customized displays for a more consistent rendering across browsers and devices. The example form below demonstrates common HTML form elements that receive updated styles from Bootstrap with additional classes.
+Athena's form controls expand on [our Rebooted form styles]({{ site.baseurl }}/content/reboot/#forms) with classes. Use these classes to opt into their customized displays for a more consistent rendering across browsers and devices. The example form below demonstrates common HTML form elements that receive updated styles from Athena with additional classes.
 
-Remember, since Bootstrap utilizes the HTML5 doctype, **all inputs must have a `type` attribute**.
+Remember, since Athena utilizes the HTML5 doctype, **all inputs must have a `type` attribute**.
 
 {% example html %}
 <form>
@@ -89,7 +89,7 @@ Remember, since Bootstrap utilizes the HTML5 doctype, **all inputs must have a `
 </form>
 {% endexample %}
 
-Below is a complete list of the specific form controls supported by Bootstrap and the classes that customize them. Additional documentation is available for each group.
+Below is a complete list of the specific form controls supported by Athena and the classes that customize them. Additional documentation is available for each group.
 
 <table>
   <thead>
@@ -252,7 +252,7 @@ Here are examples of `.form-control` applied to each textual HTML5 `<input>` `ty
 
 ## Form layouts
 
-Since Bootstrap applies `display: block` and `width: 100%` to almost all our form controls, forms will by default stack vertically. Additional classes can be used to vary this layout on a per-form basis.
+Since Athena applies `display: block` and `width: 100%` to almost all our form controls, forms will by default stack vertically. Additional classes can be used to vary this layout on a per-form basis.
 
 ### Form groups
 
@@ -276,7 +276,7 @@ The `.form-group` class is the easiest way to add some structure to forms. Its o
 Use the `.form-inline` class to display a series of labels, form controls, and buttons on a single horizontal row. Form controls within inline forms vary slightly from their default states.
 
 - Controls are `display: flex`, collapsing any HTML white space and allowing you to provide alignment control with [spacing]({{ site.baseurl }}/utilities/spacing/) and [flexbox]({{ site.baseurl }}/utilities/flexbox/) utilities.
-- Controls and input groups receive `width: auto` to override the Bootstrap default `width: 100%`.
+- Controls and input groups receive `width: auto` to override the Athena default `width: 100%`.
 - Controls **only appear inline in viewports that are at least 576px wide** to account for narrow viewports on mobile devices.
 
 You may need to manually address the width and alignment of individual form controls with [spacing utilities]({{ site.baseurl }}/utilities/spacing/) (as shown below). Lastly, be sure to always include a `<label>` with each form control, even if you need to hide it from non-screenreader visitors with `.sr-only`.
@@ -331,7 +331,7 @@ Assistive technologies such as screen readers will have trouble with your forms 
 
 ### Using the Grid
 
-For more structured form layouts that are also responsive, you can utilize Bootstrap's [predefined grid classes]({{ site.baseurl }}/layout/grid/) or [mixins]({{ site.baseurl }}/layout/grid/#sass-mixins) to create horizontal forms. Add the `.row` class to form groups and use the `.col-*-*` classes to specify the width of your labels and controls.
+For more structured form layouts that are also responsive, you can utilize Athena's [predefined grid classes]({{ site.baseurl }}/layout/grid/) or [mixins]({{ site.baseurl }}/layout/grid/#sass-mixins) to create horizontal forms. Add the `.row` class to form groups and use the `.col-*-*` classes to specify the width of your labels and controls.
 
 Be sure to add `.col-form-label` to your `<label>`s as well so they're vertically centered with their associated form controls. For `<legend>` elements, you can use `.col-form-legend` to make them appear similar to regular `<label>` elements.
 
@@ -644,7 +644,7 @@ By default, browsers will treat all native form controls (`<input>`, `<select>` 
 {% callout danger %}
 #### Cross-browser compatibility
 
-While Bootstrap will apply these styles in all browsers, Internet Explorer 11 and below don't fully support the `disabled` attribute on a `<fieldset>`. Use custom JavaScript to disable the fieldset in these browsers.
+While Athena will apply these styles in all browsers, Internet Explorer 11 and below don't fully support the `disabled` attribute on a `<fieldset>`. Use custom JavaScript to disable the fieldset in these browsers.
 {% endcallout %}
 
 ## Readonly inputs
@@ -735,7 +735,7 @@ Inline text can use any typical inline HTML element (be it a `<small>`, `<span>`
 
 ## Validation
 
-Bootstrap includes validation styles for danger, warning, and success states on most form controls.
+Athena includes validation styles for danger, warning, and success states on most form controls.
 
 ### How it works
 

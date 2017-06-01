@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: List group
-description: Learn about Bootstrap's list group component for rendering series of related content.
+description: Learn about Athena's list group component for rendering series of related content.
 group: components
 ---
 
@@ -170,7 +170,7 @@ Add nearly any HTML within, even for linked list groups like the one below, with
 
 ## JavaScript behavior
 
-Use the tab JavaScript plugin—include it individually or through the compiled `bootstrap.js` file—to extend our list group to create tabbable panes of local content.
+Use the tab JavaScript plugin—make sure the compiled `framework.min.js` file is included in your project—to extend our list group to create tabbable panes of local content.
 
 <div class="bd-example" role="tabpanel">
   <div class="row">
