@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Navs
-description: Documentation and examples for how to use Bootstrap's included navigation components.
+description: Documentation and examples for how to use Athena's included navigation components.
 group: components
 ---
 
-Navigation available in Bootstrap share general markup and styles, from the base `.nav` class to the active and disabled states. Swap modifier classes to switch between each style.
+Navigation available in Athena share general markup and styles, from the base `.nav` class to the active and disabled states. Swap modifier classes to switch between each style.
 
 ## Contents
 
@@ -17,7 +17,7 @@ Navigation available in Bootstrap share general markup and styles, from the base
 The base `.nav` component is built with flexbox and provide a strong foundation for building all types of navigation components. It includes some style overrides (for working with lists), some link padding for larger hit areas, and basic disabled styling.
 
 {% callout info %}
-The base `.nav` component does not include any `.active` state. The following examples include the class, mainly to demonstrate that this particular class does not trigger any special styling.
+Unlike in Bootstrap, the base `.nav` component _does_ include `.active` state styles, demonstrated below.
 {% endcallout %}
 
 {% example html %}
@@ -124,6 +124,25 @@ As always, vertical navigation is possible without `<ul>`s, too.
   <a class="nav-link" href="#">Link</a>
   <a class="nav-link disabled" href="#">Disabled</a>
 </nav>
+{% endexample %}
+
+To prevent vertical links from consuming the full width of their parent, add the `.align-items-start` class to the `.nav` (this works with either `<nav>` or `<ul>`):
+
+{% example html %}
+<ul class="nav flex-column align-items-start">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">Disabled</a>
+  </li>
+</ul>
 {% endexample %}
 
 ### Tabs
@@ -299,7 +318,7 @@ Add dropdown menus with a little extra HTML and the [dropdowns JavaScript plugin
 
 ## JavaScript behavior for dynamic tabbed interfaces
 
-Use the tab JavaScript plugin—include it individually or through the compiled `bootstrap.js` file—to extend our navigational tabs and pills to create tabbable panes of local content, even via dropdown menus.
+Use the tab JavaScript plugin—make sure the compiled `framework.min.js` file is included in your project—to extend our navigational tabs and pills to create tabbable panes of local content, even via dropdown menus.
 
 Dynamic tabbed interfaces, as described in the [<abbr title="Web Accessibility Initiative">WAI</abbr> <abbr title="Accessible Rich Internet Applications">ARIA</abbr> Authoring Practices](https://www.w3.org/TR/wai-aria-practices/#tabpanel), require `role="tablist"`, `role="tab"`, `role="tabpanel"`, and additional `aria-` attributes in order to convey their structure, functionality and current state to users of assistive technologies (such as screen readers).
 
@@ -480,26 +499,26 @@ And with vertical pills.
 <div class="bd-example bd-example-tabs">
   <div class="row">
     <div class="col-3">
-      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
+      <nav class="nav nav-pills flex-column mb-3" id="v-pills-tab" role="tablist">
         <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-expanded="true">Home</a>
         <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-expanded="true">Profile</a>
         <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-expanded="true">Messages</a>
         <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-expanded="true">Settings</a>
-      </div>
+      </nav>
     </div>
     <div class="col-9">
       <div class="tab-content" id="v-pills-tabContent">
         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-          <p>Cillum ad ut irure tempor velit nostrud occaecat ullamco aliqua anim Lorem sint. Veniam sint duis incididunt do esse magna mollit excepteur laborum qui. Id id reprehenderit sit est eu aliqua occaecat quis et velit excepteur laborum mollit dolore eiusmod. Ipsum dolor in occaecat commodo et voluptate minim reprehenderit mollit pariatur. Deserunt non laborum enim et cillum eu deserunt excepteur ea incididunt minim occaecat.</p>
+          <p>Consequat occaecat ullamco amet non eiusmod nostrud dolore irure incididunt est duis anim sunt officia. Fugiat velit proident aliquip nisi incididunt nostrud exercitation proident est nisi. Irure magna elit commodo anim ex veniam culpa eiusmod id nostrud sit cupidatat in veniam ad. Eiusmod consequat eu adipisicing minim anim aliquip cupidatat culpa excepteur quis. Occaecat sit eu exercitation irure Lorem incididunt nostrud.</p>
         </div>
         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-          <p>Culpa dolor voluptate do laboris laboris irure reprehenderit id incididunt duis pariatur mollit aute magna pariatur consectetur. Eu veniam duis non ut dolor deserunt commodo et minim in quis laboris ipsum velit id veniam. Quis ut consectetur adipisicing officia excepteur non sit. Ut et elit aliquip labore Lorem enim eu. Ullamco mollit occaecat dolore ipsum id officia mollit qui esse anim eiusmod do sint minim consectetur qui.</p>
+          <p>Ad pariatur nostrud pariatur exercitation ipsum ipsum culpa mollit commodo mollit ex. Aute sunt incididunt amet commodo est sint nisi deserunt pariatur do. Aliquip ex eiusmod voluptate exercitation cillum id incididunt elit sunt. Qui minim sit magna Lorem id et dolore velit Lorem amet exercitation duis deserunt. Anim id labore elit adipisicing ut in id occaecat pariatur ut ullamco ea tempor duis.</p>
         </div>
         <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-          <p>Fugiat id quis dolor culpa eiusmod anim velit excepteur proident dolor aute qui magna. Ad proident laboris ullamco esse anim Lorem Lorem veniam quis Lorem irure occaecat velit nostrud magna nulla. Velit et et proident Lorem do ea tempor officia dolor. Reprehenderit Lorem aliquip labore est magna commodo est ea veniam consectetur.</p>
+          <p>Duis mollis cursus tempor. Etiam at tellus non nisi vulputate dignissim. Vestibulum suscipit condimentum rutrum. Phasellus in interdum lacus, at fermentum lectus. Aenean sed tortor ut orci facilisis consectetur. Sed malesuada eros vel est varius.</p>
         </div>
         <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-          <p>Eu dolore ea ullamco dolore Lorem id cupidatat excepteur reprehenderit consectetur elit id dolor proident in cupidatat officia. Voluptate excepteur commodo labore nisi cillum duis aliqua do. Aliqua amet qui mollit consectetur nulla mollit velit aliqua veniam nisi id do Lorem deserunt amet. Culpa ullamco sit adipisicing labore officia magna elit nisi in aute tempor commodo eiusmod.</p>
+          <p>Nunc eu hendrerit felis. Nulla quis sapien quis urna sollicitudin elementum id at diam. Morbi sem libero, euismod at pellentesque at, pulvinar sed enim. In eu commodo lacus, vitae vulputate augue. Donec rhoncus libero erat, sed pulvinar felis fermentum non. Sed non magna eu nisl faucibus pellentesque non a tellus. Ut vehicula purus eu ex vehicula fringilla.</p>
         </div>
       </div>
     </div>
@@ -586,12 +605,9 @@ To make tabs fade in, add `.fade` to each `.tab-pane`. The first tab pane must a
 
 ### Methods
 
-{% capture callout-include %}{% include callout-danger-async-methods.md %}{% endcapture %}
-{{ callout-include | markdownify }}
-
 #### $().tab
 
-Activates a tab element and content container. Tab should have either a `data-target` or an `href` targeting a container node in the DOM.
+Activates a tab element and content container. Tabs should have either a `data-target` or an `href` targeting a container node in the DOM.
 
 {% highlight html %}
 <ul class="nav nav-tabs" id="myTab" role="tablist">

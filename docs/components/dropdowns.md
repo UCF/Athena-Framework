@@ -490,9 +490,7 @@ Add `.disabled` to items in the dropdown to **style them as disabled**.
 
 Via data attributes or JavaScript, the dropdown plugin toggles hidden content (dropdown menus) by toggling the `.show` class on the parent list item.
 
-{% callout info %}
-On touch-enabled devices, opening a dropdown adds empty (`$.noop`) `mouseover` handlers to the immediate children of the `<body>` element. This admittedly ugly hack is necessary to work around a [quirk in iOS' event delegation](https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html), which would otherwise prevent a tap anywhere outside of the dropdown from triggering the code that closes the dropdown. Once the dropdown is closed, these additional empty `mouseover` handlers are removed.
-{% endcallout %}
+On mobile devices, opening a dropdown adds a `.dropdown-backdrop` as a tap area for closing dropdown menus when tapping outside the menu, a requirement for proper iOS support. **This means that switching from an open dropdown menu to a different dropdown menu requires an extra tap on mobile.**
 
 Note: The `data-toggle="dropdown"` attribute is relied on for closing dropdown menus at an application level, so it's a good idea to always use it.
 
@@ -527,47 +525,13 @@ Regardless of whether you call your dropdown via JavaScript or instead use the d
 
 ### Options
 
-Options can be passed via data attributes or JavaScript. For data attributes, append the option name to `data-`, as in `data-placement=""`.
-
-<table class="table table-bordered table-striped table-responsive">
-  <thead>
-    <tr>
-      <th style="width: 100px;">Name</th>
-      <th style="width: 100px;">Type</th>
-      <th style="width: 50px;">Default</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>placement</td>
-      <td>string</td>
-      <td>'bottom'</td>
-      <td>
-        <p>How to position the popover - top | bottom.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>offset</td>
-      <td>number | string</td>
-      <td>0</td>
-      <td>Offset of the dropdown relative to its target. For more information refer to Popper.js's <a href="https://popper.js.org/popper-documentation.html#modifiers..offset.offset">offset docs</a>.</td>
-    </tr>
-    <tr>
-      <td>flip</td>
-      <td>boolean</td>
-      <td>true</td>
-      <td>Allow Dropdown to flip in case of an overlapping on the reference element. For more information refer to Popper.js's <a href="https://popper.js.org/popper-documentation.html#modifiers..flip.enabled">flip docs</a>.</td>
-    </tr>
-  </tbody>
-</table>
+-*None.*
 
 ### Methods
 
 | Method | Description |
 | --- | --- |
 | `$().dropdown('toggle')` | Toggles the dropdown menu of a given navbar or tabbed navigation. |
-| `$().dropdown('update')` | Updates the position of an element's dropdown. |
 
 ### Events
 

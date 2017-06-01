@@ -90,36 +90,9 @@ Using the [card]({{ site.baseurl }}/components/card/) component, you can extend 
 </div>
 {% endexample %}
 
-You can also create accordions with custom markup. Add the `data-children` attribute and specify a set of sibling elements to toggle (e.g., `.item`). Then, use the same attributes and classes as shown above for connectinh toggles to their associated content.
-
-{% example html %}
-<div id="exampleAccordion" data-children=".item">
-  <div class="item">
-    <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion1" aria-expanded="true" aria-controls="exampleAccordion1">
-      Toggle item
-    </a>
-    <div id="exampleAccordion1" class="collapse show" role="tabpanel">
-      <p class="mb-3">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pretium lorem non vestibulum scelerisque. Proin a vestibulum sem, eget tristique massa. Aliquam lacinia rhoncus nibh quis ornare.
-      </p>
-    </div>
-  </div>
-  <div class="item">
-    <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion2" aria-expanded="false" aria-controls="exampleAccordion2">
-      Toggle item 2
-    </a>
-    <div id="exampleAccordion2" class="collapse" role="tabpanel">
-      <p class="mb-3">
-        Donec at ipsum dignissim, rutrum turpis scelerisque, tristique lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus nec dui turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      </p>
-    </div>
-  </div>
-</div>
-{% endexample %}
-
 ## Accessibility
 
-Be sure to add `aria-expanded` to the control element. This attribute explicitly conveys the current state of the collapsible element tied to the control to screen readers and similar assistive technologies. If the collapsible element is closed by default, the attribute on the control element should have a value of `aria-expanded="false"`. If you've set the collapsible element to be open by default using the `show` class, set `aria-expanded="true"` on the control instead. The plugin will automatically toggle this attribute on the control based on whether or not the collapsible element has been opened or closed (via JavaScript, or because the user triggered another control element also tied to the same collapsbile element).
+Be sure to add `aria-expanded` to the control element. This attribute explicitly conveys the current state of the collapsible element tied to the control to screen readers and similar assistive technologies. If the collapsible element is closed by default, the attribute on the control element should have a value of `aria-expanded="false"`. If you've set the collapsible element to be open by default using the `show` class, set `aria-expanded="true"` on the control instead. The plugin will automatically toggle this attribute on the control based on whether or not the collapsible element has been opened or closed.
 
 Additionally, if your control element is targeting a single collapsible element – i.e. the `data-target` attribute is pointing to an `id` selector – you may add an additional `aria-controls` attribute to the control element, containing the `id` of the collapsible element. Modern screen readers and similar assistive technologies make use of this attribute to provide users with additional shortcuts to navigate directly to the collapsible element itself.
 
@@ -165,7 +138,7 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
       <td>parent</td>
       <td>selector</td>
       <td>false</td>
-      <td>If a selector is provided, then all collapsible elements under the specified parent will be closed when this collapsible item is shown. (similar to traditional accordion behavior - this is dependent on the <code>card</code> class). The attribute has to be set on the target collapsible area.</td>
+      <td>If a selector is provided, then all collapsible elements under the specified parent will be closed when this collapsible item is shown (similar to traditional accordion behavior - this is dependent on the <code>card</code> class). The attribute has to be set on the target collapsible area.</td>
     </tr>
     <tr>
       <td>toggle</td>
@@ -177,9 +150,6 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
 </table>
 
 ### Methods
-
-{% capture callout-include %}{% include callout-danger-async-methods.md %}{% endcapture %}
-{{ callout-include | markdownify }}
 
 #### `.collapse(options)`
 
@@ -193,15 +163,15 @@ $('#myCollapsible').collapse({
 
 #### `.collapse('toggle')`
 
-Toggles a collapsible element to shown or hidden. **Returns to the caller before the collapsible element has actually been shown or hidden (i.e. before the `shown.bs.collapse` or `hidden.bs.collapse` event occurs).
+Toggles a collapsible element to shown or hidden.
 
 #### `.collapse('show')`
 
-Shows a collapsible element. **Returns to the caller before the collapsible element has actually been shown** (i.e. before the `shown.bs.collapse` event occurs).
+Shows a collapsible element.
 
 #### `.collapse('hide')`
 
-Hides a collapsible element. **Returns to the caller before the collapsible element has actually been hidden** (i.e. before the `hidden.bs.collapse` event occurs).
+Hides a collapsible element.
 
 ### Events
 

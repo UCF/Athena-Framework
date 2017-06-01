@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Grid system
-description: Documentation and examples for using Athena's responsive flexbox grid system.
+description: Use our powerful mobile-first flexbox grid to build layouts of all shapes and sizes thanks to a twelve column system, five default responsive tiers, Sass variables and mixins, and dozens of predefined classes.
 group: layout
 ---
 
@@ -532,13 +532,13 @@ Use flexbox utilities for controlling the **visual order** of your content.
 {% example html %}
 <div class="container">
   <div class="row">
-    <div class="col order-0">
+    <div class="col flex-unordered">
       First, but unordered
     </div>
-    <div class="col order-last">
+    <div class="col flex-last">
       Second, but last
     </div>
-    <div class="col order-first">
+    <div class="col flex-first">
       Third, but first
     </div>
   </div>

@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Reboot
-description: Documentation and examples for Reboot, Athena's collection of element-specific CSS that heavily builds on Normalize.css.
+description: Reboot, a collection of element-specific CSS changes in a single file, kickstart Athena to provide an elegant, consistent, and simple baseline to build upon.
 group: content
 redirect_from: "/content/"
 ---

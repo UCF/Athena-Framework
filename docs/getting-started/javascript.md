@@ -68,32 +68,11 @@ $('#myModal').modal('show')                // initializes and invokes show immed
 
 Each plugin also exposes its raw constructor on a `Constructor` property: `$.fn.popover.Constructor`. If you'd like to get a particular plugin instance, retrieve it directly from an element: `$('[rel="popover"]').data('popover')`.
 
-### Asynchronous functions and transitions
-
-All programmatic API methods are **asynchronous** and returns to the caller once the transition is started but **before it ends**.
-
-In order to execute an action once the transition is complete, you can listen to the corresponding event.
-{% highlight js %}
-$('#myCollapse').on('shown.bs.collapse', function (e) {
-  // Action to execute once the collapsible area is expanded
-})
-{% endhighlight %}
-
-In addition a method call on a **transitioning component will be ignored**.
-{% highlight js %}
-$('#myCarousel').on('slid.bs.carousel', function (e) {
-  $('#myCarousel').carousel('2') // Will slide to the slide 2 as soon as the transition to slide 1 is finished
-})
-
-$('#myCarousel').carousel('1') // Will start sliding to the slide 1 and returns to the caller
-$('#myCarousel').carousel('2') // !! Will be ignored, as the transition to the slide 1 is not finished !!
-{% endhighlight %}
-
 ### Default settings
-You can change the default settings for a plugin by modifying the plugin's `Constructor.Default` object:
+You can change the default settings for a plugin by modifying the plugin's `Constructor.DEFAULTS` object:
 
 {% highlight js %}
-$.fn.modal.Constructor.Default.keyboard = false // changes default for the modal plugin's `keyboard` option to false
+$.fn.modal.Constructor.DEFAULT.keyboard = false // changes default for the modal plugin's `keyboard` option to false
 {% endhighlight %}
 
 ### No conflict
@@ -123,6 +102,6 @@ Athena's plugins don't fall back particularly gracefully when JavaScript is disa
 **Athena does not officially support third-party JavaScript libraries** like Prototype or jQuery UI. Despite `.noConflict` and namespaced events, there may be compatibility problems that you need to fix on your own.
 {% endcallout %}
 
-## Util
+## Transitions
 
-All Athena Javascript depend on `util.js`, which is compiled in Athena's minified Javascript by default. `util.js` includes utility functions and a basic helper for `transitionEnd` events as well as a CSS transition emulator. It's used by the other plugins to check for CSS transition support and to catch hanging transitions.
+Transition.js, already included in Athena's framework.min.js, is a basic helper for `transitionEnd` events as well as a CSS transition emulator. It's used by the other plugins to check for CSS transition support and to catch hanging transitions.
