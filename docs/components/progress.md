@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Progress
-description: Documentation and examples for using Bootstrap progress bars.
+description: Documentation and examples for using Athena custom progress bars, featuring support for stacked bars, animated backgrounds, and text labels.
 group: components
 ---
 
@@ -41,7 +41,7 @@ Put that all together, and you have the following examples.
 </div>
 {% endexample %}
 
-Bootstrap provides a handful of [utilities for setting width]({{ site.baseurl }}/utilities/sizing/). Depending on your needs, these may help with quickly configuring progress.
+Athena provides a handful of [utilities for setting width]({{ site.baseurl }}/utilities/sizing/). Depending on your needs, these may help with quickly configuring progress.
 
 {% example html %}
 <div class="progress">
@@ -95,6 +95,37 @@ Use background utility classes to change the appearance of individual progress b
 </div>
 {% endexample %}
 
+Use the `.progress-inverse` class on `.progress` for improved styles against dark backgrounds.
+<div class="bg-inverse p-2">
+  <div class="progress progress-inverse">
+    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <div class="progress progress-inverse mt-3">
+    <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <div class="progress progress-inverse mt-3">
+    <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+  <div class="progress progress-inverse mt-3">
+    <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+</div>
+
+{% highlight html %}
+<div class="progress progress-inverse">
+  <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress progress-inverse">
+  <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress progress-inverse">
+  <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress progress-inverse">
+  <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+{% endhighlight %}
+
 ### Multiple bars
 
 Include multiple progress bars in a progress component if you need.
@@ -132,8 +163,6 @@ Add `.progress-bar-striped` to any `.progress-bar` to apply a stripe via CSS gra
 ### Animated stripes
 
 The striped gradient can also be animated. Add `.progress-bar-animated` to `.progress-bar` to animate the stripes right to left via CSS3 animations.
-
-**Animated progress bars don't work in Opera 12**—as they don't support CSS3 animations.
 
 <div class="bd-example">
   <div class="progress">

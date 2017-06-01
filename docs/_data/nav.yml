@@ -15,7 +15,7 @@
     - title: Overview
     - title: Grid
     - title: Media object
-    - title: Utilities for layout
+    - title: Utilities for Layout
 
 - title: Content
   pages:
@@ -55,7 +55,7 @@
     - title: Clearfix
     - title: Close icon
     - title: Colors
-    - title: Display
+    - title: Display property
     - title: Flexbox
     - title: Image replacement
     - title: Position
@@ -65,7 +65,6 @@
     - title: Spacing
     - title: Typography
     - title: Vertical align
-    - title: Visibility
 
 - title: About
   pages:

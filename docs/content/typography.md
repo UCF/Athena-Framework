@@ -1,11 +1,11 @@
 ---
 layout: docs
 title: Typography
-description: Documentation and examples for Athena typography, including global settings, body text, lists, and more.
+description: Documentation and examples for Athena typography, including global settings, headings, body text, lists, and more.
 group: content
 ---
 
-Athena includes simple and easily customized typography for headings, body text, lists, and more. For even more control, check out the [textual utility classes]({{ site.baseurl }}/utilities/typography/).
+Athena includes simple and easily customized typography for headings, body text, lists, and more. When more control is needed, check out the [textual utility classes]({{ site.baseurl }}/utilities/typography/).
 
 ## Contents
 
@@ -164,16 +164,16 @@ Display headings use fluid font sizing (`vw` units) at the `-xs` breakpoint to e
   <table class="table">
     <tbody>
       <tr>
-        <td><h1 class="display-1">Display 1</h1></td>
+        <td><span class="display-1">Display 1</span></td>
       </tr>
       <tr>
-      <td><h1 class="display-2">Display 2</h1></td>
+      <td><span class="display-2">Display 2</span></td>
       </tr>
       <tr>
-      <td><h1 class="display-3">Display 3</h1></td>
+      <td><span class="display-3">Display 3</span></td>
       </tr>
       <tr>
-      <td><h1 class="display-4">Display 4</h1></td>
+      <td><span class="display-4">Display 4</span></td>
       </tr>
     </tbody>
   </table>

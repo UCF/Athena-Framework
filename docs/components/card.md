@@ -413,13 +413,11 @@ Note that inverted card behavior has been modified in Athena--instead of providi
 
 {% example html %}
 <div class="card card-inverse">
-  <div class="card-header">Header</div>
   <div class="card-block">
     <h3 class="card-title">Special title treatment</h3>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
-  <div class="card-footer">Footer</div>
 </div>
 {% endexample %}
 

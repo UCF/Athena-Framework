@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Tables
-description: Documentation and examples for styling tables with Athena.
+description: Documentation and examples for opt-in styling of tables with Athena.
 group: content
 ---
 
