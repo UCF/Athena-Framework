@@ -1,23 +1,16 @@
 ---
 layout: docs
 title: Dropdowns
-description: Toggle contextual overlays for displaying lists of links and more with the Bootstrap dropdown plugin.
+description: Toggle contextual overlays for displaying lists of links and more with the Athena dropdown plugin.
 group: components
 ---
 
-Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They're made interactive with the included Bootstrap dropdown JavaScript plugin. They're toggled by clicking, not by hovering; this is [an intentional design decision.](http://markdotto.com/2012/02/27/bootstrap-explained-dropdowns/)
+Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They're made interactive with the included Athena dropdown JavaScript plugin. They're toggled by clicking, not by hovering; this is [an intentional design decision.](http://markdotto.com/2012/02/27/bootstrap-explained-dropdowns/)
 
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
-
-## Overview
-
-Things to know when using the popover plugin:
-
-- Dropdown rely on the 3rd party library [Popper.js](https://popper.js.org) for positioning. You must include [popper.min.js](https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.9.9/umd/popper.min.js) before bootstrap.js in order for dropdowns to work!
-- Popper.js handle natively the flip of Dropdown when it's outside the viewport, if you want to disable that's behavior use `flip` attribute
 
 ## Examples
 
@@ -28,9 +21,9 @@ Wrap the dropdown's toggle (your button or link) and the dropdown menu within `.
 
 The [<abbr title="Web Accessibility Initiative">WAI</abbr> <abbr title="Accessible Rich Internet Applications">ARIA</abbr>](https://www.w3.org/TR/wai-aria/) standard defines an actual [`role="menu"` widget](https://www.w3.org/TR/wai-aria/roles#menu), but this is specific to application-like menus which trigger actions or functions. <abbr title="Accessible Rich Internet Applications">ARIA</abbr> menus can only contain menu items, checkbox menu items, radio button menu items, radio button groups, and sub-menus.
 
-Bootstrap's dropdowns, on the other hand, are designed to be generic and applicable to a variety of situations and markup structures. For instance, it is possible to create dropdowns that contain additional inputs and form controls, such as search fields or login forms. For this reason, Bootstrap does not expect (nor automatically add) any of the `role` and `aria-` attributes required for true <abbr title="Accessible Rich Internet Applications">ARIA</abbr> menus. Authors will have to include these more specific attributes themselves.
+Athena's dropdowns, on the other hand, are designed to be generic and applicable to a variety of situations and markup structures. For instance, it is possible to create dropdowns that contain additional inputs and form controls, such as search fields or login forms. For this reason, Athena does not expect (nor automatically add) any of the `role` and `aria-` attributes required for true <abbr title="Accessible Rich Internet Applications">ARIA</abbr> menus. Authors will have to include these more specific attributes themselves.
 
-However, Bootstrap does add built-in support for most standard keyboard menu interactions, such as the ability to move through individual `.dropdown-item` elements using the cursor keys and close the menu with the <kbd>ESC</kbd> key.
+However, Athena does add built-in support for most standard keyboard menu interactions, such as the ability to move through individual `.dropdown-item` elements using the cursor keys and close the menu with the <kbd>ESC</kbd> key.
 {% endcallout %}
 
 ### Single button dropdowns

@@ -21,10 +21,34 @@ A lightweight, flexible component that can optionally extend the entire viewport
 </div>
 {% endexample %}
 
-To make the jumbotron full width, and without rounded corners, add the `.jumbotron-fluid` modifier class and add a `.container` or `.container-fluid` within.
+To make the jumbotron full width, add the `.jumbotron-fluid` modifier class and add a `.container` or `.container-fluid` within.
 
 {% example html %}
 <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3">Fluid jumbotron</h1>
+    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+  </div>
+</div>
+{% endexample %}
+
+Jumbotrons work great with many of Athena's utility classes. For instance, text color, background color, and media background utilities allow for quick and easy jumbotron customizations:
+
+{% example html %}
+<div class="jumbotron jumbotron-fluid bg-primary">
+  <div class="container">
+    <h1 class="display-3">Fluid jumbotron</h1>
+    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+  </div>
+</div>
+<div class="jumbotron jumbotron-fluid bg-inverse text-primary">
+  <div class="container">
+    <h1 class="display-3">Fluid jumbotron</h1>
+    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+  </div>
+</div>
+<div class="jumbotron jumbotron-fluid media-background-container">
+  <img class="media-background object-fit-cover" src="//placehold.it/800x400" alt="">
   <div class="container">
     <h1 class="display-3">Fluid jumbotron</h1>
     <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>

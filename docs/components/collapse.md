@@ -5,7 +5,7 @@ description: Toggle the visibility of content across your project with a few cla
 group: components
 ---
 
-The Bootstrap collapse plugin allows you to toggle content on your pages with a few classes thanks to some helpful JavaScript.
+The Athena collapse plugin allows you to toggle content on your pages with a few classes thanks to some helpful JavaScript.
 
 ## Contents
 
@@ -205,7 +205,7 @@ Hides a collapsible element. **Returns to the caller before the collapsible elem
 
 ### Events
 
-Bootstrap's collapse class exposes a few events for hooking into collapse functionality.
+Athena's collapse class exposes a few events for hooking into collapse functionality.
 
 <table class="table table-bordered table-striped table-responsive">
   <thead>
