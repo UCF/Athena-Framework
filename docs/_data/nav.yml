@@ -25,6 +25,7 @@
     - title: Images
     - title: Tables
     - title: Figures
+    - title: Dividers
 
 - title: Components
   pages:
@@ -58,6 +59,8 @@
     - title: Display property
     - title: Flexbox
     - title: Image replacement
+    - title: Invisible content
+    - title: Media backgrounds
     - title: Position
     - title: Responsive helpers
     - title: Screenreaders
