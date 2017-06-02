@@ -23,20 +23,10 @@
     </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="{{ "/res/bootstrap/docs.min.js" | prepend: site.baseurl }}"></script><!-- TODO why does this script order work?? -->
 <script src="{{ "/res/js/framework.min.js" | prepend: site.baseurl }}"></script>
-
-<script src="{{ site.baseurl }}/assets/js/vendor/popper.min.js"></script>
-
-<script src="{{ site.baseurl }}/assets/js/vendor/anchor.min.js"></script>
-<script src="{{ site.baseurl }}/assets/js/vendor/clipboard.min.js"></script>
-<script src="{{ site.baseurl }}/assets/js/vendor/holder.min.js"></script>
-<script src="{{ site.baseurl }}/assets/js/src/application.js"></script>
-
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="{{ site.baseurl }}/assets/js/ie10-viewport-bug-workaround.js"></script>
-<script src="{{ site.baseurl }}/assets/js/ie-emulation-modes-warning.js"></script>
 
 <script>
 Holder.addTheme('gray', {

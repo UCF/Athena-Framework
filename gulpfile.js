@@ -34,10 +34,16 @@ var configLocal = require('./gulp-config.json'),
         fontPath: './dist/fonts'
       },
       docs: {
-        cssPath: './docs/res/css',
-        fontPath: './docs/res/fonts',
-        jsPath: './docs/res/js',
-        scssPath: './docs/_src/scss'
+        src: {
+          scssPath:      './docs/_src/scss',
+          bootstrapPath: './docs/_src/bootstrap'
+        },
+        dist: {
+          cssPath:       './docs/res/css',
+          fontPath:      './docs/res/fonts',
+          jsPath:        './docs/res/js',
+          bootstrapPath: './docs/res/bootstrap'
+        }
       },
       packagesPath: './node_modules',
       bootstrap: {
@@ -235,22 +241,31 @@ gulp.task('css', ['scss-lint', 'scss-build']);
 // GitHub Pages Build
 //
 
+gulp.task('components-gh-pages-bootstrap', function() {
+  return gulp.src(config.docs.src.bootstrapPath + '/**/*')
+    .pipe(gulp.dest(config.docs.dist.bootstrapPath));
+});
+
+gulp.task('components-gh-pages-athena-fonts', function() {
+  return gulp.src(config.dist.fontPath + '/**/*')
+    .pipe(gulp.dest(config.docs.dist.fontPath));
+});
+
+gulp.task('components-gh-pages-athena-js', function() {
+  return gulp.src(config.dist.jsPath + '/**/*')
+    .pipe(gulp.dest(config.docs.dist.jsPath));
+});
+
+gulp.task('components-gh-pages', ['components-gh-pages-bootstrap', 'components-gh-pages-athena-fonts', 'components-gh-pages-athena-js']);
+
 gulp.task('scss-gh-pages', function() {
-  return buildCSS(config.docs.scssPath + '/style.scss', 'style.min.css', config.docs.cssPath, true, false);
+  return buildCSS(config.docs.src.scssPath + '/style.scss', 'style.min.css', config.docs.dist.cssPath, true, false);
 });
 
-gulp.task('files-gh-pages', function() {
-  gulp.src(config.dist.fontPath + '/**/*')
-    .pipe(gulp.dest(config.docs.fontPath));
-
-  gulp.src(config.dist.jsPath + '/**/*')
-    .pipe(gulp.dest(config.docs.jsPath));
-});
-
-gulp.task('gh-pages', ['scss-gh-pages', 'files-gh-pages']);
+gulp.task('gh-pages', ['components-gh-pages', 'scss-gh-pages']);
 
 gulp.task('jekyll-serve', function() {
-  gulp.watch(config.docs.scss + '/**/*.scss', ['scss-gh-pages']);
+  gulp.watch(config.docs.src.scss + '/**/*.scss', ['scss-gh-pages']);
 
   process.chdir('./docs');
 
