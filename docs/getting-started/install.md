@@ -18,7 +18,7 @@ ___
 
 ## Installing Minified Files
 
-After <a href="{{ "/getting-started/download/" | prepend: site.baseurl }}">downloading and extracting the Athena-Framework,</a> add the CSS, JS and font files from the `/dist/` directory to somewhere within your project. You'll need to maintain the directory structure of the `/dist/` folder's contents, since fallback font includes are imported using a relative, fixed path; see the [Included Fonts](#included-fonts) section for more information.
+After <a href="{{ "/getting-started/download/" | prepend: site.baseurl }}">downloading and extracting the Athena-Framework,</a> add the CSS, JS and font files from the `/dist/` directory to somewhere within your project. You'll need to maintain the directory structure of the `/dist/` folder's contents, since fallback font includes are imported using a relative, fixed path; see the [Included Fonts](#included-fallback-fonts) section for more information.
 
 For more information on embedding Athena's styles and scripts into your project's templates, or for instructions on installing CDN assets, see the [Quick Start]({{ "/getting-started/introduction/#quick-start" | prepend: site.baseurl }}) instructions.
 
@@ -75,12 +75,11 @@ The sans-serif font family used in Athena is **Gotham**.
 
 {% callout danger %}
 #### Gotham Licensing for the Web
-<p>
-    Any existing print license for Gotham usage, whether purchased via the <a href="https://cstore.ucf.edu/gotham/">UCF Computer Store</a> or separately, <a href="https://www.typography.com/faq/question.php?faqID=15" target="_blank">does not cover usage of webfonts</a>.
-</p>
-<p class="mb-0">
-    To use Gotham on the web, <em>you must register for the Cloud.typography service.</em><br><strong>Do not attempt to self-host Gotham font files online.</strong>
-</p>
+Any existing _print_ license for Gotham usage, whether purchased via the [UCF Computer Store](https://cstore.ucf.edu/gotham/) or separately, [does not cover usage of webfonts](https://www.typography.com/faq/question.php?faqID=15).
+
+To use Gotham on the web, _you must register for the Cloud.typography service._
+
+**Do not attempt to self-host Gotham font files** that are not provided by Cloud.typography for production font projects.
 {% endcallout %}
 
 #### Base Configuration
