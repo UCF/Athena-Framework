@@ -44,15 +44,6 @@
       Athena includes dozens of utilities—classes with a single purpose to reduce the frequency of highly repetitive declarations.
     {% endif %}
   </span>
-{% elsif page.group == "javascript" %}
-  <h1 class="text-white font-condensed mb-4">JavaScript plugins</h1>
-  <span class="subtitle text-white heading-underline" style="text-transform: none;">
-    {% if page.subtitle %}
-      {{ page.subtitle }}
-    {% else %}
-      Bring Athena's components to life with over a dozen custom jQuery plugins. Easily include them all, or one by one.
-    {% endif %}
-  </span>
 {% elsif page.group == "about" %}
   <h1 class="text-white font-condensed mb-4">About</h1>
   <span class="subtitle text-white heading-underline" style="text-transform: none;">
@@ -69,15 +60,6 @@
       {{ page.subtitle }}
     {% else %}
       Guidance on how to upgrade from Bootstrap v3.x to Athena with emphasis on major changes, what's new, and what's been removed.
-    {% endif %}
-  </span>
-{% elsif page.group == "browser-bugs" %}
-  <h1 class="text-white font-condensed mb-4">Wall of browser bugs</h1>
-  <span class="subtitle text-white heading-underline" style="text-transform: none;">
-    {% if page.subtitle %}
-      {{ page.subtitle }}
-    {% else %}
-      A list of the browser bugs that Athena is currently grappling with.
     {% endif %}
   </span>
 {% endif %}
