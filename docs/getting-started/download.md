@@ -15,7 +15,7 @@ The Athena Framework is available to download in a few ways. The framework is [h
 ## Download Options
 
 <h3 class="mt-3" id="direct-download">Direct Download (.zip)</h3>
-<a href="https://github.com/{{ site.data.package.repository.url }}/archive/{{ site.data.package.version }}.zip">Download Athena Framework <span class="badge badge-secondary">{{ site.data.package.version }}</span></a>
+<a href="https://github.com/{{ site.data.package.repository.url }}/archive/v{{ site.data.package.version }}.zip">Download Athena Framework <span class="badge badge-secondary">v{{ site.data.package.version }}</span></a>
 
 <h3 class="mt-3" id="cdn">CDN</h3>
 {% callout info %}
