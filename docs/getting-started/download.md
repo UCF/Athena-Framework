@@ -7,14 +7,10 @@ group: getting-started
 
 The Athena Framework is available to download in a few ways. The framework is [hosted on Github]({{ site.github }}) as an open-source project under the MIT license. Additionally, a zipped archive of the latest release is available below.
 
-___
-
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
-
-___
 
 ## Download Options
 

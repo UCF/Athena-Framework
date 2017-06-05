@@ -7,14 +7,10 @@ group: getting-started
 
 Unlike Bootstrap 4, Athena's build tools are intended to only be used by developers that are contributing to Athena's core. If you choose to utilize Athena's source files in your project, they should be included using whatever build tools best suit your project. However, regardless of the build tools you choose, they will need to build your project's front-end assets in such a way that preserves Athena's core code while applying your overrides in a non-destructive way. We've outlined some examples below using [Gulp](http://gulpjs.com/).
 
----
-
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
-
----
 
 ## Tooling Setup
 
@@ -31,13 +27,14 @@ The rest of these examples will assume you have basic knowledge of setting up yo
 ## Running Tasks
 
 Assuming a basic project structure that looks something like this:
-<pre><code> ├── src/
- │   ├── my-project.scss
- │   ├── _my-project-variables.scss
- │   └── _my-project-styles.scss
- ├── dist/
- ├── package.json
- └── gulpfile.js
+<pre><code> ├── dist/
+ ├── src/
+ │   └── scss/
+ │       ├── my-project.scss
+ │       ├── _my-project-variables.scss
+ │       └── _my-project-styles.scss
+ ├── gulpfile.js
+ └── package.json
 </code></pre>
 
 ...a sample Gulp file that copies Athena's font files and minified JS, and generates a single, minified CSS file, might look like this:
@@ -96,12 +93,7 @@ With this setup, you could automate the process of setting up your front-end ass
 
 After running those build steps, your project would look something like:
 
-<pre><code> ├── src/
- │   └── scss/
- │       ├── my-project.scss
- │       ├── _my-project-variables.scss
- │       └── _my-project-styles.scss
- ├── dist/
+<pre><code> ├── dist/
  │   ├── css/
  │   │   └── my-project.min.css
  │   ├── js/
@@ -110,8 +102,14 @@ After running those build steps, your project would look something like:
  │       ├── tulia/
  │       ├── ucf-condensed-alt/
  │       └── ucf-sans-serif-alt/
- ├── package.json
- └── gulpfile.js
+ ├── node_modules/
+ ├── src/
+ │   └── scss/
+ │       ├── my-project.scss
+ │       ├── _my-project-variables.scss
+ │       └── _my-project-styles.scss
+ ├── gulpfile.js
+ └── package.json
 </code></pre>
 
 The generated files in your project's `/dist/` directory would then be ready to include in your project's templates (assuming `my-project.scss` [imports Athena's Sass files](#sass)).

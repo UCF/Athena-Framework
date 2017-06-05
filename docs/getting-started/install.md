@@ -7,14 +7,10 @@ group: getting-started
 
 In most cases, installing the Athena Framework is as simple as adding the CSS, JS, and font files to your project.
 
-___
-
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
-
-___
 
 ## Installing Minified Files
 
