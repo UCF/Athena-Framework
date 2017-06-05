@@ -8,8 +8,6 @@ redirect_from: "/getting-started/"
 
 The Athena Framework is a front-end framework built and used by the <a href="//www.ucf.edu/brand/">UCF Marketing Team</a> to create responsive websites and web applications for <a href="//www.ucf.edu">UCF</a>. Based on <a href="//v4-alpha.getboostrap.com">Bootstrap 4,</a> the framework includes most of the functionality developers and content editors have come to expect of Bootstrap. In addition, base Bootstrap styles have been updated to conform to the UCF brand by default, with additional variants for flexibility.
 
-___
-
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
@@ -22,6 +20,7 @@ ___
 Athena is a complete replacement for <a href="https://getbootstrap.com/">Bootstrap</a>.  If you are already using Bootstrap on an existing project and want to use Athena instead, you should remove Bootstrap's CSS and JavaScript completely.  Athena is designed to run as a completely standalone framework.
 
 Read more about the <a href="{{ "/migration/" | prepend: site.baseurl }}">differences between Athena and Bootstrap here.</a>
+
 ___
 
 ## Quick Start
