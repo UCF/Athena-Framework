@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
   "name": "ucf-athena-framework",
+<<<<<<< HEAD
 =======
   "name": "athena-framework",
 >>>>>>> Updated bower.json to allow the repo to be published publically; updated version number in package.json
@@ -9,6 +10,9 @@
   "name": "ucf-athena-framework",
 >>>>>>> Updated package names
   "version": "v1.0.0-alpha.2",
+=======
+  "version": "1.0.0-alpha.2",
+>>>>>>> Added version script for rebuilding docs pages after the version increments
   "author": {
     "name": "UCF Web Communications",
     "email": "webcom@ucf.edu",
@@ -68,5 +72,8 @@
   "dependencies": {
     "jquery": ">=1.9.1",
     "tether": "^1.4.0"
+  },
+  "scripts": {
+    "version": "gulp config-gh-pages && cd docs/ && jekyll build && git add --all"
   }
 }
