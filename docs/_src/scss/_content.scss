@@ -1,5 +1,4 @@
 .bd-content {
-
   > h1 {
     font-size: 2rem;
   }
@@ -46,6 +45,59 @@
       background: #eaffea;
       padding: 0;
     }
+  }
 
+  > table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: $spacer;
+    overflow-y: auto;
+
+    // Cells
+    > thead,
+    > tbody,
+    > tfoot {
+      > tr {
+        > th,
+        > td {
+          padding: $table-cell-padding;
+          vertical-align: top;
+          border: 1px solid $table-border-color;
+
+          > p:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    // Prevent breaking of code
+    td:first-child > code {
+      white-space: nowrap;
+    }
+  }
+
+  > ul li,
+  > ol li {
+    margin-bottom: .25rem;
+  }
+}
+
+
+//
+// Markdown generated ToC
+//
+
+#markdown-toc {
+  // Hide the first child li because it's always going to be "Contents".
+  > li:first-child {
+    display: none;
+  }
+
+  ul {
+    padding-left: 2rem;
+    margin-top: .25rem;
+    margin-bottom: .25rem;
   }
 }
