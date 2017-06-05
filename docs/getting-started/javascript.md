@@ -89,7 +89,7 @@ $.fn.AthenaBtn = AthenaButton            // give $().AthenaBtn the Athena functi
 The version of each of Athena's jQuery plugins can be accessed via the `VERSION` property of the plugin's constructor. For example, for the tooltip plugin:
 
 {% highlight js %}
-$.fn.tooltip.Constructor.VERSION // => "{{ site.current_version }}"
+$.fn.tooltip.Constructor.VERSION // => "{{ site.data.package.version }}"
 {% endhighlight %}
 
 ## No special fallbacks when JavaScript is disabled

@@ -5,7 +5,7 @@ description: Download Athena's compiled CSS and JavaScript, source code, or incl
 group: getting-started
 ---
 
-The Athena Framework is available to download in a few ways. The framework is [hosted on Github]({{ site.github }}) as an open-source project under the MIT license. Additionally, a zipped archive of the latest release is available below.
+The Athena Framework is available to download in a few ways. The framework is [hosted on Github](https://github.com/{{ site.data.package.repository.url }}) as an open-source project under the MIT license. Additionally, a zipped archive of the latest release is available below.
 
 ## Contents
 
@@ -15,7 +15,7 @@ The Athena Framework is available to download in a few ways. The framework is [h
 ## Download Options
 
 <h3 class="mt-3" id="direct-download">Direct Download (.zip)</h3>
-<a href="https://github.com/UCF/Athena-Framework/archive/{{ site.current_version }}.zip">Download Athena Framework <span class="badge badge-secondary">{{ site.current_version }}</span></a>
+<a href="https://github.com/{{ site.data.package.repository.url }}/archive/{{ site.data.package.version }}.zip">Download Athena Framework <span class="badge badge-secondary">{{ site.data.package.version }}</span></a>
 
 <h3 class="mt-3" id="cdn">CDN</h3>
 {% callout info %}
@@ -25,7 +25,7 @@ The Athena Framework is available to download in a few ways. The framework is [h
 <h3 class="mt-3" id="github">Github</h3>
 You can also clone a copy of the git project to your computer locally:
 
-<pre><code>git clone <a href="https://github.com/UCF/Athena-Framework/">git@github.com:UCF/Athena-Framework.git</a></code></pre>
+<pre><code>git clone <a href="https://github.com/{{ site.data.package.repository.url }}/">git@github.com:{{ site.data.package.repository.url }}.git</a></code></pre>
 
 <h3 class="mt-3" id="package-managers">Package Managers</h3>
 
