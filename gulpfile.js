@@ -269,19 +269,24 @@ gulp.task('js-build-bootstrap', function() {
 });
 
 // Concat and uglify js files through babel
-function buildJS(src, filename, dest, applyHeader, doBrowserSync) {
+function buildJS(src, filename, dest, applyHeader, doBrowserSync, forceIncludePaths) {
   dest = dest || config.dist.jsPath;
   appleHeader = applyHeader || false;
   doBrowserSync = doBrowserSync || false;
+  forceIncludePaths = forceIncludePaths || false;
 
   return gulp.src(src)
-    .pipe(include({
-      includePaths: [
-        path.dirname(src),
-        __dirname,
-        config.packagesPath
-      ]
-    }))
+    .pipe(gulpif(
+      forceIncludePaths,
+      include({
+        includePaths: [
+          path.dirname(src),
+          __dirname,
+          config.packagesPath
+        ]
+      }),
+      include()
+    ))
       .on('error', console.log)
     .pipe(babel())
     .pipe(uglify( { output: { comments: /^(!|\---)/ } } )) // try to preserve non-standard headers (e.g. from objectFitPolyfill)
@@ -292,7 +297,7 @@ function buildJS(src, filename, dest, applyHeader, doBrowserSync) {
 }
 
 gulp.task('js-build', function() {
-  return buildJS(config.src.jsPath + '/framework.js', 'framework.min.js', config.dist.jsPath, true, true);
+  return buildJS(config.src.jsPath + '/framework.js', 'framework.min.js', config.dist.jsPath, true, true, false);
 });
 
 // All js-related tasks
@@ -317,7 +322,7 @@ gulp.task('scss-gh-pages', function() {
 });
 
 gulp.task('js-gh-pages', function() {
-  return buildJS(config.docs.src.jsPath + '/docs.js', 'docs.min.js', config.docs.dist.jsPath, true, false);
+  return buildJS(config.docs.src.jsPath + '/docs.js', 'docs.min.js', config.docs.dist.jsPath, true, false, true);
 });
 
 gulp.task('gh-pages', ['components-gh-pages', 'scss-gh-pages', 'js-gh-pages']);
