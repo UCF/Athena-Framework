@@ -19,6 +19,7 @@ var browserSync = require('browser-sync').create(),
     gulpif = require('gulp-if'),
     gutil = require('gulp-util'),
     path = require('path'),
+    jsonToYaml = require('gulp-json-to-yaml'),
     fs = require('fs');
 
 
@@ -43,7 +44,8 @@ var configLocal = require('./gulp-config.json'),
           cssPath:       './docs/res/css',
           fontPath:      './docs/res/fonts',
           jsPath:        './docs/res/js'
-        }
+        },
+        dataPath: './docs/_data'
       },
       packagesPath: './node_modules',
       bootstrap: {
@@ -310,6 +312,13 @@ gulp.task('js', function() {
 // GitHub Pages Build
 //
 
+gulp.task('config-gh-pages', function() {
+  return gulp.src('./package.json')
+    .pipe(jsonToYaml())
+    .pipe(header("# THIS FILE IS GENERATED AUTOMATICALLY VIA THE `config-gh-pages` GULP TASK. DO NOT OVERRIDE VARIABLES HERE; MODIFY package.json INSTEAD.\n\n"))
+    .pipe(gulp.dest(config.docs.dataPath));
+});
+
 gulp.task('components-gh-pages-athena-fonts', function() {
   return gulp.src(config.dist.fontPath + '/**/*')
     .pipe(gulp.dest(config.docs.dist.fontPath));
@@ -325,9 +334,9 @@ gulp.task('js-gh-pages', function() {
   return buildJS(config.docs.src.jsPath + '/docs.js', 'docs.min.js', config.docs.dist.jsPath, true, false, true);
 });
 
-gulp.task('gh-pages', ['components-gh-pages', 'scss-gh-pages', 'js-gh-pages']);
+gulp.task('gh-pages', ['config-gh-pages', 'components-gh-pages', 'scss-gh-pages', 'js-gh-pages']);
 
-gulp.task('jekyll-serve', function() {
+gulp.task('jekyll-serve', ['config-gh-pages'], function() {
   gulp.watch(config.docs.src.scss + '/**/*.scss', ['scss-gh-pages']);
   gulp.watch(config.docs.src.js + '/**/*.js', ['js-gh-pages']);
 

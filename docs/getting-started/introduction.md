@@ -138,4 +138,4 @@ ___
 Stay up to date on the development of the Athena Framework and reach out to the community with these helpful resources.
 
 - Join [the official Slack channel]({{ site.slack }}).
-- Submit new issues/bugs and track the framework's development process on [Github]({{ site.github }}).
+- Submit new issues/bugs and track the framework's development process on [Github](https://github.com/{{ site.data.package.repository.url }}).
