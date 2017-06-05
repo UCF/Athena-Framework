@@ -18,6 +18,7 @@ var browserSync = require('browser-sync').create(),
     footer = require('gulp-footer'),
     gulpif = require('gulp-if'),
     gutil = require('gulp-util'),
+    path = require('path'),
     fs = require('fs');
 
 
@@ -36,13 +37,12 @@ var configLocal = require('./gulp-config.json'),
       docs: {
         src: {
           scssPath:      './docs/_src/scss',
-          bootstrapPath: './docs/_src/bootstrap'
+          jsPath:        './docs/_src/js'
         },
         dist: {
           cssPath:       './docs/res/css',
           fontPath:      './docs/res/fonts',
-          jsPath:        './docs/res/js',
-          bootstrapPath: './docs/res/bootstrap'
+          jsPath:        './docs/res/js'
         }
       },
       packagesPath: './node_modules',
@@ -238,56 +238,6 @@ gulp.task('css', ['scss-lint', 'scss-build']);
 
 
 //
-// GitHub Pages Build
-//
-
-gulp.task('components-gh-pages-bootstrap', function() {
-  return gulp.src(config.docs.src.bootstrapPath + '/**/*')
-    .pipe(gulp.dest(config.docs.dist.bootstrapPath));
-});
-
-gulp.task('components-gh-pages-athena-fonts', function() {
-  return gulp.src(config.dist.fontPath + '/**/*')
-    .pipe(gulp.dest(config.docs.dist.fontPath));
-});
-
-gulp.task('components-gh-pages-athena-js', function() {
-  return gulp.src(config.dist.jsPath + '/**/*')
-    .pipe(gulp.dest(config.docs.dist.jsPath));
-});
-
-gulp.task('components-gh-pages', ['components-gh-pages-bootstrap', 'components-gh-pages-athena-fonts', 'components-gh-pages-athena-js']);
-
-gulp.task('scss-gh-pages', function() {
-  return buildCSS(config.docs.src.scssPath + '/style.scss', 'style.min.css', config.docs.dist.cssPath, true, false);
-});
-
-gulp.task('gh-pages', ['components-gh-pages', 'scss-gh-pages']);
-
-gulp.task('jekyll-serve', function() {
-  gulp.watch(config.docs.src.scss + '/**/*.scss', ['scss-gh-pages']);
-
-  process.chdir('./docs');
-
-  const jekyll = childProc.spawn('jekyll', [
-    'serve',
-    '--watch',
-    '--incremental',
-    '--drafts'
-  ]);
-
-  const jekyllLogger = (buffer) => {
-    buffer.toString()
-      .split(/\n/)
-      .forEach((message) => gutil.log('Jekyll - ' + message));
-  };
-
-  jekyll.stdout.on('data', jekyllLogger);
-  jekyll.stderr.on('data', jekyllLogger);
-});
-
-
-//
 // JavaScript
 //
 
@@ -319,20 +269,80 @@ gulp.task('js-build-bootstrap', function() {
 });
 
 // Concat and uglify js files through babel
-gulp.task('js-build', function() {
-  return gulp.src(config.src.jsPath + '/framework.js')
-    .pipe(include())
+function buildJS(src, filename, dest, applyHeader, doBrowserSync) {
+  dest = dest || config.dist.jsPath;
+  appleHeader = applyHeader || false;
+  doBrowserSync = doBrowserSync || false;
+
+  return gulp.src(src)
+    .pipe(include({
+      includePaths: [
+        path.dirname(src),
+        __dirname,
+        config.packagesPath
+      ]
+    }))
       .on('error', console.log)
     .pipe(babel())
-    .pipe(uglify( { output: { comments: /^(!|\---)/ } } )) // try to preserve headers from objectFitPolyfill
-    .pipe(header(config.prj.header, { config: config }))
-    .pipe(rename('framework.min.js'))
-    .pipe(gulp.dest(config.dist.jsPath));
+    .pipe(uglify( { output: { comments: /^(!|\---)/ } } )) // try to preserve non-standard headers (e.g. from objectFitPolyfill)
+    .pipe(gulpif(applyHeader, header(config.prj.header, { config: config })))
+    .pipe(rename(filename))
+    .pipe(gulp.dest(dest))
+    .pipe(gulpif(doBrowserSync, browserSync.stream()));
+}
+
+gulp.task('js-build', function() {
+  return buildJS(config.src.jsPath + '/framework.js', 'framework.min.js', config.dist.jsPath, true, true);
 });
 
 // All js-related tasks
 gulp.task('js', function() {
   runSequence('es-lint', 'js-build-bootstrap', 'js-build');
+});
+
+
+//
+// GitHub Pages Build
+//
+
+gulp.task('components-gh-pages-athena-fonts', function() {
+  return gulp.src(config.dist.fontPath + '/**/*')
+    .pipe(gulp.dest(config.docs.dist.fontPath));
+});
+
+gulp.task('components-gh-pages', ['components-gh-pages-athena-fonts']);
+
+gulp.task('scss-gh-pages', function() {
+  return buildCSS(config.docs.src.scssPath + '/docs.scss', 'docs.min.css', config.docs.dist.cssPath, true, false);
+});
+
+gulp.task('js-gh-pages', function() {
+  return buildJS(config.docs.src.jsPath + '/docs.js', 'docs.min.js', config.docs.dist.jsPath, true, false);
+});
+
+gulp.task('gh-pages', ['components-gh-pages', 'scss-gh-pages', 'js-gh-pages']);
+
+gulp.task('jekyll-serve', function() {
+  gulp.watch(config.docs.src.scss + '/**/*.scss', ['scss-gh-pages']);
+  gulp.watch(config.docs.src.js + '/**/*.js', ['js-gh-pages']);
+
+  process.chdir('./docs');
+
+  const jekyll = childProc.spawn('jekyll', [
+    'serve',
+    '--watch',
+    '--incremental',
+    '--drafts'
+  ]);
+
+  const jekyllLogger = (buffer) => {
+    buffer.toString()
+      .split(/\n/)
+      .forEach((message) => gutil.log('Jekyll - ' + message));
+  };
+
+  jekyll.stdout.on('data', jekyllLogger);
+  jekyll.stderr.on('data', jekyllLogger);
 });
 
 
