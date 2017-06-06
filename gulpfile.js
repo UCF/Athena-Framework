@@ -178,7 +178,7 @@ function getAthenaYearRange() {
 
 function getAthenaHeader() {
   return ['/*!',
-  ' * Athena Framework <%= config.pkg.version %> (<%= config.pkg.homepage %>)',
+  ' * Athena Framework v<%= config.pkg.version %> (<%= config.pkg.homepage %>)',
   ' * Copyright <%= config.prj.yearRange %> <%= config.pkg.author.name %>',
   ' * Licensed under <%= config.pkg.license %>',
   ' */',
