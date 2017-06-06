@@ -14,19 +14,16 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Athena Framework
-email: webcom@ucf.edu
-description: > # this means to ignore newlines until "baseurl:"
-  A front-end web framework for UCF websites and applications.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: ucf
-github_username:  UCF
+slack: https://ucf-wp.slack.com/messages/#prj-athena-framework/
 
 # Build settings
 markdown: kramdown
 permalink: /:title/
 gems:
   - jekyll-feed
+  - jekyll-redirect-from
 exclude:
   - Gemfile
   - Gemfile.lock

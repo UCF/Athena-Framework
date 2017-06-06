@@ -1,89 +1,59 @@
 ---
 layout: docs
-title: Getting Started
-subtitle: Installation instructions and a basic setup guide for Athena.
+title: Installation
+description: Download Athena's compiled CSS and JavaScript, source code, or include it with your favorite package manager.
+group: getting-started
 ---
 
-## Installation
+In most cases, installing the Athena Framework is as simple as adding the CSS, JS, and font files to your project.
 
-Installing the Athena Framework is as simple as adding the CSS and JS files to your project.
+## Contents
 
-___
+* Will be replaced with the ToC, excluding the "Contents" header
+{:toc}
 
-## Minified Files
+## Installing Minified Files
 
-After <a href="{{ "/getting-started/download/" | prepend: site.baseurl }}">downloading and extracting the Athena-Framework,</a> add the CSS, JS and Font files from the `/dist/` directory to your project's static assets folder.
+After <a href="{{ "/getting-started/download/" | prepend: site.baseurl }}">downloading and extracting the Athena-Framework,</a> add the CSS, JS and font files from the `/dist/` directory to somewhere within your project. You'll need to maintain the directory structure of the `/dist/` folder's contents, since fallback font includes are imported using a relative, fixed path; see the [Included Fonts](#included-fallback-fonts) section for more information.
 
-Include Athena's CSS in the <code>&lt;head&gt;</code> of your project, before any additional CSS files:
-
-<pre><code>&lt;link rel="stylesheet" href="/css/framework.min.css"&gt;
-</code></pre>
-
-Athena's Javascript should be added before the closing <code>&lt;/body&gt;</code> tag. <a href="https://jquery.com/">jQuery</a> and <a href="http://tether.io/">Tether</a> are required dependencies for Athena, so be sure to include those before the Athena JS.
-
-<pre><code>&lt;script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="/js/framework.min.js"&gt;&lt;/script&gt;
-</code></pre>
+For more information on embedding Athena's styles and scripts into your project's templates, or for instructions on installing CDN assets, see the [Quick Start]({{ "/getting-started/introduction/#quick-start" | prepend: site.baseurl }}) instructions.
 
 ___
 
-## Source Files
+## Using Source Files
 
-Athena's source files are available in the `/src/` folder
+Athena's source files are available in the `/src/` folder. We recommend using Athena's source files instead of pre-minified files for projects that need to extend or build off of Athena, and/or in cases where you wish to take advantage of Athena's predefined variables and mixins.
 
-### NPM
-If you are using <a href="https://www.npmjs.com/">NPM</a> with your project, you can add Athena as a dependency by running `npm install UCF/Athena-Framework --save` in the root of your project, or by adding Athena to your package.json file and running `npm install`. Make sure you also include jQuery and Tether.
-
-**package.json**
-<pre><code>{
-  &hellip;
-  "dependencies": {
-    "jquery": "^3.2.1",
-    "tether": "^1.4.0"
-    "athena-framework": "github:UCF/Athena-Framework"
-  }
-}</code></pre>
-
-### Bower
-If you are using the <a href="https://bower.io/">Bower</a> package manager, you can add Athena as a dependency by running `bower install UCF/Athena-Framework --save` or by adding Athena to you `bower.json` file and running `bower install`. As with NPM, ensure you also include jQuery and Tether.
-
-**bower.json**
-<pre><code>{
-  &hellip;
-  "dependencies": {
-    "jquery": ">=1.9.1",
-    "tether": "^1.4.0",
-    "git://github.com/UCF/Athena-Framework": "v1.0.0-alpha"
-  }
-}</code></pre>
+See the [Build Tools instructions]({{ "/getting-started/build-tools/" | prepend: site.baseurl }}) for more information on how to utilize these files in your workflow.
 
 ___
 
 ## Adding to Existing Project Using Bootstrap
 
-Athena is a complete replacement for Bootstrap. If you are already using Bootstrap on an existing project and want to use Athena instead, you should remove Bootstrap’s CSS and Javascript completely. Athena is designed to run as a completely standalone framework.
+Athena is a complete replacement for Bootstrap. If you are already using Bootstrap on an existing project and want to use Athena instead, you should remove Bootstrap's CSS and JavaScript completely. Athena is designed to run as a completely standalone framework.
+
+If you're upgrading from Bootstrap 3, be sure to check out the [Migration Guide]({{ "/migration" | prepend: site.baseurl }}) for the full list of differences between Bootstrap and Athena.
 
 <pre><code><strike>&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;</strike>
-<span class="highlight">&lt;link rel="stylesheet" href="/css/framework.min.css"&gt;</span>
+<span class="highlight-code">&lt;link rel="stylesheet" href="/css/framework.min.css"&gt;</span>
 
 &hellip;
 
 &lt;script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"&gt;&lt;/script&gt;
 <strike>&lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"&gt;</strike>
-<span class="highlight">&lt;script type="text/javascript" src="/js/framework.min.js"&gt;&lt;/script&gt;</span>
+<span class="highlight-code">&lt;script type="text/javascript" src="/js/framework.min.js"&gt;&lt;/script&gt;</span>
 </code></pre>
 
 ___
 
 ## Webfonts &amp; Configuration
 
-Athena is built to utilize premium fonts provided by the <a href="http://www.typography.com/cloud/welcome/">Cloud.typography service</a> by default, with webfont fallbacks (available in the `/dist/fonts/` directory). If neither Cloud.Typography or webfont fallbacks are utilized, Athena will default to use appropriate system fonts.
+Athena is built to utilize premium fonts provided by the <a href="http://www.typography.com/cloud/welcome/">Cloud.typography service</a> by default, with webfont fallbacks (available in the `/dist/fonts/` directory). If neither Cloud.typography or webfont fallbacks are utilized, Athena will default to use appropriate system fonts.
 
-### Included Fonts
+### Included Fallback Fonts
 
-To utilize fallback webfonts, copy the `/fonts/` directory (from the `/src/fonts/` in the project files) to the same `/src/` folder you added the CSS and JS files. The CSS is built to include webfonts from that directory.
+To utilize fallback webfonts, copy the `/fonts/` directory (from the `/dist/fonts/` in the framework's files) to the same folder in your project that you added the framework's CSS and JS files to. The framework's CSS is built to include webfonts from that directory. Alternatively, you can pick a custom location for the fallback fonts directory within your project, as long as you modify the `$athena-font-path` Sass variable and recompile.
 
 <pre><code> ├── css/
 <strong> ├── fonts/
@@ -99,9 +69,14 @@ While Athena provides fallback webfonts out-of-the-box, the preferred font famil
 
 The sans-serif font family used in Athena is **Gotham**.
 
+{% callout danger %}
 #### Gotham Licensing for the Web
+Any existing _print_ license for Gotham usage, whether purchased via the [UCF Computer Store](https://cstore.ucf.edu/gotham/) or separately, [does not cover usage of webfonts](https://www.typography.com/faq/question.php?faqID=15).
 
-Any existing print license for Gotham usage, whether purchased via the <a class="alert-link" href="https://cstore.ucf.edu/gotham/">UCF Computer Store</a> or separately, <a class="alert-link" href="https://www.typography.com/faq/question.php?faqID=15" target="_blank">does not cover usage of webfonts</a>.  To use Gotham on the web, ***you must register for the Cloud.typography service.***  Do not attempt to self-host Gotham font files online.
+To use Gotham on the web, _you must register for the Cloud.typography service._
+
+**Do not attempt to self-host Gotham font files** that are not provided by Cloud.typography for production font projects.
+{% endcallout %}
 
 #### Base Configuration
 
@@ -134,10 +109,6 @@ Because Athena does not support older browsers, enabling Legacy Support is not n
 
 More weights can be added as needed per-project, however, we don't recommend usage of most "thin" or "extra light" weights due to readability concerns.
 
-*&#42;Avoid adding webfonts that aren't needed for your project; as the number of fonts in a project increases, the average load time for the font project increases.*
-
-___
-
-
-## CDN Coming Soon
-**Looking for a CDN link?** The Athena Framework will be available through a CDN soon.
+{% callout info %}
+<strong>*Note:</strong> Avoid adding webfonts that aren't needed for your project; as the number of fonts in a project increases, the average load time for the font project increases.
+{% endcallout %}

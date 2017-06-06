@@ -8,7 +8,7 @@
 //
 // Athena-specific overrides for Bootstrap outline buttons.
 //
-@mixin button-outline-variant-overrides($color, $active-background, $active-border, $hover-color: $color) {
+@mixin button-outline-variant-overrides($color, $active-background, $active-border, $hover-color: $color, $disabled-color: initial) {
   color: $color;
 
   // Fix bug in Bootstrap where focus state does not also receive hover state styling.
@@ -17,9 +17,11 @@
   &.focus,
   &:active,
   &.active {
-    background-color: $active-background;
-    border-color: $active-border;
-    color: $hover-color;
+    &:not(:disabled):not(.disabled) {
+      background-color: $active-background;
+      border-color: $active-border;
+      color: $hover-color;
+    }
   }
 
   &:focus,
@@ -30,6 +32,6 @@
 
   &.disabled,
   &:disabled {
-    color: initial;
+    color: $disabled-color;
   }
 }
