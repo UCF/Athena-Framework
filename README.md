@@ -1,4 +1,4 @@
-**HEADS UP: This project is under active development and should not be utilized on production-ready sites or applications until a stable tag is released.**
+**HEADS UP: This project is under active development.** While the beta should be relatively stable, major bugs may still be present--use at your own risk in production environments.
 
 ---
 
