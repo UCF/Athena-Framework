@@ -11,29 +11,29 @@
 	  
 	</title>
 
-  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" href="/res/css/docs.min.css">
-  <link rel="canonical" href="/layout/grid/">
+  <link rel="stylesheet" href="/Athena-Framework/res/css/docs.min.css">
+  <link rel="canonical" href="/Athena-Framework/layout/grid/">
 </head>
 
 <body class="docs">
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
   <div class="container">
-    <a class="navbar-brand" href="/">Athena Framework</a>
+    <a class="navbar-brand" href="/Athena-Framework/">Athena Framework</a>
     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-text">Menu</span>
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="main-nav">
       <nav class="navbar-nav ml-auto mb-2 mb-lg-0">
-        <a class="nav-link active" href="/getting-started/introduction/">
+        <a class="nav-link active" href="/Athena-Framework/getting-started/introduction/">
           Documentation
         </a>
-        <a class="nav-link " href="/about/">
+        <a class="nav-link " href="/Athena-Framework/about/">
           About
         </a>
-        <a class="nav-link " href="/migration/">
+        <a class="nav-link " href="/Athena-Framework/migration/">
           Migration
         </a>
       </nav>
@@ -75,7 +75,7 @@
             <div class="row">
                 <div class="col-md-8 bd-content">
                     <h1>Grid system</h1>
-                    <p>Athena includes a powerful mobile-first flexbox grid system for building layouts of all shapes and sizes. It’s based on a 12 column layout and has multiple tiers, one for each <a href="/layout/overview/#responsive-breakpoints">media query range</a>. You can use it with Sass mixins or our predefined classes.</p>
+                    <p>Athena includes a powerful mobile-first flexbox grid system for building layouts of all shapes and sizes. It’s based on a 12 column layout and has multiple tiers, one for each <a href="/Athena-Framework/layout/overview/#responsive-breakpoints">media query range</a>. You can use it with Sass mixins or our predefined classes.</p>
 
 <h2 id="contents">Contents</h2>
 
@@ -156,7 +156,7 @@
   <li>Column classes indicate the number of columns you’d like to use out of the possible 12 per row. So, if you want three equal-width columns, you can use <code class="highlighter-rouge">.col-sm-4</code>.</li>
   <li>Column <code class="highlighter-rouge">width</code>s are set in percentages, so they’re always fluid and sized relative to their parent element.</li>
   <li>Columns have horizontal <code class="highlighter-rouge">padding</code> to create the gutters between individual columns, however, you can remove the <code class="highlighter-rouge">margin</code> from rows and <code class="highlighter-rouge">padding</code> from columns with <code class="highlighter-rouge">.no-gutters</code> on the <code class="highlighter-rouge">.row</code>.</li>
-  <li>There are five grid tiers, one for each <a href="/layout/overview/#responsive-breakpoints">responsive breakpoint</a>: all breakpoints (extra small), small, medium, large, and extra large.</li>
+  <li>There are five grid tiers, one for each <a href="/Athena-Framework/layout/overview/#responsive-breakpoints">responsive breakpoint</a>: all breakpoints (extra small), small, medium, large, and extra large.</li>
   <li>Grid tiers are based on minimum widths, meaning they apply to that one tier and all those above it (e.g., <code class="highlighter-rouge">.col-sm-4</code> applies to small, medium, large, and extra large devices).</li>
   <li>You can use predefined grid classes or Sass mixins for more semantic markup.</li>
 </ul>
@@ -444,7 +444,7 @@
 
 <h3 id="equal-width-multi-row">Equal-width multi-row</h3>
 
-<p>Create equal-width columns that span multiple rows by inserting a <code class="highlighter-rouge">.w-100</code> where you want the columns to break to a new line. Make the breaks responsive by mixing the <code class="highlighter-rouge">.w-100</code> with some <a href="/utilities/display-property/">responsive display utilities</a>.</p>
+<p>Create equal-width columns that span multiple rows by inserting a <code class="highlighter-rouge">.w-100</code> where you want the columns to break to a new line. Make the breaks responsive by mixing the <code class="highlighter-rouge">.w-100</code> with some <a href="/Athena-Framework/utilities/display-property/">responsive display utilities</a>.</p>
 
 <div class="bd-example-row">
 
@@ -784,7 +784,7 @@
 
 <p>The gutters between columns in our predefined grid classes can be removed with <code class="highlighter-rouge">.no-gutters</code>. This removes the negative <code class="highlighter-rouge">margin</code>s from <code class="highlighter-rouge">.row</code> and the horizontal <code class="highlighter-rouge">padding</code> from all immediate children columns.</p>
 
-<p>Here’s the source code for creating these styles. Note that column overrides are scoped to only the first children columns and are targeted via <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors">attribute selector</a>. While this generates a more specific selector, column padding can still be further customized with <a href="/utilities/spacing/">spacing utilities</a>.</p>
+<p>Here’s the source code for creating these styles. Note that column overrides are scoped to only the first children columns and are targeted via <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors">attribute selector</a>. While this generates a more specific selector, column padding can still be further customized with <a href="/Athena-Framework/utilities/spacing/">spacing utilities</a>.</p>
 
 <figure class="highlight"><pre><code class="language-sass" data-lang="sass"><span class="nc">.no-gutters</span> <span class="err">{</span>
   <span class="nl">margin-right</span><span class="p">:</span> <span class="m">0</span><span class="err">;</span>
@@ -835,7 +835,7 @@
 
 <h3 id="column-resets">Column resets</h3>
 
-<p>With the handful of grid tiers available, you’re bound to run into issues where, at certain breakpoints, your columns don’t clear quite right as one is taller than the other. To fix that, use a combination of a <code class="highlighter-rouge">.clearfix</code> and our <a href="/utilities/display/">responsive display utilities</a>.</p>
+<p>With the handful of grid tiers available, you’re bound to run into issues where, at certain breakpoints, your columns don’t clear quite right as one is taller than the other. To fix that, use a combination of a <code class="highlighter-rouge">.clearfix</code> and our <a href="/Athena-Framework/utilities/display/">responsive display utilities</a>.</p>
 
 <div class="bd-example-row">
 
@@ -863,7 +863,7 @@
 
 </div>
 
-<p>In addition to column clearing at responsive breakpoints, you may need to <strong>reset offsets, pushes, or pulls</strong>. See this in action in <a href="/examples/grid/">the grid example</a>.</p>
+<p>In addition to column clearing at responsive breakpoints, you may need to <strong>reset offsets, pushes, or pulls</strong>. See this in action in <a href="/Athena-Framework/examples/grid/">the grid example</a>.</p>
 
 <div class="bd-example-row">
 
@@ -1173,7 +1173,7 @@
   
 
   <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/getting-started/introduction/">
+      <a class="bd-toc-link" href="/Athena-Framework/getting-started/introduction/">
         Getting started
       </a>
 
@@ -1185,7 +1185,7 @@
           
 
           <li class="">
-            <a href="/getting-started/introduction/">
+            <a href="/Athena-Framework/getting-started/introduction/">
               Introduction
             </a>
 
@@ -1198,7 +1198,7 @@
           
 
           <li class="">
-            <a href="/getting-started/download/">
+            <a href="/Athena-Framework/getting-started/download/">
               Download
             </a>
 
@@ -1211,7 +1211,7 @@
           
 
           <li class="">
-            <a href="/getting-started/install/">
+            <a href="/Athena-Framework/getting-started/install/">
               Install
             </a>
 
@@ -1224,7 +1224,7 @@
           
 
           <li class="">
-            <a href="/getting-started/browsers-devices/">
+            <a href="/Athena-Framework/getting-started/browsers-devices/">
               Browsers & devices
             </a>
 
@@ -1237,7 +1237,7 @@
           
 
           <li class="">
-            <a href="/getting-started/javascript/">
+            <a href="/Athena-Framework/getting-started/javascript/">
               JavaScript
             </a>
 
@@ -1250,7 +1250,7 @@
           
 
           <li class="">
-            <a href="/getting-started/options/">
+            <a href="/Athena-Framework/getting-started/options/">
               Options
             </a>
 
@@ -1263,7 +1263,7 @@
           
 
           <li class="">
-            <a href="/getting-started/build-tools/">
+            <a href="/Athena-Framework/getting-started/build-tools/">
               Build tools
             </a>
 
@@ -1276,7 +1276,7 @@
           
 
           <li class="">
-            <a href="/getting-started/best-practices/">
+            <a href="/Athena-Framework/getting-started/best-practices/">
               Best practices
             </a>
 
@@ -1289,7 +1289,7 @@
           
 
           <li class="">
-            <a href="/getting-started/accessibility/">
+            <a href="/Athena-Framework/getting-started/accessibility/">
               Accessibility
             </a>
 
@@ -1307,7 +1307,7 @@
   
 
   <div class="bd-toc-item active">
-      <a class="bd-toc-link" href="/layout/overview/">
+      <a class="bd-toc-link" href="/Athena-Framework/layout/overview/">
         Layout
       </a>
 
@@ -1319,7 +1319,7 @@
           
 
           <li class="">
-            <a href="/layout/overview/">
+            <a href="/Athena-Framework/layout/overview/">
               Overview
             </a>
 
@@ -1332,7 +1332,7 @@
           
 
           <li class="active bd-sidenav-active">
-            <a href="/layout/grid/">
+            <a href="/Athena-Framework/layout/grid/">
               Grid
             </a>
 
@@ -1345,7 +1345,7 @@
           
 
           <li class="">
-            <a href="/layout/media-object/">
+            <a href="/Athena-Framework/layout/media-object/">
               Media object
             </a>
 
@@ -1358,7 +1358,7 @@
           
 
           <li class="">
-            <a href="/layout/utilities-for-layout/">
+            <a href="/Athena-Framework/layout/utilities-for-layout/">
               Utilities for Layout
             </a>
 
@@ -1376,7 +1376,7 @@
   
 
   <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/content/reboot/">
+      <a class="bd-toc-link" href="/Athena-Framework/content/reboot/">
         Content
       </a>
 
@@ -1388,7 +1388,7 @@
           
 
           <li class="">
-            <a href="/content/reboot/">
+            <a href="/Athena-Framework/content/reboot/">
               Reboot
             </a>
 
@@ -1401,7 +1401,7 @@
           
 
           <li class="">
-            <a href="/content/typography/">
+            <a href="/Athena-Framework/content/typography/">
               Typography
             </a>
 
@@ -1414,7 +1414,7 @@
           
 
           <li class="">
-            <a href="/content/code/">
+            <a href="/Athena-Framework/content/code/">
               Code
             </a>
 
@@ -1427,7 +1427,7 @@
           
 
           <li class="">
-            <a href="/content/images/">
+            <a href="/Athena-Framework/content/images/">
               Images
             </a>
 
@@ -1440,7 +1440,7 @@
           
 
           <li class="">
-            <a href="/content/tables/">
+            <a href="/Athena-Framework/content/tables/">
               Tables
             </a>
 
@@ -1453,7 +1453,7 @@
           
 
           <li class="">
-            <a href="/content/figures/">
+            <a href="/Athena-Framework/content/figures/">
               Figures
             </a>
 
@@ -1466,7 +1466,7 @@
           
 
           <li class="">
-            <a href="/content/dividers/">
+            <a href="/Athena-Framework/content/dividers/">
               Dividers
             </a>
 
@@ -1484,7 +1484,7 @@
   
 
   <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/components/alerts/">
+      <a class="bd-toc-link" href="/Athena-Framework/components/alerts/">
         Components
       </a>
 
@@ -1496,7 +1496,7 @@
           
 
           <li class="">
-            <a href="/components/alerts/">
+            <a href="/Athena-Framework/components/alerts/">
               Alerts
             </a>
 
@@ -1509,7 +1509,7 @@
           
 
           <li class="">
-            <a href="/components/badge/">
+            <a href="/Athena-Framework/components/badge/">
               Badge
             </a>
 
@@ -1522,7 +1522,7 @@
           
 
           <li class="">
-            <a href="/components/breadcrumb/">
+            <a href="/Athena-Framework/components/breadcrumb/">
               Breadcrumb
             </a>
 
@@ -1535,7 +1535,7 @@
           
 
           <li class="">
-            <a href="/components/buttons/">
+            <a href="/Athena-Framework/components/buttons/">
               Buttons
             </a>
 
@@ -1548,7 +1548,7 @@
           
 
           <li class="">
-            <a href="/components/button-group/">
+            <a href="/Athena-Framework/components/button-group/">
               Button group
             </a>
 
@@ -1561,7 +1561,7 @@
           
 
           <li class="">
-            <a href="/components/card/">
+            <a href="/Athena-Framework/components/card/">
               Card
             </a>
 
@@ -1574,7 +1574,7 @@
           
 
           <li class="">
-            <a href="/components/collapse/">
+            <a href="/Athena-Framework/components/collapse/">
               Collapse
             </a>
 
@@ -1587,7 +1587,7 @@
           
 
           <li class="">
-            <a href="/components/dropdowns/">
+            <a href="/Athena-Framework/components/dropdowns/">
               Dropdowns
             </a>
 
@@ -1600,7 +1600,7 @@
           
 
           <li class="">
-            <a href="/components/forms/">
+            <a href="/Athena-Framework/components/forms/">
               Forms
             </a>
 
@@ -1613,7 +1613,7 @@
           
 
           <li class="">
-            <a href="/components/input-group/">
+            <a href="/Athena-Framework/components/input-group/">
               Input group
             </a>
 
@@ -1626,7 +1626,7 @@
           
 
           <li class="">
-            <a href="/components/jumbotron/">
+            <a href="/Athena-Framework/components/jumbotron/">
               Jumbotron
             </a>
 
@@ -1639,7 +1639,7 @@
           
 
           <li class="">
-            <a href="/components/list-group/">
+            <a href="/Athena-Framework/components/list-group/">
               List group
             </a>
 
@@ -1652,7 +1652,7 @@
           
 
           <li class="">
-            <a href="/components/modal/">
+            <a href="/Athena-Framework/components/modal/">
               Modal
             </a>
 
@@ -1665,7 +1665,7 @@
           
 
           <li class="">
-            <a href="/components/navs/">
+            <a href="/Athena-Framework/components/navs/">
               Navs
             </a>
 
@@ -1678,7 +1678,7 @@
           
 
           <li class="">
-            <a href="/components/navbar/">
+            <a href="/Athena-Framework/components/navbar/">
               Navbar
             </a>
 
@@ -1691,7 +1691,7 @@
           
 
           <li class="">
-            <a href="/components/pagination/">
+            <a href="/Athena-Framework/components/pagination/">
               Pagination
             </a>
 
@@ -1704,7 +1704,7 @@
           
 
           <li class="">
-            <a href="/components/popovers/">
+            <a href="/Athena-Framework/components/popovers/">
               Popovers
             </a>
 
@@ -1717,7 +1717,7 @@
           
 
           <li class="">
-            <a href="/components/progress/">
+            <a href="/Athena-Framework/components/progress/">
               Progress
             </a>
 
@@ -1730,7 +1730,7 @@
           
 
           <li class="">
-            <a href="/components/scrollspy/">
+            <a href="/Athena-Framework/components/scrollspy/">
               Scrollspy
             </a>
 
@@ -1743,7 +1743,7 @@
           
 
           <li class="">
-            <a href="/components/tooltips/">
+            <a href="/Athena-Framework/components/tooltips/">
               Tooltips
             </a>
 
@@ -1761,7 +1761,7 @@
   
 
   <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/utilities/borders/">
+      <a class="bd-toc-link" href="/Athena-Framework/utilities/borders/">
         Utilities
       </a>
 
@@ -1773,7 +1773,7 @@
           
 
           <li class="">
-            <a href="/utilities/borders/">
+            <a href="/Athena-Framework/utilities/borders/">
               Borders
             </a>
 
@@ -1786,7 +1786,7 @@
           
 
           <li class="">
-            <a href="/utilities/clearfix/">
+            <a href="/Athena-Framework/utilities/clearfix/">
               Clearfix
             </a>
 
@@ -1799,7 +1799,7 @@
           
 
           <li class="">
-            <a href="/utilities/close-icon/">
+            <a href="/Athena-Framework/utilities/close-icon/">
               Close icon
             </a>
 
@@ -1812,7 +1812,7 @@
           
 
           <li class="">
-            <a href="/utilities/colors/">
+            <a href="/Athena-Framework/utilities/colors/">
               Colors
             </a>
 
@@ -1825,7 +1825,7 @@
           
 
           <li class="">
-            <a href="/utilities/display-property/">
+            <a href="/Athena-Framework/utilities/display-property/">
               Display property
             </a>
 
@@ -1838,7 +1838,7 @@
           
 
           <li class="">
-            <a href="/utilities/flexbox/">
+            <a href="/Athena-Framework/utilities/flexbox/">
               Flexbox
             </a>
 
@@ -1851,7 +1851,7 @@
           
 
           <li class="">
-            <a href="/utilities/image-replacement/">
+            <a href="/Athena-Framework/utilities/image-replacement/">
               Image replacement
             </a>
 
@@ -1864,7 +1864,7 @@
           
 
           <li class="">
-            <a href="/utilities/invisible-content/">
+            <a href="/Athena-Framework/utilities/invisible-content/">
               Invisible content
             </a>
 
@@ -1877,7 +1877,7 @@
           
 
           <li class="">
-            <a href="/utilities/media-backgrounds/">
+            <a href="/Athena-Framework/utilities/media-backgrounds/">
               Media backgrounds
             </a>
 
@@ -1890,7 +1890,7 @@
           
 
           <li class="">
-            <a href="/utilities/position/">
+            <a href="/Athena-Framework/utilities/position/">
               Position
             </a>
 
@@ -1903,7 +1903,7 @@
           
 
           <li class="">
-            <a href="/utilities/responsive-helpers/">
+            <a href="/Athena-Framework/utilities/responsive-helpers/">
               Responsive helpers
             </a>
 
@@ -1916,7 +1916,7 @@
           
 
           <li class="">
-            <a href="/utilities/screenreaders/">
+            <a href="/Athena-Framework/utilities/screenreaders/">
               Screenreaders
             </a>
 
@@ -1929,7 +1929,7 @@
           
 
           <li class="">
-            <a href="/utilities/sizing/">
+            <a href="/Athena-Framework/utilities/sizing/">
               Sizing
             </a>
 
@@ -1942,7 +1942,7 @@
           
 
           <li class="">
-            <a href="/utilities/spacing/">
+            <a href="/Athena-Framework/utilities/spacing/">
               Spacing
             </a>
 
@@ -1955,7 +1955,7 @@
           
 
           <li class="">
-            <a href="/utilities/typography/">
+            <a href="/Athena-Framework/utilities/typography/">
               Typography
             </a>
 
@@ -1968,7 +1968,7 @@
           
 
           <li class="">
-            <a href="/utilities/vertical-align/">
+            <a href="/Athena-Framework/utilities/vertical-align/">
               Vertical align
             </a>
 
@@ -1986,7 +1986,7 @@
   
 
   <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/about/">
+      <a class="bd-toc-link" href="/Athena-Framework/about/">
         About
       </a>
 
@@ -2003,7 +2003,7 @@
   
 
   <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/migration/">
+      <a class="bd-toc-link" href="/Athena-Framework/migration/">
         Migration
       </a>
 
@@ -2045,7 +2045,7 @@
 
 <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-<script src="/res/js/docs.min.js"></script>
+<script src="http://localhost:4000/Athena-Framework/res/js/docs.min.js"></script>
 
 </body>
 </html>
