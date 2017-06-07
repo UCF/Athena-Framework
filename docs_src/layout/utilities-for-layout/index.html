@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>
+	  
+	    Utilities for layout &middot; Athena Framework
+	  
+	</title>
+
+  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="/res/css/docs.min.css">
+  <link rel="canonical" href="/layout/utilities-for-layout/">
+</head>
+
+<body class="docs">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <div class="container">
+    <a class="navbar-brand" href="/">Athena Framework</a>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-text">Menu</span>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="main-nav">
+      <nav class="navbar-nav ml-auto mb-2 mb-lg-0">
+        <a class="nav-link active" href="/getting-started/introduction/">
+          Documentation
+        </a>
+        <a class="nav-link " href="/about/">
+          About
+        </a>
+        <a class="nav-link " href="/migration/">
+          Migration
+        </a>
+      </nav>
+    </div>
+  </div>
+</nav>
+
+    <header class="header">
+        <div class="container">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="title-container">
+
+  <h1 class="text-white font-condensed mb-4">Layout</h1>
+  <span class="subtitle text-white heading-underline" style="text-transform: none;">
+    
+      Options for structuring your pages with Athena, including global styles, required scaffolding, grid system, and more.
+    
+  </span>
+
+</div>
+
+              </div>
+              <div class="col-md-4">
+                <div class="card github">
+  <div class="card-block">
+    <h2 class="card-title">Want to contribute?</h2>
+    <p class="card-text">If you're interested in contributing to the Athena Framework, please read our <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework#contributing">contributing guidelines</a>, then submit a new issue or pull request.</p>
+    <a href="https://github.com/UCF/Athena-Framework" class="btn btn-primary btn-sm" target="_blank">GitHub Page</a>
+  </div>
+</div>
+
+              </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <article class="py-5 container">
+            <div class="row">
+                <div class="col-md-8 bd-content">
+                    <h1>Utilities for layout</h1>
+                    <p>For faster mobile-friendly and responsive development, Athena includes dozens of utility classes for showing, hiding, aligning, and spacing content. Below is a primer on what’s included in Athena and how these utilities can help you with layout.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#contents" id="markdown-toc-contents">Contents</a></li>
+  <li><a href="#changing-display" id="markdown-toc-changing-display">Changing <code class="highlighter-rouge">display</code></a></li>
+  <li><a href="#flexbox-options" id="markdown-toc-flexbox-options">Flexbox options</a></li>
+  <li><a href="#margin-and-padding" id="markdown-toc-margin-and-padding">Margin and padding</a></li>
+  <li><a href="#toggle-visibility" id="markdown-toc-toggle-visibility">Toggle <code class="highlighter-rouge">visibility</code></a></li>
+</ul>
+
+<h2 id="changing-display">Changing <code class="highlighter-rouge">display</code></h2>
+
+<p>Use our <code class="highlighter-rouge">display</code> utilities for responsively toggling common values of the <code class="highlighter-rouge">display</code> property. Mix it with our grid system, content, or components to show or hide them across specific viewports.</p>
+
+<h2 id="flexbox-options">Flexbox options</h2>
+
+<p>Athena is built with flexbox, but not every element’s <code class="highlighter-rouge">display</code> has been changed to <code class="highlighter-rouge">display: flex</code> as this would add many unnecessary overrides and unexpectedly change key browser behaviors. Most of <a href="/components/">our components</a> are built with flexbox enabled.</p>
+
+<p>Should you need to add <code class="highlighter-rouge">display: flex</code> to an element, do so with <code class="highlighter-rouge">.d-flex</code> or one of the responsive variants (e.g., <code class="highlighter-rouge">.d-sm-flex</code>). You’ll need this class or <code class="highlighter-rouge">display</code> value to allow the use of our extra <a href="/utilities/flexbox/">flexbox utilities</a> for sizing, alignment, spacing, and more.</p>
+
+<h2 id="margin-and-padding">Margin and padding</h2>
+
+<p>Use the <code class="highlighter-rouge">margin</code> and <code class="highlighter-rouge">padding</code> <a href="/utilities/spacing/">spacing utilities</a> to control how elements and components are spaced and sized. Athena includes a five-level scale for spacing utilities, based on a <code class="highlighter-rouge">1rem</code> value default <code class="highlighter-rouge">$spacer</code> variable. Choose values for all viewports (e.g., <code class="highlighter-rouge">.mr-3</code> for <code class="highlighter-rouge">margin-right: 1rem</code>), or pick responsive variants to target specific viewports (e.g., <code class="highlighter-rouge">.mr-md-3</code> for <code class="highlighter-rouge">margin-right: 1rem</code> starting at the <code class="highlighter-rouge">md</code> breakpoint).</p>
+
+<h2 id="toggle-visibility">Toggle <code class="highlighter-rouge">visibility</code></h2>
+
+<p>When toggling <code class="highlighter-rouge">display</code> isn’t needed, you can toggle the <code class="highlighter-rouge">visibility</code> of an element with our <a href="/utilities/invisible-content/">visibility utilities</a>. Invisible elements will still affect the layout of the page, but are visually hidden from visitors.</p>
+
+                </div>
+                <div class="col-md-4 bd-sidebar">
+                  <!-- <form class="bd-search d-none d-sm-block">
+  <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+  <div class="dropdown-menu bd-search-results" id="search-results"></div>
+</form>
+ -->
+<nav class="bd-links" id="docsNavbarContent">
+  
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item ">
+      <a class="bd-toc-link" href="/getting-started/introduction/">
+        Getting started
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/getting-started/introduction/">
+              Introduction
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/getting-started/download/">
+              Download
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/getting-started/install/">
+              Install
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/getting-started/browsers-devices/">
+              Browsers & devices
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/getting-started/javascript/">
+              JavaScript
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/getting-started/options/">
+              Options
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/getting-started/build-tools/">
+              Build tools
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/getting-started/best-practices/">
+              Best practices
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/getting-started/accessibility/">
+              Accessibility
+            </a>
+
+            
+          </li>
+        
+      </ul>
+    </div>
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item active">
+      <a class="bd-toc-link" href="/layout/overview/">
+        Layout
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/layout/overview/">
+              Overview
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/layout/grid/">
+              Grid
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/layout/media-object/">
+              Media object
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="active bd-sidenav-active">
+            <a href="/layout/utilities-for-layout/">
+              Utilities for Layout
+            </a>
+
+            
+          </li>
+        
+      </ul>
+    </div>
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item ">
+      <a class="bd-toc-link" href="/content/reboot/">
+        Content
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/content/reboot/">
+              Reboot
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/content/typography/">
+              Typography
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/content/code/">
+              Code
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/content/images/">
+              Images
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/content/tables/">
+              Tables
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/content/figures/">
+              Figures
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/content/dividers/">
+              Dividers
+            </a>
+
+            
+          </li>
+        
+      </ul>
+    </div>
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item ">
+      <a class="bd-toc-link" href="/components/alerts/">
+        Components
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/alerts/">
+              Alerts
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/badge/">
+              Badge
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/breadcrumb/">
+              Breadcrumb
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/buttons/">
+              Buttons
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/button-group/">
+              Button group
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/card/">
+              Card
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/collapse/">
+              Collapse
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/dropdowns/">
+              Dropdowns
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/forms/">
+              Forms
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/input-group/">
+              Input group
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/jumbotron/">
+              Jumbotron
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/list-group/">
+              List group
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/modal/">
+              Modal
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/navs/">
+              Navs
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/navbar/">
+              Navbar
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/pagination/">
+              Pagination
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/popovers/">
+              Popovers
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/progress/">
+              Progress
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/scrollspy/">
+              Scrollspy
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/tooltips/">
+              Tooltips
+            </a>
+
+            
+          </li>
+        
+      </ul>
+    </div>
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item ">
+      <a class="bd-toc-link" href="/utilities/borders/">
+        Utilities
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/borders/">
+              Borders
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/clearfix/">
+              Clearfix
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/close-icon/">
+              Close icon
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/colors/">
+              Colors
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/display-property/">
+              Display property
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/flexbox/">
+              Flexbox
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/image-replacement/">
+              Image replacement
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/invisible-content/">
+              Invisible content
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/media-backgrounds/">
+              Media backgrounds
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/position/">
+              Position
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/responsive-helpers/">
+              Responsive helpers
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/screenreaders/">
+              Screenreaders
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/sizing/">
+              Sizing
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/spacing/">
+              Spacing
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/typography/">
+              Typography
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/vertical-align/">
+              Vertical align
+            </a>
+
+            
+          </li>
+        
+      </ul>
+    </div>
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item ">
+      <a class="bd-toc-link" href="/about/">
+        About
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+      </ul>
+    </div>
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item ">
+      <a class="bd-toc-link" href="/migration/">
+        Migration
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+      </ul>
+    </div>
+  
+</nav>
+
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col self-align-left">
+                <p>
+                  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and <a href="https://github.com/UCF/Athena-Framework">the Athena Framework</a>.
+                  <br>
+                  Documentation adapted from <a href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.
+                </p>
+                <p class="mb-0">
+                  Code licensed <a href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
+                </p>
+            </div>
+            <div class="col self-align-right">
+              <p class="text-right">
+                Current version: <strong>v1.0.0-beta</strong>.
+              </p>
+              <p class="text-right">
+                <a href="https://github.com/UCF/" target="_blank"><span class="fa fa-github"></span> UCF GitHub</a>
+              </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="/res/js/docs.min.js"></script>
+
+</body>
+</html>

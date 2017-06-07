@@ -37,15 +37,17 @@ var configLocal = require('./gulp-config.json'),
       },
       docs: {
         src: {
-          scssPath:      './docs/_src/scss',
-          jsPath:        './docs/_src/js'
+          scssPath:      './docs_src/_src/scss',
+          jsPath:        './docs_src/_src/js'
         },
         dist: {
-          cssPath:       './docs/res/css',
-          fontPath:      './docs/res/fonts',
-          jsPath:        './docs/res/js'
+          cssPath:       './docs_src/res/css',
+          fontPath:      './docs_src/res/fonts',
+          jsPath:        './docs_src/res/js'
         },
-        dataPath: './docs/_data'
+        dataPath: './docs_src/_data',
+        rootPath: './docs_src',
+        deployPath: './docs'
       },
       packagesPath: './node_modules',
       bootstrap: {
@@ -334,7 +336,17 @@ gulp.task('js-gh-pages', function() {
   return buildJS(config.docs.src.jsPath + '/docs.js', 'docs.min.js', config.docs.dist.jsPath, true, false, true);
 });
 
-gulp.task('gh-pages', ['config-gh-pages', 'components-gh-pages', 'scss-gh-pages', 'js-gh-pages']);
+gulp.task('move-gh-pages', function() {
+
+  return gulp.src(config.docs.rootPath + '/_site/**/*')
+    .pipe(gulp.dest(config.docs.deployPath));
+});
+
+gulp.task('gh-pages', function() {
+  return runSequence(
+    'config-gh-pages', 'components-gh-pages', 'scss-gh-pages', 'js-gh-pages', 'move-gh-pages'
+  );
+});
 
 gulp.task('jekyll-serve', ['config-gh-pages'], function() {
   gulp.watch(config.docs.src.scss + '/**/*.scss', ['scss-gh-pages']);
