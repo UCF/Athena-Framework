@@ -37,16 +37,16 @@ var configLocal = require('./gulp-config.json'),
       },
       docs: {
         src: {
-          scssPath:      './docs_src/_src/scss',
-          jsPath:        './docs_src/_src/js'
+          scssPath:      './_docs/_src/scss',
+          jsPath:        './_docs/_src/js'
         },
         dist: {
-          cssPath:       './docs_src/res/css',
-          fontPath:      './docs_src/res/fonts',
-          jsPath:        './docs_src/res/js'
+          cssPath:       './_docs/res/css',
+          fontPath:      './_docs/res/fonts',
+          jsPath:        './_docs/res/js'
         },
-        dataPath: './docs_src/_data',
-        rootPath: './docs_src',
+        dataPath: './_docs/_data',
+        rootPath: './_docs',
         deployPath: './docs'
       },
       packagesPath: './node_modules',
