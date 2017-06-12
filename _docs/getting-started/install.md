@@ -35,14 +35,14 @@ Athena is a complete replacement for Bootstrap. If you are already using Bootstr
 If you're upgrading from Bootstrap 3, be sure to check out the [Migration Guide]({{ "/migration" | prepend: site.baseurl }}) for the full list of differences between Bootstrap and Athena.
 
 <pre><code><strike>&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;</strike>
-<span class="highlight-code">&lt;link rel="stylesheet" href="/css/framework.min.css"&gt;</span>
+<span class="highlight-code">&lt;link rel="stylesheet" href="{{ site.cdn }}v{{ site.data.package.version }}/css/framework.min.css"&gt;</span>
 
 &hellip;
 
 &lt;script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"&gt;&lt;/script&gt;
 <strike>&lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"&gt;</strike>
-<span class="highlight-code">&lt;script type="text/javascript" src="/js/framework.min.js"&gt;&lt;/script&gt;</span>
+<span class="highlight-code">&lt;script type="text/javascript" src="{{ site.cdn }}v{{ site.data.package.version }}/js/framework.min.js"&gt;&lt;/script&gt;</span>
 </code></pre>
 
 ___

@@ -112,18 +112,14 @@
 
 <h2 id="quick-start">Quick Start</h2>
 
-<p>To quickly add all of Athena’s features to your project, add the following to your pages:</p>
-
-<div class="bd-callout bd-callout-info">
-<p><strong>CDN Coming Soon:</strong> Looking for a CDN link? The Athena Framework will be available through a CDN soon.</p>
-</div>
+<p>To quickly add all of Athena’s features to your project, add the following CDN assets to your pages:</p>
 
 <h3 id="add-stylesheets">Add stylesheets</h3>
 
-<p>Add your Cloud.typography CSS key** and the Athena stylesheet before all other stylesheets. The Cloud.typography CSS key should go immediately before the Athena stylesheet.</p>
+<p>Add the Athena stylesheet before all other stylesheets in your document <code class="highlighter-rouge">&lt;head&gt;</code>. If you’re using Cloud.typography**, your CSS key should go immediately before the Athena stylesheet.</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"https://cloud.typography.com/xxxxxx/xxxxxx/css/fonts.css"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/css/framework.min.css"</span><span class="nt">&gt;</span></code></pre></figure>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdn.ucf.edu/athena-framework/v1.0.0-beta/css/framework.min.css"</span><span class="nt">&gt;</span></code></pre></figure>
 
 <div class="bd-callout bd-callout-info">
 <p><strong>**Note: Cloud.typography fonts are optional.</strong> If Cloud.typography is not utilized, fallback fonts provided by Athena will be used. See the <a href="/Athena-Framework/getting-started/install/#webfonts--configuration">webfont configuration</a> section for information on setting up a Cloud.typography project for use with Athena.</p>
@@ -131,11 +127,11 @@
 
 <h3 id="add-javascript">Add JavaScript</h3>
 
-<p>Add our JavaScript plugins, jQuery, and Tether near the end of your pages, right before the closing <code class="highlighter-rouge">&lt;/body&gt;</code> tag. Be sure to place jQuery and Tether first, as our code depends on them. While we use jQuery’s slim build in our docs, the full version is also supported.</p>
+<p>Add jQuery, Tether, and Athena’s JavaScript near the end of your pages, right before the closing <code class="highlighter-rouge">&lt;/body&gt;</code> tag. Be sure to place jQuery and Tether first, as our code depends on them. While we use jQuery’s slim build in our docs, the full version is also supported.</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://code.jquery.com/jquery-3.1.1.slim.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/css/framework.min.css"</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.ucf.edu/athena-framework/v1.0.0-beta/js/framework.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
 
 <hr />
 
@@ -151,7 +147,7 @@
     <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1, shrink-to-fit=no"</span><span class="nt">&gt;</span>
 
     <span class="c">&lt;!-- Athena CSS --&gt;</span>
-    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/css/framework.min.css"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdn.ucf.edu/athena-framework/v1.0.0-beta/css/framework.min.css"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;/head&gt;</span>
   <span class="nt">&lt;body&gt;</span>
     <span class="nt">&lt;h1&gt;</span>Hello, world!<span class="nt">&lt;/h1&gt;</span>
@@ -159,7 +155,7 @@
     <span class="c">&lt;!-- jQuery first, then Tether, then Athena JS. --&gt;</span>
     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://code.jquery.com/jquery-3.1.1.slim.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
-    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/css/framework.min.css"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.ucf.edu/athena-framework/v1.0.0-beta/js/framework.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
   <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span></code></pre></figure>
 

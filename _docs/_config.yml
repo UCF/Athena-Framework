@@ -17,6 +17,7 @@ title: Athena Framework
 baseurl: "" # the subpath of your site, e.g. /blog
 # host: "" # the base hostname & protocol for your site, e.g. http://example.com
 slack: https://ucf-wp.slack.com/messages/#prj-athena-framework/
+cdn: https://cdn.ucf.edu/athena-framework/
 
 # Build settings
 markdown: kramdown
@@ -27,3 +28,4 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+destination: ../docs
