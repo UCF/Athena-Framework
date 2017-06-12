@@ -356,8 +356,6 @@ gulp.task('jekyll-serve', ['config-gh-pages'], function() {
 
   const jekyll = childProc.spawn('jekyll', [
     'serve',
-    '--destination',
-    '../docs',
     '--watch',
     '--incremental',
     '--drafts'
