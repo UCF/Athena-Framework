@@ -358,7 +358,8 @@ gulp.task('jekyll-serve', ['config-gh-pages'], function() {
     'serve',
     '--watch',
     '--incremental',
-    '--drafts'
+    '--drafts',
+    '--baseurl=/Athena-Framework'
   ]);
 
   const jekyllLogger = (buffer) => {
