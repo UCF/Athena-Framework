@@ -25,4 +25,8 @@
 
 <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+{% if jekyll.environment == "production" %}
+<script src="{{ '/res/js/docs.min.js' | prepend: site.baseurl | prepend: site.host }}"></script>
+{% else %}
 <script src="{{ '/res/js/docs.min.js' | prepend: site.baseurl }}"></script>
+{% endif %}

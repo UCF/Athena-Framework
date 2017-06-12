@@ -336,15 +336,20 @@ gulp.task('js-gh-pages', function() {
   return buildJS(config.docs.src.jsPath + '/docs.js', 'docs.min.js', config.docs.dist.jsPath, true, false, true);
 });
 
-gulp.task('move-gh-pages', function() {
+gulp.task('gh-build-pages', function() {
+  process.chdir('./_docs');
 
-  return gulp.src(config.docs.rootPath + '/_site/**/*')
-    .pipe(gulp.dest(config.docs.deployPath));
+  process.env.JEKYLL_ENV = 'production';
+
+  const jekyll = childProc.spawnSync('jekyll', [
+    'build',
+    '--config=_config.yml,_config_prod.yml'
+  ]);
 });
 
 gulp.task('gh-pages', function() {
   return runSequence(
-    'config-gh-pages', 'components-gh-pages', 'scss-gh-pages', 'js-gh-pages', 'move-gh-pages'
+    'config-gh-pages', 'components-gh-pages', 'scss-gh-pages', 'js-gh-pages', 'gh-build-pages'
   );
 });
 
@@ -358,8 +363,7 @@ gulp.task('jekyll-serve', ['config-gh-pages'], function() {
     'serve',
     '--watch',
     '--incremental',
-    '--drafts',
-    '--baseurl=/Athena-Framework'
+    '--drafts'
   ]);
 
   const jekyllLogger = (buffer) => {
