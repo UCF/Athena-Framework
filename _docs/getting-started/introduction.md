@@ -25,19 +25,15 @@ ___
 
 ## Quick Start
 
-To quickly add all of Athena's features to your project, add the following to your pages:
-
-{% callout info %}
-<strong>CDN Coming Soon:</strong> Looking for a CDN link? The Athena Framework will be available through a CDN soon.
-{% endcallout %}
+To quickly add all of Athena's features to your project, add the following CDN assets to your pages:
 
 ### Add stylesheets
 
-Add your Cloud.typography CSS key** and the Athena stylesheet before all other stylesheets. The Cloud.typography CSS key should go immediately before the Athena stylesheet.
+Add the Athena stylesheet before all other stylesheets in your document `<head>`. If you're using Cloud.typography**, your CSS key should go immediately before the Athena stylesheet.
 
 {% highlight html %}
 <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/xxxxxx/xxxxxx/css/fonts.css">
-<link rel="stylesheet" href="/css/framework.min.css">
+<link rel="stylesheet" href="{{ site.cdn }}v{{ site.data.package.version }}/css/framework.min.css">
 {% endhighlight %}
 
 {% callout info %}
@@ -46,12 +42,12 @@ Add your Cloud.typography CSS key** and the Athena stylesheet before all other s
 
 ### Add JavaScript
 
-Add our JavaScript plugins, jQuery, and Tether near the end of your pages, right before the closing `</body>` tag. Be sure to place jQuery and Tether first, as our code depends on them. While we use jQuery's slim build in our docs, the full version is also supported.
+Add jQuery, Tether, and Athena's JavaScript near the end of your pages, right before the closing `</body>` tag. Be sure to place jQuery and Tether first, as our code depends on them. While we use jQuery's slim build in our docs, the full version is also supported.
 
 {% highlight html %}
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="/css/framework.min.css"></script>
+<script src="{{ site.cdn }}v{{ site.data.package.version }}/js/framework.min.js"></script>
 {% endhighlight %}
 
 ___
@@ -69,7 +65,7 @@ Be sure to have your pages set up with the latest design and development standar
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Athena CSS -->
-    <link rel="stylesheet" href="/css/framework.min.css">
+    <link rel="stylesheet" href="{{ site.cdn }}v{{ site.data.package.version }}/css/framework.min.css">
   </head>
   <body>
     <h1>Hello, world!</h1>
@@ -77,7 +73,7 @@ Be sure to have your pages set up with the latest design and development standar
     <!-- jQuery first, then Tether, then Athena JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="/css/framework.min.css"></script>
+    <script src="{{ site.cdn }}v{{ site.data.package.version }}/js/framework.min.js"></script>
   </body>
 </html>
 {% endhighlight %}

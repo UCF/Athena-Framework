@@ -18,9 +18,12 @@ The Athena Framework is available to download in a few ways. The framework is [h
 <a href="https://github.com/{{ site.data.package.repository.url }}/archive/v{{ site.data.package.version }}.zip">Download Athena Framework <span class="badge badge-secondary">v{{ site.data.package.version }}</span></a>
 
 <h3 class="mt-3" id="cdn">CDN</h3>
-{% callout info %}
-<strong>CDN Coming Soon:</strong> Looking for a CDN link? The Athena Framework will be available through a CDN soon.
-{% endcallout %}
+Skip the download and use CDN-hosted files to deliver Athena's compiled CSS and JS to your project.
+
+{% highlight html %}
+<link rel="stylesheet" href="{{ site.cdn }}v{{ site.data.package.version }}/css/framework.min.css">
+<script src="{{ site.cdn }}v{{ site.data.package.version }}/js/framework.min.js"></script>
+{% endhighlight %}
 
 <h3 class="mt-3" id="github">Github</h3>
 You can also clone a copy of the git project to your computer locally:

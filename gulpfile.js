@@ -352,7 +352,7 @@ gulp.task('jekyll-serve', ['config-gh-pages'], function() {
   gulp.watch(config.docs.src.scss + '/**/*.scss', ['scss-gh-pages']);
   gulp.watch(config.docs.src.js + '/**/*.js', ['js-gh-pages']);
 
-  process.chdir('./docs');
+  process.chdir('./_docs');
 
   const jekyll = childProc.spawn('jekyll', [
     'serve',
