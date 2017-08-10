@@ -1,0 +1,23 @@
+// Column overrides
+//
+// TODO remove after upgrading to v4 beta
+
+@if $enable-grid-classes {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .col#{$infix}-auto {
+      @include make-gutters($grid-gutter-widths);
+      min-height: 1px; // Prevent columns from collapsing when empty
+      position: relative;
+      width: 100%;
+    }
+
+    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+      .col#{$infix}-auto {
+        max-width: none; // Reset earlier grid tiers
+        width: auto;
+      }
+    }
+  }
+}
