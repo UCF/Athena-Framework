@@ -1,3 +1,14 @@
+// Container Overrides
+.container,
+.container-fluid {
+  width: 100%;
+}
+
+.container {
+  @include make-container-max-widths();
+}
+
+
 // Column overrides
 //
 // TODO remove after upgrading to v4 beta
