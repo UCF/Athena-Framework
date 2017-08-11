@@ -146,111 +146,73 @@
 // Generate series of `.navbar-toggleable-*` responsive classes for configuring
 // where your navbar collapses.
 //
-// TODO rename class to .navbar-expand after upgrading to BS4 beta
-.navbar-toggleable {
+// TODO remove duplicate code/clean up selectors within media queries after upgrading to BS4 beta
+.navbar-toggleable,
+.navbar-expand {
   @each $breakpoint in map-keys($grid-breakpoints) {
     $next: breakpoint-next($breakpoint, $grid-breakpoints);
-    $infix: breakpoint-infix($breakpoint, $grid-breakpoints); // TODO update $breakpoint to $next on this line after upgrading to BS4 beta
+    $infix: breakpoint-infix($next, $grid-breakpoints);
 
     &#{$infix} {
-      // TODO remove block after upgrading to BS4 beta
-      @include media-breakpoint-up($next) {
-        align-items: unset;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-      }
-
-      // scss-lint:disable SelectorDepth NestingDepth
-      // Nesting required to match Bootstrap selectors
-
-      // Theme-specific overrides
-
-      &.navbar-light {
-        // Primary color-specific overrides
-        &.bg-primary {
-          .navbar-nav {
-            .dropdown-item {
-              @include hover-focus {
-                @include media-breakpoint-down($breakpoint) {
-                  color: $white;
-                }
-              }
-            }
-          }
+      @include media-breakpoint-down($breakpoint) {
+        > .container,
+        > .container-fluid {
+          padding-right: 0;
+          padding-left: 0;
         }
 
         .navbar-nav {
-          .dropdown-item {
-            @include media-breakpoint-down($breakpoint) {
-              color: $navbar-light-color;
-            }
-
-            @include hover-focus {
-              @include media-breakpoint-down($breakpoint) {
-                background-color: $navbar-light-hover-bg-color;
-                color: $navbar-light-hover-color;
-              }
-            }
-
-            &.disabled {
-              @include media-breakpoint-down($breakpoint) {
-                color: $navbar-light-disabled-color;
-              }
-            }
-          }
-        }
-      }
-
-      &.navbar-inverse {
-        .navbar-nav {
-          .dropdown-item {
-            @include media-breakpoint-down($breakpoint) {
-              color: $navbar-inverse-color;
-            }
-
-            @include hover-focus {
-              @include media-breakpoint-down($breakpoint) {
-                background-color: $navbar-inverse-hover-bg-color;
-                color: $navbar-inverse-hover-color;
-              }
-            }
-
-            &.disabled {
-              @include media-breakpoint-down($breakpoint) {
-                color: $navbar-inverse-disabled-color;
-              }
-            }
-          }
-        }
-      }
-
-      // General child element overrides
-
-      .navbar-nav {
-        .dropdown-menu {
-          @include media-breakpoint-down($breakpoint) {
+          .dropdown-menu {
             background-color: transparent;
             border: 0 solid transparent;
             margin-top: 0;
           }
 
-          // TODO remove block after upgrading to BS4 beta
-          @include media-breakpoint-up($next) {
-            position: absolute;
-          }
-        }
-
-        .dropdown-item {
-          @include hover-focus {
-            @include media-breakpoint-down($breakpoint) {
+          .dropdown-item {
+            @include hover-focus {
               background-color: transparent;
             }
           }
+
+          .nav-link {
+            // Allow customizable padding specific to collapsed navbar
+            padding: $navbar-collapsed-nav-link-padding-y $navbar-collapsed-nav-link-padding-x;
+          }
         }
 
-        .nav-item,
-        .nav-link {
-          @include media-breakpoint-up($next) {
+        .navbar-collapse {
+          &.collapse.show,
+          &.collapsing {
+            border-top: 1px solid;
+          }
+        }
+      }
+
+      @include media-breakpoint-up($next) {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+
+        .navbar-nav {
+          flex-direction: row;
+
+          .dropdown-menu {
+            position: absolute;
+          }
+
+          .dropdown-menu-right {
+            right: 0;
+            left: auto; // Reset the default from `.dropdown-menu`
+          }
+
+          .nav-link {
+            // Override fixed left/right padding values set by Bootstrap.  Reset overridden
+            // vertical padding values set above.
+            padding: $navbar-nav-link-padding-y $navbar-nav-link-padding-x;
+          }
+
+          .nav-item,
+          .nav-link {
             // Force nav link hover states to always consume 100% of the navbar
             // height, but only when the navbar is not collapsed (sets default
             // align-items: stretch)
@@ -258,82 +220,27 @@
           }
         }
 
-        .nav-link {
-          @include media-breakpoint-down($breakpoint) {
-            // Allow customizable padding specific to collapsed navbar
-            padding: $navbar-collapsed-nav-link-padding-y $navbar-collapsed-nav-link-padding-x;
-          }
-
-          @include media-breakpoint-up($next) {
-            // Override fixed left/right padding values set by Bootstrap.  Reset overridden
-            // vertical padding values set above.
-            padding: $navbar-nav-link-padding-y $navbar-nav-link-padding-x;
-          }
-        }
-      }
-
-      > .container,
-      > .container-fluid {
-        // TODO remove block after upgrading to BS4 beta
-        @include media-breakpoint-down($breakpoint) {
-          padding-left: 0;
-          padding-right: 0;
-        }
-
-        // TODO remove block after upgrading to BS4 beta
-        @include media-breakpoint-up($next) {
-          align-items: center;
-          display: flex;
+        // For nesting containers, have to redeclare for alignment purposes
+        > .container,
+        > .container-fluid {
           flex-wrap: nowrap;
         }
 
-        .navbar-brand {
-          @include media-breakpoint-down($breakpoint) {
-            // Fixed left padding needs to be added here to match up with
-            // grid gutters
-            padding-left: ($grid-gutter-width-base / 2);
-          }
+        .navbar-collapse {
+          // scss-lint:disable ImportantRule
+          display: flex !important;
+          // scss-lint:enable ImportantRule
 
-          @include media-breakpoint-down(nth(map-keys($grid-breakpoints), 1)) {
-            // Unset above override at -xs
-            padding-left: 0;
+          &.collapse.show,
+          &.collapsing {
+            border-top: 0 solid transparent;
           }
         }
 
         .navbar-toggler {
-          @include media-breakpoint-down($breakpoint) {
-            // Fixed left padding needs to be added here to match up with
-            // grid gutters
-            margin-right: ($grid-gutter-width-base / 2);
-          }
-
-          @include media-breakpoint-down(nth(map-keys($grid-breakpoints), 1)) {
-            // Unset above override at -xs
-            margin-right: 0;
-          }
+          display: none;
         }
       }
-
-      .navbar-collapse {
-        width: auto;
-
-        @include media-breakpoint-up($next) {
-          flex: 1 1 auto;
-        }
-
-        &.collapse.show,
-        &.collapsing {
-          @include media-breakpoint-down($breakpoint) {
-            border-top: 1px solid;
-          }
-
-          @include media-breakpoint-up($next) {
-            border-top: 0 solid transparent;
-          }
-        }
-      }
-
-      // scss-lint:enable SelectorDepth NestingDepth
     }
   }
 }
