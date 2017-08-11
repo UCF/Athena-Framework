@@ -9,13 +9,17 @@
   flex-wrap: wrap;
   justify-content: space-between;
 
-  // TODO remove this block after upgrading Bootstrap to v4 beta
   > .container,
   > .container-fluid {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    align-items: center; // TODO remove after upgrading Bootstrap to v4 beta
+    display: flex; // TODO remove after upgrading Bootstrap to v4 beta
+    flex-wrap: wrap; // TODO remove after upgrading Bootstrap to v4 beta
+    justify-content: space-between; // TODO remove after upgrading Bootstrap to v4 beta
+
+    @include media-breakpoint-down(xs) {
+      padding-right: 0;
+      padding-left: 0;
+    }
 
     // TODO remove this block after upgrading Bootstrap to v4 beta
     // Bugfix from BS4 alpha-6 that causes inner navbar contents within
@@ -28,8 +32,8 @@
   }
 
   > .container-fluid {
-    padding-right: 0;
     padding-left: 0;
+    padding-right: 0;
   }
 
   // Make things behave the way we expect them to--vertical centering of
@@ -84,7 +88,8 @@
     font-weight: bold;
     letter-spacing: $letter-spacing-base;
     line-height: $navbar-nav-link-line-height;
-    padding: $navbar-nav-link-padding-y $navbar-nav-link-padding-x;
+    // Allow customizable padding specific to collapsed navbar
+    padding: $navbar-collapsed-nav-link-padding-y $navbar-collapsed-nav-link-padding-x;
     text-transform: uppercase;
 
     @include hover-focus-active {
@@ -98,6 +103,22 @@
 
     &.active {
       text-decoration: none; // unset underline
+    }
+  }
+
+  // Restyle dropdown link items with collapsed-first styling
+  .dropdown-menu {
+    background-color: transparent;
+    border: 0 solid transparent;
+    float: none;
+    margin-top: 0;
+    position: static;
+    width: 100%;
+  }
+
+  .dropdown-item {
+    @include hover-focus {
+      background-color: transparent;
     }
   }
 }
@@ -152,6 +173,12 @@
 // Generate series of `.navbar-expand-*` responsive classes for configuring
 // where your navbar collapses.
 //
+// NOTE: we still include .navbar-toggleable-* for backward compatibility with
+// earlier alpha and beta versions.  Only .navbar-expand-* should be used in
+// new projects.
+//
+// NOTE: .navbar-toggleable-xl is not supported.
+//
 // TODO remove duplicate code/clean up selectors within media queries after upgrading to BS4 beta
 .navbar-toggleable,
 .navbar-expand {
@@ -160,94 +187,46 @@
     $infix: breakpoint-infix($next, $grid-breakpoints);
 
     &#{$infix} {
-      @include media-breakpoint-down(xs) {
-        > .container {
-          padding-left: 0;
-          padding-right: 0;
-        }
-      }
-
-      @include media-breakpoint-down($breakpoint) {
-        .navbar-nav {
-          .dropdown-menu {
-            background-color: transparent;
-            border: 0 solid transparent;
-            float: none;
-            margin-top: 0;
-            position: static;
-            width: 100%;
-          }
-
-          .dropdown-item {
-            @include hover-focus {
-              background-color: transparent;
-            }
-          }
-
-          .nav-link {
-            // Allow customizable padding specific to collapsed navbar
-            padding: $navbar-collapsed-nav-link-padding-y $navbar-collapsed-nav-link-padding-x;
-          }
-        }
-
-        // Theme-specific overrides
-
-        &.navbar-light {
-          // Primary color-specific overrides
-          &.bg-primary {
-            .navbar-nav {
-              .dropdown-item {
-                @include hover-focus {
-                  color: $white;
-                }
-              }
-            }
-          }
-
-          .navbar-nav {
-            .dropdown-item {
-              color: $navbar-light-color;
-
-              @include hover-focus {
-                background-color: $navbar-light-hover-bg-color;
-                color: $navbar-light-hover-color;
-              }
-
-              &.disabled {
-                color: $navbar-light-disabled-color;
-              }
-            }
-          }
-        }
-
-        &.navbar-inverse {
-          .navbar-nav {
-            .dropdown-item {
-              color: $navbar-inverse-color;
-
-              @include hover-focus {
-                background-color: $navbar-inverse-hover-bg-color;
-                color: $navbar-inverse-hover-color;
-              }
-
-              &.disabled {
-                color: $navbar-inverse-disabled-color;
-              }
-            }
-          }
-        }
-      }
-
       @include media-breakpoint-up($next) {
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: flex-start;
 
+        // Theme-specific overrides
+        &.navbar-light,
+        &.navbar-light.bg-primary,
+        &.navbar-inverse {
+          .navbar-nav {
+            .dropdown-item {
+              color: $dropdown-link-color;
+
+              @include hover-focus {
+                background-color: $dropdown-link-hover-bg;
+                color: $dropdown-link-hover-color;
+              }
+
+              &.disabled {
+                color: $dropdown-link-disabled-color;
+              }
+            }
+          }
+        }
+
+        > .container {
+          padding-left: $grid-gutter-width-base / 2;
+          padding-right: $grid-gutter-width-base / 2;
+        }
+
         .navbar-nav {
           flex-direction: row;
 
           .dropdown-menu {
+            background-color: $dropdown-bg;
+            border: $dropdown-border-width solid $dropdown-border-color;
+            float: left;
+            margin-top: $dropdown-margin-top;
             position: absolute;
+            width: auto;
           }
 
           .dropdown-menu-right {
@@ -316,6 +295,19 @@
   // scss-lint:disable SelectorDepth NestingDepth
   &.bg-primary {
     .navbar-nav {
+      .dropdown-item {
+        color: $navbar-light-color;
+
+        @include hover-focus {
+          background-color: $navbar-light-hover-bg-color;
+          color: $white;
+        }
+
+        &.disabled {
+          color: $navbar-light-disabled-color;
+        }
+      }
+
       .nav-link {
         @include hover-focus {
           color: $white;
@@ -353,6 +345,19 @@
   }
 
   .navbar-nav {
+    .dropdown-item {
+      color: $navbar-light-color;
+
+      @include hover-focus {
+        background-color: $navbar-light-hover-bg-color;
+        color: $navbar-light-hover-color;
+      }
+
+      &.disabled {
+        color: $navbar-light-disabled-color;
+      }
+    }
+
     .dropdown-toggle::after {
       border-top-color: $navbar-light-dropdown-caret-border;
     }
@@ -408,6 +413,19 @@
   }
 
   .navbar-nav {
+    .dropdown-item {
+      color: $navbar-inverse-color;
+
+      @include hover-focus {
+        background-color: $navbar-inverse-hover-bg-color;
+        color: $navbar-inverse-hover-color;
+      }
+
+      &.disabled {
+        color: $navbar-inverse-disabled-color;
+      }
+    }
+
     .dropdown-toggle::after {
       border-top-color: $navbar-inverse-dropdown-caret-border;
     }
