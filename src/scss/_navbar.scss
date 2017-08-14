@@ -5,7 +5,7 @@
 .navbar {
   // TODO remove this block after upgrading Bootstrap to v4 beta
   align-items: center;
-  flex-direction: unset;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
 
@@ -189,7 +189,6 @@
     &#{$infix} {
       // scss-lint:disable NestingDepth SelectorDepth
       @include media-breakpoint-up($next) {
-        flex-direction: row;
         flex-wrap: nowrap;
         justify-content: flex-start;
 
@@ -256,6 +255,7 @@
           flex-wrap: nowrap;
         }
 
+        // TODO width is borked in IE
         .navbar-collapse {
           border-top: 0 solid transparent;
           // scss-lint:disable ImportantRule
