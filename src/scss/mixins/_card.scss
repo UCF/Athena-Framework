@@ -22,3 +22,40 @@
     }
   }
 }
+
+// Applies text color overrides for contextual card variants.
+@mixin card-variant-list-groups($text-color, $border-color, $bg-color: $list-group-bg) {
+  .list-group-item {
+    background-color: $bg-color;
+    border-bottom-color: $border-color;
+    border-top-color: $border-color;
+    color: $text-color;
+
+    &.active:not([class~="list-group-item-success"]):not([class~="list-group-item-info"]):not([class~="list-group-item-warning"]):not([class~="list-group-item-danger"]) {
+      &,
+      &:hover {
+        background-color: $list-group-active-bg;
+        border-bottom-color: $list-group-active-border;
+        border-top-color: $list-group-active-border;
+        color: $list-group-active-color;
+      }
+    }
+
+    &.disabled,
+    &[disabled] {
+      color: $list-group-disabled-color;
+    }
+  }
+
+  a.list-group-item,
+  button.list-group-item {
+    @include hover-focus {
+      background-color: darken($bg-color, 5%);
+    }
+  }
+
+  @include list-group-item-variant(success, $state-success-bg, $state-success-text);
+  @include list-group-item-variant(info, $state-info-bg, $state-info-text);
+  @include list-group-item-variant(warning, $state-warning-bg, $state-warning-text);
+  @include list-group-item-variant(danger, $state-danger-bg, $state-danger-text);
+}
