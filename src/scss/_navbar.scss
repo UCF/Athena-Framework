@@ -17,8 +17,8 @@
     justify-content: space-between; // TODO remove after upgrading Bootstrap to v4 beta
 
     @include media-breakpoint-down(xs) {
-      padding-right: 0;
       padding-left: 0;
+      padding-right: 0;
     }
 
     // TODO remove this block after upgrading Bootstrap to v4 beta
@@ -187,12 +187,13 @@
     $infix: breakpoint-infix($next, $grid-breakpoints);
 
     &#{$infix} {
+      // scss-lint:disable NestingDepth SelectorDepth
       @include media-breakpoint-up($next) {
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: flex-start;
 
-        // Theme-specific overrides
+        // Theme-specific overrides--reset dropdown styles
         &.navbar-light,
         &.navbar-light.bg-primary,
         &.navbar-inverse {
@@ -230,8 +231,8 @@
           }
 
           .dropdown-menu-right {
-            right: 0;
             left: auto; // Reset the default from `.dropdown-menu`
+            right: 0;
           }
 
           .nav-link {
@@ -266,6 +267,7 @@
           display: none;
         }
       }
+      // scss-lint:enable NestingDepth SelectorDepth
     }
   }
 }
@@ -353,9 +355,11 @@
         color: $navbar-light-hover-color;
       }
 
+      // scss-lint:disable NestingDepth SelectorDepth
       &.disabled {
         color: $navbar-light-disabled-color;
       }
+      // scss-lint:enable NestingDepth SelectorDepth
     }
 
     .dropdown-toggle::after {
@@ -421,9 +425,11 @@
         color: $navbar-inverse-hover-color;
       }
 
+      // scss-lint:disable NestingDepth SelectorDepth
       &.disabled {
         color: $navbar-inverse-disabled-color;
       }
+      // scss-lint:enable NestingDepth SelectorDepth
     }
 
     .dropdown-toggle::after {
