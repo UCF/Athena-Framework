@@ -12,12 +12,18 @@
 .dropdown-item {
   // Add a proper vertical padding variable
   padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+  // Remove white-space:nowrap to prevent long list items from creating scrollbars
+  white-space: normal;
 }
 
 // The dropdown menu
 .dropdown-menu {
   border-radius: $dropdown-border-radius;
   opacity: 0;
+
+  @include media-breakpoint-up(md) {
+    min-width: $dropdown-min-width-md;
+  }
 
   .show & {
     animation: dropdownFadeIn .2s;

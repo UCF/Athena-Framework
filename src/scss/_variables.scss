@@ -865,6 +865,7 @@ $form-icon-danger: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns
 // Dropdown menu container and contents.
 
 $dropdown-min-width:             10rem !default;
+$dropdown-min-width-md:          16rem !default; // custom
 $dropdown-padding-y:             .5rem !default;
 $dropdown-margin-top:            .125rem !default;
 $dropdown-bg:                    $white !default;
