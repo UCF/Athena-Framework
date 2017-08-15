@@ -134,7 +134,7 @@ The following sample Sass file imports _all_ of Athena's styles into the project
 @import 'my-project-variables';
 
 // Package assets
-@import './athena-framework/src/scss/framework';
+@import './ucf-athena-framework/src/scss/framework';
 // @import './some-other-vendor-package/some-stylesheet';
 
 // Project styles
@@ -148,10 +148,10 @@ If you want to keep Athena contained to an individual file, but still have acces
 @import 'my-project-variables';
 
 // Package assets
-@import './athena-framework/src/scss/variables';
-@import './athena-framework/src/bootstrap/scss/variables';
-@import './athena-framework/src/scss/mixins';
-@import './athena-framework/src/bootstrap/scss/mixins';
+@import './ucf-athena-framework/src/scss/variables';
+@import './ucf-athena-framework/src/bootstrap/scss/variables';
+@import './ucf-athena-framework/src/scss/mixins';
+@import './ucf-athena-framework/src/bootstrap/scss/mixins';
 
 // Project styles
 @import 'my-project-styles';
