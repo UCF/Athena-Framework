@@ -62,6 +62,6 @@
     "tether": "^1.4.0"
   },
   "scripts": {
-    "version": "gulp config-gh-pages && cd docs/ && jekyll build && git add --all"
+    "version": "gulp default && gulp gh-pages && git add --all"
   }
 }
