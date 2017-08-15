@@ -341,7 +341,9 @@ gulp.task('gh-build-pages', function() {
 
   process.env.JEKYLL_ENV = 'production';
 
-  const jekyll = childProc.spawnSync('jekyll', [
+  const jekyll = childProc.spawnSync('bundle', [
+    'exec',
+    'jekyll',
     'build',
     '--config=_config.yml,_config_prod.yml'
   ]);
