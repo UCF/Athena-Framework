@@ -1,0 +1,10 @@
+//
+// Adds a combination selector for links in addition to the specified
+// class declaration.
+//
+@mixin link-selector($selector) {
+  a#{$selector},
+  #{$selector} {
+    @content;
+  }
+}

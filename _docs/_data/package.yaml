@@ -1,7 +1,7 @@
 # THIS FILE IS GENERATED AUTOMATICALLY VIA THE `config-gh-pages` GULP TASK. DO NOT OVERRIDE VARIABLES HERE; MODIFY package.json INSTEAD.
 
 name: ucf-athena-framework
-version: 1.0.0-beta
+version: 1.0.0-beta.1
 author:
   name: UCF Web Communications
   email: webcom@ucf.edu
@@ -22,17 +22,17 @@ devDependencies:
   babel-eslint: ^7.2.1
   babel-plugin-transform-es2015-modules-strip: ^0.1.1
   babel-preset-es2015: ^6.24.1
-  bootstrap: ^4.0.0-alpha.6
+  bootstrap: 4.0.0-alpha.6
   browser-sync: ^2.10.0
   child_process: ^1.0.2
   clipboard: ^1.7.1
-  eslint: ^3.19.0
+  eslint: ^4.4.1
   fs: 0.0.1-security
   gulp: ~3.9.0
   gulp-autoprefixer: ^4.0.0
-  gulp-babel: ^6.1.2
+  gulp-babel: ^7.0.0
   gulp-clean-css: ^3.3.1
-  gulp-eslint: ^3.0.1
+  gulp-eslint: ^4.0.0
   gulp-eslint-if-fixed: ^1.0.0
   gulp-footer: ^1.0.5
   gulp-header: ^1.8.8
@@ -40,21 +40,21 @@ devDependencies:
   gulp-include: ^2.3.1
   gulp-json-to-yaml: 0.0.2
   gulp-rename: ^1.2.2
-  gulp-replace: ^0.5.4
+  gulp-replace: ^0.6.1
   gulp-sass: ~3.1.0
-  gulp-scss-lint: ^0.4.0
+  gulp-scss-lint: ^0.5.0
   gulp-sourcemaps: ^2.5.1
-  gulp-uglify: ^2.0.1
+  gulp-uglify: ^3.0.0
   gulp-util: ^3.0.8
   holderjs: ^2.9.4
   merge: ^1.2.0
-  objectFitPolyfill: ^2.0.3
+  objectFitPolyfill: ^2.0.5
   path: ^0.12.7
-  run-sequence: ^1.2.2
+  run-sequence: ^2.1.0
 browserslist:
   - last 2 versions
 dependencies:
   jquery: '>=1.9.1'
   tether: ^1.4.0
 scripts:
-  version: gulp config-gh-pages && cd docs/ && jekyll build && git add --all
+  version: gulp default && gulp gh-pages && git add --all

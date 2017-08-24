@@ -34,6 +34,17 @@
 
 
 //
+// text-decoration reset class
+//
+
+.text-decoration-none {
+  // scss-lint:disable ImportantRule
+  text-decoration: none !important;
+  // scss-lint:enable ImportantRule
+}
+
+
+//
 // Extended font weight classes
 //
 

@@ -15,7 +15,7 @@ Use a generic close icon for dismissing content like modals and alerts. **Be sur
 Use text color utility overrides against alternate background colors for greater visibility:
 
 <div class="row">
-  <div class="col-md-5">
+  <div class="col-md-12">
     <div class="card card-inverse">
       <div class="card-block">
         <button type="button" class="close text-inverse" aria-label="Close">
@@ -27,7 +27,7 @@ Use text color utility overrides against alternate background colors for greater
 </div>
 
 {% highlight html %}
-<button type="button text-inverse" class="close" aria-label="Close">
+<button type="button" class="close text-inverse" aria-label="Close">
   <span aria-hidden="true">&times;</span>
 </button>
 {% endhighlight %}
