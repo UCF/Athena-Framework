@@ -1,7 +1,7 @@
 .hover-show {
   opacity: 0;
 
-  @include hover-focus() {
+  @include hover-focus-active() {
     opacity: 1;
   }
 }
@@ -9,31 +9,30 @@
 .hover-hide {
   opacity: 1;
 
-  @include hover-focus() {
+  @include hover-focus-active() {
     opacity: 0;
   }
 }
 
 .hover-scale-up {
-  @include hover-focus() {
+  transition: $transition-scale;
+
+  @include hover-focus-active() {
     transform: scale(#{$zoom});
   }
 }
 
 .hover-scale-down {
   transform: scale(#{$zoom});
+  transition: $transition-scale;
 
-  @include hover-focus() {
+  @include hover-focus-active() {
     transform: scale(1);
   }
 }
 
-.scale-fade {
-  transition: $transition-scale;
-}
-
 @include link-selector('.hover-text-white') {
-  @include hover-focus() {
+  @include hover-focus-active() {
     // scss-lint:disable ImportantRule
     color: $white !important;
     // scss-lint:enable ImportantRule
@@ -41,7 +40,7 @@
 }
 
 @include link-selector('.hover-text-inverse') {
-  @include hover-focus() {
+  @include hover-focus-active() {
     // scss-lint:disable ImportantRule
     color: $brand-inverse !important;
     // scss-lint:enable ImportantRule
@@ -49,7 +48,7 @@
 }
 
 @include link-selector('.hover-text-black') {
-  @include hover-focus() {
+  @include hover-focus-active() {
     // scss-lint:disable ImportantRule
     color: $black !important;
     // scss-lint:enable ImportantRule
@@ -57,7 +56,7 @@
 }
 
 @include link-selector('.hover-text-secondary') {
-  @include hover-focus() {
+  @include hover-focus-active() {
     // scss-lint:disable ImportantRule
     color: $brand-secondary-color !important;
     // scss-lint:enable ImportantRule
