@@ -4,56 +4,14 @@
   z-index: 0;
 }
 
-.media-background-hover-scale-up {
-  @include hover-focus() {
-    > picture,
-    .media-background {
-      transform: scale(#{$zoom});
-    }
-  }
-
-  > picture,
-  .media-background {
-    transition: $transition-scale;
-  }
-}
-
-.media-background-hover-scale-down {
-  @include hover-focus() {
-    > picture,
-    .media-background {
-      transform: scale(1);
-    }
-  }
-
-  > picture,
-  .media-background {
-    transform: scale(#{$zoom});
-    transition: $transition-scale;
-  }
-}
-
 .media-background-container > picture,
-.media-background,
-.media-background-filter {
+.media-background {
   height: 100%;
   left: 0;
   position: absolute;
   top: 0;
   width: 100%;
-}
-
-.media-background-container > picture,
-.media-background {
-  z-index: -2;
-}
-
-.media-background-filter {
   z-index: -1;
-}
-
-.media-background-content {
-  pointer-events: none;
 }
 
 .object-fit-contain {

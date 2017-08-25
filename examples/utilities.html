@@ -1507,67 +1507,114 @@
     <a href="#" class="hover-text-white">Transitions to white on hover</a><br>
     <a href="#" class="hover-text-black">Transitions to black on hover</a><br>
 
+    <h3 class="mt-4 mb-3">Hover Parents and Children</h3>
+
+    <div class="hover-parent bg-faded mb-1">
+      <p class="hover-child-show p-2 d-inline-block bg-default">Lorem ipsum dolor sit amet</p>
+    </div>
+
+    <div class="hover-parent bg-faded mb-1">
+      <p class="hover-child-hide p-2 d-inline-block bg-default">Lorem ipsum dolor sit amet</p>
+    </div>
+
+    <div class="hover-parent bg-faded mb-1">
+      <p class="hover-child-show fade p-2 d-inline-block bg-default">Lorem ipsum dolor sit amet</p>
+    </div>
+
+    <div class="hover-parent bg-faded mb-1">
+      <p class="hover-child-hide fade p-2 d-inline-block bg-default">Lorem ipsum dolor sit amet</p>
+    </div>
+
+    <div class="hover-parent bg-faded mb-1">
+      <p class="hover-child-scale-up p-2 d-inline-block bg-default">Lorem ipsum dolor sit amet</p>
+    </div>
+
+    <div class="hover-parent bg-faded mb-1">
+      <p class="hover-child-scale-down p-2 d-inline-block bg-default">Lorem ipsum dolor sit amet</p>
+    </div>
+
+    <div class="hover-parent bg-faded mb-1">
+      <p class="hover-child-text-white text-primary p-2 d-inline-block bg-default">Lorem ipsum dolor sit amet</p>
+    </div>
+
+    <div class="hover-parent bg-faded mb-1">
+      <p class="hover-child-text-black p-2 d-inline-block bg-default">Lorem ipsum dolor sit amet</p>
+    </div>
+
     <h3 class="mt-4 mb-3">Advanced Examples</h3>
+
+    <h4 class="mt-4 mb-3">Media Background Links with Filter Transitions</h4>
+
     <div class="row no-gutters mb-4">
       <div class="col-sm">
         <a class="d-flex w-100 p-4 media-background-container text-inverse hover-text-inverse text-decoration-none" style="height: 300px;" href="#">
           <img src="https://www.ucf.edu/wp-content/uploads/2017/03/College-Pages-Nav-Images-600x600-artshumanities.jpg" class="media-background object-fit-cover filter-sepia hover-filter-none">
-          <span class="media-background-content align-self-end h4 font-condensed text-uppercase">Arts and Humanities</span>
+          <span class="pointer-events-none align-self-end h4 font-condensed text-uppercase">Arts and Humanities</span>
         </a>
       </div>
       <div class="col-sm">
         <a class="d-flex w-100 p-4 media-background-container text-inverse hover-text-inverse text-decoration-none" style="height: 300px;" href="#">
           <img src="https://www.ucf.edu/wp-content/uploads/2017/03/College-Pages-Nav-Images-600x600-business.jpg" class="media-background object-fit-cover filter-sepia hover-filter-none">
-          <span class="media-background-content align-self-end h4 font-condensed text-uppercase">Business</span>
+          <span class="pointer-events-none align-self-end h4 font-condensed text-uppercase">Business</span>
         </a>
       </div>
       <div class="col-sm">
         <a class="d-flex w-100 p-4 media-background-container text-inverse hover-text-inverse text-decoration-none" style="height: 300px;" href="#">
           <img src="https://www.ucf.edu/wp-content/uploads/2017/03/College-Pages-Nav-Images-600x600-burnett.jpg" class="media-background object-fit-cover filter-sepia hover-filter-none">
-          <span class="media-background-content align-self-end h4 font-condensed text-uppercase">Burnett Honors</span>
+          <span class="pointer-events-none align-self-end h4 font-condensed text-uppercase">Burnett Honors</span>
         </a>
       </div>
       <div class="col-sm">
         <a class="d-flex w-100 p-4 media-background-container text-inverse hover-text-inverse text-decoration-none" style="height: 300px;" href="#">
           <img src="https://www.ucf.edu/wp-content/uploads/2017/03/College-Pages-Nav-Images-600x600-education.jpg" class="media-background object-fit-cover filter-sepia hover-filter-none">
-          <span class="media-background-content align-self-end h4 font-condensed text-uppercase">Education and Human Performance</span>
+          <span class="pointer-events-none align-self-end h4 font-condensed text-uppercase">Education and Human Performance</span>
         </a>
       </div>
     </div>
 
+    <h4 class="mt-4 mb-3">Media Background Color Overlay with Transition on Hover</h4>
+
     <div class="row">
       <div class="col-sm">
-        <a class="d-block w-100 p-4 media-background-container media-background-hover-scale-up text-secondary hover-text-inverse text-decoration-none" style="min-height: 300px;" href="#">
-          <img src="https://www.ucf.edu/wp-content/uploads/2016/12/undergraduate-card.jpg" class="media-background object-fit-cover">
-          <div class="bg-primary-t-2 hover-hide fade media-background-filter"></div>
-          <div class="bg-inverse-t-3 hover-show fade media-background-filter"></div>
-          <div class="mt-5 media-background-content">
+        <a class="d-block w-100 p-4 media-background-container hover-parent text-secondary hover-text-inverse text-decoration-none" style="min-height: 300px;" href="#">
+          <img src="https://www.ucf.edu/wp-content/uploads/2016/12/undergraduate-card.jpg" class="media-background object-fit-cover hover-child hover-child-scale-up">
+          <div class="bg-primary-t-2 hover-child hover-child-hide fade media-background"></div>
+          <div class="bg-inverse-t-3 hover-child hover-child-show fade media-background"></div>
+          <div class="mt-5 pointer-events-none">
             <span class="h5 text-uppercase letter-spacing-2 mt-4">Freshman</span>
             <p>I’m a high school senior or first-time-in-college student (FTIC) seeking a bachelor’s degree.</p>
           </div>
         </a>
       </div>
       <div class="col-sm">
-        <a class="d-block w-100 p-4 media-background-container media-background-hover-scale-up text-secondary hover-text-inverse text-decoration-none" style="min-height: 300px;" href="#">
-          <img src="https://www.ucf.edu/wp-content/uploads/2016/12/transfer-card.jpg" class="media-background object-fit-cover">
-          <div class="bg-primary-t-2 hover-hide fade media-background-filter"></div>
-          <div class="bg-inverse-t-3 hover-show fade media-background-filter"></div>
-          <div class="mt-5 media-background-content">
+        <a class="d-block w-100 p-4 media-background-container hover-parent text-secondary hover-text-inverse text-decoration-none" style="min-height: 300px;" href="#">
+          <img src="https://www.ucf.edu/wp-content/uploads/2016/12/transfer-card.jpg" class="media-background object-fit-cover hover-child hover-child-scale-up">
+          <div class="bg-primary-t-2 hover-child hover-child-hide fade media-background"></div>
+          <div class="bg-inverse-t-3 hover-child hover-child-show fade media-background"></div>
+          <div class="mt-5 pointer-events-none">
             <span class="h5 text-uppercase letter-spacing-2">Transfer</span>
             <p>I’m am an undergraduate or DirectConnect to UCF student transferring with existing credits.</p>
           </div>
         </a>
       </div>
       <div class="col-sm">
-        <a class="d-block w-100 p-4 media-background-container media-background-hover-scale-up text-secondary hover-text-inverse text-decoration-none" style="min-height: 300px;" href="#">
-          <img src="https://www.ucf.edu/wp-content/uploads/2016/12/online-card.jpg" class="media-background object-fit-cover">
-          <div class="bg-primary-t-2 hover-hide fade media-background-filter"></div>
-          <div class="bg-inverse-t-3 hover-show fade media-background-filter"></div>
-          <div class="mt-5 media-background-content">
+        <a class="d-block w-100 p-4 media-background-container hover-parent text-secondary hover-text-inverse text-decoration-none" style="min-height: 300px;" href="#">
+          <img src="https://www.ucf.edu/wp-content/uploads/2016/12/online-card.jpg" class="media-background object-fit-cover hover-child hover-child-scale-up">
+          <div class="bg-primary-t-2 hover-child hover-child-hide fade media-background"></div>
+          <div class="bg-inverse-t-3 hover-child hover-child-show fade media-background"></div>
+          <div class="mt-5 pointer-events-none">
             <span class="h5 text-uppercase letter-spacing-2">Online</span>
             <p>I’m a transfer or graduate student interested in earning my degree online.</p>
           </div>
         </a>
+      </div>
+    </div>
+
+    <div class="media-background-container hover-parent">
+      <img class="media-background object-fit-cover hover-child hover-child-scale-up" src="//placehold.it/600x300">
+      <div class="bg-primary-t-3 hover-child hover-child-show fade media-background"></div>
+      <div class="p-5 my-5">
+        <p class="text-center">Learn more about our programs.  <a href="https://www.ucf.edu/">Click Here</a></p>
       </div>
     </div>
 

@@ -1,33 +1,45 @@
-.hover-show {
+.hover-show,
+.hover-child-show {
   opacity: 0;
-  transform: translateZ(0);
+  transform: translateZ(0); // required to make Safari behave
+}
 
+.hover-show {
   @include hover-focus-active() {
     opacity: 1;
   }
 }
 
-.hover-hide {
+.hover-hide,
+.hover-child-hide {
   opacity: 1;
-  transform: translateZ(0);
+  transform: translateZ(0); // required to make Safari behave
+}
 
+.hover-hide {
   @include hover-focus-active() {
     opacity: 0;
   }
 }
 
-.hover-scale-up {
+.hover-scale-up,
+.hover-child-scale-up {
   transition: $transition-scale;
+}
 
+.hover-scale-up {
   @include hover-focus-active() {
     transform: scale(#{$zoom});
   }
 }
 
-.hover-scale-down {
+.hover-scale-down,
+.hover-child-scale-down {
   transform: scale(#{$zoom});
   transition: $transition-scale;
+}
 
+.hover-scale-down {
   @include hover-focus-active() {
     transform: scale(1);
   }
@@ -70,5 +82,56 @@
     // scss-lint:disable ImportantRule
     color: $brand-secondary-color !important;
     // scss-lint:enable ImportantRule
+  }
+}
+
+
+.hover-parent {
+  @include hover-focus-active() {
+    .hover-child-show {
+      opacity: 1;
+    }
+
+    .hover-child-hide {
+      opacity: 0;
+    }
+
+    .hover-child-scale-up {
+      transform: scale(#{$zoom});
+    }
+
+    .hover-child-scale-down {
+      transform: scale(1);
+    }
+
+    .hover-child-filter-none {
+      // scss-lint:disable ImportantRule
+      filter: none !important;
+      // scss-lint:enable ImportantRule
+    }
+
+    @include link-selector('.hover-child-text-white') {
+      // scss-lint:disable ImportantRule
+      color: $white !important;
+      // scss-lint:enable ImportantRule
+    }
+
+    @include link-selector('.hover-child-text-inverse') {
+      // scss-lint:disable ImportantRule
+      color: $brand-inverse !important;
+      // scss-lint:enable ImportantRule
+    }
+
+    @include link-selector('.hover-child-text-black') {
+      // scss-lint:disable ImportantRule
+      color: $black !important;
+      // scss-lint:enable ImportantRule
+    }
+
+    @include link-selector('.hover-child-text-secondary') {
+      // scss-lint:disable ImportantRule
+      color: $brand-secondary-color !important;
+      // scss-lint:enable ImportantRule
+    }
   }
 }
