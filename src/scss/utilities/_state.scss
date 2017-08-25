@@ -1,5 +1,6 @@
 .hover-show {
   opacity: 0;
+  transform: translateZ(0);
 
   @include hover-focus-active() {
     opacity: 1;
@@ -8,6 +9,7 @@
 
 .hover-hide {
   opacity: 1;
+  transform: translateZ(0);
 
   @include hover-focus-active() {
     opacity: 0;
