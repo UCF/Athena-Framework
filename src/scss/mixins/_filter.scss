@@ -9,8 +9,21 @@
 
   .hover-filter-#{$name} {
     transition: $transition-filter;
+
     @include hover-focus-active() {
       @content;
+    }
+  }
+
+  .hover-parent {
+    @include hover-focus-active() {
+      .hover-child-filter-#{$name} {
+        @content;
+      }
+    }
+
+    .hover-child-filter-#{$name} {
+      transition: $transition-filter;
     }
   }
 }
