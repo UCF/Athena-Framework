@@ -31,6 +31,14 @@
   }
 }
 
+.hover-filter-none {
+  @include hover-focus-active() {
+    // scss-lint:disable ImportantRule
+    filter: none !important;
+    // scss-lint:enable ImportantRule
+  }
+}
+
 @include link-selector('.hover-text-white') {
   @include hover-focus-active() {
     // scss-lint:disable ImportantRule
