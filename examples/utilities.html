@@ -1429,6 +1429,65 @@
 
 
     <hr class="mt-5 mb-5">
+    
+    
+    <!--
+    ================================================
+    STATE UTILITIES
+    ================================================
+    -->
+
+    <h2 class="mb-3">Filters</h2>
+
+    <div class="row">
+      <div class="col-sm">
+        <code class="mb-2">.filter-sepia</code>
+        <img src="https://www.ucf.edu/wp-content/uploads/2017/03/College-Pages-Nav-Images-600x600-artshumanities.jpg" class="img-fluid filter-sepia">
+      </div>
+      <div class="col-sm">
+        <code class="mb-2">.filter-grayscale</code>
+        <img src="https://www.ucf.edu/wp-content/uploads/2017/03/College-Pages-Nav-Images-600x600-artshumanities.jpg" class="img-fluid filter-grayscale">
+      </div>
+      <div class="col-sm">
+        <code class="mb-2">.filter-brightness</code>
+        <img src="https://www.ucf.edu/wp-content/uploads/2017/03/College-Pages-Nav-Images-600x600-artshumanities.jpg" class="img-fluid filter-brightness">
+      </div>
+      <div class="col-sm">
+        <code class="mb-2">.filter-blur</code>
+        <img src="https://www.ucf.edu/wp-content/uploads/2017/03/College-Pages-Nav-Images-600x600-artshumanities.jpg" class="img-fluid filter-blur">
+      </div>
+    </div>
+
+    <h3 class="mt-4 mb-3">State Filters</h3>
+    <div class="row">
+      <div class="col-sm">
+        <code class="mb-2">.hover-filter-sepia</code>
+        <img src="https://www.ucf.edu/wp-content/uploads/2017/03/College-Pages-Nav-Images-600x600-artshumanities.jpg" class="img-fluid hover-filter-sepia"><br>
+        <code class="mb-2">.hover-filter-none .filter-sepia</code>
+        <img src="https://www.ucf.edu/wp-content/uploads/2017/03/College-Pages-Nav-Images-600x600-artshumanities.jpg" class="img-fluid hover-filter-none filter-sepia">
+      </div>
+      <div class="col-sm">
+        <code class="mb-2">.hover-filter-grayscale</code>
+        <img src="https://www.ucf.edu/wp-content/uploads/2017/03/College-Pages-Nav-Images-600x600-artshumanities.jpg" class="img-fluid hover-filter-grayscale"><br>
+        <code class="mb-2">.hover-filter-none .filter-grayscale</code>
+        <img src="https://www.ucf.edu/wp-content/uploads/2017/03/College-Pages-Nav-Images-600x600-artshumanities.jpg" class="img-fluid hover-filter-none filter-grayscale">
+      </div>
+      <div class="col-sm">
+        <code class="mb-2">.hover-filter-brightness</code>
+        <img src="https://www.ucf.edu/wp-content/uploads/2017/03/College-Pages-Nav-Images-600x600-artshumanities.jpg" class="img-fluid hover-filter-brightness"><br>
+        <code class="mb-2">.hover-filter-none .filter-brightness</code>
+        <img src="https://www.ucf.edu/wp-content/uploads/2017/03/College-Pages-Nav-Images-600x600-artshumanities.jpg" class="img-fluid hover-filter-none filter-brightness">
+      </div>
+      <div class="col-sm">
+        <code class="mb-2">.hover-filter-blur</code>
+        <img src="https://www.ucf.edu/wp-content/uploads/2017/03/College-Pages-Nav-Images-600x600-artshumanities.jpg" class="img-fluid hover-filter-blur"><br>
+        <code class="mb-2">.hover-filter-none .filter-blur</code>
+        <img src="https://www.ucf.edu/wp-content/uploads/2017/03/College-Pages-Nav-Images-600x600-artshumanities.jpg" class="img-fluid hover-filter-none filter-blur">
+      </div>
+    </div>
+    
+
+    <hr class="mt-5 mb-5">
 
 
     <!--
@@ -1445,8 +1504,6 @@
     <a href="#" class="hover-hide fade">Hidden on hover (with fade)</a><br>
     <a href="#" class="d-inline-block hover-scale-up">Zooms in on hover (scale+)</a><br>
     <a href="#" class="d-inline-block hover-scale-down">Zooms out on hover (scale-)</a><br>
-    <a href="#" class="d-inline-block hover-scale-up scale-fade">Zooms in on hover (scale+, with fade)</a><br>
-    <a href="#" class="d-inline-block hover-scale-down scale-fade">Zooms out on hover (scale-, with fade)</a><br>
     <a href="#" class="hover-text-white">Transitions to white on hover</a><br>
     <a href="#" class="hover-text-black">Transitions to black on hover</a><br>
 
@@ -1454,29 +1511,25 @@
     <div class="row no-gutters mb-4">
       <div class="col-sm">
         <a class="d-flex w-100 p-4 media-background-container text-inverse hover-text-inverse text-decoration-none" style="height: 300px;" href="#">
-          <div class="bg-default-t-3 hover-hide fade media-background-filter"></div>
-          <img src="https://www.ucf.edu/wp-content/uploads/2017/03/College-Pages-Nav-Images-600x600-artshumanities.jpg" class="media-background object-fit-cover">
+          <img src="https://www.ucf.edu/wp-content/uploads/2017/03/College-Pages-Nav-Images-600x600-artshumanities.jpg" class="media-background object-fit-cover filter-sepia hover-filter-none">
           <span class="media-background-content align-self-end h4 font-condensed text-uppercase">Arts and Humanities</span>
         </a>
       </div>
       <div class="col-sm">
         <a class="d-flex w-100 p-4 media-background-container text-inverse hover-text-inverse text-decoration-none" style="height: 300px;" href="#">
-          <div class="bg-default-t-3 hover-hide fade media-background-filter"></div>
-          <img src="https://www.ucf.edu/wp-content/uploads/2017/03/College-Pages-Nav-Images-600x600-business.jpg" class="media-background object-fit-cover">
+          <img src="https://www.ucf.edu/wp-content/uploads/2017/03/College-Pages-Nav-Images-600x600-business.jpg" class="media-background object-fit-cover filter-sepia hover-filter-none">
           <span class="media-background-content align-self-end h4 font-condensed text-uppercase">Business</span>
         </a>
       </div>
       <div class="col-sm">
         <a class="d-flex w-100 p-4 media-background-container text-inverse hover-text-inverse text-decoration-none" style="height: 300px;" href="#">
-          <div class="bg-default-t-3 hover-hide fade media-background-filter"></div>
-          <img src="https://www.ucf.edu/wp-content/uploads/2017/03/College-Pages-Nav-Images-600x600-burnett.jpg" class="media-background object-fit-cover scale-fade">
+          <img src="https://www.ucf.edu/wp-content/uploads/2017/03/College-Pages-Nav-Images-600x600-burnett.jpg" class="media-background object-fit-cover filter-sepia hover-filter-none">
           <span class="media-background-content align-self-end h4 font-condensed text-uppercase">Burnett Honors</span>
         </a>
       </div>
       <div class="col-sm">
         <a class="d-flex w-100 p-4 media-background-container text-inverse hover-text-inverse text-decoration-none" style="height: 300px;" href="#">
-          <div class="bg-default-t-3 hover-hide fade media-background-filter"></div>
-          <img src="https://www.ucf.edu/wp-content/uploads/2017/03/College-Pages-Nav-Images-600x600-education.jpg" class="media-background object-fit-cover">
+          <img src="https://www.ucf.edu/wp-content/uploads/2017/03/College-Pages-Nav-Images-600x600-education.jpg" class="media-background object-fit-cover filter-sepia hover-filter-none">
           <span class="media-background-content align-self-end h4 font-condensed text-uppercase">Education and Human Performance</span>
         </a>
       </div>
