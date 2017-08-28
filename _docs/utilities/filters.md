@@ -46,3 +46,9 @@ By combining a filter and hover class, you can transition between filters on hov
 {% example html %}
 <img src="https://unsplash.it/255/255" class="img-fluid hover-filter-none filter-sepia">
 {% endexample %}
+
+### No Filter to Filter
+
+{% example html %}
+<img src="https://unsplash.it/255/255" class="img-fluid hover-filter-sepia">
+{% endexample %}
