@@ -1,0 +1,4 @@
+@include filter-effect(sepia, $filter-sepia);
+@include filter-effect(grayscale, $filter-grayscale);
+@include filter-effect(brightness, $filter-brightness);
+@include filter-effect(blur, $filter-blur);

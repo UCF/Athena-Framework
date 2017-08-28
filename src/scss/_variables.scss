@@ -308,6 +308,10 @@ $bg-transparencies: (
   3: .75
 ) !default;
 
+// Custom variable that determines the zoom amount for the .hover-zoom-in and
+// .hover-zoom-out utility classes
+$zoom: 1.25;
+
 
 
 // Options
@@ -593,6 +597,8 @@ $caret-width:            .3em !default;
 $transition-base:        all .2s ease-in-out !default;
 $transition-fade:        opacity .15s linear !default;
 $transition-collapse:    height .35s ease !default;
+$transition-scale:       transform .35s ease-in-out !default; // custom
+$transition-filter:      filter .35s ease-in-out !default; // custom
 
 
 // Tables
@@ -1307,3 +1313,11 @@ $pre-bg:                      $gray-lightest !default;
 $pre-color:                   $gray-darkest !default; // modified
 $pre-border-color:            #ccc !default;
 $pre-scrollable-max-height:   340px !default;
+
+
+// Filters
+
+$filter-sepia:      grayscale(1) sepia(.15) contrast(.65) brightness(.65) !default; // custom
+$filter-grayscale:  grayscale(1) !default; // custom
+$filter-brightness: brightness(120%) !default; // custom
+$filter-blur:       blur(5px) !default; // custom
