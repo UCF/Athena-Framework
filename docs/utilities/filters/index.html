@@ -7,7 +7,7 @@
 
 	<title>
 	  
-	    Best practices &middot; Athena Framework
+	    Filters &middot; Athena Framework
 	  
 	</title>
 
@@ -15,7 +15,7 @@
   
   <link href="https://ucf.github.io/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
   <link rel="stylesheet" href="https://ucf.github.io/Athena-Framework/res/css/docs.min.css">
-  <link rel="canonical" href="https://ucf.github.io/Athena-Framework/getting-started/best-practices/">
+  <link rel="canonical" href="https://ucf.github.io/Athena-Framework/utilities/filters/">
   
 </head>
 
@@ -49,10 +49,10 @@
               <div class="col-md-8">
                 <div class="title-container">
 
-  <h1 class="text-white font-condensed mb-4">Getting Started</h1>
+  <h1 class="text-white font-condensed mb-4">Utilities</h1>
   <span class="subtitle text-white heading-underline" style="text-transform: none;">
     
-      Installation instructions and a basic setup guide for Athena.
+      Athena includes dozens of utilities—classes with a single purpose to reduce the frequency of highly repetitive declarations.
     
   </span>
 
@@ -76,21 +76,62 @@
         <article class="py-5 container">
             <div class="row">
                 <div class="col-md-8 bd-content">
-                    <h1>Best practices</h1>
-                    <p>We’ve designed and developed Athena to work in a number of environments. Here are some of the best practices we’ve gathered by working on and using it ourselves.</p>
+                    <h1>Filters</h1>
+                    <p>Apply unique effects to images using Athena’s built-in filter classes.</p>
 
-<div class="bd-callout bd-callout-info">
-<p><strong>Heads up!</strong> This copy is a work in progress.</p>
+<div class="bd-callout bd-callout-warning">
+<h2 id="not-compatible-with-ie10-11">Not Compatible with IE10, 11</h2>
+<p>Note that these filters are not compatible with IE10 or 11.</p>
 </div>
 
-<h3 id="general-outline">General outline</h3>
-<ul>
-  <li>Working with CSS</li>
-  <li>Working with Sass files</li>
-  <li>Building new CSS components</li>
-  <li>Working with flexbox</li>
-  <li>Ask in <a href="https://ucf-wp.slack.com/messages/#prj-athena-framework/">Slack</a></li>
-</ul>
+<h2 id="base-filters">Base Filters</h2>
+
+<h3 id="sepia">Sepia</h3>
+
+<div class="bd-example" data-example-id="">
+<img src="https://unsplash.it/255/255" class="img-fluid filter-sepia" />
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://unsplash.it/255/255"</span> <span class="na">class=</span><span class="s">"img-fluid filter-sepia"</span><span class="nt">&gt;</span></code></pre></div>
+
+<h3 id="grayscale">Grayscale</h3>
+
+<div class="bd-example" data-example-id="">
+<img src="https://unsplash.it/255/255" class="img-fluid filter-grayscale" />
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://unsplash.it/255/255"</span> <span class="na">class=</span><span class="s">"img-fluid filter-grayscale"</span><span class="nt">&gt;</span></code></pre></div>
+
+<h3 id="brightness">Brightness</h3>
+
+<div class="bd-example" data-example-id="">
+<img src="https://unsplash.it/255/255" class="img-fluid filter-brightness" />
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://unsplash.it/255/255"</span> <span class="na">class=</span><span class="s">"img-fluid filter-brightness"</span><span class="nt">&gt;</span></code></pre></div>
+
+<h3 id="blur">Blur</h3>
+
+<div class="bd-example" data-example-id="">
+<img src="https://unsplash.it/255/255" class="img-fluid filter-blur" />
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://unsplash.it/255/255"</span> <span class="na">class=</span><span class="s">"img-fluid filter-blur"</span><span class="nt">&gt;</span></code></pre></div>
+
+<h2 id="hover-state-filter-overrides">Hover State Filter Overrides</h2>
+
+<p>By combining a filter and hover class, you can transition between filters on hover.</p>
+
+<h3 id="filter-to-no-filter">Filter to No Filter</h3>
+
+<div class="bd-example" data-example-id="">
+<img src="https://unsplash.it/255/255" class="img-fluid hover-filter-none filter-sepia" />
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://unsplash.it/255/255"</span> <span class="na">class=</span><span class="s">"img-fluid hover-filter-none filter-sepia"</span><span class="nt">&gt;</span></code></pre></div>
+
+<h3 id="no-filter-to-filter">No Filter to Filter</h3>
+
+<div class="bd-example" data-example-id="">
+<img src="https://unsplash.it/255/255" class="img-fluid hover-filter-sepia" />
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"https://unsplash.it/255/255"</span> <span class="na">class=</span><span class="s">"img-fluid hover-filter-sepia"</span><span class="nt">&gt;</span></code></pre></div>
+
 
                 </div>
                 <div class="col-md-4 bd-sidebar">
@@ -109,7 +150,7 @@
 
   
 
-  <div class="bd-toc-item active">
+  <div class="bd-toc-item ">
       <a class="bd-toc-link" href="/Athena-Framework/getting-started/introduction/">
         Getting started
       </a>
@@ -212,7 +253,7 @@
 
           
 
-          <li class="active bd-sidenav-active">
+          <li class="">
             <a href="/Athena-Framework/getting-started/best-practices/">
               Best practices
             </a>
@@ -697,7 +738,7 @@
 
   
 
-  <div class="bd-toc-item ">
+  <div class="bd-toc-item active">
       <a class="bd-toc-link" href="/Athena-Framework/utilities/borders/">
         Utilities
       </a>
@@ -774,7 +815,7 @@
 
           
 
-          <li class="">
+          <li class="active bd-sidenav-active">
             <a href="/Athena-Framework/utilities/filters/">
               Filters
             </a>
