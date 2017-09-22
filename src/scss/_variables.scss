@@ -498,11 +498,12 @@ $font-serif-heading-size-ratio:      1.1 !default; // custom
 $font-slab-serif-heading-size-ratio: 1.15 !default; // custom
 $font-condensed-heading-size-ratio:  1.75 !default; // custom
 
-$headings-margin-bottom: ($spacer / 2) !default;
-$headings-font-family:   inherit !default;
-$headings-font-weight:   600 !default; // modified
-$headings-line-height:   1.1 !default;
-$headings-color:         inherit !default;
+$headings-margin-bottom:   ($spacer / 2) !default;
+$headings-font-family:     inherit !default;
+$headings-font-weight:     600 !default; // modified
+$headings-line-height:     1.1 !default;
+$headings-line-height-min: .875 !default; // custom
+$headings-color:           inherit !default;
 
 $display1-size: 14vw !default; // modified
 $display2-size: 12vw !default; // modified
@@ -517,11 +518,12 @@ $display2-size-md: 5.5rem !default; // custom
 $display3-size-md: 4.5rem !default; // custom
 $display4-size-md: 3.5rem !default; // custom
 
-$display1-weight:     600 !default; // modified
-$display2-weight:     600 !default; // modified
-$display3-weight:     600 !default; // modified
-$display4-weight:     600 !default; // modified
-$display-line-height: $headings-line-height !default;
+$display1-weight:         600 !default; // modified
+$display2-weight:         600 !default; // modified
+$display3-weight:         600 !default; // modified
+$display4-weight:         600 !default; // modified
+$display-line-height:     $headings-line-height !default;
+$display-line-height-min: $headings-line-height-min !default; // custom
 
 $lead-font-size:    1rem !default; // modified
 $lead-font-size-md: 1.4rem !default; // custom

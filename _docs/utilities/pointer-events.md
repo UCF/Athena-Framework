@@ -8,6 +8,6 @@ Disabling [pointer events](https://developer.mozilla.org/en-US/docs/Web/CSS/poin
 
 {% example html %}
 <a href="#">
-  <div class="pointer-events-none">...</div>
+  <div class="pointer-events-none">This is a child object within a link</div>
 </a>
 {% endexample %}

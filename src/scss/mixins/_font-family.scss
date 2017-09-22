@@ -2,10 +2,13 @@
 // Heading font size overrides, by font family
 //
 @mixin font-family-heading-variant($size-ratio: 1, $font-utility-class: '') {
+  $line-height: max($headings-line-height / $size-ratio, $headings-line-height-min);
+
   h1,
   .h1 {
     &#{$font-utility-class} {
       font-size: $font-size-h1 * $size-ratio;
+      line-height: $line-height;
 
       @include media-breakpoint-up(md) {
         font-size: $font-size-h1-md * $size-ratio;
@@ -17,6 +20,7 @@
   .h2 {
     &#{$font-utility-class} {
       font-size: $font-size-h2 * $size-ratio;
+      line-height: $line-height;
 
       @include media-breakpoint-up(md) {
         font-size: $font-size-h2-md * $size-ratio;
@@ -28,6 +32,7 @@
   .h3 {
     &#{$font-utility-class} {
       font-size: $font-size-h3 * $size-ratio;
+      line-height: $line-height;
 
       @include media-breakpoint-up(md) {
         font-size: $font-size-h3-md * $size-ratio;
@@ -39,6 +44,7 @@
   .h4 {
     &#{$font-utility-class} {
       font-size: $font-size-h4 * $size-ratio;
+      line-height: $line-height;
 
       @include media-breakpoint-up(md) {
         font-size: $font-size-h4-md * $size-ratio;
@@ -50,6 +56,7 @@
   .h5 {
     &#{$font-utility-class} {
       font-size: $font-size-h5 * $size-ratio;
+      line-height: $line-height;
 
       @include media-breakpoint-up(md) {
         font-size: $font-size-h5-md * $size-ratio;
@@ -61,6 +68,7 @@
   .h6 {
     &#{$font-utility-class} {
       font-size: $font-size-h6 * $size-ratio;
+      line-height: $line-height;
 
       @include media-breakpoint-up(md) {
         font-size: $font-size-h6-md * $size-ratio;
@@ -73,10 +81,13 @@
 //
 // Display heading font size overrides, by font family
 //
-@mixin font-family-display-variant($size-ratio: 1, $font-utility-class: '') {
+@mixin font-family-display-variant($size-ratio: 1, $font-utility-class: '', $line-height: $display-line-height) {
+  $line-height: max($display-line-height / $size-ratio, $display-line-height-min);
+
   .display-1 {
     &#{$font-utility-class} {
       font-size: $display1-size * $size-ratio;
+      line-height: $line-height - .075;
 
       @include media-breakpoint-up(sm) {
         font-size: $display1-size-sm * $size-ratio;
@@ -91,6 +102,7 @@
   .display-2 {
     &#{$font-utility-class} {
       font-size: $display2-size * $size-ratio;
+      line-height: $line-height - .05;
 
       @include media-breakpoint-up(sm) {
         font-size: $display2-size-sm * $size-ratio;
@@ -105,6 +117,7 @@
   .display-3 {
     &#{$font-utility-class} {
       font-size: $display3-size * $size-ratio;
+      line-height: $line-height;
 
       @include media-breakpoint-up(sm) {
         font-size: $display3-size-sm * $size-ratio;
@@ -119,6 +132,7 @@
   .display-4 {
     &#{$font-utility-class} {
       font-size: $display4-size * $size-ratio;
+      line-height: $line-height;
 
       @include media-breakpoint-up(sm) {
         font-size: $display4-size-sm * $size-ratio;

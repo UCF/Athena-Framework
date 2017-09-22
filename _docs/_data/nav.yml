@@ -57,15 +57,18 @@
     - title: Close icon
     - title: Colors
     - title: Display property
+    - title: Filters
     - title: Flexbox
     - title: Image replacement
     - title: Invisible content
     - title: Media backgrounds
+    - title: Pointer Events
     - title: Position
     - title: Responsive helpers
     - title: Screenreaders
     - title: Sizing
     - title: Spacing
+    - title: States
     - title: Typography
     - title: Vertical align
 
