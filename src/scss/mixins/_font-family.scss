@@ -81,7 +81,7 @@
 //
 // Display heading font size overrides, by font family
 //
-@mixin font-family-display-variant($size-ratio: 1, $font-utility-class: '', $line-height: $display-line-height) {
+@mixin font-family-display-variant($size-ratio: 1, $font-utility-class: '') {
   $line-height: max($display-line-height / $size-ratio, $display-line-height-min);
 
   .display-1 {
