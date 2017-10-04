@@ -12,6 +12,12 @@
   margin-right: -$nav-link-padding-x;
 }
 
+.nav-item,
+.nav-link {
+  // Fix text overflow when using certain flex utility classes in IE10, 11
+  max-width: 100%;
+}
+
 .nav-link {
   padding: $nav-link-padding-y $nav-link-padding-x;
 
