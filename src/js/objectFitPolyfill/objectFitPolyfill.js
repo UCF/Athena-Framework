@@ -50,18 +50,26 @@
   };
 
   /**
-   * Check for pre-set max-width/height or min-width/height,
-   * which can mess up image calculations
+   * Check for pre-set max-width/height, min-width/height,
+   * positioning, or margins, which can mess up image calculations
    *
    * @param {node} $media - img/video element
    */
-  var checkMediaConstraints = function($media) {
+  var checkMediaProperties = function($media) {
     var styles = window.getComputedStyle($media, null);
     var constraints = {
       "max-width":  "none",
       "max-height": "none",
       "min-width":  "0px",
-      "min-height": "0px"
+      "min-height": "0px",
+      "top": "auto",
+      "right": "auto",
+      "bottom": "auto",
+      "left": "auto",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "0px",
+      "margin-left": "0px",
     };
 
     for (var property in constraints) {
@@ -81,8 +89,12 @@
    * @param {string} objectPosition - e.g. "50% 50%", "top bottom"
    */
   var setPosition = function(axis, $media, objectPosition) {
-    objectPosition = objectPosition.split(" ");
     var position, other, start, end, side;
+    objectPosition = objectPosition.split(" ");
+
+    if (objectPosition.length < 2) {
+      objectPosition[1] = objectPosition[0];
+    }
 
     if (axis === "x") {
       position = objectPosition[0];
@@ -157,8 +169,8 @@
     var $container = $media.parentNode;
     checkParentContainer($container);
 
-    // Check for max-width/height or min-width/height, which can mess up image calculations
-    checkMediaConstraints($media);
+    // Check for any pre-set CSS which could mess up image calculations
+    checkMediaProperties($media);
 
     // Mathematically figure out which side needs covering, and add CSS positioning & centering
     $media.style.position = "absolute";
@@ -206,11 +218,27 @@
 
   /**
    * Initialize plugin
+   *
+   * @param {node} media - Optional specific DOM node(s) to be polyfilled
    */
-  var objectFitPolyfill = function() {
-    var media = document.querySelectorAll("[data-object-fit]");
+  var objectFitPolyfill = function(media) {
+    if (typeof media === "undefined") {
+      // If left blank, all media on the page will be polyfilled.
+      media = document.querySelectorAll("[data-object-fit]");
+    } else if (media && media.nodeName) {
+      // If it's a single node, wrap it in an array so it works.
+      media = [media];
+    } else if (typeof media === "object" && media.length && media[0].nodeName) {
+      // If it's an array of DOM nodes (e.g. a jQuery selector), it's fine as-is.
+      media = media;
+    } else {
+      // Otherwise, if it's invalid or an incorrect type, return false to let people know.
+      return false;
+    }
 
-    for (var i = 0; i < media.length; i ++) {
+    for (var i = 0; i < media.length; i++) {
+      if (!media[i].nodeName) { continue; }
+
       var mediaType = media[i].nodeName.toLowerCase();
 
       if (mediaType === "img") {

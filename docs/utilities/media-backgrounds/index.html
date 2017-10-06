@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>
+	  
+	    Media Backgrounds &middot; Athena Framework
+	  
+	</title>
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  
+  <link href="https://ucf.github.io/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link rel="stylesheet" href="https://ucf.github.io/Athena-Framework/res/css/docs.min.css">
+  <link rel="canonical" href="https://ucf.github.io/Athena-Framework/utilities/media-backgrounds/">
+  
+</head>
+
+<body class="docs">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <div class="container">
+    <a class="navbar-brand" href="/Athena-Framework/">Athena Framework</a>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-text">Menu</span>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="main-nav">
+      <nav class="navbar-nav ml-auto mb-2 mb-lg-0">
+        <a class="nav-link active" href="/Athena-Framework/getting-started/introduction/">
+          Documentation
+        </a>
+        <a class="nav-link " href="/Athena-Framework/about/">
+          About
+        </a>
+        <a class="nav-link " href="/Athena-Framework/migration/">
+          Migration
+        </a>
+      </nav>
+    </div>
+  </div>
+</nav>
+
+    <header class="header">
+        <div class="container">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="title-container">
+
+  <h1 class="text-white font-condensed mb-4">Utilities</h1>
+  <span class="subtitle text-white heading-underline" style="text-transform: none;">
+    
+      Athena includes dozens of utilities—classes with a single purpose to reduce the frequency of highly repetitive declarations.
+    
+  </span>
+
+</div>
+
+              </div>
+              <div class="col-md-4">
+                <div class="card github">
+  <div class="card-block">
+    <h2 class="card-title">Want to contribute?</h2>
+    <p class="card-text">If you're interested in contributing to the Athena Framework, please read our <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework#contributing">contributing guidelines</a>, then submit a new issue or pull request.</p>
+    <a href="https://github.com/UCF/Athena-Framework" class="btn btn-primary btn-sm" target="_blank">GitHub Page</a>
+  </div>
+</div>
+
+              </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <article class="py-5 container">
+            <div class="row">
+                <div class="col-md-8 bd-content">
+                    <h1>Media Backgrounds</h1>
+                    <p>Media backgrounds are an easy way of applying large images or video as a background.  They behave similarly to an image applied to an element using <code class="highlighter-rouge">background-image</code>, but with the advantage of being able to utilize <code class="highlighter-rouge">srcset</code> and <code class="highlighter-rouge">&lt;picture&gt; &lt;source&gt;</code>s for automated responsive switchouts of images.  For videos, media backgrounds provide a consistent, responsive option for full-screen scaling and stretching without requiring additional JavaScript.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#contents" id="markdown-toc-contents">Contents</a></li>
+  <li><a href="#how-it-works" id="markdown-toc-how-it-works">How it works</a></li>
+  <li><a href="#usage" id="markdown-toc-usage">Usage</a>    <ul>
+      <li><a href="#image" id="markdown-toc-image">Image</a></li>
+      <li><a href="#picture" id="markdown-toc-picture">Picture</a></li>
+      <li><a href="#video" id="markdown-toc-video">Video</a></li>
+      <li><a href="#object-fit" id="markdown-toc-object-fit">Object-fit</a></li>
+      <li><a href="#object-position" id="markdown-toc-object-position">Object-position</a></li>
+    </ul>
+  </li>
+  <li><a href="#dynamic-media-background-insertion" id="markdown-toc-dynamic-media-background-insertion">Dynamic media background insertion</a></li>
+  <li><a href="#picture-elements-and-srcset" id="markdown-toc-picture-elements-and-srcset">Picture elements and <code class="highlighter-rouge">srcset</code></a></li>
+</ul>
+
+<h2 id="how-it-works">How it works</h2>
+
+<ul>
+  <li>Media backgrounds require a parent element, <code class="highlighter-rouge">.media-background-container</code>, and one or more <code class="highlighter-rouge">.media-background</code> child elements.</li>
+  <li><code class="highlighter-rouge">.media-background-container</code> can be any element, as long as it is capable of being relatively-positioned.  The parent element wraps the media background and any content that should be overlaid on top of the media background.  The media background is absolutely positioned within the parent, and sized using an <code class="highlighter-rouge">object-fit</code> utility class.</li>
+  <li>Because the media background is absolutely positioned within the parent element, it will not affect the parent element’s height–similarly to a standard background image.  You may wish to apply a <code class="highlighter-rouge">min-height</code> value to the parent element if you want to force a certain amount of the background image to always be shown.</li>
+  <li>Because media backgrounds rely on the <code class="highlighter-rouge">object-fit</code> property, which isn’t supported in IE or Edge, Athena includes the objectFitPolyfill.js library out-of-the-box for consistent functionality cross-browser.</li>
+</ul>
+
+<h2 id="usage">Usage</h2>
+
+<p>Media backgrounds can be <code class="highlighter-rouge">&lt;img&gt;</code>, <code class="highlighter-rouge">&lt;picture&gt;</code> or <code class="highlighter-rouge">&lt;video&gt;</code> elements.  However, the <code class="highlighter-rouge">.media-background</code> and <code class="highlighter-rouge">object-fit</code> classes are applied differently depending on the element:</p>
+
+<h3 id="image">Image</h3>
+
+<p>Apply directly to the element:</p>
+
+<div class="media-background-container">
+  <img class="media-background object-fit-cover" src="//placehold.it/600x300/" alt="" />
+  <div class="p-5">
+    Your content here...
+  </div>
+</div>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"media-background-container"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"media-background object-fit-cover"</span> <span class="na">srcset=</span><span class="s">"..."</span> <span class="na">src=</span><span class="s">"..."</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+  Your content here...
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+<h3 id="picture">Picture</h3>
+
+<p>Apply to the inner <code class="highlighter-rouge">&lt;source&gt;</code> and <code class="highlighter-rouge">&lt;img&gt;</code> elements:</p>
+
+<div class="media-background-container">
+  <picture>
+    <source class="media-background object-fit-cover" srcset="//placehold.it/800x300" media="(min-width: 768px)" />
+    <source class="media-background object-fit-cover" srcset="//placehold.it/767x300" media="(min-width: 576px)" />
+    <source class="media-background object-fit-cover" srcset="//placehold.it/575x300" media="(max-width: 575px)" />
+    <img class="media-background object-fit-cover" src="//placehold.it/800x300" alt="" />
+  </picture>
+  <div class="p-5">
+    Your content here...
+  </div>
+</div>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"media-background-container"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;picture&gt;</span>
+    <span class="nt">&lt;source</span> <span class="na">class=</span><span class="s">"media-background object-fit-cover"</span> <span class="na">srcset=</span><span class="s">"..."</span> <span class="na">media=</span><span class="s">"..."</span><span class="nt">&gt;&lt;/source&gt;</span>
+    <span class="nt">&lt;source</span> <span class="na">class=</span><span class="s">"media-background object-fit-cover"</span> <span class="na">srcset=</span><span class="s">"..."</span> <span class="na">media=</span><span class="s">"..."</span><span class="nt">&gt;&lt;/source&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"media-background object-fit-cover"</span> <span class="na">src=</span><span class="s">"..."</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/picture&gt;</span>
+  Your content here...
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+<h3 id="video">Video</h3>
+
+<p>Apply directly to the element (do not apply to <code class="highlighter-rouge">&lt;source&gt;</code>s):</p>
+
+<div class="media-background-container">
+  <video class="media-background object-fit-cover">
+    <source src="https://www.ucf.edu/wp-content/uploads/2017/01/Vignette-One-02.mp4" />
+  </video>
+  <div class="p-5 text-white">
+    Your content here...
+  </div>
+</div>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"media-background-container"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;video</span> <span class="na">class=</span><span class="s">"media-background object-fit-cover"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"..."</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/video&gt;</span>
+  Your content here...
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+<h3 id="object-fit">Object-fit</h3>
+
+<p>An <code class="highlighter-rouge">object-fit</code> utility class is <strong>required</strong> for the media background to scale properly.  The following options are available; for more information on how they behave, see <a href="https://css-tricks.com/almanac/properties/o/object-fit/">https://css-tricks.com/almanac/properties/o/object-fit/</a>:</p>
+<ul>
+  <li><code class="highlighter-rouge">.object-fit-contain</code></li>
+  <li><code class="highlighter-rouge">.object-fit-cover</code></li>
+  <li><code class="highlighter-rouge">.object-fit-fill</code></li>
+  <li><code class="highlighter-rouge">.object-fit-none</code> (unsets an existing object-fit rule)</li>
+  <li><code class="highlighter-rouge">.object-fit-scale-down</code></li>
+</ul>
+
+<h3 id="object-position">Object-position</h3>
+
+<p>Custom <code class="highlighter-rouge">object-position</code> values are supported by media backgrounds, but for full cross-browser support, they must also be added to the media background elements using the <code class="highlighter-rouge">data-object-position</code> attribute (so that the polyfill can apply them in IE/Edge).  See the <a href="https://github.com/constancecchen/object-fit-polyfill#usage">polyfill documentation</a> for more information.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"media-background object-fit-contain"</span> <span class="na">style=</span><span class="s">"object-position: 0 50%;"</span> <span class="na">data-object-position=</span><span class="s">"0 50%"</span><span class="nt">&gt;</span></code></pre></figure>
+
+<h2 id="dynamic-media-background-insertion">Dynamic media background insertion</h2>
+
+<p>Any media backgrounds added to the DOM after the page has finished loading will need to re-trigger the object-fit polyfill by using Athena’s mediaBackground plugin.  After dynamically inserting the new element into the dom, simply call:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">'#my-media-background'</span><span class="p">).</span><span class="nx">mediaBackground</span><span class="p">();</span></code></pre></figure>
+
+<p>…where <code class="highlighter-rouge">$('#my-media-background')</code> is a valid element with class <code class="highlighter-rouge">.media-background</code>.</p>
+
+<h2 id="picture-elements-and-srcset">Picture elements and <code class="highlighter-rouge">srcset</code></h2>
+
+<p>Note that IE 10 and 11 do not support the <code class="highlighter-rouge">&lt;picture&gt;</code> element and its <code class="highlighter-rouge">&lt;source&gt;</code> children natively: <a href="http://caniuse.com/#search=picture">http://caniuse.com/#search=picture</a>.  In addition, because the <code class="highlighter-rouge">srcset</code> attribute is also not supported in IE nor Edge, make sure you always include an <code class="highlighter-rouge">&lt;img&gt;</code> as the last child element within any <code class="highlighter-rouge">&lt;picture&gt;</code>, and that that image uses the <code class="highlighter-rouge">src</code> attribute to define the url.</p>
+
+<p>For better cross-browser handling of the <code class="highlighter-rouge">&lt;picture&gt;</code> element and srcset attribute, you may wish to incorporate a polyfill into your project, such as <a href="http://scottjehl.github.io/picturefill/">Picturefill</a>.  Note that polyfills such as Picturefill have their own usage guidelines that may differ from what’s noted above.</p>
+
+                </div>
+                <div class="col-md-4 bd-sidebar">
+                  <!-- <form class="bd-search d-none d-sm-block">
+  <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+  <div class="dropdown-menu bd-search-results" id="search-results"></div>
+</form>
+ -->
+<nav class="bd-links" id="docsNavbarContent">
+  
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item ">
+      <a class="bd-toc-link" href="/Athena-Framework/getting-started/introduction/">
+        Getting started
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/getting-started/introduction/">
+              Introduction
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/getting-started/download/">
+              Download
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/getting-started/install/">
+              Install
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/getting-started/browsers-devices/">
+              Browsers & devices
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/getting-started/javascript/">
+              JavaScript
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/getting-started/options/">
+              Options
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/getting-started/build-tools/">
+              Build tools
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/getting-started/best-practices/">
+              Best practices
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/getting-started/accessibility/">
+              Accessibility
+            </a>
+
+            
+          </li>
+        
+      </ul>
+    </div>
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item ">
+      <a class="bd-toc-link" href="/Athena-Framework/layout/overview/">
+        Layout
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/layout/overview/">
+              Overview
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/layout/grid/">
+              Grid
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/layout/media-object/">
+              Media object
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/layout/utilities-for-layout/">
+              Utilities for Layout
+            </a>
+
+            
+          </li>
+        
+      </ul>
+    </div>
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item ">
+      <a class="bd-toc-link" href="/Athena-Framework/content/reboot/">
+        Content
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/content/reboot/">
+              Reboot
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/content/typography/">
+              Typography
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/content/code/">
+              Code
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/content/images/">
+              Images
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/content/tables/">
+              Tables
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/content/figures/">
+              Figures
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/content/dividers/">
+              Dividers
+            </a>
+
+            
+          </li>
+        
+      </ul>
+    </div>
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item ">
+      <a class="bd-toc-link" href="/Athena-Framework/components/alerts/">
+        Components
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/alerts/">
+              Alerts
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/badge/">
+              Badge
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/breadcrumb/">
+              Breadcrumb
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/buttons/">
+              Buttons
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/button-group/">
+              Button group
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/card/">
+              Card
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/collapse/">
+              Collapse
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/dropdowns/">
+              Dropdowns
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/forms/">
+              Forms
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/input-group/">
+              Input group
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/jumbotron/">
+              Jumbotron
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/list-group/">
+              List group
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/modal/">
+              Modal
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/navs/">
+              Navs
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/navbar/">
+              Navbar
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/pagination/">
+              Pagination
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/popovers/">
+              Popovers
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/progress/">
+              Progress
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/scrollspy/">
+              Scrollspy
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/tooltips/">
+              Tooltips
+            </a>
+
+            
+          </li>
+        
+      </ul>
+    </div>
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item active">
+      <a class="bd-toc-link" href="/Athena-Framework/utilities/borders/">
+        Utilities
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/borders/">
+              Borders
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/clearfix/">
+              Clearfix
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/close-icon/">
+              Close icon
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/colors/">
+              Colors
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/display-property/">
+              Display property
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/filters/">
+              Filters
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/flexbox/">
+              Flexbox
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/image-replacement/">
+              Image replacement
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/invisible-content/">
+              Invisible content
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="active bd-sidenav-active">
+            <a href="/Athena-Framework/utilities/media-backgrounds/">
+              Media backgrounds
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/pointer-events/">
+              Pointer Events
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/position/">
+              Position
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/responsive-helpers/">
+              Responsive helpers
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/screenreaders/">
+              Screenreaders
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/sizing/">
+              Sizing
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/spacing/">
+              Spacing
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/states/">
+              States
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/typography/">
+              Typography
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/vertical-align/">
+              Vertical align
+            </a>
+
+            
+          </li>
+        
+      </ul>
+    </div>
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item ">
+      <a class="bd-toc-link" href="/Athena-Framework/about/">
+        About
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+      </ul>
+    </div>
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item ">
+      <a class="bd-toc-link" href="/Athena-Framework/migration/">
+        Migration
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+      </ul>
+    </div>
+  
+</nav>
+
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col self-align-left">
+                <p>
+                  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and <a href="https://github.com/UCF/Athena-Framework">the Athena Framework</a>.
+                  <br>
+                  Documentation adapted from <a href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.
+                </p>
+                <p class="mb-0">
+                  Code licensed <a href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
+                </p>
+            </div>
+            <div class="col self-align-right">
+              <p class="text-right">
+                Current version: <strong>v1.0.0-beta.3</strong>.
+              </p>
+              <p class="text-right">
+                <a href="https://github.com/UCF/" target="_blank"><span class="fa fa-github"></span> UCF GitHub</a>
+              </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+
+<script src="https://ucf.github.io/Athena-Framework/res/js/docs.min.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+//
+// Generates a new image filter variant with extra hover state class.
+//
+@mixin filter-variant-base($name) {
+  .filter-#{$name} {
+    transition: $transition-filter;
+    @content;
+  }
+
+  .hover-filter-#{$name} {
+    transition: $transition-filter;
+
+    @include hover-focus-active() {
+      @content;
+    }
+  }
+
+  .hover-parent {
+    @include hover-focus-active() {
+      .hover-child-filter-#{$name} {
+        @content;
+      }
+    }
+
+    .hover-child-filter-#{$name} {
+      transition: $transition-filter;
+    }
+  }
+}
+
+@mixin filter-effect($name, $filter) {
+  @include filter-variant-base($name) {
+    filter: $filter;
+  }
+}

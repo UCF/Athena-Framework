@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>
+	  
+	    Badges &middot; Athena Framework
+	  
+	</title>
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  
+  <link href="https://ucf.github.io/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link rel="stylesheet" href="https://ucf.github.io/Athena-Framework/res/css/docs.min.css">
+  <link rel="canonical" href="https://ucf.github.io/Athena-Framework/components/badge/">
+  
+</head>
+
+<body class="docs">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <div class="container">
+    <a class="navbar-brand" href="/Athena-Framework/">Athena Framework</a>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-text">Menu</span>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="main-nav">
+      <nav class="navbar-nav ml-auto mb-2 mb-lg-0">
+        <a class="nav-link active" href="/Athena-Framework/getting-started/introduction/">
+          Documentation
+        </a>
+        <a class="nav-link " href="/Athena-Framework/about/">
+          About
+        </a>
+        <a class="nav-link " href="/Athena-Framework/migration/">
+          Migration
+        </a>
+      </nav>
+    </div>
+  </div>
+</nav>
+
+    <header class="header">
+        <div class="container">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="title-container">
+
+  <h1 class="text-white font-condensed mb-4">Components</h1>
+  <span class="subtitle text-white heading-underline" style="text-transform: none;">
+    
+      Over a dozen reusable components built to provide buttons, dropdowns, input groups, navigation, alerts, and much more.
+    
+  </span>
+
+</div>
+
+              </div>
+              <div class="col-md-4">
+                <div class="card github">
+  <div class="card-block">
+    <h2 class="card-title">Want to contribute?</h2>
+    <p class="card-text">If you're interested in contributing to the Athena Framework, please read our <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework#contributing">contributing guidelines</a>, then submit a new issue or pull request.</p>
+    <a href="https://github.com/UCF/Athena-Framework" class="btn btn-primary btn-sm" target="_blank">GitHub Page</a>
+  </div>
+</div>
+
+              </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <article class="py-5 container">
+            <div class="row">
+                <div class="col-md-8 bd-content">
+                    <h1>Badges</h1>
+                    <p>Small and adaptive tag for adding context to just about any content.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#contents" id="markdown-toc-contents">Contents</a></li>
+  <li><a href="#example" id="markdown-toc-example">Example</a></li>
+  <li><a href="#contextual-variations" id="markdown-toc-contextual-variations">Contextual variations</a></li>
+  <li><a href="#pill-badges" id="markdown-toc-pill-badges">Pill badges</a></li>
+  <li><a href="#links" id="markdown-toc-links">Links</a></li>
+</ul>
+
+<h2 id="example">Example</h2>
+
+<p>Badges scale to match the size of the immediate parent element by using relative font sizing and <code class="highlighter-rouge">em</code> units.</p>
+
+<div class="bd-example" data-example-id="">
+<h1>Example heading <span class="badge badge-default">New</span></h1>
+<h2>Example heading <span class="badge badge-default">New</span></h2>
+<h3>Example heading <span class="badge badge-default">New</span></h3>
+<h4>Example heading <span class="badge badge-default">New</span></h4>
+<h5>Example heading <span class="badge badge-default">New</span></h5>
+<h6>Example heading <span class="badge badge-default">New</span></h6>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;h1&gt;</span>Example heading <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-default"</span><span class="nt">&gt;</span>New<span class="nt">&lt;/span&gt;&lt;/h1&gt;</span>
+<span class="nt">&lt;h2&gt;</span>Example heading <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-default"</span><span class="nt">&gt;</span>New<span class="nt">&lt;/span&gt;&lt;/h2&gt;</span>
+<span class="nt">&lt;h3&gt;</span>Example heading <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-default"</span><span class="nt">&gt;</span>New<span class="nt">&lt;/span&gt;&lt;/h3&gt;</span>
+<span class="nt">&lt;h4&gt;</span>Example heading <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-default"</span><span class="nt">&gt;</span>New<span class="nt">&lt;/span&gt;&lt;/h4&gt;</span>
+<span class="nt">&lt;h5&gt;</span>Example heading <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-default"</span><span class="nt">&gt;</span>New<span class="nt">&lt;/span&gt;&lt;/h5&gt;</span>
+<span class="nt">&lt;h6&gt;</span>Example heading <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-default"</span><span class="nt">&gt;</span>New<span class="nt">&lt;/span&gt;&lt;/h6&gt;</span></code></pre></div>
+
+<h2 id="contextual-variations">Contextual variations</h2>
+
+<p>Add any of the below mentioned modifier classes to change the appearance of a badge.</p>
+
+<div class="bd-example" data-example-id="">
+<span class="badge badge-default">Default</span>
+<span class="badge badge-primary">Primary</span>
+<span class="badge badge-secondary">Secondary</span>
+<span class="badge badge-complementary">Complementary</span>
+<span class="badge badge-success">Success</span>
+<span class="badge badge-info">Info</span>
+<span class="badge badge-warning">Warning</span>
+<span class="badge badge-danger">Danger</span>
+<span class="badge badge-inverse">Inverse</span>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-default"</span><span class="nt">&gt;</span>Default<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-primary"</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-secondary"</span><span class="nt">&gt;</span>Secondary<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-complementary"</span><span class="nt">&gt;</span>Complementary<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-success"</span><span class="nt">&gt;</span>Success<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-info"</span><span class="nt">&gt;</span>Info<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-warning"</span><span class="nt">&gt;</span>Warning<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-danger"</span><span class="nt">&gt;</span>Danger<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-inverse"</span><span class="nt">&gt;</span>Inverse<span class="nt">&lt;/span&gt;</span></code></pre></div>
+
+<div class="bd-callout bd-callout-warning">
+<h4 id="conveying-meaning-to-assistive-technologies">Conveying meaning to assistive technologies</h4>
+
+<p>Using color to add meaning only provides a visual indication, which will not be conveyed to users of assistive technologies – such as screen readers. Ensure that information denoted by the color is either obvious from the content itself (e.g. the visible text), or is included through alternative means, such as additional text hidden with the <code class="highlighter-rouge">.sr-only</code> class.</p>
+</div>
+
+<h2 id="pill-badges">Pill badges</h2>
+
+<p>Use the <code class="highlighter-rouge">.badge-pill</code> modifier class to make badges more rounded (with a larger <code class="highlighter-rouge">border-radius</code> and additional horizontal <code class="highlighter-rouge">padding</code>). Useful if you miss the badges from v3.</p>
+
+<div class="bd-example" data-example-id="">
+<span class="badge badge-pill badge-default">Default</span>
+<span class="badge badge-pill badge-primary">Primary</span>
+<span class="badge badge-pill badge-secondary">Secondary</span>
+<span class="badge badge-pill badge-complementary">Complementary</span>
+<span class="badge badge-pill badge-success">Success</span>
+<span class="badge badge-pill badge-info">Info</span>
+<span class="badge badge-pill badge-warning">Warning</span>
+<span class="badge badge-pill badge-danger">Danger</span>
+<span class="badge badge-pill badge-inverse">Inverse</span>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-pill badge-default"</span><span class="nt">&gt;</span>Default<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-pill badge-primary"</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-pill badge-secondary"</span><span class="nt">&gt;</span>Secondary<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-pill badge-complementary"</span><span class="nt">&gt;</span>Complementary<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-pill badge-success"</span><span class="nt">&gt;</span>Success<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-pill badge-info"</span><span class="nt">&gt;</span>Info<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-pill badge-warning"</span><span class="nt">&gt;</span>Warning<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-pill badge-danger"</span><span class="nt">&gt;</span>Danger<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-pill badge-inverse"</span><span class="nt">&gt;</span>Inverse<span class="nt">&lt;/span&gt;</span></code></pre></div>
+
+<h2 id="links">Links</h2>
+
+<p>Using the <code class="highlighter-rouge">.badge</code> classes with the <code class="highlighter-rouge">&lt;a&gt;</code> element quickly provide <em>actionable</em> badges with hover and focus states.</p>
+
+<div class="bd-example" data-example-id="">
+<a href="#" class="badge badge-default">Default</a>
+<a href="#" class="badge badge-primary">Primary</a>
+<a href="#" class="badge badge-secondary">Secondary</a>
+<a href="#" class="badge badge-complementary">Complementary</a>
+<a href="#" class="badge badge-success">Success</a>
+<a href="#" class="badge badge-info">Info</a>
+<a href="#" class="badge badge-warning">Warning</a>
+<a href="#" class="badge badge-danger">Danger</a>
+<a href="#" class="badge badge-inverse">Inverse</a>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"badge badge-default"</span><span class="nt">&gt;</span>Default<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"badge badge-primary"</span><span class="nt">&gt;</span>Primary<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"badge badge-secondary"</span><span class="nt">&gt;</span>Secondary<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"badge badge-complementary"</span><span class="nt">&gt;</span>Complementary<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"badge badge-success"</span><span class="nt">&gt;</span>Success<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"badge badge-info"</span><span class="nt">&gt;</span>Info<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"badge badge-warning"</span><span class="nt">&gt;</span>Warning<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"badge badge-danger"</span><span class="nt">&gt;</span>Danger<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"badge badge-inverse"</span><span class="nt">&gt;</span>Inverse<span class="nt">&lt;/a&gt;</span></code></pre></div>
+
+
+                </div>
+                <div class="col-md-4 bd-sidebar">
+                  <!-- <form class="bd-search d-none d-sm-block">
+  <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+  <div class="dropdown-menu bd-search-results" id="search-results"></div>
+</form>
+ -->
+<nav class="bd-links" id="docsNavbarContent">
+  
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item ">
+      <a class="bd-toc-link" href="/Athena-Framework/getting-started/introduction/">
+        Getting started
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/getting-started/introduction/">
+              Introduction
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/getting-started/download/">
+              Download
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/getting-started/install/">
+              Install
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/getting-started/browsers-devices/">
+              Browsers & devices
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/getting-started/javascript/">
+              JavaScript
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/getting-started/options/">
+              Options
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/getting-started/build-tools/">
+              Build tools
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/getting-started/best-practices/">
+              Best practices
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/getting-started/accessibility/">
+              Accessibility
+            </a>
+
+            
+          </li>
+        
+      </ul>
+    </div>
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item ">
+      <a class="bd-toc-link" href="/Athena-Framework/layout/overview/">
+        Layout
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/layout/overview/">
+              Overview
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/layout/grid/">
+              Grid
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/layout/media-object/">
+              Media object
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/layout/utilities-for-layout/">
+              Utilities for Layout
+            </a>
+
+            
+          </li>
+        
+      </ul>
+    </div>
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item ">
+      <a class="bd-toc-link" href="/Athena-Framework/content/reboot/">
+        Content
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/content/reboot/">
+              Reboot
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/content/typography/">
+              Typography
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/content/code/">
+              Code
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/content/images/">
+              Images
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/content/tables/">
+              Tables
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/content/figures/">
+              Figures
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/content/dividers/">
+              Dividers
+            </a>
+
+            
+          </li>
+        
+      </ul>
+    </div>
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item active">
+      <a class="bd-toc-link" href="/Athena-Framework/components/alerts/">
+        Components
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/alerts/">
+              Alerts
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="active bd-sidenav-active">
+            <a href="/Athena-Framework/components/badge/">
+              Badge
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/breadcrumb/">
+              Breadcrumb
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/buttons/">
+              Buttons
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/button-group/">
+              Button group
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/card/">
+              Card
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/collapse/">
+              Collapse
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/dropdowns/">
+              Dropdowns
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/forms/">
+              Forms
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/input-group/">
+              Input group
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/jumbotron/">
+              Jumbotron
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/list-group/">
+              List group
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/modal/">
+              Modal
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/navs/">
+              Navs
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/navbar/">
+              Navbar
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/pagination/">
+              Pagination
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/popovers/">
+              Popovers
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/progress/">
+              Progress
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/scrollspy/">
+              Scrollspy
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/components/tooltips/">
+              Tooltips
+            </a>
+
+            
+          </li>
+        
+      </ul>
+    </div>
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item ">
+      <a class="bd-toc-link" href="/Athena-Framework/utilities/borders/">
+        Utilities
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/borders/">
+              Borders
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/clearfix/">
+              Clearfix
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/close-icon/">
+              Close icon
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/colors/">
+              Colors
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/display-property/">
+              Display property
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/filters/">
+              Filters
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/flexbox/">
+              Flexbox
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/image-replacement/">
+              Image replacement
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/invisible-content/">
+              Invisible content
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/media-backgrounds/">
+              Media backgrounds
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/pointer-events/">
+              Pointer Events
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/position/">
+              Position
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/responsive-helpers/">
+              Responsive helpers
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/screenreaders/">
+              Screenreaders
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/sizing/">
+              Sizing
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/spacing/">
+              Spacing
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/states/">
+              States
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/typography/">
+              Typography
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/Athena-Framework/utilities/vertical-align/">
+              Vertical align
+            </a>
+
+            
+          </li>
+        
+      </ul>
+    </div>
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item ">
+      <a class="bd-toc-link" href="/Athena-Framework/about/">
+        About
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+      </ul>
+    </div>
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item ">
+      <a class="bd-toc-link" href="/Athena-Framework/migration/">
+        Migration
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+      </ul>
+    </div>
+  
+</nav>
+
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col self-align-left">
+                <p>
+                  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and <a href="https://github.com/UCF/Athena-Framework">the Athena Framework</a>.
+                  <br>
+                  Documentation adapted from <a href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.
+                </p>
+                <p class="mb-0">
+                  Code licensed <a href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
+                </p>
+            </div>
+            <div class="col self-align-right">
+              <p class="text-right">
+                Current version: <strong>v1.0.0-beta.3</strong>.
+              </p>
+              <p class="text-right">
+                <a href="https://github.com/UCF/" target="_blank"><span class="fa fa-github"></span> UCF GitHub</a>
+              </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+
+<script src="https://ucf.github.io/Athena-Framework/res/js/docs.min.js"></script>
+
+
+</body>
+</html>

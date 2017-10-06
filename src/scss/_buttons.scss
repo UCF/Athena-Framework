@@ -58,9 +58,16 @@
   &.focus,
   &:active,
   &.active {
-    // Lighten hover states so that a difference between states is apparent
-    background-color: lighten($btn-secondary-bg, 30%);
-    border-color: lighten($btn-secondary-bg, 30%);
+    &:not(:disabled):not(.disabled) {
+      // Lighten hover states so that a difference between states is apparent
+      background-color: lighten($btn-secondary-bg, 30%);
+      border-color: lighten($btn-secondary-bg, 30%);
+    }
+  }
+
+  &:disabled,
+  &.disabled {
+    color: darken($btn-secondary-color, 30%);
   }
 }
 
@@ -105,38 +112,38 @@
 //
 
 .btn-outline-primary {
-  @include button-outline-variant-overrides($black, $btn-primary-bg, $btn-primary-border);
+  @include button-outline-variant-overrides($black, $btn-primary-bg, $btn-primary-border, $black, $black);
 }
 
 .btn-outline-secondary {
   @include button-outline-variant($btn-secondary-bg);
-  @include button-outline-variant-overrides($black, $btn-secondary-bg, $btn-secondary-border, $white);
+  @include button-outline-variant-overrides($black, $btn-secondary-bg, $btn-secondary-border, $white, $black);
 }
 
 .btn-outline-complementary {
   @include button-outline-variant($btn-complementary-bg);
-  @include button-outline-variant-overrides($black, $btn-complementary-bg, $btn-complementary-border, $white);
+  @include button-outline-variant-overrides($black, $btn-complementary-bg, $btn-complementary-border, $white, $black);
 }
 
 .btn-outline-inverse {
   @include button-outline-variant($btn-inverse-bg);
-  @include button-outline-variant-overrides($white, $btn-inverse-bg, $btn-inverse-border, $black);
+  @include button-outline-variant-overrides($white, $btn-inverse-bg, $btn-inverse-border, $black, $white);
 }
 
 .btn-outline-info {
-  @include button-outline-variant-overrides($black, $btn-info-bg, $btn-info-border, $white);
+  @include button-outline-variant-overrides($black, $btn-info-bg, $btn-info-border, $white, $black);
 }
 
 .btn-outline-success {
-  @include button-outline-variant-overrides($black, $btn-success-bg, $btn-success-border, $white);
+  @include button-outline-variant-overrides($black, $btn-success-bg, $btn-success-border, $white, $black);
 }
 
 .btn-outline-warning {
-  @include button-outline-variant-overrides($black, $btn-warning-bg, $btn-warning-border, $white);
+  @include button-outline-variant-overrides($black, $btn-warning-bg, $btn-warning-border, $white, $black);
 }
 
 .btn-outline-danger {
-  @include button-outline-variant-overrides($black, $btn-danger-bg, $btn-danger-border, $white);
+  @include button-outline-variant-overrides($black, $btn-danger-bg, $btn-danger-border, $white, $black);
 }
 
 
@@ -149,32 +156,32 @@
 
 .btn-outline-i-primary {
   @include button-outline-variant($btn-primary-bg);
-  @include button-outline-variant-overrides($brand-inverse, $btn-primary-bg, $btn-primary-border, $black);
+  @include button-outline-variant-overrides($brand-inverse, $btn-primary-bg, $btn-primary-border, $black, $white);
 }
 
 .btn-outline-i-complementary {
   @include button-outline-variant($btn-complementary-bg);
-  @include button-outline-variant-overrides($brand-inverse, $btn-complementary-bg, $btn-complementary-border);
+  @include button-outline-variant-overrides($brand-inverse, $btn-complementary-bg, $btn-complementary-border, $brand-inverse, $white);
 }
 
 .btn-outline-i-success {
   @include button-outline-variant($btn-success-bg);
-  @include button-outline-variant-overrides($brand-inverse, $btn-success-bg, $btn-success-border);
+  @include button-outline-variant-overrides($brand-inverse, $btn-success-bg, $btn-success-border, $brand-inverse, $white);
 }
 
 .btn-outline-i-info {
   @include button-outline-variant($btn-info-bg);
-  @include button-outline-variant-overrides($brand-inverse, $btn-info-bg, $btn-info-border);
+  @include button-outline-variant-overrides($brand-inverse, $btn-info-bg, $btn-info-border, $brand-inverse, $white);
 }
 
 .btn-outline-i-warning {
   @include button-outline-variant($btn-warning-bg);
-  @include button-outline-variant-overrides($brand-inverse, $btn-warning-bg, $btn-warning-border);
+  @include button-outline-variant-overrides($brand-inverse, $btn-warning-bg, $btn-warning-border, $brand-inverse, $white);
 }
 
 .btn-outline-i-danger {
   @include button-outline-variant($btn-danger-bg);
-  @include button-outline-variant-overrides($brand-inverse, $btn-danger-bg, $btn-danger-border);
+  @include button-outline-variant-overrides($brand-inverse, $btn-danger-bg, $btn-danger-border, $brand-inverse, $white);
 }
 
 
@@ -209,10 +216,12 @@
   &:hover,
   &:active,
   &.active {
-    // Force !important here, in case a text color utility class is used
-    // scss-lint:disable ImportantRule
-    color: $black !important;
-    // scss-lint:enable ImportantRule
+    &:not(:disabled):not(.disabled) {
+      // Force !important here, in case a text color utility class is used
+      // scss-lint:disable ImportantRule
+      color: $black !important;
+      // scss-lint:enable ImportantRule
+    }
   }
 }
 
@@ -225,9 +234,11 @@
   &:hover,
   &.active,
   &:active {
-    // Force !important here, in case a text color utility class is used
-    // scss-lint:disable ImportantRule
-    color: $white !important;
-    // scss-lint:enable ImportantRule
+    &:not(:disabled):not(.disabled) {
+      // Force !important here, in case a text color utility class is used
+      // scss-lint:disable ImportantRule
+      color: $white !important;
+      // scss-lint:enable ImportantRule
+    }
   }
 }

@@ -308,6 +308,10 @@ $bg-transparencies: (
   3: .75
 ) !default;
 
+// Custom variable that determines the zoom amount for the .hover-zoom-in and
+// .hover-zoom-out utility classes
+$zoom: 1.25;
+
 
 
 // Options
@@ -494,11 +498,12 @@ $font-serif-heading-size-ratio:      1.1 !default; // custom
 $font-slab-serif-heading-size-ratio: 1.15 !default; // custom
 $font-condensed-heading-size-ratio:  1.75 !default; // custom
 
-$headings-margin-bottom: ($spacer / 2) !default;
-$headings-font-family:   inherit !default;
-$headings-font-weight:   600 !default; // modified
-$headings-line-height:   1.1 !default;
-$headings-color:         inherit !default;
+$headings-margin-bottom:   ($spacer / 2) !default;
+$headings-font-family:     inherit !default;
+$headings-font-weight:     600 !default; // modified
+$headings-line-height:     1.1 !default;
+$headings-line-height-min: .875 !default; // custom
+$headings-color:           inherit !default;
 
 $display1-size: 14vw !default; // modified
 $display2-size: 12vw !default; // modified
@@ -513,11 +518,12 @@ $display2-size-md: 5.5rem !default; // custom
 $display3-size-md: 4.5rem !default; // custom
 $display4-size-md: 3.5rem !default; // custom
 
-$display1-weight:     600 !default; // modified
-$display2-weight:     600 !default; // modified
-$display3-weight:     600 !default; // modified
-$display4-weight:     600 !default; // modified
-$display-line-height: $headings-line-height !default;
+$display1-weight:         600 !default; // modified
+$display2-weight:         600 !default; // modified
+$display3-weight:         600 !default; // modified
+$display4-weight:         600 !default; // modified
+$display-line-height:     $headings-line-height !default;
+$display-line-height-min: $headings-line-height-min !default; // custom
 
 $lead-font-size:    1rem !default; // modified
 $lead-font-size-md: 1.4rem !default; // custom
@@ -593,6 +599,8 @@ $caret-width:            .3em !default;
 $transition-base:        all .2s ease-in-out !default;
 $transition-fade:        opacity .15s linear !default;
 $transition-collapse:    height .35s ease !default;
+$transition-scale:       transform .35s ease-in-out !default; // custom
+$transition-filter:      filter .35s ease-in-out !default; // custom
 
 
 // Tables
@@ -865,6 +873,7 @@ $form-icon-danger: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns
 // Dropdown menu container and contents.
 
 $dropdown-min-width:             10rem !default;
+$dropdown-min-width-md:          16rem !default; // custom
 $dropdown-padding-y:             .5rem !default;
 $dropdown-margin-top:            .125rem !default;
 $dropdown-bg:                    $white !default;
@@ -1306,3 +1315,11 @@ $pre-bg:                      $gray-lightest !default;
 $pre-color:                   $gray-darkest !default; // modified
 $pre-border-color:            #ccc !default;
 $pre-scrollable-max-height:   340px !default;
+
+
+// Filters
+
+$filter-sepia:      grayscale(1) sepia(.15) contrast(.65) brightness(.65) !default; // custom
+$filter-grayscale:  grayscale(1) !default; // custom
+$filter-brightness: brightness(120%) !default; // custom
+$filter-blur:       blur(5px) !default; // custom

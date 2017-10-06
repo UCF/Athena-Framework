@@ -81,6 +81,19 @@ select.form-control {
 
 
 //
+// Legends
+//
+
+// For use with horizontal and inline forms, when you need the legend text to
+// be the same size as regular labels, and to align with the form controls.
+.col-form-legend {
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-base-md;
+  }
+}
+
+
+//
 // Form control sizing
 //
 .form-control-sm {

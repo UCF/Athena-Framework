@@ -1,0 +1,103 @@
+.bd-content {
+  > h1 {
+    font-size: 2rem;
+  }
+
+  > h2 {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  > h3 {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  > h4 {
+    font-size: 1rem;
+    margin-top: 1.75rem;
+  }
+
+  > h5 {
+    font-size: .75rem;
+    margin-top: 1.25rem;
+  }
+
+  > hr {
+    @include media-breakpoint-up(md) {
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+    }
+  }
+
+  > pre,
+  > figure.highlight {
+    @include border-radius(.25rem);
+    background: $gray-lighter;
+    padding: 1.5rem;
+
+    strike {
+      background: #ffecec;
+      color: #bd4147;
+    }
+
+    .highlight-code {
+      background: #eaffea;
+      padding: 0;
+    }
+  }
+
+  > table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: $spacer;
+    overflow-y: auto;
+
+    // Cells
+    > thead,
+    > tbody,
+    > tfoot {
+      > tr {
+        > th,
+        > td {
+          padding: $table-cell-padding;
+          vertical-align: top;
+          border: 1px solid $table-border-color;
+
+          > p:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    // Prevent breaking of code
+    td:first-child > code {
+      white-space: nowrap;
+    }
+  }
+
+  > ul li,
+  > ol li {
+    margin-bottom: .25rem;
+  }
+}
+
+
+//
+// Markdown generated ToC
+//
+
+#markdown-toc {
+  // Hide the first child li because it's always going to be "Contents".
+  > li:first-child {
+    display: none;
+  }
+
+  ul {
+    padding-left: 2rem;
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+  }
+}
