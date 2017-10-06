@@ -190,19 +190,17 @@ body {
     content: '“';
     // Allow font family for quotation marks to be set separately
     font-family: $blockquote-quotation-mark-font-family;
-    font-size: 5.4rem;
+    font-size: 5.25em;
     font-style: normal;
     font-weight: 600;
-    left: -5px;
+    left: -.05em;
     line-height: 0;
     position: absolute;
-    top: .565em;
+    top: .575em;
     z-index: -1;
 
     @include media-breakpoint-up(md) {
-      font-size: 9.25rem;
-      left: -8px;
-      top: .545em;
+      top: .65em;
     }
   }
 }
