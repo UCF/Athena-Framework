@@ -10,8 +10,16 @@
 (function(){
   "use strict";
 
+  // if the page is being rendered on the server, don't continue
+  if (typeof window === "undefined") {
+      return;
+  }
+
+  // Workaround for Edge 16, which only implemented object-fit for <img> tags
+  var isEdge16 = ( window.navigator.userAgent.indexOf("Edge/16.") !== -1 );
+
   // If the browser does support object-fit, we don't need to continue
-  if ("objectFit" in document.documentElement.style !== false) {
+  if ("objectFit" in document.documentElement.style !== false && !isEdge16) {
     window.objectFitPolyfill = function() { return false };
     return;
   }
@@ -241,7 +249,7 @@
 
       var mediaType = media[i].nodeName.toLowerCase();
 
-      if (mediaType === "img") {
+      if (mediaType === "img" && !isEdge16) {
         if (media[i].complete) {
           objectFit(media[i]);
         }
