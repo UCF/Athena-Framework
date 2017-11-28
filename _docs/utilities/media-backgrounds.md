@@ -42,13 +42,13 @@ Apply directly to the element:
 
 ### Picture
 
-Apply to the inner `<source>` and `<img>` elements:
+Apply to the inner `<img>` element:
 
 <div class="media-background-container">
   <picture>
-    <source class="media-background object-fit-cover" srcset="//placehold.it/800x300" media="(min-width: 768px)">
-    <source class="media-background object-fit-cover" srcset="//placehold.it/767x300" media="(min-width: 576px)">
-    <source class="media-background object-fit-cover" srcset="//placehold.it/575x300" media="(max-width: 575px)">
+    <source srcset="//placehold.it/800x300" media="(min-width: 768px)">
+    <source srcset="//placehold.it/767x300" media="(min-width: 576px)">
+    <source srcset="//placehold.it/575x300" media="(max-width: 575px)">
     <img class="media-background object-fit-cover" src="//placehold.it/800x300" alt="">
   </picture>
   <div class="p-5">
@@ -59,8 +59,8 @@ Apply to the inner `<source>` and `<img>` elements:
 {% highlight html %}
 <div class="media-background-container">
   <picture>
-    <source class="media-background object-fit-cover" srcset="..." media="..."></source>
-    <source class="media-background object-fit-cover" srcset="..." media="..."></source>
+    <source srcset="..." media="..."></source>
+    <source srcset="..." media="..."></source>
     <img class="media-background object-fit-cover" src="..." alt="">
   </picture>
   Your content here...
