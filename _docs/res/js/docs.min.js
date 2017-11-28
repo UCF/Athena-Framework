@@ -1,5 +1,5 @@
 /*!
- * Athena Framework v1.0.0-beta.5 (https://ucf.github.io/Athena-Framework)
+ * Athena Framework v1.0.0-beta.6 (https://ucf.github.io/Athena-Framework)
  * Copyright 2017 UCF Web Communications
  * Licensed under MIT
  */
