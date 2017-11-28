@@ -1,21 +1,20 @@
-// Modify default focus outlines globally.
-:focus,
-button:focus {
-  outline: $focus-outline;
-}
-
-:hover,
-button:hover,
-:active,
-button:active {
-  outline: none;
-}
-
-// Add transitions on link hover.
 a,
 button {
+  // Add transitions on link hover.
   @if ($enable-transitions) {
     transition: $link-transition;
+  }
+
+  // Modify default focus outlines globally.
+  &:not([disabled]) {
+    &:focus {
+      outline: $focus-outline;
+    }
+
+    &:hover,
+    &:active {
+      outline: none;
+    }
   }
 }
 
