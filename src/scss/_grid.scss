@@ -1,11 +1,10 @@
 // Column overrides
-//
-// TODO remove after upgrading to v4 beta
 
 @if $enable-grid-classes {
   @each $breakpoint in map-keys($grid-breakpoints) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
+    // TODO remove after upgrading to v4 beta
     .col#{$infix}-auto {
       @include make-gutters($grid-gutter-widths);
       min-height: 1px; // Prevent columns from collapsing when empty
@@ -15,8 +14,9 @@
 
     @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
       .col#{$infix}-auto {
-        max-width: none; // Reset earlier grid tiers
-        width: auto;
+        flex: 0 1 auto; // Opinionated override of Bootstrap base styles--allow flex shrinkage to prevent overflow
+        max-width: 100%; // Opinionated override of Bootstrap base styles--ensure columns don't exceed the width of their parent container
+        width: auto; // TODO remove after upgrading to v4 beta
       }
     }
   }
