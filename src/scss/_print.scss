@@ -1,0 +1,137 @@
+// scss-lint:disable QualifyingElement, ImportantRule, ColorVariable
+
+@if $enable-print-styles {
+  @media print {
+
+    //
+    // Base overrides
+    // Adapted from https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css
+    //
+
+    *,
+    *::before,
+    *::after {
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+      text-decoration: underline;
+    }
+
+    abbr[title]::after {
+      // scss-lint:disable StringQuotes
+      content: " (" attr(title) ")";
+      // scss-lint:enable StringQuotes
+    }
+
+    pre {
+      border: $border-width solid #999;
+      white-space: pre-wrap !important;
+    }
+
+    pre,
+    blockquote {
+      page-break-inside: avoid;
+    }
+
+    //
+    // Printing Tables:
+    // http://css-discuss.incutio.com/wiki/Printing_Tables
+    //
+
+    thead {
+      display: table-header-group;
+    }
+
+    tr,
+    img {
+      page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+      orphans: 3;
+      widows: 3;
+    }
+
+    h2,
+    h3 {
+      page-break-after: avoid;
+    }
+
+
+    //
+    // Athena specific changes
+    //
+
+    // Content
+    .heading-underline-inverse::after {
+      border-bottom-color: $brand-primary !important;
+    }
+
+    .blockquote-quotation-inverse::before {
+      color: $brand-primary !important;
+    }
+
+    .table {
+      border-collapse: collapse !important;
+
+      td,
+      th {
+        background-color: #fff !important;
+      }
+    }
+
+    .table-inverse {
+      color: #000 !important;
+
+      th,
+      td,
+      thead th {
+        border-color: #ddd !important;
+      }
+
+      &.table-bordered {
+        border-color: #ddd !important;
+
+        th,
+        td {
+          border-color: #ddd !important;
+        }
+      }
+    }
+
+    .table-bordered {
+      th,
+      td {
+        border: 1px solid #ddd !important;
+      }
+    }
+
+    .hr-white {
+      border-top-color: #ddd !important;
+    }
+
+    // Components
+    .navbar,
+    .navbar-toggle {
+      display: none;
+    }
+
+    .badge {
+      border: $border-width solid #000;
+    }
+
+    .btn {
+      color: #000 !important;
+    }
+
+    // Utilities
+    // TODO
+  }
+}
+
+// scss-lint:enable QualifyingElement, ImportantRule, ColorVariable
