@@ -18,7 +18,7 @@
 
 // Bootstrap - Reset and dependencies
 @import 'bootstrap/normalize';
-@import 'bootstrap/print';
+// NOTE: Athena intentionally does not include Bootstrap's print overrides.
 
 // Bootstrap - Core CSS
 @import 'bootstrap/reboot';
@@ -93,3 +93,5 @@
 @import 'tooltip';
 
 @import 'utilities';
+
+@import 'print';
