@@ -1,0 +1,288 @@
+// scss-lint:disable QualifyingElement, ImportantRule, ColorVariable
+
+@if $enable-print-styles {
+  @media print {
+
+    // Make Chrome print emulation behave a little more predictably
+    // https://www.lockedowndesign.com/chrome-print-preview-differs-from-dev-tools/
+    * {
+      transition: none !important;
+    }
+
+    //
+    // Base overrides
+    // Adapted from https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css
+    //
+
+    *,
+    *::before,
+    *::after {
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+
+    html {
+      font-size: 10pt !important;
+    }
+
+    a,
+    a:visited {
+      &:not(.btn) {
+        text-decoration: underline;
+      }
+    }
+
+    abbr[title]::after {
+      // scss-lint:disable StringQuotes
+      content: " (" attr(title) ")";
+      // scss-lint:enable StringQuotes
+    }
+
+    pre {
+      border: $border-width solid #999;
+      white-space: pre-wrap !important;
+    }
+
+    pre,
+    blockquote {
+      page-break-inside: avoid;
+    }
+
+    //
+    // Printing Tables:
+    // http://css-discuss.incutio.com/wiki/Printing_Tables
+    //
+
+    thead {
+      display: table-header-group;
+    }
+
+    tr,
+    img {
+      page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+      orphans: 3;
+      widows: 3;
+    }
+
+    h2,
+    h3 {
+      page-break-after: avoid;
+    }
+
+
+    //
+    // Athena class changes
+    //
+
+    // Layout
+    .container {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      width: map-get($container-max-widths, lg) !important;
+
+      @each $breakpoint, $container-max-width in $container-max-widths {
+        @include media-breakpoint-up($breakpoint) {
+          width: map-get($container-max-widths, lg) !important;
+        }
+      }
+    }
+
+
+    // Content
+    .heading-underline-inverse::after {
+      border-bottom-color: $brand-primary !important;
+    }
+
+    .blockquote-quotation-inverse::before {
+      color: $brand-primary !important;
+    }
+
+    .table {
+      border-collapse: collapse !important;
+
+      td,
+      th {
+        background-color: #fff !important;
+      }
+    }
+
+    .table-inverse {
+      color: #000 !important;
+
+      th,
+      td,
+      thead th {
+        border-color: #ddd !important;
+      }
+
+      &.table-bordered {
+        border-color: #ddd !important;
+
+        th,
+        td {
+          border-color: #ddd !important;
+        }
+      }
+    }
+
+    .table-bordered {
+      th,
+      td {
+        border: 1px solid #ddd !important;
+      }
+    }
+
+    .hr-white {
+      border-top-color: #ddd !important;
+    }
+
+
+    // Components
+    .alert-success {
+      border: $border-width solid $alert-success-bg !important;
+    }
+
+    .alert-info {
+      border: $border-width solid $alert-info-bg !important;
+    }
+
+    .alert-warning {
+      border: $border-width solid $alert-warning-bg !important;
+    }
+
+    .alert-danger {
+      border: $border-width solid $alert-danger-bg !important;
+    }
+
+    .navbar,
+    .navbar-toggle {
+      display: none;
+    }
+
+    .badge {
+      background-color: #fff !important;
+      border: $border-width solid #000;
+      color: #000 !important;
+    }
+
+    .btn {
+      background-color: #fff !important;
+      color: #000 !important;
+    }
+
+    .btn-inverse,
+    .btn-outline-inverse {
+      border-color: #ddd !important;
+    }
+
+    .card {
+      background-color: #fff !important;
+      color: #000 !important;
+
+      .list-group-item {
+        background-color: #fff !important;
+
+        &.active {
+          border: $border-width-thicker solid $brand-primary !important;
+        }
+
+        &:not(.disabled):not(disabled) {
+          color: #000 !important;
+        }
+      }
+
+      .list-group-item-success {
+        &:not(.disabled):not(disabled) {
+          color: $brand-success-aw !important;
+        }
+      }
+
+      .list-group-item-info {
+        &:not(.disabled):not(disabled) {
+          color: $brand-info-aw !important;
+        }
+      }
+
+      .list-group-item-warning {
+        &:not(.disabled):not(disabled) {
+          color: $brand-warning-aw !important;
+        }
+      }
+
+      .list-group-item-danger {
+        &:not(.disabled):not(disabled) {
+          color: $brand-danger-aw !important;
+        }
+      }
+    }
+
+    .card-title,
+    .card-subtitle,
+    .card-header,
+    .card-footer,
+    .card-blockquote,
+    .card-text,
+    .card-link {
+      color: #000 !important;
+    }
+
+    .card-link {
+      text-decoration: underline !important;
+    }
+
+    .card-secondary {
+      border-color: #000 !important;
+    }
+
+    .card-img {
+      visibility: hidden !important;
+    }
+
+    .nav-pills .nav-link.active {
+      border: 1px solid #ddd !important;
+    }
+
+    .progress {
+      border: $border-width solid #ddd !important;
+      -webkit-print-color-adjust: exact; // for browsers that can support it
+    }
+
+    .progress-bar {
+      border: $border-width-thicker solid #000;
+    }
+
+
+    // Utilities
+    .bg-default,
+    .bg-secondary,
+    .bg-complementary,
+    .bg-inverse,
+    .bg-primary-darkest {
+      background-color: #fff !important;
+      color: #000 !important;
+    }
+
+    .bg-default-link,
+    .bg-secondary-link,
+    .bg-complementary-link,
+    .bg-inverse-link,
+    .bg-primary-darkest-link {
+      color: #000 !important;
+    }
+
+    .close {
+      display: none !important;
+    }
+
+    .media-background {
+      display: none !important;
+    }
+  }
+}
+
+// scss-lint:enable QualifyingElement, ImportantRule, ColorVariable
