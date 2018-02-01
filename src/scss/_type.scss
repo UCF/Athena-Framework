@@ -227,6 +227,11 @@ body {
 // Horizontal rules (dividers)
 //
 
+hr {
+  border-color: $hr-border-color;
+  border-width: $hr-border-width;
+}
+
 .hr-2 {
   border-width: $border-width-thicker;
 }
@@ -236,13 +241,24 @@ body {
 }
 
 .hr-black {
-  border-top-color: $black;
+  border-color: $black;
 }
 
 .hr-white {
-  border-top-color: $white;
+  border-color: $white;
 }
 
 .hr-primary {
-  border-top-color: $brand-primary;
+  border-color: $brand-primary;
+}
+
+.hr-vertical {
+  border-left-style: solid;
+  border-top: 0 solid transparent;
+  height: 100%;
+  margin-bottom: 0;
+  margin-left: $spacer-x;
+  margin-right: $spacer-x;
+  margin-top: 0;
+  width: 0;
 }
