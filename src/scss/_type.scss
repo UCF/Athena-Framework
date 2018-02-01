@@ -56,10 +56,11 @@ body {
   text-transform: uppercase;
 
   &::after {
+    border-bottom: $border-width-thicker solid;
     bottom: 0;
     content: '';
     display: block;
-    height: $border-width-thicker;
+    height: 0;
     min-width: 2rem;
     position: absolute;
     width: 1em;
@@ -70,7 +71,7 @@ body {
   @extend %heading-underline;
 
   &::after {
-    background-color: $brand-primary;
+    border-bottom-color: $brand-primary;
   }
 }
 
@@ -78,7 +79,7 @@ body {
   @extend %heading-underline;
 
   &::after {
-    background-color: $brand-inverse;
+    border-bottom-color: $brand-inverse;
   }
 }
 

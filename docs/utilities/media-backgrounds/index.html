@@ -127,13 +127,13 @@
 
 <h3 id="picture">Picture</h3>
 
-<p>Apply to the inner <code class="highlighter-rouge">&lt;source&gt;</code> and <code class="highlighter-rouge">&lt;img&gt;</code> elements:</p>
+<p>Apply to the inner <code class="highlighter-rouge">&lt;img&gt;</code> element:</p>
 
 <div class="media-background-container">
   <picture>
-    <source class="media-background object-fit-cover" srcset="//placehold.it/800x300" media="(min-width: 768px)" />
-    <source class="media-background object-fit-cover" srcset="//placehold.it/767x300" media="(min-width: 576px)" />
-    <source class="media-background object-fit-cover" srcset="//placehold.it/575x300" media="(max-width: 575px)" />
+    <source srcset="//placehold.it/800x300" media="(min-width: 768px)" />
+    <source srcset="//placehold.it/767x300" media="(min-width: 576px)" />
+    <source srcset="//placehold.it/575x300" media="(max-width: 575px)" />
     <img class="media-background object-fit-cover" src="//placehold.it/800x300" alt="" />
   </picture>
   <div class="p-5">
@@ -143,8 +143,8 @@
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"media-background-container"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;picture&gt;</span>
-    <span class="nt">&lt;source</span> <span class="na">class=</span><span class="s">"media-background object-fit-cover"</span> <span class="na">srcset=</span><span class="s">"..."</span> <span class="na">media=</span><span class="s">"..."</span><span class="nt">&gt;&lt;/source&gt;</span>
-    <span class="nt">&lt;source</span> <span class="na">class=</span><span class="s">"media-background object-fit-cover"</span> <span class="na">srcset=</span><span class="s">"..."</span> <span class="na">media=</span><span class="s">"..."</span><span class="nt">&gt;&lt;/source&gt;</span>
+    <span class="nt">&lt;source</span> <span class="na">srcset=</span><span class="s">"..."</span> <span class="na">media=</span><span class="s">"..."</span><span class="nt">&gt;&lt;/source&gt;</span>
+    <span class="nt">&lt;source</span> <span class="na">srcset=</span><span class="s">"..."</span> <span class="na">media=</span><span class="s">"..."</span><span class="nt">&gt;&lt;/source&gt;</span>
     <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"media-background object-fit-cover"</span> <span class="na">src=</span><span class="s">"..."</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
   <span class="nt">&lt;/picture&gt;</span>
   Your content here...
@@ -1118,7 +1118,7 @@
             </div>
             <div class="col self-align-right">
               <p class="text-right">
-                Current version: <strong>v1.0.0-beta.3</strong>.
+                Current version: <strong>v1.0.0-beta.8</strong>.
               </p>
               <p class="text-right">
                 <a href="https://github.com/UCF/" target="_blank"><span class="fa fa-github"></span> UCF GitHub</a>

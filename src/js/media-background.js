@@ -25,21 +25,16 @@
 
   $.fn.mediaBackground = function () {
 
-    // Only continue if the browser requires the polyfill
-    if ('objectFit' in document.documentElement.style === false) {
+    // Loop through each media background and assign required data attributes
+    // for the object-fit polyfill plugin.
+    this.each(function () {
+      const $bg = $(this);
+      _assignDataAttrs($bg);
+    });
 
-      // Loop through each media background and assign required data attributes
-      // for the object-fit polyfill plugin.
-      this.each(function () {
-        const $bg = $(this);
-        _assignDataAttrs($bg);
-      });
-
-      // Re-trigger the object-fit polyfill plugin after all the data attributes
-      // have been assigned.
-      objectFitPolyfill();
-
-    }
+    // Re-trigger the object-fit polyfill plugin after all the data attributes
+    // have been assigned.
+    objectFitPolyfill(this);
 
     return this;
 

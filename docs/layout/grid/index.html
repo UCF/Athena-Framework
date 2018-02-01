@@ -388,7 +388,7 @@
 
 <h3 id="variable-width-content">Variable width content</h3>
 
-<p>Use <code class="highlighter-rouge">col-{breakpoint}-auto</code> classes to size columns based on the natural width of their content.</p>
+<p>Use <code class="highlighter-rouge">col-{breakpoint}-auto</code> classes to size columns based on the natural width of their content. Note that these classes have been modified from Bootstrap 4 to enforce a max-width; <code class="highlighter-rouge">col-{breakpoint}-auto</code> columns will never exceed the width of their parent container.</p>
 
 <div class="bd-example-row">
 
@@ -400,6 +400,17 @@
     </div>
     <div class="col-md-auto">
       Variable width content
+    </div>
+    <div class="col col-lg-2">
+      3 of 3
+    </div>
+  </div>
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-2">
+      1 of 3
+    </div>
+    <div class="col-md-auto">
+      Variable width content Variable width content Variable width content Variable width content Variable width content Variable width content Variable width content Variable width content Variable width content Variable width content Variable width content Variable width content
     </div>
     <div class="col col-lg-2">
       3 of 3
@@ -424,6 +435,17 @@
     <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-auto"</span><span class="nt">&gt;</span>
       Variable width content
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col col-lg-2"</span><span class="nt">&gt;</span>
+      3 of 3
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row justify-content-md-center"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col col-lg-2"</span><span class="nt">&gt;</span>
+      1 of 3
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-auto"</span><span class="nt">&gt;</span>
+      Variable width content Variable width content Variable width content Variable width content Variable width content Variable width content Variable width content Variable width content Variable width content Variable width content Variable width content Variable width content
     <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col col-lg-2"</span><span class="nt">&gt;</span>
       3 of 3
@@ -2074,7 +2096,7 @@
             </div>
             <div class="col self-align-right">
               <p class="text-right">
-                Current version: <strong>v1.0.0-beta.3</strong>.
+                Current version: <strong>v1.0.0-beta.8</strong>.
               </p>
               <p class="text-right">
                 <a href="https://github.com/UCF/" target="_blank"><span class="fa fa-github"></span> UCF GitHub</a>
