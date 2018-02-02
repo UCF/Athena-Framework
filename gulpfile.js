@@ -361,7 +361,9 @@ gulp.task('jekyll-serve', ['config-gh-pages'], function () {
 
   process.chdir('./_docs');
 
-  const jekyll = childProc.spawn('jekyll', [
+  const jekyll = childProc.spawn('bundle', [
+    'exec',
+    'jekyll',
     'serve',
     '--watch',
     '--incremental',
