@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: docs-content
 title: Tables
 description: Documentation and examples for opt-in styling of tables with Athena.
 group: content

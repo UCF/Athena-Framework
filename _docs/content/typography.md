@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: docs-content
 title: Typography
 description: Documentation and examples for Athena typography, including global settings, headings, body text, lists, and more.
 group: content

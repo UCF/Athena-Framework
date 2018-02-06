@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: docs-utilities
 title: Media Backgrounds
 group: utilities
 ---

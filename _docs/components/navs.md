@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: docs-components
 title: Navs
 description: Documentation and examples for how to use Athena's included navigation components.
 group: components

@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: docs-utilities
 title: Flexbox
 group: utilities
 ---

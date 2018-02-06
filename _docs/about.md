@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: about
 title: About
 description: A brief overview of what Athena is and why it exists.
 group: about
@@ -9,4 +9,4 @@ The Athena Framework, part of the [Athena Project](https://ucf.github.io/Athena-
 
 The Athena Framework, which we refer to as just "Athena" in these docs, is written off of [Bootstrap 4](http://v4-alpha.getbootstrap.com/).  Most features from Bootstrap 3/4 are carried over into Athena and should be familiar to developers that have used Bootstrap for other projects.
 
-The Athena Framework is actively developed by [UCF Marketing's Web Communications team](https://www.ucf.edu/brand/contact-us/), but involvement and pull requests from the greater UCF development community are highly encouraged. See the [Community]({{ "/getting-started/introduction/#community" | prepend: site.baseurl }}) section of the docs for more information about getting involved.
+The Athena Framework is actively developed by [UCF Marketing's Web Communications team](https://www.ucf.edu/brand/contact-us/), but involvement and pull requests from the greater UCF development community are highly encouraged. See the [Community]({{ "/getting-started/quickstart/#community" | prepend: site.baseurl }}) section of the docs for more information about getting involved.

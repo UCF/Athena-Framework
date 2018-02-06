@@ -41,9 +41,9 @@ var configLocal = require('./gulp-config.json'),
         jsPath: './_docs/_src/js'
       },
       dist: {
-        cssPath: './_docs/res/css',
-        fontPath: './_docs/res/fonts',
-        jsPath: './_docs/res/js'
+        cssPath: './_docs/static/css',
+        fontPath: './_docs/static/fonts',
+        jsPath: './_docs/static/js'
       },
       dataPath: './_docs/_data',
       rootPath: './_docs',
@@ -314,50 +314,47 @@ gulp.task('js', function () {
 // GitHub Pages Build
 //
 
-gulp.task('config-gh-pages', function () {
+// Generates a Jekyll config file based off of the project's package.json for
+// the project docs.
+// Allows us to not have to re-define values such as the project version number
+// within Jekyll.
+gulp.task('docs-config', function () {
   return gulp.src('./package.json')
     .pipe(jsonToYaml())
-    .pipe(header("# THIS FILE IS GENERATED AUTOMATICALLY VIA THE `config-gh-pages` GULP TASK. DO NOT OVERRIDE VARIABLES HERE; MODIFY package.json INSTEAD.\n\n"))
+    .pipe(header("# THIS FILE IS GENERATED AUTOMATICALLY VIA THE `docs-config` GULP TASK. DO NOT OVERRIDE VARIABLES HERE; MODIFY package.json INSTEAD.\n\n"))
     .pipe(gulp.dest(config.docs.dataPath));
 });
 
-gulp.task('components-gh-pages-athena-fonts', function () {
+// Web font processing
+gulp.task('docs-move-components-athena-fonts', function () {
   return gulp.src(config.dist.fontPath + '/**/*')
     .pipe(gulp.dest(config.docs.dist.fontPath));
 });
 
-gulp.task('components-gh-pages', ['components-gh-pages-athena-fonts']);
+// All component-related tasks for docs
+gulp.task('docs-components', ['docs-move-components-athena-fonts']);
 
-gulp.task('scss-gh-pages', function () {
+// Process scss files
+gulp.task('docs-scss', function () {
   return buildCSS(config.docs.src.scssPath + '/docs.scss', 'docs.min.css', config.docs.dist.cssPath, true, false);
 });
 
-gulp.task('js-gh-pages', function () {
+// Concat and uglify js files through babel
+gulp.task('docs-js', function () {
   return buildJS(config.docs.src.jsPath + '/docs.js', 'docs.min.js', config.docs.dist.jsPath, true, false, true);
 });
 
-gulp.task('gh-build-pages', function () {
-  process.chdir('./_docs');
-
-  process.env.JEKYLL_ENV = 'production';
-
-  const jekyll = childProc.spawnSync('bundle', [
-    'exec',
-    'jekyll',
-    'build',
-    '--config=_config.yml,_config_prod.yml'
-  ]);
+// Default task for docs.  Runs all docs-related tasks that do not serve or
+// build the docs.
+gulp.task('docs-default', function () {
+  return runSequence('docs-config', 'docs-components', ['docs-scss', 'docs-js']);
 });
 
-gulp.task('gh-pages', function () {
-  return runSequence(
-    'config-gh-pages', 'components-gh-pages', 'scss-gh-pages', 'js-gh-pages', 'gh-build-pages'
-  );
-});
-
-gulp.task('jekyll-serve', ['config-gh-pages'], function () {
-  gulp.watch(config.docs.src.scss + '/**/*.scss', ['scss-gh-pages']);
-  gulp.watch(config.docs.src.js + '/**/*.js', ['js-gh-pages']);
+// Spins up a new environment for previewing changes to the docs.
+// Watches and reloads when files change.
+gulp.task('docs-serve', ['docs-config'], function () {
+  gulp.watch(config.docs.src.scss + '/**/*.scss', ['docs-scss']);
+  gulp.watch(config.docs.src.js + '/**/*.js', ['docs-js']);
 
   process.chdir('./_docs');
 
@@ -380,6 +377,21 @@ gulp.task('jekyll-serve', ['config-gh-pages'], function () {
   jekyll.stderr.on('data', jekyllLogger);
 });
 
+// Runs all tasks necessary to generate production-ready (Github Pages)
+// documentation.
+gulp.task('gh-pages', ['docs-default'], function () {
+  process.chdir('./_docs');
+
+  process.env.JEKYLL_ENV = 'production';
+
+  const jekyll = childProc.spawnSync('bundle', [
+    'exec',
+    'jekyll',
+    'build',
+    '--config=_config.yml,_config_prod.yml'
+  ]);
+});
+
 
 //
 // Rerun tasks when files change
@@ -397,12 +409,11 @@ gulp.task('watch', function () {
   gulp.watch(config.src.jsPath + '/**/*.js', ['js']).on('change', browserSync.reload);
 });
 
-gulp.task('watch-jekyll', ['watch', 'jekyll-serve']);
 
 //
 // Default task
 //
 gulp.task('default', function () {
   // Make sure 'components' completes before 'css' or 'js' are allowed to run
-  runSequence('components', ['css', 'js']);
+  return runSequence('components', ['css', 'js']);
 });

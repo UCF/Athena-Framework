@@ -1,13 +1,11 @@
 - title: Getting started
   pages:
-    - title: Introduction
+    - title: Quick start
     - title: Download
-    - title: Install
     - title: Browsers & devices
     - title: JavaScript
     - title: Options
     - title: Build tools
-    - title: Best practices
     - title: Accessibility
 
 - title: Layout

@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: docs-getting-started
 title: JavaScript
 description: Learn about Athena's JavaScript—how to include it, our data and programmatic API options, and more.
 group: getting-started

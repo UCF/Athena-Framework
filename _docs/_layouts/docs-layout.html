@@ -1,0 +1,25 @@
+{% include header.html %}
+
+<header class="header bg-inverse">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 d-flex flex-column justify-content-center">
+        <h1 class="display-4 heading-underline mb-4">Layout</h1>
+        <span class="lead font-slab-serif">
+          {% if page.subtitle %}
+            {{ page.subtitle }}
+          {% else %}
+            Options for structuring your pages with Athena, including global styles, required scaffolding, grid system, and more.
+          {% endif %}
+        </span>
+      </div>
+      <div class="col-lg-4 hidden-md-down">
+        {% include contribute.html %}
+      </div>
+    </div>
+  </div>
+</header>
+
+{% include main-twocol.html %}
+
+{% include footer.html %}

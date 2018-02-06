@@ -1,83 +1,81 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>
-	  
-	    Collapse &middot; Athena Framework
-	  
-	</title>
+    <title>
+      
+        Collapse &middot; Athena Framework
+      
+    </title>
 
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  
-  <link href="https://ucf.github.io/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
-  <link rel="stylesheet" href="https://ucf.github.io/Athena-Framework/res/css/docs.min.css">
-  <link rel="canonical" href="https://ucf.github.io/Athena-Framework/components/collapse/">
-  
-</head>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-<body class="docs">
-    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/docs.min.css">
+    <link rel="canonical" href="/components/collapse/">
+    
+  </head>
+
+  <body class="docs">
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+      <div class="container">
+        <a class="navbar-brand" href="/">Athena Framework</a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-text">Menu</span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-nav">
+          <nav class="navbar-nav ml-auto mb-2 mb-lg-0">
+            <a class="nav-link active" href="/getting-started/quick-start/">
+              Documentation
+            </a>
+            <a class="nav-link " href="/about/">
+              About
+            </a>
+            <a class="nav-link " href="/migration/">
+              Migration
+            </a>
+          </nav>
+        </div>
+      </div>
+    </nav>
+
+
+<header class="header bg-inverse">
   <div class="container">
-    <a class="navbar-brand" href="/Athena-Framework/">Athena Framework</a>
-    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-text">Menu</span>
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="main-nav">
-      <nav class="navbar-nav ml-auto mb-2 mb-lg-0">
-        <a class="nav-link active" href="/Athena-Framework/getting-started/introduction/">
-          Documentation
-        </a>
-        <a class="nav-link " href="/Athena-Framework/about/">
-          About
-        </a>
-        <a class="nav-link " href="/Athena-Framework/migration/">
-          Migration
-        </a>
-      </nav>
-    </div>
-  </div>
-</nav>
-
-    <header class="header">
-        <div class="container">
-            <div class="row">
-              <div class="col-md-8">
-                <div class="title-container">
-
-  <h1 class="text-white font-condensed mb-4">Components</h1>
-  <span class="subtitle text-white heading-underline" style="text-transform: none;">
-    
-      Over a dozen reusable components built to provide buttons, dropdowns, input groups, navigation, alerts, and much more.
-    
-  </span>
-
-</div>
-
-              </div>
-              <div class="col-md-4">
-                <div class="card github">
+    <div class="row">
+      <div class="col-lg-8 d-flex flex-column justify-content-center">
+        <h1 class="display-4 heading-underline mb-4">Components</h1>
+        <span class="lead font-slab-serif">
+          
+            Over a dozen reusable components built to provide buttons, dropdowns, input groups, navigation, alerts, and much more.
+          
+        </span>
+      </div>
+      <div class="col-lg-4 hidden-md-down">
+        <div class="card card-outline-inverse card-github">
   <div class="card-block">
-    <h2 class="card-title">Want to contribute?</h2>
+    <h2 class="card-title h4">Want to contribute?</h2>
     <p class="card-text">If you're interested in contributing to the Athena Framework, please read our <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework#contributing">contributing guidelines</a>, then submit a new issue or pull request.</p>
     <a href="https://github.com/UCF/Athena-Framework" class="btn btn-primary btn-sm" target="_blank">GitHub Page</a>
   </div>
 </div>
 
-              </div>
-            </div>
-        </div>
-    </header>
-    <main>
-        <article class="py-5 container">
-            <div class="row">
-                <div class="col-md-8 bd-content">
-                    <h1>Collapse</h1>
-                    <p>The Athena collapse plugin allows you to toggle content on your pages with a few classes thanks to some helpful JavaScript.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <article class="py-5 container">
+    <div class="row">
+      <div class="col-md-8 bd-content">
+        <h1>Collapse</h1>
+        <p>The Athena collapse plugin allows you to toggle content on your pages with a few classes thanks to some helpful JavaScript.</p>
 
 <h2 id="contents">Contents</h2>
 
@@ -145,7 +143,7 @@
 
 <h2 id="accordion-example">Accordion example</h2>
 
-<p>Using the <a href="/Athena-Framework/components/card/">card</a> component, you can extend the default collapse behavior to create an accordion.</p>
+<p>Using the <a href="/components/card/">card</a> component, you can extend the default collapse behavior to create an accordion.</p>
 
 <div class="bd-example" data-example-id="">
 <div id="accordion" role="tablist">
@@ -357,9 +355,9 @@
 <span class="p">})</span></code></pre></figure>
 
 
-                </div>
-                <div class="col-md-4 bd-sidebar">
-                  <!-- <form class="bd-search d-none d-sm-block">
+      </div>
+      <div class="col-md-4 bd-sidebar">
+        <!-- <form class="bd-search d-none d-sm-block">
   <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
   <div class="dropdown-menu bd-search-results" id="search-results"></div>
 </form>
@@ -375,7 +373,7 @@
   
 
   <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/Athena-Framework/getting-started/introduction/">
+      <a class="bd-toc-link" href="/getting-started/quick-start/">
         Getting started
       </a>
 
@@ -387,8 +385,8 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/getting-started/introduction/">
-              Introduction
+            <a href="/getting-started/quick-start/">
+              Quick start
             </a>
 
             
@@ -400,7 +398,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/getting-started/download/">
+            <a href="/getting-started/download/">
               Download
             </a>
 
@@ -413,20 +411,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/getting-started/install/">
-              Install
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/getting-started/browsers-devices/">
+            <a href="/getting-started/browsers-devices/">
               Browsers & devices
             </a>
 
@@ -439,7 +424,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/getting-started/javascript/">
+            <a href="/getting-started/javascript/">
               JavaScript
             </a>
 
@@ -452,7 +437,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/getting-started/options/">
+            <a href="/getting-started/options/">
               Options
             </a>
 
@@ -465,7 +450,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/getting-started/build-tools/">
+            <a href="/getting-started/build-tools/">
               Build tools
             </a>
 
@@ -478,20 +463,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/getting-started/best-practices/">
-              Best practices
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/getting-started/accessibility/">
+            <a href="/getting-started/accessibility/">
               Accessibility
             </a>
 
@@ -509,7 +481,7 @@
   
 
   <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/Athena-Framework/layout/overview/">
+      <a class="bd-toc-link" href="/layout/overview/">
         Layout
       </a>
 
@@ -521,7 +493,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/layout/overview/">
+            <a href="/layout/overview/">
               Overview
             </a>
 
@@ -534,7 +506,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/layout/grid/">
+            <a href="/layout/grid/">
               Grid
             </a>
 
@@ -547,7 +519,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/layout/media-object/">
+            <a href="/layout/media-object/">
               Media object
             </a>
 
@@ -560,7 +532,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/layout/utilities-for-layout/">
+            <a href="/layout/utilities-for-layout/">
               Utilities for Layout
             </a>
 
@@ -578,7 +550,7 @@
   
 
   <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/Athena-Framework/content/reboot/">
+      <a class="bd-toc-link" href="/content/reboot/">
         Content
       </a>
 
@@ -590,7 +562,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/content/reboot/">
+            <a href="/content/reboot/">
               Reboot
             </a>
 
@@ -603,7 +575,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/content/typography/">
+            <a href="/content/typography/">
               Typography
             </a>
 
@@ -616,7 +588,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/content/code/">
+            <a href="/content/code/">
               Code
             </a>
 
@@ -629,7 +601,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/content/images/">
+            <a href="/content/images/">
               Images
             </a>
 
@@ -642,7 +614,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/content/tables/">
+            <a href="/content/tables/">
               Tables
             </a>
 
@@ -655,7 +627,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/content/figures/">
+            <a href="/content/figures/">
               Figures
             </a>
 
@@ -668,7 +640,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/content/dividers/">
+            <a href="/content/dividers/">
               Dividers
             </a>
 
@@ -686,7 +658,7 @@
   
 
   <div class="bd-toc-item active">
-      <a class="bd-toc-link" href="/Athena-Framework/components/alerts/">
+      <a class="bd-toc-link" href="/components/alerts/">
         Components
       </a>
 
@@ -698,7 +670,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/components/alerts/">
+            <a href="/components/alerts/">
               Alerts
             </a>
 
@@ -711,7 +683,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/components/badge/">
+            <a href="/components/badge/">
               Badge
             </a>
 
@@ -724,7 +696,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/components/breadcrumb/">
+            <a href="/components/breadcrumb/">
               Breadcrumb
             </a>
 
@@ -737,7 +709,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/components/buttons/">
+            <a href="/components/buttons/">
               Buttons
             </a>
 
@@ -750,7 +722,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/components/button-group/">
+            <a href="/components/button-group/">
               Button group
             </a>
 
@@ -763,7 +735,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/components/card/">
+            <a href="/components/card/">
               Card
             </a>
 
@@ -776,7 +748,7 @@
           
 
           <li class="active bd-sidenav-active">
-            <a href="/Athena-Framework/components/collapse/">
+            <a href="/components/collapse/">
               Collapse
             </a>
 
@@ -789,7 +761,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/components/dropdowns/">
+            <a href="/components/dropdowns/">
               Dropdowns
             </a>
 
@@ -802,7 +774,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/components/forms/">
+            <a href="/components/forms/">
               Forms
             </a>
 
@@ -815,7 +787,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/components/input-group/">
+            <a href="/components/input-group/">
               Input group
             </a>
 
@@ -828,7 +800,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/components/jumbotron/">
+            <a href="/components/jumbotron/">
               Jumbotron
             </a>
 
@@ -841,7 +813,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/components/list-group/">
+            <a href="/components/list-group/">
               List group
             </a>
 
@@ -854,7 +826,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/components/modal/">
+            <a href="/components/modal/">
               Modal
             </a>
 
@@ -867,7 +839,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/components/navs/">
+            <a href="/components/navs/">
               Navs
             </a>
 
@@ -880,7 +852,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/components/navbar/">
+            <a href="/components/navbar/">
               Navbar
             </a>
 
@@ -893,7 +865,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/components/pagination/">
+            <a href="/components/pagination/">
               Pagination
             </a>
 
@@ -906,7 +878,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/components/popovers/">
+            <a href="/components/popovers/">
               Popovers
             </a>
 
@@ -919,7 +891,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/components/progress/">
+            <a href="/components/progress/">
               Progress
             </a>
 
@@ -932,7 +904,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/components/scrollspy/">
+            <a href="/components/scrollspy/">
               Scrollspy
             </a>
 
@@ -945,7 +917,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/components/tooltips/">
+            <a href="/components/tooltips/">
               Tooltips
             </a>
 
@@ -963,7 +935,7 @@
   
 
   <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/Athena-Framework/utilities/borders/">
+      <a class="bd-toc-link" href="/utilities/borders/">
         Utilities
       </a>
 
@@ -975,7 +947,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/utilities/borders/">
+            <a href="/utilities/borders/">
               Borders
             </a>
 
@@ -988,7 +960,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/utilities/clearfix/">
+            <a href="/utilities/clearfix/">
               Clearfix
             </a>
 
@@ -1001,7 +973,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/utilities/close-icon/">
+            <a href="/utilities/close-icon/">
               Close icon
             </a>
 
@@ -1014,7 +986,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/utilities/colors/">
+            <a href="/utilities/colors/">
               Colors
             </a>
 
@@ -1027,7 +999,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/utilities/display-property/">
+            <a href="/utilities/display-property/">
               Display property
             </a>
 
@@ -1040,7 +1012,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/utilities/filters/">
+            <a href="/utilities/filters/">
               Filters
             </a>
 
@@ -1053,7 +1025,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/utilities/flexbox/">
+            <a href="/utilities/flexbox/">
               Flexbox
             </a>
 
@@ -1066,7 +1038,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/utilities/image-replacement/">
+            <a href="/utilities/image-replacement/">
               Image replacement
             </a>
 
@@ -1079,7 +1051,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/utilities/invisible-content/">
+            <a href="/utilities/invisible-content/">
               Invisible content
             </a>
 
@@ -1092,7 +1064,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/utilities/media-backgrounds/">
+            <a href="/utilities/media-backgrounds/">
               Media backgrounds
             </a>
 
@@ -1105,7 +1077,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/utilities/pointer-events/">
+            <a href="/utilities/pointer-events/">
               Pointer Events
             </a>
 
@@ -1118,7 +1090,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/utilities/position/">
+            <a href="/utilities/position/">
               Position
             </a>
 
@@ -1131,7 +1103,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/utilities/responsive-helpers/">
+            <a href="/utilities/responsive-helpers/">
               Responsive helpers
             </a>
 
@@ -1144,7 +1116,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/utilities/screenreaders/">
+            <a href="/utilities/screenreaders/">
               Screenreaders
             </a>
 
@@ -1157,7 +1129,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/utilities/sizing/">
+            <a href="/utilities/sizing/">
               Sizing
             </a>
 
@@ -1170,7 +1142,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/utilities/spacing/">
+            <a href="/utilities/spacing/">
               Spacing
             </a>
 
@@ -1183,7 +1155,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/utilities/states/">
+            <a href="/utilities/states/">
               States
             </a>
 
@@ -1196,7 +1168,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/utilities/typography/">
+            <a href="/utilities/typography/">
               Typography
             </a>
 
@@ -1209,7 +1181,7 @@
           
 
           <li class="">
-            <a href="/Athena-Framework/utilities/vertical-align/">
+            <a href="/utilities/vertical-align/">
               Vertical align
             </a>
 
@@ -1227,7 +1199,7 @@
   
 
   <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/Athena-Framework/about/">
+      <a class="bd-toc-link" href="/about/">
         About
       </a>
 
@@ -1244,7 +1216,7 @@
   
 
   <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/Athena-Framework/migration/">
+      <a class="bd-toc-link" href="/migration/">
         Migration
       </a>
 
@@ -1255,40 +1227,43 @@
   
 </nav>
 
-                </div>
-            </div>
-        </article>
-    </main>
-    <footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col self-align-left">
-                <p>
-                  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and <a href="https://github.com/UCF/Athena-Framework">the Athena Framework</a>.
-                  <br>
-                  Documentation adapted from <a href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.
-                </p>
-                <p class="mb-0">
-                  Code licensed <a href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
-                </p>
-            </div>
-            <div class="col self-align-right">
-              <p class="text-right">
-                Current version: <strong>v1.0.0-beta.8</strong>.
-              </p>
-              <p class="text-right">
-                <a href="https://github.com/UCF/" target="_blank"><span class="fa fa-github"></span> UCF GitHub</a>
-              </p>
-            </div>
-        </div>
+      </div>
     </div>
-</footer>
+  </article>
+</main>
 
-<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <footer class="py-4 py-md-5 mt-5 bg-inverse">
+      <div class="container">
+        <div class="row d-flex justify-content-lg-between">
+          <div class="col-lg">
+            <p>
+              Powered by <a class="bg-inverse-link" href="https://jekyllrb.com/" target="_blank">Jekyll</a> and <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework">the Athena Framework</a>.
+              <br>
+              Documentation adapted from <a class="bg-inverse-link" href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.
+            </p>
+            <p class="mb-0">
+              Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
+            </p>
+          </div>
+          <div class="col-lg mt-5 mt-lg-0 text-lg-right">
+            <p>
+              Current version: <strong>v1.0.0-beta.8</strong>.
+            </p>
+            <p>
+              <a class="bg-inverse-link" href="https://github.com/UCF/" target="_blank"><span class="fa fa-github"></span> UCF GitHub</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-<script src="https://ucf.github.io/Athena-Framework/res/js/docs.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js" integrity="sha256-mIiWebTG82x+OcV3vUA49ffGDIAJ53uC9jflw5/+REs=" crossorigin="anonymous"></script>
 
+    
+    <script src="/static/js/docs.min.js"></script>
+    
 
-</body>
+  </body>
 </html>
+

@@ -1,65 +1,29 @@
 .header {
-  @include gradient-directional($black, $gray-darker, 165deg);
-  color: $black;
+  @include gradient-directional($gray-darkest, $gray-darker, 165deg);
   padding: 4rem 0;
 }
 
-.docs {
-  .header {
-    padding-bottom: 2rem;
-    padding-top: 2rem;
+.card-github {
+  overflow: hidden;
 
-    .title-container {
-      padding-bottom: 2rem;
-      padding-top: 2rem;
-    }
+  &:after {
+    color: $gray-lighter;
+    content: "\f09b";
+    font-family: FontAwesome;
+    font-size: 219px;
+    font-style: normal;
+    font-weight: normal;
+    left: 93%;
+    margin: -203px 0 0 -160px;
+    opacity: .1;
+    position: absolute;
+    text-decoration: inherit;
+    top: 80%;
+    z-index: 1;
+  }
 
-    h1 {
-      text-align: left;
-    }
-
-    .subtitle {
-      font-weight: 400;
-      line-height: 1.2;
-      padding-bottom: 15px;
-      text-transform: none;
-    }
-
-    .card.github {
-      background: transparent;
-      @include border-radius(.25rem);
-      border: solid 1px $gray-lighter;
-      color: $gray-lighter;
-      overflow: hidden;
-
-      .card-block {
-        z-index: 2;
-      }
-
-      .card-title {
-        font-size: 1.3rem;
-        margin-bottom: 0.5rem;
-        margin-top: 0;
-      }
-      .card-text {
-        font-size: 0.9rem;
-      }
-    }
-
-    .card.github:after {
-      color: $gray-lighter;
-      content: "\f09b";
-      font-family: FontAwesome;
-      font-size: 219px;
-      font-style: normal;
-      font-weight: normal;
-      left: 93%;
-      margin: -203px 0 0 -160px;
-      opacity: .1;
-      position: absolute;
-      text-decoration: inherit;
-      top: 80%;
-      z-index: 1;
-    }
+  .card-block {
+    z-index: 2;
   }
 }
+

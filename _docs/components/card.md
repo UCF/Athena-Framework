@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: docs-components
 title: Cards
 description: Athena's cards provide a flexible and extensible content container with multiple variants and options.
 group: components

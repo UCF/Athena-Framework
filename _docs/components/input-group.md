@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: docs-components
 title: Input group
 description: Easily extend form controls by adding text, buttons, or button groups on either side of textual inputs.
 group: components

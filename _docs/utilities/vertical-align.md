@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: docs-utilities
 title: Vertical alignment
 group: utilities
 ---

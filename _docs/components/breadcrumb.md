@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: docs-components
 title: Breadcrumb
 description: Indicate the current page's location within a navigational hierarchy.
 group: components

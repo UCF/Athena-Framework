@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+      
+        Quick start &middot; Athena Framework
+      
+    </title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/docs.min.css">
+    <link rel="canonical" href="/getting-started/quick-start/">
+    
+  </head>
+
+  <body class="docs">
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+      <div class="container">
+        <a class="navbar-brand" href="/">Athena Framework</a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-text">Menu</span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-nav">
+          <nav class="navbar-nav ml-auto mb-2 mb-lg-0">
+            <a class="nav-link active" href="/getting-started/quick-start/">
+              Documentation
+            </a>
+            <a class="nav-link " href="/about/">
+              About
+            </a>
+            <a class="nav-link " href="/migration/">
+              Migration
+            </a>
+          </nav>
+        </div>
+      </div>
+    </nav>
+
+
+<header class="header bg-inverse">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 d-flex flex-column justify-content-center">
+        <h1 class="display-4 heading-underline mb-4">Getting Started</h1>
+        <span class="lead font-slab-serif">
+          
+            Installation instructions and a basic setup guide for Athena.
+          
+        </span>
+      </div>
+      <div class="col-lg-4 hidden-md-down">
+        <div class="card card-outline-inverse card-github">
+  <div class="card-block">
+    <h2 class="card-title h4">Want to contribute?</h2>
+    <p class="card-text">If you're interested in contributing to the Athena Framework, please read our <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework#contributing">contributing guidelines</a>, then submit a new issue or pull request.</p>
+    <a href="https://github.com/UCF/Athena-Framework" class="btn btn-primary btn-sm" target="_blank">GitHub Page</a>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <article class="py-5 container">
+    <div class="row">
+      <div class="col-md-8 bd-content">
+        <h1>Quick start</h1>
+        <p>It’s easy to get started with the Athena Framework. The steps below outline the minimum requirements for getting Athena set up using CDN assets.</p>
+
+<div class="bd-callout bd-callout-info">
+<h2 id="a-note-about-bootstrap">A Note about Bootstrap</h2>
+
+<p>Athena is a complete replacement for <a href="https://getbootstrap.com/">Bootstrap</a>.  If you are already using Bootstrap on an existing project and want to use Athena instead, you should remove Bootstrap’s CSS and JavaScript completely.  Athena is designed to run as a completely standalone framework.</p>
+
+<p>Read more about the <a href="/migration/">differences between Athena and Bootstrap here.</a></p>
+
+</div>
+
+<h2 id="contents">Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#contents" id="markdown-toc-contents">Contents</a></li>
+  <li><a href="#1-add-required-document-metadata" id="markdown-toc-1-add-required-document-metadata">1. Add required document metadata</a>    <ul>
+      <li><a href="#html5-doctype" id="markdown-toc-html5-doctype">HTML5 doctype</a></li>
+      <li><a href="#responsive-meta-tag" id="markdown-toc-responsive-meta-tag">Responsive meta tag</a></li>
+    </ul>
+  </li>
+  <li><a href="#2-add-stylesheets" id="markdown-toc-2-add-stylesheets">2. Add stylesheets</a>    <ul>
+      <li><a href="#using-fallback-fonts-only-no-cloudtypography-fonts" id="markdown-toc-using-fallback-fonts-only-no-cloudtypography-fonts">Using fallback fonts only (no Cloud.typography fonts):</a></li>
+      <li><a href="#using-cloudtypography-fonts" id="markdown-toc-using-cloudtypography-fonts">Using Cloud.typography fonts:</a></li>
+    </ul>
+  </li>
+  <li><a href="#3-add-javascript" id="markdown-toc-3-add-javascript">3. Add JavaScript</a></li>
+  <li><a href="#starter-template" id="markdown-toc-starter-template">Starter template</a></li>
+</ul>
+
+<h2 id="1-add-required-document-metadata">1. Add required document metadata</h2>
+
+<h3 id="html5-doctype">HTML5 doctype</h3>
+
+<p>Bootstrap requires the use of the HTML5 doctype. Make sure you’ve included it at the very top of your document.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+  ...
+<span class="nt">&lt;/html&gt;</span></code></pre></figure>
+
+<h3 id="responsive-meta-tag">Responsive meta tag</h3>
+
+<p>Bootstrap is developed <em>mobile first</em>, a strategy in which we optimize code for mobile devices first and then scale up components as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, <strong>add the responsive viewport meta tag</strong> to your <code class="highlighter-rouge">&lt;head&gt;</code>.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1, shrink-to-fit=no"</span><span class="nt">&gt;</span></code></pre></figure>
+
+<p>You can see an example of this in action in the <a href="#starter-template">starter template</a>.</p>
+
+<h2 id="2-add-stylesheets">2. Add stylesheets</h2>
+
+<p>Add the Athena stylesheet before all other stylesheets in your document <code class="highlighter-rouge">&lt;head&gt;</code>. If you’re using Cloud.typography**, your CSS key should go immediately before the Athena stylesheet.</p>
+
+<h3 id="using-fallback-fonts-only-no-cloudtypography-fonts">Using fallback fonts only (no Cloud.typography fonts):</h3>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdn.ucf.edu/athena-framework/v1.0.0-beta.8/css/framework.min.css"</span><span class="nt">&gt;</span></code></pre></figure>
+
+<h3 id="using-cloudtypography-fonts">Using Cloud.typography fonts:</h3>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"https://cloud.typography.com/xxxxxx/xxxxxx/css/fonts.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdn.ucf.edu/athena-framework/v1.0.0-beta.8/css/framework.min.css"</span><span class="nt">&gt;</span></code></pre></figure>
+
+<div class="bd-callout bd-callout-info">
+<p><strong>**Note: Cloud.typography fonts are optional.</strong> If Cloud.typography is not utilized, fallback fonts provided by Athena will be used. See the <a href="/getting-started/install/#webfonts--configuration">webfont configuration</a> section for information on setting up a Cloud.typography project for use with Athena.</p>
+</div>
+
+<h2 id="3-add-javascript">3. Add JavaScript</h2>
+
+<p>Add jQuery, Tether, and Athena’s JavaScript near the end of your pages, right before the closing <code class="highlighter-rouge">&lt;/body&gt;</code> tag. Be sure to place jQuery and Tether first, as our code depends on them. While we use jQuery’s slim build in our docs, the full version is also supported.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://code.jquery.com/jquery-3.3.1.slim.min.js"</span> <span class="na">integrity=</span><span class="s">"sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js"</span> <span class="na">integrity=</span><span class="s">"sha256-mIiWebTG82x+OcV3vUA49ffGDIAJ53uC9jflw5/+REs="</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.ucf.edu/athena-framework/v1.0.0-beta.8/js/framework.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
+
+<h2 id="starter-template">Starter template</h2>
+
+<p>Following the steps above, a basic starter template would look something like this:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="c">&lt;!-- Required meta tags --&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1, shrink-to-fit=no"</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!-- Athena CSS --&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdn.ucf.edu/athena-framework/v1.0.0-beta.8/css/framework.min.css"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Hello, world!<span class="nt">&lt;/h1&gt;</span>
+
+    <span class="c">&lt;!-- jQuery first, then Tether, then Athena JS. --&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://code.jquery.com/jquery-3.3.1.slim.min.js"</span> <span class="na">integrity=</span><span class="s">"sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js"</span> <span class="na">integrity=</span><span class="s">"sha256-mIiWebTG82x+OcV3vUA49ffGDIAJ53uC9jflw5/+REs="</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.ucf.edu/athena-framework/v1.0.0-beta.8/js/framework.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></figure>
+
+<p>That’s all you need for overall page requirements. Visit the <a href="/layout/overview/">Layout docs</a> to start laying out your site’s content and components.</p>
+
+      </div>
+      <div class="col-md-4 bd-sidebar">
+        <!-- <form class="bd-search d-none d-sm-block">
+  <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+  <div class="dropdown-menu bd-search-results" id="search-results"></div>
+</form>
+ -->
+<nav class="bd-links" id="docsNavbarContent">
+  
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item active">
+      <a class="bd-toc-link" href="/getting-started/quick-start/">
+        Getting started
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+          
+          
+
+          
+
+          <li class="active bd-sidenav-active">
+            <a href="/getting-started/quick-start/">
+              Quick start
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/getting-started/download/">
+              Download
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/getting-started/browsers-devices/">
+              Browsers & devices
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/getting-started/javascript/">
+              JavaScript
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/getting-started/options/">
+              Options
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/getting-started/build-tools/">
+              Build tools
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/getting-started/best-practices/">
+              Best practices
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/getting-started/accessibility/">
+              Accessibility
+            </a>
+
+            
+          </li>
+        
+      </ul>
+    </div>
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item ">
+      <a class="bd-toc-link" href="/layout/overview/">
+        Layout
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/layout/overview/">
+              Overview
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/layout/grid/">
+              Grid
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/layout/media-object/">
+              Media object
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/layout/utilities-for-layout/">
+              Utilities for Layout
+            </a>
+
+            
+          </li>
+        
+      </ul>
+    </div>
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item ">
+      <a class="bd-toc-link" href="/content/reboot/">
+        Content
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/content/reboot/">
+              Reboot
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/content/typography/">
+              Typography
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/content/code/">
+              Code
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/content/images/">
+              Images
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/content/tables/">
+              Tables
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/content/figures/">
+              Figures
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/content/dividers/">
+              Dividers
+            </a>
+
+            
+          </li>
+        
+      </ul>
+    </div>
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item ">
+      <a class="bd-toc-link" href="/components/alerts/">
+        Components
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/alerts/">
+              Alerts
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/badge/">
+              Badge
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/breadcrumb/">
+              Breadcrumb
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/buttons/">
+              Buttons
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/button-group/">
+              Button group
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/card/">
+              Card
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/collapse/">
+              Collapse
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/dropdowns/">
+              Dropdowns
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/forms/">
+              Forms
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/input-group/">
+              Input group
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/jumbotron/">
+              Jumbotron
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/list-group/">
+              List group
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/modal/">
+              Modal
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/navs/">
+              Navs
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/navbar/">
+              Navbar
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/pagination/">
+              Pagination
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/popovers/">
+              Popovers
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/progress/">
+              Progress
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/scrollspy/">
+              Scrollspy
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/components/tooltips/">
+              Tooltips
+            </a>
+
+            
+          </li>
+        
+      </ul>
+    </div>
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item ">
+      <a class="bd-toc-link" href="/utilities/borders/">
+        Utilities
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/borders/">
+              Borders
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/clearfix/">
+              Clearfix
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/close-icon/">
+              Close icon
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/colors/">
+              Colors
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/display-property/">
+              Display property
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/filters/">
+              Filters
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/flexbox/">
+              Flexbox
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/image-replacement/">
+              Image replacement
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/invisible-content/">
+              Invisible content
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/media-backgrounds/">
+              Media backgrounds
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/pointer-events/">
+              Pointer Events
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/position/">
+              Position
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/responsive-helpers/">
+              Responsive helpers
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/screenreaders/">
+              Screenreaders
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/sizing/">
+              Sizing
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/spacing/">
+              Spacing
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/states/">
+              States
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/typography/">
+              Typography
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/vertical-align/">
+              Vertical align
+            </a>
+
+            
+          </li>
+        
+      </ul>
+    </div>
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item ">
+      <a class="bd-toc-link" href="/about/">
+        About
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+      </ul>
+    </div>
+  
+  
+  
+  
+  
+
+  
+
+  <div class="bd-toc-item ">
+      <a class="bd-toc-link" href="/migration/">
+        Migration
+      </a>
+
+      <ul class="nav bd-sidenav">
+        
+      </ul>
+    </div>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+    <footer class="py-4 py-md-5 mt-5 bg-inverse">
+      <div class="container">
+        <div class="row d-flex justify-content-lg-between">
+          <div class="col-lg">
+            <p>
+              Powered by <a class="bg-inverse-link" href="https://jekyllrb.com/" target="_blank">Jekyll</a> and <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework">the Athena Framework</a>.
+              <br>
+              Documentation adapted from <a class="bg-inverse-link" href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.
+            </p>
+            <p class="mb-0">
+              Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
+            </p>
+          </div>
+          <div class="col-lg mt-5 mt-lg-0 text-lg-right">
+            <p>
+              Current version: <strong>v1.0.0-beta.8</strong>.
+            </p>
+            <p>
+              <a class="bg-inverse-link" href="https://github.com/UCF/" target="_blank"><span class="fa fa-github"></span> UCF GitHub</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js" integrity="sha256-mIiWebTG82x+OcV3vUA49ffGDIAJ53uC9jflw5/+REs=" crossorigin="anonymous"></script>
+
+    
+    <script src="/static/js/docs.min.js"></script>
+    
+
+  </body>
+</html>
+

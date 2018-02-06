@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: docs-utilities
 title: Sizing
 group: utilities
 ---

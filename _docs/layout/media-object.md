@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: docs-layout
 title: Media object
 description: Documentation and examples for Athena's media object to construct highly repetitive components like blog comments, tweets, and the like.
 group: layout

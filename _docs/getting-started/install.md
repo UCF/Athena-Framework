@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: docs-getting-started
 title: Installation
 description: Download Athena's compiled CSS and JavaScript, source code, or include it with your favorite package manager.
 group: getting-started
@@ -16,7 +16,7 @@ In most cases, installing the Athena Framework is as simple as adding the CSS, J
 
 After <a href="{{ "/getting-started/download/" | prepend: site.baseurl }}">downloading and extracting the Athena-Framework,</a> add the CSS, JS and font files from the `/dist/` directory to somewhere within your project. You'll need to maintain the directory structure of the `/dist/` folder's contents, since fallback font includes are imported using a relative, fixed path; see the [Included Fonts](#included-fallback-fonts) section for more information.
 
-For more information on embedding Athena's styles and scripts into your project's templates, or for instructions on installing CDN assets, see the [Quick Start]({{ "/getting-started/introduction/#quick-start" | prepend: site.baseurl }}) instructions.
+For more information on embedding Athena's styles and scripts into your project's templates, or for instructions on installing CDN assets, see the [Quick Start]({{ "/getting-started/quickstart" | prepend: site.baseurl }}) instructions.
 
 ___
 

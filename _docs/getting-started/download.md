@@ -1,23 +1,27 @@
 ---
-layout: docs
+layout: docs-getting-started
 title: Download
 description: Download Athena's compiled CSS and JavaScript, source code, or include it with your favorite package manager.
 group: getting-started
 ---
 
-The Athena Framework is available to download in a few ways. The framework is [hosted on Github](https://github.com/{{ site.data.package.repository.url }}) as an open-source project under the MIT license. Additionally, a zipped archive of the latest release is available below.
+For [quick usage]({{ site.baseurl }}{% link getting-started/quick-start.md %}), the Athena Framework is hosted on UCF's CDN.  For those that want to utilize Athena's Sass variables and mixins directly, Athena can also be downloaded from [Github](https://github.com/{{ site.data.package.repository.url }}), or included in your project using npm or Bower.
+
 
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
+
 ## Download Options
 
-<h3 class="mt-3" id="direct-download">Direct Download (.zip)</h3>
-<a href="https://github.com/{{ site.data.package.repository.url }}/archive/v{{ site.data.package.version }}.zip">Download Athena Framework <span class="badge badge-secondary">v{{ site.data.package.version }}</span></a>
+### Direct Download (.zip)
+<a class="btn btn-outline-primary" href="https://github.com/{{ site.data.package.repository.url }}/archive/v{{ site.data.package.version }}.zip">
+    <span class="fa fa-file-archive-o"></span> Download Athena Framework <span class="small muted">v{{ site.data.package.version }}</span>
+</a>
 
-<h3 class="mt-3" id="cdn">CDN</h3>
+### CDN
 Skip the download and use CDN-hosted files to deliver Athena's compiled CSS and JS to your project.
 
 {% highlight html %}
@@ -25,29 +29,23 @@ Skip the download and use CDN-hosted files to deliver Athena's compiled CSS and 
 <script src="{{ site.cdn }}v{{ site.data.package.version }}/js/framework.min.js"></script>
 {% endhighlight %}
 
-<h3 class="mt-3" id="github">Github</h3>
+### Github
 You can also clone a copy of the git project to your computer locally:
 
 <pre><code>git clone <a href="https://github.com/{{ site.data.package.repository.url }}/">git@github.com:{{ site.data.package.repository.url }}.git</a></code></pre>
 
-<h3 class="mt-3" id="package-managers">Package Managers</h3>
-
-<h4 class="mt-2" id="npm">npm</h4>
-
+### npm
 `npm install --save ucf-athena-framework`
 
-<h4 class="mt-3" id="bower">bower</h4>
+### Bower
 `bower install --save ucf-athena-framework`
 
-___
 
 ## What's Included
-The project folder will contain minified files (`/dist/`) as well as source code (`/src/`).
-
-Projects that need to extend Athena and/or reference Athena's Sass variables should utilize the source code files in `/src/`. Projects that just need to include Athena without modifications can use the already-minified files in `/dist/`. See the <a href="{{ "/getting-started/install/" | prepend: site.baseurl }}">Installation instructions</a> for more details.
+The project folder will contain minified files (`/dist/`) as well as source code (`/src/`):
 
 ### Minified, pre-compiled assets
-The framework download includes ready-to-use CSS, JavaScript, and webfont files. These can be found in the `/dist/` folder.
+The framework download includes ready-to-use CSS, JavaScript, and webfont files in the `/dist/` folder. Projects that just need to include Athena without modifications can use the already-minified files in this folder.
 
 <pre><code>├── dist/
    ├── css/
@@ -60,9 +58,16 @@ The framework download includes ready-to-use CSS, JavaScript, and webfont files.
        └── framework.min.js
 </code></pre>
 
+{% callout warning %}
+#### Relative font paths in `/dist/`
+Keep in mind that Athena's minified CSS references font files relative to the folder structure in `/dist/`--meaning that, in projects using these files, this existing folder structure _must_ be maintained for fonts to load properly.
+
+If you cannot store Athena's fallback fonts in a folder called `/fonts/` that exists one directory up from the minified framework CSS, you must use Athena's source Sass files, modify the `$athena-font-path` Sass variable, and minify the framework manually.
+{% endcallout %}
+
 ### Source files
 
-Source Sass files and other full, non-minified, files can be found in the `/src/` folder.
+Source Sass files and other full, non-minified, files can be found in the `/src/` folder. Projects that need to extend Athena and/or reference Athena's Sass variables should utilize the source code files in this folder. For more information on working with these files directly, see our [build tools notes]({{ site.baseurl }}{% link getting-started/build-tools.md %}).
 
 <pre><code>├── src/
    ├── fonts/…
@@ -77,4 +82,3 @@ Source Sass files and other full, non-minified, files can be found in the `/src/
    │   ├── …
    │   └── framework.scss
 </code></pre>
-

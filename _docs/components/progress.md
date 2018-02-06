@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: docs-components
 title: Progress
 description: Documentation and examples for using Athena custom progress bars, featuring support for stacked bars, animated backgrounds, and text labels.
 group: components
