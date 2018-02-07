@@ -1,28 +1,31 @@
 ---
 layout: docs-content
-title: Reboot
-description: Reboot, a collection of element-specific CSS changes in a single file, kickstart Athena to provide an elegant, consistent, and simple baseline to build upon.
+title: Resets
+description: Athena includes various cross-browser style resets to provide an elegant, consistent, and simple baseline to build upon.
 group: content
 redirect_from: "/content/"
 ---
 
-Part of Athena's job is to provide an elegant, consistent, and simple baseline to build upon. We use Reboot, a collection of element-specific CSS changes in a single file, to kickstart that.
+Part of Athena's job is to provide an elegant, consistent, and simple baseline to build upon. We use a combination of our own opinionated resets and [Bootstrap's Reboot](https://v4-alpha.getbootstrap.com/content/reboot/), a collection of element-specific CSS changes in a single file, to kickstart that.
 
-Reboot builds upon Normalize, providing many HTML elements with somewhat opinionated styles using only element selectors. Additional styling is done only with classes. For example, we reboot some `<table>` styles for a simpler baseline and later provide `.table`, `.table-bordered`, and more.
+Reboot builds upon [Normalize](https://necolas.github.io/normalize.css/), providing many HTML elements with somewhat opinionated styles using only element selectors. Additional styling is done only with classes. For example, we reboot some `<table>` styles for a simpler baseline and later provide `.table`, `.table-bordered`, and more.
+
 
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
+
 ## Approach
 
-Here are our guidelines and reasons for choosing what to override in Reboot:
+Listed below are guidelines and reasons for resetting element styles in Athena:
 
 - Update some browser default values to use `rem`s instead of `em`s for scalable component spacing.
 - Avoid `margin-top`. Vertical margins can collapse, yielding unexpected results. More importantly though, a single direction of `margin` is a simpler mental model.
 - For easier scaling across device sizes, block elements should use `rem`s for `margin`s.
 - Keep declarations of `font`-related properties to a minimum, using `inherit` whenever possible.
+
 
 ## Page defaults
 
@@ -30,12 +33,12 @@ The `<html>` and `<body>` elements are updated to provide better page-wide defau
 
 - The `box-sizing` is globally set on every element—including `*:before` and `*:after`, to `border-box`. This ensures that the declared width of element is never exceeded due to padding or border.
 - No base `font-size` is declared on the `<html>`, but `16px` is assumed (the browser default).
-  - Unlike Bootstrap 4, Athena applies different font sizes on `<body>` at different breakpoints: `.875rem` by default, and `1rem` at the `-md` breakpoint and up. Font size adjustments are applied on the `<body>` using `rem` units for easy responsive type-scaling via media queries while respecting user preferences and ensuring a more accessible approach.
+  - Note that Athena applies different font sizes on `<body>` at different breakpoints: `.875rem` by default, and `1rem` at the `-md` breakpoint and up. Font size adjustments are applied on the `<body>` using `rem` units for easy responsive type-scaling via media queries while respecting user preferences and ensuring a more accessible approach.
   - Athena intentionally does not utilize or recommend a [responsive typography](https://v4-alpha.getbootstrap.com/content/typography/#responsive-typography) approach due to the need for fine-tuned font size customizations across the framework, and the fact that this method makes browser-level font size adjustments less flexible.
 - The `<body>` also sets a global `font-family` and `line-height`. This is inherited later by some form elements to prevent font inconsistencies.
 - For safety, the `<body>` has a declared `background-color`, defaulting to `#fff`.
-- Athena applies global `:focus` rules on all elements that can receive focus (Bootstrap 4 does not do this).
 - Global `<a>` and `<button>` transitions are applied when $enable-transitions is true.
+
 
 ## Font stack
 
@@ -45,7 +48,8 @@ Unlike Bootstrap 4, Athena provides an opinionated font stack and does not rely 
 $font-family-sans-serif: 'Gotham SSm A', 'Gotham SSm B', 'UCF Sans Serif Alt', 'Helvetica Neue', Arial, sans-serif;
 {% endhighlight %}
 
-This `font-family` is applied to the `<body>` and automatically inherited globally throughout Athena. To switch the global `font-family`, update `$font-family-base` and recompile Athena.
+This `font-family` is applied to the `<body>` and automatically inherited globally throughout Athena.
+
 
 ## Headings and paragraphs
 
@@ -74,6 +78,7 @@ Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem 
 Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
 {% endmarkdown %}
 </div>
+
 
 ## Lists
 
@@ -121,6 +126,7 @@ For simpler styling, clear hierarchy, and better spacing, description lists have
 {% endmarkdown %}
 </div>
 
+
 ## Preformatted text
 
 The `<pre>` element is reset to remove its `margin-top` and use `rem` units for its `margin-bottom`.
@@ -135,9 +141,10 @@ The `<pre>` element is reset to remove its `margin-top` and use `rem` units for 
 {% endmarkdown %}
 </div>
 
+
 ## Tables
 
-Tables are slightly adjusted to style `<caption>`s, collapse borders, and ensure consistent `text-align` throughout. Additional changes for borders, padding, and more come with [the `.table` class]({{ site.baseurl }}/content/tables/).
+Tables are slightly adjusted to style `<caption>`s, collapse borders, and ensure consistent `text-align` throughout. Additional changes for borders, padding, and more come with [the `.table` class]({{ site.baseurl }}{% link content/tables.md %}).
 
 <div class="bd-example">
   <table>
@@ -174,6 +181,7 @@ Tables are slightly adjusted to style `<caption>`s, collapse borders, and ensure
     </tbody>
   </table>
 </div>
+
 
 ## Forms
 
@@ -265,6 +273,7 @@ These changes, and more, are demonstrated below.
   </fieldset>
 </form>
 
+
 ## Misc elements
 
 ### Address
@@ -317,21 +326,7 @@ HTML5 adds [a new global attribute named `[hidden]`](https://developer.mozilla.o
 {% callout warning %}
 #### jQuery incompatibility
 
-`[hidden]` is not compatible with jQuery's `$(...).hide()` and `$(...).show()` methods. This could potentially change in jQuery 3, but we're not holding our breath. Therefore, we don't currently especially endorse `[hidden]` over other techniques for managing the `display` of elements.
+`[hidden]` is not compatible with jQuery's `$(...).hide()` and `$(...).show()` methods. Therefore, we don't currently especially endorse `[hidden]` over other techniques for managing the `display` of elements.
 {% endcallout %}
 
-To merely toggle the visibility of an element, meaning its `display` is not modified and the element can still affect the flow of the document, use [the `.invisible` class]({{ site.baseurl }}/utilities/invisible-content/) instead.
-
-## Click delay optimization for touch
-
-Traditionally, browsers on touchscreen devices have a delay of approximately 300ms between the end of a "tap" – the moment when a finger/stylus is lifted from screen – and the [`click` event](https://developer.mozilla.org/en-US/docs/Web/Events/click) being fired. This delay is necessary for these browsers to correctly handle "double-tap to zoom" gestures without prematurely triggering actions or links after the first "tap", but it can make your site feel slightly sluggish and unresponsive.
-
-Most mobile browsers automatically optimize away this 300ms delay for sites that use the `width=device-width` property as part of their [responsive meta tag]({{ site.baseurl }}/getting-started/quickstart/#responsive-meta-tag) (as well as for sites that disable zooming, for instance with `user-scalable=no`, though this practice is strongly discouraged for accessibility and usability reasons). The biggest exceptions here are IE11 on Windows Phone 8.1, and iOS Safari (and any other iOS WebView-based browser) [prior to iOS 9.3](https://webkit.org/blog/5610/more-responsive-tapping-on-ios/).
-
-On touch-enabled laptop/desktop devices, IE11 and Microsoft Edge are currently the only browsers with "double-tap to zoom" functionality. As the [responsive meta tag]({{ site.baseurl }}/getting-started/quickstart/#responsive-meta-tag) is ignored by all desktop browsers, using `width=device-width` will have no effect on the 300ms delay here.
-
-To address this problem in IE11 and Microsoft Edge on desktop, as well as IE11 on Windows Phone 8.1, Athena explicitly uses the [`touch-action:manipulation` CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action) on all interactive elements (such as buttons and links). This property essentially disables double-tap functionality on those elements, eliminating the 300ms delay.
-
-In the case of old iOS versions (prior to 9.3), the suggested approach is to use additional scripts such as [FastClick](https://github.com/ftlabs/fastclick) to explicitly work around the delay.
-
-For further details, see the compatibility table for [suppressing 300ms delay for touchscreen interactions](https://patrickhlauke.github.io/touch/tests/results/#suppressing-300ms-delay).
+To merely toggle the visibility of an element, meaning its `display` is not modified and the element can still affect the flow of the document, use [the `.invisible` class]({{ site.baseurl }}{% link utilities/invisible-content.md %}) instead.

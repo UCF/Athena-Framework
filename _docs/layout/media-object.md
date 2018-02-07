@@ -7,10 +7,12 @@ group: layout
 
 The [media object](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/) helps build complex and repetitive components where some media is positioned alongside content that doesn't wrap around said media. Plus, it does this with only two required classes thanks to flexbox.
 
+
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
+
 
 ## Example
 
@@ -33,6 +35,7 @@ Internet Explorer 10-11 do not render inline elements like links or images (or `
 
 **Source:** [Flexbugs on GitHub](https://github.com/philipwalton/flexbugs#12-inline-elements-are-not-treated-as-flex-items)
 {% endcallout %}
+
 
 ## Nesting
 
@@ -57,6 +60,7 @@ Media objects can be infinitely nested, though we suggest you stop at some point
   </div>
 </div>
 {% endexample %}
+
 
 ## Alignment
 
@@ -95,6 +99,7 @@ Media in a media object can be aligned with flexbox utilities to the top (defaul
 </div>
 {% endexample %}
 
+
 ## Order
 
 Change the order of content in media objects by modifying the HTML itself, or by adding some custom flexbox CSS to set the `order` property (to an integer of your choosing).
@@ -108,6 +113,7 @@ Change the order of content in media objects by modifying the HTML itself, or by
   <img class="d-flex ml-3" data-src="holder.js/64x64" alt="Generic placeholder image">
 </div>
 {% endexample %}
+
 
 ## Media list
 

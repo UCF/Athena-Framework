@@ -7,7 +7,7 @@
 
     <title>
       
-        Reboot &middot; Athena Framework
+        Resets &middot; Athena Framework
       
     </title>
 
@@ -16,7 +16,7 @@
     
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link rel="stylesheet" href="/static/css/docs.min.css">
-    <link rel="canonical" href="/content/reboot/">
+    <link rel="canonical" href="/content/resets/">
     
   </head>
 
@@ -74,10 +74,10 @@
   <article class="py-5 container">
     <div class="row">
       <div class="col-md-8 bd-content">
-        <h1>Reboot</h1>
-        <p>Part of Athena’s job is to provide an elegant, consistent, and simple baseline to build upon. We use Reboot, a collection of element-specific CSS changes in a single file, to kickstart that.</p>
+        <h1>Resets</h1>
+        <p>Part of Athena’s job is to provide an elegant, consistent, and simple baseline to build upon. We use a combination of our own opinionated resets and <a href="https://v4-alpha.getbootstrap.com/content/reboot/">Bootstrap’s Reboot</a>, a collection of element-specific CSS changes in a single file, to kickstart that.</p>
 
-<p>Reboot builds upon Normalize, providing many HTML elements with somewhat opinionated styles using only element selectors. Additional styling is done only with classes. For example, we reboot some <code class="highlighter-rouge">&lt;table&gt;</code> styles for a simpler baseline and later provide <code class="highlighter-rouge">.table</code>, <code class="highlighter-rouge">.table-bordered</code>, and more.</p>
+<p>Reboot builds upon <a href="https://necolas.github.io/normalize.css/">Normalize</a>, providing many HTML elements with somewhat opinionated styles using only element selectors. Additional styling is done only with classes. For example, we reboot some <code class="highlighter-rouge">&lt;table&gt;</code> styles for a simpler baseline and later provide <code class="highlighter-rouge">.table</code>, <code class="highlighter-rouge">.table-bordered</code>, and more.</p>
 
 <h2 id="contents">Contents</h2>
 
@@ -98,12 +98,11 @@
     </ul>
   </li>
   <li><a href="#html5-hidden-attribute" id="markdown-toc-html5-hidden-attribute">HTML5 <code class="highlighter-rouge">[hidden]</code> attribute</a></li>
-  <li><a href="#click-delay-optimization-for-touch" id="markdown-toc-click-delay-optimization-for-touch">Click delay optimization for touch</a></li>
 </ul>
 
 <h2 id="approach">Approach</h2>
 
-<p>Here are our guidelines and reasons for choosing what to override in Reboot:</p>
+<p>Listed below are guidelines and reasons for resetting element styles in Athena:</p>
 
 <ul>
   <li>Update some browser default values to use <code class="highlighter-rouge">rem</code>s instead of <code class="highlighter-rouge">em</code>s for scalable component spacing.</li>
@@ -120,13 +119,12 @@
   <li>The <code class="highlighter-rouge">box-sizing</code> is globally set on every element—including <code class="highlighter-rouge">*:before</code> and <code class="highlighter-rouge">*:after</code>, to <code class="highlighter-rouge">border-box</code>. This ensures that the declared width of element is never exceeded due to padding or border.</li>
   <li>No base <code class="highlighter-rouge">font-size</code> is declared on the <code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code>, but <code class="highlighter-rouge">16px</code> is assumed (the browser default).
     <ul>
-      <li>Unlike Bootstrap 4, Athena applies different font sizes on <code class="highlighter-rouge">&lt;body&gt;</code> at different breakpoints: <code class="highlighter-rouge">.875rem</code> by default, and <code class="highlighter-rouge">1rem</code> at the <code class="highlighter-rouge">-md</code> breakpoint and up. Font size adjustments are applied on the <code class="highlighter-rouge">&lt;body&gt;</code> using <code class="highlighter-rouge">rem</code> units for easy responsive type-scaling via media queries while respecting user preferences and ensuring a more accessible approach.</li>
+      <li>Note that Athena applies different font sizes on <code class="highlighter-rouge">&lt;body&gt;</code> at different breakpoints: <code class="highlighter-rouge">.875rem</code> by default, and <code class="highlighter-rouge">1rem</code> at the <code class="highlighter-rouge">-md</code> breakpoint and up. Font size adjustments are applied on the <code class="highlighter-rouge">&lt;body&gt;</code> using <code class="highlighter-rouge">rem</code> units for easy responsive type-scaling via media queries while respecting user preferences and ensuring a more accessible approach.</li>
       <li>Athena intentionally does not utilize or recommend a <a href="https://v4-alpha.getbootstrap.com/content/typography/#responsive-typography">responsive typography</a> approach due to the need for fine-tuned font size customizations across the framework, and the fact that this method makes browser-level font size adjustments less flexible.</li>
     </ul>
   </li>
   <li>The <code class="highlighter-rouge">&lt;body&gt;</code> also sets a global <code class="highlighter-rouge">font-family</code> and <code class="highlighter-rouge">line-height</code>. This is inherited later by some form elements to prevent font inconsistencies.</li>
   <li>For safety, the <code class="highlighter-rouge">&lt;body&gt;</code> has a declared <code class="highlighter-rouge">background-color</code>, defaulting to <code class="highlighter-rouge">#fff</code>.</li>
-  <li>Athena applies global <code class="highlighter-rouge">:focus</code> rules on all elements that can receive focus (Bootstrap 4 does not do this).</li>
   <li>Global <code class="highlighter-rouge">&lt;a&gt;</code> and <code class="highlighter-rouge">&lt;button&gt;</code> transitions are applied when $enable-transitions is true.</li>
 </ul>
 
@@ -136,7 +134,7 @@
 
 <figure class="highlight"><pre><code class="language-sass" data-lang="sass"><span class="nv">$font-family-sans-serif</span><span class="p">:</span> <span class="s1">'Gotham SSm A'</span><span class="o">,</span> <span class="s1">'Gotham SSm B'</span><span class="o">,</span> <span class="s1">'UCF Sans Serif Alt'</span><span class="o">,</span> <span class="s1">'Helvetica Neue'</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="nb">sans-serif</span><span class="err">;</span></code></pre></figure>
 
-<p>This <code class="highlighter-rouge">font-family</code> is applied to the <code class="highlighter-rouge">&lt;body&gt;</code> and automatically inherited globally throughout Athena. To switch the global <code class="highlighter-rouge">font-family</code>, update <code class="highlighter-rouge">$font-family-base</code> and recompile Athena.</p>
+<p>This <code class="highlighter-rouge">font-family</code> is applied to the <code class="highlighter-rouge">&lt;body&gt;</code> and automatically inherited globally throughout Athena.</p>
 
 <h2 id="headings-and-paragraphs">Headings and paragraphs</h2>
 
@@ -415,24 +413,10 @@
 <div class="bd-callout bd-callout-warning">
 <h4 id="jquery-incompatibility">jQuery incompatibility</h4>
 
-<p><code class="highlighter-rouge">[hidden]</code> is not compatible with jQuery’s <code class="highlighter-rouge">$(...).hide()</code> and <code class="highlighter-rouge">$(...).show()</code> methods. This could potentially change in jQuery 3, but we’re not holding our breath. Therefore, we don’t currently especially endorse <code class="highlighter-rouge">[hidden]</code> over other techniques for managing the <code class="highlighter-rouge">display</code> of elements.</p>
+<p><code class="highlighter-rouge">[hidden]</code> is not compatible with jQuery’s <code class="highlighter-rouge">$(...).hide()</code> and <code class="highlighter-rouge">$(...).show()</code> methods. Therefore, we don’t currently especially endorse <code class="highlighter-rouge">[hidden]</code> over other techniques for managing the <code class="highlighter-rouge">display</code> of elements.</p>
 </div>
 
 <p>To merely toggle the visibility of an element, meaning its <code class="highlighter-rouge">display</code> is not modified and the element can still affect the flow of the document, use <a href="/utilities/invisible-content/">the <code class="highlighter-rouge">.invisible</code> class</a> instead.</p>
-
-<h2 id="click-delay-optimization-for-touch">Click delay optimization for touch</h2>
-
-<p>Traditionally, browsers on touchscreen devices have a delay of approximately 300ms between the end of a “tap” – the moment when a finger/stylus is lifted from screen – and the <a href="https://developer.mozilla.org/en-US/docs/Web/Events/click"><code class="highlighter-rouge">click</code> event</a> being fired. This delay is necessary for these browsers to correctly handle “double-tap to zoom” gestures without prematurely triggering actions or links after the first “tap”, but it can make your site feel slightly sluggish and unresponsive.</p>
-
-<p>Most mobile browsers automatically optimize away this 300ms delay for sites that use the <code class="highlighter-rouge">width=device-width</code> property as part of their <a href="/getting-started/quickstart/#responsive-meta-tag">responsive meta tag</a> (as well as for sites that disable zooming, for instance with <code class="highlighter-rouge">user-scalable=no</code>, though this practice is strongly discouraged for accessibility and usability reasons). The biggest exceptions here are IE11 on Windows Phone 8.1, and iOS Safari (and any other iOS WebView-based browser) <a href="https://webkit.org/blog/5610/more-responsive-tapping-on-ios/">prior to iOS 9.3</a>.</p>
-
-<p>On touch-enabled laptop/desktop devices, IE11 and Microsoft Edge are currently the only browsers with “double-tap to zoom” functionality. As the <a href="/getting-started/quickstart/#responsive-meta-tag">responsive meta tag</a> is ignored by all desktop browsers, using <code class="highlighter-rouge">width=device-width</code> will have no effect on the 300ms delay here.</p>
-
-<p>To address this problem in IE11 and Microsoft Edge on desktop, as well as IE11 on Windows Phone 8.1, Athena explicitly uses the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action"><code class="highlighter-rouge">touch-action:manipulation</code> CSS property</a> on all interactive elements (such as buttons and links). This property essentially disables double-tap functionality on those elements, eliminating the 300ms delay.</p>
-
-<p>In the case of old iOS versions (prior to 9.3), the suggested approach is to use additional scripts such as <a href="https://github.com/ftlabs/fastclick">FastClick</a> to explicitly work around the delay.</p>
-
-<p>For further details, see the compatibility table for <a href="https://patrickhlauke.github.io/touch/tests/results/#suppressing-300ms-delay">suppressing 300ms delay for touchscreen interactions</a>.</p>
 
       </div>
       <div class="col-md-4 bd-sidebar">
@@ -629,7 +613,7 @@
   
 
   <div class="bd-toc-item active">
-      <a class="bd-toc-link" href="/content/reboot/">
+      <a class="bd-toc-link" href="/content/resets/">
         Content
       </a>
 
@@ -641,8 +625,8 @@
           
 
           <li class="active bd-sidenav-active">
-            <a href="/content/reboot/">
-              Reboot
+            <a href="/content/resets/">
+              Resets
             </a>
 
             
