@@ -93,6 +93,7 @@
   <li><a href="#menu-headers" id="markdown-toc-menu-headers">Menu headers</a></li>
   <li><a href="#menu-dividers" id="markdown-toc-menu-dividers">Menu dividers</a></li>
   <li><a href="#disabled-menu-items" id="markdown-toc-disabled-menu-items">Disabled menu items</a></li>
+  <li><a href="#accessibility" id="markdown-toc-accessibility">Accessibility</a></li>
   <li><a href="#usage" id="markdown-toc-usage">Usage</a>    <ul>
       <li><a href="#via-data-attributes" id="markdown-toc-via-data-attributes">Via data attributes</a></li>
       <li><a href="#via-javascript" id="markdown-toc-via-javascript">Via JavaScript</a></li>
@@ -106,16 +107,6 @@
 <h2 id="examples">Examples</h2>
 
 <p>Wrap the dropdown’s toggle (your button or link) and the dropdown menu within <code class="highlighter-rouge">.dropdown</code>, or another element that declares <code class="highlighter-rouge">position: relative;</code>. Dropdowns can be triggered from <code class="highlighter-rouge">&lt;a&gt;</code> or <code class="highlighter-rouge">&lt;button&gt;</code> elements to better fit your potential needs.</p>
-
-<div class="bd-callout bd-callout-info">
-<h3 id="dropdown-menu-accessibility">Dropdown menu accessibility</h3>
-
-<p>The <a href="https://www.w3.org/TR/wai-aria/"><abbr title="Web Accessibility Initiative">WAI</abbr> <abbr title="Accessible Rich Internet Applications">ARIA</abbr></a> standard defines an actual <a href="https://www.w3.org/TR/wai-aria/roles#menu"><code class="highlighter-rouge">role="menu"</code> widget</a>, but this is specific to application-like menus which trigger actions or functions. <abbr title="Accessible Rich Internet Applications">ARIA</abbr> menus can only contain menu items, checkbox menu items, radio button menu items, radio button groups, and sub-menus.</p>
-
-<p>Athena’s dropdowns, on the other hand, are designed to be generic and applicable to a variety of situations and markup structures. For instance, it is possible to create dropdowns that contain additional inputs and form controls, such as search fields or login forms. For this reason, Athena does not expect (nor automatically add) any of the <code class="highlighter-rouge">role</code> and <code class="highlighter-rouge">aria-</code> attributes required for true <abbr title="Accessible Rich Internet Applications">ARIA</abbr> menus. Authors will have to include these more specific attributes themselves.</p>
-
-<p>However, Athena does add built-in support for most standard keyboard menu interactions, such as the ability to move through individual <code class="highlighter-rouge">.dropdown-item</code> elements using the cursor keys and close the menu with the <kbd>ESC</kbd> key.</p>
-</div>
 
 <h3 id="single-button-dropdowns">Single button dropdowns</h3>
 
@@ -517,7 +508,7 @@
 
 <h2 id="menu-items">Menu items</h2>
 
-<p>Historically dropdown menu contents <em>had</em> to be links, but that’s no longer the case with v4. Now you can optionally use <code class="highlighter-rouge">&lt;button&gt;</code> elements in your dropdowns instead of just <code class="highlighter-rouge">&lt;a&gt;</code>s.</p>
+<p>Athena provides the option of using <code class="highlighter-rouge">&lt;button&gt;</code> elements in your dropdowns instead of just <code class="highlighter-rouge">&lt;a&gt;</code>s.</p>
 
 <div class="bd-example" data-example-id="">
 <div class="dropdown">
@@ -628,9 +619,17 @@
   <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"dropdown-item"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Another link<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
+<h2 id="accessibility">Accessibility</h2>
+
+<p>The <a href="https://www.w3.org/TR/wai-aria/"><abbr title="Web Accessibility Initiative">WAI</abbr> <abbr title="Accessible Rich Internet Applications">ARIA</abbr></a> standard defines an actual <a href="https://www.w3.org/TR/wai-aria/roles#menu"><code class="highlighter-rouge">role="menu"</code> widget</a>, but this is specific to application-like menus which trigger actions or functions. <abbr title="Accessible Rich Internet Applications">ARIA</abbr> menus can only contain menu items, checkbox menu items, radio button menu items, radio button groups, and sub-menus.</p>
+
+<p>Athena’s dropdowns, on the other hand, are designed to be generic and applicable to a variety of situations and markup structures. For instance, it is possible to create dropdowns that contain additional inputs and form controls, such as search fields or login forms. For this reason, Athena does not expect (nor automatically add) any of the <code class="highlighter-rouge">role</code> and <code class="highlighter-rouge">aria-</code> attributes required for true <abbr title="Accessible Rich Internet Applications">ARIA</abbr> menus. Authors will have to include these more specific attributes themselves.</p>
+
+<p>However, Athena does add built-in support for most standard keyboard menu interactions, such as the ability to move through individual <code class="highlighter-rouge">.dropdown-item</code> elements using the cursor keys and close the menu with the <kbd>ESC</kbd> key.</p>
+
 <h2 id="usage">Usage</h2>
 
-<p>Via data attributes or JavaScript, the dropdown plugin toggles hidden content (dropdown menus) by toggling the <code class="highlighter-rouge">.show</code> class on the parent list item.</p>
+<p>Dropdown menu content is toggled by toggling the <code class="highlighter-rouge">.show</code> class on the parent list item, via data attributes or JavaScript.</p>
 
 <p>On mobile devices, opening a dropdown adds a <code class="highlighter-rouge">.dropdown-backdrop</code> as a tap area for closing dropdown menus when tapping outside the menu, a requirement for proper iOS support. <strong>This means that switching from an open dropdown menu to a different dropdown menu requires an extra tap on mobile.</strong></p>
 

@@ -5,7 +5,8 @@ description: Group a series of buttons together on a single line with the button
 group: components
 ---
 
-Group a series of buttons together on a single line with the button group. Add on optional JavaScript radio and checkbox style behavior with [our buttons plugin]({{ site.baseurl }}/components/buttons/#button-plugin).
+Group a series of buttons together on a single line with the button group. Add on optional JavaScript radio and checkbox style behavior with [Athena's included JavaScript for buttons]({{ site.baseurl }}{% link components/buttons.md %}#button-plugin).
+
 
 ## Contents
 
@@ -20,6 +21,7 @@ In order for assistive technologies (such as screen readers) to convey that a se
 In addition, groups and toolbars should be given an explicit label, as most assistive technologies will otherwise not announce them, despite the presence of the correct role attribute. In the examples provided here, we use `aria-label`, but alternatives such as `aria-labelledby` can also be used.
 {% endcallout %}
 
+
 ## Basic example
 
 Wrap a series of buttons with `.btn` in `.btn-group`.
@@ -31,6 +33,7 @@ Wrap a series of buttons with `.btn` in `.btn-group`.
   <button type="button" class="btn btn-default">Right</button>
 </div>
 {% endexample %}
+
 
 ## Button toolbar
 
@@ -85,6 +88,7 @@ Feel free to mix input groups with button groups in your toolbars. Similar to th
 </div>
 {% endexample %}
 
+
 ## Sizing
 
 Instead of applying button sizing classes to every button in a group, just add `.btn-group-*` to each `.btn-group`, including each one when nesting multiple groups.
@@ -115,6 +119,7 @@ Instead of applying button sizing classes to every button in a group, just add `
 <div class="btn-group btn-group-sm" role="group" aria-label="...">...</div>
 {% endhighlight %}
 
+
 ## Nesting
 
 Place a `.btn-group` within another `.btn-group` when you want dropdown menus mixed with a series of buttons.
@@ -136,6 +141,7 @@ Place a `.btn-group` within another `.btn-group` when you want dropdown menus mi
 </div>
 {% endexample %}
 
+
 ## Vertical variation
 
 Make a set of buttons appear vertically stacked rather than horizontally. **Split button dropdowns are not supported here.**
@@ -150,7 +156,6 @@ Make a set of buttons appear vertically stacked rather than horizontally. **Spli
     <button type="button" class="btn btn-default">Button</button>
   </div>
 </div>
-
 
 <div class="bd-example">
   <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
@@ -202,6 +207,7 @@ Make a set of buttons appear vertically stacked rather than horizontally. **Spli
   ...
 </div>
 {% endhighlight %}
+
 
 ## Tooltips and popovers
 

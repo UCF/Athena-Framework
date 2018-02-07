@@ -7,24 +7,16 @@ group: components
 
 Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They're made interactive with the included Athena dropdown JavaScript plugin. They're toggled by clicking, not by hovering; this is [an intentional design decision.](http://markdotto.com/2012/02/27/bootstrap-explained-dropdowns/)
 
+
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
+
 ## Examples
 
 Wrap the dropdown's toggle (your button or link) and the dropdown menu within `.dropdown`, or another element that declares `position: relative;`. Dropdowns can be triggered from `<a>` or `<button>` elements to better fit your potential needs.
-
-{% callout info %}
-### Dropdown menu accessibility
-
-The [<abbr title="Web Accessibility Initiative">WAI</abbr> <abbr title="Accessible Rich Internet Applications">ARIA</abbr>](https://www.w3.org/TR/wai-aria/) standard defines an actual [`role="menu"` widget](https://www.w3.org/TR/wai-aria/roles#menu), but this is specific to application-like menus which trigger actions or functions. <abbr title="Accessible Rich Internet Applications">ARIA</abbr> menus can only contain menu items, checkbox menu items, radio button menu items, radio button groups, and sub-menus.
-
-Athena's dropdowns, on the other hand, are designed to be generic and applicable to a variety of situations and markup structures. For instance, it is possible to create dropdowns that contain additional inputs and form controls, such as search fields or login forms. For this reason, Athena does not expect (nor automatically add) any of the `role` and `aria-` attributes required for true <abbr title="Accessible Rich Internet Applications">ARIA</abbr> menus. Authors will have to include these more specific attributes themselves.
-
-However, Athena does add built-in support for most standard keyboard menu interactions, such as the ability to move through individual `.dropdown-item` elements using the cursor keys and close the menu with the <kbd>ESC</kbd> key.
-{% endcallout %}
 
 ### Single button dropdowns
 
@@ -244,6 +236,7 @@ We use this extra class to reduce the horizontal `padding` on either side of the
 </div>
 {% endhighlight %}
 
+
 ## Sizing
 
 Button dropdowns work with buttons of all sizes, including default and split dropdown buttons.
@@ -349,6 +342,7 @@ Button dropdowns work with buttons of all sizes, including default and split dro
 </div>
 {% endhighlight %}
 
+
 ## Dropup variation
 
 Trigger dropdown menus above elements by adding `.dropup` to the parent element.
@@ -410,9 +404,10 @@ Trigger dropdown menus above elements by adding `.dropup` to the parent element.
 </div>
 {% endhighlight %}
 
+
 ## Menu items
 
-Historically dropdown menu contents *had* to be links, but that's no longer the case with v4. Now you can optionally use `<button>` elements in your dropdowns instead of just `<a>`s.
+Athena provides the option of using `<button>` elements in your dropdowns instead of just `<a>`s.
 
 {% example html %}
 <div class="dropdown">
@@ -426,6 +421,7 @@ Historically dropdown menu contents *had* to be links, but that's no longer the 
   </div>
 </div>
 {% endexample %}
+
 
 ## Menu alignment
 
@@ -448,6 +444,7 @@ By default, a dropdown menu is automatically positioned 100% from the top and al
 </div>
 {% endexample %}
 
+
 ## Menu headers
 
 Add a header to label sections of actions in any dropdown menu.
@@ -459,6 +456,7 @@ Add a header to label sections of actions in any dropdown menu.
   <a class="dropdown-item" href="#">Another action</a>
 </div>
 {% endexample %}
+
 
 ## Menu dividers
 
@@ -486,9 +484,19 @@ Add `.disabled` to items in the dropdown to **style them as disabled**.
 </div>
 {% endexample %}
 
+
+## Accessibility
+
+The [<abbr title="Web Accessibility Initiative">WAI</abbr> <abbr title="Accessible Rich Internet Applications">ARIA</abbr>](https://www.w3.org/TR/wai-aria/) standard defines an actual [`role="menu"` widget](https://www.w3.org/TR/wai-aria/roles#menu), but this is specific to application-like menus which trigger actions or functions. <abbr title="Accessible Rich Internet Applications">ARIA</abbr> menus can only contain menu items, checkbox menu items, radio button menu items, radio button groups, and sub-menus.
+
+Athena's dropdowns, on the other hand, are designed to be generic and applicable to a variety of situations and markup structures. For instance, it is possible to create dropdowns that contain additional inputs and form controls, such as search fields or login forms. For this reason, Athena does not expect (nor automatically add) any of the `role` and `aria-` attributes required for true <abbr title="Accessible Rich Internet Applications">ARIA</abbr> menus. Authors will have to include these more specific attributes themselves.
+
+However, Athena does add built-in support for most standard keyboard menu interactions, such as the ability to move through individual `.dropdown-item` elements using the cursor keys and close the menu with the <kbd>ESC</kbd> key.
+
+
 ## Usage
 
-Via data attributes or JavaScript, the dropdown plugin toggles hidden content (dropdown menus) by toggling the `.show` class on the parent list item.
+Dropdown menu content is toggled by toggling the `.show` class on the parent list item, via data attributes or JavaScript.
 
 On mobile devices, opening a dropdown adds a `.dropdown-backdrop` as a tap area for closing dropdown menus when tapping outside the menu, a requirement for proper iOS support. **This means that switching from an open dropdown menu to a different dropdown menu requires an extra tap on mobile.**
 

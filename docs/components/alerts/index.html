@@ -97,7 +97,7 @@
 
 <h2 id="examples">Examples</h2>
 
-<p>Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the four <strong>required</strong> contextual classes (e.g., <code class="highlighter-rouge">.alert-success</code>). For inline dismissal, use the <a href="#dismissing">alerts jQuery plugin</a>.</p>
+<p>Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the four <strong>required</strong> contextual classes (e.g., <code class="highlighter-rouge">.alert-success</code>). Inline dismissal is <a href="#dismissing">handled using JavaScript</a>.</p>
 
 <div class="bd-example" data-example-id="">
 <div class="alert alert-success" role="alert">
@@ -184,10 +184,10 @@
 
 <h3 id="dismissing">Dismissing</h3>
 
-<p>Using the alert JavaScript plugin, it’s possible to dismiss any alert inline. Here’s how:</p>
+<p>Using Athena’s provided JavaScript, it’s possible to dismiss any alert inline. Here’s how:</p>
 
 <ul>
-  <li>Be sure you’ve loaded the compiled Athena JavaScript.</li>
+  <li>Be sure Athena’s JavaScript is <a href="/getting-started/quick-start/#3-add-javascript">included on your page correctly</a>.</li>
   <li>Add a dismiss button and the <code class="highlighter-rouge">.alert-dismissible</code> class, which adds extra padding to the right of the alert and positions the <code class="highlighter-rouge">.close</code> button.</li>
   <li>On the dismiss button, add the <code class="highlighter-rouge">data-dismiss="alert"</code> attribute, which triggers the JavaScript functionality. Be sure to use the <code class="highlighter-rouge">&lt;button&gt;</code> element with it for proper behavior across all devices.</li>
   <li>To animate alerts when dismissing them, be sure to add the <code class="highlighter-rouge">.fade</code> and <code class="highlighter-rouge">.show</code> classes.</li>
@@ -251,7 +251,7 @@
 
 <h3 id="events">Events</h3>
 
-<p>Athena’s alert plugin exposes a few events for hooking into alert functionality.</p>
+<p>Athena’s alert JavaScript exposes a few events for hooking into alert functionality.</p>
 
 <table>
   <thead>

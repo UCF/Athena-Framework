@@ -1,16 +1,18 @@
 ---
 layout: docs-components
 title: Modal
-description: Use Athena's JavaScript modal plugin to add dialogs to your site for lightboxes, user notifications, or completely custom content.
+description: Use Athena's modal JavaScript to add dialogs to your site for lightboxes, user notifications, or completely custom content.
 group: components
 ---
 
 Modals are streamlined, but flexible dialog prompts powered by JavaScript. They support a number of use cases from user notification to completely custom content and feature a handful of helpful subcomponents, sizes, and more.
 
+
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
+
 
 ## How it works
 
@@ -20,12 +22,7 @@ Before getting started with Athena's modal component, be sure to read the follow
 - Clicking on the modal "backdrop" will automatically close the modal.
 - Athena only supports one modal window at a time. Nested modals aren't supported as we believe them to be poor user experiences.
 - Modals use `position: fixed`, which can sometimes be a bit particular about its rendering. Whenever possible, place your modal HTML in a top-level position to avoid potential interference from other elements. You'll likely run into issues when nesting a `.modal` within another fixed element.
-- Once again, due to `position: fixed`, there are some caveats with using modals on mobile devices. [See our browser support docs]({{ site.baseurl }}/getting-started/browsers-devices/#modals-and-dropdowns-on-mobile) for details.
-- Lastly, the `autofocus` HTML attribute has no effect in modals. Here's how you can achieve the same effect with custom JavaScript.
-
-Keep reading for demos and usage guidelines.
-
-
+- Once again, due to `position: fixed`, there are some caveats with using modals on mobile devices. [See our browser support docs]({{ site.baseurl }}{% link getting-started/browsers-devices.md %}#modals-and-dropdowns-on-mobile) for details.
 - Due to how HTML5 defines its semantics, [the `autofocus` HTML attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-autofocus) has no effect in Athena modals. To achieve the same effect, use some custom JavaScript:
 
 {% highlight js %}
@@ -33,6 +30,7 @@ $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').focus()
 })
 {% endhighlight %}
+
 
 ## Examples
 
@@ -219,47 +217,7 @@ When modals become too long for the user's viewport or device, they scroll indep
 
 ### Tooltips and popovers
 
-[Tooltips]({{ site.baseurl }}/components/tooltips/) and [popovers]({{ site.baseurl }}/components/popovers/) can be placed within modals as needed. When modals are closed, any tooltips and popovers within are also automatically dismissed.
-
-<div id="exampleModalPopovers" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalPopoversLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalPopoversLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <h5>Popover in a modal</h5>
-        <p>This <a href="#" role="button" class="btn btn-default popover-test" title="Popover title" data-content="Popover body content is set in this attribute.">button</a> triggers a popover on click.</p>
-        <hr>
-        <h5>Tooltips in a modal</h5>
-        <p><a href="#" class="tooltip-test" title="Tooltip">This link</a> and <a href="#" class="tooltip-test" title="Tooltip">that link</a> have tooltips on hover.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="bd-example">
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalPopovers">
-    Launch demo modal
-  </button>
-</div>
-
-{% highlight html %}
-<div class="modal-body">
-  <h5>Popover in a modal</h5>
-  <p>This <a href="#" role="button" class="btn btn-default popover-test" title="Popover title" data-content="Popover body content is set in this attribute.">button</a> triggers a popover on click.</p>
-  <hr>
-  <h5>Tooltips in a modal</h5>
-  <p><a href="#" class="tooltip-test" title="Tooltip">This link</a> and <a href="#" class="tooltip-test" title="Tooltip">that link</a> have tooltips on hover.</p>
-</div>
-{% endhighlight %}
+[Tooltips]({{ site.baseurl }}{% link components/tooltips.md %}) and [popovers]({{ site.baseurl }}{% link components/popovers.md %}) are currently unsupported within modals. Support will be added in a future update.
 
 ### Using the grid
 
@@ -412,13 +370,15 @@ For modals that simply appear rather than fade in to view, remove the `.fade` cl
 
 If the height of a modal changes while it is open, you should call `$('#myModal').data('bs.modal').handleUpdate()` to readjust the modal's position in case a scrollbar appears.
 
-### Accessibility
-
-Be sure to add `role="dialog"` and `aria-labelledby="..."`, referencing the modal title, to `.modal`, and `role="document"` to the `.modal-dialog` itself. Additionally, you may give a description of your modal dialog with `aria-describedby` on `.modal`.
-
 ### Embedding YouTube videos
 
 Embedding YouTube videos in modals requires additional JavaScript not in Athena to automatically stop playback and more. [See this helpful Stack Overflow post](https://stackoverflow.com/questions/18622508/bootstrap-3-and-youtube-in-modal) for more information.
+
+
+## Accessibility
+
+Be sure to add `role="dialog"` and `aria-labelledby="..."`, referencing the modal title, to `.modal`, and `role="document"` to the `.modal-dialog` itself. Additionally, you may give a description of your modal dialog with `aria-describedby` on `.modal`.
+
 
 ## Optional sizes
 
@@ -486,9 +446,10 @@ Modals have two optional sizes, available via modifier classes to be placed on a
   </div>
 </div>
 
+
 ## Usage
 
-The modal plugin toggles your hidden content on demand, via data attributes or JavaScript. It also adds `.modal-open` to the `<body>` to override default scrolling behavior and generates a `.modal-backdrop` to provide a click area for dismissing shown modals when clicking outside the modal.
+Athena's modal JavaScript toggles your hidden content on demand, via data attributes or direct JavaScript instantiation. It also adds `.modal-open` to the `<body>` to override default scrolling behavior and generates a `.modal-backdrop` to provide a click area for dismissing shown modals when clicking outside the modal.
 
 ### Via data attributes
 

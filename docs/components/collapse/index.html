@@ -75,7 +75,7 @@
     <div class="row">
       <div class="col-md-8 bd-content">
         <h1>Collapse</h1>
-        <p>The Athena collapse plugin allows you to toggle content on your pages with a few classes thanks to some helpful JavaScript.</p>
+        <p>The Athena collapse component allows you to toggle content on your pages with a few classes thanks to some helpful JavaScript.</p>
 
 <h2 id="contents">Contents</h2>
 
@@ -243,6 +243,8 @@
 <p>Be sure to add <code class="highlighter-rouge">aria-expanded</code> to the control element. This attribute explicitly conveys the current state of the collapsible element tied to the control to screen readers and similar assistive technologies. If the collapsible element is closed by default, the attribute on the control element should have a value of <code class="highlighter-rouge">aria-expanded="false"</code>. If you’ve set the collapsible element to be open by default using the <code class="highlighter-rouge">show</code> class, set <code class="highlighter-rouge">aria-expanded="true"</code> on the control instead. The plugin will automatically toggle this attribute on the control based on whether or not the collapsible element has been opened or closed.</p>
 
 <p>Additionally, if your control element is targeting a single collapsible element – i.e. the <code class="highlighter-rouge">data-target</code> attribute is pointing to an <code class="highlighter-rouge">id</code> selector – you may add an additional <code class="highlighter-rouge">aria-controls</code> attribute to the control element, containing the <code class="highlighter-rouge">id</code> of the collapsible element. Modern screen readers and similar assistive technologies make use of this attribute to provide users with additional shortcuts to navigate directly to the collapsible element itself.</p>
+
+<p>Note that Athena’s current implementation does not cover the various keyboard interactions described in the <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#accordion">WAI-ARIA Authoring Practices 1.1 accordion pattern</a> - you will need to include these yourself with custom JavaScript.</p>
 
 <h2 id="usage">Usage</h2>
 
