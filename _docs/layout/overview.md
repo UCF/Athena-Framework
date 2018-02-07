@@ -8,10 +8,12 @@ redirect_from: "/layout/"
 
 Athena includes several components and options for laying out your project, including wrapping containers, a powerful flexbox grid system, a flexible media object, and responsive utility classes.
 
+
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
+
 
 ## Containers
 
@@ -160,6 +162,7 @@ The Sass mixin for targeting the same screen size range would be:
 {% highlight scss %}
 @include media-breakpoint-between(md, xl) { ... }
 {% endhighlight %}
+
 
 ## Z-index
 

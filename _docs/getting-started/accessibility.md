@@ -9,7 +9,7 @@ The Athena Framework provides a rich suite of tools for building accessible webs
 
 {% callout info %}
 ## Accessibility Basics
-It is critical that UCF's web developers and content editors understand not only what the minimum accessibility requirements are for higher education websites and applications, but also _how_ to implement those standards. The Athena Framework provides utilities and pre-styled components that are designed to be accessible, but **it is the responsibility of the developers and content editors using the framework to implement them appropriately**.
+The Athena Framework provides utilities and pre-styled components that are designed to be accessible, but **it is the responsibility of the developers and content editors using the framework to implement them appropriately**.
 
 Please see our [Additional Resources](#additional-resources) section for further reading on accessibility requirements.
 {% endcallout %}
@@ -37,7 +37,7 @@ Because Athena's components are purposely designed to be fairly generic, authors
 
 ### Color contrast
 
-Colors in Athena have been modified from Bootstrap's defaults to ensure they meet [WCAG 2.0 AA color contrast requirements](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html) (color contrast ratio of 4.5 to 1). In addition, most components include overrides unique to Athena that apply accessible text colors out-of-the-box. However, projects that apply custom color overrides should be tested on a per-case basis to ensure they still meet color contrast requirements.
+Colors in Athena have been modified from Bootstrap's defaults to ensure they meet [WCAG 2.0 AA color contrast requirements](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html) (color contrast ratio of at least 4.5 to 1). In addition, most components include overrides unique to Athena that apply accessible text colors out-of-the-box. However, projects that apply custom color overrides should be tested on a per-case basis to ensure they still meet color contrast requirements.
 
 ### Visually hidden content
 
