@@ -80,15 +80,13 @@
 <ul id="markdown-toc">
   <li><a href="#contents" id="markdown-toc-contents">Contents</a></li>
   <li><a href="#text-colors" id="markdown-toc-text-colors">Text colors</a>    <ul>
-      <li><a href="#on-links" id="markdown-toc-on-links">On links</a></li>
-      <li><a href="#accessible-over-white-colors" id="markdown-toc-accessible-over-white-colors">Accessible-over-white colors</a></li>
       <li><a href="#extended-brand-colors" id="markdown-toc-extended-brand-colors">Extended brand colors</a></li>
-      <li><a href="#extra-colors" id="markdown-toc-extra-colors">Extra colors</a></li>
+      <li><a href="#accessible-over-white-colors" id="markdown-toc-accessible-over-white-colors">Accessible-over-white colors</a></li>
+      <li><a href="#on-links" id="markdown-toc-on-links">On links</a></li>
     </ul>
   </li>
   <li><a href="#background-colors" id="markdown-toc-background-colors">Background colors</a>    <ul>
       <li><a href="#extended-colors" id="markdown-toc-extended-colors">Extended colors</a></li>
-      <li><a href="#extra-colors-1" id="markdown-toc-extra-colors-1">Extra colors</a></li>
       <li><a href="#transparent-variants" id="markdown-toc-transparent-variants">Transparent variants</a></li>
     </ul>
   </li>
@@ -96,7 +94,13 @@
 
 <h2 id="text-colors">Text colors</h2>
 
-<p>Convey meaning through color with a handful of emphasis utility classes. These may also be applied to links and will darken on hover just like our default link styles.</p>
+<p>Style text with brand-specific colors with a handful of emphasis utility classes. These may also be applied to links and will darken on hover just like our default link styles.</p>
+
+<div class="bd-callout bd-callout-warning">
+<h3 id="color-contrast">Color contrast</h3>
+
+<p>Keep in mind that most of Athena’s text utilities do <em>not</em> meet WCAG 2.0 AA color contrast requirements against white or other light backgrounds.  If you’re looking to apply color to text against a white background, please use our <a href="#accessible-over-white-colors">accessible-over-white utility classes</a>.</p>
+</div>
 
 <div class="bd-example" data-example-id="">
 <p class="text-default">Etiam porta sem malesuada ultricies vehicula.</p>
@@ -108,6 +112,8 @@
 <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
 <p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
 <p class="text-inverse">Etiam porta sem malesuada magna mollis euismod.</p>
+<p class="text-muted">Etiam porta sem malesuada ultricies vehicula.</p>
+<p class="text-white">Etiam porta sem malesuada magna mollis euismod.</p>
 </div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-default"</span><span class="nt">&gt;</span>Etiam porta sem malesuada ultricies vehicula.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-primary"</span><span class="nt">&gt;</span>Nullam id dolor id nibh ultricies vehicula ut id elit.<span class="nt">&lt;/p&gt;</span>
@@ -117,57 +123,9 @@
 <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-info"</span><span class="nt">&gt;</span>Maecenas sed diam eget risus varius blandit sit amet non magna.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-warning"</span><span class="nt">&gt;</span>Etiam porta sem malesuada magna mollis euismod.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-danger"</span><span class="nt">&gt;</span>Donec ullamcorper nulla non metus auctor fringilla.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-inverse"</span><span class="nt">&gt;</span>Etiam porta sem malesuada magna mollis euismod.<span class="nt">&lt;/p&gt;</span></code></pre></div>
-
-<h3 id="on-links">On links</h3>
-
-<p>Contextual text classes also work well on anchors with the provided hover and focus states.</p>
-
-<div class="bd-example" data-example-id="">
-<a href="#" class="text-default">Default color link</a>
-<a href="#" class="text-primary">Primary link</a>
-<a href="#" class="text-secondary">Secondary link</a>
-<a href="#" class="text-complementary">Complementary link</a>
-<a href="#" class="text-success">Success link</a>
-<a href="#" class="text-info">Info link</a>
-<a href="#" class="text-warning">Warning link</a>
-<a href="#" class="text-danger">Danger link</a>
-<a href="#" class="text-inverse">Inverse link</a>
-</div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"text-default"</span><span class="nt">&gt;</span>Default color link<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"text-primary"</span><span class="nt">&gt;</span>Primary link<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"text-secondary"</span><span class="nt">&gt;</span>Secondary link<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"text-complementary"</span><span class="nt">&gt;</span>Complementary link<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"text-success"</span><span class="nt">&gt;</span>Success link<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"text-info"</span><span class="nt">&gt;</span>Info link<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"text-warning"</span><span class="nt">&gt;</span>Warning link<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"text-danger"</span><span class="nt">&gt;</span>Danger link<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"text-inverse"</span><span class="nt">&gt;</span>Inverse link<span class="nt">&lt;/a&gt;</span></code></pre></div>
-
-<h3 id="accessible-over-white-colors">Accessible-over-white colors</h3>
-
-<p>Athena also provides a unique set of text color classes, using the <code class="highlighter-rouge">-aw</code> suffix, that are specifically intended for text used over white backgrounds for adequate contrast:</p>
-
-<div class="bd-example" data-example-id="">
-<p class="text-default-aw">Etiam porta sem malesuada ultricies vehicula.</p>
-<p class="text-primary-aw">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-<p class="text-secondary-aw">Etiam porta sem malesuada magna mollis euismod.</p>
-<p class="text-complementary-aw">Etiam porta sem malesuada ultricies vehicula.</p>
-<p class="text-success-aw">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
-<p class="text-info-aw">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-<p class="text-warning-aw">Etiam porta sem malesuada magna mollis euismod.</p>
-<p class="text-danger-aw">Donec ullamcorper nulla non metus auctor fringilla.</p>
-<p class="text-inverse-aw">Etiam porta sem malesuada magna mollis euismod.</p>
-</div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-default-aw"</span><span class="nt">&gt;</span>Etiam porta sem malesuada ultricies vehicula.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-primary-aw"</span><span class="nt">&gt;</span>Nullam id dolor id nibh ultricies vehicula ut id elit.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-secondary-aw"</span><span class="nt">&gt;</span>Etiam porta sem malesuada magna mollis euismod.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-complementary-aw"</span><span class="nt">&gt;</span>Etiam porta sem malesuada ultricies vehicula.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-success-aw"</span><span class="nt">&gt;</span>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-info-aw"</span><span class="nt">&gt;</span>Maecenas sed diam eget risus varius blandit sit amet non magna.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-warning-aw"</span><span class="nt">&gt;</span>Etiam porta sem malesuada magna mollis euismod.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-danger-aw"</span><span class="nt">&gt;</span>Donec ullamcorper nulla non metus auctor fringilla.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-inverse-aw"</span><span class="nt">&gt;</span>Etiam porta sem malesuada magna mollis euismod.<span class="nt">&lt;/p&gt;</span></code></pre></div>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-inverse"</span><span class="nt">&gt;</span>Etiam porta sem malesuada magna mollis euismod.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-muted"</span><span class="nt">&gt;</span>Etiam porta sem malesuada ultricies vehicula.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-white"</span><span class="nt">&gt;</span>Etiam porta sem malesuada magna mollis euismod.<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
 <h3 id="extended-brand-colors">Extended brand colors</h3>
 
@@ -194,20 +152,57 @@
 <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-metallic-lighter"</span><span class="nt">&gt;</span>Etiam porta sem malesuada magna mollis euismod.<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-metallic-lightest"</span><span class="nt">&gt;</span>Donec ullamcorper nulla non metus auctor fringilla.<span class="nt">&lt;/p&gt;</span></code></pre></div>
 
-<h3 id="extra-colors">Extra colors</h3>
+<h3 id="accessible-over-white-colors">Accessible-over-white colors</h3>
 
-<p>The colors below are carried over from Bootstrap, and don’t follow Athena’s standard naming conventions.</p>
-
-<p>Note that, unlike in Bootstrap 4, <code class="highlighter-rouge">.text-white</code> <strong>does</strong> have link styling applied to it in Athena.</p>
+<p>Athena also provides a unique set of text color classes, using the <code class="highlighter-rouge">-aw</code> suffix, that are specifically intended for text used over white backgrounds for adequate contrast:</p>
 
 <div class="bd-example" data-example-id="">
-<p class="text-muted">Etiam porta sem malesuada ultricies vehicula.</p>
-<p class="text-white">Etiam porta sem malesuada magna mollis euismod.</p>
+<p class="text-default-aw">Etiam porta sem malesuada ultricies vehicula.</p>
+<p class="text-primary-aw">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+<p class="text-secondary-aw">Etiam porta sem malesuada magna mollis euismod.</p>
+<p class="text-complementary-aw">Etiam porta sem malesuada ultricies vehicula.</p>
+<p class="text-success-aw">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+<p class="text-info-aw">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+<p class="text-warning-aw">Etiam porta sem malesuada magna mollis euismod.</p>
+<p class="text-danger-aw">Donec ullamcorper nulla non metus auctor fringilla.</p>
+<p class="text-inverse-aw">Etiam porta sem malesuada magna mollis euismod.</p>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-default-aw"</span><span class="nt">&gt;</span>Etiam porta sem malesuada ultricies vehicula.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-primary-aw"</span><span class="nt">&gt;</span>Nullam id dolor id nibh ultricies vehicula ut id elit.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-secondary-aw"</span><span class="nt">&gt;</span>Etiam porta sem malesuada magna mollis euismod.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-complementary-aw"</span><span class="nt">&gt;</span>Etiam porta sem malesuada ultricies vehicula.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-success-aw"</span><span class="nt">&gt;</span>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-info-aw"</span><span class="nt">&gt;</span>Maecenas sed diam eget risus varius blandit sit amet non magna.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-warning-aw"</span><span class="nt">&gt;</span>Etiam porta sem malesuada magna mollis euismod.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-danger-aw"</span><span class="nt">&gt;</span>Donec ullamcorper nulla non metus auctor fringilla.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-inverse-aw"</span><span class="nt">&gt;</span>Etiam porta sem malesuada magna mollis euismod.<span class="nt">&lt;/p&gt;</span></code></pre></div>
+
+<h3 id="on-links">On links</h3>
+
+<p>Contextual text classes also work well on anchors with the provided hover and focus states.</p>
+
+<div class="bd-example" data-example-id="">
+<a href="#" class="text-default">Default color link</a>
+<a href="#" class="text-primary">Primary link</a>
+<a href="#" class="text-secondary">Secondary link</a>
+<a href="#" class="text-complementary">Complementary link</a>
+<a href="#" class="text-success">Success link</a>
+<a href="#" class="text-info">Info link</a>
+<a href="#" class="text-warning">Warning link</a>
+<a href="#" class="text-danger">Danger link</a>
+<a href="#" class="text-inverse">Inverse link</a>
 <a href="#" class="text-muted">Muted link</a>
 <a href="#" class="text-white">White link</a>
 </div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-muted"</span><span class="nt">&gt;</span>Etiam porta sem malesuada ultricies vehicula.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"text-white"</span><span class="nt">&gt;</span>Etiam porta sem malesuada magna mollis euismod.<span class="nt">&lt;/p&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"text-default"</span><span class="nt">&gt;</span>Default color link<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"text-primary"</span><span class="nt">&gt;</span>Primary link<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"text-secondary"</span><span class="nt">&gt;</span>Secondary link<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"text-complementary"</span><span class="nt">&gt;</span>Complementary link<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"text-success"</span><span class="nt">&gt;</span>Success link<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"text-info"</span><span class="nt">&gt;</span>Info link<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"text-warning"</span><span class="nt">&gt;</span>Warning link<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"text-danger"</span><span class="nt">&gt;</span>Danger link<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"text-inverse"</span><span class="nt">&gt;</span>Inverse link<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"text-muted"</span><span class="nt">&gt;</span>Muted link<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"text-white"</span><span class="nt">&gt;</span>White link<span class="nt">&lt;/a&gt;</span></code></pre></div>
 
@@ -215,9 +210,9 @@
 
 <p>Similar to the contextual text color classes, easily set the background of an element to any contextual class.</p>
 
-<p>Unlike in Bootstrap 4, background utilities <strong>do set <code class="highlighter-rouge">color</code></strong> in Athena, so <code class="highlighter-rouge">.text-*</code> utilities are not required for accessible text contrast out-of-the-box. However, link colors are still opt-in with <code class="highlighter-rouge">.bg-&lt;color&gt;-link</code> utilities, so that we don’t override stylized link components (such as buttons) unintentionally.</p>
+<p>Note that Athena’s background utilities <strong>do set text <code class="highlighter-rouge">color</code></strong>, so <code class="highlighter-rouge">.text-*</code> utilities are not required for accessible text contrast out-of-the-box. However, link colors are still opt-in with <code class="highlighter-rouge">.bg-&lt;color&gt;-link</code> utilities, so that we don’t override stylized link components (such as buttons) unintentionally.</p>
 
-<p>Note that <code class="highlighter-rouge">.bg-secondary</code> does <em>not</em> have a custom link color class.</p>
+<p>Note that <code class="highlighter-rouge">.bg-secondary</code> and <code class="highlighter-rouge">.bg-faded</code> do <em>not</em> have their own custom link color class.</p>
 
 <div class="bd-example" data-example-id="">
 <div class="bg-default">
@@ -256,6 +251,10 @@
   Cras mattis consectetur purus sit amet fermentum.
   <a class="bg-inverse-link" href="#">Styled link.</a>
 </div>
+<div class="bg-faded">
+  Cras mattis consectetur purus sit amet fermentum.
+  <a href="#">Unstyled link.</a>
+</div>
 </div>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-default"</span><span class="nt">&gt;</span>
   Donec ullamcorper nulla non metus auctor fringilla.
@@ -292,6 +291,10 @@
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-inverse"</span><span class="nt">&gt;</span>
   Cras mattis consectetur purus sit amet fermentum.
   <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"bg-inverse-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Styled link.<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-faded"</span><span class="nt">&gt;</span>
+  Cras mattis consectetur purus sit amet fermentum.
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Unstyled link.<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
 <h3 id="extended-colors">Extended colors</h3>
@@ -373,17 +376,6 @@
   <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"bg-metallic-lightest-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Styled link.<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-<h3 id="extra-colors-1">Extra colors</h3>
-
-<p>The colors below are carried over from Bootstrap, and don’t follow Athena’s standard naming conventions.</p>
-
-<p>Note that <code class="highlighter-rouge">.bg-faded</code> does <em>not</em> have its own link color class.</p>
-
-<div class="bd-example" data-example-id="">
-<div class="bg-faded">Cras mattis consectetur purus sit amet fermentum. <a href="#">Unstyled link.</a></div>
-</div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bg-faded"</span><span class="nt">&gt;</span>Cras mattis consectetur purus sit amet fermentum. <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Unstyled link.<span class="nt">&lt;/a&gt;&lt;/div&gt;</span></code></pre></div>
-
 <h3 id="transparent-variants">Transparent variants</h3>
 
 <p>Add the <code class="highlighter-rouge">-t-&lt;level&gt;</code> suffix to pretty much any background utility class to create a semi-transparent version of that background color.</p>
@@ -427,8 +419,6 @@
   Nullam id dolor id nibh ultricies vehicula ut id elit.
   <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"bg-primary-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Styled Link.<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></figure>
-
-<hr />
 
 <div class="bd-callout bd-callout-info">
 <h4 id="dealing-with-specificity">Dealing with specificity</h4>
@@ -1100,6 +1090,19 @@
           
 
           <li class="">
+            <a href="/utilities/embeds/">
+              Embeds
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
             <a href="/utilities/filters/">
               Filters
             </a>
@@ -1126,8 +1129,8 @@
           
 
           <li class="">
-            <a href="/utilities/image-replacement/">
-              Image replacement
+            <a href="/utilities/float/">
+              Float
             </a>
 
             
@@ -1139,8 +1142,8 @@
           
 
           <li class="">
-            <a href="/utilities/invisible-content/">
-              Invisible content
+            <a href="/utilities/image-replacement/">
+              Image replacement
             </a>
 
             
@@ -1180,19 +1183,6 @@
           <li class="">
             <a href="/utilities/position/">
               Position
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/utilities/responsive-helpers/">
-              Responsive helpers
             </a>
 
             
@@ -1271,6 +1261,19 @@
           <li class="">
             <a href="/utilities/vertical-align/">
               Vertical align
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/utilities/visibility-property/">
+              Visibility property
             </a>
 
             

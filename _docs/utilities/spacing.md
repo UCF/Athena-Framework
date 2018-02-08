@@ -6,10 +6,12 @@ group: utilities
 
 Assign responsive-friendly `margin` or `padding` values to an element or a subset of its sides with shorthand classes. Includes support for individual properties, all properties, and vertical and horizontal properties. Classes are built from a default Sass map ranging from `.25rem` to `3rem`.
 
+
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
+
 
 ## Notation
 
@@ -42,6 +44,7 @@ Where *size* is one of:
 * `5` - (by default) for classes that set the `margin` or `padding` to `$spacer-x * 3` or `$spacer-y * 3`
 
 (You can add more sizes by adding entries to the `$spacers` Sass map variable.)
+
 
 ## Examples
 

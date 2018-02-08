@@ -4,12 +4,14 @@ title: Typography
 group: utilities
 ---
 
-The following utilities can be used to add additional styles to texts.
+The following utilities can be used to add additional styles to text.
+
 
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
+
 
 ## Text alignment
 
@@ -20,7 +22,7 @@ Easily realign text to components with text alignment classes.
 {% endexample %}
 
 {% example html %}
-<div class="card">
+<div class="card w-50">
   <div class="card-block text-nowrap">
     Curabitur blandit tempus ardua ridiculus sed magna.
   </div>
@@ -40,6 +42,7 @@ For left, right, and center alignment, responsive classes are available that use
 <p class="text-xl-left">Left aligned text on viewports sized XL (extra-large) or wider.</p>
 {% endexample %}
 
+
 ## Text transform
 
 Transform text in components with text capitalization classes.
@@ -52,6 +55,7 @@ Transform text in components with text capitalization classes.
 {% endexample %}
 
 Note how `text-capitalize` only changes the first letter of each word, leaving the case of any other letters unaffected.
+
 
 ## Font weight and italics
 
@@ -67,6 +71,7 @@ Note that `.font-weight-black` and `.font-weight-light` will only take effect on
 <p class="font-italic">Italic text.</p>
 {% endexample %}
 
+
 ## Font family
 
 Use `font-family` utility classes to quickly change the font family on an element.  These classes are optimized for use with headings, `.lead` text, and `.blockquote`s.
@@ -79,6 +84,7 @@ Note that `.font-condensed` is only optimized for heading usage due to readabili
 <p class="font-slab-serif">Slab serif</p>
 <p class="font-condensed">Condensed</p>
 {% endexample %}
+
 
 ## Letter spacing
 

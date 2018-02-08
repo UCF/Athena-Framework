@@ -7,6 +7,7 @@ redirect_from: "/utilities/"
 
 Use border utilities to quickly style the `border` and `border-radius` of an element. Great for images, buttons, or any other element.
 
+
 ## Border
 
 Add classes to an element to remove all borders or some borders.
@@ -20,6 +21,7 @@ Add classes to an element to remove all borders or some borders.
 <span class="border-left-0"></span>
 {% endexample %}
 </div>
+
 
 ## Border-radius
 

@@ -6,10 +6,12 @@ group: utilities
 
 Quickly manage the layout, alignment, and sizing of grid columns, navigation, components, and more with a full suite of responsive flexbox utilities. For more complex implementations, custom CSS may be necessary.
 
+
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
+
 
 ## Enable flex behaviors
 
@@ -28,6 +30,7 @@ Responsive variations also exist for `.d-flex` and `.d-inline-flex`.
 {% for bp in site.data.breakpoints %}
 - `.d{{ bp.abbr }}-flex`
 - `.d{{ bp.abbr }}-inline-flex`{% endfor %}
+
 
 ## Direction
 
@@ -120,6 +123,7 @@ Responsive variations also exist for `justify-content`.
 - `.justify-content{{ bp.abbr }}-between`
 - `.justify-content{{ bp.abbr }}-around`{% endfor %}
 
+
 ## Align items
 
 Use `align-items` utilities on flexbox containers to change the alignment of flex items on the cross axis (the y-axis to start, x-axis if `flex-direction: column`). Choose from `start`, `end`, `center`, `baseline`, or `stretch` (browser default).
@@ -168,6 +172,7 @@ Responsive variations also exist for `align-items`.
 - `.align-items{{ bp.abbr }}-center`
 - `.align-items{{ bp.abbr }}-baseline`
 - `.align-items{{ bp.abbr }}-stretch`{% endfor %}
+
 
 ## Align self
 
@@ -218,31 +223,38 @@ Responsive variations also exist for `align-self`.
 - `.align-self{{ bp.abbr }}-baseline`
 - `.align-self{{ bp.abbr }}-stretch`{% endfor %}
 
+
 ## Auto margins
 
-Flexbox can do some pretty awesome things when you mix flex alignments with auto margins.
-
-### With justify-content
-
-Easily move all flex items to one side, but keep another on the opposite end by mixing `justify-content` with `margin-right: auto` or `margin-left: auto`.
+Flexbox can do some pretty awesome things when you mix flex alignments with auto margins. Shown below are three examples of controlling flex items via auto margins: default (no auto margin), pushing two items to the right (`.mr-auto`), and pushing two items to the left (`.ml-auto`).
 
 {% example html %}
-<div class="d-flex justify-content-end bd-highlight mb-3">
+<div class="d-flex bd-highlight mb-3">
+  <div class="p-2 bd-highlight">Flex item</div>
+  <div class="p-2 bd-highlight">Flex item</div>
+  <div class="p-2 bd-highlight">Flex item</div>
+</div>
+
+<div class="d-flex bd-highlight mb-3">
   <div class="mr-auto p-2 bd-highlight">Flex item</div>
   <div class="p-2 bd-highlight">Flex item</div>
   <div class="p-2 bd-highlight">Flex item</div>
 </div>
 
-<div class="d-flex justify-content-start bd-highlight">
+<div class="d-flex bd-highlight">
   <div class="p-2 bd-highlight">Flex item</div>
   <div class="p-2 bd-highlight">Flex item</div>
   <div class="ml-auto p-2 bd-highlight">Flex item</div>
 </div>
 {% endexample %}
 
+### With justify-content
+
+**Unfortunately, IE10 and IE11 do not properly support auto margins on flex items whose parent has a non-default `justify-content` value.** [See this StackOverflow answer](https://stackoverflow.com/a/37535548) for more details.
+
 ### With align-items
 
-Similarly, move one flex item to the top or bottom of a container by mixing `align-items`, `flex-direction: column`, and `margin-top: auto` or `margin-bottom: auto`.
+Move one flex item to the top or bottom of a container by mixing `align-items`, `flex-direction: column`, and `margin-top: auto` or `margin-bottom: auto`.
 
 {% example html %}
 <div class="d-flex align-items-start flex-column bd-highlight mb-3" style="height: 200px;">
@@ -257,6 +269,7 @@ Similarly, move one flex item to the top or bottom of a container by mixing `ali
   <div class="mt-auto p-2 bd-highlight">Flex item</div>
 </div>
 {% endexample %}
+
 
 ## Wrap
 
@@ -337,16 +350,13 @@ Change how flex items wrap in a flex container. Choose from no wrapping at all (
 </div>
 {% endhighlight %}
 
-
-{% example html %}
-{% endexample %}
-
 Responsive variations also exist for `flex-wrap`.
 
 {% for bp in site.data.breakpoints %}
 - `.flex{{ bp.abbr }}-nowrap`
 - `.flex{{ bp.abbr }}-wrap`
 - `.flex{{ bp.abbr }}-wrap-reverse`{% endfor %}
+
 
 ## Order
 
@@ -367,11 +377,12 @@ Responsive variations also exist for `order`.
 - `.order{{ bp.abbr }}-last`
 - `.order{{ bp.abbr }}-unordered`{% endfor %}
 
+
 ## Align content
 
 Use `align-content` utilities on flexbox containers to align flex items *together* on the cross axis. Choose from `start` (browser default), `end`, `center`, `between`, `around`, or `stretch`. To demonstrate these utilities, we've enforced `flex-wrap: wrap` and increased the number of flex items.
 
-**Heads up!** This property has no affect on single rows of flex items.
+**Heads up!** This property has no effect on single rows of flex items.
 
 <div class="bd-example">
   <div class="d-flex align-content-start flex-wrap bd-highlight mb-3" style="height: 200px">

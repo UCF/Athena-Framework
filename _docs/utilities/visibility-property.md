@@ -1,6 +1,6 @@
 ---
 layout: docs-utilities
-title: Invisible content
+title: Visibility property
 group: utilities
 ---
 
