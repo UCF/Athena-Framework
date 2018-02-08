@@ -5,18 +5,17 @@ description: Documentation and examples for adding custom Athena tooltips with C
 group: components
 ---
 
-Inspired by the excellent Tipsy jQuery plugin written by Jason Frame. Tooltips are an updated version, which don't rely on images, use CSS3 for animations, and data-attributes for local title storage.
-
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
+
 ## Overview
 
-Things to know when using the tooltip plugin:
+Things to know when using tooltips:
 
-- Tooltips rely on the 3rd party library [Tether](http://tether.io/) for positioning. You must include [tether.min.js](https://github.com/HubSpot/tether/blob/master/dist/js/tether.min.js) before framework.min.js in order for tooltips to work!
+- Tooltips rely on the 3rd party library [Tether](http://tether.io/) and Athena's JavaScript for positioning. You must include [tether.min.js](https://github.com/HubSpot/tether/blob/master/dist/js/tether.min.js) before framework.min.js in order for tooltips to work!
 - Tooltips are opt-in for performance reasons, so **you must initialize them yourself**.
 - Tooltips with zero-length titles are never displayed.
 - Specify `container: 'body'` to avoid rendering problems in more complex components (like our input groups, button groups, etc).
@@ -25,6 +24,7 @@ Things to know when using the tooltip plugin:
 - When triggered from hyperlinks that span multiple lines, tooltips will be centered. Use `white-space: nowrap;` on your `<a>`s to avoid this behavior.
 
 Got all that? Great, let's see how they work with some examples.
+
 
 ## Example: Enable tooltips everywhere
 
@@ -36,6 +36,7 @@ $(function () {
 })
 {% endhighlight %}
 
+
 ## Examples
 
 Hover over the links below to see tooltips:
@@ -45,58 +46,29 @@ Hover over the links below to see tooltips:
   </p>
 </div>
 
-### Static demo
-
-Four options are available: top, right, bottom, and left aligned.
-
-<div class="bd-example bd-example-tooltip-static">
-  <div class="tooltip tooltip-top" role="tooltip">
-    <div class="tooltip-inner">
-      Tooltip on the top
-    </div>
-  </div>
-  <div class="tooltip tooltip-right" role="tooltip">
-    <div class="tooltip-inner">
-      Tooltip on the right
-    </div>
-  </div>
-  <div class="tooltip tooltip-bottom" role="tooltip">
-    <div class="tooltip-inner">
-      Tooltip on the bottom
-    </div>
-  </div>
-  <div class="tooltip tooltip-left" role="tooltip">
-    <div class="tooltip-inner">
-      Tooltip on the left
-    </div>
-  </div>
-</div>
-
-### Interactive demo
-
-Hover over the buttons below to see their tooltips.
+Hover over the buttons below to see the four tooltips directions: top, right, bottom, and left.
 
 <div class="bd-example tooltip-demo">
   <div class="bd-example-tooltips">
-    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
-    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</button>
-    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>
-    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</button>
-    <button type="button" class="btn btn-default" data-toggle="tooltip" data-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">Tooltip with HTML</button>
+    <button type="button" class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
+    <button type="button" class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</button>
+    <button type="button" class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>
+    <button type="button" class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</button>
+    <button type="button" class="btn btn-sm btn-default" data-toggle="tooltip" data-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">Tooltip with HTML</button>
   </div>
 </div>
 
 {% highlight html %}
-<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+<button type="button" class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
   Tooltip on top
 </button>
-<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+<button type="button" class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
   Tooltip on right
 </button>
-<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+<button type="button" class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
   Tooltip on bottom
 </button>
-<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+<button type="button" class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
   Tooltip on left
 </button>
 {% endhighlight %}
@@ -109,9 +81,10 @@ And with custom HTML added:
 </button>
 {% endhighlight %}
 
+
 ## Usage
 
-The tooltip plugin generates content and markup on demand, and by default places tooltips after their trigger element.
+Tooltip content and markup is generated on demand. By default, tooltips are placed after their trigger element.
 
 Trigger the tooltip via JavaScript:
 
@@ -121,19 +94,21 @@ $('#example').tooltip(options)
 
 ### Markup
 
-The required markup for a tooltip is only a `data` attribute and `title` on the HTML element you wish to have a tooltip. The generated markup of a tooltip is rather simple, though it does require a position (by default, set to `top` by the plugin).
+The required markup for a tooltip is only a `data` attribute and `title` on the HTML element you wish to have a tooltip. The generated markup of a tooltip is rather simple, though it does require a position (by default, set to `top`).
 
 {% callout warning %}
 #### Making tooltips work for keyboard and assistive technology users
 
 You should only add tooltips to HTML elements that are traditionally keyboard-focusable and interactive (such as links or form controls). Although arbitrary HTML elements (such as `<span>`s) can be made focusable by adding the `tabindex="0"` attribute, this will add potentially annoying and confusing tab stops on non-interactive elements for keyboard users. In addition, most assistive technologies currently do not announce the tooltip in this situation.
+
+Additionally, do not rely solely on `hover` as the trigger for your tooltip, as this will make your tooltips impossible to trigger for keyboard users.
 {% endcallout %}
 
 {% highlight html %}
 <!-- HTML to write -->
 <a href="#" data-toggle="tooltip" title="Some tooltip text!">Hover over me</a>
 
-<!-- Generated markup by the plugin -->
+<!-- Generated tooltip markup -->
 <div class="tooltip tooltip-top" role="tooltip">
   <div class="tooltip-arrow"></div>
   <div class="tooltip-inner">

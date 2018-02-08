@@ -75,19 +75,13 @@
     <div class="row">
       <div class="col-md-8 bd-content">
         <h1>Tooltips</h1>
-        <p>Inspired by the excellent Tipsy jQuery plugin written by Jason Frame. Tooltips are an updated version, which don’t rely on images, use CSS3 for animations, and data-attributes for local title storage.</p>
-
-<h2 id="contents">Contents</h2>
+        <h2 id="contents">Contents</h2>
 
 <ul id="markdown-toc">
   <li><a href="#contents" id="markdown-toc-contents">Contents</a></li>
   <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
   <li><a href="#example-enable-tooltips-everywhere" id="markdown-toc-example-enable-tooltips-everywhere">Example: Enable tooltips everywhere</a></li>
-  <li><a href="#examples" id="markdown-toc-examples">Examples</a>    <ul>
-      <li><a href="#static-demo" id="markdown-toc-static-demo">Static demo</a></li>
-      <li><a href="#interactive-demo" id="markdown-toc-interactive-demo">Interactive demo</a></li>
-    </ul>
-  </li>
+  <li><a href="#examples" id="markdown-toc-examples">Examples</a></li>
   <li><a href="#usage" id="markdown-toc-usage">Usage</a>    <ul>
       <li><a href="#markup" id="markdown-toc-markup">Markup</a></li>
       <li><a href="#options" id="markdown-toc-options">Options</a></li>
@@ -106,10 +100,10 @@
 
 <h2 id="overview">Overview</h2>
 
-<p>Things to know when using the tooltip plugin:</p>
+<p>Things to know when using tooltips:</p>
 
 <ul>
-  <li>Tooltips rely on the 3rd party library <a href="http://tether.io/">Tether</a> for positioning. You must include <a href="https://github.com/HubSpot/tether/blob/master/dist/js/tether.min.js">tether.min.js</a> before framework.min.js in order for tooltips to work!</li>
+  <li>Tooltips rely on the 3rd party library <a href="http://tether.io/">Tether</a> and Athena’s JavaScript for positioning. You must include <a href="https://github.com/HubSpot/tether/blob/master/dist/js/tether.min.js">tether.min.js</a> before framework.min.js in order for tooltips to work!</li>
   <li>Tooltips are opt-in for performance reasons, so <strong>you must initialize them yourself</strong>.</li>
   <li>Tooltips with zero-length titles are never displayed.</li>
   <li>Specify <code class="highlighter-rouge">container: 'body'</code> to avoid rendering problems in more complex components (like our input groups, button groups, etc).</li>
@@ -137,57 +131,28 @@
   </p>
 </div>
 
-<h3 id="static-demo">Static demo</h3>
-
-<p>Four options are available: top, right, bottom, and left aligned.</p>
-
-<div class="bd-example bd-example-tooltip-static">
-  <div class="tooltip tooltip-top" role="tooltip">
-    <div class="tooltip-inner">
-      Tooltip on the top
-    </div>
-  </div>
-  <div class="tooltip tooltip-right" role="tooltip">
-    <div class="tooltip-inner">
-      Tooltip on the right
-    </div>
-  </div>
-  <div class="tooltip tooltip-bottom" role="tooltip">
-    <div class="tooltip-inner">
-      Tooltip on the bottom
-    </div>
-  </div>
-  <div class="tooltip tooltip-left" role="tooltip">
-    <div class="tooltip-inner">
-      Tooltip on the left
-    </div>
-  </div>
-</div>
-
-<h3 id="interactive-demo">Interactive demo</h3>
-
-<p>Hover over the buttons below to see their tooltips.</p>
+<p>Hover over the buttons below to see the four tooltips directions: top, right, bottom, and left.</p>
 
 <div class="bd-example tooltip-demo">
   <div class="bd-example-tooltips">
-    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
-    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</button>
-    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>
-    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</button>
-    <button type="button" class="btn btn-default" data-toggle="tooltip" data-html="true" title="&lt;em&gt;Tooltip&lt;/em&gt; &lt;u&gt;with&lt;/u&gt; &lt;b&gt;HTML&lt;/b&gt;">Tooltip with HTML</button>
+    <button type="button" class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
+    <button type="button" class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</button>
+    <button type="button" class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>
+    <button type="button" class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</button>
+    <button type="button" class="btn btn-sm btn-default" data-toggle="tooltip" data-html="true" title="&lt;em&gt;Tooltip&lt;/em&gt; &lt;u&gt;with&lt;/u&gt; &lt;b&gt;HTML&lt;/b&gt;">Tooltip with HTML</button>
   </div>
 </div>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span> <span class="na">data-toggle=</span><span class="s">"tooltip"</span> <span class="na">data-placement=</span><span class="s">"top"</span> <span class="na">title=</span><span class="s">"Tooltip on top"</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-sm btn-default"</span> <span class="na">data-toggle=</span><span class="s">"tooltip"</span> <span class="na">data-placement=</span><span class="s">"top"</span> <span class="na">title=</span><span class="s">"Tooltip on top"</span><span class="nt">&gt;</span>
   Tooltip on top
 <span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span> <span class="na">data-toggle=</span><span class="s">"tooltip"</span> <span class="na">data-placement=</span><span class="s">"right"</span> <span class="na">title=</span><span class="s">"Tooltip on right"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-sm btn-default"</span> <span class="na">data-toggle=</span><span class="s">"tooltip"</span> <span class="na">data-placement=</span><span class="s">"right"</span> <span class="na">title=</span><span class="s">"Tooltip on right"</span><span class="nt">&gt;</span>
   Tooltip on right
 <span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span> <span class="na">data-toggle=</span><span class="s">"tooltip"</span> <span class="na">data-placement=</span><span class="s">"bottom"</span> <span class="na">title=</span><span class="s">"Tooltip on bottom"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-sm btn-default"</span> <span class="na">data-toggle=</span><span class="s">"tooltip"</span> <span class="na">data-placement=</span><span class="s">"bottom"</span> <span class="na">title=</span><span class="s">"Tooltip on bottom"</span><span class="nt">&gt;</span>
   Tooltip on bottom
 <span class="nt">&lt;/button&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span> <span class="na">data-toggle=</span><span class="s">"tooltip"</span> <span class="na">data-placement=</span><span class="s">"left"</span> <span class="na">title=</span><span class="s">"Tooltip on left"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-sm btn-default"</span> <span class="na">data-toggle=</span><span class="s">"tooltip"</span> <span class="na">data-placement=</span><span class="s">"left"</span> <span class="na">title=</span><span class="s">"Tooltip on left"</span><span class="nt">&gt;</span>
   Tooltip on left
 <span class="nt">&lt;/button&gt;</span></code></pre></figure>
 
@@ -199,7 +164,7 @@
 
 <h2 id="usage">Usage</h2>
 
-<p>The tooltip plugin generates content and markup on demand, and by default places tooltips after their trigger element.</p>
+<p>Tooltip content and markup is generated on demand. By default, tooltips are placed after their trigger element.</p>
 
 <p>Trigger the tooltip via JavaScript:</p>
 
@@ -207,18 +172,20 @@
 
 <h3 id="markup">Markup</h3>
 
-<p>The required markup for a tooltip is only a <code class="highlighter-rouge">data</code> attribute and <code class="highlighter-rouge">title</code> on the HTML element you wish to have a tooltip. The generated markup of a tooltip is rather simple, though it does require a position (by default, set to <code class="highlighter-rouge">top</code> by the plugin).</p>
+<p>The required markup for a tooltip is only a <code class="highlighter-rouge">data</code> attribute and <code class="highlighter-rouge">title</code> on the HTML element you wish to have a tooltip. The generated markup of a tooltip is rather simple, though it does require a position (by default, set to <code class="highlighter-rouge">top</code>).</p>
 
 <div class="bd-callout bd-callout-warning">
 <h4 id="making-tooltips-work-for-keyboard-and-assistive-technology-users">Making tooltips work for keyboard and assistive technology users</h4>
 
 <p>You should only add tooltips to HTML elements that are traditionally keyboard-focusable and interactive (such as links or form controls). Although arbitrary HTML elements (such as <code class="highlighter-rouge">&lt;span&gt;</code>s) can be made focusable by adding the <code class="highlighter-rouge">tabindex="0"</code> attribute, this will add potentially annoying and confusing tab stops on non-interactive elements for keyboard users. In addition, most assistive technologies currently do not announce the tooltip in this situation.</p>
+
+<p>Additionally, do not rely solely on <code class="highlighter-rouge">hover</code> as the trigger for your tooltip, as this will make your tooltips impossible to trigger for keyboard users.</p>
 </div>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- HTML to write --&gt;</span>
 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">data-toggle=</span><span class="s">"tooltip"</span> <span class="na">title=</span><span class="s">"Some tooltip text!"</span><span class="nt">&gt;</span>Hover over me<span class="nt">&lt;/a&gt;</span>
 
-<span class="c">&lt;!-- Generated markup by the plugin --&gt;</span>
+<span class="c">&lt;!-- Generated tooltip markup --&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tooltip tooltip-top"</span> <span class="na">role=</span><span class="s">"tooltip"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tooltip-arrow"</span><span class="nt">&gt;&lt;/div&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tooltip-inner"</span><span class="nt">&gt;</span>

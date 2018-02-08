@@ -79,10 +79,9 @@
 
 <ul id="markdown-toc">
   <li><a href="#contents" id="markdown-toc-contents">Contents</a></li>
+  <li><a href="#how-it-works" id="markdown-toc-how-it-works">How it works</a></li>
   <li><a href="#example-in-navbar" id="markdown-toc-example-in-navbar">Example in navbar</a></li>
   <li><a href="#usage" id="markdown-toc-usage">Usage</a>    <ul>
-      <li><a href="#requires-athena-nav" id="markdown-toc-requires-athena-nav">Requires Athena nav</a></li>
-      <li><a href="#requires-relative-positioning" id="markdown-toc-requires-relative-positioning">Requires relative positioning</a></li>
       <li><a href="#via-data-attributes" id="markdown-toc-via-data-attributes">Via data attributes</a></li>
       <li><a href="#via-javascript" id="markdown-toc-via-javascript">Via JavaScript</a></li>
       <li><a href="#methods" id="markdown-toc-methods">Methods</a>        <ul>
@@ -95,9 +94,22 @@
   </li>
 </ul>
 
+<h2 id="how-it-works">How it works</h2>
+
+<p>Scrollspy has a few requirements to function properly:</p>
+
+<ul>
+  <li>It must be used on a <a href="/components/navs/">nav component</a>.</li>
+  <li>Scrollspy requires <code class="highlighter-rouge">position: relative;</code> on the element you’re spying on, usually the <code class="highlighter-rouge">&lt;body&gt;</code>.</li>
+  <li>When spying on elements other than the &lt;body&gt;, be sure to have a height set and overflow-y: scroll; applied.</li>
+  <li>Anchors (<code class="highlighter-rouge">&lt;a&gt;</code>) are required and must point to an element with that ID.</li>
+</ul>
+
+<p>When successfully implemented, your nav will update accordingly, moving the <code class="highlighter-rouge">.active</code> class from one item to the next based on their associated targets.</p>
+
 <h2 id="example-in-navbar">Example in navbar</h2>
 
-<p>The ScrollSpy plugin is for automatically updating nav targets based on scroll position. Scroll the area below the navbar and watch the active class change. The dropdown sub items will be highlighted as well.</p>
+<p>Scroll the area below the navbar and watch the active class change. The dropdown sub items will be highlighted as well.</p>
 
 <div class="bd-example">
   <nav id="navbar-example2" class="navbar navbar-light bg-faded">
@@ -134,17 +146,9 @@
 
 <h2 id="usage">Usage</h2>
 
-<h3 id="requires-athena-nav">Requires Athena nav</h3>
-
-<p>Scrollspy currently requires the use of an <a href="/components/navs/">Athena nav component</a> for proper highlighting of active links.</p>
-
-<h3 id="requires-relative-positioning">Requires relative positioning</h3>
-
-<p>No matter the implementation method, scrollspy requires the use of <code class="highlighter-rouge">position: relative;</code> on the element you’re spying on. In most cases this is the <code class="highlighter-rouge">&lt;body&gt;</code>. When scrollspying on elements other than the <code class="highlighter-rouge">&lt;body&gt;</code>, be sure to have a <code class="highlighter-rouge">height</code> set and <code class="highlighter-rouge">overflow-y: scroll;</code> applied.</p>
-
 <h3 id="via-data-attributes">Via data attributes</h3>
 
-<p>To easily add scrollspy behavior to your topbar navigation, add <code class="highlighter-rouge">data-spy="scroll"</code> to the element you want to spy on (most typically this would be the <code class="highlighter-rouge">&lt;body&gt;</code>). Then add the <code class="highlighter-rouge">data-target</code> attribute with the ID or class of the parent element of any Athena <code class="highlighter-rouge">.nav</code> component.</p>
+<p>To easily add scrollspy behavior to your topbar navigation, add <code class="highlighter-rouge">data-spy="scroll"</code> to the element you want to spy on (most typically this would be the <code class="highlighter-rouge">&lt;body&gt;</code>). Then add the <code class="highlighter-rouge">data-target</code> attribute with the ID or class of the parent element of any <code class="highlighter-rouge">.nav</code> component.</p>
 
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">body</span> <span class="p">{</span>
   <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>

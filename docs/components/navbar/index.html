@@ -75,7 +75,7 @@
     <div class="row">
       <div class="col-md-8 bd-content">
         <h1>Navbar</h1>
-        <p>The navbar is a wrapper that positions branding, navigation, and other elements in a concise header. It’s easily extensible and, thanks to our Collapse plugin, can easily integrate responsive behaviors.</p>
+        <p>The navbar is a wrapper that positions branding, navigation, and other elements in a concise header. It’s easily extensible and, thanks to Athena’s JavaScript, can easily integrate responsive behaviors.</p>
 
 <h2 id="contents">Contents</h2>
 
@@ -107,7 +107,7 @@
   <li>Navbars require a wrapping <code class="highlighter-rouge">.navbar</code> with <code class="highlighter-rouge">.navbar-toggleable{-sm|-md|-lg|-xl}</code> for responsive collapsing and <a href="#color-schemes">color scheme</a> classes.</li>
   <li>Navbars and their contents are fluid by default. Use <a href="#containers">optional containers</a> to limit their horizontal width.</li>
   <li>Navbars and their contents are built with flexbox, providing easy alignment options via the order of elements in the DOM and utility classes.</li>
-  <li>Navbars are responsive by default, but you can easily modify them to change that. Responsive behavior depends on our Collapse JavaScript plugin.</li>
+  <li>Navbars are responsive by default, but you can easily modify them to change that. Responsive behavior depends on Athena’s JavaScript.</li>
   <li>Ensure accessibility by using a <code class="highlighter-rouge">&lt;nav&gt;</code> element or, if using a more generic element such as a <code class="highlighter-rouge">&lt;div&gt;</code>, add a <code class="highlighter-rouge">role="navigation"</code> to every navbar to explicitly identify it as a landmark region for users of assistive technologies.</li>
 </ul>
 
@@ -720,7 +720,7 @@
 
 <h3 id="toggler">Toggler</h3>
 
-<p>Navbar togglers are left-aligned by default, but should be forced to the right using <code class="highlighter-rouge">.ml-auto</code> to avoid gutter stacking issues. However, should they follow a sibling element like a <code class="highlighter-rouge">.navbar-brand</code>, they’ll automatically be aligned to the far right, and no margin utility class is needed. Below are examples of different toggle styles.</p>
+<p>Navbar togglers should be forced to the right using <code class="highlighter-rouge">.ml-auto</code> to avoid gutter stacking issues. However, should they follow a sibling element like a <code class="highlighter-rouge">.navbar-brand</code>, they’ll automatically be aligned to the far right, and no margin utility class is needed. Below are examples of different toggle styles.</p>
 
 <p>With <code class="highlighter-rouge">.navbar-brand</code> nested in the collapsible portion of the navbar:</p>
 
@@ -871,7 +871,7 @@
 
 <h3 id="external-content">External content</h3>
 
-<p>Sometimes you want to use the collapse plugin to trigger hidden content elsewhere on the page. Because our plugin works on the <code class="highlighter-rouge">id</code> and <code class="highlighter-rouge">data-target</code> matching, that’s easily done!</p>
+<p>Sometimes you may want to use the <a href="/components/collapse/">collapse component</a> to trigger hidden content elsewhere on the page. Because Athena’s collapse JavaScript works on the <code class="highlighter-rouge">id</code> and <code class="highlighter-rouge">data-target</code> matching, that’s easily done!</p>
 
 <div class="bd-example" data-example-id="">
 <div class="pos-f-t">

@@ -107,11 +107,10 @@
 
 <h2 id="overview">Overview</h2>
 
-<p>Things to know when using the popover plugin:</p>
+<p>Things to know when using popovers:</p>
 
 <ul>
-  <li>Popovers rely on the 3rd party library <a href="http://tether.io/">Tether</a> for positioning. You must include <a href="https://github.com/HubSpot/tether/blob/master/dist/js/tether.min.js">tether.min.js</a> before framework.min.js in order for popovers to work!</li>
-  <li>Popovers require the <a href="/components/tooltips/">tooltip plugin</a> as a dependency.</li>
+  <li>Popovers rely on the 3rd party library <a href="http://tether.io/">Tether</a> as well as Athena’s JavaScript for positioning. You must include <a href="https://github.com/HubSpot/tether/blob/master/dist/js/tether.min.js">tether.min.js</a> before framework.min.js in order for popovers to work!</li>
   <li>Popovers are opt-in for performance reasons, so <strong>you must initialize them yourself</strong>.</li>
   <li>Zero-length <code class="highlighter-rouge">title</code> and <code class="highlighter-rouge">content</code> values will never show a popover.</li>
   <li>Specify <code class="highlighter-rouge">container: 'body'</code> to avoid rendering problems in more complex components (like our input groups, button groups, etc).</li>
