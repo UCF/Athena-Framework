@@ -73,7 +73,7 @@
 <main>
   <article class="py-5 container">
     <div class="row">
-      <div class="col-md-8 bd-content">
+      <div class="col-md-8 afd-content">
         <h1>Resets</h1>
         <p>Part of Athena’s job is to provide an elegant, consistent, and simple baseline to build upon. We use a combination of our own opinionated resets and <a href="https://v4-alpha.getbootstrap.com/content/reboot/">Bootstrap’s Reboot</a>, a collection of element-specific CSS changes in a single file, to kickstart that.</p>
 
@@ -142,7 +142,7 @@
 
 <p>Like with the base <code class="highlighter-rouge">&lt;body&gt;</code> font size, all headings increase in size at the <code class="highlighter-rouge">-md</code> breakpoint in Athena.</p>
 
-<div class="bd-example">
+<div class="afd-example">
 
 <h1 id="h1-heading">h1 heading</h1>
 <p>Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
@@ -168,7 +168,7 @@
 
 <p>All lists—<code class="highlighter-rouge">&lt;ul&gt;</code>, <code class="highlighter-rouge">&lt;ol&gt;</code>, and <code class="highlighter-rouge">&lt;dl&gt;</code>—have their <code class="highlighter-rouge">margin-top</code> removed and a <code class="highlighter-rouge">margin-bottom: 1rem</code>. Nested lists have no <code class="highlighter-rouge">margin-bottom</code>.</p>
 
-<div class="bd-example">
+<div class="afd-example">
 
 <ul>
   <li>Lorem ipsum dolor sit amet</li>
@@ -203,7 +203,7 @@
 
 <p>For simpler styling, clear hierarchy, and better spacing, description lists have updated <code class="highlighter-rouge">margin</code>s. <code class="highlighter-rouge">&lt;dd&gt;</code>s reset <code class="highlighter-rouge">margin-left</code> to <code class="highlighter-rouge">0</code> and add <code class="highlighter-rouge">margin-bottom: .5rem</code>. <code class="highlighter-rouge">&lt;dt&gt;</code>s are <strong>bolded</strong>.</p>
 
-<div class="bd-example">
+<div class="afd-example">
 
 <dl>
   <dt>Description lists</dt>
@@ -221,7 +221,7 @@
 
 <p>The <code class="highlighter-rouge">&lt;pre&gt;</code> element is reset to remove its <code class="highlighter-rouge">margin-top</code> and use <code class="highlighter-rouge">rem</code> units for its <code class="highlighter-rouge">margin-bottom</code>.</p>
 
-<div class="bd-example">
+<div class="afd-example">
 
 <pre>
 .example-element {
@@ -235,7 +235,7 @@
 
 <p>Tables are slightly adjusted to style <code class="highlighter-rouge">&lt;caption&gt;</code>s, collapse borders, and ensure consistent <code class="highlighter-rouge">text-align</code> throughout. Additional changes for borders, padding, and more come with <a href="/content/tables/">the <code class="highlighter-rouge">.table</code> class</a>.</p>
 
-<div class="bd-example">
+<div class="afd-example">
   <table>
     <caption>
       This is an example table, and this is its caption to describe the contents.
@@ -286,7 +286,7 @@
 
 <p>These changes, and more, are demonstrated below.</p>
 
-<form class="bd-example">
+<form class="afd-example">
   <fieldset>
     <legend>Example legend</legend>
 
@@ -369,7 +369,7 @@
 
 <p>The <code class="highlighter-rouge">&lt;address&gt;</code> element is updated to reset the browser default <code class="highlighter-rouge">font-style</code> from <code class="highlighter-rouge">italic</code> to <code class="highlighter-rouge">normal</code>. <code class="highlighter-rouge">line-height</code> is also now inherited, and <code class="highlighter-rouge">margin-bottom: 1rem</code> has been added. <code class="highlighter-rouge">&lt;address&gt;</code>s are for presenting contact information for the nearest ancestor (or an entire body of work). Preserve formatting by ending lines with <code class="highlighter-rouge">&lt;br&gt;</code>.</p>
 
-<div class="bd-example">
+<div class="afd-example">
   <address>
     <strong>Twitter, Inc.</strong><br />
     1355 Market St, Suite 900<br />
@@ -389,7 +389,7 @@
 
 <p><code class="highlighter-rouge">&lt;cite&gt;</code> elements have forced unitalicized text in Athena.</p>
 
-<div class="bd-example">
+<div class="afd-example">
   <blockquote class="blockquote">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
     <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
@@ -400,7 +400,7 @@
 
 <p>The <code class="highlighter-rouge">&lt;abbr&gt;</code> element receives basic styling to make it stand out amongst paragraph text.</p>
 
-<div class="bd-example">
+<div class="afd-example">
   Nulla <abbr title="attribute">attr</abbr> vitae elit libero, a pharetra augue.
 </div>
 
@@ -410,7 +410,7 @@
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">hidden</span><span class="nt">&gt;</span></code></pre></figure>
 
-<div class="bd-callout bd-callout-warning">
+<div class="afd-callout afd-callout-warning">
 <h4 id="jquery-incompatibility">jQuery incompatibility</h4>
 
 <p><code class="highlighter-rouge">[hidden]</code> is not compatible with jQuery’s <code class="highlighter-rouge">$(...).hide()</code> and <code class="highlighter-rouge">$(...).show()</code> methods. Therefore, we don’t currently especially endorse <code class="highlighter-rouge">[hidden]</code> over other techniques for managing the <code class="highlighter-rouge">display</code> of elements.</p>
@@ -419,13 +419,13 @@
 <p>To merely toggle the visibility of an element, meaning its <code class="highlighter-rouge">display</code> is not modified and the element can still affect the flow of the document, use <a href="/utilities/visibility-property/">the <code class="highlighter-rouge">.invisible</code> class</a> instead.</p>
 
       </div>
-      <div class="col-md-4 bd-sidebar">
-        <!-- <form class="bd-search d-none d-sm-block">
+      <div class="col-md-4 afd-sidebar">
+        <!-- <form class="afd-search d-none d-sm-block">
   <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
-  <div class="dropdown-menu bd-search-results" id="search-results"></div>
+  <div class="dropdown-menu afd-search-results" id="search-results"></div>
 </form>
  -->
-<nav class="bd-links" id="docsNavbarContent">
+<nav class="afd-links" id="docsNavbarContent">
   
   
   
@@ -435,12 +435,12 @@
 
   
 
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/getting-started/quick-start/">
+  <div class="afd-toc-item ">
+      <a class="afd-toc-link" href="/getting-started/quick-start/">
         Getting started
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
           
           
@@ -461,8 +461,8 @@
           
 
           <li class="">
-            <a href="/getting-started/download/">
-              Download
+            <a href="/getting-started/download-install/">
+              Download & install
             </a>
 
             
@@ -474,21 +474,8 @@
           
 
           <li class="">
-            <a href="/getting-started/browsers-devices/">
-              Browsers & devices
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/getting-started/javascript/">
-              JavaScript
+            <a href="/getting-started/build-tools/">
+              Build tools
             </a>
 
             
@@ -513,8 +500,21 @@
           
 
           <li class="">
-            <a href="/getting-started/build-tools/">
-              Build tools
+            <a href="/getting-started/javascript/">
+              JavaScript
+            </a>
+
+            
+          </li>
+        
+          
+          
+
+          
+
+          <li class="">
+            <a href="/getting-started/browsers-devices/">
+              Browsers & devices
             </a>
 
             
@@ -543,12 +543,12 @@
 
   
 
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/layout/overview/">
+  <div class="afd-toc-item ">
+      <a class="afd-toc-link" href="/layout/overview/">
         Layout
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
           
           
@@ -612,19 +612,19 @@
 
   
 
-  <div class="bd-toc-item active">
-      <a class="bd-toc-link" href="/content/resets/">
+  <div class="afd-toc-item active">
+      <a class="afd-toc-link" href="/content/resets/">
         Content
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
           
           
 
           
 
-          <li class="active bd-sidenav-active">
+          <li class="active afd-sidenav-active">
             <a href="/content/resets/">
               Resets
             </a>
@@ -720,12 +720,12 @@
 
   
 
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/components/alerts/">
+  <div class="afd-toc-item ">
+      <a class="afd-toc-link" href="/components/alerts/">
         Components
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
           
           
@@ -997,12 +997,12 @@
 
   
 
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/utilities/borders/">
+  <div class="afd-toc-item ">
+      <a class="afd-toc-link" href="/utilities/borders/">
         Utilities
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
           
           
@@ -1274,12 +1274,12 @@
 
   
 
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/about/">
+  <div class="afd-toc-item ">
+      <a class="afd-toc-link" href="/about/">
         About
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
       </ul>
     </div>
@@ -1291,12 +1291,12 @@
 
   
 
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/migration/">
+  <div class="afd-toc-item ">
+      <a class="afd-toc-link" href="/migration/">
         Migration
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
       </ul>
     </div>

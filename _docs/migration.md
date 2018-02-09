@@ -72,7 +72,7 @@ Athena includes a combination of opinionated element style resets and [Reboot](h
 - Responsive tables no longer require a wrapping element. Instead, just put the `.table-responsive` right on the `<table>`.
 - Renamed `.table-condensed` to `.table-sm` for consistency.
 - Added a new `.table-inverse` option.
-- Added table header modifiers: `.thead-default` and `.thead-inverse`.
+- Added table header modifiers: `.theafd-default` and `.theafd-inverse`.
 - Renamed contextual classes to have a `.table-`-prefix. Hence `.active`, `.success`, `.warning`, `.danger` and `.table-info` to `.table-active`, `.table-success`, `.table-warning`, `.table-danger` and `.table-info`.
 
 ### Utilities

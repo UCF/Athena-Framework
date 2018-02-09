@@ -31,10 +31,10 @@
     $('.popover-test').popover();
 
     // Indeterminate checkbox example
-    $('.bd-example-indeterminate [type="checkbox"]').prop('indeterminate', true);
+    $('.afd-example-indeterminate [type="checkbox"]').prop('indeterminate', true);
 
     // Disable empty links in docs examples
-    $('.bd-content [href="#"]').click(function (e) {
+    $('.afd-content [href="#"]').click(function (e) {
       e.preventDefault();
     });
 
@@ -50,13 +50,13 @@
     });
 
     // Activate animated progress bar
-    $('.bd-toggle-animated-progress').on('click', function () {
+    $('.afd-toggle-animated-progress').on('click', function () {
       $(this).siblings('.progress').find('.progress-bar-striped').toggleClass('progress-bar-animated');
     });
 
     // Insert copy to clipboard button before .highlight
     $('.highlight').each(function () {
-      var btnHtml = '<div class="bd-clipboard"><span class="btn-clipboard" title="Copy to clipboard">Copy</span></div>'
+      var btnHtml = '<div class="afd-clipboard"><span class="btn-clipboard" title="Copy to clipboard">Copy</span></div>'
       $(this).before(btnHtml);
       $('.btn-clipboard').tooltip();
     });
@@ -98,7 +98,7 @@
   'use strict';
 
   anchors.options.placement = 'left';
-  anchors.add('.bd-content > h1, .bd-content > h2, .bd-content > h3, .bd-content > h4, .bd-content > h5');
+  anchors.add('.afd-content > h1, .afd-content > h2, .afd-content > h3, .afd-content > h4, .afd-content > h5');
 
   Holder.addTheme('gray', {
     bg: '#777',

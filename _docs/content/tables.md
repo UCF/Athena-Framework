@@ -93,7 +93,7 @@ Similar to default and inverse tables, use one of two modifier classes to make `
 
 {% example html %}
 <table class="table">
-  <thead class="thead-inverse">
+  <thead class="theafd-inverse">
     <tr>
       <th>#</th>
       <th>First Name</th>
@@ -124,7 +124,7 @@ Similar to default and inverse tables, use one of two modifier classes to make `
 </table>
 
 <table class="table">
-  <thead class="thead-default">
+  <thead class="theafd-default">
     <tr>
       <th>#</th>
       <th>First Name</th>
@@ -458,7 +458,7 @@ Use contextual classes to color table rows or individual cells.
 | `.table-warning` | Indicates a warning that might need attention |
 | `.table-danger` | Indicates a dangerous or potentially negative action |
 
-<div class="bd-example">
+<div class="afd-example">
   <table class="table">
     <thead>
       <tr>
@@ -547,7 +547,7 @@ Use contextual classes to color table rows or individual cells.
 
 Regular table background variants are not available with the inverse table, however, you may use [text or background utilities]({{ site.baseurl }}{% link utilities/colors.md %}) to achieve similar styles.
 
-<div class="bd-example">
+<div class="afd-example">
   <table class="table table-inverse">
     <thead>
       <tr>
@@ -648,7 +648,7 @@ Create responsive tables by adding `.table-responsive` to any `.table` to make t
 Responsive tables make use of `overflow-y: hidden`, which clips off any content that goes beyond the bottom or top edges of the table. In particular, this can clip off dropdown menus and other third-party widgets.
 {% endcallout %}
 
-<div class="bd-example">
+<div class="afd-example">
   <table class="table table-responsive">
     <thead>
       <tr>

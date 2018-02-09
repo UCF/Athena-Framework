@@ -573,7 +573,7 @@ Should you have no text within the `<label>`, the input is positioned as you'd e
 
 ## Static controls
 
-If you want to have read-only fields in your form styled as plain text, use the `.form-control-static` class to remove the default form field styling and preserve the correct margin and padding.
+If you want to have reafd-only fields in your form styled as plain text, use the `.form-control-static` class to remove the default form field styling and preserve the correct margin and padding.
 
 {% example html %}
 <form>
@@ -655,7 +655,7 @@ While Athena will apply these styles in all browsers, Internet Explorer 11 and b
 
 ## Readonly inputs
 
-Add the `readonly` boolean attribute on an input to prevent modification of the input's value. Read-only inputs appear lighter (just like disabled inputs), but retain the standard cursor.
+Add the `readonly` boolean attribute on an input to prevent modification of the input's value. Reafd-only inputs appear lighter (just like disabled inputs), but retain the standard cursor.
 
 {% example html %}
 <input class="form-control" type="text" placeholder="Readonly input here…" readonly>
@@ -887,7 +887,7 @@ In the checked states, we use **base64 embedded SVG icons** from [Open Iconic](h
 
 Custom checkboxes can also utilize the `:indeterminate` pseudo class when manually set via JavaScript (there is no available HTML attribute for specifying it).
 
-<div class="bd-example bd-example-indeterminate">
+<div class="afd-example afd-example-indeterminate">
   <label class="custom-control custom-checkbox">
     <input type="checkbox" class="custom-control-input">
     <span class="custom-control-indicator"></span>

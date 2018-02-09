@@ -57,7 +57,7 @@ All heading elements—e.g., `<h1>`—and `<p>` are reset to have their `margin-
 
 Like with the base `<body>` font size, all headings increase in size at the `-md` breakpoint in Athena.
 
-<div class="bd-example">
+<div class="afd-example">
 {% markdown %}
 # h1 heading
 Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
@@ -84,7 +84,7 @@ Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem 
 
 All lists—`<ul>`, `<ol>`, and `<dl>`—have their `margin-top` removed and a `margin-bottom: 1rem`. Nested lists have no `margin-bottom`.
 
-<div class="bd-example">
+<div class="afd-example">
 {% markdown %}
 * Lorem ipsum dolor sit amet
 * Consectetur adipiscing elit
@@ -112,7 +112,7 @@ All lists—`<ul>`, `<ol>`, and `<dl>`—have their `margin-top` removed and a `
 
 For simpler styling, clear hierarchy, and better spacing, description lists have updated `margin`s. `<dd>`s reset `margin-left` to `0` and add `margin-bottom: .5rem`. `<dt>`s are **bolded**.
 
-<div class="bd-example">
+<div class="afd-example">
 {% markdown %}
 <dl>
   <dt>Description lists</dt>
@@ -131,7 +131,7 @@ For simpler styling, clear hierarchy, and better spacing, description lists have
 
 The `<pre>` element is reset to remove its `margin-top` and use `rem` units for its `margin-bottom`.
 
-<div class="bd-example">
+<div class="afd-example">
 {% markdown %}
 <pre>
 .example-element {
@@ -146,7 +146,7 @@ The `<pre>` element is reset to remove its `margin-top` and use `rem` units for 
 
 Tables are slightly adjusted to style `<caption>`s, collapse borders, and ensure consistent `text-align` throughout. Additional changes for borders, padding, and more come with [the `.table` class]({{ site.baseurl }}{% link content/tables.md %}).
 
-<div class="bd-example">
+<div class="afd-example">
   <table>
     <caption>
       This is an example table, and this is its caption to describe the contents.
@@ -196,7 +196,7 @@ Various form elements have been rebooted for simpler base styles. Here are some 
 
 These changes, and more, are demonstrated below.
 
-<form class="bd-example">
+<form class="afd-example">
   <fieldset>
     <legend>Example legend</legend>
 
@@ -280,7 +280,7 @@ These changes, and more, are demonstrated below.
 
 The `<address>` element is updated to reset the browser default `font-style` from `italic` to `normal`. `line-height` is also now inherited, and `margin-bottom: 1rem` has been added. `<address>`s are for presenting contact information for the nearest ancestor (or an entire body of work). Preserve formatting by ending lines with `<br>`.
 
-<div class="bd-example">
+<div class="afd-example">
   <address>
     <strong>Twitter, Inc.</strong><br>
     1355 Market St, Suite 900<br>
@@ -300,7 +300,7 @@ The default `margin` on blockquotes is `1em 40px`, so we reset that to `0 0 1rem
 
 `<cite>` elements have forced unitalicized text in Athena.
 
-<div class="bd-example">
+<div class="afd-example">
   <blockquote class="blockquote">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
     <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
@@ -311,7 +311,7 @@ The default `margin` on blockquotes is `1em 40px`, so we reset that to `0 0 1rem
 
 The `<abbr>` element receives basic styling to make it stand out amongst paragraph text.
 
-<div class="bd-example">
+<div class="afd-example">
   Nulla <abbr title="attribute">attr</abbr> vitae elit libero, a pharetra augue.
 </div>
 

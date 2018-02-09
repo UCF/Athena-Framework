@@ -31,7 +31,7 @@ These styles can be found in both Bootstrap's `_reboot.scss` and Athena's `type.
 
 All HTML headings, `<h1>` through `<h6>`, are available.
 
-<div class="bd-example bd-example-type">
+<div class="afd-example afd-example-type">
   <table class="table">
     <tbody>
       <tr>
@@ -97,7 +97,7 @@ Use the included utility classes to recreate the small secondary heading text fr
 
 When combined with [font family utility classes]({{ site.baseurl }}{% link utilities/typography.md %}#font-family), heading font sizes are adjusted slightly to help achieve balance of size between each available font family.
 
-<div class="bd-example bd-example-type">
+<div class="afd-example afd-example-type">
   <table class="table">
     <tbody>
       <tr>
@@ -163,7 +163,7 @@ Traditional heading elements are designed to work best in the meat of your page 
 
 Display headings use fluid font sizing (`vw` units) at the `-xs` breakpoint to ensure they scale to fit smaller screens while staying as large as possible.
 
-<div class="bd-example bd-example-type">
+<div class="afd-example afd-example-type">
   <table class="table">
     <tbody>
       <tr>

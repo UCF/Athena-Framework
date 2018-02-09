@@ -73,7 +73,7 @@
 <main>
   <article class="py-5 container">
     <div class="row">
-      <div class="col-md-8 bd-content">
+      <div class="col-md-8 afd-content">
         <h1>Navbar</h1>
         <p>The navbar is a wrapper that positions branding, navigation, and other elements in a concise header. It’s easily extensible and, thanks to Athena’s JavaScript, can easily integrate responsive behaviors.</p>
 
@@ -125,7 +125,7 @@
   <li><code class="highlighter-rouge">.collapse.navbar-collapse</code> for grouping and hiding navbar contents by a parent breakpoint.</li>
 </ul>
 
-<div class="bd-callout bd-callout-warning">
+<div class="afd-callout afd-callout-warning">
 <h3 id="a-note-about-navbar-toggler-positioning">A note about navbar toggler positioning</h3>
 <p><code class="highlighter-rouge">.navbar-toggler-left</code> and <code class="highlighter-rouge">.navbar-toggler-right</code> classes should not be used to position the navbar toggler button in Athena navbars.  Athena’s navbars have been modified from Bootstrap alpha.6 to utilize flex styles for positioning of inner elements, meaning that the toggler button is now positioned by <strong>its order in the navbar markup</strong>.  Athena currently supports right-aligned toggler buttons: if a toggler is added after a <code class="highlighter-rouge">.navbar-brand</code> (or other supported nested components), it will be positioned correctly without any additional markup; if the toggler button is the only child besides the collapsed content, you will need to add the <code class="highlighter-rouge">.ml-auto</code> class to push it to the right.</p>
 
@@ -134,7 +134,7 @@
 
 <p>Here’s an example of all the sub-components included in a responsive light-themed navbar that automatically collapses at the <code class="highlighter-rouge">lg</code> (large) breakpoint.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <nav class="navbar navbar-toggleable-lg navbar-light bg-faded">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -189,7 +189,7 @@
 
 <p>The <code class="highlighter-rouge">.navbar-brand</code> can be applied to most elements, but an anchor works best as some elements might require utility classes or custom styles.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <!-- As a link -->
 <nav class="navbar navbar-light bg-faded">
   <a class="navbar-brand" href="#">Navbar</a>
@@ -212,7 +212,7 @@
 
 <p>Adding images to the <code class="highlighter-rouge">.navbar-brand</code> will likely always require custom styles or utilities to properly size. Here are some examples to demonstrate.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <!-- Just an image -->
 <nav class="navbar navbar-light bg-faded">
   <a class="navbar-brand" href="#">
@@ -227,7 +227,7 @@
   <span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;/nav&gt;</span></code></pre></div>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <!-- Image and text -->
 <nav class="navbar navbar-light bg-faded">
   <a class="navbar-brand" href="#">
@@ -250,7 +250,7 @@
 
 <p>Active states—with <code class="highlighter-rouge">.active</code>—to indicate the current page can be applied directly to <code class="highlighter-rouge">.nav-link</code>s or their immediate parent <code class="highlighter-rouge">.nav-item</code>s.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <nav class="navbar navbar-toggleable-lg navbar-light bg-faded">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -299,7 +299,7 @@
 
 <p>And because we use classes for our navs, you can avoid the list-based approach entirely if you like.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <nav class="navbar navbar-toggleable-lg navbar-light bg-faded">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -332,7 +332,7 @@
 
 <p>You may also utilize dropdowns in your navbar nav. Dropdown menus require a wrapping element for positioning, so be sure to use separate and nested elements for <code class="highlighter-rouge">.nav-item</code> and <code class="highlighter-rouge">.nav-link</code> as shown below.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <nav class="navbar navbar-toggleable-lg navbar-light bg-faded">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -397,7 +397,7 @@
 
 <p>Place various form controls and components within a navbar with <code class="highlighter-rouge">.form-inline</code>.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <nav class="navbar navbar-light bg-faded">
   <form class="form-inline">
     <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />
@@ -414,7 +414,7 @@
 
 <p>Align the contents of your inline forms with utilities as needed.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <nav class="navbar navbar-light bg-faded justify-content-between">
   <a class="navbar-brand">Navbar</a>
   <form class="form-inline">
@@ -433,7 +433,7 @@
 
 <p>Input groups work, too:</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <nav class="navbar navbar-light bg-faded">
   <form class="form-inline">
     <div class="input-group">
@@ -454,7 +454,7 @@
 
 <p>Various buttons are supported as part of these navbar forms, too. This is also a great reminder that vertical alignment utilities can be used to align different sized elements.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <nav class="navbar navbar-light bg-faded">
   <form class="form-inline">
     <button class="btn btn-outline-success" type="button">Main button</button>
@@ -473,7 +473,7 @@
 
 <p>Navbars may contain bits of text with the help of <code class="highlighter-rouge">.navbar-text</code>. This class adjusts vertical alignment and horizontal spacing for strings of text.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <nav class="navbar navbar-light bg-faded">
   <span class="navbar-text">
     Navbar text with an inline element
@@ -488,7 +488,7 @@
 
 <p>Mix and match with other components and utilities as needed.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <nav class="navbar navbar-toggleable-lg navbar-light bg-faded">
   <a class="navbar-brand" href="#">Navbar w/ text</a>
   <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -539,7 +539,7 @@
 
 <p>Theming the navbar is easy thanks to the combination of theming classes and <code class="highlighter-rouge">background-color</code> utilities. Choose from <code class="highlighter-rouge">.navbar-light</code> for use with light background colors, or <code class="highlighter-rouge">.navbar-inverse</code> for dark background colors. Then, customize with <code class="highlighter-rouge">.bg-*</code> utilities.</p>
 
-<div class="bd-example">
+<div class="afd-example">
   <nav class="navbar navbar-toggleable-lg navbar-inverse bg-inverse">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -644,7 +644,7 @@
 
 <p>Although it’s not required, you can wrap a navbar in a <code class="highlighter-rouge">.container</code> to center it on a page or add one within to only center the contents of a <a href="#placement">fixed or static top navbar</a>.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <div class="container">
   <nav class="navbar navbar-toggleable-lg navbar-light bg-faded">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -659,7 +659,7 @@
 
 <p>When the container is within your navbar, its horizontal padding is removed at breakpoints lower than your specified <code class="highlighter-rouge">.navbar-toggleable{-sm|-md|-lg|-xl}</code> class. This ensures we’re not doubling up on padding unnecessarily on lower viewports when your navbar is collapsed.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <nav class="navbar navbar-toggleable-lg navbar-light bg-faded">
   <div class="container">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -676,7 +676,7 @@
 
 <p>Use our position utilities to place navbars in non-static positions. Choose from fixed to the top, fixed to the bottom, or stickied to the top.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <nav class="navbar navbar-light bg-faded">
   <a class="navbar-brand" href="#">Full width</a>
 </nav>
@@ -685,7 +685,7 @@
   <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"navbar-brand"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Full width<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;/nav&gt;</span></code></pre></div>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <nav class="navbar fixed-top navbar-light bg-faded">
   <a class="navbar-brand" href="#">Fixed top</a>
 </nav>
@@ -694,7 +694,7 @@
   <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"navbar-brand"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Fixed top<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;/nav&gt;</span></code></pre></div>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <nav class="navbar fixed-bottom navbar-light bg-faded">
   <a class="navbar-brand" href="#">Fixed bottom</a>
 </nav>
@@ -703,7 +703,7 @@
   <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"navbar-brand"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Fixed bottom<span class="nt">&lt;/a&gt;</span>
 <span class="nt">&lt;/nav&gt;</span></code></pre></div>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <nav class="navbar sticky-top navbar-light bg-faded">
   <a class="navbar-brand" href="#">Sticky top</a>
 </nav>
@@ -724,7 +724,7 @@
 
 <p>With <code class="highlighter-rouge">.navbar-brand</code> nested in the collapsible portion of the navbar:</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <nav class="navbar navbar-light bg-faded">
   <button class="navbar-toggler ml-auto collapsed" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -775,7 +775,7 @@
 
 <p>With a brand name shown on the left and toggler on the right:</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <nav class="navbar navbar-light bg-faded">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -826,7 +826,7 @@
 
 <p>With custom toggler text:</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <nav class="navbar navbar-light bg-faded">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -873,7 +873,7 @@
 
 <p>Sometimes you may want to use the <a href="/components/collapse/">collapse component</a> to trigger hidden content elsewhere on the page. Because Athena’s collapse JavaScript works on the <code class="highlighter-rouge">id</code> and <code class="highlighter-rouge">data-target</code> matching, that’s easily done!</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <div class="pos-f-t">
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-inverse p-4">
@@ -904,13 +904,13 @@
 
 
       </div>
-      <div class="col-md-4 bd-sidebar">
-        <!-- <form class="bd-search d-none d-sm-block">
+      <div class="col-md-4 afd-sidebar">
+        <!-- <form class="afd-search d-none d-sm-block">
   <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
-  <div class="dropdown-menu bd-search-results" id="search-results"></div>
+  <div class="dropdown-menu afd-search-results" id="search-results"></div>
 </form>
  -->
-<nav class="bd-links" id="docsNavbarContent">
+<nav class="afd-links" id="docsNavbarContent">
   
   
   
@@ -920,12 +920,12 @@
 
   
 
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/getting-started/quick-start/">
+  <div class="afd-toc-item ">
+      <a class="afd-toc-link" href="/getting-started/quick-start/">
         Getting started
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
           
           
@@ -1028,12 +1028,12 @@
 
   
 
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/layout/overview/">
+  <div class="afd-toc-item ">
+      <a class="afd-toc-link" href="/layout/overview/">
         Layout
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
           
           
@@ -1097,12 +1097,12 @@
 
   
 
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/content/resets/">
+  <div class="afd-toc-item ">
+      <a class="afd-toc-link" href="/content/resets/">
         Content
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
           
           
@@ -1205,12 +1205,12 @@
 
   
 
-  <div class="bd-toc-item active">
-      <a class="bd-toc-link" href="/components/alerts/">
+  <div class="afd-toc-item active">
+      <a class="afd-toc-link" href="/components/alerts/">
         Components
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
           
           
@@ -1399,7 +1399,7 @@
 
           
 
-          <li class="active bd-sidenav-active">
+          <li class="active afd-sidenav-active">
             <a href="/components/navbar/">
               Navbar
             </a>
@@ -1482,12 +1482,12 @@
 
   
 
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/utilities/borders/">
+  <div class="afd-toc-item ">
+      <a class="afd-toc-link" href="/utilities/borders/">
         Utilities
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
           
           
@@ -1759,12 +1759,12 @@
 
   
 
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/about/">
+  <div class="afd-toc-item ">
+      <a class="afd-toc-link" href="/about/">
         About
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
       </ul>
     </div>
@@ -1776,12 +1776,12 @@
 
   
 
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/migration/">
+  <div class="afd-toc-item ">
+      <a class="afd-toc-link" href="/migration/">
         Migration
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
       </ul>
     </div>

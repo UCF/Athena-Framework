@@ -73,7 +73,7 @@
 <main>
   <article class="py-5 container">
     <div class="row">
-      <div class="col-md-8 bd-content">
+      <div class="col-md-8 afd-content">
         <h1>Navs</h1>
         <p>Navigation options available in Athena share general markup and styles, from the base <code class="highlighter-rouge">.nav</code> class to the active and disabled states. Swap modifier classes to switch between each style.</p>
 
@@ -117,7 +117,7 @@
 
 <p>Unlike in Bootstrap 4, the base <code class="highlighter-rouge">.nav</code> component <em>does</em> include <code class="highlighter-rouge">.active</code> state styles, demonstrated below.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <ul class="nav">
   <li class="nav-item">
     <a class="nav-link active" href="#">Active</a>
@@ -150,7 +150,7 @@
 
 <p>Classes are used throughout, so your markup can be super flexible. Use <code class="highlighter-rouge">&lt;ul&gt;</code>s like above, or roll your own with say a <code class="highlighter-rouge">&lt;nav&gt;</code> element. Because the <code class="highlighter-rouge">.nav</code> uses <code class="highlighter-rouge">display: flex</code>, the nav links behave the same as nav items would, but without the extra markup.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <nav class="nav">
   <a class="nav-link active" href="#">Active</a>
   <a class="nav-link" href="#">Link</a>
@@ -175,7 +175,7 @@
 
 <p>Centered with <code class="highlighter-rouge">.justify-content-center</code>:</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <ul class="nav justify-content-center">
   <li class="nav-item">
     <a class="nav-link active" href="#">Active</a>
@@ -208,7 +208,7 @@
 
 <p>Right-aligned with <code class="highlighter-rouge">.justify-content-end</code>:</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <ul class="nav justify-content-end">
   <li class="nav-item">
     <a class="nav-link active" href="#">Active</a>
@@ -243,7 +243,7 @@
 
 <p>Stack your navigation by changing the flex item direction with the <code class="highlighter-rouge">.flex-column</code> utility. Need to stack them on some viewports but not others? Use the responsive versions (e.g., <code class="highlighter-rouge">.flex-sm-column</code>).</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <ul class="nav flex-column">
   <li class="nav-item">
     <a class="nav-link active" href="#">Active</a>
@@ -276,7 +276,7 @@
 
 <p>As always, vertical navigation is possible without <code class="highlighter-rouge">&lt;ul&gt;</code>s, too.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <nav class="nav flex-column">
   <a class="nav-link active" href="#">Active</a>
   <a class="nav-link" href="#">Link</a>
@@ -293,7 +293,7 @@
 
 <p>To prevent vertical links from consuming the full width of their parent, add the <code class="highlighter-rouge">.align-items-start</code> class to the <code class="highlighter-rouge">.nav</code> (this works with either <code class="highlighter-rouge">&lt;nav&gt;</code> or <code class="highlighter-rouge">&lt;ul&gt;</code>):</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <ul class="nav flex-column align-items-start">
   <li class="nav-item">
     <a class="nav-link active" href="#">Active</a>
@@ -328,7 +328,7 @@
 
 <p>Takes the basic nav from above and adds the <code class="highlighter-rouge">.nav-tabs</code> class to generate a tabbed interface. Use them to create tabbable regions with Athena’s <a href="#javascript-behavior">tab JavaScript</a>.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link active" href="#">Active</a>
@@ -363,7 +363,7 @@
 
 <p>Take that same HTML, but use <code class="highlighter-rouge">.nav-pills</code> instead:</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <ul class="nav nav-pills">
   <li class="nav-item">
     <a class="nav-link active" href="#">Active</a>
@@ -398,7 +398,7 @@
 
 <p>Force your <code class="highlighter-rouge">.nav</code>’s contents to extend the full available width one of two modifier classes. To proportionately fill all available space with your <code class="highlighter-rouge">.nav-item</code>s, use <code class="highlighter-rouge">.nav-fill</code>. Notice that all horizontal space is occupied, but not every nav item has the same width.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <ul class="nav nav-pills nav-fill">
   <li class="nav-item">
     <a class="nav-link active" href="#">Active</a>
@@ -431,7 +431,7 @@
 
 <p>When using a <code class="highlighter-rouge">&lt;nav&gt;</code>-based navigation, be sure to include <code class="highlighter-rouge">.nav-item</code> on the anchors.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <nav class="nav nav-pills nav-fill">
   <a class="nav-item nav-link active" href="#">Active</a>
   <a class="nav-item nav-link" href="#">Link</a>
@@ -448,7 +448,7 @@
 
 <p>For equal-width elements, use <code class="highlighter-rouge">.nav-justified</code>. All horizontal space will be occupied by nav links, but unlike the <code class="highlighter-rouge">.nav-fill</code> above, every nav item will be the same width.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <nav class="nav nav-pills nav-justified">
   <a class="nav-link active" href="#">Active</a>
   <a class="nav-link" href="#">Longer nav link</a>
@@ -465,7 +465,7 @@
 
 <p>Similar to the <code class="highlighter-rouge">.nav-fill</code> example using a <code class="highlighter-rouge">&lt;nav&gt;</code>-based navigation, be sure to include <code class="highlighter-rouge">.nav-item</code> on the anchors.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <nav class="nav nav-pills nav-justified">
   <a class="nav-item nav-link active" href="#">Active</a>
   <a class="nav-item nav-link" href="#">Link</a>
@@ -484,7 +484,7 @@
 
 <p>If you need responsive nav variations, consider using a series of <a href="/utilities/flexbox/">flexbox utilities</a>. While more verbose, these utilities offer greater customization across responsive breakpoints. In the example below, our nav will be stacked on the lowest breakpoint, then adapt to a horizontal layout that fills the available width starting from the small breakpoint.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <nav class="nav nav-pills flex-column flex-sm-row">
   <a class="flex-sm-fill text-sm-center nav-link active" href="#">Active</a>
   <a class="flex-sm-fill text-sm-center nav-link" href="#">Link</a>
@@ -511,7 +511,7 @@
 
 <h3 id="tabs-with-dropdowns">Tabs with dropdowns</h3>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link active" href="#">Active</a>
@@ -558,7 +558,7 @@
 
 <h3 id="pills-with-dropdowns">Pills with dropdowns</h3>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <ul class="nav nav-pills">
   <li class="nav-item">
     <a class="nav-link active" href="#">Active</a>
@@ -611,7 +611,7 @@
 
 <p><strong>Note that dynamic tabbed interfaces should not contain dropdown menus</strong>, as this causes both usability and accessibility issues. From a usability perspective, the fact that the currently displayed tab’s trigger element is not immediately visible (as it’s inside the closed dropdown menu) can cause confusion. From an accessibility point of view, there is currently no sensible way to map this sort of construct to a standard WAI ARIA pattern, meaning that it cannot be easily made understandable to users of assistive technologies.</p>
 
-<div class="bd-example bd-example-tabs">
+<div class="afd-example afd-example-tabs">
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item">
         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
@@ -655,7 +655,7 @@
 
 <p>Tab logic also works with pills.</p>
 
-<div class="bd-example bd-example-tabs">
+<div class="afd-example afd-example-tabs">
   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
     <li class="nav-item">
         <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
@@ -699,7 +699,7 @@
 
 <p>And with vertical pills.</p>
 
-<div class="bd-example bd-example-tabs">
+<div class="afd-example afd-example-tabs">
   <div class="row">
     <div class="col-3">
       <nav class="nav nav-pills flex-column mb-3" id="v-pills-tab" role="tablist">
@@ -883,13 +883,13 @@
 
 
       </div>
-      <div class="col-md-4 bd-sidebar">
-        <!-- <form class="bd-search d-none d-sm-block">
+      <div class="col-md-4 afd-sidebar">
+        <!-- <form class="afd-search d-none d-sm-block">
   <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
-  <div class="dropdown-menu bd-search-results" id="search-results"></div>
+  <div class="dropdown-menu afd-search-results" id="search-results"></div>
 </form>
  -->
-<nav class="bd-links" id="docsNavbarContent">
+<nav class="afd-links" id="docsNavbarContent">
   
   
   
@@ -899,12 +899,12 @@
 
   
 
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/getting-started/quick-start/">
+  <div class="afd-toc-item ">
+      <a class="afd-toc-link" href="/getting-started/quick-start/">
         Getting started
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
           
           
@@ -1007,12 +1007,12 @@
 
   
 
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/layout/overview/">
+  <div class="afd-toc-item ">
+      <a class="afd-toc-link" href="/layout/overview/">
         Layout
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
           
           
@@ -1076,12 +1076,12 @@
 
   
 
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/content/resets/">
+  <div class="afd-toc-item ">
+      <a class="afd-toc-link" href="/content/resets/">
         Content
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
           
           
@@ -1184,12 +1184,12 @@
 
   
 
-  <div class="bd-toc-item active">
-      <a class="bd-toc-link" href="/components/alerts/">
+  <div class="afd-toc-item active">
+      <a class="afd-toc-link" href="/components/alerts/">
         Components
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
           
           
@@ -1365,7 +1365,7 @@
 
           
 
-          <li class="active bd-sidenav-active">
+          <li class="active afd-sidenav-active">
             <a href="/components/navs/">
               Navs
             </a>
@@ -1461,12 +1461,12 @@
 
   
 
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/utilities/borders/">
+  <div class="afd-toc-item ">
+      <a class="afd-toc-link" href="/utilities/borders/">
         Utilities
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
           
           
@@ -1738,12 +1738,12 @@
 
   
 
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/about/">
+  <div class="afd-toc-item ">
+      <a class="afd-toc-link" href="/about/">
         About
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
       </ul>
     </div>
@@ -1755,12 +1755,12 @@
 
   
 
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/migration/">
+  <div class="afd-toc-item ">
+      <a class="afd-toc-link" href="/migration/">
         Migration
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
       </ul>
     </div>

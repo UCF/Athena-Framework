@@ -27,7 +27,7 @@ When successfully implemented, your nav will update accordingly, moving the `.ac
 
 Scroll the area below the navbar and watch the active class change. The dropdown sub items will be highlighted as well.
 
-<div class="bd-example">
+<div class="afd-example">
   <nav id="navbar-example2" class="navbar navbar-light bg-faded">
     <a class="navbar-brand" href="#">Navbar</a>
     <ul class="nav nav-pills">

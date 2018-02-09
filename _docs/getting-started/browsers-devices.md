@@ -19,7 +19,7 @@ Athena supports the **latest two stable releases** of all major browsers and pla
 ### Mobile browser support
 
 <table class="table table-bordered table-responsive">
-  <thead class="thead-default">
+  <thead class="theafd-default">
     <tr>
       <td></td>
       <th>Chrome</th>
@@ -52,7 +52,7 @@ Athena supports the **latest two stable releases** of all major browsers and pla
 ### Desktop browser support
 
 <table class="table table-bordered table-responsive">
-  <thead class="thead-default">
+  <thead class="theafd-default">
     <tr>
       <td></td>
       <th>Chrome</th>

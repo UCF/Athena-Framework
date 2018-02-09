@@ -1,4 +1,4 @@
-.bd-content {
+.afd-content {
   > h1 {
     font-size: 2rem;
   }
@@ -32,8 +32,7 @@
 
   > pre,
   > figure.highlight {
-    @include border-radius(.25rem);
-    background: $gray-lighter;
+    background: $gray-lightest;
     padding: 1.5rem;
 
     strike {

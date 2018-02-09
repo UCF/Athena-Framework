@@ -53,7 +53,7 @@ And with `<a>` elements:
 
 The best part is you can do this with any button variant, too:
 
-<div class="bd-example">
+<div class="afd-example">
   <div class="btn-group">
     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Primary</button>
     <div class="dropdown-menu">
@@ -138,7 +138,7 @@ Similarly, create split button dropdowns with virtually the same markup as singl
 
 We use this extra class to reduce the horizontal `padding` on either side of the caret by 25% and remove the `margin-left` that's added for regular button dropdowns. Those extra changes keep the caret centered in the split button and provide a more appropriately sized hit area next to the main button.
 
-<div class="bd-example">
+<div class="afd-example">
   <div class="btn-group">
     <button type="button" class="btn btn-primary">Primary</button>
     <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -241,7 +241,7 @@ We use this extra class to reduce the horizontal `padding` on either side of the
 
 Button dropdowns work with buttons of all sizes, including default and split dropdown buttons.
 
-<div class="bd-example">
+<div class="afd-example">
   <div class="btn-toolbar" role="toolbar">
     <div class="btn-group">
       <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -347,7 +347,7 @@ Button dropdowns work with buttons of all sizes, including default and split dro
 
 Trigger dropdown menus above elements by adding `.dropup` to the parent element.
 
-<div class="bd-example">
+<div class="afd-example">
   <div class="btn-group dropup">
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Dropup

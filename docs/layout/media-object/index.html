@@ -73,7 +73,7 @@
 <main>
   <article class="py-5 container">
     <div class="row">
-      <div class="col-md-8 bd-content">
+      <div class="col-md-8 afd-content">
         <h1>Media object</h1>
         <p>The <a href="http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/">media object</a> helps build complex and repetitive components where some media is positioned alongside content that doesn’t wrap around said media. Plus, it does this with only two required classes thanks to flexbox.</p>
 
@@ -92,7 +92,7 @@
 
 <p>Below is an example of a single media object. Only two classes are required—the wrapping <code class="highlighter-rouge">.media</code> and the <code class="highlighter-rouge">.media-body</code> around your content. Optional padding and margin can be controlled through <a href="/utilities/spacing/">spacing utilities</a>.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <div class="media">
   <img class="d-flex mr-3" data-src="holder.js/64x64" alt="Generic placeholder image" />
   <div class="media-body">
@@ -109,7 +109,7 @@
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-<div class="bd-callout bd-callout-warning">
+<div class="afd-callout afd-callout-warning">
 <h5 id="flexbug-12-inline-elements-arent-treated-as-flex-items">Flexbug #12: Inline elements aren’t treated as flex items</h5>
 
 <p>Internet Explorer 10-11 do not render inline elements like links or images (or <code class="highlighter-rouge">::before</code> and <code class="highlighter-rouge">::after</code> pseudo-elements) as flex items. The only workaround is to set a non-inline <code class="highlighter-rouge">display</code> value (e.g., <code class="highlighter-rouge">block</code>, <code class="highlighter-rouge">inline-block</code>, or <code class="highlighter-rouge">flex</code>). We suggest using <code class="highlighter-rouge">.d-flex</code>, one of our <a href="/utilities/display-property/">display utilities</a>, as seen above for an easy fix.</p>
@@ -121,7 +121,7 @@
 
 <p>Media objects can be infinitely nested, though we suggest you stop at some point. Place nested <code class="highlighter-rouge">.media</code> within the <code class="highlighter-rouge">.media-body</code> of a parent media object.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <div class="media">
   <img class="d-flex mr-3" data-src="holder.js/64x64" alt="Generic placeholder image" />
   <div class="media-body">
@@ -162,7 +162,7 @@
 
 <p>Media in a media object can be aligned with flexbox utilities to the top (default), middle, or end of your <code class="highlighter-rouge">.media-body</code> content.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <div class="media">
   <img class="d-flex align-self-start mr-3" data-src="holder.js/64x64" alt="Generic placeholder image" />
   <div class="media-body">
@@ -181,7 +181,7 @@
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <div class="media">
   <img class="d-flex align-self-center mr-3" data-src="holder.js/64x64" alt="Generic placeholder image" />
   <div class="media-body">
@@ -200,7 +200,7 @@
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <div class="media">
   <img class="d-flex align-self-end mr-3" data-src="holder.js/64x64" alt="Generic placeholder image" />
   <div class="media-body">
@@ -223,7 +223,7 @@
 
 <p>Change the order of content in media objects by modifying the HTML itself, or by adding some custom flexbox CSS to set the <code class="highlighter-rouge">order</code> property (to an integer of your choosing).</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <div class="media">
   <div class="media-body">
     <h5 class="mt-0 mb-1">Media object</h5>
@@ -244,7 +244,7 @@
 
 <p>Because the media object has so few structural requirements, you can also use these classes on list HTML elements. On your <code class="highlighter-rouge">&lt;ul&gt;</code> or <code class="highlighter-rouge">&lt;ol&gt;</code>, add the <code class="highlighter-rouge">.list-unstyled</code> to remove any browser default list styles, and then apply <code class="highlighter-rouge">.media</code> to your <code class="highlighter-rouge">&lt;li&gt;</code>s. As always, use spacing utilities wherever needed to fine tune.</p>
 
-<div class="bd-example" data-example-id="">
+<div class="afd-example" data-example-id="">
 <ul class="list-unstyled">
   <li class="media">
     <img class="d-flex mr-3" data-src="holder.js/64x64" alt="Generic placeholder image" />
@@ -295,13 +295,13 @@
 
 
       </div>
-      <div class="col-md-4 bd-sidebar">
-        <!-- <form class="bd-search d-none d-sm-block">
+      <div class="col-md-4 afd-sidebar">
+        <!-- <form class="afd-search d-none d-sm-block">
   <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
-  <div class="dropdown-menu bd-search-results" id="search-results"></div>
+  <div class="dropdown-menu afd-search-results" id="search-results"></div>
 </form>
  -->
-<nav class="bd-links" id="docsNavbarContent">
+<nav class="afd-links" id="docsNavbarContent">
   
   
   
@@ -311,12 +311,12 @@
 
   
 
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/getting-started/quick-start/">
+  <div class="afd-toc-item ">
+      <a class="afd-toc-link" href="/getting-started/quick-start/">
         Getting started
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
           
           
@@ -419,12 +419,12 @@
 
   
 
-  <div class="bd-toc-item active">
-      <a class="bd-toc-link" href="/layout/overview/">
+  <div class="afd-toc-item active">
+      <a class="afd-toc-link" href="/layout/overview/">
         Layout
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
           
           
@@ -457,7 +457,7 @@
 
           
 
-          <li class="active bd-sidenav-active">
+          <li class="active afd-sidenav-active">
             <a href="/layout/media-object/">
               Media object
             </a>
@@ -488,12 +488,12 @@
 
   
 
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/content/resets/">
+  <div class="afd-toc-item ">
+      <a class="afd-toc-link" href="/content/resets/">
         Content
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
           
           
@@ -596,12 +596,12 @@
 
   
 
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/components/alerts/">
+  <div class="afd-toc-item ">
+      <a class="afd-toc-link" href="/components/alerts/">
         Components
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
           
           
@@ -873,12 +873,12 @@
 
   
 
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/utilities/borders/">
+  <div class="afd-toc-item ">
+      <a class="afd-toc-link" href="/utilities/borders/">
         Utilities
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
           
           
@@ -1150,12 +1150,12 @@
 
   
 
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/about/">
+  <div class="afd-toc-item ">
+      <a class="afd-toc-link" href="/about/">
         About
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
       </ul>
     </div>
@@ -1167,12 +1167,12 @@
 
   
 
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/migration/">
+  <div class="afd-toc-item ">
+      <a class="afd-toc-link" href="/migration/">
         Migration
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         
       </ul>
     </div>

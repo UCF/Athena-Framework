@@ -57,7 +57,7 @@ $(function () {
 
 Four options are available: top, right, bottom, and left aligned.
 
-<div class="bd-example bd-example-popover-static">
+<div class="afd-example afd-example-popover-static">
   <div class="popover popover-top">
     <h3 class="popover-title">Popover top</h3>
     <div class="popover-content">
@@ -99,8 +99,8 @@ Four options are available: top, right, bottom, and left aligned.
 
 ### Four directions
 
-<div class="bd-example popover-demo">
-  <div class="bd-example-popovers">
+<div class="afd-example popover-demo">
+  <div class="afd-example-popovers">
     <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
       Popover on top
     </button>

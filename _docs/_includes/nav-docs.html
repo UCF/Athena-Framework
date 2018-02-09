@@ -1,9 +1,9 @@
-<!-- <form class="bd-search d-none d-sm-block">
+<!-- <form class="afd-search d-none d-sm-block">
   <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
-  <div class="dropdown-menu bd-search-results" id="search-results"></div>
+  <div class="dropdown-menu afd-search-results" id="search-results"></div>
 </form>
  -->
-<nav class="bd-links" id="docsNavbarContent">
+<nav class="afd-links" id="docsNavbarContent">
   {% assign page_slug = page.url | split: '/' | last %}
   {% for group in site.data.nav %}
   {% assign link = group.pages | first %}
@@ -15,18 +15,18 @@
     {% assign active = 'active' %}
   {% endif %}
 
-  <div class="bd-toc-item {{ active }}">
-      <a class="bd-toc-link" href="{{ site.baseurl }}/{{ group_slug }}/{{ link_slug }}{% if link_slug %}/{% endif %}">
+  <div class="afd-toc-item {{ active }}">
+      <a class="afd-toc-link" href="{{ site.baseurl }}/{{ group_slug }}/{{ link_slug }}{% if link_slug %}/{% endif %}">
         {{ group.title }}
       </a>
 
-      <ul class="nav bd-sidenav">
+      <ul class="nav afd-sidenav">
         {% for doc in group.pages %}
           {% assign doc_slug = doc.title | slugify %}
           {% assign active = nil %}
 
           {% if page.group == group_slug and page_slug == doc_slug %}
-            {% assign active = 'active bd-sidenav-active' %}
+            {% assign active = 'active afd-sidenav-active' %}
           {% endif %}
 
           <li class="{{ active }}">

@@ -38,7 +38,7 @@ $('#myModal').on('shown.bs.modal', function () {
 
 Below is a _static_ modal example (meaning its `position` and `display` have been overridden). Included are the modal header, modal body (required for `padding`), and modal footer (optional). We ask that you include modal headers with dismiss actions whenever possible, or provide another explicit dismiss action.
 
-<div class="bd-example bd-example-modal">
+<div class="afd-example afd-example-modal">
   <div class="modal">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -106,7 +106,7 @@ Toggle a working modal demo by clicking the button below. It will slide down and
   </div>
 </div>
 
-<div class="bd-example">
+<div class="afd-example">
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLive">
     Launch demo modal
   </button>
@@ -181,7 +181,7 @@ When modals become too long for the user's viewport or device, they scroll indep
   </div>
 </div>
 
-<div class="bd-example">
+<div class="afd-example">
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
     Launch demo modal
   </button>
@@ -231,7 +231,7 @@ Utilize the Athena grid system within a modal by nesting `.container-fluid` with
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
-        <div class="container-fluid bd-example-row">
+        <div class="container-fluid afd-example-row">
           <div class="row">
             <div class="col-md-4">.col-md-4</div>
             <div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
@@ -266,7 +266,7 @@ Utilize the Athena grid system within a modal by nesting `.container-fluid` with
   </div>
 </div>
 
-<div class="bd-example">
+<div class="afd-example">
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#gridSystemModal">
   Launch demo modal
 </button>
@@ -384,16 +384,16 @@ Be sure to add `role="dialog"` and `aria-labelledby="..."`, referencing the moda
 
 Modals have two optional sizes, available via modifier classes to be placed on a `.modal-dialog`. These sizes kick in at certain breakpoints to avoid horizontal scrollbars on narrower viewports.
 
-<div class="bd-example">
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Small modal</button>
+<div class="afd-example">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".afd-example-modal-lg">Large modal</button>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".afd-example-modal-sm">Small modal</button>
 </div>
 
 {% highlight html %}
 <!-- Large modal -->
-<button class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+<button class="btn btn-primary" data-toggle="modal" data-target=".afd-example-modal-lg">Large modal</button>
 
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade afd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       ...
@@ -402,9 +402,9 @@ Modals have two optional sizes, available via modifier classes to be placed on a
 </div>
 
 <!-- Small modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Small modal</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".afd-example-modal-sm">Small modal</button>
 
-<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+<div class="modal fade afd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       ...
@@ -413,7 +413,7 @@ Modals have two optional sizes, available via modifier classes to be placed on a
 </div>
 {% endhighlight %}
 
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade afd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
 
@@ -430,7 +430,7 @@ Modals have two optional sizes, available via modifier classes to be placed on a
   </div>
 </div>
 
-<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+<div class="modal fade afd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">

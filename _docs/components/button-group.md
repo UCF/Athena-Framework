@@ -93,7 +93,7 @@ Feel free to mix input groups with button groups in your toolbars. Similar to th
 
 Instead of applying button sizing classes to every button in a group, just add `.btn-group-*` to each `.btn-group`, including each one when nesting multiple groups.
 
-<div class="bd-example">
+<div class="afd-example">
   <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
     <button type="button" class="btn btn-default">Left</button>
     <button type="button" class="btn btn-default">Middle</button>
@@ -146,7 +146,7 @@ Place a `.btn-group` within another `.btn-group` when you want dropdown menus mi
 
 Make a set of buttons appear vertically stacked rather than horizontally. **Split button dropdowns are not supported here.**
 
-<div class="bd-example">
+<div class="afd-example">
   <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
     <button type="button" class="btn btn-default">Button</button>
     <button type="button" class="btn btn-default">Button</button>
@@ -157,7 +157,7 @@ Make a set of buttons appear vertically stacked rather than horizontally. **Spli
   </div>
 </div>
 
-<div class="bd-example">
+<div class="afd-example">
   <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
     <button type="button" class="btn btn-default">Button</button>
     <button type="button" class="btn btn-default">Button</button>
