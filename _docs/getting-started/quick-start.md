@@ -51,23 +51,19 @@ You can see an example of this in action in the [starter template](#starter-temp
 
 ## 2. Add stylesheets
 
-Add the Athena stylesheet before all other stylesheets in your document `<head>`. If you're using Cloud.typography**, your CSS key should go immediately before the Athena stylesheet.
+Add the Athena stylesheet before all other stylesheets in your document `<head>`. If you're [using Cloud.typography]({{ site.baseurl }}{% link getting-started/download-install.md %}#webfont-configuration), your CSS key should go immediately before the Athena stylesheet.
 
-### Using fallback fonts only (no Cloud.typography fonts):
+### Using fallback fonts only (no Cloud.typography fonts)
 
 {% highlight html %}
 <link rel="stylesheet" href="{{ site.cdn }}v{{ site.data.package.version }}/css/framework.min.css">
 {% endhighlight %}
 
-### Using Cloud.typography fonts:
+### Using Cloud.typography fonts
 {% highlight html %}
 <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/xxxxxx/xxxxxx/css/fonts.css">
 <link rel="stylesheet" href="{{ site.cdn }}v{{ site.data.package.version }}/css/framework.min.css">
 {% endhighlight %}
-
-{% callout info %}
-<strong>**Note: Cloud.typography fonts are optional.</strong> If Cloud.typography is not utilized, fallback fonts provided by Athena will be used. See the <a href="{{ site.baseurl }}{% link getting-started/install.md %}#webfonts--configuration">webfont configuration</a> section for information on setting up a Cloud.typography project for use with Athena.
-{% endcallout %}
 
 
 ## 3. Add JavaScript
