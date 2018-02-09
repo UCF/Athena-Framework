@@ -17,7 +17,7 @@ Like Bootstrap 4, Athena is designed as a utility-based framework--meaning that 
 
 ## Maintainers
 
-The Athena Framework is actively developed by [UCF Marketing's Web Communications team](https://www.ucf.edu/brand/contact-us/), but involvement and pull requests from the greater UCF development community are [highly encouraged](#get-involved).
+The Athena Framework is actively developed by [UCF Marketing's Web Communications team](https://www.ucf.edu/brand/contact-us/), but involvement and pull requests from the greater UCF development community are [highly encouraged](#contributing).
 
 
 ## Contributing
