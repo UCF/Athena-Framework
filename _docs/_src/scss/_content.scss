@@ -5,22 +5,22 @@
 
   > h2 {
     font-size: 1.5rem;
-    margin-top: 2.5rem;
+    margin-top: 3rem;
   }
 
   > h3 {
     font-size: 1.25rem;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
   }
 
   > h4 {
     font-size: 1rem;
-    margin-top: 1.75rem;
+    margin-top: 2rem;
   }
 
   > h5 {
     font-size: .75rem;
-    margin-top: 1.25rem;
+    margin-top: 1.5rem;
   }
 
   > hr {
@@ -31,9 +31,13 @@
   }
 
   > pre,
-  > figure.highlight {
+  .highlight {
     background: $gray-lightest;
     padding: 1.5rem;
+
+    code {
+      background: transparent;
+    }
 
     strike {
       background: #ffecec;
@@ -41,7 +45,7 @@
     }
 
     .highlight-code {
-      background: #eaffea;
+      background: #d1f8d1;
       padding: 0;
     }
   }
@@ -80,6 +84,10 @@
   > ul li,
   > ol li {
     margin-bottom: .25rem;
+  }
+
+  code {
+    background: rgba(0, 0, 0, .05);
   }
 }
 

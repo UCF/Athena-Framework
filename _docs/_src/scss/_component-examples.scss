@@ -139,6 +139,10 @@
     float: none;
   }
 
+  > pre > code {
+    background: transparent;
+  }
+
   // Images
   > img {
     + img {

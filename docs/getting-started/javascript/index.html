@@ -75,7 +75,7 @@
     <div class="row">
       <div class="col-md-8 afd-content">
         <h1>JavaScript</h1>
-        <p>Athena includes a handful of JavaScript to help bring some of our components to life. Learn more about how to include it, our data and programmatic API options, and more.</p>
+        <p>Athena includes a handful of JavaScript code, mostly inherited from Bootstrap, to help bring some of our components to life. Learn more about how to include it, our data and programmatic API options, and more.</p>
 
 <h2 id="contents">Contents</h2>
 
@@ -102,19 +102,19 @@
 
 <h2 id="data-attributes">Data attributes</h2>
 
-<p>Nearly all Athena plugins can be enabled and configured through HTML alone with data attributes (our preferred way of using JavaScript functionality). Be sure to <strong>only use one set of data attributes on a single element</strong> (e.g., you cannot trigger a tooltip and modal from the same button.)</p>
+<p>Nearly all of Athena’s JavaScript can be enabled and configured through HTML alone with data attributes (our preferred way of using JavaScript functionality). Be sure to <strong>only use one set of data attributes on a single element</strong> (e.g., you cannot trigger a tooltip and modal from the same button.)</p>
 
-<p>However, in some situations it may be desirable to disable this functionality. To disable the data attribute API, unbind all events on the document namespaced with <code class="highlighter-rouge">data-api</code> like so:</p>
+<p>However, in some situations it may be desirable to disable this functionality. To disable the data attribute API for Bootstrap plugins, unbind all events on the document namespaced with <code class="highlighter-rouge">data-api</code> like so:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">off</span><span class="p">(</span><span class="s1">'.data-api'</span><span class="p">)</span></code></pre></figure>
 
-<p>Alternatively, to target a specific plugin, just include the plugin’s name as a namespace along with the data-api namespace like this:</p>
+<p>Alternatively, to target a specific Bootstrap plugin, just include the plugin’s name as a namespace along with the data-api namespace like this:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">off</span><span class="p">(</span><span class="s1">'.alert.data-api'</span><span class="p">)</span></code></pre></figure>
 
 <h2 id="events">Events</h2>
 
-<p>Athena provides custom events for most plugins’ unique actions. Generally, these come in an infinitive and past participle form - where the infinitive (ex. <code class="highlighter-rouge">show</code>) is triggered at the start of an event, and its past participle form (ex. <code class="highlighter-rouge">shown</code>) is triggered on the completion of an action.</p>
+<p>Athena provides custom events for most components’ unique actions. Generally, these come in an infinitive and past participle form - where the infinitive (ex. <code class="highlighter-rouge">show</code>) is triggered at the start of an event, and its past participle form (ex. <code class="highlighter-rouge">shown</code>) is triggered on the completion of an action.</p>
 
 <p>All infinitive events provide <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault"><code class="highlighter-rouge">preventDefault()</code></a> functionality. This provides the ability to stop the execution of an action before it starts.</p>
 
@@ -122,55 +122,59 @@
   <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">data</span><span class="p">)</span> <span class="k">return</span> <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">()</span> <span class="c1">// stops modal from being shown</span>
 <span class="p">})</span></code></pre></figure>
 
+<p>Because most of Athena’s JavaScript is copied over directly from Bootstrap, you’ll still see <code class="highlighter-rouge">bs.</code> suffixes after these event names.</p>
+
 <h2 id="programmatic-api">Programmatic API</h2>
 
-<p>We also believe you should be able to use all Athena plugins purely through the JavaScript API. All public APIs are single, chainable methods, and return the collection acted upon.</p>
+<p>In addition to data attributes, most of Athena’s JavaScript functionality is also accessible through the JavaScript API. All public APIs are single, chainable methods, and return the collection acted upon.</p>
 
 <div class="afd-callout afd-callout-info">
-<p><strong>Note: Programmatic API applies to plugins ported from Bootstrap only.</strong> Athena-specific plugins (<code class="highlighter-rouge">mediaBackground</code> and <code class="highlighter-rouge">stickyTop</code>) don’t currently expose a constructor, <code class="highlighter-rouge">noConflict</code> method, custom events, version number or have any configurable options.</p>
+<p><strong>Note: Programmatic API applies to plugins ported from Bootstrap only.</strong> Athena-specific plugins (<code class="highlighter-rouge">mediaBackground</code> and <code class="highlighter-rouge">stickyTop</code>) don’t currently expose a constructor, <code class="highlighter-rouge">noConflict</code> method, version number or have any configurable options.</p>
 </div>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'.btn.danger'</span><span class="p">).</span><span class="nx">button</span><span class="p">(</span><span class="s1">'toggle'</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">'fat'</span><span class="p">)</span></code></pre></figure>
 
-<p>All methods should accept an optional options object, a string which targets a particular method, or nothing (which initiates a plugin with default behavior):</p>
+<p>All methods should accept an optional options object, a string which targets a particular method, or nothing (which initiates default behavior):</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'#myModal'</span><span class="p">).</span><span class="nx">modal</span><span class="p">()</span>                      <span class="c1">// initialized with defaults</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">'#myModal'</span><span class="p">).</span><span class="nx">modal</span><span class="p">({</span> <span class="na">keyboard</span><span class="p">:</span> <span class="kc">false</span> <span class="p">})</span>   <span class="c1">// initialized with no keyboard</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">'#myModal'</span><span class="p">).</span><span class="nx">modal</span><span class="p">(</span><span class="s1">'show'</span><span class="p">)</span>                <span class="c1">// initializes and invokes show immediately</span></code></pre></figure>
 
-<p>Each plugin also exposes its raw constructor on a <code class="highlighter-rouge">Constructor</code> property: <code class="highlighter-rouge">$.fn.popover.Constructor</code>. If you’d like to get a particular plugin instance, retrieve it directly from an element: <code class="highlighter-rouge">$('[rel="popover"]').data('popover')</code>.</p>
+<p>Each plugin from Bootstrap also exposes its raw constructor on a <code class="highlighter-rouge">Constructor</code> property: <code class="highlighter-rouge">$.fn.popover.Constructor</code>. If you’d like to get a particular plugin instance, retrieve it directly from an element: <code class="highlighter-rouge">$('[rel="popover"]').data('popover')</code>.</p>
 
 <h3 id="default-settings">Default settings</h3>
-<p>You can change the default settings for a plugin by modifying the plugin’s <code class="highlighter-rouge">Constructor.DEFAULTS</code> object:</p>
+<p>You can change the default settings for a Bootstrap plugin by modifying the plugin’s <code class="highlighter-rouge">Constructor.DEFAULTS</code> object:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">modal</span><span class="p">.</span><span class="nx">Constructor</span><span class="p">.</span><span class="nx">DEFAULT</span><span class="p">.</span><span class="nx">keyboard</span> <span class="o">=</span> <span class="kc">false</span> <span class="c1">// changes default for the modal plugin's `keyboard` option to false</span></code></pre></figure>
 
 <h3 id="no-conflict">No conflict</h3>
 
-<p>Sometimes it is necessary to use Athena plugins with other UI frameworks. In these circumstances, namespace collisions can occasionally occur. If this happens, you may call <code class="highlighter-rouge">.noConflict</code> on the plugin you wish to revert the value of.</p>
+<p>Sometimes it is necessary to use Athena’s JavaScript with other UI frameworks. In these circumstances, namespace collisions can occasionally occur. If this happens, you may call <code class="highlighter-rouge">.noConflict</code> on the Bootstrap plugin you wish to revert the value of.</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">AthenaButton</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">button</span><span class="p">.</span><span class="nx">noConflict</span><span class="p">()</span> <span class="c1">// return $.fn.button to previously assigned value</span>
 <span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">AthenaBtn</span> <span class="o">=</span> <span class="nx">AthenaButton</span>            <span class="c1">// give $().AthenaBtn the Athena functionality</span></code></pre></figure>
 
 <h3 id="version-numbers">Version numbers</h3>
 
-<p>The version of each of Athena’s jQuery plugins can be accessed via the <code class="highlighter-rouge">VERSION</code> property of the plugin’s constructor. For example, for the tooltip plugin:</p>
+<p>The version of each of jQuery plugin ported from Bootstrap can be accessed via the <code class="highlighter-rouge">VERSION</code> property of the plugin’s constructor. For example, for the tooltip plugin:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">tooltip</span><span class="p">.</span><span class="nx">Constructor</span><span class="p">.</span><span class="nx">VERSION</span> <span class="c1">// =&gt; "1.0.0-beta.8"</span></code></pre></figure>
 
+<p>Note that these version numbers will correspond to the version of Bootstrap that they are ported from, <em>not</em> the current version of the Athena Framework!</p>
+
 <h2 id="no-special-fallbacks-when-javascript-is-disabled">No special fallbacks when JavaScript is disabled</h2>
 
-<p>Athena’s plugins don’t fall back particularly gracefully when JavaScript is disabled. If you care about the user experience in this case, use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript"><code class="highlighter-rouge">&lt;noscript&gt;</code></a> to explain the situation (and how to re-enable JavaScript) to your users, and/or add your own custom fallbacks.</p>
+<p>Athena’s components that depend on JavaScript logic don’t fall back particularly gracefully when JavaScript is disabled. If you care about the user experience in this case, use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript"><code class="highlighter-rouge">&lt;noscript&gt;</code></a> to explain the situation (and how to re-enable JavaScript) to your users, and/or add your own custom fallbacks.</p>
 
 <div class="afd-callout afd-callout-warning">
-<h4 id="third-party-libraries">Third-party libraries</h4>
+<h3 id="third-party-libraries">Third-party libraries</h3>
 
 <p><strong>Athena does not officially support third-party JavaScript libraries</strong> like Prototype or jQuery UI. Despite <code class="highlighter-rouge">.noConflict</code> and namespaced events, there may be compatibility problems that you need to fix on your own.</p>
 </div>
 
 <h2 id="transitions">Transitions</h2>
 
-<p>Transition.js, already included in Athena’s framework.min.js, is a basic helper for <code class="highlighter-rouge">transitionEnd</code> events as well as a CSS transition emulator. It’s used by the other plugins to check for CSS transition support and to catch hanging transitions.</p>
+<p>Transition.js, a Bootstrap plugin already in Athena’s JavaScript, is a basic helper for <code class="highlighter-rouge">transitionEnd</code> events as well as a CSS transition emulator. It’s used by the other Bootstrap plugins to check for CSS transition support and to catch hanging transitions.</p>
 
       </div>
       <div class="col-md-4 afd-sidebar">
