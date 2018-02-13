@@ -1,5 +1,5 @@
 ---
-layout: docs-content
+layout: docs
 title: Dividers
 description: Documentation and examples for customizing dividers in Athena.
 group: content

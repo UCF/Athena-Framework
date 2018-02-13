@@ -1,5 +1,5 @@
 ---
-layout: docs-content
+layout: docs
 title: Images
 description: Documentation and examples for styling images with Athena.
 group: content

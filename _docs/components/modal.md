@@ -1,5 +1,5 @@
 ---
-layout: docs-components
+layout: docs
 title: Modal
 description: Use Athena's modal JavaScript to add dialogs to your site for lightboxes, user notifications, or completely custom content.
 group: components

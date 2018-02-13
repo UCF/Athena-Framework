@@ -1,5 +1,5 @@
 ---
-layout: docs-components
+layout: docs
 title: Collapse
 description: Toggle the visibility of content across your project with a few classes and Athena's JavaScript.
 group: components

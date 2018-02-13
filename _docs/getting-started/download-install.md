@@ -1,5 +1,5 @@
 ---
-layout: docs-getting-started
+layout: docs
 title: Download & install
 description: Download Athena's compiled CSS and JavaScript, source code, or include it with your favorite package manager.
 group: getting-started

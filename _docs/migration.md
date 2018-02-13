@@ -1,5 +1,5 @@
 ---
-layout: migration
+layout: subpage
 title: Migrating to Athena from Bootstrap 3
 group: migration
 ---

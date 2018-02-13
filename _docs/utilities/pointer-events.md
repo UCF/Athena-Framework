@@ -1,5 +1,5 @@
 ---
-layout: docs-utilities
+layout: docs
 title: Pointer Events
 group: utilities
 ---

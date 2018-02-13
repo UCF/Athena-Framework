@@ -1,5 +1,5 @@
 ---
-layout: docs-getting-started
+layout: docs
 title: Accessibility
 description: A brief overview of Athena's features and limitations for the creation of accessible content.
 group: getting-started

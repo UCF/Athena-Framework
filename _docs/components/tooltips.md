@@ -1,5 +1,5 @@
 ---
-layout: docs-components
+layout: docs
 title: Tooltips
 description: Documentation and examples for adding custom Athena tooltips with CSS and JavaScript.
 group: components

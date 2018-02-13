@@ -1,5 +1,5 @@
 ---
-layout: docs-components
+layout: docs
 title: Scrollspy
 description: Documentation and examples for scrollspy logic with Athena's navigation components.
 group: components

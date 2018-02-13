@@ -1,5 +1,5 @@
 ---
-layout: about
+layout: subpage
 title: About
 description: A brief overview of what Athena is and why it exists.
 group: about

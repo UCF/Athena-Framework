@@ -47,34 +47,811 @@
 
 <header class="header bg-inverse">
   <div class="container">
+    <h1 class="display-4 heading-underline mb-4">Filters</h1>
     <div class="row">
-      <div class="col-lg-8 d-flex flex-column justify-content-center">
-        <h1 class="display-4 heading-underline mb-4">Utilities</h1>
+      <div class="col-xl-10">
         <span class="lead font-slab-serif">
           
-            Athena includes dozens of utilities—classes with a single purpose to reduce the frequency of highly repetitive declarations.
-          
         </span>
-      </div>
-      <div class="col-lg-4 hidden-md-down">
-        <div class="card card-outline-inverse card-github">
-  <div class="card-block">
-    <h2 class="card-title h4">Want to contribute?</h2>
-    <p class="card-text">If you're interested in contributing to the Athena Framework, please read our <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/CONTRIBUTING.md">contributing guidelines</a>, then submit a new issue or pull request.</p>
-    <a href="https://github.com/UCF/Athena-Framework" class="btn btn-primary btn-sm" target="_blank">GitHub Page</a>
-  </div>
-</div>
-
       </div>
     </div>
   </div>
 </header>
 
 <main>
-  <article class="py-5 container">
+  <div class="navbar-light bg-primary hidden-md-up">
+    <div class="container d-flex flex-column align-items-end">
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#afd-toc" aria-controls="afd-toc" aria-expanded="false" aria-label="Toggle documentation navigation">
+        <span class="navbar-toggler-text">Documentation<span class="sr-only"> Menu</span></span>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+  <article class="container">
     <div class="row">
-      <div class="col-md-8 afd-content">
-        <h1>Filters</h1>
+      <div class="col-md-4 push-md-8 pt-3 pt-md-5 pl-lg-5">
+        <div id="afd-toc" class="collapse d-md-block mb-4">
+  <!-- <form class="afd-search d-none d-sm-block">
+    <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+    <div class="dropdown-menu afd-search-results" id="search-results"></div>
+  </form>
+  -->
+  <nav class="afd-links">
+    
+    
+    
+    
+    
+    
+
+    
+
+    <div class="afd-toc-item">
+      <a class="afd-toc-link " href="#sidenav-getting-started" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-getting-started">
+        Getting started
+        <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+      </a>
+
+      
+
+      
+        <div class="ml-4 collapse afd-sidenav " id="sidenav-getting-started">
+          <ul class="nav d-flex flex-column">
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/getting-started/quick-start/">
+                  Quick start
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/getting-started/download-install/">
+                  Download & install
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/getting-started/build-tools/">
+                  Build tools
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/getting-started/options/">
+                  Options
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/getting-started/javascript/">
+                  JavaScript
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/getting-started/browsers-devices/">
+                  Browsers & devices
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/getting-started/accessibility/">
+                  Accessibility
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      
+
+    </div>
+
+    
+    
+    
+    
+    
+
+    
+
+    <div class="afd-toc-item">
+      <a class="afd-toc-link " href="#sidenav-layout" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-layout">
+        Layout
+        <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+      </a>
+
+      
+
+      
+        <div class="ml-4 collapse afd-sidenav " id="sidenav-layout">
+          <ul class="nav d-flex flex-column">
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/layout/overview/">
+                  Overview
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/layout/grid/">
+                  Grid
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/layout/media-object/">
+                  Media object
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/layout/utilities-for-layout/">
+                  Utilities for Layout
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      
+
+    </div>
+
+    
+    
+    
+    
+    
+
+    
+
+    <div class="afd-toc-item">
+      <a class="afd-toc-link " href="#sidenav-content" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-content">
+        Content
+        <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+      </a>
+
+      
+
+      
+        <div class="ml-4 collapse afd-sidenav " id="sidenav-content">
+          <ul class="nav d-flex flex-column">
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/content/resets/">
+                  Resets
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/content/typography/">
+                  Typography
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/content/code/">
+                  Code
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/content/images/">
+                  Images
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/content/tables/">
+                  Tables
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/content/figures/">
+                  Figures
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/content/dividers/">
+                  Dividers
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      
+
+    </div>
+
+    
+    
+    
+    
+    
+
+    
+
+    <div class="afd-toc-item">
+      <a class="afd-toc-link " href="#sidenav-components" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-components">
+        Components
+        <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+      </a>
+
+      
+
+      
+        <div class="ml-4 collapse afd-sidenav " id="sidenav-components">
+          <ul class="nav d-flex flex-column">
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/alerts/">
+                  Alerts
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/badge/">
+                  Badge
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/breadcrumb/">
+                  Breadcrumb
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/buttons/">
+                  Buttons
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/button-group/">
+                  Button group
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/card/">
+                  Card
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/collapse/">
+                  Collapse
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/dropdowns/">
+                  Dropdowns
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/forms/">
+                  Forms
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/input-group/">
+                  Input group
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/jumbotron/">
+                  Jumbotron
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/list-group/">
+                  List group
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/modal/">
+                  Modal
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/navs/">
+                  Navs
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/navbar/">
+                  Navbar
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/pagination/">
+                  Pagination
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/popovers/">
+                  Popovers
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/progress/">
+                  Progress
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/scrollspy/">
+                  Scrollspy
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/tooltips/">
+                  Tooltips
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      
+
+    </div>
+
+    
+    
+    
+    
+    
+
+    
+
+    <div class="afd-toc-item">
+      <a class="afd-toc-link active" href="#sidenav-utilities" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-utilities">
+        Utilities
+        <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+      </a>
+
+      
+
+      
+        <div class="ml-4 collapse afd-sidenav show" id="sidenav-utilities">
+          <ul class="nav d-flex flex-column">
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/borders/">
+                  Borders
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/clearfix/">
+                  Clearfix
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/close-icon/">
+                  Close icon
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/colors/">
+                  Colors
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/display-property/">
+                  Display property
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/embeds/">
+                  Embeds
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link active afd-sidenav-active" href="/utilities/filters/">
+                  Filters
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/flexbox/">
+                  Flexbox
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/float/">
+                  Float
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/image-replacement/">
+                  Image replacement
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/media-backgrounds/">
+                  Media backgrounds
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/pointer-events/">
+                  Pointer Events
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/position/">
+                  Position
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/screenreaders/">
+                  Screenreaders
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/sizing/">
+                  Sizing
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/spacing/">
+                  Spacing
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/states/">
+                  States
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/typography/">
+                  Typography
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/vertical-align/">
+                  Vertical align
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/visibility-property/">
+                  Visibility property
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      
+
+    </div>
+
+    
+  </nav>
+</div>
+
+      </div>
+      <div class="col-md-8 pull-md-4 pt-3 pt-md-5 afd-content">
         <p>Apply unique effects to images using Athena’s built-in filter classes.</p>
 
 <div class="afd-callout afd-callout-warning">
@@ -131,915 +908,47 @@
 <p>By combining a filter and <a href="/utilities/states/">state classes</a>, you can transition between filters on hover, active, and focus. Filter changes on state change (including parent/child element state changes) are documented in further detail in our <a href="/utilities/states/">state class documentation</a>.</p>
 
       </div>
-      <div class="col-md-4 afd-sidebar">
-        <!-- <form class="afd-search d-none d-sm-block">
-  <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
-  <div class="dropdown-menu afd-search-results" id="search-results"></div>
-</form>
- -->
-<nav class="afd-links" id="docsNavbarContent">
-  
-  
-  
-  
-  
-  
-
-  
-
-  <div class="afd-toc-item ">
-      <a class="afd-toc-link" href="/getting-started/quick-start/">
-        Getting started
-      </a>
-
-      <ul class="nav afd-sidenav">
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/getting-started/quick-start/">
-              Quick start
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/getting-started/download-install/">
-              Download & install
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/getting-started/build-tools/">
-              Build tools
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/getting-started/options/">
-              Options
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/getting-started/javascript/">
-              JavaScript
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/getting-started/browsers-devices/">
-              Browsers & devices
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/getting-started/accessibility/">
-              Accessibility
-            </a>
-
-            
-          </li>
-        
-      </ul>
-    </div>
-  
-  
-  
-  
-  
-
-  
-
-  <div class="afd-toc-item ">
-      <a class="afd-toc-link" href="/layout/overview/">
-        Layout
-      </a>
-
-      <ul class="nav afd-sidenav">
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/layout/overview/">
-              Overview
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/layout/grid/">
-              Grid
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/layout/media-object/">
-              Media object
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/layout/utilities-for-layout/">
-              Utilities for Layout
-            </a>
-
-            
-          </li>
-        
-      </ul>
-    </div>
-  
-  
-  
-  
-  
-
-  
-
-  <div class="afd-toc-item ">
-      <a class="afd-toc-link" href="/content/resets/">
-        Content
-      </a>
-
-      <ul class="nav afd-sidenav">
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/content/resets/">
-              Resets
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/content/typography/">
-              Typography
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/content/code/">
-              Code
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/content/images/">
-              Images
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/content/tables/">
-              Tables
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/content/figures/">
-              Figures
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/content/dividers/">
-              Dividers
-            </a>
-
-            
-          </li>
-        
-      </ul>
-    </div>
-  
-  
-  
-  
-  
-
-  
-
-  <div class="afd-toc-item ">
-      <a class="afd-toc-link" href="/components/alerts/">
-        Components
-      </a>
-
-      <ul class="nav afd-sidenav">
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/components/alerts/">
-              Alerts
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/components/badge/">
-              Badge
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/components/breadcrumb/">
-              Breadcrumb
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/components/buttons/">
-              Buttons
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/components/button-group/">
-              Button group
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/components/card/">
-              Card
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/components/collapse/">
-              Collapse
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/components/dropdowns/">
-              Dropdowns
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/components/forms/">
-              Forms
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/components/input-group/">
-              Input group
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/components/jumbotron/">
-              Jumbotron
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/components/list-group/">
-              List group
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/components/modal/">
-              Modal
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/components/navs/">
-              Navs
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/components/navbar/">
-              Navbar
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/components/pagination/">
-              Pagination
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/components/popovers/">
-              Popovers
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/components/progress/">
-              Progress
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/components/scrollspy/">
-              Scrollspy
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/components/tooltips/">
-              Tooltips
-            </a>
-
-            
-          </li>
-        
-      </ul>
-    </div>
-  
-  
-  
-  
-  
-
-  
-
-  <div class="afd-toc-item active">
-      <a class="afd-toc-link" href="/utilities/borders/">
-        Utilities
-      </a>
-
-      <ul class="nav afd-sidenav">
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/utilities/borders/">
-              Borders
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/utilities/clearfix/">
-              Clearfix
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/utilities/close-icon/">
-              Close icon
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/utilities/colors/">
-              Colors
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/utilities/display-property/">
-              Display property
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/utilities/embeds/">
-              Embeds
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="active afd-sidenav-active">
-            <a href="/utilities/filters/">
-              Filters
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/utilities/flexbox/">
-              Flexbox
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/utilities/float/">
-              Float
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/utilities/image-replacement/">
-              Image replacement
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/utilities/media-backgrounds/">
-              Media backgrounds
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/utilities/pointer-events/">
-              Pointer Events
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/utilities/position/">
-              Position
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/utilities/screenreaders/">
-              Screenreaders
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/utilities/sizing/">
-              Sizing
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/utilities/spacing/">
-              Spacing
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/utilities/states/">
-              States
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/utilities/typography/">
-              Typography
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/utilities/vertical-align/">
-              Vertical align
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/utilities/visibility-property/">
-              Visibility property
-            </a>
-
-            
-          </li>
-        
-      </ul>
-    </div>
-  
-  
-  
-  
-  
-
-  
-
-  <div class="afd-toc-item ">
-      <a class="afd-toc-link" href="/about/">
-        About
-      </a>
-
-      <ul class="nav afd-sidenav">
-        
-      </ul>
-    </div>
-  
-  
-  
-  
-  
-
-  
-
-  <div class="afd-toc-item ">
-      <a class="afd-toc-link" href="/migration/">
-        Migration
-      </a>
-
-      <ul class="nav afd-sidenav">
-        
-      </ul>
-    </div>
-  
-</nav>
-
-      </div>
     </div>
   </article>
 </main>
 
-    <footer class="py-4 py-md-5 mt-5 bg-inverse">
+
+    <footer class="py-5 mt-5 bg-inverse">
       <div class="container">
         <div class="row d-flex justify-content-lg-between">
-          <div class="col-lg">
+          <div class="col-lg-7 col-xl-8">
+            <strong class="h6 heading-underline mb-4">Athena Framework</strong>
+            <ul class="nav flex-column align-items-start mb-5">
+              <li class="nav-item">
+                <a class="nav-link bg-inverse-link" href="https://github.com/UCF/" target="_blank">
+                  <span class="fa fa-github mr-2 text-primary" aria-hidden="true"></span>UCF GitHub
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link bg-inverse-link" href="https://ucf-wp.slack.com/messages/#prj-athena-framework/" target="_blank">
+                  <span class="fa fa-slack mr-2 text-primary" aria-hidden="true"></span>Athena Framework Slack Channel
+                </a>
+              </li>
+            </ul>
             <p>
-              Powered by <a class="bg-inverse-link" href="https://jekyllrb.com/" target="_blank">Jekyll</a> and <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework">the Athena Framework</a>.
-              <br>
-              Documentation adapted from <a class="bg-inverse-link" href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.
+              Current version: <strong>v1.0.0-beta.8</strong>.
+            </p>
+            <p>
+              Documentation powered by <a class="bg-inverse-link" href="https://jekyllrb.com/" target="_blank">Jekyll</a>. Contents adapted from <a class="bg-inverse-link" href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.
             </p>
             <p class="mb-0">
               Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
             </p>
           </div>
-          <div class="col-lg mt-5 mt-lg-0 text-lg-right">
-            <p>
-              Current version: <strong>v1.0.0-beta.8</strong>.
-            </p>
-            <p>
-              <a class="bg-inverse-link" href="https://github.com/UCF/" target="_blank"><span class="fa fa-github"></span> UCF GitHub</a>
-            </p>
+          <div class="col-lg-5 col-xl-4 mt-5 mt-lg-0">
+            <div class="card card-outline-inverse card-github">
+  <div class="card-block">
+    <h2 class="card-title h4">Want to contribute?</h2>
+    <p class="card-text">If you're interested in contributing to the Athena Framework, please read our <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/CONTRIBUTING.md">contributing guidelines</a>, then submit a new issue or pull request.</p>
+    <a href="https://github.com/UCF/Athena-Framework" class="btn btn-primary btn-sm" target="_blank">GitHub Page</a>
+  </div>
+</div>
+
           </div>
         </div>
       </div>

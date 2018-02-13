@@ -3,27 +3,3 @@
   padding: 4rem 0;
 }
 
-.card-github {
-  overflow: hidden;
-
-  &:after {
-    color: $gray-lighter;
-    content: "\f09b";
-    font-family: FontAwesome;
-    font-size: 219px;
-    font-style: normal;
-    font-weight: normal;
-    left: 93%;
-    margin: -203px 0 0 -160px;
-    opacity: .1;
-    position: absolute;
-    text-decoration: inherit;
-    top: 80%;
-    z-index: 1;
-  }
-
-  .card-block {
-    z-index: 2;
-  }
-}
-

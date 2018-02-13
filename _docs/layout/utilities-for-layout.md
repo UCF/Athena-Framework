@@ -1,5 +1,5 @@
 ---
-layout: docs-layout
+layout: docs
 title: Utilities for layout
 description: Use any of our dozens of responsive utility classes for showing, hiding, aligning, and spacing content.
 group: layout

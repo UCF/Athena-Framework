@@ -1,5 +1,5 @@
 ---
-layout: docs-getting-started
+layout: docs
 title: Quick start
 description: Get started with Athena using these quick setup steps.
 group: getting-started
@@ -12,7 +12,7 @@ It's easy to get started with the Athena Framework. The steps below outline the 
 
 ## A Note about Bootstrap
 
-Athena is a complete replacement for <a href="https://getbootstrap.com/">Bootstrap</a>.  If you are already using Bootstrap on an existing project and want to use Athena instead, you should remove Bootstrap's CSS and JavaScript completely.  Athena is designed to run as a completely standalone framework.
+Athena is a complete replacement for <a href="https://getbootstrap.com/">Bootstrap</a>.  If you are already using Bootstrap on an existing project and want to use Athena instead, you should [remove Bootstrap's CSS and JavaScript completely]({% link getting-started/download-install.md %}#adding-to-existing-project-using-bootstrap).  Athena is designed to run as a completely standalone framework.
 
 Read more about the <a href="{{ site.baseurl }}{% link migration.md %}">differences between Athena and Bootstrap here.</a>
 

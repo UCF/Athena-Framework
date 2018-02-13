@@ -1,5 +1,5 @@
 ---
-layout: docs-getting-started
+layout: docs
 title: Browsers and devices
 description: Learn which browsers and devices are supported by Athena.
 group: getting-started

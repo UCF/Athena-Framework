@@ -1,5 +1,5 @@
 ---
-layout: docs-utilities
+layout: docs
 title: Borders
 group: utilities
 redirect_from: "/utilities/"

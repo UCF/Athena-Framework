@@ -1,5 +1,5 @@
 ---
-layout: docs-getting-started
+layout: docs
 title: Build tools
 description: Details on how to use compile custom Athena builds and more.
 group: getting-started

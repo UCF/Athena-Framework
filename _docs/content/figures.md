@@ -1,5 +1,5 @@
 ---
-layout: docs-content
+layout: docs
 title: Figures
 description: Documentation and examples for displaying related images and text with the figure component in Athena.
 group: content

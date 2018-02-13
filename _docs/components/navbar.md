@@ -1,5 +1,5 @@
 ---
-layout: docs-components
+layout: docs
 title: Navbar
 description: Documentation and examples for Athena's powerful, responsive navigation header, the navbar.
 group: components
