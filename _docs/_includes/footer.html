@@ -34,6 +34,7 @@
 
     {{ site.jquery_script }}
     {{ site.tether_script }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.bundle.min.js" integrity="sha256-VCsWOz+0GuHdS/sIICtQNTFJdbaDI80rxvoB7BXabrU=" crossorigin="anonymous"></script>
 
     {% if jekyll.environment == "production" %}
     <script src="{{ site.host }}{{ site.baseurl }}{% link static/js/docs.min.js %}"></script>
