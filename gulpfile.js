@@ -13,14 +13,14 @@ var browserSync = require('browser-sync').create(),
   replace = require('gulp-replace'),
   runSequence = require('run-sequence'),
   merge = require('merge'),
-  childProc = require('child_process'),
   header = require('gulp-header'),
   footer = require('gulp-footer'),
   gulpif = require('gulp-if'),
   gutil = require('gulp-util'),
   path = require('path'),
   jsonToYaml = require('gulp-json-to-yaml'),
-  fs = require('fs');
+  fs = require('fs'),
+  shell = require('gulp-shell');
 
 
 var configLocal = require('./gulp-config.json'),
@@ -353,17 +353,10 @@ gulp.task('docs-default', function (callback) {
 });
 
 // Generates a new local build of the docs.
-gulp.task('docs-local', ['docs-default'], function (callback) {
-  process.chdir(__dirname + '/_docs');
-
-  childProc.spawn('bundle', [
-    'exec',
-    'jekyll',
-    'build'
-  ], { stdio: 'inherit' })
-    .on('error', (error) => gutil.log(gutil.colors.red(error.message)))
-    .on('close', callback);
-});
+gulp.task('docs-local', ['docs-default'], shell.task('bundle exec jekyll build', {
+  cwd: __dirname + '/_docs',
+  verbose: true
+}));
 
 // Spins up a new environment for previewing changes to the docs.
 // Watches for file changes.
@@ -384,19 +377,13 @@ gulp.task('docs-watch', function() {
 
 // Runs all tasks necessary to generate production-ready (Github Pages)
 // documentation.
-gulp.task('gh-pages', ['docs-default'], function (callback) {
-  process.chdir(__dirname + '/_docs');
-  process.env.JEKYLL_ENV = 'production';
-
-  childProc.spawn('bundle', [
-    'exec',
-    'jekyll',
-    'build',
-    '--config=_config.yml,_config_prod.yml'
-  ], { stdio: 'inherit' })
-    .on('error', (error) => gutil.log(gutil.colors.red(error.message)))
-    .on('close', callback);
-});
+gulp.task('gh-pages', ['docs-default'], shell.task('bundle exec jekyll build --config=_config.yml,_config_prod.yml', {
+  cwd: __dirname + '/_docs',
+  verbose: true,
+  env: {
+    JEKYLL_ENV: 'production'
+  }
+}));
 
 
 //
