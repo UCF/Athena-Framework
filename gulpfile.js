@@ -46,6 +46,8 @@ var configLocal = require('./gulp-config.json'),
         jsPath: './_docs/static/js'
       },
       dataPath: './_docs/_data',
+      srcPath: './_docs/_src',
+      distPath: './_docs/static',
       rootPath: './_docs',
       deployPath: './docs'
     },
@@ -305,8 +307,8 @@ gulp.task('js-build', function () {
 });
 
 // All js-related tasks
-gulp.task('js', function () {
-  runSequence('es-lint', 'js-build-bootstrap', 'js-build');
+gulp.task('js', function (callback) {
+  return runSequence('es-lint', 'js-build-bootstrap', 'js-build', callback);
 });
 
 
@@ -344,52 +346,56 @@ gulp.task('docs-js', function () {
   return buildJS(config.docs.src.jsPath + '/docs.js', 'docs.min.js', config.docs.dist.jsPath, true, false, true);
 });
 
-// Default task for docs.  Runs all docs-related tasks that do not serve or
-// build the docs.
-gulp.task('docs-default', function () {
-  return runSequence('docs-config', 'docs-components', ['docs-scss', 'docs-js']);
+// Default task for docs.  Runs all preliminary docs-related tasks that do not
+// actually build the docs.
+gulp.task('docs-default', function (callback) {
+  return runSequence('docs-config', 'docs-components', ['docs-scss', 'docs-js'], callback);
+});
+
+// Generates a new local build of the docs.
+gulp.task('docs-local', ['docs-default'], function (callback) {
+  process.chdir(__dirname + '/_docs');
+
+  childProc.spawn('bundle', [
+    'exec',
+    'jekyll',
+    'build'
+  ], { stdio: 'inherit' })
+    .on('error', (error) => gutil.log(gutil.colors.red(error.message)))
+    .on('close', callback);
 });
 
 // Spins up a new environment for previewing changes to the docs.
-// Watches and reloads when files change.
-gulp.task('docs-serve', ['docs-config'], function () {
-  gulp.watch(config.docs.src.scss + '/**/*.scss', ['docs-scss']);
-  gulp.watch(config.docs.src.js + '/**/*.js', ['docs-js']);
+// Watches for file changes.
+gulp.task('docs-watch', function() {
+  if (config.docSync.sync) {
+    browserSync.init({
+      proxy: {
+        target: config.docSync.syncTarget
+      }
+    });
+  }
 
-  process.chdir('./_docs');
-
-  const jekyll = childProc.spawn('bundle', [
-    'exec',
-    'jekyll',
-    'serve',
-    '--watch',
-    '--incremental',
-    '--drafts'
-  ]);
-
-  const jekyllLogger = (buffer) => {
-    buffer.toString()
-      .split(/\n/)
-      .forEach((message) => gutil.log('Jekyll - ' + message));
-  };
-
-  jekyll.stdout.on('data', jekyllLogger);
-  jekyll.stderr.on('data', jekyllLogger);
+  gulp.watch([
+    config.docs.rootPath + '/**/*',
+    '!' + config.docs.distPath + '/**/*'
+  ], ['docs-local'], { dot: true });
 });
 
 // Runs all tasks necessary to generate production-ready (Github Pages)
 // documentation.
-gulp.task('gh-pages', ['docs-default'], function () {
-  process.chdir('./_docs');
-
+gulp.task('gh-pages', ['docs-default'], function (callback) {
+  process.chdir(__dirname + '/_docs');
   process.env.JEKYLL_ENV = 'production';
 
-  const jekyll = childProc.spawnSync('bundle', [
+  childProc.spawn('bundle', [
     'exec',
     'jekyll',
     'build',
     '--config=_config.yml,_config_prod.yml'
-  ]);
+  ], { stdio: 'inherit' })
+    .on('error', (error) => gutil.log(gutil.colors.red(error.message)))
+    .on('close', callback);
 });
 
 
@@ -413,7 +419,7 @@ gulp.task('watch', function () {
 //
 // Default task
 //
-gulp.task('default', function () {
+gulp.task('default', function (callback) {
   // Make sure 'components' completes before 'css' or 'js' are allowed to run
-  return runSequence('components', ['css', 'js']);
+  return runSequence('components', ['css', 'js'], callback);
 });

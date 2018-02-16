@@ -27,6 +27,9 @@ bower_components
 gulp-config.json
 typings
 
+# Locally-generated documentation
+_site/*
+
 # debug files
 npm-debug.log
 
