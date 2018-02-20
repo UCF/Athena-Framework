@@ -217,7 +217,7 @@ gulp.task('scss-lint', function () {
 // Compile scss files
 function buildCSS(src, filename, dest, applyHeader, doBrowserSync) {
   dest = dest || config.dist.cssPath;
-  appleHeader = applyHeader || false;
+  applyHeader = applyHeader || false;
   doBrowserSync = doBrowserSync || false;
 
   return gulp.src(src)
@@ -277,7 +277,7 @@ gulp.task('js-build-bootstrap', function () {
 // Concat and uglify js files through babel
 function buildJS(src, filename, dest, applyHeader, doBrowserSync, forceIncludePaths) {
   dest = dest || config.dist.jsPath;
-  appleHeader = applyHeader || false;
+  applyHeader = applyHeader || false;
   doBrowserSync = doBrowserSync || false;
   forceIncludePaths = forceIncludePaths || false;
 
