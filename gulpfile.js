@@ -63,7 +63,9 @@ var configLocal = require('./gulp-config.json'),
       header: getAthenaHeader()
     },
     sync: false,
-    syncTarget: 'http://localhost/'
+    syncOptions: {},
+    docSync: false,
+    docSyncOptions: {}
   },
   config = merge(configDefault, configLocal);
 
@@ -361,12 +363,8 @@ gulp.task('docs-local', ['docs-default'], shell.task('bundle exec jekyll build',
 // Spins up a new environment for previewing changes to the docs.
 // Watches for file changes.
 gulp.task('docs-watch', function() {
-  if (config.docSync.sync) {
-    browserSync.init({
-      proxy: {
-        target: config.docSync.syncTarget
-      }
-    });
+  if (config.docSync) {
+    browserSync.init(config.docSyncOptions);
   }
 
   gulp.watch([
@@ -391,11 +389,7 @@ gulp.task('gh-pages', ['docs-default'], shell.task('bundle exec jekyll build --c
 //
 gulp.task('watch', function () {
   if (config.sync) {
-    browserSync.init({
-      proxy: {
-        target: config.syncTarget
-      }
-    });
+    browserSync.init(config.syncOptions);
   }
 
   gulp.watch(config.src.scssPath + '/**/*.scss', ['css']).on('change', browserSync.reload);

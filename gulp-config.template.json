@@ -1,8 +1,6 @@
 {
   "sync": false,
-  "syncTarget": "http://localhost/Athena-Framework/",
-  "docSync": {
-    "sync": true,
-    "syncTarget": "http://localhost/Athena-Framework/_site/"
-  }
+  "syncOptions": {},
+  "docSync": false,
+  "docSyncOptions": {}
 }
