@@ -1,6 +1,6 @@
 # Contributing to the Athena Framework
 
-Looking to contribute to the Athena Framework? We'd love to hear from you! **Here's how you can help.**
+If you are a developer for UCF and want to contribute to the Athena Framework, we'd love to hear from you.  This document outlines the best ways to submit new ideas or inform us of bugs.
 
 Please take a moment to review this document before submitting new issues or pull requests in order to make the contribution process easy and effective for everyone involved.
 
@@ -14,7 +14,7 @@ Please do not use the issue tracker for personal support requests.  Our [Slack c
 
 ## Bug reports
 
-A bug is a _demonstrable problem_ that is caused by the code in the repository. Concise and thorough bug reports will help us fix reported problems more quickly and effectively.
+A bug is a demonstrable problem that is caused by the code in the repository. Concise and thorough bug reports will help us fix reported problems more quickly and effectively.
 
 ### Before submitting a bug report
 Please follow the instructions below **before** submitting a new bug report:
@@ -77,7 +77,8 @@ Similarly, when contributing to Athena's documentation, you should edit the docu
 
 Adhering to the following process is the best way to submit a pull request:
 
-1. [Fork](https://help.github.com/articles/fork-a-repo/) the project, clone your fork, and configure the remotes:
+1. [Fork](https://help.github.com/articles/fork-a-repo/) the project.
+2. Clone your fork, and configure the remotes:
 
    ```bash
    # Clone your fork of the repo into the current directory
@@ -88,14 +89,14 @@ Adhering to the following process is the best way to submit a pull request:
    git remote add upstream https://github.com/UCF/Athena-Framework.git
    ```
 
-2. If you cloned a while ago, get the latest changes from upstream:
+3. If you cloned a while ago, get the latest changes from upstream:
 
    ```bash
    git checkout master
    git pull upstream master
    ```
 
-3. Create a new topic branch to contain your feature, change, or fix.
+4. Create a new topic branch to contain your feature, change, or fix.
 
     New branches **must** be branched off of the most recent existing `rc-*` branch (typically there will only be one open at a time), or off of `master` directly, if no `rc-*` branch exists.
 
@@ -105,21 +106,21 @@ Adhering to the following process is the best way to submit a pull request:
    git checkout -b <topic-branch-name>
    ```
 
-4. Commit your changes in logical chunks. Please provide helpful, readable commit messages (avoid nondescriptive messages such as "bugfix" or "minor change").
+5. Commit your changes in logical chunks. Please provide helpful, readable commit messages (avoid nondescriptive messages such as "bugfix" or "minor change").
 
-5. Locally merge the upstream `rc-*` or `master` branch (whichever you branched off of initially) into your topic branch:
+6. Locally merge the upstream `rc-*` or `master` branch (whichever you branched off of initially) into your topic branch:
 
    ```bash
    git merge --no-ff upstream master
    ```
 
-6. Push your topic branch up to your fork:
+7. Push your topic branch up to your fork:
 
    ```bash
    git push origin <topic-branch-name>
    ```
 
-7. [Open a Pull Request](https://help.github.com/articles/about-pull-requests/)
+8. [Open a Pull Request](https://help.github.com/articles/about-pull-requests/)
     with a clear title and description against the branch your topic branch was initially branched off of.
 
 
@@ -150,8 +151,3 @@ Use [CSS-Tricks' Sass Style Guide](https://css-tricks.com/sass-style-guide/) for
 
 - 2 spaces (no tabs)
 - Don't use [jQuery event alias convenience methods](https://github.com/jquery/jquery/blob/master/src/event/alias.js) (such as `$().focus()`). Instead, use [`$().trigger(eventType, ...)`](https://api.jquery.com/trigger/) or [`$().on(eventType, ...)`](https://api.jquery.com/on/), depending on whether you're firing an event or listening for an event. (For example, `$().trigger('focus')` or `$().on('focus', function (event) { /* handle focus event */ })`) We do this to be compatible with custom builds of jQuery where the event aliases module has been excluded.
-
-
-## License
-
-All code published to the Athena Framework, including code merged in via pull requests, is licensed under the [MIT License](https://github.com/UCF/Athena-Framework/blob/master/LICENSE), except for included third-party assets (such as webfonts) which may have their own separate licenses.
