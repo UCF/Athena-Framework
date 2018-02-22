@@ -48,9 +48,9 @@ var configLocal = require('./gulp-config.json'),
       dataPath: './_docs/_data',
       srcPath: './_docs/_src',
       distPath: './_docs/static',
-      rootPath: './_docs',
-      deployPath: './docs'
+      rootPath: './_docs'
     },
+    examplesPath: './_examples',
     packagesPath: './node_modules',
     bootstrap: {
       base: './node_modules/bootstrap',
@@ -65,9 +65,23 @@ var configLocal = require('./gulp-config.json'),
     sync: false,
     syncOptions: {},
     docSync: false,
-    docSyncOptions: {}
+    docSyncOptions: {},
+    examplesCSSKey: ''
   },
   config = merge(configDefault, configLocal);
+
+
+//
+// Helper functions
+//
+
+// Reload an open test page via BrowserSync and call a callback so that
+// streams resolve properly.  Will silently do nothing if BrowserSync isn't
+// initialized.
+function browserSyncReload(callback) {
+  browserSync.reload();
+  callback();
+}
 
 
 //
@@ -235,11 +249,9 @@ function buildCSS(src, filename, dest, applyHeader, doBrowserSync) {
     .pipe(gulpif(doBrowserSync, browserSync.stream()));
 }
 
-gulp.task('scss-build-framework', function () {
+gulp.task('scss-build', function () {
   return buildCSS(config.src.scssPath + '/framework.scss', 'framework.min.css', config.dist.cssPath, true, true);
 });
-
-gulp.task('scss-build', ['scss-build-framework']);
 
 // All css-related tasks
 gulp.task('css', ['scss-lint', 'scss-build']);
@@ -360,6 +372,9 @@ gulp.task('docs-local', ['docs-default'], shell.task('bundle exec jekyll build',
   verbose: true
 }));
 
+// Generates a new local build of the docs and reloads BrowserSync (if enabled).
+gulp.task('docs-onwatch', ['docs-local'], browserSyncReload);
+
 // Spins up a new environment for previewing changes to the docs.
 // Watches for file changes.
 gulp.task('docs-watch', function() {
@@ -370,7 +385,7 @@ gulp.task('docs-watch', function() {
   gulp.watch([
     config.docs.rootPath + '/**/*',
     '!' + config.docs.distPath + '/**/*'
-  ], ['docs-local'], { dot: true });
+  ], ['docs-onwatch'], { dot: true });
 });
 
 // Runs all tasks necessary to generate production-ready (Github Pages)
@@ -385,21 +400,53 @@ gulp.task('gh-pages', ['docs-default'], shell.task('bundle exec jekyll build --c
 
 
 //
-// Rerun tasks when files change
+// Local examples build
 //
+
+// Generates a custom local config file for the example files.
+gulp.task('examples-config', function() {
+  var localConfig = [
+    '# THIS FILE IS GENERATED AUTOMATICALLY VIA THE `examples-config` GULP TASK. DO NOT OVERRIDE VARIABLES HERE; MODIFY gulp-config.json INSTEAD.\n',
+    'cloud_typography_key: "' + config.examplesCSSKey + '"'
+  ].join('\n');
+
+  return fs.writeFileSync(config.examplesPath + '/_config_local.yml', localConfig);
+});
+
+// Generates a new local build of example files.
+gulp.task('examples-build', shell.task('bundle exec jekyll build --config=_config.yml,_config_local.yml', {
+  cwd: __dirname + '/_examples',
+  verbose: true
+}));
+
+// All examples-related tasks.
+gulp.task('examples', function (callback) {
+  return runSequence('examples-config', 'examples-build', callback);
+});
+
+// Performs all examples-related tasks and reloads BrowserSync (if enabled).
+gulp.task('examples-onwatch', ['examples'], browserSyncReload);
+
+
+//
+// Rerun tasks when files change.
+//
+
 gulp.task('watch', function () {
   if (config.sync) {
     browserSync.init(config.syncOptions);
   }
 
-  gulp.watch(config.src.scssPath + '/**/*.scss', ['css']).on('change', browserSync.reload);
-  gulp.watch(config.src.jsPath + '/**/*.js', ['js']).on('change', browserSync.reload);
+  gulp.watch(config.src.scssPath + '/**/*.scss', ['css']);
+  gulp.watch(config.src.jsPath + '/**/*.js', ['js']);
+  gulp.watch([config.examplesPath + '/**/*', '!' + config.examplesPath + '/_config_local.yml'], ['examples-onwatch']);
 });
 
 
 //
 // Default task
 //
+
 gulp.task('default', function (callback) {
   // Make sure 'components' completes before 'css' or 'js' are allowed to run
   return runSequence('components', ['css', 'js'], callback);

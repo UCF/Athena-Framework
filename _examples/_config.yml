@@ -13,22 +13,22 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Athena Framework
-baseurl: "/Athena-Framework/docs-local" # the subpath of your site, e.g. /blog
-# host: "" # the base hostname & protocol for your site, e.g. http://example.com
-slack: https://ucf-wp.slack.com/messages/#prj-athena-framework/
-cdn: https://cdn.ucf.edu/athena-framework/
+title: Athena Framework | Examples and Tests
+baseurl: "/Athena-Framework/examples" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 jquery_script: '<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>'
 tether_script: '<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js" integrity="sha256-mIiWebTG82x+OcV3vUA49ffGDIAJ53uC9jflw5/+REs=" crossorigin="anonymous"></script>'
-contributing_docs: https://github.com/UCF/Athena-Framework/CONTRIBUTING.md
 
 # Build settings
 markdown: kramdown
 permalink: /:title/
-gems:
+plugins:
   - jekyll-feed
-  - jekyll-redirect-from
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
 exclude:
   - Gemfile
   - Gemfile.lock
-destination: ../docs-local
+destination: ../examples
