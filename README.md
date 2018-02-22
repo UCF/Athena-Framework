@@ -39,11 +39,76 @@ _These instructions are for installation and development of the project for core
    `gulp default`
 5. Navigate to the `_docs/` directory, install dependencies for the framework docs, and build a local copy of the docs:
 
-   `cd docs_/`
+   `cd _docs/`
 
    `bundle install`
 
    `gulp docs-local`
+5. Navigate to the `_examples/` directory, install dependencies, and build a local copy of the examples site:
+
+   `cd _examples/`
+
+   `bundle install`
+
+   `gulp examples`
+
+That's it! Once you've finished all those steps, the root directory of the repo should look like this:
+
+```
+ ├── _docs/
+ ├── _examples/
+ ├── dist/
+ ├── docs/
+ ├── docs-local/
+ ├── examples/
+ ├── node_modules/
+ ├── src/
+ └── ...
+```
+
+(We're excluding git-related files in this example, as well as your `gulp-config.json` and the top-level config files that should have been cloned down from the project on Github, such as `gulpfile.js` and `package.json`).
+
+Here's a rundown of what's in each of these directories:
+
+#### _docs/
+
+Contains source files for the framework's documentation.  Athena's docs are built on Jekyll, meaning that they consist primarily of Markdown files.
+
+Documentation files get built to one of two locations: `docs-local/` or `docs/`.  `docs/` contains production-ready files intended to be served via Github Pages, and requires some unique options that we can't use for local testing.  Because of this, the documentation site will only get built to `docs/` when Athena's maintainers publish a new tag.  If you're working on updates to Athena's documentation, you'll always build changes to `docs-local/`.
+
+#### _examples/
+
+Contains source files for local example pages that you can use to test changes to the framework against.  Like the framework docs, these framework pages are built on Jekyll (but they are totally separate Jekyll instances.)
+
+The examples site will get built to `examples/`.
+
+#### dist/
+
+Contains production-ready, distributable framework files, including fallback fonts, minified CSS, and minified JS.
+
+#### docs/
+
+Contains production-ready documentation files to be served on Github Pages.  These files should never be edited directly or be included in commits to the repo--they'll only ever get changed by Athena's maintainers when a new release of the framework is published.
+
+#### docs-local/
+
+Contains your local copy of the built-out documentation site.
+
+This directory is included in our `.gitignore`, so only changes to the source files are tracked via git.
+
+#### examples/
+
+Contains built-out static site files for Athena's example pages, which are intended to be used for testing changes to the framework's core CSS and JS.
+
+The `examples/` directory is included in our `.gitignore`, so the examples site will never be committed to the main repo--the site exists strictly for local testing.
+
+#### node_modules/
+
+Contains project dependencies installed via npm.
+
+#### src/
+
+Contains the primary source files for the framework, including font files, Sass, and JavaScript.
 
 ### Framework development workflow
 
@@ -51,7 +116,7 @@ The Athena Framework comes with an extensive set of gulp tasks, which we use as 
 
 Your general workflow when working on the Athena Framework will look something like this:
 
-1. Download + install the framework. Run `gulp default` and `gulp docs-local` at least once before running watch tasks for the first time.
+1. Download + install the framework. Run `gulp default`, `gulp docs-local`, and `gulp examples` at least once before running watch tasks for the first time.
 2. Run `gulp watch` to watch changes to Sass and JS files in `src/`, and automatically perform CSS and JS build steps whenever changes are made.
 3. When making changes to the docs, run `gulp docs-local` to watch changes to files in `_docs/` and rebuild your local copy of the documentation into `docs-local/`.
 
@@ -101,6 +166,11 @@ If you'd like to automatically spin up a virtual test server when <code>gulp doc
 
 See [BrowserSync's documentation](https://browsersync.io/docs/options) for available options. Function-based options are not supported.</td>
 </tr>
+<tr>
+<td><code>examplesCSSKey</code></td>
+<td><code>""</code></td>
+<td>If you'd like to enable premium webfonts on your local examples files, you can specify the URL of a Cloud.Typography CSS key here (e.g. <code>https://cloud.typography.com/000000/000000/css/fonts.css</code>).</td>
+</tr>
 </tbody>
 </table>
 
@@ -122,7 +192,7 @@ Our gulpfile contains a lot of functions and tasks--however, you likely won't (a
 </tr>
 <tr>
 <td><code>gulp watch</code></td>
-<td>Watches changes to Sass files in <code>src/scss/</code> and JS files in <code>src/js/</code>, and runs <code>gulp css</code> or <code>gulp js</code>, respectively, when those files change.</td>
+<td>Watches changes to Sass files in <code>src/scss/</code> and JS files in <code>src/js/</code>, and runs <code>gulp css</code> or <code>gulp js</code>, respectively, when those files change. Also watches changes to files in <code>_examples/</code>.</td>
 </tr>
 <tr>
 <td><code>gulp components</code></td>
@@ -138,13 +208,16 @@ Our gulpfile contains a lot of functions and tasks--however, you likely won't (a
 </t>
 <tr>
 <td><code>gulp docs-local</code></td>
-<td>The primary task for building out minified CSS and JS for the framework documentation, and for building a new local copy of the documentation site.
+<td>The primary task for building out minified CSS and JS for the framework documentation, and for building a new local copy of the documentation site. The static documentation site will be built from <code>_docs/</code> and saved to <code>docs-local/</code>.
 <br><br>
 Due to the way our documentation project is set up, and how Jekyll performs new site builds, we actually create minified CSS and JS within <code>_docs/</code> (in <code>_docs/static/</code>) <b>before</b> building the local site, <b>not during</b> the <code>jekyll build</code> process.  This means that, whenever changes are made to the documentation's styles or scripts, the full <code>gulp docs-local</code> task should always be run, so that the generated minified files get copied to your local <code>docs-local/</code> directory for you to view and test the changes.</td>
 </tr>
 <tr>
 <td><code>gulp docs-watch</code></td>
 <td>Watches changes to all files in <code>_docs/</code> (except <code>_docs/static/</code>) and runs <code>gulp docs-local</code>) when changes are saved.</td>
+</tr>
+<td><code>gulp examples</code></td>
+<td>The primary task for building a local set of example files to test the framework against. Files from <code>_examples/</code> will be built out as a static site and saved to <code>examples/</code>.</td>
 </tr>
 </tbody>
 </table>
