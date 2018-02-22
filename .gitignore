@@ -28,7 +28,10 @@ gulp-config.json
 typings
 
 # Locally-generated documentation
-_site/*
+docs-local/*
+
+# Locally-generated example files
+examples/*
 
 # debug files
 npm-debug.log

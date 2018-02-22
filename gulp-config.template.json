@@ -2,5 +2,6 @@
   "sync": false,
   "syncOptions": {},
   "docSync": false,
-  "docSyncOptions": {}
+  "docSyncOptions": {},
+  "examplesCSSKey": ""
 }

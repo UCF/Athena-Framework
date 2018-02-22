@@ -53,11 +53,11 @@ Your general workflow when working on the Athena Framework will look something l
 
 1. Download + install the framework. Run `gulp default` and `gulp docs-local` at least once before running watch tasks for the first time.
 2. Run `gulp watch` to watch changes to Sass and JS files in `src/`, and automatically perform CSS and JS build steps whenever changes are made.
-3. When making changes to the docs, run `gulp docs-local` to watch changes to files in `_docs/` and rebuild your local copy of the documentation into `_site/`.
+3. When making changes to the docs, run `gulp docs-local` to watch changes to files in `_docs/` and rebuild your local copy of the documentation into `docs-local/`.
 
 Gulp tasks are set up to save minified, distributable framework assets in `dist/`.  Whenever you're committing changes to the framework, **you should always include updated `dist/` files in your commits**.
 
-However, documentation-related gulp tasks do not save distributable files to a tracked folder in the repo (`_site/` is intentionally included in the project's `.gitignore` file).  **Commits for documentation-related changes should only include changes to files in `_docs/`**; changes to production-ready documentation files (in `docs/`) are only made when new tags are released.
+However, documentation-related gulp tasks do not save distributable files to a tracked folder in the repo (`docs-local/` is intentionally included in the project's `.gitignore` file).  **Commits for documentation-related changes should only include changes to files in `_docs/`**; changes to production-ready documentation files (in `docs/`) are only made when new tags are released.
 
 ### Gulp config options
 
@@ -140,7 +140,7 @@ Our gulpfile contains a lot of functions and tasks--however, you likely won't (a
 <td><code>gulp docs-local</code></td>
 <td>The primary task for building out minified CSS and JS for the framework documentation, and for building a new local copy of the documentation site.
 <br><br>
-Due to the way our documentation project is set up, and how Jekyll performs new site builds, we actually create minified CSS and JS within <code>_docs/</code> (in <code>_docs/static/</code>) <b>before</b> building the local site, <b>not during</b> the <code>jekyll build</code> process.  This means that, whenever changes are made to the documentation's styles or scripts, the full <code>gulp docs-local</code> task should always be run, so that the generated minified files get copied to your local <code>_site/</code> directory for you to view and test the changes.</td>
+Due to the way our documentation project is set up, and how Jekyll performs new site builds, we actually create minified CSS and JS within <code>_docs/</code> (in <code>_docs/static/</code>) <b>before</b> building the local site, <b>not during</b> the <code>jekyll build</code> process.  This means that, whenever changes are made to the documentation's styles or scripts, the full <code>gulp docs-local</code> task should always be run, so that the generated minified files get copied to your local <code>docs-local/</code> directory for you to view and test the changes.</td>
 </tr>
 <tr>
 <td><code>gulp docs-watch</code></td>
