@@ -1,7 +1,13 @@
 {
   "sync": false,
-  "syncOptions": {},
+  "syncOptions": {
+    "server": "examples"
+  },
+  "examplesCSSKey": "",
+  "examplesBaseURL": "/examples",
   "docSync": false,
-  "docSyncOptions": {},
-  "examplesCSSKey": ""
+  "docSyncOptions": {
+    "server": "docs-local"
+  },
+  "docBaseURL": "/docs-local"
 }

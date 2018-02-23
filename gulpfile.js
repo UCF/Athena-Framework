@@ -343,6 +343,16 @@ gulp.task('docs-config', function () {
     .pipe(gulp.dest(config.docs.dataPath));
 });
 
+// Generates a custom local Jekyll config file for the project docs.
+gulp.task('docs-config-local', function() {
+  var localConfig = [
+    '# THIS FILE IS GENERATED AUTOMATICALLY VIA THE `docs-config-local` GULP TASK. DO NOT OVERRIDE VARIABLES HERE; MODIFY gulp-config.json INSTEAD.\n',
+    'baseurl: "' + config.docBaseURL + '"'
+  ].join('\n');
+
+  return fs.writeFileSync(config.docs.rootPath + '/_config_local.yml', localConfig);
+});
+
 // Web font processing
 gulp.task('docs-move-components-athena-fonts', function () {
   return gulp.src(config.dist.fontPath + '/**/*')
@@ -369,7 +379,7 @@ gulp.task('docs-default', function (callback) {
 });
 
 // Generates a new local build of the docs.
-gulp.task('docs-local', ['docs-default'], shell.task('bundle exec jekyll build', {
+gulp.task('docs-local', ['docs-default'], shell.task('bundle exec jekyll build --config=_config.yml,_config_local.yml', {
   cwd: __dirname + '/_docs',
   verbose: true
 }));
@@ -409,7 +419,8 @@ gulp.task('gh-pages', ['docs-default'], shell.task('bundle exec jekyll build --c
 gulp.task('examples-config', function() {
   var localConfig = [
     '# THIS FILE IS GENERATED AUTOMATICALLY VIA THE `examples-config` GULP TASK. DO NOT OVERRIDE VARIABLES HERE; MODIFY gulp-config.json INSTEAD.\n',
-    'cloud_typography_key: "' + config.examplesCSSKey + '"'
+    'cloud_typography_key: "' + config.examplesCSSKey + '"',
+    'baseurl: "' + config.examplesBaseURL + '"'
   ].join('\n');
 
   return fs.writeFileSync(config.examplesPath + '/_config_local.yml', localConfig);
