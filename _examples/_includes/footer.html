@@ -3,7 +3,7 @@
     {{ site.tether_script }}
     <script src="{{ site.baseurl }}/../dist/js/framework.min.js"></script>
 
-    {% if site.cloud_typography_key %}
+    {% if site.cloud_typography_key and site.cloud_typography_key.size > 1 %}
     <script>
       $('#js-webfont-toggle').on('change', function() {
         var $toggle = $(this),

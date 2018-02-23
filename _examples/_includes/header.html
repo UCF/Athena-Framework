@@ -11,7 +11,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    {% if site.cloud_typography_key %}
+    {% if site.cloud_typography_key and site.cloud_typography_key.size > 1 %}
     <link rel="stylesheet" type="text/css" id="js-webfont-link" href="{{ site.cloud_typography_key }}" data-href-premium="{{ site.cloud_typography_key }}" data-href-fallback="">
     {% endif %}
     <link rel="stylesheet" href="{{ site.baseurl }}/../dist/css/framework.min.css">
