@@ -379,7 +379,7 @@ gulp.task('docs-default', function (callback) {
 });
 
 // Generates a new local build of the docs.
-gulp.task('docs-local', ['docs-default'], shell.task('bundle exec jekyll build --config=_config.yml,_config_local.yml', {
+gulp.task('docs-local', ['docs-config-local', 'docs-default'], shell.task('bundle exec jekyll build --config=_config.yml,_config_local.yml', {
   cwd: __dirname + '/_docs',
   verbose: true
 }));
