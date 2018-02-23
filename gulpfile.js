@@ -83,6 +83,96 @@ function browserSyncReload(callback) {
   callback();
 }
 
+// Compile scss files
+function buildCSS(src, filename, dest, applyHeader, doBrowserSync) {
+  dest = dest || config.dist.cssPath;
+  applyHeader = applyHeader || false;
+  doBrowserSync = doBrowserSync || false;
+
+  return gulp.src(src)
+    .pipe(sass().on('error', sass.logError))
+    .pipe(cleanCSS())
+    .pipe(autoprefixer({
+      // Supported browsers added in package.json ("browserslist")
+      cascade: false
+    }))
+    .pipe(gulpif(applyHeader, header(config.prj.header, { config: config })))
+    .pipe(rename(filename))
+    .pipe(gulp.dest(dest))
+    .pipe(gulpif(doBrowserSync, browserSync.stream()));
+}
+
+// Concat and uglify js files through babel
+function buildJS(src, filename, dest, applyHeader, doBrowserSync, forceIncludePaths) {
+  dest = dest || config.dist.jsPath;
+  applyHeader = applyHeader || false;
+  doBrowserSync = doBrowserSync || false;
+  forceIncludePaths = forceIncludePaths || false;
+
+  return gulp.src(src)
+    .pipe(gulpif(
+      forceIncludePaths,
+      include({
+        includePaths: [
+          path.dirname(src),
+          __dirname,
+          config.packagesPath
+        ]
+      }),
+      include()
+    ))
+    .on('error', console.log)
+    .pipe(babel())
+    .pipe(uglify({ output: { comments: /^(!|\---)/ } })) // try to preserve non-standard headers (e.g. from objectFitPolyfill)
+    .pipe(gulpif(applyHeader, header(config.prj.header, { config: config })))
+    .pipe(rename(filename))
+    .pipe(gulp.dest(dest))
+    .pipe(gulpif(doBrowserSync, browserSync.stream()));
+}
+
+
+//
+// Header/metadata appending
+//
+
+function getAthenaPackage() {
+  return JSON.parse(fs.readFileSync('./package.json'));
+}
+
+function getAthenaYearRange() {
+  var year = '',
+    startYear = 2017,
+    currentYear = new Date().getFullYear();
+  if (startYear == currentYear) {
+    year += startYear;
+  }
+  else {
+    year += startYear + '-' + currentYear;
+  }
+  return year;
+}
+
+function getAthenaHeader() {
+  return ['/*!',
+    ' * Athena Framework v<%= config.pkg.version %> (<%= config.pkg.homepage %>)',
+    ' * Copyright <%= config.prj.yearRange %> <%= config.pkg.author.name %>',
+    ' * Licensed under <%= config.pkg.license %>',
+    ' */',
+    ''].join('\n');
+}
+
+function getLicenseComment(fileString) {
+  var regex = /\/\*(\*(?!\/)|[^*])*\*\//,
+    comment = regex.exec(fileString);
+
+  if (!comment || !comment[0]) {
+    return false;
+  }
+  else {
+    return comment[0];
+  }
+}
+
 
 //
 // Installation of components/dependencies
@@ -176,49 +266,6 @@ gulp.task('components', [
 
 
 //
-// Header/metadata appending
-//
-
-function getAthenaPackage() {
-  return JSON.parse(fs.readFileSync('./package.json'));
-}
-
-function getAthenaYearRange() {
-  var year = '',
-    startYear = 2017,
-    currentYear = new Date().getFullYear();
-  if (startYear == currentYear) {
-    year += startYear;
-  }
-  else {
-    year += startYear + '-' + currentYear;
-  }
-  return year;
-}
-
-function getAthenaHeader() {
-  return ['/*!',
-    ' * Athena Framework v<%= config.pkg.version %> (<%= config.pkg.homepage %>)',
-    ' * Copyright <%= config.prj.yearRange %> <%= config.pkg.author.name %>',
-    ' * Licensed under <%= config.pkg.license %>',
-    ' */',
-    ''].join('\n');
-}
-
-function getLicenseComment(fileString) {
-  var regex = /\/\*(\*(?!\/)|[^*])*\*\//,
-    comment = regex.exec(fileString);
-
-  if (!comment || !comment[0]) {
-    return false;
-  }
-  else {
-    return comment[0];
-  }
-}
-
-
-//
 // CSS
 //
 
@@ -230,25 +277,7 @@ gulp.task('scss-lint', function () {
     }));
 });
 
-// Compile scss files
-function buildCSS(src, filename, dest, applyHeader, doBrowserSync) {
-  dest = dest || config.dist.cssPath;
-  applyHeader = applyHeader || false;
-  doBrowserSync = doBrowserSync || false;
-
-  return gulp.src(src)
-    .pipe(sass().on('error', sass.logError))
-    .pipe(cleanCSS())
-    .pipe(autoprefixer({
-      // Supported browsers added in package.json ("browserslist")
-      cascade: false
-    }))
-    .pipe(gulpif(applyHeader, header(config.prj.header, { config: config })))
-    .pipe(rename(filename))
-    .pipe(gulp.dest(dest))
-    .pipe(gulpif(doBrowserSync, browserSync.stream()));
-}
-
+// Compile framework scss files
 gulp.task('scss-build', function () {
   return buildCSS(config.src.scssPath + '/framework.scss', 'framework.min.css', config.dist.cssPath, true, true);
 });
@@ -288,34 +317,7 @@ gulp.task('js-build-bootstrap', function () {
     .pipe(gulp.dest(config.src.jsPath + '/bootstrap'));
 });
 
-// Concat and uglify js files through babel
-function buildJS(src, filename, dest, applyHeader, doBrowserSync, forceIncludePaths) {
-  dest = dest || config.dist.jsPath;
-  applyHeader = applyHeader || false;
-  doBrowserSync = doBrowserSync || false;
-  forceIncludePaths = forceIncludePaths || false;
-
-  return gulp.src(src)
-    .pipe(gulpif(
-      forceIncludePaths,
-      include({
-        includePaths: [
-          path.dirname(src),
-          __dirname,
-          config.packagesPath
-        ]
-      }),
-      include()
-    ))
-    .on('error', console.log)
-    .pipe(babel())
-    .pipe(uglify({ output: { comments: /^(!|\---)/ } })) // try to preserve non-standard headers (e.g. from objectFitPolyfill)
-    .pipe(gulpif(applyHeader, header(config.prj.header, { config: config })))
-    .pipe(rename(filename))
-    .pipe(gulp.dest(dest))
-    .pipe(gulpif(doBrowserSync, browserSync.stream()));
-}
-
+// Concat and uglify framework js files through babel
 gulp.task('js-build', function () {
   return buildJS(config.src.jsPath + '/framework.js', 'framework.min.js', config.dist.jsPath, true, true, false);
 });
@@ -450,4 +452,13 @@ gulp.task('watch', function () {
 gulp.task('default', function (callback) {
   // Make sure 'components' completes before 'css' or 'js' are allowed to run
   return runSequence('components', ['css', 'js'], callback);
+});
+
+
+//
+// Initial setup task for the project
+//
+
+gulp.task('setup', function (callback) {
+  return runSequence('default', 'docs-local', 'examples', callback);
 });

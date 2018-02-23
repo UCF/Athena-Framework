@@ -33,24 +33,20 @@ _These instructions are for installation and development of the project for core
    `cd Athena-Framework/`
 
    `npm install`
-3. Create a copy of `gulp-config.template.json`, modify settings as needed for your local development environment, and save as `gulp-config.json`.
-4. Run an initial full build of the framework, which will fetch and place freshly-installed components, then build new copies of the framework's CSS and JS:
-
-   `gulp default`
-5. Navigate to the `_docs/` directory, install dependencies for the framework docs, and build a local copy of the docs:
+3. Create a copy of `gulp-config.template.json`, modify settings as needed for your local development environment ([available options are listed below](#gulp-config-options)), and save as `gulp-config.json`.
+5. Navigate to the `_docs/` directory and install dependencies for the framework docs:
 
    `cd _docs/`
 
    `bundle install`
-
-   `gulp docs-local`
-5. Navigate to the `_examples/` directory, install dependencies, and build a local copy of the examples site:
+5. Navigate to the `_examples/` directory and install dependencies for the examples site:
 
    `cd _examples/`
 
    `bundle install`
+6. Navigate back to the **root directory** of the project, and run an initial full build of the framework, documentation, and examples:
 
-   `gulp examples`
+   `gulp setup`
 
 That's it! Once you've finished all those steps, the root directory of the repo should look like this:
 
@@ -84,7 +80,7 @@ The examples site will get built to `examples/`.
 
 #### dist/
 
-Contains production-ready, distributable framework files, including fallback fonts, minified CSS, and minified JS.
+Contains distributable framework files, including fallback fonts, minified CSS, and minified JS.
 
 #### docs/
 
@@ -94,7 +90,7 @@ Contains production-ready documentation files to be served on Github Pages.  The
 
 Contains your local copy of the built-out documentation site.
 
-This directory is included in our `.gitignore`, so only changes to the source files are tracked via git.
+This directory is included in our `.gitignore`, so only changes to the source files (in `_docs/`) are tracked via git.
 
 #### examples/
 
@@ -116,9 +112,9 @@ The Athena Framework comes with an extensive set of gulp tasks, which we use as 
 
 Your general workflow when working on the Athena Framework will look something like this:
 
-1. Download + install the framework. Run `gulp default`, `gulp docs-local`, and `gulp examples` at least once before running watch tasks for the first time.
-2. Run `gulp watch` to watch changes to Sass and JS files in `src/`, and automatically perform CSS and JS build steps whenever changes are made.
-3. When making changes to the docs, run `gulp docs-local` to watch changes to files in `_docs/` and rebuild your local copy of the documentation into `docs-local/`.
+1. Download + install the framework. Run `gulp setup` once before running watch tasks for the first time.
+2. Run `gulp watch` to watch changes to Sass and JS files in `src/`, and automatically perform CSS and JS build steps whenever changes are made.  Changes to example pages are also watched with this task.
+3. When making changes to the docs, run `gulp docs-watch` to watch changes to files in `_docs/` and rebuild your local copy of the documentation into `docs-local/`.
 
 Gulp tasks are set up to save minified, distributable framework assets in `dist/`.  Whenever you're committing changes to the framework, **you should always include updated `dist/` files in your commits**.
 
