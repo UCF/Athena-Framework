@@ -68,7 +68,7 @@ Here's a rundown of what's in each of these directories:
 
 #### _docs/
 
-Contains source files for the framework's documentation.  Athena's docs are built on Jekyll, meaning that they consist primarily of Markdown files.
+Contains source files for the framework's documentation.  Athena's docs are built on [Jekyll](https://jekyllrb.com/), meaning that they consist primarily of Markdown files.
 
 Documentation files get built to one of two locations: `docs-local/` or `docs/`.  `docs/` contains production-ready files intended to be served via Github Pages, and requires some unique options that we can't use for local testing.  Because of this, the documentation site will only get built to `docs/` when Athena's maintainers publish a new tag.  If you're working on updates to Athena's documentation, you'll always build changes to `docs-local/`.
 
@@ -137,35 +137,55 @@ Some key settings used in the framework's gulpfile are configurable via your `gu
 <td><code>sync</code></td>
 <td><code>false</code></td>
 <td>Whether or not BrowserSync should be initialized when <code>gulp watch</code> is run.
-
+<br><br>
 If you'd like to automatically spin up a virtual test server when <code>gulp watch</code> is run and auto-refresh your browser when changes are made, set this to <code>true</code>.</td>
 </tr>
 <tr>
 <td><code>syncOptions</code></td>
-<td><code>{}</code></td>
+<td><pre><code>{
+  "server": {
+    "baseDir": "."
+  },
+  "startPath": "/examples"
+}</code></pre></td>
 <td>Options to pass to BrowserSync when it is initialized during <code>gulp watch</code>. Will have no effect if <code>sync</code> is <code>false</code>.
-
-See [BrowserSync's documentation](https://browsersync.io/docs/options) for available options. Function-based options are not supported.
+<br><br>
+See <a href="https://browsersync.io/docs/options">BrowserSync's documentation</a> for available options. Function-based options are not supported.
 </td>
-</tr>
-<tr>
-<td><code>docSync</code></td>
-<td><code>false</code></td>
-<td>Whether or not BrowserSync should be initialized when <code>gulp docs-watch</code> is run.
-
-If you'd like to automatically spin up a virtual test server when <code>gulp docs-watch</code> is run, set this to <code>true</code>.</td>
-</tr>
-<tr>
-<td><code>docSyncOptions</code></td>
-<td><code>{}</code></td>
-<td>Options to pass to BrowserSync when it is initialized during <code>gulp docs-watch</code>. Will have no effect if <code>docSync</code> is <code>false</code>.
-
-See [BrowserSync's documentation](https://browsersync.io/docs/options) for available options. Function-based options are not supported.</td>
 </tr>
 <tr>
 <td><code>examplesCSSKey</code></td>
 <td><code>""</code></td>
 <td>If you'd like to enable premium webfonts on your local examples files, you can specify the URL of a Cloud.Typography CSS key here (e.g. <code>https://cloud.typography.com/000000/000000/css/fonts.css</code>).</td>
+</tr>
+<tr>
+<td><code>examplesBaseURL</code></td>
+<td><code>"/examples"</code></td>
+<td>The <code>baseurl</code> setting to pass to Jekyll when building your local examples site.  This value gets prepended to all internal links within the example files.</td>
+</tr>
+<tr>
+<td><code>docSync</code></td>
+<td><code>false</code></td>
+<td>Whether or not BrowserSync should be initialized when <code>gulp docs-watch</code> is run.
+<br><br>
+If you'd like to automatically spin up a virtual test server when <code>gulp docs-watch</code> is run, set this to <code>true</code>.</td>
+</tr>
+<tr>
+<td><code>docSyncOptions</code></td>
+<td><pre><code>{
+  "server": {
+    "baseDir": "."
+  },
+  "startPath": "/docs-local"
+}</code></pre></td>
+<td>Options to pass to BrowserSync when it is initialized during <code>gulp docs-watch</code>. Will have no effect if <code>docSync</code> is <code>false</code>.
+<br><br>
+See <a href="https://browsersync.io/docs/options">BrowserSync's documentation</a> for available options. Function-based options are not supported.</td>
+</tr>
+<tr>
+<td><code>docBaseURL</code></td>
+<td><code>"/docs-local"</code></td>
+<td>The <code>baseurl</code> setting to pass to Jekyll when building your local documentation site.  This value gets prepended to all internal links within the docs.</td>
 </tr>
 </tbody>
 </table>
@@ -182,6 +202,10 @@ Our gulpfile contains a lot of functions and tasks--however, you likely won't (a
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>gulp setup</code></td>
+<td>Runs a full build of the project--specifically, this task runs <code>gulp default</code>, <code>gulp docs-local</code>, and <code>gulp examples</code>.</td>
+</tr>
 <tr>
 <td><code>gulp default</code></td>
 <td>The primary task for building out distributable framework assets.  Handles components (<code>gulp components</code>) and Sass and JS linting, compilation, and minification (<code>gulp css</code> and <code>gulp js</code>). Saves distributable files to <code>dist/</code>.</td>
