@@ -1,4 +1,19 @@
 {
   "sync": false,
-  "syncTarget": "http://localhost/"
+  "syncOptions": {
+    "server": {
+      "baseDir": "."
+    },
+    "startPath": "/examples"
+  },
+  "examplesCSSKey": "",
+  "examplesBaseURL": "/examples",
+  "docSync": false,
+  "docSyncOptions": {
+    "server": {
+      "baseDir": "."
+    },
+    "startPath": "/docs-local"
+  },
+  "docBaseURL": "/docs-local"
 }

@@ -1,0 +1,18 @@
+    <script type="text/javascript" id="ucfhb-script" src="https://universityheader.ucf.edu/bar/js/university-header.js?use-1200-breakpoint=1"></script>
+    {{ site.jquery_script }}
+    {{ site.tether_script }}
+    <script src="{{ site.baseurl }}/../dist/js/framework.min.js"></script>
+
+    {% if site.cloud_typography_key and site.cloud_typography_key.size > 1 %}
+    <script>
+      $('#js-webfont-toggle').on('change', function() {
+        var $toggle = $(this),
+            $stylesheet = $('#js-webfont-link'),
+            href = $toggle.prop('checked') ? $stylesheet.attr('data-href-premium') : $stylesheet.attr('data-href-fallback');
+
+        $stylesheet.attr('href', href);
+      });
+    </script>
+    {% endif %}
+  </body>
+</html>

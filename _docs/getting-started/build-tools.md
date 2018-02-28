@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Build tools
-description: Details on how to use compile custom Athena builds and more.
+description: Details on how to compile custom Athena builds and more.
 group: getting-started
 ---
 
