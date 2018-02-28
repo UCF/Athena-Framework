@@ -5,18 +5,20 @@ description: Documentation and examples for Athena typography, including global 
 group: content
 ---
 
-Athena includes simple and easily customized typography for headings, body text, lists, and more. When more control is needed, check out the [textual utility classes]({{ site.baseurl }}/utilities/typography/).
+Athena includes simple and easily customized typography for headings, body text, lists, and more. When more control is needed, check out the [textual utility classes]({{ site.baseurl }}{% link utilities/typography.md %}).
+
 
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
+
 ## Global settings
 
 Athena sets basic global display, typography, and link styles. Specifically, we:
 
-- Use an [opinionated font stack]({{ site.baseurl }}/content/reboot/#font-stack) that sets UCF's preferred sans-serif font stack globally.
+- Use an [opinionated font stack]({{ site.baseurl }}{% link content/resets.md %}#font-stack) that sets UCF's preferred sans-serif font stack globally.
 - For a more inclusive and accessible type scale, we assume the browser default root `font-size` (typically 16px) so visitors can customize their browser defaults as needed.
 - Use the `$font-family-base`, `$font-size-base`, `$font-size-base-md`, and `$line-height-base` attributes as our typographic base applied to the `<body>`.
 - Set the global link color via `$link-color` and apply link underlines only on `:hover`.
@@ -24,11 +26,12 @@ Athena sets basic global display, typography, and link styles. Specifically, we:
 
 These styles can be found in both Bootstrap's `_reboot.scss` and Athena's `type.scss`.
 
+
 ## Headings
 
 All HTML headings, `<h1>` through `<h6>`, are available.
 
-<div class="bd-example bd-example-type">
+<div class="afd-example afd-example-type">
   <table class="table">
     <tbody>
       <tr>
@@ -92,9 +95,9 @@ Use the included utility classes to recreate the small secondary heading text fr
 
 ### With font family overrides
 
-When combined with [font family utility classes]({{ site.baseurl }}/utilities/typography#font-family), heading font sizes are adjusted slightly to help achieve balance of size between each available font family.
+When combined with [font family utility classes]({{ site.baseurl }}{% link utilities/typography.md %}#font-family), heading font sizes are adjusted slightly to help achieve balance of size between each available font family.
 
-<div class="bd-example bd-example-type">
+<div class="afd-example afd-example-type">
   <table class="table">
     <tbody>
       <tr>
@@ -154,13 +157,13 @@ When combined with [font family utility classes]({{ site.baseurl }}/utilities/ty
 <h6 class="font-condensed">Heading 6</h6>
 {% endhighlight %}
 
-## Display headings
+### Display headings
 
 Traditional heading elements are designed to work best in the meat of your page content. When you need a heading to stand out, consider using a **display heading**—a larger, slightly more opinionated heading style.
 
 Display headings use fluid font sizing (`vw` units) at the `-xs` breakpoint to ensure they scale to fit smaller screens while staying as large as possible.
 
-<div class="bd-example bd-example-type">
+<div class="afd-example afd-example-type">
   <table class="table">
     <tbody>
       <tr>
@@ -186,7 +189,7 @@ Display headings use fluid font sizing (`vw` units) at the `-xs` breakpoint to e
 <h1 class="display-4">Display 4</h1>
 {% endhighlight %}
 
-## Underline headings
+### Underline headings
 
 Applies a stylized partial underline to a heading. Available in two styles: gold (`.heading-underline`) and white, for use against gold backgrounds (`.heading-underline-inverse`).
 
@@ -198,6 +201,7 @@ Note that this class is opinionated and forces some specific styles, including a
   <h2 class="heading-underline-inverse">Heading 2</h2>
 </div>
 {% endexample %}
+
 
 ## Lead
 
@@ -211,7 +215,7 @@ Make a paragraph stand out by adding `.lead`.
 
 ### With font family overrides
 
-When combined with [font family utility classes]({{ site.baseurl }}/utilities/typography#font-family), lead text font sizes are adjusted slightly to help achieve balance of size between each available font family. Note that `.font-condensed` is _not_ a supported font family with `.lead` due to readability issues.
+When combined with [font family utility classes]({{ site.baseurl }}{% link utilities/typography.md %}#font-family), lead text font sizes are adjusted slightly to help achieve balance of size between each available font family. Note that `.font-condensed` is _not_ a supported font family with `.lead` due to readability issues.
 
 {% example html %}
 <p class="lead font-serif">
@@ -221,6 +225,7 @@ When combined with [font family utility classes]({{ site.baseurl }}/utilities/ty
   Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
 </p>
 {% endexample %}
+
 
 ## Inline text elements
 
@@ -241,9 +246,11 @@ Styling for common inline HTML5 elements.
 
 While not shown above, feel free to use `<b>` and `<i>` in HTML5. `<b>` is meant to highlight words or phrases without conveying additional importance while `<i>` is mostly for voice, technical terms, etc.
 
+
 ## Text utilities
 
-Change text alignment, transform, style, weight, and color with our [text utilities]({{ site.baseurl }}/utilities/typography/#text-alignment).
+Change text alignment, transform, style, weight, and color with our [text utilities]({{ site.baseurl }}{% link utilities/typography.md %}#text-alignment).
+
 
 ## Abbreviations
 
@@ -256,6 +263,7 @@ Add `.initialism` to an abbreviation for a slightly smaller font-size.
 <p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr></p>
 {% endexample %}
 
+
 ## Blockquotes
 
 For quoting blocks of content from another source within your document. Wrap `<blockquote class="blockquote">` around any <abbr title="HyperText Markup Language">HTML</abbr> as the quote.
@@ -267,7 +275,7 @@ For quoting blocks of content from another source within your document. Wrap `<b
 {% endexample %}
 
 ### With font family overrides
-When combined with [font family utility classes]({{ site.baseurl }}/utilities/typography#font-family), blockquote font sizes are adjusted slightly to help achieve balance of size between each available font family. Note that `.font-condensed` is _not_ a supported font family with `.blockquote` due to readability issues.
+When combined with [font family utility classes]({{ site.baseurl }}{% link utilities/typography.md %}#font-family), blockquote font sizes are adjusted slightly to help achieve balance of size between each available font family. Note that `.font-condensed` is _not_ a supported font family with `.blockquote` due to readability issues.
 
 {% example html %}
 <blockquote class="blockquote font-serif">
@@ -324,6 +332,7 @@ Apply a large blockquote icon to the left of a blockquote using `.blockquote-quo
   </blockquote>
 </div>
 {% endexample %}
+
 
 ## Lists
 
@@ -391,6 +400,7 @@ Align terms and descriptions horizontally by using our grid system's predefined 
   </dd>
 </dl>
 {% endexample %}
+
 
 ## Responsive typography
 

@@ -7,10 +7,12 @@ group: components
 
 Use our custom progress component for displaying simple or complex progress bars. We don't use [the HTML5 `<progress>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress), ensuring you can stack progress bars, animate them, and place text labels over them.
 
+
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
+
 
 ## How it works
 
@@ -41,7 +43,7 @@ Put that all together, and you have the following examples.
 </div>
 {% endexample %}
 
-Athena provides a handful of [utilities for setting width]({{ site.baseurl }}/utilities/sizing/). Depending on your needs, these may help with quickly configuring progress.
+Athena provides a handful of [utilities for setting width]({{ site.baseurl }}{% link utilities/sizing.md %}). Depending on your needs, these may help with quickly configuring progress.
 
 {% example html %}
 <div class="progress">
@@ -49,11 +51,8 @@ Athena provides a handful of [utilities for setting width]({{ site.baseurl }}/ut
 </div>
 {% endexample %}
 
-## Customizing
 
-Customize the appearance of your progress bars with custom CSS, background utilities, stripes, and more.
-
-### Labels
+## Labels
 
 Add labels to your progress bars by placing text within the `.progress-bar`.
 
@@ -63,7 +62,8 @@ Add labels to your progress bars by placing text within the `.progress-bar`.
 </div>
 {% endexample %}
 
-### Height
+
+## Height
 
 We only set a `height` value on the `.progress-bar`, so if you change that value the outer `.progress` will automatically resize accordingly.
 
@@ -76,7 +76,8 @@ We only set a `height` value on the `.progress-bar`, so if you change that value
 </div>
 {% endexample %}
 
-### Backgrounds
+
+## Backgrounds
 
 Use background utility classes to change the appearance of individual progress bars.
 
@@ -126,7 +127,8 @@ Use the `.progress-inverse` class on `.progress` for improved styles against dar
 </div>
 {% endhighlight %}
 
-### Multiple bars
+
+## Multiple bars
 
 Include multiple progress bars in a progress component if you need.
 
@@ -138,7 +140,8 @@ Include multiple progress bars in a progress component if you need.
 </div>
 {% endexample %}
 
-### Striped
+
+## Striped
 
 Add `.progress-bar-striped` to any `.progress-bar` to apply a stripe via CSS gradient over the progress bar's background color.
 
@@ -160,15 +163,16 @@ Add `.progress-bar-striped` to any `.progress-bar` to apply a stripe via CSS gra
 </div>
 {% endexample %}
 
-### Animated stripes
+
+## Animated stripes
 
 The striped gradient can also be animated. Add `.progress-bar-animated` to `.progress-bar` to animate the stripes right to left via CSS3 animations.
 
-<div class="bd-example">
+<div class="afd-example">
   <div class="progress">
     <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
   </div>
-  <button type="button" class="btn btn-secondary bd-toggle-animated-progress" data-toggle="button" aria-pressed="false" autocomplete="off">
+  <button type="button" class="btn btn-secondary afd-toggle-animated-progress" data-toggle="button" aria-pressed="false" autocomplete="off">
     Toggle animation
   </button>
 </div>

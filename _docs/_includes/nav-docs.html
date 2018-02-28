@@ -1,55 +1,54 @@
-<!-- <form class="bd-search d-none d-sm-block">
-  <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
-  <div class="dropdown-menu bd-search-results" id="search-results"></div>
-</form>
- -->
-<nav class="bd-links" id="docsNavbarContent">
-  {% assign page_slug = page.url | split: '/' | last %}
-  {% for group in site.data.nav %}
-  {% assign link = group.pages | first %}
-  {% assign link_slug = link.title | slugify %}
-  {% assign group_slug = group.title | slugify %}
-  {% assign active = nil %}
+<div id="afd-toc" class="collapse d-md-block mb-4">
+  <!-- <form class="afd-search d-none d-sm-block">
+    <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+    <div class="dropdown-menu afd-search-results" id="search-results"></div>
+  </form>
+  -->
+  <nav class="afd-links">
+    {% assign page_slug = page.url | split: '/' | last %}
+    {% for group in site.data.nav %}
+    {% assign link = group.pages | first %}
+    {% assign link_slug = link.title | slugify %}
+    {% assign group_slug = group.title | slugify %}
+    {% assign active = nil %}
 
-  {% if page.group == group_slug %}
-    {% assign active = 'active' %}
-  {% endif %}
+    {% if page.group == group_slug %}
+      {% assign active = 'active' %}
+    {% endif %}
 
-  <div class="bd-toc-item {{ active }}">
-      <a class="bd-toc-link" href="{{ site.baseurl }}/{{ group_slug }}/{{ link_slug }}{% if link_slug %}/{% endif %}">
+    <div class="afd-toc-item">
+      <a class="afd-toc-link {{ active }}" {% if link_slug.size > 0 %}href="#sidenav-{{ group_slug }}" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-{{ group_slug }}"{% else %}href="{{ site.baseurl }}/{{ group_slug }}/{{ link_slug }}/"{% endif %}>
         {{ group.title }}
+        <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
       </a>
 
-      <ul class="nav bd-sidenav">
-        {% for doc in group.pages %}
-          {% assign doc_slug = doc.title | slugify %}
-          {% assign active = nil %}
+      {% if page.group == group_slug %}
+        {% assign active = 'show' %}
+      {% endif %}
 
-          {% if page.group == group_slug and page_slug == doc_slug %}
-            {% assign active = 'active bd-sidenav-active' %}
-          {% endif %}
+      {% if link_slug.size > 0 %}
+        <div class="ml-4 collapse afd-sidenav {{ active }}" id="sidenav-{{ group_slug }}">
+          <ul class="nav d-flex flex-column">
+            {% for doc in group.pages %}
+              {% assign doc_slug = doc.title | slugify %}
+              {% assign active = nil %}
 
-          <li class="{{ active }}">
-            <a href="{{ site.baseurl }}/{{ group_slug }}/{{ doc_slug }}/">
-              {{ doc.title }}
-            </a>
+              {% if page.group == group_slug and page_slug == doc_slug %}
+                {% assign active = 'active afd-sidenav-active' %}
+              {% endif %}
 
-            {% comment %}
-            {% unless doc.sections == nil %}
-              <ul class="nav">
-                {% for section in doc.sections %}
-                  <li>
-                    <a href="#{{ section.title | downcase | replace: ' ', '-' }}">
-                      {{ section.title }}
-                    </a>
-                  </li>
-                {% endfor %}
-              </ul>
-            {% endunless %}
-            {% endcomment %}
-          </li>
-        {% endfor %}
-      </ul>
+              <li class="nav-item">
+                <a class="nav-link {{ active }}" href="{{ site.baseurl }}/{{ group_slug }}/{{ doc_slug }}/">
+                  {{ doc.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
     </div>
-  {% endfor %}
-</nav>
+
+    {% endfor %}
+  </nav>
+</div>

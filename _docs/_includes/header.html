@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+      {% if page.title %}
+        {{ page.title }} &middot; {{ site.title }}
+      {% else %}
+        {{ site.title }} &middot; {{ site.data.package.description }}
+      {% endif %}
+    </title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    {% if jekyll.environment == "production" %}
+    <link href="{{ site.host }}{{ site.baseurl }}{% link favicon.ico %}" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="{{ site.host }}{{ site.baseurl }}{% link static/css/docs.min.css %}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.host }}">
+    {% else %}
+    <link href="{{ site.baseurl }}{% link favicon.ico %}" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="{{ site.baseurl }}{% link static/css/docs.min.css %}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl }}">
+    {% endif %}
+  </head>
+
+  <body class="docs">
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+      <div class="container">
+        <a class="navbar-brand" href="{{ site.baseurl }}{% link index.md %}">Athena Framework</a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-text">Menu</span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-nav">
+          <nav class="navbar-nav ml-auto mb-2 mb-lg-0">
+            <a class="nav-link {% if page.layout contains 'docs' %}active{% endif %}" href="{{ site.baseurl }}{% link getting-started/quick-start.md %}">
+              Documentation
+            </a>
+            <a class="nav-link {% if page.group == 'about' %}active{% endif %}" href="{{ site.baseurl }}{% link about.md %}">
+              About
+            </a>
+            <a class="nav-link {% if page.group == 'migration' %}active{% endif %}" href="{{ site.baseurl }}{% link migration.md %}">
+              Migration
+            </a>
+          </nav>
+        </div>
+      </div>
+    </nav>

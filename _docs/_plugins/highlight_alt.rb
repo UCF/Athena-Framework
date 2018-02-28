@@ -55,7 +55,7 @@ eos
       end
 
       def example(output)
-        "<div class=\"bd-example\" data-example-id=\"#{@options[:id]}\">\n#{output}\n</div>"
+        "<div class=\"afd-example\" data-example-id=\"#{@options[:id]}\">\n#{output}\n</div>"
       end
 
       def remove_holderjs(code)
@@ -63,10 +63,10 @@ eos
       end
 
       def remove_example_classes(code)
-        # Find `bd-` classes and remove them from the highlighted code. Because of how this regex works, it will also
-        # remove classes that are after the `bd-` class. While this is a bug, I left it because it can be helpful too.
+        # Find `afd-` classes and remove them from the highlighted code. Because of how this regex works, it will also
+        # remove classes that are after the `afd-` class. While this is a bug, I left it because it can be helpful too.
         # To fix the bug, replace `(?=")` with `(?=("|\ ))`.
-        code = code.gsub(/(?!class=".)\ *?bd-.+?(?=")/, "")
+        code = code.gsub(/(?!class=".)\ *?afd-.+?(?=")/, "")
         # Find empty class attributes after the previous regex and remove those too.
         code = code.gsub(/\ class=""/, "")
       end

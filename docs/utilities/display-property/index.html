@@ -1,1050 +1,1207 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>
-	  
-	    Display property &middot; Athena Framework
-	  
-	</title>
+    <title>
+      
+        Display property &middot; Athena Framework
+      
+    </title>
 
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  
-  <link href="https://ucf.github.io/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
-  <link rel="stylesheet" href="https://ucf.github.io/Athena-Framework/res/css/docs.min.css">
-  <link rel="canonical" href="https://ucf.github.io/Athena-Framework/utilities/display-property/">
-  
-</head>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-<body class="docs">
-    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/docs.min.css">
+    <link rel="canonical" href="/utilities/display-property/">
+    
+  </head>
+
+  <body class="docs">
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+      <div class="container">
+        <a class="navbar-brand" href="/">Athena Framework</a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-text">Menu</span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-nav">
+          <nav class="navbar-nav ml-auto mb-2 mb-lg-0">
+            <a class="nav-link active" href="/getting-started/quick-start/">
+              Documentation
+            </a>
+            <a class="nav-link " href="/about/">
+              About
+            </a>
+            <a class="nav-link " href="/migration/">
+              Migration
+            </a>
+          </nav>
+        </div>
+      </div>
+    </nav>
+
+
+<header class="header bg-inverse">
   <div class="container">
-    <a class="navbar-brand" href="/Athena-Framework/">Athena Framework</a>
-    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-text">Menu</span>
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="main-nav">
-      <nav class="navbar-nav ml-auto mb-2 mb-lg-0">
-        <a class="nav-link active" href="/Athena-Framework/getting-started/introduction/">
-          Documentation
-        </a>
-        <a class="nav-link " href="/Athena-Framework/about/">
-          About
-        </a>
-        <a class="nav-link " href="/Athena-Framework/migration/">
-          Migration
-        </a>
-      </nav>
+    <h1 class="display-4 heading-underline mb-4">Display property</h1>
+    <div class="row">
+      <div class="col-xl-10">
+        <span class="lead font-slab-serif">
+          
+        </span>
+      </div>
     </div>
   </div>
-</nav>
+</header>
 
-    <header class="header">
-        <div class="container">
-            <div class="row">
-              <div class="col-md-8">
-                <div class="title-container">
-
-  <h1 class="text-white font-condensed mb-4">Utilities</h1>
-  <span class="subtitle text-white heading-underline" style="text-transform: none;">
+<main>
+  <div class="navbar-light bg-primary hidden-md-up">
+    <div class="container d-flex flex-column align-items-end">
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#afd-toc" aria-controls="afd-toc" aria-expanded="false" aria-label="Toggle documentation navigation">
+        <span class="navbar-toggler-text">Documentation<span class="sr-only"> Menu</span></span>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+  <article class="container">
+    <div class="row">
+      <div class="col-md-4 push-md-8 pt-3 pt-md-5 pl-lg-5">
+        <div id="afd-toc" class="collapse d-md-block mb-4">
+  <!-- <form class="afd-search d-none d-sm-block">
+    <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+    <div class="dropdown-menu afd-search-results" id="search-results"></div>
+  </form>
+  -->
+  <nav class="afd-links">
     
-      Athena includes dozens of utilities—classes with a single purpose to reduce the frequency of highly repetitive declarations.
     
-  </span>
+    
+    
+    
+    
 
+    
+
+    <div class="afd-toc-item">
+      <a class="afd-toc-link " href="#sidenav-getting-started" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-getting-started">
+        Getting started
+        <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+      </a>
+
+      
+
+      
+        <div class="ml-4 collapse afd-sidenav " id="sidenav-getting-started">
+          <ul class="nav d-flex flex-column">
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/getting-started/quick-start/">
+                  Quick start
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/getting-started/download-install/">
+                  Download & install
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/getting-started/build-tools/">
+                  Build tools
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/getting-started/options/">
+                  Options
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/getting-started/javascript/">
+                  JavaScript
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/getting-started/browsers-devices/">
+                  Browsers & devices
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/getting-started/accessibility/">
+                  Accessibility
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      
+
+    </div>
+
+    
+    
+    
+    
+    
+
+    
+
+    <div class="afd-toc-item">
+      <a class="afd-toc-link " href="#sidenav-layout" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-layout">
+        Layout
+        <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+      </a>
+
+      
+
+      
+        <div class="ml-4 collapse afd-sidenav " id="sidenav-layout">
+          <ul class="nav d-flex flex-column">
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/layout/overview/">
+                  Overview
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/layout/grid/">
+                  Grid
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/layout/media-object/">
+                  Media object
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/layout/utilities-for-layout/">
+                  Utilities for Layout
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      
+
+    </div>
+
+    
+    
+    
+    
+    
+
+    
+
+    <div class="afd-toc-item">
+      <a class="afd-toc-link " href="#sidenav-content" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-content">
+        Content
+        <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+      </a>
+
+      
+
+      
+        <div class="ml-4 collapse afd-sidenav " id="sidenav-content">
+          <ul class="nav d-flex flex-column">
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/content/resets/">
+                  Resets
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/content/typography/">
+                  Typography
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/content/code/">
+                  Code
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/content/images/">
+                  Images
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/content/tables/">
+                  Tables
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/content/figures/">
+                  Figures
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/content/dividers/">
+                  Dividers
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      
+
+    </div>
+
+    
+    
+    
+    
+    
+
+    
+
+    <div class="afd-toc-item">
+      <a class="afd-toc-link " href="#sidenav-components" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-components">
+        Components
+        <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+      </a>
+
+      
+
+      
+        <div class="ml-4 collapse afd-sidenav " id="sidenav-components">
+          <ul class="nav d-flex flex-column">
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/alerts/">
+                  Alerts
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/badge/">
+                  Badge
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/breadcrumb/">
+                  Breadcrumb
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/buttons/">
+                  Buttons
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/button-group/">
+                  Button group
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/card/">
+                  Card
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/collapse/">
+                  Collapse
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/dropdowns/">
+                  Dropdowns
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/forms/">
+                  Forms
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/input-group/">
+                  Input group
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/jumbotron/">
+                  Jumbotron
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/list-group/">
+                  List group
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/modal/">
+                  Modal
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/navs/">
+                  Navs
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/navbar/">
+                  Navbar
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/pagination/">
+                  Pagination
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/popovers/">
+                  Popovers
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/progress/">
+                  Progress
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/scrollspy/">
+                  Scrollspy
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/components/tooltips/">
+                  Tooltips
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      
+
+    </div>
+
+    
+    
+    
+    
+    
+
+    
+
+    <div class="afd-toc-item">
+      <a class="afd-toc-link active" href="#sidenav-utilities" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-utilities">
+        Utilities
+        <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+      </a>
+
+      
+
+      
+        <div class="ml-4 collapse afd-sidenav show" id="sidenav-utilities">
+          <ul class="nav d-flex flex-column">
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/borders/">
+                  Borders
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/clearfix/">
+                  Clearfix
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/close-icon/">
+                  Close icon
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/colors/">
+                  Colors
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link active afd-sidenav-active" href="/utilities/display-property/">
+                  Display property
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/embeds/">
+                  Embeds
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/filters/">
+                  Filters
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/flexbox/">
+                  Flexbox
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/float/">
+                  Float
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/image-replacement/">
+                  Image replacement
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/media-backgrounds/">
+                  Media backgrounds
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/pointer-events/">
+                  Pointer Events
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/position/">
+                  Position
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/screenreaders/">
+                  Screenreaders
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/sizing/">
+                  Sizing
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/spacing/">
+                  Spacing
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/states/">
+                  States
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/typography/">
+                  Typography
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/vertical-align/">
+                  Vertical align
+                </a>
+              </li>
+            
+              
+              
+
+              
+
+              <li class="nav-item">
+                <a class="nav-link " href="/utilities/visibility-property/">
+                  Visibility property
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      
+
+    </div>
+
+    
+  </nav>
 </div>
 
-              </div>
-              <div class="col-md-4">
-                <div class="card github">
+      </div>
+      <div class="col-md-8 pull-md-4 pt-3 pt-md-5 afd-content">
+        <p>Change the value of the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display"><code class="highlighter-rouge">display</code> property</a> with our responsive display utility classes. We purposely support only a subset of all possible values for <code class="highlighter-rouge">display</code>. Classes can be combined for various effects as you need.</p>
+
+<h2 id="contents">Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#contents" id="markdown-toc-contents">Contents</a></li>
+  <li><a href="#display-classes" id="markdown-toc-display-classes">Display classes</a>    <ul>
+      <li><a href="#notation" id="markdown-toc-notation">Notation</a></li>
+      <li><a href="#examples" id="markdown-toc-examples">Examples</a></li>
+    </ul>
+  </li>
+  <li><a href="#responsive-hiding-classes" id="markdown-toc-responsive-hiding-classes">Responsive hiding classes</a>    <ul>
+      <li><a href="#available-classes" id="markdown-toc-available-classes">Available classes</a></li>
+      <li><a href="#test-cases" id="markdown-toc-test-cases">Test cases</a></li>
+    </ul>
+  </li>
+  <li><a href="#print-visibility-classes" id="markdown-toc-print-visibility-classes">Print visibility classes</a></li>
+</ul>
+
+<h2 id="display-classes">Display classes</h2>
+
+<h3 id="notation">Notation</h3>
+
+<p>Display utility classes that apply to all <a href="/layout/overview/#responsive-breakpoints">breakpoints</a>, from <code class="highlighter-rouge">xs</code> to <code class="highlighter-rouge">xl</code>, have no breakpoint abbreviation in them. This is because those classes are applied from <code class="highlighter-rouge">min-width: 0;</code> and up, and thus are not bound by a media query. The remaining breakpoints, however, do include a breakpoint abbreviation.</p>
+
+<p>As such, the classes are named using the format:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">.d-{value}</code> for <code class="highlighter-rouge">xs</code></li>
+  <li><code class="highlighter-rouge">.d-{breakpoint}-{value}</code> for <code class="highlighter-rouge">sm</code>, <code class="highlighter-rouge">md</code>, <code class="highlighter-rouge">lg</code>, and <code class="highlighter-rouge">xl</code>.</li>
+</ul>
+
+<p>Where <em>value</em> is one of:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">none</code></li>
+  <li><code class="highlighter-rouge">inline</code></li>
+  <li><code class="highlighter-rouge">inline-block</code></li>
+  <li><code class="highlighter-rouge">block</code></li>
+  <li><code class="highlighter-rouge">table</code></li>
+  <li><code class="highlighter-rouge">table-cell</code></li>
+  <li><code class="highlighter-rouge">flex</code></li>
+  <li><code class="highlighter-rouge">inline-flex</code></li>
+</ul>
+
+<p>The media queries effect screen widths with the given breakpoint <em>or larger</em>. For example, <code class="highlighter-rouge">.d-lg-none</code> sets <code class="highlighter-rouge">display: none;</code> on both <code class="highlighter-rouge">lg</code> and <code class="highlighter-rouge">xl</code> screens.</p>
+
+<h3 id="examples">Examples</h3>
+
+<div class="afd-example" data-example-id="">
+<div class="d-inline p-2 bg-primary text-white">d-inline</div>
+<div class="d-inline p-2 bg-dark text-white">d-inline</div>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-inline p-2 bg-primary text-white"</span><span class="nt">&gt;</span>d-inline<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-inline p-2 bg-dark text-white"</span><span class="nt">&gt;</span>d-inline<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+<div class="afd-example" data-example-id="">
+<span class="d-block p-2 bg-primary text-white">d-block</span>
+<span class="d-block p-2 bg-dark text-white">d-block</span>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"d-block p-2 bg-primary text-white"</span><span class="nt">&gt;</span>d-block<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"d-block p-2 bg-dark text-white"</span><span class="nt">&gt;</span>d-block<span class="nt">&lt;/span&gt;</span></code></pre></div>
+
+<h2 id="responsive-hiding-classes">Responsive hiding classes</h2>
+
+<p>For convenience, you can use <code class="highlighter-rouge">.hidden-*-up</code> and <code class="highlighter-rouge">.hidden-*-down</code> classes for showing and hiding content by breakpoint, as an alternative to combining multiple <code class="highlighter-rouge">.d-*</code> classes.</p>
+
+<p>Try to use these on a limited basis and avoid creating entirely different versions of the same site. Instead, use them to complement each device’s presentation.</p>
+
+<h3 id="available-classes">Available classes</h3>
+
+<ul>
+  <li>The <code class="highlighter-rouge">.hidden-*-up</code> classes hide the element when the viewport is at the given breakpoint or wider. For example, <code class="highlighter-rouge">.hidden-md-up</code> hides an element on medium, large, and extra-large viewports. They can be considered aliases to <code class="highlighter-rouge">.d-*-none</code> classes.</li>
+  <li>The <code class="highlighter-rouge">.hidden-*-down</code> classes hide the element when the viewport is at the given breakpoint or smaller. For example, <code class="highlighter-rouge">.hidden-md-down</code> hides an element on extra-small, small, and medium viewports.</li>
+  <li>You can combine one <code class="highlighter-rouge">.hidden-*-up</code> class with one <code class="highlighter-rouge">.hidden-*-down</code> class to show an element only on a given interval of screen sizes. For example, <code class="highlighter-rouge">.hidden-sm-down.hidden-xl-up</code> shows the element only on medium and large viewports. Using multiple <code class="highlighter-rouge">.hidden-*-up</code> classes or multiple <code class="highlighter-rouge">.hidden-*-down</code> classes is redundant and pointless.</li>
+</ul>
+
+<table class="table table-bordered table-striped responsive-utilities table-responsive">
+  <thead>
+    <tr>
+      <th></th>
+      <th>
+        Extra small devices
+        <small>Portrait phones (&lt;544px)</small>
+      </th>
+      <th>
+        Small devices
+        <small>Landscape phones (&ge;544px - &lt;768px)</small>
+      </th>
+      <th>
+        Medium devices
+        <small>Tablets (&ge;768px - &lt;992px)</small>
+      </th>
+      <th>
+        Large devices
+        <small>Desktops (&ge;992px - &lt;1200px)</small>
+      </th>
+      <th>
+        Extra large devices
+        <small>Desktops (&ge;1200px)</small>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><code>.hidden-xs-down</code></th>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-visible">Visible</td>
+      <td class="is-visible">Visible</td>
+      <td class="is-visible">Visible</td>
+      <td class="is-visible">Visible</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>.hidden-sm-down</code></th>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-visible">Visible</td>
+      <td class="is-visible">Visible</td>
+      <td class="is-visible">Visible</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>.hidden-md-down</code></th>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-visible">Visible</td>
+      <td class="is-visible">Visible</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>.hidden-lg-down</code></th>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-visible">Visible</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>.hidden-xl-down</code></th>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-hidden">Hidden</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>.hidden-xs-up</code></th>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-hidden">Hidden</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>.hidden-sm-up</code></th>
+      <td class="is-visible">Visible</td>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-hidden">Hidden</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>.hidden-md-up</code></th>
+      <td class="is-visible">Visible</td>
+      <td class="is-visible">Visible</td>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-hidden">Hidden</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>.hidden-lg-up</code></th>
+      <td class="is-visible">Visible</td>
+      <td class="is-visible">Visible</td>
+      <td class="is-visible">Visible</td>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-hidden">Hidden</td>
+    </tr>
+    <tr>
+      <th scope="row"><code>.hidden-xl-up</code></th>
+      <td class="is-visible">Visible</td>
+      <td class="is-visible">Visible</td>
+      <td class="is-visible">Visible</td>
+      <td class="is-visible">Visible</td>
+      <td class="is-hidden">Hidden</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="test-cases">Test cases</h3>
+
+<p>Resize your browser or load on different devices to test the responsive utility classes.</p>
+
+<p>Green checkmarks indicate the element <strong>is visible</strong> in your current viewport.</p>
+
+<div class="row responsive-utilities-test visible-on">
+  <div class="col-6 col-sm-3">
+    <span class="hidden-sm-up visible">&#10004; Visible on extra small</span>
+    <span class="hidden-xs-down not-visible">Extra small</span>
+  </div>
+  <div class="col-6 col-sm-3">
+    <span class="hidden-md-up visible">&#10004; Visible on small or narrower</span>
+    <span class="hidden-sm-down not-visible">Small or narrower</span>
+  </div>
+  <div class="col-6 col-sm-3">
+    <span class="hidden-lg-up visible">&#10004; Visible on medium or narrower</span>
+    <span class="hidden-md-down not-visible">Medium or narrower</span>
+  </div>
+  <div class="col-6 col-sm-3">
+    <span class="hidden-xl-up visible">&#10004; Visible on large or narrower</span>
+    <span class="hidden-lg-down not-visible">Large or narrower</span>
+  </div>
+</div>
+
+<hr />
+
+<div class="row responsive-utilities-test visible-on">
+  <div class="col-6 col-sm-3">
+    <span class="hidden-xs-down visible">&#10004; Visible on small or wider</span>
+    <span class="hidden-sm-up not-visible">Small or wider</span>
+  </div>
+  <div class="col-6 col-sm-3">
+    <span class="hidden-sm-down visible">&#10004; Visible on medium or wider</span>
+    <span class="hidden-md-up not-visible">Medium or wider</span>
+  </div>
+  <div class="col-6 col-sm-3">
+    <span class="hidden-md-down visible">&#10004; Visible on large or wider</span>
+    <span class="hidden-lg-up not-visible">Large or wider</span>
+  </div>
+  <div class="col-6 col-sm-3">
+    <span class="hidden-lg-down visible">&#10004; Visible on extra large</span>
+    <span class="hidden-xl-up not-visible">Extra large</span>
+  </div>
+</div>
+
+<hr />
+
+<div class="row responsive-utilities-test visible-on">
+  <div class="col-6 col-sm-4">
+    <span class="hidden-sm-up visible">&#10004; Your viewport is exactly extra small</span>
+    <span class="hidden-xs-down not-visible">Your viewport is NOT exactly extra small</span>
+  </div>
+  <div class="col-6 col-sm-4">
+    <span class="hidden-xs-down hidden-md-up visible">&#10004; Your viewport is exactly small</span>
+    <span class="hidden-sm-only not-visible">Your viewport is NOT exactly small</span>
+  </div>
+  <div class="col-6 col-sm-4">
+    <span class="hidden-sm-down hidden-lg-up visible">&#10004; Your viewport is exactly medium</span>
+    <span class="hidden-md-only not-visible">Your viewport is NOT exactly medium</span>
+  </div>
+  </div>
+
+<div class="row responsive-utilities-test visible-on">
+  <div class="col-6 col-sm-4">
+    <span class="hidden-md-down hidden-xl-up visible">&#10004; Your viewport is exactly large</span>
+    <span class="hidden-lg-only not-visible">Your viewport is NOT exactly large</span>
+  </div>
+  <div class="col-6 col-sm-4">
+    <span class="hidden-lg-down visible">&#10004; Your viewport is exactly extra large</span>
+    <span class="hidden-xl-only not-visible">Your viewport is NOT exactly extra large</span>
+  </div>
+</div>
+
+<h2 id="print-visibility-classes">Print visibility classes</h2>
+
+<p>Similar to the responsive hiding classes noted above, use these for toggling content for print.</p>
+<table class="table table-bordered table-striped responsive-utilities table-responsive">
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>Browser</th>
+      <th>Print</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><code>.visible-print-block</code></th>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-visible">Visible<br />(as <code>display: block</code>)</td>
+    </tr>
+    <tr>
+      <th><code>.visible-print-inline</code></th>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-visible">Visible<br />(as <code>display: inline</code>)</td>
+    </tr>
+    <tr>
+      <th><code>.visible-print-inline-block</code></th>
+      <td class="is-hidden">Hidden</td>
+      <td class="is-visible">Visible<br />(as <code>display: inline-block</code>)</td>
+    </tr>
+    <tr>
+      <th><code>.hidden-print</code></th>
+      <td class="is-visible">Visible</td>
+      <td class="is-hidden">Hidden</td>
+    </tr>
+  </tbody>
+</table>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer class="py-5 mt-5 bg-inverse">
+      <div class="container">
+        <div class="row d-flex justify-content-lg-between">
+          <div class="col-lg-7 col-xl-8">
+            <strong class="h6 heading-underline mb-4">Athena Framework</strong>
+            <ul class="nav flex-column align-items-start mb-5">
+              <li class="nav-item">
+                <a class="nav-link bg-inverse-link" href="https://github.com/UCF/" target="_blank">
+                  <span class="fa fa-github mr-2 text-primary" aria-hidden="true"></span>UCF GitHub
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link bg-inverse-link" href="https://ucf-wp.slack.com/messages/#prj-athena-framework/" target="_blank">
+                  <span class="fa fa-slack mr-2 text-primary" aria-hidden="true"></span>Athena Framework Slack Channel
+                </a>
+              </li>
+            </ul>
+            <p>
+              Current version: <strong>v1.0.0-beta.8</strong>.
+            </p>
+            <p>
+              Documentation powered by <a class="bg-inverse-link" href="https://jekyllrb.com/" target="_blank">Jekyll</a>. Contents adapted from <a class="bg-inverse-link" href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.
+            </p>
+            <p class="mb-0">
+              Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
+            </p>
+          </div>
+          <div class="col-lg-5 col-xl-4 mt-5 mt-lg-0">
+            <div class="card card-outline-inverse card-github">
   <div class="card-block">
-    <h2 class="card-title">Want to contribute?</h2>
-    <p class="card-text">If you're interested in contributing to the Athena Framework, please read our <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework#contributing">contributing guidelines</a>, then submit a new issue or pull request.</p>
+    <h2 class="card-title h4">Want to contribute?</h2>
+    <p class="card-text">If you're interested in contributing to the Athena Framework, please read our <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/CONTRIBUTING.md">contributing guidelines</a>, then submit a new issue or pull request.</p>
     <a href="https://github.com/UCF/Athena-Framework" class="btn btn-primary btn-sm" target="_blank">GitHub Page</a>
   </div>
 </div>
 
-              </div>
-            </div>
+          </div>
         </div>
-    </header>
-    <main>
-        <article class="py-5 container">
-            <div class="row">
-                <div class="col-md-8 bd-content">
-                    <h1>Display property</h1>
-                    <p>Use <code class="highlighter-rouge">.d-block</code>, <code class="highlighter-rouge">.d-inline</code>, or <code class="highlighter-rouge">.d-inline-block</code> to simply set an element’s <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display"><code class="highlighter-rouge">display</code> property</a> to <code class="highlighter-rouge">block</code>, <code class="highlighter-rouge">inline</code>, or <code class="highlighter-rouge">inline-block</code> (respectively).</p>
+      </div>
+    </footer>
 
-<p>To make an element <code class="highlighter-rouge">display: none</code>, use our <a href="/Athena-Framework/layout/responsive-utilities/">responsive utilities</a> instead.</p>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js" integrity="sha256-mIiWebTG82x+OcV3vUA49ffGDIAJ53uC9jflw5/+REs=" crossorigin="anonymous"></script>
 
-<div class="bd-example" data-example-id="">
-<div class="d-inline bg-success">Inline</div>
-<div class="d-inline bg-success">Inline</div>
-</div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-inline bg-success"</span><span class="nt">&gt;</span>Inline<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-inline bg-success"</span><span class="nt">&gt;</span>Inline<span class="nt">&lt;/div&gt;</span></code></pre></div>
+    
+    <script src="/static/js/docs.min.js"></script>
+    
 
-<div class="bd-example" data-example-id="">
-<span class="d-block bg-primary">Block</span>
-</div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"d-block bg-primary"</span><span class="nt">&gt;</span>Block<span class="nt">&lt;/span&gt;</span></code></pre></div>
-
-<div class="bd-example" data-example-id="">
-<div class="d-inline-block bg-warning">
-  <h3>inline-block</h3>
-  Boot that strap!
-</div>
-<div class="d-inline-block bg-warning">
-  <h3>inline-block</h3>
-  Strap that boot!
-</div>
-</div>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-inline-block bg-warning"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;h3&gt;</span>inline-block<span class="nt">&lt;/h3&gt;</span>
-  Boot that strap!
-<span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-inline-block bg-warning"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;h3&gt;</span>inline-block<span class="nt">&lt;/h3&gt;</span>
-  Strap that boot!
-<span class="nt">&lt;/div&gt;</span></code></pre></div>
-
-
-                </div>
-                <div class="col-md-4 bd-sidebar">
-                  <!-- <form class="bd-search d-none d-sm-block">
-  <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
-  <div class="dropdown-menu bd-search-results" id="search-results"></div>
-</form>
- -->
-<nav class="bd-links" id="docsNavbarContent">
-  
-  
-  
-  
-  
-  
-
-  
-
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/Athena-Framework/getting-started/introduction/">
-        Getting started
-      </a>
-
-      <ul class="nav bd-sidenav">
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/getting-started/introduction/">
-              Introduction
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/getting-started/download/">
-              Download
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/getting-started/install/">
-              Install
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/getting-started/browsers-devices/">
-              Browsers & devices
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/getting-started/javascript/">
-              JavaScript
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/getting-started/options/">
-              Options
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/getting-started/build-tools/">
-              Build tools
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/getting-started/best-practices/">
-              Best practices
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/getting-started/accessibility/">
-              Accessibility
-            </a>
-
-            
-          </li>
-        
-      </ul>
-    </div>
-  
-  
-  
-  
-  
-
-  
-
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/Athena-Framework/layout/overview/">
-        Layout
-      </a>
-
-      <ul class="nav bd-sidenav">
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/layout/overview/">
-              Overview
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/layout/grid/">
-              Grid
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/layout/media-object/">
-              Media object
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/layout/utilities-for-layout/">
-              Utilities for Layout
-            </a>
-
-            
-          </li>
-        
-      </ul>
-    </div>
-  
-  
-  
-  
-  
-
-  
-
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/Athena-Framework/content/reboot/">
-        Content
-      </a>
-
-      <ul class="nav bd-sidenav">
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/content/reboot/">
-              Reboot
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/content/typography/">
-              Typography
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/content/code/">
-              Code
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/content/images/">
-              Images
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/content/tables/">
-              Tables
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/content/figures/">
-              Figures
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/content/dividers/">
-              Dividers
-            </a>
-
-            
-          </li>
-        
-      </ul>
-    </div>
-  
-  
-  
-  
-  
-
-  
-
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/Athena-Framework/components/alerts/">
-        Components
-      </a>
-
-      <ul class="nav bd-sidenav">
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/alerts/">
-              Alerts
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/badge/">
-              Badge
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/breadcrumb/">
-              Breadcrumb
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/buttons/">
-              Buttons
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/button-group/">
-              Button group
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/card/">
-              Card
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/collapse/">
-              Collapse
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/dropdowns/">
-              Dropdowns
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/forms/">
-              Forms
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/input-group/">
-              Input group
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/jumbotron/">
-              Jumbotron
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/list-group/">
-              List group
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/modal/">
-              Modal
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/navs/">
-              Navs
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/navbar/">
-              Navbar
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/pagination/">
-              Pagination
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/popovers/">
-              Popovers
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/progress/">
-              Progress
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/scrollspy/">
-              Scrollspy
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/tooltips/">
-              Tooltips
-            </a>
-
-            
-          </li>
-        
-      </ul>
-    </div>
-  
-  
-  
-  
-  
-
-  
-
-  <div class="bd-toc-item active">
-      <a class="bd-toc-link" href="/Athena-Framework/utilities/borders/">
-        Utilities
-      </a>
-
-      <ul class="nav bd-sidenav">
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/borders/">
-              Borders
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/clearfix/">
-              Clearfix
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/close-icon/">
-              Close icon
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/colors/">
-              Colors
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="active bd-sidenav-active">
-            <a href="/Athena-Framework/utilities/display-property/">
-              Display property
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/filters/">
-              Filters
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/flexbox/">
-              Flexbox
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/image-replacement/">
-              Image replacement
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/invisible-content/">
-              Invisible content
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/media-backgrounds/">
-              Media backgrounds
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/pointer-events/">
-              Pointer Events
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/position/">
-              Position
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/responsive-helpers/">
-              Responsive helpers
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/screenreaders/">
-              Screenreaders
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/sizing/">
-              Sizing
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/spacing/">
-              Spacing
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/states/">
-              States
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/typography/">
-              Typography
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/vertical-align/">
-              Vertical align
-            </a>
-
-            
-          </li>
-        
-      </ul>
-    </div>
-  
-  
-  
-  
-  
-
-  
-
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/Athena-Framework/about/">
-        About
-      </a>
-
-      <ul class="nav bd-sidenav">
-        
-      </ul>
-    </div>
-  
-  
-  
-  
-  
-
-  
-
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/Athena-Framework/migration/">
-        Migration
-      </a>
-
-      <ul class="nav bd-sidenav">
-        
-      </ul>
-    </div>
-  
-</nav>
-
-                </div>
-            </div>
-        </article>
-    </main>
-    <footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col self-align-left">
-                <p>
-                  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and <a href="https://github.com/UCF/Athena-Framework">the Athena Framework</a>.
-                  <br>
-                  Documentation adapted from <a href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.
-                </p>
-                <p class="mb-0">
-                  Code licensed <a href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
-                </p>
-            </div>
-            <div class="col self-align-right">
-              <p class="text-right">
-                Current version: <strong>v1.0.0-beta.8</strong>.
-              </p>
-              <p class="text-right">
-                <a href="https://github.com/UCF/" target="_blank"><span class="fa fa-github"></span> UCF GitHub</a>
-              </p>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-
-<script src="https://ucf.github.io/Athena-Framework/res/js/docs.min.js"></script>
-
-
-</body>
+  </body>
 </html>
+

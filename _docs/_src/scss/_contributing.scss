@@ -1,0 +1,22 @@
+.card-github {
+  overflow: hidden;
+
+  &:after {
+    color: rgba(255, 255, 255, .15);
+    content: "\f09b";
+    font-family: FontAwesome;
+    font-size: 219px;
+    font-style: normal;
+    font-weight: normal;
+    left: 93%;
+    margin: -203px 0 0 -160px;
+    position: absolute;
+    text-decoration: inherit;
+    top: 80%;
+    z-index: 1;
+  }
+
+  .card-block {
+    z-index: 2;
+  }
+}

@@ -4,7 +4,7 @@ title: Clearfix
 group: utilities
 ---
 
-Easily clear `float`s by adding `.clearfix` **to the parent element**. Utilizes [the micro clearfix](http://nicolasgallagher.com/micro-clearfix-hack/) as popularized by Nicolas Gallagher. Can also be used as a mixin.
+Easily clear `float`s by adding `.clearfix` **to the parent element**. Can also be used as a mixin.
 
 {% highlight html %}
 <div class="clearfix">...</div>

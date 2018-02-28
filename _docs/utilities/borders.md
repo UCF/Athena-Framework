@@ -7,11 +7,12 @@ redirect_from: "/utilities/"
 
 Use border utilities to quickly style the `border` and `border-radius` of an element. Great for images, buttons, or any other element.
 
+
 ## Border
 
 Add classes to an element to remove all borders or some borders.
 
-<div class="bd-example-border-utils">
+<div class="afd-example-border-utils">
 {% example html %}
 <span class="border-0"></span>
 <span class="border-top-0"></span>
@@ -21,11 +22,12 @@ Add classes to an element to remove all borders or some borders.
 {% endexample %}
 </div>
 
+
 ## Border-radius
 
 Add classes to an element to easily round its corners.
 
-<div class="bd-example bd-example-images">
+<div class="afd-example afd-example-images">
   <img data-src="holder.js/75x75" class="rounded" alt="Example rounded image">
   <img data-src="holder.js/75x75" class="rounded-top" alt="Example top rounded image">
   <img data-src="holder.js/75x75" class="rounded-right" alt="Example right rounded image">

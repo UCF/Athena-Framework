@@ -1,21 +1,12 @@
-<!DOCTYPE html>
-<html lang="en-US">
-{% include head.html %}
-<body class="docs">
-    {% include navigation.html %}
-    <header class="header">
-        <div class="container">
-            <h1 class="text-center text-white font-condensed mb-4">{{ page.title }}</h1>
-            {% if page.subtitle %}
-            <div class="text-center"><p class="lead bg-primary d-inline-block px-4 py-2">{{ page.subtitle }}</p></div>
-            {% endif %}
-        </div>
-    </header>
-    <main>
-        <article class="py-5 container">
-            {{ content }}
-        </article>
-    </main>
-    {% include footer.html %}
-</body>
-</html>
+{% include header.html %}
+
+<header class="header bg-inverse">
+  <div class="container">
+    <h1 class="display-4 text-center text-uppercase letter-spacing-1 mb-4">{{ page.title }}</h1>
+    <p class="text-center mb-0"><span class="badge badge-primary h6">{{ page.subtitle }}</span></p>
+  </div>
+</header>
+
+{% include main-onecol.html %}
+
+{% include footer.html %}

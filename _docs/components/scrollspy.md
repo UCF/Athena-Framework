@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Scrollspy
-description: Documentation and examples for the scrollspy plugin with Athena's navigation components.
+description: Documentation and examples for scrollspy logic with Athena's navigation components.
 group: components
 ---
 
@@ -10,11 +10,24 @@ group: components
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
+
+## How it works
+
+Scrollspy has a few requirements to function properly:
+
+- It must be used on a [nav component]({{ site.baseurl }}{% link components/navs.md %}).
+- Scrollspy requires `position: relative;` on the element you’re spying on, usually the `<body>`.
+- When spying on elements other than the <body>, be sure to have a height set and overflow-y: scroll; applied.
+- Anchors (`<a>`) are required and must point to an element with that ID.
+
+When successfully implemented, your nav will update accordingly, moving the `.active` class from one item to the next based on their associated targets.
+
+
 ## Example in navbar
 
-The ScrollSpy plugin is for automatically updating nav targets based on scroll position. Scroll the area below the navbar and watch the active class change. The dropdown sub items will be highlighted as well.
+Scroll the area below the navbar and watch the active class change. The dropdown sub items will be highlighted as well.
 
-<div class="bd-example">
+<div class="afd-example">
   <nav id="navbar-example2" class="navbar navbar-light bg-faded">
     <a class="navbar-brand" href="#">Navbar</a>
     <ul class="nav nav-pills">
@@ -50,17 +63,9 @@ The ScrollSpy plugin is for automatically updating nav targets based on scroll p
 
 ## Usage
 
-### Requires Athena nav
-
-Scrollspy currently requires the use of an [Athena nav component]({{ site.baseurl }}/components/navs/) for proper highlighting of active links.
-
-### Requires relative positioning
-
-No matter the implementation method, scrollspy requires the use of `position: relative;` on the element you're spying on. In most cases this is the `<body>`. When scrollspying on elements other than the `<body>`, be sure to have a `height` set and `overflow-y: scroll;` applied.
-
 ### Via data attributes
 
-To easily add scrollspy behavior to your topbar navigation, add `data-spy="scroll"` to the element you want to spy on (most typically this would be the `<body>`). Then add the `data-target` attribute with the ID or class of the parent element of any Athena `.nav` component.
+To easily add scrollspy behavior to your topbar navigation, add `data-spy="scroll"` to the element you want to spy on (most typically this would be the `<body>`). Then add the `data-target` attribute with the ID or class of the parent element of any `.nav` component.
 
 {% highlight css %}
 body {
@@ -111,7 +116,6 @@ $('[data-spy="scroll"]').each(function () {
   var $spy = $(this).scrollspy('refresh')
 })
 {% endhighlight %}
-
 
 ### Options
 

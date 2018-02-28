@@ -6,10 +6,12 @@ group: utilities
 
 Assign responsive-friendly `margin` or `padding` values to an element or a subset of its sides with shorthand classes. Includes support for individual properties, all properties, and vertical and horizontal properties. Classes are built from a default Sass map ranging from `.25rem` to `3rem`.
 
+
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
+
 
 ## Notation
 
@@ -43,6 +45,7 @@ Where *size* is one of:
 
 (You can add more sizes by adding entries to the `$spacers` Sass map variable.)
 
+
 ## Examples
 
 Here are some representative examples of these classes:
@@ -69,7 +72,7 @@ Here are some representative examples of these classes:
 ### Horizontal centering
 Additionally, Athena also includes an `.mx-auto` class for horizontally centering fixed-width block level content—that is, content that has `display: block` and a `width` set—by setting the horizontal margins to `auto`.
 
-<div class="bd-example">
+<div class="afd-example">
   <div class="mx-auto" style="width: 200px; background-color: rgba(86,61,124,.15);">
     Centered element
   </div>

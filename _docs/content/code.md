@@ -7,10 +7,12 @@ group: content
 
 Styles for inline code snippets and longer, multiline blocks of code.
 
+
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
+
 
 ## Inline code
 
@@ -19,6 +21,7 @@ Wrap inline snippets of code with `<code>`. Be sure to escape HTML angle bracket
 {% example html %}
 For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 {% endexample %}
+
 
 ## Code blocks
 
@@ -30,6 +33,7 @@ Use `<pre>`s for multiple lines of code. Once again, be sure to escape any angle
 </code></pre>
 {% endexample %}
 
+
 ## Variables
 
 For indicating variables use the `<var>` tag.
@@ -37,6 +41,7 @@ For indicating variables use the `<var>` tag.
 {% example html %}
 <var>y</var> = <var>m</var><var>x</var> + <var>b</var>
 {% endexample %}
+
 
 ## User input
 
@@ -46,6 +51,7 @@ Use the `<kbd>` to indicate input that is typically entered via keyboard.
 To switch directories, type <kbd>cd</kbd> followed by the name of the directory.<br>
 To edit settings, press <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd>
 {% endexample %}
+
 
 ## Sample output
 

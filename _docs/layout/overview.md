@@ -8,10 +8,12 @@ redirect_from: "/layout/"
 
 Athena includes several components and options for laying out your project, including wrapping containers, a powerful flexbox grid system, a flexible media object, and responsive utility classes.
 
+
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
+
 
 ## Containers
 
@@ -19,11 +21,11 @@ Containers are the most basic layout element in Athena and are **required when u
 
 While containers *can* be nested, most layouts do not require a nested container.
 
-<div class="bd-example">
-  <div class="bd-example-container">
-    <div class="bd-example-container-header"></div>
-    <div class="bd-example-container-sidebar"></div>
-    <div class="bd-example-container-body"></div>
+<div class="afd-example">
+  <div class="afd-example-container">
+    <div class="afd-example-container-header"></div>
+    <div class="afd-example-container-sidebar"></div>
+    <div class="afd-example-container-body"></div>
   </div>
 </div>
 
@@ -35,11 +37,11 @@ While containers *can* be nested, most layouts do not require a nested container
 
 Use `.container-fluid` for a full width container, spanning the entire width of the viewport.
 
-<div class="bd-example">
-  <div class="bd-example-container bd-example-container-fluid">
-    <div class="bd-example-container-header"></div>
-    <div class="bd-example-container-sidebar"></div>
-    <div class="bd-example-container-body"></div>
+<div class="afd-example">
+  <div class="afd-example-container afd-example-container-fluid">
+    <div class="afd-example-container-header"></div>
+    <div class="afd-example-container-sidebar"></div>
+    <div class="afd-example-container-body"></div>
   </div>
 </div>
 
@@ -160,6 +162,7 @@ The Sass mixin for targeting the same screen size range would be:
 {% highlight scss %}
 @include media-breakpoint-between(md, xl) { ... }
 {% endhighlight %}
+
 
 ## Z-index
 

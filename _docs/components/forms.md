@@ -7,14 +7,16 @@ group: components
 
 Athena provides several form control styles, layout options, and custom components for creating a wide variety of forms.
 
+
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
+
 ## Form controls
 
-Athena's form controls expand on [our Rebooted form styles]({{ site.baseurl }}/content/reboot/#forms) with classes. Use these classes to opt into their customized displays for a more consistent rendering across browsers and devices. The example form below demonstrates common HTML form elements that receive updated styles from Athena with additional classes.
+Athena's form controls expand on [our reset form styles]({{ site.baseurl }}{% link content/resets.md %}#forms) with classes. Use these classes to opt into their customized displays for a more consistent rendering across browsers and devices. The example form below demonstrates common HTML form elements that receive updated styles from Athena with additional classes.
 
 Remember, since Athena utilizes the HTML5 doctype, **all inputs must have a `type` attribute**.
 
@@ -250,6 +252,7 @@ Here are examples of `.form-control` applied to each textual HTML5 `<input>` `ty
 </div>
 {% endexample %}
 
+
 ## Form layouts
 
 Since Athena applies `display: block` and `width: 100%` to almost all our form controls, forms will by default stack vertically. Additional classes can be used to vary this layout on a per-form basis.
@@ -275,11 +278,11 @@ The `.form-group` class is the easiest way to add some structure to forms. Its o
 
 Use the `.form-inline` class to display a series of labels, form controls, and buttons on a single horizontal row. Form controls within inline forms vary slightly from their default states.
 
-- Controls are `display: flex`, collapsing any HTML white space and allowing you to provide alignment control with [spacing]({{ site.baseurl }}/utilities/spacing/) and [flexbox]({{ site.baseurl }}/utilities/flexbox/) utilities.
+- Controls are `display: flex`, collapsing any HTML white space and allowing you to provide alignment control with [spacing]({{ site.baseurl }}{% link utilities/spacing.md %}) and [flexbox]({{ site.baseurl }}{% link utilities/flexbox.md %}) utilities.
 - Controls and input groups receive `width: auto` to override the Athena default `width: 100%`.
 - Controls **only appear inline in viewports that are at least 576px wide** to account for narrow viewports on mobile devices.
 
-You may need to manually address the width and alignment of individual form controls with [spacing utilities]({{ site.baseurl }}/utilities/spacing/) (as shown below). Lastly, be sure to always include a `<label>` with each form control, even if you need to hide it from non-screenreader visitors with `.sr-only`.
+You may need to manually address the width and alignment of individual form controls with [spacing utilities]({{ site.baseurl }}{% link utilities/spacing.md %}) (as shown below). Lastly, be sure to always include a `<label>` with each form control, even if you need to hide it from non-screenreader visitors with `.sr-only`.
 
 {% example html %}
 <form class="form-inline">
@@ -331,7 +334,7 @@ Assistive technologies such as screen readers will have trouble with your forms 
 
 ### Using the Grid
 
-For more structured form layouts that are also responsive, you can utilize Athena's [predefined grid classes]({{ site.baseurl }}/layout/grid/) or [mixins]({{ site.baseurl }}/layout/grid/#sass-mixins) to create horizontal forms. Add the `.row` class to form groups and use the `.col-*-*` classes to specify the width of your labels and controls.
+For more structured form layouts that are also responsive, you can utilize Athena's [predefined grid classes]({{ site.baseurl }}{% link layout/grid.md %}) or [mixins]({{ site.baseurl }}{% link layout/grid.md %}#sass-mixins) to create horizontal forms. Add the `.row` class to form groups and use the `.col-*-*` classes to specify the width of your labels and controls.
 
 Be sure to add `.col-form-label` to your `<label>`s as well so they're vertically centered with their associated form controls. For `<legend>` elements, you can use `.col-form-legend` to make them appear similar to regular `<label>` elements.
 
@@ -567,9 +570,10 @@ Should you have no text within the `<label>`, the input is positioned as you'd e
 </div>
 {% endexample %}
 
+
 ## Static controls
 
-If you want to have read-only fields in your form styled as plain text, use the `.form-control-static` class to remove the default form field styling and preserve the correct margin and padding.
+If you want to have reafd-only fields in your form styled as plain text, use the `.form-control-static` class to remove the default form field styling and preserve the correct margin and padding.
 
 {% example html %}
 <form>
@@ -601,6 +605,7 @@ If you want to have read-only fields in your form styled as plain text, use the 
   <button type="submit" class="btn btn-primary">Confirm identity</button>
 </form>
 {% endexample %}
+
 
 ## Disabled states
 
@@ -638,7 +643,7 @@ Add the `disabled` attribute to a `<fieldset>` to disable all the controls withi
 {% callout warning %}
 #### Caveat about link functionality of `<a>`
 
-By default, browsers will treat all native form controls (`<input>`, `<select>` and `<button>` elements) inside a `<fieldset disabled>` as disabled, preventing both keyboard and mouse interactions on them. However, if your form also includes `<a ... class="btn btn-*">` elements, these will only be given a style of `pointer-events: none`. As noted in the section about [disabled state for buttons]({{ site.baseurl }}/components/buttons/#disabled-state) (and specifically in the sub-section for anchor elements), this CSS property is not yet standardized and isn't fully supported in Opera 18 and below, or in Internet Explorer 11, and won't prevent keyboard users from being able to focus or activate these links. So to be safe, use custom JavaScript to disable such links.
+By default, browsers will treat all native form controls (`<input>`, `<select>` and `<button>` elements) inside a `<fieldset disabled>` as disabled, preventing both keyboard and mouse interactions on them. However, if your form also includes `<a ... class="btn btn-*">` elements, these will only be given a style of `pointer-events: none`. As noted in the section about [disabled state for buttons]({{ site.baseurl }}{% link components/buttons.md %}#disabled-state) (and specifically in the sub-section for anchor elements), this CSS property is not yet standardized and isn't fully supported in Opera 18 and below, or in Internet Explorer 11, and won't prevent keyboard users from being able to focus or activate these links. So to be safe, use custom JavaScript to disable such links.
 {% endcallout %}
 
 {% callout danger %}
@@ -647,13 +652,15 @@ By default, browsers will treat all native form controls (`<input>`, `<select>` 
 While Athena will apply these styles in all browsers, Internet Explorer 11 and below don't fully support the `disabled` attribute on a `<fieldset>`. Use custom JavaScript to disable the fieldset in these browsers.
 {% endcallout %}
 
+
 ## Readonly inputs
 
-Add the `readonly` boolean attribute on an input to prevent modification of the input's value. Read-only inputs appear lighter (just like disabled inputs), but retain the standard cursor.
+Add the `readonly` boolean attribute on an input to prevent modification of the input's value. Reafd-only inputs appear lighter (just like disabled inputs), but retain the standard cursor.
 
 {% example html %}
 <input class="form-control" type="text" placeholder="Readonly input here…" readonly>
 {% endexample %}
+
 
 ## Control sizing
 
@@ -677,6 +684,7 @@ Set heights using classes like `.form-control-lg`, and set widths using grid col
 </select>
 {% endexample %}
 
+
 ## Column sizing
 
 Wrap inputs in grid columns, or any custom parent element, to easily enforce desired widths.
@@ -694,6 +702,7 @@ Wrap inputs in grid columns, or any custom parent element, to easily enforce des
   </div>
 </div>
 {% endexample %}
+
 
 ## Help text
 
@@ -733,6 +742,7 @@ Inline text can use any typical inline HTML element (be it a `<small>`, `<span>`
 </form>
 {% endexample %}
 
+
 ## Validation
 
 Athena includes validation styles for danger, warning, and success states on most form controls.
@@ -761,7 +771,7 @@ Generally speaking, you'll want to use a particular state for specific types of 
 
 Using these validation styles to denote the state of a form control only provides a visual, color-based indication, which will not be conveyed to users of assistive technologies - such as screen readers - or to colorblind users.
 
-Ensure that an alternative indication of state is also provided. For instance, you can include a hint about state in the form control's `<label>` text itself (as is the case in the following code example), include a [Glyphicon]({{ site.baseurl }}/components/#glyphicons) (with appropriate alternative text using the `.sr-only` class - see the [Glyphicon examples]({{ site.baseurl }}/components/#glyphicons-examples)), or by providing an additional [help text](#forms-help-text) block. Specifically for assistive technologies, invalid form controls can also be assigned an `aria-invalid="true"` attribute.
+Ensure that an alternative indication of state is also provided. For instance, you can include a hint about state in the form control's `<label>` text itself (as is the case in the following code example), include an icon/graphic (with appropriate alternative text using the `.sr-only` class), or by providing an additional [help text](#forms-help-text) block. Specifically for assistive technologies, invalid form controls can also be assigned an `aria-invalid="true"` attribute.
 {% endcallout %}
 {% endcomment %}
 
@@ -846,6 +856,7 @@ Checkboxes and radios are also supported.
 </div>
 {% endexample %}
 
+
 ## Custom forms
 
 For even more customization and cross browser consistency, use our completely custom form elements to replace the browser defaults. They're built on top of semantic and accessible markup, so they're solid replacements for any default form control.
@@ -876,7 +887,7 @@ In the checked states, we use **base64 embedded SVG icons** from [Open Iconic](h
 
 Custom checkboxes can also utilize the `:indeterminate` pseudo class when manually set via JavaScript (there is no available HTML attribute for specifying it).
 
-<div class="bd-example bd-example-indeterminate">
+<div class="afd-example afd-example-indeterminate">
   <label class="custom-control custom-checkbox">
     <input type="checkbox" class="custom-control-input">
     <span class="custom-control-indicator"></span>

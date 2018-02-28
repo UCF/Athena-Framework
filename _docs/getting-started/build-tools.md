@@ -1,26 +1,29 @@
 ---
 layout: docs
 title: Build tools
-description: Details on how to use compile custom Athena builds and more.
+description: Details on how to compile custom Athena builds and more.
 group: getting-started
 ---
 
-Unlike Bootstrap 4, Athena's build tools are intended to only be used by developers that are contributing to Athena's core. If you choose to utilize Athena's source files in your project, they should be included using whatever build tools best suit your project. However, regardless of the build tools you choose, they will need to build your project's front-end assets in such a way that preserves Athena's core code while applying your overrides in a non-destructive way. We've outlined some examples below using [Gulp](http://gulpjs.com/).
+If you choose to utilize Athena's source files in your project, they should be included using whatever build tools best suit your project, such as [Grunt](http://gruntjs.com/) or [Gulp](http://gulpjs.com/). However, regardless of the build tools you choose, they will need to build your project's front-end assets in such a way that preserves Athena's core code while applying your overrides in a non-destructive way. We've outlined some examples below using Gulp.
+
 
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
+
 ## Tooling Setup
 
 To utilize Athena's source files in your project, we recommend picking a set of build tools that automates the process of:
-- Downloading Athena (and any other third-party packages for your project)
-- Copying Athena's font files from Athena into your project
-- Processing Sass and generating a minified CSS file
-- Processing and generating a minified JavaScript file, or copying Athena's minified JavaScript into your project
+1. Downloading Athena (and any other third-party packages for your project)
+2. Copying Athena's font files from Athena into your project
+3. Processing Sass and JS:
+  - Processing Sass and generating a minified CSS file
+  - Processing and generating a minified JavaScript file, or copying Athena's minified JavaScript into your project
 
-Athena is available to download as a package directly via [npm](https://www.npmjs.com/) and [bower](https://bower.io/). Popular task runners that can automate file processing include [Gulp](http://gulpjs.com/) and [Grunt](http://gruntjs.com/). We'll be using npm for downloading packages and Gulp for processing files in the rest of the examples below.
+We'll be using npm for downloading packages and Gulp for processing files in the rest of the examples below.
 
 The rest of these examples will assume you have basic knowledge of setting up your tool(s) of choice.
 
@@ -118,14 +121,16 @@ You could easily extend this sample gulpfile with extra steps that watch changes
 
 ## Sass
 
-To utilize Athena's Sass files in your project, your workflow must include Sass processing. Projects utilizing Athena's Sass should also be written entirely with Sass.
+To utilize Athena's Sass files in your project, your workflow must include Sass processing. Projects utilizing Athena's Sass should also be written entirely with Sass (not Less or vanilla CSS).
 
 To have access to Athena's variables and mixins within your Sass files, you'll need to use a specific import order in your project's main Sass file:
 1. Your project's variables (including Athena variable overrides)
 2. Athena assets
 3. Your project's styles
 
-Your project's variables _must_ be included before anything else to ensure they override Athena properly.
+Your project's variables _must_ be included before anything else to ensure they override Athena's variables properly.
+
+### Including all Athena styles in your project
 
 The following sample Sass file imports _all_ of Athena's styles into the project's stylesheet:
 
@@ -141,6 +146,8 @@ The following sample Sass file imports _all_ of Athena's styles into the project
 @import 'my-project-styles';
 {% endhighlight %}
 
+### Including _just_ Athena variables and mixins in your project
+
 If you want to keep Athena contained to an individual file, but still have access to its variables and mixins, you'll need to import Athena's variable and mixin files into your stylesheet individually. Remember to also import variables and mixins from Athena's import of Bootstrap:
 
 {% highlight scss %}
@@ -149,9 +156,9 @@ If you want to keep Athena contained to an individual file, but still have acces
 
 // Package assets
 @import './ucf-athena-framework/src/scss/variables';
-@import './ucf-athena-framework/src/bootstrap/scss/variables';
+@import './ucf-athena-framework/src/scss/bootstrap/variables';
 @import './ucf-athena-framework/src/scss/mixins';
-@import './ucf-athena-framework/src/bootstrap/scss/mixins';
+@import './ucf-athena-framework/src/scss/bootstrap/mixins';
 
 // Project styles
 @import 'my-project-styles';
