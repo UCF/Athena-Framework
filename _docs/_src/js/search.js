@@ -65,7 +65,7 @@
   }
 
   function init() {
-    dataURL = 'http://127.0.0.1:4000/search-data.json';
+    dataURL = 'http://localhost:3000/Athena-Framework/docs-local/search-data.json';
     $searchInput = $('#afd-search-input');
 
     dataRequest = initSearchEngine();

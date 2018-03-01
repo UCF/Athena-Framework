@@ -20,7 +20,8 @@ var browserSync = require('browser-sync').create(),
   path = require('path'),
   jsonToYaml = require('gulp-json-to-yaml'),
   fs = require('fs'),
-  shell = require('gulp-shell');
+  shell = require('gulp-shell'),
+  lunr = require('lunr');
 
 
 var configLocal = require('./gulp-config.json'),
@@ -371,6 +372,27 @@ gulp.task('docs-scss', function () {
 gulp.task('docs-js', function () {
   return buildJS(config.docs.src.jsPath + '/docs.js', 'docs.min.js', config.docs.dist.jsPath, true, false, true);
 });
+
+// Generates a search index for the documentation's search feature.
+gulp.task('docs-index', function() {
+  // TODO read file in compiled docs dir
+  var documents = JSON.parse(fs.readFileSync(config.docs.rootPath + '/search-data.json'));
+
+  var idx = lunr(function () {
+    this.ref('id');
+    this.field('title');
+    this.field('url');
+    this.field('content');
+
+    documents.forEach(function (doc) {
+      this.add(doc);
+    }, this);
+  });
+
+  var searchIndex = (JSON.stringify(idx));
+
+  return fs.writeFileSync(config.docs.rootPath + 'search-index.json', searchIndex);
+})
 
 // Default task for docs.  Runs all preliminary docs-related tasks that do not
 // actually build the docs.
