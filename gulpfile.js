@@ -126,7 +126,7 @@ function buildJS(src, filename, dest, applyHeader, doBrowserSync, forceIncludePa
     ))
     .on('error', console.log)
     .pipe(babel())
-    // .pipe(uglify({ output: { comments: /^(!|\---)/ } })) // try to preserve non-standard headers (e.g. from objectFitPolyfill)
+    .pipe(uglify({ output: { comments: /^(!|\---)/ } })) // try to preserve non-standard headers (e.g. from objectFitPolyfill)
     .pipe(gulpif(applyHeader, header(config.prj.header, { config: config })))
     .pipe(rename(filename))
     .pipe(gulp.dest(dest))
