@@ -1,34 +1,35 @@
-/* global jQuery, lunr */
+/* global jQuery, lunr, SEARCH_INDEX_URL, SEARCH_DATA_URL */
 
 
 (function ($) {
-  let dataURL;
   let dataRequest;
-  let data;
+  let dataJSON;
+  let indexJSON;
   let idx;
   let $searchInput;
 
   function searchEngine(query, syncResults) {
     const results = idx.search(query);
-    // console.log(results);
     syncResults(results);
   }
 
   function initSearchEngine() {
-    return $.ajax({
-      url: dataURL,
-      dataType: 'json'
-    }).then((json) => {
-      idx = lunr(function () {
-        this.field('id');
-        this.field('title');
-        this.field('content');
+    return $.when(
+      // Get the prebuilt index
+      $.ajax({
+        url: SEARCH_INDEX_URL,
+        dataType: 'json'
+      }),
 
-        $.each(json, (index, value) => {
-          this.add(value);
-        });
-      });
-      data = json;
+      // Get the search data
+      $.ajax({
+        url: SEARCH_DATA_URL,
+        dataType: 'json'
+      })
+    ).then((indexAjax, dataAjax) => {
+      indexJSON = JSON.parse(JSON.stringify(indexAjax[0]));
+      dataJSON = JSON.parse(JSON.stringify(dataAjax[0]));
+      idx = lunr.Index.load(indexJSON);
     });
   }
 
@@ -41,13 +42,13 @@
     {
       name: 'pages-data',
       displayKey(obj) {
-        const suggestion = data[obj.ref];
+        const suggestion = dataJSON[obj.ref];
         return suggestion.title;
       },
       source: searchEngine,
       templates: {
         suggestion(obj) {
-          const suggestion = data[obj.ref];
+          const suggestion = dataJSON[obj.ref];
           return `<div>${suggestion.title}</div>`;
         },
         empty() {
@@ -56,7 +57,7 @@
       }
     })
       .on('typeahead:selected', (event, obj) => {
-        const suggestion = data[obj.ref];
+        const suggestion = dataJSON[obj.ref];
         window.location = suggestion.url;
       })
       .on('typeahead:asyncreceive', () => {
@@ -65,7 +66,6 @@
   }
 
   function init() {
-    dataURL = 'http://localhost:3000/Athena-Framework/docs-local/search-data.json';
     $searchInput = $('#afd-search-input');
 
     dataRequest = initSearchEngine();
