@@ -144,7 +144,6 @@ function buildDocsIndex(dataPath, indexPath) {
   var idx = lunr(function () {
     this.ref('id');
     this.field('title', { boost: 10 });
-    this.field('url');
     this.field('content');
 
     documents.forEach(function (doc) {

@@ -13,6 +13,12 @@
     syncResults(results);
   }
 
+  function getSearchSuggestion(ref) {
+    return $.grep(dataJSON, (obj) => {
+      return obj.id === parseInt(ref, 10);
+    })[0];
+  }
+
   function initSearchEngine() {
     return $.when(
       // Get the prebuilt index
@@ -42,22 +48,22 @@
     {
       name: 'pages-data',
       displayKey(obj) {
-        const suggestion = dataJSON[obj.ref];
+        const suggestion = getSearchSuggestion(obj.ref);
         return suggestion.title;
       },
       source: searchEngine,
       templates: {
         suggestion(obj) {
-          const suggestion = dataJSON[obj.ref];
+          const suggestion = getSearchSuggestion(obj.ref);
           return `<div>${suggestion.title}</div>`;
         },
         empty() {
-          return '<div class="text-muted">No results found.</div>';
+          return '<div class="text-muted px-3">No results found.</div>';
         }
       }
     })
       .on('typeahead:selected', (event, obj) => {
-        const suggestion = dataJSON[obj.ref];
+        const suggestion = getSearchSuggestion(obj.ref);
         window.location = suggestion.url;
       })
       .on('typeahead:asyncreceive', () => {
