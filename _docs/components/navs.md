@@ -148,7 +148,7 @@ To prevent vertical links from consuming the full width of their parent, add the
 
 ### Tabs
 
-Takes the basic nav from above and adds the `.nav-tabs` class to generate a tabbed interface. Use them to create tabbable regions with Athena's [tab JavaScript](#javascript-behavior).
+Takes the basic nav from above and adds the `.nav-tabs` class to generate a tabbed interface. Use them to create tabbable regions with Athena's [tab JavaScript](#javascript-behavior-for-dynamic-tabbed-interfaces).
 
 {% example html %}
 <ul class="nav nav-tabs">
