@@ -4,35 +4,35 @@
 // Grid examples
 //
 
-.bd-example-row {
-  .row + .row {
-    margin-top: 1rem;
-  }
-
+.afd-example-row {
   .row {
     > .col,
     > [class^="col-"] {
-      padding-top: .75rem;
+      background-color: rgba(86, 61, 124, .15);
+      border: 1px solid rgba(86, 61, 124, .2);
       padding-bottom: .75rem;
-      background-color: rgba(86,61,124,.15);
-      border: 1px solid rgba(86,61,124,.2);
+      padding-top: .75rem;
+    }
+
+    + .row {
+      margin-top: 1rem;
     }
   }
 
   .flex-items-top,
   .flex-items-middle,
   .flex-items-bottom {
+    background-color: rgba(255, 0, 0, .1);
     min-height: 6rem;
-    background-color: rgba(255,0,0,.1);
   }
 }
 
-.bd-example-row-flex-cols .row {
+.afd-example-row-flex-cols .row {
+  background-color: rgba(255, 0, 0, .1);
   min-height: 10rem;
-  background-color: rgba(255,0,0,.1);
 }
 
-.bd-highlight {
+.afd-highlight {
   background-color: rgba($purple, .15);
   border: 1px solid rgba($purple, .15);
 }
@@ -42,36 +42,33 @@
 // Container illustrations
 //
 
-.bd-example-container {
-  min-width: 16rem;
-  max-width: 25rem;
-  margin-right: auto;
+.afd-example-container {
   margin-left: auto;
+  margin-right: auto;
+  max-width: 25rem;
+  min-width: 16rem;
 }
 
-.bd-example-container-header {
+.afd-example-container-header {
+  background-color: lighten($brand-primary, 50%);
   height: 3rem;
   margin-bottom: .5rem;
-  background-color: lighten($brand-primary, 50%);
-  border-radius: .25rem;
 }
 
-.bd-example-container-sidebar {
-  float: right;
-  width: 4rem;
-  height: 8rem;
+.afd-example-container-sidebar {
   background-color: lighten($brand-warning, 25%);
-  border-radius: .25rem;
+  float: right;
+  height: 8rem;
+  width: 4rem;
 }
 
-.bd-example-container-body {
+.afd-example-container-body {
+  background-color: lighten($purple, 25%);
   height: 8rem;
   margin-right: 4.5rem;
-  background-color: lighten($purple, 25%);
-  border-radius: .25rem;
 }
 
-.bd-example-container-fluid {
+.afd-example-container-fluid {
   max-width: none;
 }
 
@@ -80,20 +77,24 @@
 // Docs examples
 //
 
-.bd-example {
-  position: relative;
-  padding: 1rem;
-  margin: 1rem -1rem;
-  border: solid #f7f7f9;
-  border-width: .2rem 0 0;
+.afd-example {
   @include clearfix();
+  border: solid $gray-lightest;
+  border-width: .2rem 0 0;
+  margin: 1rem -1rem;
+  padding: 1rem;
+  position: relative;
 
   @include media-breakpoint-up(sm) {
-    padding: 1.5rem;
-    margin-right: 0;
+    border-width: .2rem;
     margin-bottom: 0;
     margin-left: 0;
-    border-width: .2rem;
+    margin-right: 0;
+    padding: 1.5rem;
+  }
+
+  + p {
+    margin-top: 2rem;
   }
 
   + .highlight,
@@ -101,13 +102,9 @@
     margin-top: 0;
   }
 
-  + p {
-    margin-top: 2rem;
-  }
-
   .pos-f-t {
-    position: relative;
     margin: -1rem;
+    position: relative;
 
     @include media-breakpoint-up(sm) {
       margin: -1.5rem;
@@ -137,146 +134,160 @@
   > .form-group:last-child {
     margin-bottom: 0;
   }
-}
 
-.bd-example > .close {
-  float: none;
-}
-
-// Typography
-.bd-example-type .table .type-info {
-  color: #999;
-  vertical-align: middle;
-}
-.bd-example-type .table td {
-  padding: 1rem 0;
-  border-color: #eee;
-}
-.bd-example-type .table tr:first-child td {
-  border-top: 0;
-}
-.bd-example-type h1,
-.bd-example-type h2,
-.bd-example-type h3,
-.bd-example-type h4,
-.bd-example-type h5,
-.bd-example-type h6 {
-  margin: 0;
-}
-
-// Contextual background colors
-.bd-example-bg-classes p {
-  padding: 1rem;
-}
-
-// Images
-.bd-example > img {
-  + img {
-    margin-left: .5rem;
+  > .close {
+    float: none;
   }
-}
 
-// Buttons
-.bd-example > .btn-group {
-  margin-top: .25rem;
-  margin-bottom: .25rem;
-}
-.bd-example > .btn-toolbar + .btn-toolbar {
-  margin-top: .5rem;
-}
+  > pre > code {
+    background: transparent;
+  }
 
-// Forms
-.bd-example-control-sizing select,
-.bd-example-control-sizing input[type="text"] + input[type="text"] {
-  margin-top: .5rem;
-}
-.bd-example-form .input-group {
-  margin-bottom: .5rem;
-}
-.bd-example > textarea.form-control {
-  resize: vertical;
-}
+  // Images
+  > img {
+    + img {
+      margin-left: .5rem;
+    }
+  }
 
-// List groups
-.bd-example > .list-group {
-  max-width: 400px;
-}
+  // Buttons
+  > .btn-group {
+    margin-bottom: .25rem;
+    margin-top: .25rem;
+  }
 
-// Navbars
-.bd-example {
+  > .btn-toolbar + .btn-toolbar {
+    margin-top: .5rem;
+  }
+
+  // Forms
+  > textarea.form-control {
+    resize: vertical;
+  }
+
+  // List Groups
+  > .list-group {
+    max-width: 400px;
+  }
+
+  // Navbars (positioning)
   .fixed-top,
   .sticky-top {
-    position: static;
     margin: -1rem -1rem 1rem;
-  }
-  .fixed-bottom {
     position: static;
-    margin: 1rem -1rem -1rem;
-  }
 
-  @include media-breakpoint-up(sm) {
-    .fixed-top,
-    .sticky-top {
+    @include media-breakpoint-up(sm) {
       margin: -1.5rem -1.5rem 1rem;
     }
-    .fixed-bottom {
+  }
+
+  .fixed-bottom {
+    margin: 1rem -1rem -1rem;
+    position: static;
+
+    @include media-breakpoint-up(sm) {
       margin: 1rem -1.5rem -1.5rem;
     }
   }
+
+  // Pagination
+  .pagination {
+    margin-bottom: .5rem;
+    margin-top: .5rem;
+  }
 }
 
-// Pagination
-.bd-example .pagination {
+// Typography
+.afd-example-type {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+
+  .table {
+    td {
+      border-color: #eee;
+      padding: 1rem 0;
+    }
+
+    tr:first-child td {
+      border-top: 0;
+    }
+
+    .type-info {
+      color: $gray;
+      vertical-align: middle;
+    }
+  }
+}
+
+// Contextual background colors
+.afd-example-bg-classes p {
+  padding: 1rem;
+}
+
+// Forms
+.afd-example-control-sizing select,
+.afd-example-control-sizing input[type="text"] + input[type="text"] {
   margin-top: .5rem;
+}
+
+.afd-example-form .input-group {
   margin-bottom: .5rem;
 }
 
 // Example modals
-.bd-example-modal {
-  background-color: #fafafa;
+.afd-example-modal {
+  background-color: $gray-lightest;
 
   .modal {
-    position: relative;
-    top: auto;
-    right: auto;
     bottom: auto;
-    left: auto;
-    z-index: 1;
     display: block;
+    left: auto;
+    position: relative;
+    right: auto;
+    top: auto;
+    z-index: 1;
   }
 
   .modal-dialog {
     left: auto;
-    margin-right: auto;
     margin-left: auto;
+    margin-right: auto;
   }
 }
 
 // Example tabbable tabs
-.bd-example-tabs .nav-tabs {
+.afd-example-tabs .nav-tabs {
   margin-bottom: 1rem;
 }
 
 // Tooltips
-.bd-example-tooltips {
+.afd-example-tooltips {
   text-align: center;
-}
-.bd-example-tooltips > .btn {
-  margin-top: .25rem;
-  margin-bottom: .25rem;
+
+  > .btn {
+    margin-bottom: .25rem;
+    margin-top: .25rem;
+  }
 }
 
 // Popovers
-.bd-example-popover-static {
+.afd-example-popover-static {
+  background-color: $gray-lightest;
   padding-bottom: 1.5rem;
-  background-color: #f9f9f9;
-}
-.bd-example-popover-static .popover {
-  position: relative;
-  display: block;
-  float: left;
-  width: 260px;
-  margin: 1.25rem;
+
+  .popover {
+    display: block;
+    float: left;
+    margin: 1.25rem;
+    position: relative;
+    width: 260px;
+  }
 }
 
 // Tooltips
@@ -284,57 +295,60 @@
   white-space: nowrap;
 }
 
-.bd-example-tooltip-static .tooltip {
-  position: relative;
+.afd-example-tooltip-static .tooltip {
   display: inline-block;
   margin: 10px 20px;
   opacity: 1;
+  position: relative;
 }
 
 // Scrollspy demo on fixed height div
 .scrollspy-example {
-  position: relative;
   height: 200px;
   margin-top: .5rem;
   overflow: auto;
+  position: relative;
 }
 
 // Helpers
-.bd-example-border-utils {
+.afd-example-border-utils {
   [class^="border-"] {
-    display: inline-block;
-    width: 6rem;
-    height: 6rem;
-    margin: .25rem;
     background-color: #f5f5f5;
     border: 1px solid;
+    display: inline-block;
+    height: 6rem;
+    margin: .25rem;
+    width: 6rem;
   }
 }
+
 
 //
 // Code snippets
 //
 
 .highlight {
-  padding: 1rem;
+  background-color: $gray-lightest;
   margin: 1rem (-$grid-gutter-width-base / 2);
-  background-color: #f7f7f9;
   -ms-overflow-style: -ms-autohiding-scrollbar;
+  padding: 1rem;
 
   @include media-breakpoint-up(sm) {
-    padding: 1.5rem;
-    margin-right: 0;
     margin-left: 0;
+    margin-right: 0;
+    padding: 1.5rem;
   }
-}
-.highlight pre {
-  padding: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  background-color: transparent;
-  border: 0;
-}
-.highlight pre code {
-  font-size: inherit;
-  color: $gray-dark; // Effectively the base text color
+
+  pre {
+    background-color: transparent;
+    border: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+
+    code {
+      color: $gray-dark;
+      font-size: inherit;
+    }
+  }
 }

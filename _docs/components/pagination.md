@@ -7,10 +7,12 @@ group: components
 
 Pagination links indicate a series of related content exists across multiple pages. Typically these are used where a multi-page approach to long lists of content improves general performance, such as in search results or inboxes.
 
+
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
+
 
 ## Overview
 
@@ -29,6 +31,7 @@ In addition, as pages likely have more than one such navigation section, it's ad
   </ul>
 </nav>
 {% endexample %}
+
 
 ## Working with icons
 
@@ -55,6 +58,7 @@ Looking to use an icon or symbol in place of text for some pagination links? Be 
   </ul>
 </nav>
 {% endexample %}
+
 
 ## Disabled and active states
 
@@ -103,6 +107,7 @@ You can optionally swap out active or disabled anchors for `<span>`, or omit the
 </nav>
 {% endexample %}
 
+
 ## Sizing
 
 Fancy larger or smaller pagination? Add `.pagination-lg` or `.pagination-sm` for additional sizes.
@@ -139,9 +144,10 @@ Fancy larger or smaller pagination? Add `.pagination-lg` or `.pagination-sm` for
 </nav>
 {% endexample %}
 
+
 ## Alignment
 
-Change the alignment of pagination components with [flexbox utilities]({{ site.baseurl }}/utilities/flexbox/).
+Change the alignment of pagination components with [flexbox utilities]({{ site.baseurl }}{% link utilities/flexbox.md %}).
 
 {% example html %}
 <nav aria-label="Page navigation example">

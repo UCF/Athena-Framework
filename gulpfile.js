@@ -13,14 +13,14 @@ var browserSync = require('browser-sync').create(),
   replace = require('gulp-replace'),
   runSequence = require('run-sequence'),
   merge = require('merge'),
-  childProc = require('child_process'),
   header = require('gulp-header'),
   footer = require('gulp-footer'),
   gulpif = require('gulp-if'),
   gutil = require('gulp-util'),
   path = require('path'),
   jsonToYaml = require('gulp-json-to-yaml'),
-  fs = require('fs');
+  fs = require('fs'),
+  shell = require('gulp-shell');
 
 
 var configLocal = require('./gulp-config.json'),
@@ -41,14 +41,16 @@ var configLocal = require('./gulp-config.json'),
         jsPath: './_docs/_src/js'
       },
       dist: {
-        cssPath: './_docs/res/css',
-        fontPath: './_docs/res/fonts',
-        jsPath: './_docs/res/js'
+        cssPath: './_docs/static/css',
+        fontPath: './_docs/static/fonts',
+        jsPath: './_docs/static/js'
       },
       dataPath: './_docs/_data',
-      rootPath: './_docs',
-      deployPath: './docs'
+      srcPath: './_docs/_src',
+      distPath: './_docs/static',
+      rootPath: './_docs'
     },
+    examplesPath: './_examples',
     packagesPath: './node_modules',
     bootstrap: {
       base: './node_modules/bootstrap',
@@ -61,9 +63,115 @@ var configLocal = require('./gulp-config.json'),
       header: getAthenaHeader()
     },
     sync: false,
-    syncTarget: 'http://localhost/'
+    syncOptions: {},
+    docSync: false,
+    docSyncOptions: {},
+    examplesCSSKey: ''
   },
   config = merge(configDefault, configLocal);
+
+
+//
+// Helper functions
+//
+
+// Reload an open test page via BrowserSync and call a callback so that
+// streams resolve properly.  Will silently do nothing if BrowserSync isn't
+// initialized.
+function browserSyncReload(callback) {
+  browserSync.reload();
+  callback();
+}
+
+// Compile scss files
+function buildCSS(src, filename, dest, applyHeader, doBrowserSync) {
+  dest = dest || config.dist.cssPath;
+  applyHeader = applyHeader || false;
+  doBrowserSync = doBrowserSync || false;
+
+  return gulp.src(src)
+    .pipe(sass().on('error', sass.logError))
+    .pipe(cleanCSS())
+    .pipe(autoprefixer({
+      // Supported browsers added in package.json ("browserslist")
+      cascade: false
+    }))
+    .pipe(gulpif(applyHeader, header(config.prj.header, { config: config })))
+    .pipe(rename(filename))
+    .pipe(gulp.dest(dest))
+    .pipe(gulpif(doBrowserSync, browserSync.stream()));
+}
+
+// Concat and uglify js files through babel
+function buildJS(src, filename, dest, applyHeader, doBrowserSync, forceIncludePaths) {
+  dest = dest || config.dist.jsPath;
+  applyHeader = applyHeader || false;
+  doBrowserSync = doBrowserSync || false;
+  forceIncludePaths = forceIncludePaths || false;
+
+  return gulp.src(src)
+    .pipe(gulpif(
+      forceIncludePaths,
+      include({
+        includePaths: [
+          path.dirname(src),
+          __dirname,
+          config.packagesPath
+        ]
+      }),
+      include()
+    ))
+    .on('error', console.log)
+    .pipe(babel())
+    .pipe(uglify({ output: { comments: /^(!|\---)/ } })) // try to preserve non-standard headers (e.g. from objectFitPolyfill)
+    .pipe(gulpif(applyHeader, header(config.prj.header, { config: config })))
+    .pipe(rename(filename))
+    .pipe(gulp.dest(dest))
+    .pipe(gulpif(doBrowserSync, browserSync.stream()));
+}
+
+
+//
+// Header/metadata appending
+//
+
+function getAthenaPackage() {
+  return JSON.parse(fs.readFileSync('./package.json'));
+}
+
+function getAthenaYearRange() {
+  var year = '',
+    startYear = 2017,
+    currentYear = new Date().getFullYear();
+  if (startYear == currentYear) {
+    year += startYear;
+  }
+  else {
+    year += startYear + '-' + currentYear;
+  }
+  return year;
+}
+
+function getAthenaHeader() {
+  return ['/*!',
+    ' * Athena Framework v<%= config.pkg.version %> (<%= config.pkg.homepage %>)',
+    ' * Copyright <%= config.prj.yearRange %> <%= config.pkg.author.name %>',
+    ' * Licensed under <%= config.pkg.license %>',
+    ' */',
+    ''].join('\n');
+}
+
+function getLicenseComment(fileString) {
+  var regex = /\/\*(\*(?!\/)|[^*])*\*\//,
+    comment = regex.exec(fileString);
+
+  if (!comment || !comment[0]) {
+    return false;
+  }
+  else {
+    return comment[0];
+  }
+}
 
 
 //
@@ -158,49 +266,6 @@ gulp.task('components', [
 
 
 //
-// Header/metadata appending
-//
-
-function getAthenaPackage() {
-  return JSON.parse(fs.readFileSync('./package.json'));
-}
-
-function getAthenaYearRange() {
-  var year = '',
-    startYear = 2017,
-    currentYear = new Date().getFullYear();
-  if (startYear == currentYear) {
-    year += startYear;
-  }
-  else {
-    year += startYear + '-' + currentYear;
-  }
-  return year;
-}
-
-function getAthenaHeader() {
-  return ['/*!',
-    ' * Athena Framework v<%= config.pkg.version %> (<%= config.pkg.homepage %>)',
-    ' * Copyright <%= config.prj.yearRange %> <%= config.pkg.author.name %>',
-    ' * Licensed under <%= config.pkg.license %>',
-    ' */',
-    ''].join('\n');
-}
-
-function getLicenseComment(fileString) {
-  var regex = /\/\*(\*(?!\/)|[^*])*\*\//,
-    comment = regex.exec(fileString);
-
-  if (!comment || !comment[0]) {
-    return false;
-  }
-  else {
-    return comment[0];
-  }
-}
-
-
-//
 // CSS
 //
 
@@ -212,30 +277,10 @@ gulp.task('scss-lint', function () {
     }));
 });
 
-// Compile scss files
-function buildCSS(src, filename, dest, applyHeader, doBrowserSync) {
-  dest = dest || config.dist.cssPath;
-  appleHeader = applyHeader || false;
-  doBrowserSync = doBrowserSync || false;
-
-  return gulp.src(src)
-    .pipe(sass().on('error', sass.logError))
-    .pipe(cleanCSS())
-    .pipe(autoprefixer({
-      // Supported browsers added in package.json ("browserslist")
-      cascade: false
-    }))
-    .pipe(gulpif(applyHeader, header(config.prj.header, { config: config })))
-    .pipe(rename(filename))
-    .pipe(gulp.dest(dest))
-    .pipe(gulpif(doBrowserSync, browserSync.stream()));
-}
-
-gulp.task('scss-build-framework', function () {
+// Compile framework scss files
+gulp.task('scss-build', function () {
   return buildCSS(config.src.scssPath + '/framework.scss', 'framework.min.css', config.dist.cssPath, true, true);
 });
-
-gulp.task('scss-build', ['scss-build-framework']);
 
 // All css-related tasks
 gulp.task('css', ['scss-lint', 'scss-build']);
@@ -272,41 +317,14 @@ gulp.task('js-build-bootstrap', function () {
     .pipe(gulp.dest(config.src.jsPath + '/bootstrap'));
 });
 
-// Concat and uglify js files through babel
-function buildJS(src, filename, dest, applyHeader, doBrowserSync, forceIncludePaths) {
-  dest = dest || config.dist.jsPath;
-  appleHeader = applyHeader || false;
-  doBrowserSync = doBrowserSync || false;
-  forceIncludePaths = forceIncludePaths || false;
-
-  return gulp.src(src)
-    .pipe(gulpif(
-      forceIncludePaths,
-      include({
-        includePaths: [
-          path.dirname(src),
-          __dirname,
-          config.packagesPath
-        ]
-      }),
-      include()
-    ))
-    .on('error', console.log)
-    .pipe(babel())
-    .pipe(uglify({ output: { comments: /^(!|\---)/ } })) // try to preserve non-standard headers (e.g. from objectFitPolyfill)
-    .pipe(gulpif(applyHeader, header(config.prj.header, { config: config })))
-    .pipe(rename(filename))
-    .pipe(gulp.dest(dest))
-    .pipe(gulpif(doBrowserSync, browserSync.stream()));
-}
-
+// Concat and uglify framework js files through babel
 gulp.task('js-build', function () {
   return buildJS(config.src.jsPath + '/framework.js', 'framework.min.js', config.dist.jsPath, true, true, false);
 });
 
 // All js-related tasks
-gulp.task('js', function () {
-  runSequence('es-lint', 'js-build-bootstrap', 'js-build');
+gulp.task('js', function (callback) {
+  return runSequence('es-lint', 'js-build-bootstrap', 'js-build', callback);
 });
 
 
@@ -314,95 +332,144 @@ gulp.task('js', function () {
 // GitHub Pages Build
 //
 
-gulp.task('config-gh-pages', function () {
+// Generates a Jekyll config file based off of the project's package.json for
+// the project docs.
+// Allows us to not have to re-define values such as the project version number
+// within Jekyll.
+gulp.task('docs-config', function () {
   return gulp.src('./package.json')
     .pipe(jsonToYaml())
-    .pipe(header("# THIS FILE IS GENERATED AUTOMATICALLY VIA THE `config-gh-pages` GULP TASK. DO NOT OVERRIDE VARIABLES HERE; MODIFY package.json INSTEAD.\n\n"))
+    .pipe(header("# THIS FILE IS GENERATED AUTOMATICALLY VIA THE `docs-config` GULP TASK. DO NOT OVERRIDE VARIABLES HERE; MODIFY package.json INSTEAD.\n\n"))
     .pipe(gulp.dest(config.docs.dataPath));
 });
 
-gulp.task('components-gh-pages-athena-fonts', function () {
+// Generates a custom local Jekyll config file for the project docs.
+gulp.task('docs-config-local', function() {
+  var localConfig = [
+    '# THIS FILE IS GENERATED AUTOMATICALLY VIA THE `docs-config-local` GULP TASK. DO NOT OVERRIDE VARIABLES HERE; MODIFY gulp-config.json INSTEAD.\n',
+    'baseurl: "' + config.docBaseURL + '"'
+  ].join('\n');
+
+  return fs.writeFileSync(config.docs.rootPath + '/_config_local.yml', localConfig);
+});
+
+// Web font processing
+gulp.task('docs-move-components-athena-fonts', function () {
   return gulp.src(config.dist.fontPath + '/**/*')
     .pipe(gulp.dest(config.docs.dist.fontPath));
 });
 
-gulp.task('components-gh-pages', ['components-gh-pages-athena-fonts']);
+// All component-related tasks for docs
+gulp.task('docs-components', ['docs-move-components-athena-fonts']);
 
-gulp.task('scss-gh-pages', function () {
+// Process scss files
+gulp.task('docs-scss', function () {
   return buildCSS(config.docs.src.scssPath + '/docs.scss', 'docs.min.css', config.docs.dist.cssPath, true, false);
 });
 
-gulp.task('js-gh-pages', function () {
+// Concat and uglify js files through babel
+gulp.task('docs-js', function () {
   return buildJS(config.docs.src.jsPath + '/docs.js', 'docs.min.js', config.docs.dist.jsPath, true, false, true);
 });
 
-gulp.task('gh-build-pages', function () {
-  process.chdir('./_docs');
-
-  process.env.JEKYLL_ENV = 'production';
-
-  const jekyll = childProc.spawnSync('bundle', [
-    'exec',
-    'jekyll',
-    'build',
-    '--config=_config.yml,_config_prod.yml'
-  ]);
+// Default task for docs.  Runs all preliminary docs-related tasks that do not
+// actually build the docs.
+gulp.task('docs-default', function (callback) {
+  return runSequence('docs-config', 'docs-components', ['docs-scss', 'docs-js'], callback);
 });
 
-gulp.task('gh-pages', function () {
-  return runSequence(
-    'config-gh-pages', 'components-gh-pages', 'scss-gh-pages', 'js-gh-pages', 'gh-build-pages'
-  );
-});
+// Generates a new local build of the docs.
+gulp.task('docs-local', ['docs-config-local', 'docs-default'], shell.task('bundle exec jekyll build --config=_config.yml,_config_local.yml', {
+  cwd: __dirname + '/_docs',
+  verbose: true
+}));
 
-gulp.task('jekyll-serve', ['config-gh-pages'], function () {
-  gulp.watch(config.docs.src.scss + '/**/*.scss', ['scss-gh-pages']);
-  gulp.watch(config.docs.src.js + '/**/*.js', ['js-gh-pages']);
+// Generates a new local build of the docs and reloads BrowserSync (if enabled).
+gulp.task('docs-onwatch', ['docs-local'], browserSyncReload);
 
-  process.chdir('./_docs');
-
-  const jekyll = childProc.spawn('bundle', [
-    'exec',
-    'jekyll',
-    'serve',
-    '--watch',
-    '--incremental',
-    '--drafts'
-  ]);
-
-  const jekyllLogger = (buffer) => {
-    buffer.toString()
-      .split(/\n/)
-      .forEach((message) => gutil.log('Jekyll - ' + message));
-  };
-
-  jekyll.stdout.on('data', jekyllLogger);
-  jekyll.stderr.on('data', jekyllLogger);
-});
-
-
-//
-// Rerun tasks when files change
-//
-gulp.task('watch', function () {
-  if (config.sync) {
-    browserSync.init({
-      proxy: {
-        target: config.syncTarget
-      }
-    });
+// Spins up a new environment for previewing changes to the docs.
+// Watches for file changes.
+gulp.task('docs-watch', function() {
+  if (config.docSync) {
+    browserSync.init(config.docSyncOptions);
   }
 
-  gulp.watch(config.src.scssPath + '/**/*.scss', ['css']).on('change', browserSync.reload);
-  gulp.watch(config.src.jsPath + '/**/*.js', ['js']).on('change', browserSync.reload);
+  gulp.watch([
+    config.docs.rootPath + '/**/*',
+    '!' + config.docs.distPath + '/**/*'
+  ], ['docs-onwatch'], { dot: true });
 });
 
-gulp.task('watch-jekyll', ['watch', 'jekyll-serve']);
+// Runs all tasks necessary to generate production-ready (Github Pages)
+// documentation.
+gulp.task('gh-pages', ['docs-default'], shell.task('bundle exec jekyll build --config=_config.yml,_config_prod.yml', {
+  cwd: __dirname + '/_docs',
+  verbose: true,
+  env: {
+    JEKYLL_ENV: 'production'
+  }
+}));
+
+
+//
+// Local examples build
+//
+
+// Generates a custom local config file for the example files.
+gulp.task('examples-config', function() {
+  var localConfig = [
+    '# THIS FILE IS GENERATED AUTOMATICALLY VIA THE `examples-config` GULP TASK. DO NOT OVERRIDE VARIABLES HERE; MODIFY gulp-config.json INSTEAD.\n',
+    'cloud_typography_key: "' + config.examplesCSSKey + '"',
+    'baseurl: "' + config.examplesBaseURL + '"'
+  ].join('\n');
+
+  return fs.writeFileSync(config.examplesPath + '/_config_local.yml', localConfig);
+});
+
+// Generates a new local build of example files.
+gulp.task('examples-build', shell.task('bundle exec jekyll build --config=_config.yml,_config_local.yml', {
+  cwd: __dirname + '/_examples',
+  verbose: true
+}));
+
+// All examples-related tasks.
+gulp.task('examples', function (callback) {
+  return runSequence('examples-config', 'examples-build', callback);
+});
+
+// Performs all examples-related tasks and reloads BrowserSync (if enabled).
+gulp.task('examples-onwatch', ['examples'], browserSyncReload);
+
+
+//
+// Rerun tasks when files change.
+//
+
+gulp.task('watch', function () {
+  if (config.sync) {
+    browserSync.init(config.syncOptions);
+  }
+
+  gulp.watch(config.src.scssPath + '/**/*.scss', ['css']);
+  gulp.watch(config.src.jsPath + '/**/*.js', ['js']);
+  gulp.watch([config.examplesPath + '/**/*', '!' + config.examplesPath + '/_config_local.yml'], ['examples-onwatch']);
+});
+
 
 //
 // Default task
 //
-gulp.task('default', function () {
+
+gulp.task('default', function (callback) {
   // Make sure 'components' completes before 'css' or 'js' are allowed to run
-  runSequence('components', ['css', 'js']);
+  return runSequence('components', ['css', 'js'], callback);
+});
+
+
+//
+// Initial setup task for the project
+//
+
+gulp.task('setup', function (callback) {
+  return runSequence('default', 'docs-local', 'examples', callback);
 });

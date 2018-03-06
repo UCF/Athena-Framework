@@ -1,1020 +1,137 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>
-	  
-	    About &middot; Athena Framework
-	  
-	</title>
+    <title>
+      
+        About &middot; Athena Framework
+      
+    </title>
 
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  
-  <link href="https://ucf.github.io/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
-  <link rel="stylesheet" href="https://ucf.github.io/Athena-Framework/res/css/docs.min.css">
-  <link rel="canonical" href="https://ucf.github.io/Athena-Framework/about/">
-  
-</head>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-<body class="docs">
-    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/docs.min.css">
+    <link rel="canonical" href="/about/">
+    
+  </head>
+
+  <body class="docs">
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+      <div class="container">
+        <a class="navbar-brand" href="/">Athena Framework</a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-text">Menu</span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-nav">
+          <nav class="navbar-nav ml-auto mb-2 mb-lg-0">
+            <a class="nav-link " href="/getting-started/quick-start/">
+              Documentation
+            </a>
+            <a class="nav-link active" href="/about/">
+              About
+            </a>
+            <a class="nav-link " href="/migration/">
+              Migration
+            </a>
+          </nav>
+        </div>
+      </div>
+    </nav>
+
+
+<header class="header bg-inverse">
   <div class="container">
-    <a class="navbar-brand" href="/Athena-Framework/">Athena Framework</a>
-    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-text">Menu</span>
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="main-nav">
-      <nav class="navbar-nav ml-auto mb-2 mb-lg-0">
-        <a class="nav-link " href="/Athena-Framework/getting-started/introduction/">
-          Documentation
-        </a>
-        <a class="nav-link active" href="/Athena-Framework/about/">
-          About
-        </a>
-        <a class="nav-link " href="/Athena-Framework/migration/">
-          Migration
-        </a>
-      </nav>
+    <h1 class="display-4 heading-underline mb-4">About</h1>
+    <div class="row">
+      <div class="col-xl-10">
+        <span class="lead font-slab-serif">
+          
+            A brief overview of what Athena is and why it exists.
+          
+        </span>
+      </div>
     </div>
   </div>
-</nav>
+</header>
 
-    <header class="header">
-        <div class="container">
-            <div class="row">
-              <div class="col-md-8">
-                <div class="title-container">
+<main>
+  <article class="py-5 container afd-content">
+    <p>The Athena Framework, part of the <a href="https://ucf.github.io/Athena-Project/">Athena Project</a>, is a front-end toolset for rapid development of websites and web applications which utilize <a href="https://www.ucf.edu/brand/">UCF’s brand standards</a>.  It was developed out of necessity after UCF’s rebranding initiative in 2016, which led to drastic visual changes in UCF’s top-level websites.  The framework aims to provide a base set of styles and components that reduce repetitive front-end code and make it easy for the entire university to adhere to UCF’s brand guidelines.</p>
 
-  <h1 class="text-white font-condensed mb-4">About</h1>
-  <span class="subtitle text-white heading-underline" style="text-transform: none;">
-    
-      Learn about the project's history, meet the maintaining teams, and find out how to use the UCF brand.
-    
-  </span>
+<p>The Athena Framework, which we refer to as just “Athena” in these docs, is written off of <a href="http://v4-alpha.getbootstrap.com/">Bootstrap 4 alpha 6</a>.  Most features from Bootstrap 3/4 are <a href="/migration/">carried over into Athena</a> and should be familiar to developers that have used Bootstrap for other projects.</p>
 
-</div>
+<h2 id="philosophy">Philosophy</h2>
 
-              </div>
-              <div class="col-md-4">
-                <div class="card github">
+<p>Like Bootstrap 4, Athena is designed as a utility-based framework–meaning that highly-repetitive, frequently-used styles and logic have been condensed into single-purpose classes and components.  These single-purpose classes make it easy to rapidly develop prototypes and build highly-custom webpages without the need for writing custom CSS or JavaScript.  They also make it easier to duplicate similar design conventions across projects.</p>
+
+<h2 id="maintainers">Maintainers</h2>
+
+<p>The Athena Framework is actively developed by <a href="https://www.ucf.edu/brand/contact-us/">UCF Marketing’s Web Communications team</a>, but involvement and pull requests from the greater UCF development community are <a href="#contributing">highly encouraged</a>.</p>
+
+<h2 id="contributing">Contributing</h2>
+
+<p>Want to get involved with the development of the Athena Framework?  Take a look at our <a href="https://github.com/UCF/Athena-Framework/CONTRIBUTING.md">contributing guidelines</a> first, then submit a new issue or pull request in Github.</p>
+
+<p>For general questions/discussion about the project as a whole, please join us on our <a href="https://ucf-wp.slack.com/messages/#prj-athena-framework/">Slack channel</a> (requires a <strong>@ucf.edu</strong> email address.)</p>
+
+  </article>
+</main>
+
+
+    <footer class="py-5 mt-5 bg-inverse">
+      <div class="container">
+        <div class="row d-flex justify-content-lg-between">
+          <div class="col-lg-7 col-xl-8">
+            <strong class="h6 heading-underline mb-4">Athena Framework</strong>
+            <ul class="nav flex-column align-items-start mb-5">
+              <li class="nav-item">
+                <a class="nav-link bg-inverse-link" href="https://github.com/UCF/" target="_blank">
+                  <span class="fa fa-github mr-2 text-primary" aria-hidden="true"></span>UCF GitHub
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link bg-inverse-link" href="https://ucf-wp.slack.com/messages/#prj-athena-framework/" target="_blank">
+                  <span class="fa fa-slack mr-2 text-primary" aria-hidden="true"></span>Athena Framework Slack Channel
+                </a>
+              </li>
+            </ul>
+            <p>
+              Current version: <strong>v1.0.0-beta.8</strong>.
+            </p>
+            <p>
+              Documentation powered by <a class="bg-inverse-link" href="https://jekyllrb.com/" target="_blank">Jekyll</a>. Contents adapted from <a class="bg-inverse-link" href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.
+            </p>
+            <p class="mb-0">
+              Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
+            </p>
+          </div>
+          <div class="col-lg-5 col-xl-4 mt-5 mt-lg-0">
+            <div class="card card-outline-inverse card-github">
   <div class="card-block">
-    <h2 class="card-title">Want to contribute?</h2>
-    <p class="card-text">If you're interested in contributing to the Athena Framework, please read our <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework#contributing">contributing guidelines</a>, then submit a new issue or pull request.</p>
+    <h2 class="card-title h4">Want to contribute?</h2>
+    <p class="card-text">If you're interested in contributing to the Athena Framework, please read our <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/CONTRIBUTING.md">contributing guidelines</a>, then submit a new issue or pull request.</p>
     <a href="https://github.com/UCF/Athena-Framework" class="btn btn-primary btn-sm" target="_blank">GitHub Page</a>
   </div>
 </div>
 
-              </div>
-            </div>
+          </div>
         </div>
-    </header>
-    <main>
-        <article class="py-5 container">
-            <div class="row">
-                <div class="col-md-8 bd-content">
-                    <h1>About</h1>
-                    <p>The Athena Framework, part of the <a href="https://ucf.github.io/Athena-Project/">Athena Project</a>, is a front-end toolset for rapid development of websites and web applications which utilize <a href="https://www.ucf.edu/brand/">UCF’s brand standards</a>.  It was developed out of necessity after UCF’s rebranding initiative in 2016, which led to drastic visual changes in UCF’s top-level websites.  The framework aims to provide a base set of styles and components that reduce repetitive front-end code and make it easy for the entire university to adhere to UCF’s brand guidelines.</p>
+      </div>
+    </footer>
 
-<p>The Athena Framework, which we refer to as just “Athena” in these docs, is written off of <a href="http://v4-alpha.getbootstrap.com/">Bootstrap 4</a>.  Most features from Bootstrap 3/4 are carried over into Athena and should be familiar to developers that have used Bootstrap for other projects.</p>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js" integrity="sha256-mIiWebTG82x+OcV3vUA49ffGDIAJ53uC9jflw5/+REs=" crossorigin="anonymous"></script>
 
-<p>The Athena Framework is actively developed by <a href="https://www.ucf.edu/brand/contact-us/">UCF Marketing’s Web Communications team</a>, but involvement and pull requests from the greater UCF development community are highly encouraged. See the <a href="/Athena-Framework/getting-started/introduction/#community">Community</a> section of the docs for more information about getting involved.</p>
+    
+    <script src="/static/js/docs.min.js"></script>
+    
 
-                </div>
-                <div class="col-md-4 bd-sidebar">
-                  <!-- <form class="bd-search d-none d-sm-block">
-  <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
-  <div class="dropdown-menu bd-search-results" id="search-results"></div>
-</form>
- -->
-<nav class="bd-links" id="docsNavbarContent">
-  
-  
-  
-  
-  
-  
-
-  
-
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/Athena-Framework/getting-started/introduction/">
-        Getting started
-      </a>
-
-      <ul class="nav bd-sidenav">
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/getting-started/introduction/">
-              Introduction
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/getting-started/download/">
-              Download
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/getting-started/install/">
-              Install
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/getting-started/browsers-devices/">
-              Browsers & devices
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/getting-started/javascript/">
-              JavaScript
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/getting-started/options/">
-              Options
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/getting-started/build-tools/">
-              Build tools
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/getting-started/best-practices/">
-              Best practices
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/getting-started/accessibility/">
-              Accessibility
-            </a>
-
-            
-          </li>
-        
-      </ul>
-    </div>
-  
-  
-  
-  
-  
-
-  
-
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/Athena-Framework/layout/overview/">
-        Layout
-      </a>
-
-      <ul class="nav bd-sidenav">
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/layout/overview/">
-              Overview
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/layout/grid/">
-              Grid
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/layout/media-object/">
-              Media object
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/layout/utilities-for-layout/">
-              Utilities for Layout
-            </a>
-
-            
-          </li>
-        
-      </ul>
-    </div>
-  
-  
-  
-  
-  
-
-  
-
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/Athena-Framework/content/reboot/">
-        Content
-      </a>
-
-      <ul class="nav bd-sidenav">
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/content/reboot/">
-              Reboot
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/content/typography/">
-              Typography
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/content/code/">
-              Code
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/content/images/">
-              Images
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/content/tables/">
-              Tables
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/content/figures/">
-              Figures
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/content/dividers/">
-              Dividers
-            </a>
-
-            
-          </li>
-        
-      </ul>
-    </div>
-  
-  
-  
-  
-  
-
-  
-
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/Athena-Framework/components/alerts/">
-        Components
-      </a>
-
-      <ul class="nav bd-sidenav">
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/alerts/">
-              Alerts
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/badge/">
-              Badge
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/breadcrumb/">
-              Breadcrumb
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/buttons/">
-              Buttons
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/button-group/">
-              Button group
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/card/">
-              Card
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/collapse/">
-              Collapse
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/dropdowns/">
-              Dropdowns
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/forms/">
-              Forms
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/input-group/">
-              Input group
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/jumbotron/">
-              Jumbotron
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/list-group/">
-              List group
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/modal/">
-              Modal
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/navs/">
-              Navs
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/navbar/">
-              Navbar
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/pagination/">
-              Pagination
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/popovers/">
-              Popovers
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/progress/">
-              Progress
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/scrollspy/">
-              Scrollspy
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/components/tooltips/">
-              Tooltips
-            </a>
-
-            
-          </li>
-        
-      </ul>
-    </div>
-  
-  
-  
-  
-  
-
-  
-
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/Athena-Framework/utilities/borders/">
-        Utilities
-      </a>
-
-      <ul class="nav bd-sidenav">
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/borders/">
-              Borders
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/clearfix/">
-              Clearfix
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/close-icon/">
-              Close icon
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/colors/">
-              Colors
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/display-property/">
-              Display property
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/filters/">
-              Filters
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/flexbox/">
-              Flexbox
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/image-replacement/">
-              Image replacement
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/invisible-content/">
-              Invisible content
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/media-backgrounds/">
-              Media backgrounds
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/pointer-events/">
-              Pointer Events
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/position/">
-              Position
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/responsive-helpers/">
-              Responsive helpers
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/screenreaders/">
-              Screenreaders
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/sizing/">
-              Sizing
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/spacing/">
-              Spacing
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/states/">
-              States
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/typography/">
-              Typography
-            </a>
-
-            
-          </li>
-        
-          
-          
-
-          
-
-          <li class="">
-            <a href="/Athena-Framework/utilities/vertical-align/">
-              Vertical align
-            </a>
-
-            
-          </li>
-        
-      </ul>
-    </div>
-  
-  
-  
-  
-  
-
-  
-
-  <div class="bd-toc-item active">
-      <a class="bd-toc-link" href="/Athena-Framework/about/">
-        About
-      </a>
-
-      <ul class="nav bd-sidenav">
-        
-      </ul>
-    </div>
-  
-  
-  
-  
-  
-
-  
-
-  <div class="bd-toc-item ">
-      <a class="bd-toc-link" href="/Athena-Framework/migration/">
-        Migration
-      </a>
-
-      <ul class="nav bd-sidenav">
-        
-      </ul>
-    </div>
-  
-</nav>
-
-                </div>
-            </div>
-        </article>
-    </main>
-    <footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col self-align-left">
-                <p>
-                  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and <a href="https://github.com/UCF/Athena-Framework">the Athena Framework</a>.
-                  <br>
-                  Documentation adapted from <a href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.
-                </p>
-                <p class="mb-0">
-                  Code licensed <a href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
-                </p>
-            </div>
-            <div class="col self-align-right">
-              <p class="text-right">
-                Current version: <strong>v1.0.0-beta.8</strong>.
-              </p>
-              <p class="text-right">
-                <a href="https://github.com/UCF/" target="_blank"><span class="fa fa-github"></span> UCF GitHub</a>
-              </p>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-
-<script src="https://ucf.github.io/Athena-Framework/res/js/docs.min.js"></script>
-
-
-</body>
+  </body>
 </html>
+

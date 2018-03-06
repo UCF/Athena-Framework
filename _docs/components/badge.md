@@ -7,10 +7,12 @@ group: components
 
 Small and adaptive tag for adding context to just about any content.
 
+
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
+
 
 ## Example
 
@@ -24,6 +26,7 @@ Badges scale to match the size of the immediate parent element by using relative
 <h5>Example heading <span class="badge badge-default">New</span></h5>
 <h6>Example heading <span class="badge badge-default">New</span></h6>
 {% endexample %}
+
 
 ## Contextual variations
 
@@ -44,6 +47,7 @@ Add any of the below mentioned modifier classes to change the appearance of a ba
 {% capture callout-include %}{% include callout-warning-color-assistive-technologies.md %}{% endcapture %}
 {{ callout-include | markdownify }}
 
+
 ## Pill badges
 
 Use the `.badge-pill` modifier class to make badges more rounded (with a larger `border-radius` and additional horizontal `padding`). Useful if you miss the badges from v3.
@@ -59,6 +63,7 @@ Use the `.badge-pill` modifier class to make badges more rounded (with a larger 
 <span class="badge badge-pill badge-danger">Danger</span>
 <span class="badge badge-pill badge-inverse">Inverse</span>
 {% endexample %}
+
 
 ## Links
 

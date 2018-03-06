@@ -7,16 +7,18 @@ group: content
 
 Opt your images into responsive behavior (so they never become larger than their parent elements) and add lightweight styles to them—all via classes.
 
+
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
+
 ## Responsive images
 
-Images in Athena are made responsive with `.img-fluid`. `max-width: 100%;` and `height: auto;` are applied to the image so that it scales with the parent element.
+Responsive behavior for images in Athena is opt-in, via the `.img-fluid` class. `max-width: 100%;` and `height: auto;` are applied to the image so that it scales with the parent element.
 
-<div class="bd-example">
+<div class="afd-example">
   <img data-src="holder.js/100px250" class="img-fluid" alt="Generic responsive image">
 </div>
 
@@ -25,16 +27,17 @@ Images in Athena are made responsive with `.img-fluid`. `max-width: 100%;` and `
 {% endhighlight %}
 
 {% callout warning %}
-#### SVG images and IE 10
+### SVG images and IE 10
 
 In Internet Explorer 10, SVG images with `.img-fluid` are disproportionately sized. To fix this, add `width: 100% \9;` where necessary. This fix improperly sizes other image formats, so Athena doesn't apply it automatically.
 {% endcallout %}
 
+
 ## Image thumbnails
 
-In addition to our [border-radius utilities]({{ site.baseurl }}/utilities/borders/), you can use `.img-thumbnail` to give an image a rounded 1px border appearance.
+In addition to our [border-radius utilities]({{ site.baseurl }}{% link utilities/borders.md %}), you can use `.img-thumbnail` to give an image a rounded 1px border appearance.
 
-<div class="bd-example bd-example-images">
+<div class="afd-example afd-example-images">
   <img data-src="holder.js/200x200" class="img-thumbnail" alt="A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera">
 </div>
 
@@ -42,11 +45,12 @@ In addition to our [border-radius utilities]({{ site.baseurl }}/utilities/border
 <img src="..." alt="..." class="img-thumbnail">
 {% endhighlight %}
 
+
 ## Aligning images
 
-Align images with the [helper float classes]({{ site.baseurl }}/utilities/responsive-helpers/#responsive-floats) or [text alignment classes]({{ site.baseurl }}/utilities/typography/#text-alignment). `block`-level images can be centered using [the `.mx-auto` margin utility class]({{ site.baseurl }}/utilities/spacing/#horizontal-centering).
+Align images with the [helper float classes]({{ site.baseurl }}{% link utilities/float.md %}#responsive-floats) or [text alignment classes]({{ site.baseurl }}{% link utilities/typography.md %}#text-alignment). `block`-level images can be centered using [the `.mx-auto` margin utility class]({{ site.baseurl }}{% link utilities/spacing.md %}#horizontal-centering).
 
-<div class="bd-example bd-example-images">
+<div class="afd-example afd-example-images">
   <img data-src="holder.js/200x200" class="rounded float-left" alt="A generic square placeholder image with rounded corners">
   <img data-src="holder.js/200x200" class="rounded float-right" alt="A generic square placeholder image with rounded corners">
 </div>
@@ -56,7 +60,7 @@ Align images with the [helper float classes]({{ site.baseurl }}/utilities/respon
 <img src="..." class="rounded float-right" alt="...">
 {% endhighlight %}
 
-<div class="bd-example bd-example-images">
+<div class="afd-example afd-example-images">
   <img data-src="holder.js/200x200" class="rounded mx-auto d-block" alt="A generic square placeholder image with rounded corners">
 </div>
 
@@ -64,7 +68,7 @@ Align images with the [helper float classes]({{ site.baseurl }}/utilities/respon
 <img src="..." class="rounded mx-auto d-block" alt="...">
 {% endhighlight %}
 
-<div class="bd-example bd-example-images">
+<div class="afd-example afd-example-images">
   <div class="text-center">
     <img data-src="holder.js/200x200" class="rounded" alt="A generic square placeholder image with rounded corners">
   </div>
@@ -74,4 +78,16 @@ Align images with the [helper float classes]({{ site.baseurl }}/utilities/respon
 <div class="text-center">
   <img src="..." class="rounded" alt="...">
 </div>
+{% endhighlight %}
+
+
+## Picture elements
+
+If you are using the `<picture>` element to specify multiple `<source>` elements for a specific `<img>`, make sure to add the `.img-*` classes to the `<img>` and not to the `<picture>` tag.
+
+{% highlight html %}
+​<picture>
+  <source srcset="...">
+  <img src="..." class="img-fluid img-thumbnail" alt="...">
+</picture>
 {% endhighlight %}

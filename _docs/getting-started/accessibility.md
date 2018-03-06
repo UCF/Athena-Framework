@@ -5,20 +5,29 @@ description: A brief overview of Athena's features and limitations for the creat
 group: getting-started
 ---
 
-Athena provides an easy-to-use framework of ready-made styles, layout tools, and interactive components, allowing developers to create web sites and applications that are visually appealing, functionally rich, and accessible out of the box.
+The Athena Framework provides a rich suite of tools for building accessible websites and applications--but it's important that developers and content editors understand how to implement these tools to meet Section 508 compliance and <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0 AA requirements.
+
+{% callout info %}
+## Accessibility Basics
+The Athena Framework provides utilities and pre-styled components that are designed to be accessible, but **it is the responsibility of the developers and content editors using the framework to implement them appropriately**.
+
+Please see our [Additional Resources](#additional-resources) section for further reading on accessibility requirements.
+{% endcallout %}
+
 
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
+
 ## Overview and limitations
 
-The overall accessibility of any project built with Athena depends in large part on the author's markup, additional styling, and scripting they've included. However, provided that these have been implemented correctly, it should be perfectly possible to create web sites and applications with Athena that fulfill [<abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0](https://www.w3.org/TR/WCAG20/) (A/AA/AAA), [Section 508](https://www.section508.gov/) and similar accessibility standards and requirements.
+The overall accessibility of any project built with Athena depends in large part on the author's markup, additional styling, and scripting they've included. However, provided that these have been implemented correctly, websites and applications using Athena should be able to fulfill WCAG 2.0 AA and Section 508 accessibility requirements.
 
 ### Structural markup
 
-Athena's styling and layout can be applied to a wide range of markup structures. This documentation aims to provide developers with best practice examples to demonstrate the use of Athena itself and illustrate appropriate semantic markup, including ways in which potential accessibility concerns can be addressed.
+Athena's styling and layout can be applied to a wide range of markup structures. Athean's documentation aims to provide developers with best practice examples to demonstrate the use of Athena itself and illustrate appropriate semantic markup, including ways in which potential accessibility concerns can be addressed.
 
 ### Interactive components
 
@@ -28,7 +37,7 @@ Because Athena's components are purposely designed to be fairly generic, authors
 
 ### Color contrast
 
-Colors in Athena have been modified from Bootstrap's defaults to ensure they meet [WCAG 2.0 AA color contrast requirements](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html) (color contrast ratio of 4.5 to 1). In addition, most components include overrides unique to Athena that apply accessible text colors out-of-the-box. However, projects that apply custom color overrides should be tested on a per-case basis to ensure they still meet color contrast requirements.
+Colors in Athena have been modified from Bootstrap's defaults to ensure they meet [WCAG 2.0 AA color contrast requirements](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html) (color contrast ratio of at least 4.5 to 1). In addition, most components include overrides unique to Athena that apply accessible text colors out-of-the-box. However, projects that apply custom color overrides should be tested on a per-case basis to ensure they still meet color contrast requirements.
 
 ### Visually hidden content
 
@@ -36,7 +45,7 @@ Content which should be visually hidden, but remain accessible to assistive tech
 
 {% highlight html %}
 <p class="text-danger">
-  <span class=".sr-only">Danger: </span>
+  <span class="sr-only">Danger: </span>
   This action is not reversible
 </p>
 {% endhighlight %}
@@ -47,11 +56,18 @@ For visually hidden interactive controls, such as traditional "skip" links, `.sr
 <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 {% endhighlight %}
 
+
 ## Additional resources
 
-- [Web Content Accessibility Guidelines (WCAG) 2.0](https://www.w3.org/TR/WCAG20/)
+### Further reading
 - [The A11Y Project](http://a11yproject.com/)
+- [The Section 508 Refresh and What It Means for Higher Education](https://er.educause.edu/articles/2017/12/the-section-508-refresh-and-what-it-means-for-higher-education)
 - [MDN accessibility documentation](https://developer.mozilla.org/en-US/docs/Web/Accessibility)
-- [Tenon.io Accessibility Checker](https://tenon.io/)
-- [Colour Contrast Analyser (CCA)](https://www.paciellogroup.com/resources/contrastanalyser/)
+
+### Accessibility validation tools
+- [WAVE accessibility evaluation tool (browser extensions available)](https://wave.webaim.org/)
+- [WebAIM Color Contrast Checker](https://webaim.org/resources/contrastchecker/)
+- [ChromeVox (free screenreader extension for Chrome)](https://chrome.google.com/webstore/detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en)
+- [Accessibility Developer Tools (provides accessibility auditing tools to Chrome Developer Tools)](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb)
+- [NoCoffee vision impairment simulator (Chrome extension)](https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl?hl=en-US)
 - ["HTML Codesniffer" bookmarklet for identifying accessibility issues](https://github.com/squizlabs/HTML_CodeSniffer)

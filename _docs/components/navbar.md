@@ -5,12 +5,14 @@ description: Documentation and examples for Athena's powerful, responsive naviga
 group: components
 ---
 
-The navbar is a wrapper that positions branding, navigation, and other elements in a concise header. It's easily extensible and, thanks to our Collapse plugin, can easily integrate responsive behaviors.
+The navbar is a wrapper that positions branding, navigation, and other elements in a concise header. It's easily extensible and, thanks to Athena's JavaScript, can easily integrate responsive behaviors.
+
 
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
+
 
 ## How it works
 
@@ -19,10 +21,11 @@ Here's what you need to know before getting started with the navbar:
 - Navbars require a wrapping `.navbar` with `.navbar-toggleable{-sm|-md|-lg|-xl}` for responsive collapsing and [color scheme](#color-schemes) classes.
 - Navbars and their contents are fluid by default. Use [optional containers](#containers) to limit their horizontal width.
 - Navbars and their contents are built with flexbox, providing easy alignment options via the order of elements in the DOM and utility classes.
-- Navbars are responsive by default, but you can easily modify them to change that. Responsive behavior depends on our Collapse JavaScript plugin.
+- Navbars are responsive by default, but you can easily modify them to change that. Responsive behavior depends on Athena's JavaScript.
 - Ensure accessibility by using a `<nav>` element or, if using a more generic element such as a `<div>`, add a `role="navigation"` to every navbar to explicitly identify it as a landmark region for users of assistive technologies.
 
 Read on for an example and list of supported sub-components.
+
 
 ## Supported content
 
@@ -279,11 +282,12 @@ Mix and match with other components and utilities as needed.
 </nav>
 {% endexample %}
 
+
 ## Color schemes
 
 Theming the navbar is easy thanks to the combination of theming classes and `background-color` utilities. Choose from `.navbar-light` for use with light background colors, or `.navbar-inverse` for dark background colors. Then, customize with `.bg-*` utilities.
 
-<div class="bd-example">
+<div class="afd-example">
   <nav class="navbar navbar-toggleable-lg navbar-inverse bg-inverse">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -386,6 +390,7 @@ Theming the navbar is easy thanks to the combination of theming classes and `bac
 </nav>
 {% endhighlight %}
 
+
 ## Containers
 
 Although it's not required, you can wrap a navbar in a `.container` to center it on a page or add one within to only center the contents of a [fixed or static top navbar](#placement).
@@ -407,6 +412,7 @@ When the container is within your navbar, its horizontal padding is removed at b
   </div>
 </nav>
 {% endexample %}
+
 
 ## Placement
 
@@ -436,6 +442,7 @@ Use our position utilities to place navbars in non-static positions. Choose from
 </nav>
 {% endexample %}
 
+
 ## Responsive behaviors
 
 Navbars can utilize `.navbar-toggler`, `.navbar-collapse`, and `.navbar-toggleable{-sm|-md|-lg|-xl}` classes to change when their content collapses behind a button. In combination with other utilities, you can easily choose when to show or hide particular elements.
@@ -444,7 +451,7 @@ For navbars that never collapse, add the `.navbar-toggleable` class on the navba
 
 ### Toggler
 
-Navbar togglers are left-aligned by default, but should be forced to the right using `.ml-auto` to avoid gutter stacking issues. However, should they follow a sibling element like a `.navbar-brand`, they'll automatically be aligned to the far right, and no margin utility class is needed. Below are examples of different toggle styles.
+Navbar togglers should be forced to the right using `.ml-auto` to avoid gutter stacking issues. However, should they follow a sibling element like a `.navbar-brand`, they'll automatically be aligned to the far right, and no margin utility class is needed. Below are examples of different toggle styles.
 
 With `.navbar-brand` nested in the collapsible portion of the navbar:
 
@@ -529,7 +536,7 @@ With custom toggler text:
 
 ### External content
 
-Sometimes you want to use the collapse plugin to trigger hidden content elsewhere on the page. Because our plugin works on the `id` and `data-target` matching, that's easily done!
+Sometimes you may want to use the [collapse component]({{ site.baseurl }}{% link components/collapse.md %}) to trigger hidden content elsewhere on the page. Because Athena's collapse JavaScript works on the `id` and `data-target` matching, that's easily done!
 
 {% example html %}
 <div class="pos-f-t">

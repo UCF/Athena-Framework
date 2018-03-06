@@ -19,7 +19,7 @@ module Jekyll
         site = context.registers[:site]
         converter = site.find_converter_instance(::Jekyll::Converters::Markdown)
         output = converter.convert(super(context))
-        "<div class=\"bd-callout bd-callout-#{@type}\">#{output}</div>"
+        "<div class=\"afd-callout afd-callout-#{@type}\">#{output}</div>"
       end
     end
   end

@@ -1,16 +1,18 @@
 ---
 layout: docs
 title: Collapse
-description: Toggle the visibility of content across your project with a few classes and our JavaScript plugins.
+description: Toggle the visibility of content across your project with a few classes and Athena's JavaScript.
 group: components
 ---
 
-The Athena collapse plugin allows you to toggle content on your pages with a few classes thanks to some helpful JavaScript.
+The Athena collapse component allows you to toggle content on your pages with a few classes thanks to some helpful JavaScript.
+
 
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
+
 
 ## Example
 
@@ -38,9 +40,10 @@ You can use a link with the `href` attribute, or a button with the `data-target`
 </div>
 {% endexample %}
 
+
 ## Accordion example
 
-Using the [card]({{ site.baseurl }}/components/card/) component, you can extend the default collapse behavior to create an accordion.
+Using the [card]({{ site.baseurl }}{% link components/card.md %}) component, you can extend the default collapse behavior to create an accordion.
 
 {% example html %}
 <div id="accordion" role="tablist">
@@ -90,11 +93,15 @@ Using the [card]({{ site.baseurl }}/components/card/) component, you can extend 
 </div>
 {% endexample %}
 
+
 ## Accessibility
 
 Be sure to add `aria-expanded` to the control element. This attribute explicitly conveys the current state of the collapsible element tied to the control to screen readers and similar assistive technologies. If the collapsible element is closed by default, the attribute on the control element should have a value of `aria-expanded="false"`. If you've set the collapsible element to be open by default using the `show` class, set `aria-expanded="true"` on the control instead. The plugin will automatically toggle this attribute on the control based on whether or not the collapsible element has been opened or closed.
 
 Additionally, if your control element is targeting a single collapsible element – i.e. the `data-target` attribute is pointing to an `id` selector – you may add an additional `aria-controls` attribute to the control element, containing the `id` of the collapsible element. Modern screen readers and similar assistive technologies make use of this attribute to provide users with additional shortcuts to navigate directly to the collapsible element itself.
+
+Note that Athena's current implementation does not cover the various keyboard interactions described in the [WAI-ARIA Authoring Practices 1.1 accordion pattern](https://www.w3.org/TR/wai-aria-practices-1.1/#accordion) - you will need to include these yourself with custom JavaScript.
+
 
 ## Usage
 

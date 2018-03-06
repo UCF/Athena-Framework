@@ -7,14 +7,16 @@ group: components
 
 Easily extend form controls by adding text, buttons, or button groups on either side of textual `<input>`s.
 
+
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
+
 ## Basic example
 
-Place one add-on or button on either side of an input. You may also place one on both sides of an input. **We do not support multiple form-controls in a single input group.**
+Place one add-on or button on either side of an input. You may also place one on both sides of an input. **We do not support multiple form-controls in a single input group** and `<label>`s must be placed outside the input group.
 
 {% example html %}
 <div class="input-group">
@@ -46,6 +48,7 @@ Place one add-on or button on either side of an input. You may also place one on
 </div>
 {% endexample %}
 
+
 ## Sizing
 
 Add the relative form sizing classes to the `.input-group` itself and contents within will automatically resize—no need for repeating the form control size classes on each element.
@@ -61,6 +64,7 @@ Add the relative form sizing classes to the `.input-group` itself and contents w
   <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="sizing-addon2">
 </div>
 {% endexample %}
+
 
 ## Checkboxes and radio addons
 
@@ -86,6 +90,7 @@ Place any checkbox or radio option within an input group's addon instead of text
   </div>
 </div>
 {% endexample %}
+
 
 ## Multiple addons
 
@@ -152,6 +157,7 @@ Buttons in input groups must wrapped in a `.input-group-btn` for proper alignmen
 </div>
 {% endexample %}
 
+
 ## Buttons with dropdowns
 
 {% example html %}
@@ -192,6 +198,7 @@ Buttons in input groups must wrapped in a `.input-group-btn` for proper alignmen
   </div>
 </div>
 {% endexample %}
+
 
 ## Segmented buttons
 
@@ -235,6 +242,7 @@ Buttons in input groups must wrapped in a `.input-group-btn` for proper alignmen
   </div>
 </div>
 {% endexample %}
+
 
 ## Accessibility
 

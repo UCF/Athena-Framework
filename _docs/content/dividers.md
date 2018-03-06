@@ -5,12 +5,14 @@ description: Documentation and examples for customizing dividers in Athena.
 group: content
 ---
 
-Athena provides extra utility classes for styling `<hr>` elements that are not provided in Bootstrap.
+Athena provides utility classes for styling `<hr>` elements with alternate thicknesses, colors, and orientation.
+
 
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
+
 
 ## Thickness
 
@@ -22,6 +24,7 @@ Modify the weight of a divider using the `.hr-2` or `.hr-3` classes. The weight 
 <hr class="hr-3">
 {% endexample %}
 
+
 ## Color
 
 Use the `.hr-black`, `.hr-white`, or `.hr-primary` classes to modify the color of the divider.
@@ -32,9 +35,10 @@ Use the `.hr-black`, `.hr-white`, or `.hr-primary` classes to modify the color o
 <hr class="hr-primary">
 {% endexample %}
 
+
 ## Vertical Orientation
 
-Unique to Athena, you can modify a divider to be oriented vertically using the `.hr-vertical` class. Vertical dividers are best used within columns (or some other block-level parent element) to help define how tall the divider should be.
+You can modify a divider to be oriented vertically using the `.hr-vertical` class. Vertical dividers are best used within columns (or some other block-level parent element) to help define how tall the divider should be.
 
 {% callout warning %}
 <h3 class="h5">Browser Compatibility</h3>

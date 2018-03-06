@@ -7,18 +7,18 @@ group: components
 
 Add small overlay content, like those found in iOS, to any element for housing secondary information.
 
+
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
+
 ## Overview
 
-Things to know when using the popover plugin:
+Things to know when using popovers:
 
-
-- Popovers rely on the 3rd party library [Tether](http://tether.io/) for positioning. You must include [tether.min.js](https://github.com/HubSpot/tether/blob/master/dist/js/tether.min.js) before framework.min.js in order for popovers to work!
-- Popovers require the [tooltip plugin]({{ site.baseurl }}/components/tooltips/) as a dependency.
+- Popovers rely on the 3rd party library [Tether](http://tether.io/) as well as Athena's JavaScript for positioning. You must include [tether.min.js](https://github.com/HubSpot/tether/blob/master/dist/js/tether.min.js) before framework.min.js in order for popovers to work!
 - Popovers are opt-in for performance reasons, so **you must initialize them yourself**.
 - Zero-length `title` and `content` values will never show a popover.
 - Specify `container: 'body'` to avoid rendering problems in more complex components (like our input groups, button groups, etc).
@@ -27,6 +27,7 @@ Things to know when using the popover plugin:
 - When triggered from hyperlinks that span multiple lines, popovers will be centered. Use `white-space: nowrap;` on your `<a>`s to avoid this behavior.
 
 Got all that? Great, let's see how they work with some examples.
+
 
 ## Example: Enable popovers everywhere
 
@@ -37,6 +38,7 @@ $(function () {
   $('[data-toggle="popover"]').popover()
 })
 {% endhighlight %}
+
 
 ## Example: Using the `container` option
 
@@ -50,11 +52,12 @@ $(function () {
 })
 {% endhighlight %}
 
+
 ## Static popover
 
 Four options are available: top, right, bottom, and left aligned.
 
-<div class="bd-example bd-example-popover-static">
+<div class="afd-example afd-example-popover-static">
   <div class="popover popover-top">
     <h3 class="popover-title">Popover top</h3>
     <div class="popover-content">
@@ -87,6 +90,7 @@ Four options are available: top, right, bottom, and left aligned.
   <div class="clearfix"></div>
 </div>
 
+
 ## Live demo
 
 {% example html %}
@@ -95,8 +99,8 @@ Four options are available: top, right, bottom, and left aligned.
 
 ### Four directions
 
-<div class="bd-example popover-demo">
-  <div class="bd-example-popovers">
+<div class="afd-example popover-demo">
+  <div class="afd-example-popovers">
     <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
       Popover on top
     </button>
@@ -150,7 +154,6 @@ $('.popover-dismiss').popover({
   trigger: 'focus'
 })
 {% endhighlight %}
-
 
 
 ## Usage

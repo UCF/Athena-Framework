@@ -1,32 +1,45 @@
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col self-align-left">
-                <p>
-                  Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and <a href="https://github.com/{{ site.data.package.repository.url }}">the Athena Framework</a>.
-                  <br>
-                  Documentation adapted from <a href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.
-                </p>
-                <p class="mb-0">
-                  Code licensed <a href="https://github.com/{{ site.data.package.repository.url }}/blob/master/LICENSE">MIT</a>, docs <a href="https://github.com/{{ site.data.package.repository.url }}/blob/master/docs/LICENSE">CC BY 3.0</a>.
-                </p>
-            </div>
-            <div class="col self-align-right">
-              <p class="text-right">
-                {% if site.data.package.version %}Current version: <strong>v{{ site.data.package.version }}</strong>.{% endif %}
-              </p>
-              <p class="text-right">
-                <a href="https://github.com/UCF/" target="_blank"><span class="fa fa-github"></span> UCF GitHub</a>
-              </p>
-            </div>
+    <footer class="py-5 mt-5 bg-inverse">
+      <div class="container">
+        <div class="row d-flex justify-content-lg-between">
+          <div class="col-lg-7 col-xl-8">
+            <strong class="h6 heading-underline mb-4">Athena Framework</strong>
+            <ul class="nav flex-column align-items-start mb-5">
+              <li class="nav-item">
+                <a class="nav-link bg-inverse-link" href="https://github.com/UCF/" target="_blank">
+                  <span class="fa fa-github mr-2 text-primary" aria-hidden="true"></span>UCF GitHub
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link bg-inverse-link" href="{{ site.slack }}" target="_blank">
+                  <span class="fa fa-slack mr-2 text-primary" aria-hidden="true"></span>Athena Framework Slack Channel
+                </a>
+              </li>
+            </ul>
+            <p>
+              {% if site.data.package.version %}Current version: <strong>v{{ site.data.package.version }}</strong>.{% endif %}
+            </p>
+            <p>
+              Documentation powered by <a class="bg-inverse-link" href="https://jekyllrb.com/" target="_blank">Jekyll</a>. Contents adapted from <a class="bg-inverse-link" href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.
+            </p>
+            <p class="mb-0">
+              Code licensed <a class="bg-inverse-link" href="https://github.com/{{ site.data.package.repository.url }}/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/{{ site.data.package.repository.url }}/blob/master/docs/LICENSE">CC BY 3.0</a>.
+            </p>
+          </div>
+          <div class="col-lg-5 col-xl-4 mt-5 mt-lg-0">
+            {% include contribute.html %}
+          </div>
         </div>
-    </div>
-</footer>
+      </div>
+    </footer>
 
-<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-{% if jekyll.environment == "production" %}
-<script src="{{ '/res/js/docs.min.js' | prepend: site.baseurl | prepend: site.host }}"></script>
-{% else %}
-<script src="{{ '/res/js/docs.min.js' | prepend: site.baseurl }}"></script>
-{% endif %}
+    {{ site.jquery_script }}
+    {{ site.tether_script }}
+
+    {% if jekyll.environment == "production" %}
+    <script src="{{ site.host }}{{ site.baseurl }}{% link static/js/docs.min.js %}"></script>
+    {% else %}
+    <script src="{{ site.baseurl }}{% link static/js/docs.min.js %}"></script>
+    {% endif %}
+
+  </body>
+</html>
