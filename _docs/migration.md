@@ -132,7 +132,7 @@ This list highlights key changes by component between Bootstrap v3.x.x and Athen
 ### Buttons
 
 - Dropped the `.btn-xs` class entirely.
-- The [stateful button](https://getbootstrap.com/javascript/#buttons-methods) feature of Bootstrap's `button.js` jQuery plugin has been dropped. This includes the `$().button(string)` and `$().button('reset')` methods. We advise using a tiny bit of custom JavaScript instead, which will have the benefit of behaving exactly the way you want it to.
+- The [stateful button](https://getbootstrap.com/docs/3.3/javascript/#buttons-stateful) feature of Bootstrap's `button.js` jQuery plugin has been dropped. This includes the `$().button(string)` and `$().button('reset')` methods. We advise using a tiny bit of custom JavaScript instead, which will have the benefit of behaving exactly the way you want it to.
   - Note that the other features of the plugin (button checkboxes, button radios, single-toggle buttons) have been retained in Athena.
 
 ### Button group

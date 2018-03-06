@@ -89,7 +89,7 @@ For more information on embedding Athena's styles and scripts into your project'
 #### Relative font paths in `/dist/`
 Keep in mind that Athena's minified CSS references font files relative to the folder structure in `/dist/`--meaning that, in projects using these files, this existing folder structure _must_ be maintained for fonts to load properly.
 
-If you cannot store Athena's fallback fonts in a folder called `/fonts/` that exists one directory up from the minified framework CSS, you must [use Athena's source Sass files](#using-source-files), modify the `$athena-font-path` Sass variable, and minify the framework manually.
+If you cannot store Athena's fallback fonts in a folder called `/fonts/` that exists one directory up from the minified framework CSS, you must [use Athena's source Sass files](#source-files), modify the `$athena-font-path` Sass variable, and minify the framework manually.
 {% endcallout %}
 
 ### Adding to Existing Project Using Bootstrap
