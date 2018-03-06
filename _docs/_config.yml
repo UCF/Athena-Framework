@@ -31,4 +31,5 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - vendor
 destination: ../docs-local
