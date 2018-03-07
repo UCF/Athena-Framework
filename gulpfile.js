@@ -143,8 +143,7 @@ function buildDocsIndex(dataPath, indexPath) {
   // Generate index
   var idx = lunr(function () {
     this.ref('id');
-    this.field('title', { boost: 10 });
-    this.field('content');
+    this.field('title');
 
     documents.forEach(function (doc) {
       this.add(doc);

@@ -7,8 +7,7 @@ layout: null
     {
       "id": {{ forloop.index }},
       "title": "{{ page.title | xml_escape }}",
-      "url": "{{ site.baseurl }}{{ page.url | xml_escape }}",
-      "content": "{{ page.content | strip_html | strip_newlines | remove: "	" | escape | remove: "\"}}"
+      "url": "{{ site.baseurl }}{{ page.url | xml_escape }}"
     }
     {% unless forloop.last %},{% endunless %}
   {% endfor %}
