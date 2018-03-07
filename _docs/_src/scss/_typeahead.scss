@@ -1,8 +1,26 @@
 .twitter-typeahead {
+  background-color: $input-bg;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgcm9sZT0iaW1nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaW5ZTWluIj48cGF0aCBmaWxsPSIjY2NjIiBkPSJNNTA1IDQ0Mi43TDQwNS4zIDM0M2MtNC41LTQuNS0xMC42LTctMTctN0gzNzJjMjcuNi0zNS4zIDQ0LTc5LjcgNDQtMTI4QzQxNiA5My4xIDMyMi45IDAgMjA4IDBTMCA5My4xIDAgMjA4czkzLjEgMjA4IDIwOCAyMDhjNDguMyAwIDkyLjctMTYuNCAxMjgtNDR2MTYuM2MwIDYuNCAyLjUgMTIuNSA3IDE3bDk5LjcgOTkuN2M5LjQgOS40IDI0LjYgOS40IDMzLjkgMGwyOC4zLTI4LjNjOS40LTkuNCA5LjQtMjQuNi4xLTM0ek0yMDggMzM2Yy03MC43IDAtMTI4LTU3LjItMTI4LTEyOCAwLTcwLjcgNTcuMi0xMjggMTI4LTEyOCA3MC43IDAgMTI4IDU3LjIgMTI4IDEyOCAwIDcwLjctNTcuMiAxMjgtMTI4IDEyOHoiIGNsYXNzPSIiPjwvcGF0aD48L3N2Zz4=);
+  background-position: right .5rem center;
+  background-repeat: no-repeat;
+  background-size: auto 50%;
   width: 100%;
 
   .tt-input {
     @extend .form-control;
+    background-color: transparent;
+    padding-right: 3rem;
+
+    @include hover-focus() {
+      // Sadly this !important is necessary to override complex selectors inherited from `@extend .form-control` above
+      // scss-lint:disable ImportantRule
+      background-color: transparent !important;
+      // scss-lint:enable ImportantRule
+    }
+  }
+
+  .bg-inverse .tt-input:focus {
+    background-color: transparent;
   }
 
   .tt-hint {
