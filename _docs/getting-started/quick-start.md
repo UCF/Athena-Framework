@@ -68,7 +68,7 @@ Add the Athena stylesheet before all other stylesheets in your document `<head>`
 
 ## 3. Add JavaScript
 
-Add jQuery, Tether, and Athena's JavaScript near the end of your pages, right before the closing `</body>` tag. Be sure to place jQuery and Tether first, as our code depends on them. While we use jQuery's slim build in our docs, the full version is also supported.
+Add jQuery, Tether, and Athena's JavaScript near the end of your pages, right before the closing `</body>` tag. Be sure to place jQuery and Tether first, as our code depends on them. While we use jQuery's full build in our docs, the slim version is also supported.
 
 {% highlight html %}
 {{ site.jquery_script }}
