@@ -19,7 +19,7 @@ Athena supports the **latest two stable releases** of all major browsers and pla
 ### Mobile browser support
 
 <table class="table table-bordered table-responsive">
-  <thead class="theafd-default">
+  <thead class="thead-default">
     <tr>
       <td></td>
       <th>Chrome</th>
@@ -52,14 +52,13 @@ Athena supports the **latest two stable releases** of all major browsers and pla
 ### Desktop browser support
 
 <table class="table table-bordered table-responsive">
-  <thead class="theafd-default">
+  <thead class="thead-default">
     <tr>
       <td></td>
       <th>Chrome</th>
       <th>Firefox</th>
       <th>Internet Explorer</th>
       <th>Microsoft Edge</th>
-      <th>Opera</th>
       <th>Safari</th>
     </tr>
   </thead>
@@ -71,14 +70,12 @@ Athena supports the **latest two stable releases** of all major browsers and pla
       <td>N/A</td>
       <td>N/A</td>
       <td class="text-success-aw">Supported</td>
-      <td class="text-success-aw">Supported</td>
     </tr>
     <tr>
       <th scope="row">Windows</th>
       <td class="text-success-aw">Supported</td>
       <td class="text-success-aw">Supported</td>
       <td class="text-success-aw">Supported, IE 11</td>
-      <td class="text-success-aw">Supported</td>
       <td class="text-success-aw">Supported</td>
       <td class="text-danger-aw">Not supported</td>
     </tr>
