@@ -14,7 +14,7 @@ Athena supports a wide variety of modern browsers and devices, and some older on
 
 ## Supported browsers
 
-Athena supports the **latest two stable releases** of all major browsers and platforms, listed below. On Windows, **we support [Internet Explorer 10-11*](#internet-explorer) and the two latest versions of Edge**.
+Athena supports the **latest two stable releases** of all major browsers and platforms, listed below, as well as [Internet Explorer 11*](#internet-explorer).
 
 ### Mobile browser support
 
@@ -77,7 +77,7 @@ Athena supports the **latest two stable releases** of all major browsers and pla
       <th scope="row">Windows</th>
       <td class="text-success-aw">Supported</td>
       <td class="text-success-aw">Supported</td>
-      <td class="text-success-aw">Supported, IE10+</td>
+      <td class="text-success-aw">Supported, IE 11</td>
       <td class="text-success-aw">Supported</td>
       <td class="text-success-aw">Supported</td>
       <td class="text-danger-aw">Not supported</td>
@@ -87,7 +87,7 @@ Athena supports the **latest two stable releases** of all major browsers and pla
 
 ### Internet Explorer
 
-Internet Explorer 10+ is supported; IE9 and down is not. Please be aware that some CSS3 properties and HTML5 elements are not fully supported in IE10 and IE11, or require prefixed properties for full functionality. Visit [Can I use...](http://caniuse.com/) for details on browser support of CSS3 and HTML5 features.
+Internet Explorer 11 is supported; IE 10 and older are not. Please be aware that some CSS3 properties and HTML5 elements are not fully supported in IE 11, or require prefixed properties for full functionality. Visit [Can I use...](http://caniuse.com/) for details on browser support of CSS3 and HTML5 features.
 
 ### Other browsers
 Alternative browsers which use the latest version of WebKit, Blink, or Gecko, whether directly or via the platform's web view API, are not explicitly supported. However, Athena should (in most cases) display and function correctly in these browsers as well.

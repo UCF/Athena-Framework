@@ -73,7 +73,7 @@ Apply `.media-background` and your `.object-fit-*` class to the inner `<img>` el
 {% callout info %}
 #### Picture elements and `srcset`
 
-Note that IE 10 and 11 [do not support the `<picture>` element and its `<source>` children](http://caniuse.com/#search=picture) natively.  In addition, because the `srcset` attribute is also not supported in IE nor Edge, make sure you always include an `<img>` as the last child element within any `<picture>`, and that that image uses the `src` attribute to define the url.
+Note that IE 11 [does not support the `<picture>` element and its `<source>` children](http://caniuse.com/#search=picture) natively.  In addition, because the `srcset` attribute is also not supported in IE nor Edge, make sure you always include an `<img>` as the last child element within any `<picture>`, and that that image uses the `src` attribute to define the url.
 
 For better cross-browser handling of the `<picture>` element and srcset attribute, you may wish to incorporate a polyfill into your project, such as [Picturefill](http://scottjehl.github.io/picturefill/).  Note that polyfills such as Picturefill have their own usage guidelines that may differ from what's noted above.
 {% endcallout %}

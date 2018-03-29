@@ -57,7 +57,7 @@
     "run-sequence": "^2.2.0"
   },
   "browserslist": [
-    "last 2 versions"
+    "last 2 versions", "not ie 10"
   ],
   "dependencies": {
     "jquery": ">=3.2.1",
