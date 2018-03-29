@@ -19,7 +19,7 @@ Here are the big ticket items you'll want to be aware of when moving from Bootst
 
 ### Browser support
 
-- Dropped IE8, IE9, and iOS 6 support. Athena only supports the [latest 2 versions of major browsers]({{ site.baseurl }}{% link getting-started/browsers-devices.md %}#supported-browsers).
+- Dropped IE 8, IE 9, IE 10, and iOS 6 support. Athena only supports the [latest 2 versions of major browsers and IE 11]({{ site.baseurl }}{% link getting-started/browsers-devices.md %}#supported-browsers).
 - Added official support for Android v5.0 Lollipop’s Browser and WebView.
 
 ### Global changes
