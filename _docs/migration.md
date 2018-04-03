@@ -19,7 +19,7 @@ Here are the big ticket items you'll want to be aware of when moving from Bootst
 
 ### Browser support
 
-- Dropped IE8, IE9, and iOS 6 support. Athena only supports the [latest 2 versions of major browsers]({{ site.baseurl }}{% link getting-started/browsers-devices.md %}#supported-browsers).
+- Dropped IE 8, IE 9, IE 10, and iOS 6 support. Athena only supports the [latest 2 versions of major browsers and IE 11]({{ site.baseurl }}{% link getting-started/browsers-devices.md %}#supported-browsers).
 - Added official support for Android v5.0 Lollipop’s Browser and WebView.
 
 ### Global changes
@@ -132,7 +132,7 @@ This list highlights key changes by component between Bootstrap v3.x.x and Athen
 ### Buttons
 
 - Dropped the `.btn-xs` class entirely.
-- The [stateful button](https://getbootstrap.com/javascript/#buttons-methods) feature of Bootstrap's `button.js` jQuery plugin has been dropped. This includes the `$().button(string)` and `$().button('reset')` methods. We advise using a tiny bit of custom JavaScript instead, which will have the benefit of behaving exactly the way you want it to.
+- The [stateful button](https://getbootstrap.com/docs/3.3/javascript/#buttons-stateful) feature of Bootstrap's `button.js` jQuery plugin has been dropped. This includes the `$().button(string)` and `$().button('reset')` methods. We advise using a tiny bit of custom JavaScript instead, which will have the benefit of behaving exactly the way you want it to.
   - Note that the other features of the plugin (button checkboxes, button radios, single-toggle buttons) have been retained in Athena.
 
 ### Button group

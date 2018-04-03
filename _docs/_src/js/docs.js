@@ -2,13 +2,17 @@
 // =require ./anchor-js/anchor.js
 // =require ./clipboard/dist/clipboard.js
 // =require ./holderjs/holder.js
+// =require ./lunr/lunr.js
+
+// =require search.js
+
 
 /*!
- * JavaScript for Bootstrap's docs (https://getbootstrap.com)
- * Copyright 2011-2017 The Bootstrap Authors
- * Copyright 2011-2017 Twitter, Inc.
- * Licensed under the Creative Commons Attribution 3.0 Unported License. For
- * details, see https://creativecommons.org/licenses/by/3.0/.
+ * JavaScript for Athena Framework's documentation, a derivative of
+ * JavaScript for Bootstrap's docs by The Bootstrap Authors and Twitter, Inc.
+ *
+ * Used under and licensed under the Creative Commons Attribution 3.0 Unported
+ * License (https://creativecommons.org/licenses/by/3.0/).
  */
 
 /* global Clipboard, anchors, Holder */

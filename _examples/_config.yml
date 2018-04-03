@@ -31,4 +31,5 @@ plugins:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - vendor
 destination: ../examples

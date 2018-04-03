@@ -9,7 +9,7 @@ Please take a moment to review this document before submitting new issues or pul
 
 The [issue tracker](https://github.com/UCF/Athena-Framework/issues) in Github is the preferred channel for [bug reports](#bug-reports), [features requests](#feature-requests) and [submitting pull requests](#pull-requests).
 
-Please do not use the issue tracker for personal support requests.  Our [Slack channel](https://ucf-wp.slack.com/messages/#prj-athena-framework/) is the best place to get help with your project.
+Please do not use the issue tracker for personal support requests.  Our [Slack channel](https://ucf-wp.slack.com/messages/prj-athena-framework/) is the best place to get help with your project.
 
 
 ## Bug reports

@@ -250,7 +250,7 @@ Flexbox can do some pretty awesome things when you mix flex alignments with auto
 
 ### With justify-content
 
-**Unfortunately, IE10 and IE11 do not properly support auto margins on flex items whose parent has a non-default `justify-content` value.** [See this StackOverflow answer](https://stackoverflow.com/a/37535548) for more details.
+**Unfortunately, IE 11 does not properly support auto margins on flex items whose parent has a non-default `justify-content` value.** [See this StackOverflow answer](https://stackoverflow.com/a/37535548) for more details.
 
 ### With align-items
 

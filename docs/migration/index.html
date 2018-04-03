@@ -14,32 +14,37 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     
-    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="/static/css/docs.min.css">
-    <link rel="canonical" href="/migration/">
+    <link href="https://ucf.github.io/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="https://ucf.github.io/Athena-Framework/static/css/docs.min.css">
+    <link rel="canonical" href="https://ucf.github.io/Athena-Framework/migration/">
     
   </head>
 
   <body class="docs">
     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
       <div class="container">
-        <a class="navbar-brand" href="/">Athena Framework</a>
+        <a class="navbar-brand" href="/Athena-Framework/">Athena Framework</a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-text">Menu</span>
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="main-nav">
           <nav class="navbar-nav ml-auto mb-2 mb-lg-0">
-            <a class="nav-link " href="/getting-started/quick-start/">
+            <a class="nav-link " href="/Athena-Framework/getting-started/quick-start/">
               Documentation
             </a>
-            <a class="nav-link " href="/about/">
+            <a class="nav-link " href="/Athena-Framework/about/">
               About
             </a>
-            <a class="nav-link active" href="/migration/">
+            <a class="nav-link active" href="/Athena-Framework/migration/">
               Migration
             </a>
           </nav>
+          <form class="afd-search form-inline ml-lg-4">
+            <label for="afd-search-input" class="sr-only">Search the Athena Framework documentation</label>
+            <input type="search" class="form-control" id="afd-search-input" placeholder="Search..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-owns="afd-search-results">
+            <div class="dropdown-menu" id="afd-search-results"></div>
+          </form>
         </div>
       </div>
     </nav>
@@ -115,7 +120,7 @@
 <h3 id="browser-support">Browser support</h3>
 
 <ul>
-  <li>Dropped IE8, IE9, and iOS 6 support. Athena only supports the <a href="/getting-started/browsers-devices/#supported-browsers">latest 2 versions of major browsers</a>.</li>
+  <li>Dropped IE 8, IE 9, IE 10, and iOS 6 support. Athena only supports the <a href="/Athena-Framework/getting-started/browsers-devices/#supported-browsers">latest 2 versions of major browsers and IE 11</a>.</li>
   <li>Added official support for Android v5.0 Lollipop’s Browser and WebView.</li>
 </ul>
 
@@ -207,8 +212,8 @@
   </li>
   <li><strong>Alignment and spacing:</strong>
     <ul>
-      <li>Added new <a href="/utilities/spacing/">responsive margin and padding utilities</a> for all sides, plus vertical and horizontal shorthands.</li>
-      <li>Added lots of <a href="/utilities/flexbox/">flexbox utilities</a>.</li>
+      <li>Added new <a href="/Athena-Framework/utilities/spacing/">responsive margin and padding utilities</a> for all sides, plus vertical and horizontal shorthands.</li>
+      <li>Added lots of <a href="/Athena-Framework/utilities/flexbox/">flexbox utilities</a>.</li>
       <li>Dropped <code class="highlighter-rouge">.center-block</code> for the new <code class="highlighter-rouge">.mx-auto</code> class.</li>
     </ul>
   </li>
@@ -240,9 +245,9 @@
 <h3 id="components">Components</h3>
 
 <ul>
-  <li><strong>Dropped panels, thumbnails, and wells</strong> for a new all-encompassing component, <a href="/components/card/">cards</a>.</li>
+  <li><strong>Dropped panels, thumbnails, and wells</strong> for a new all-encompassing component, <a href="/Athena-Framework/components/card/">cards</a>.</li>
   <li><strong>Dropped the Glyphicons icon font.</strong> If you need icons, we recommend including <a href="http://fontawesome.io/">Font Awesome</a> or another icon library in your project as needed.</li>
-  <li><strong>Dropped the Affix jQuery plugin.</strong> Use the <a href="/utilities/position/#sticky-top"><code class="highlighter-rouge">.sticky-top</code> utility class</a> instead.
+  <li><strong>Dropped the Affix jQuery plugin.</strong> Use the <a href="/Athena-Framework/utilities/position/#sticky-top"><code class="highlighter-rouge">.sticky-top</code> utility class</a> instead.
     <ul>
       <li>If you were using Affix to apply additional, non-<code class="highlighter-rouge">position</code> styles, <code class="highlighter-rouge">.sticky-top</code> might not support your use case. One option for such uses is the third-party <a href="https://github.com/acch/scrollpos-styler">ScrollPos-Styler</a> library.</li>
     </ul>
@@ -267,7 +272,7 @@
 
 <ul>
   <li>Dropped the <code class="highlighter-rouge">.btn-xs</code> class entirely.</li>
-  <li>The <a href="https://getbootstrap.com/javascript/#buttons-methods">stateful button</a> feature of Bootstrap’s <code class="highlighter-rouge">button.js</code> jQuery plugin has been dropped. This includes the <code class="highlighter-rouge">$().button(string)</code> and <code class="highlighter-rouge">$().button('reset')</code> methods. We advise using a tiny bit of custom JavaScript instead, which will have the benefit of behaving exactly the way you want it to.
+  <li>The <a href="https://getbootstrap.com/docs/3.3/javascript/#buttons-stateful">stateful button</a> feature of Bootstrap’s <code class="highlighter-rouge">button.js</code> jQuery plugin has been dropped. This includes the <code class="highlighter-rouge">$().button(string)</code> and <code class="highlighter-rouge">$().button('reset')</code> methods. We advise using a tiny bit of custom JavaScript instead, which will have the benefit of behaving exactly the way you want it to.
     <ul>
       <li>Note that the other features of the plugin (button checkboxes, button radios, single-toggle buttons) have been retained in Athena.</li>
     </ul>
@@ -374,7 +379,7 @@
 
 <h3 id="panels-thumbnails-and-wells">Panels, thumbnails, and wells</h3>
 
-<p>Dropped entirely for the new <a href="/components/card/">card component</a>.</p>
+<p>Dropped entirely for the new <a href="/Athena-Framework/components/card/">card component</a>.</p>
 
 <h4 id="panels">Panels</h4>
 
@@ -383,7 +388,7 @@
   <li><code class="highlighter-rouge">.panel-default</code> removed and no replacement.</li>
   <li><code class="highlighter-rouge">.panel-group</code> removed and no replacement. <code class="highlighter-rouge">.card-group</code> is not a replacement, it is different.</li>
   <li><code class="highlighter-rouge">.panel-heading</code> to <code class="highlighter-rouge">.card-header</code></li>
-  <li><code class="highlighter-rouge">.panel-title</code> to <code class="highlighter-rouge">.card-title</code>. Depending on the desired look, you may also want to use <a href="/content/typography/#headings">heading elements or classes</a> (e.g. <code class="highlighter-rouge">&lt;h3&gt;</code>, <code class="highlighter-rouge">.h3</code>) or bold elements or classes (e.g. <code class="highlighter-rouge">&lt;strong&gt;</code>, <code class="highlighter-rouge">&lt;b&gt;</code>, <a href="/utilities/typography/#font-weight-and-italics"><code class="highlighter-rouge">.font-weight-bold</code></a>). Note that <code class="highlighter-rouge">.card-title</code>, while similarly named, produces a different look than <code class="highlighter-rouge">.panel-title</code>.</li>
+  <li><code class="highlighter-rouge">.panel-title</code> to <code class="highlighter-rouge">.card-title</code>. Depending on the desired look, you may also want to use <a href="/Athena-Framework/content/typography/#headings">heading elements or classes</a> (e.g. <code class="highlighter-rouge">&lt;h3&gt;</code>, <code class="highlighter-rouge">.h3</code>) or bold elements or classes (e.g. <code class="highlighter-rouge">&lt;strong&gt;</code>, <code class="highlighter-rouge">&lt;b&gt;</code>, <a href="/Athena-Framework/utilities/typography/#font-weight-and-italics"><code class="highlighter-rouge">.font-weight-bold</code></a>). Note that <code class="highlighter-rouge">.card-title</code>, while similarly named, produces a different look than <code class="highlighter-rouge">.panel-title</code>.</li>
   <li><code class="highlighter-rouge">.panel-body</code> to <code class="highlighter-rouge">.card-block</code></li>
   <li><code class="highlighter-rouge">.panel-footer</code> to <code class="highlighter-rouge">.card-footer</code></li>
   <li><code class="highlighter-rouge">.panel-primary</code> to <code class="highlighter-rouge">.card-primary</code> and <code class="highlighter-rouge">.card-inverse</code> (or use <code class="highlighter-rouge">.bg-primary</code> on <code class="highlighter-rouge">.card-header</code>)</li>
@@ -423,13 +428,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link bg-inverse-link" href="https://ucf-wp.slack.com/messages/#prj-athena-framework/" target="_blank">
+                <a class="nav-link bg-inverse-link" href="https://ucf-wp.slack.com/messages/prj-athena-framework/" target="_blank">
                   <span class="fa fa-slack mr-2 text-primary" aria-hidden="true"></span>Athena Framework Slack Channel
                 </a>
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.0.0-beta.8</strong>.
+              Current version: <strong>v1.0.0</strong>.
             </p>
             <p>
               Documentation powered by <a class="bg-inverse-link" href="https://jekyllrb.com/" target="_blank">Jekyll</a>. Contents adapted from <a class="bg-inverse-link" href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.
@@ -452,11 +457,16 @@
       </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js" integrity="sha256-mIiWebTG82x+OcV3vUA49ffGDIAJ53uC9jflw5/+REs=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.bundle.min.js" integrity="sha256-VCsWOz+0GuHdS/sIICtQNTFJdbaDI80rxvoB7BXabrU=" crossorigin="anonymous"></script>
 
     
-    <script src="/static/js/docs.min.js"></script>
+    <script>
+      var SEARCH_INDEX_URL = 'https://ucf.github.io/Athena-Framework/search-index.json';
+      var SEARCH_DATA_URL = 'https://ucf.github.io/Athena-Framework/search-data.json';
+    </script>
+    <script src="https://ucf.github.io/Athena-Framework/static/js/docs.min.js"></script>
     
 
   </body>

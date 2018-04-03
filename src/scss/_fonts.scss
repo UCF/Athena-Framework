@@ -2,18 +2,17 @@
 // Base fonts for minimum required fallback font support.
 //
 // NOTE: the fallback font's weights are intentionally used at different registered
-// weights here to make up for Montserrat being an overall heavier font family than
-// Gotham.
+// weights here to make up for Montserrat and Gotham's weight differences.
 //
 
 // Sans-serif - Book
 @font-face {
-  @include build-font-face('UCF Sans Serif Alt', 'ucf-sans-serif-alt', 'ucfsansserifalt-light-webfont', normal, 400);
+  @include build-font-face('UCF Sans Serif Alt', 'ucf-sans-serif-alt', 'ucfsansserifalt-medium-webfont', normal, 400);
 }
 
 // Sans-serif - Bold
 @font-face {
-  @include build-font-face('UCF Sans Serif Alt', 'ucf-sans-serif-alt', 'ucfsansserifalt-semibold-webfont', normal, 600);
+  @include build-font-face('UCF Sans Serif Alt', 'ucf-sans-serif-alt', 'ucfsansserifalt-bold-webfont', normal, 700);
 }
 
 
@@ -21,23 +20,17 @@
 // Extended weights for the fallback sans-serif webfont family.
 //
 // NOTE: the fallback font's weights are intentionally used at different registered
-// weights here to make up for Montserrat being an overall heavier font family than
-// Gotham.
+// weights here to make up for Montserrat and Gotham's weight differences.
 //
 
 // Light
 @font-face {
-  @include build-font-face('UCF Sans Serif Alt', 'ucf-sans-serif-alt', 'ucfsansserifalt-extralight-webfont', normal, 300);
+  @include build-font-face('UCF Sans Serif Alt', 'ucf-sans-serif-alt', 'ucfsansserifalt-light-webfont', normal, 300);
 }
 
 // Medium
 @font-face {
-  @include build-font-face('UCF Sans Serif Alt', 'ucf-sans-serif-alt', 'ucfsansserifalt-regular-webfont', normal, 500);
-}
-
-// Extra bold
-@font-face {
-  @include build-font-face('UCF Sans Serif Alt', 'ucf-sans-serif-alt', 'ucfsansserifalt-bold-webfont', normal, 700);
+  @include build-font-face('UCF Sans Serif Alt', 'ucf-sans-serif-alt', 'ucfsansserifalt-semibold-webfont', normal, 500);
 }
 
 // Black
@@ -80,5 +73,5 @@
 
 // Slab Serif - Bold
 @font-face {
-  @include build-font-face('UCF Slab Serif Alt', 'tulia', 'tulia_bold-webfont', normal, 600);
+  @include build-font-face('UCF Slab Serif Alt', 'tulia', 'tulia_bold-webfont', normal, 700);
 }

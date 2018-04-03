@@ -18,10 +18,10 @@ _These instructions are for installation and development of the project for core
 
 ### Installation requirements
 
-- [Node.js](https://nodejs.org/en/download/)
-- [gulp-cli](https://github.com/gulpjs/gulp/blob/v3.9.1/docs/getting-started.md#1-install-gulp-globally)
-- [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
-- [Bundler](http://bundler.io/#getting-started)
+- [Node.js 5.6.0+](https://nodejs.org/en/download/)
+- [gulp-cli 2.0.0+](https://github.com/gulpjs/gulp/blob/v3.9.1/docs/getting-started.md#1-install-gulp-globally)
+- [Ruby 2.4.1+](https://www.ruby-lang.org/en/documentation/installation/)
+- [Bundler 1.16.1+](http://bundler.io/#getting-started)
 
 ### Installation instructions
 

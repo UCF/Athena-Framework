@@ -14,32 +14,37 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     
-    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="/static/css/docs.min.css">
-    <link rel="canonical" href="/about/">
+    <link href="https://ucf.github.io/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="https://ucf.github.io/Athena-Framework/static/css/docs.min.css">
+    <link rel="canonical" href="https://ucf.github.io/Athena-Framework/about/">
     
   </head>
 
   <body class="docs">
     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
       <div class="container">
-        <a class="navbar-brand" href="/">Athena Framework</a>
+        <a class="navbar-brand" href="/Athena-Framework/">Athena Framework</a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-text">Menu</span>
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="main-nav">
           <nav class="navbar-nav ml-auto mb-2 mb-lg-0">
-            <a class="nav-link " href="/getting-started/quick-start/">
+            <a class="nav-link " href="/Athena-Framework/getting-started/quick-start/">
               Documentation
             </a>
-            <a class="nav-link active" href="/about/">
+            <a class="nav-link active" href="/Athena-Framework/about/">
               About
             </a>
-            <a class="nav-link " href="/migration/">
+            <a class="nav-link " href="/Athena-Framework/migration/">
               Migration
             </a>
           </nav>
+          <form class="afd-search form-inline ml-lg-4">
+            <label for="afd-search-input" class="sr-only">Search the Athena Framework documentation</label>
+            <input type="search" class="form-control" id="afd-search-input" placeholder="Search..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-owns="afd-search-results">
+            <div class="dropdown-menu" id="afd-search-results"></div>
+          </form>
         </div>
       </div>
     </nav>
@@ -64,7 +69,7 @@
   <article class="py-5 container afd-content">
     <p>The Athena Framework, part of the <a href="https://ucf.github.io/Athena-Project/">Athena Project</a>, is a front-end toolset for rapid development of websites and web applications which utilize <a href="https://www.ucf.edu/brand/">UCF’s brand standards</a>.  It was developed out of necessity after UCF’s rebranding initiative in 2016, which led to drastic visual changes in UCF’s top-level websites.  The framework aims to provide a base set of styles and components that reduce repetitive front-end code and make it easy for the entire university to adhere to UCF’s brand guidelines.</p>
 
-<p>The Athena Framework, which we refer to as just “Athena” in these docs, is written off of <a href="http://v4-alpha.getbootstrap.com/">Bootstrap 4 alpha 6</a>.  Most features from Bootstrap 3/4 are <a href="/migration/">carried over into Athena</a> and should be familiar to developers that have used Bootstrap for other projects.</p>
+<p>The Athena Framework, which we refer to as just “Athena” in these docs, is written off of <a href="https://v4-alpha.getbootstrap.com/">Bootstrap 4 alpha 6</a>.  Most features from Bootstrap 3/4 are <a href="/Athena-Framework/migration/">carried over into Athena</a> and should be familiar to developers that have used Bootstrap for other projects.</p>
 
 <h2 id="philosophy">Philosophy</h2>
 
@@ -78,7 +83,7 @@
 
 <p>Want to get involved with the development of the Athena Framework?  Take a look at our <a href="https://github.com/UCF/Athena-Framework/CONTRIBUTING.md">contributing guidelines</a> first, then submit a new issue or pull request in Github.</p>
 
-<p>For general questions/discussion about the project as a whole, please join us on our <a href="https://ucf-wp.slack.com/messages/#prj-athena-framework/">Slack channel</a> (requires a <strong>@ucf.edu</strong> email address.)</p>
+<p>For general questions/discussion about the project as a whole, please join us on our <a href="https://ucf-wp.slack.com/messages/prj-athena-framework/">Slack channel</a> (requires a <strong>@ucf.edu</strong> email address.)</p>
 
   </article>
 </main>
@@ -96,13 +101,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link bg-inverse-link" href="https://ucf-wp.slack.com/messages/#prj-athena-framework/" target="_blank">
+                <a class="nav-link bg-inverse-link" href="https://ucf-wp.slack.com/messages/prj-athena-framework/" target="_blank">
                   <span class="fa fa-slack mr-2 text-primary" aria-hidden="true"></span>Athena Framework Slack Channel
                 </a>
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.0.0-beta.8</strong>.
+              Current version: <strong>v1.0.0</strong>.
             </p>
             <p>
               Documentation powered by <a class="bg-inverse-link" href="https://jekyllrb.com/" target="_blank">Jekyll</a>. Contents adapted from <a class="bg-inverse-link" href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.
@@ -125,11 +130,16 @@
       </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js" integrity="sha256-mIiWebTG82x+OcV3vUA49ffGDIAJ53uC9jflw5/+REs=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.bundle.min.js" integrity="sha256-VCsWOz+0GuHdS/sIICtQNTFJdbaDI80rxvoB7BXabrU=" crossorigin="anonymous"></script>
 
     
-    <script src="/static/js/docs.min.js"></script>
+    <script>
+      var SEARCH_INDEX_URL = 'https://ucf.github.io/Athena-Framework/search-index.json';
+      var SEARCH_DATA_URL = 'https://ucf.github.io/Athena-Framework/search-data.json';
+    </script>
+    <script src="https://ucf.github.io/Athena-Framework/static/js/docs.min.js"></script>
     
 
   </body>

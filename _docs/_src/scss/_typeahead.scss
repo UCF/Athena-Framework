@@ -1,0 +1,69 @@
+.twitter-typeahead {
+  background-color: $input-bg;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgcm9sZT0iaW1nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaW5ZTWluIj48cGF0aCBmaWxsPSIjY2NjIiBkPSJNNTA1IDQ0Mi43TDQwNS4zIDM0M2MtNC41LTQuNS0xMC42LTctMTctN0gzNzJjMjcuNi0zNS4zIDQ0LTc5LjcgNDQtMTI4QzQxNiA5My4xIDMyMi45IDAgMjA4IDBTMCA5My4xIDAgMjA4czkzLjEgMjA4IDIwOCAyMDhjNDguMyAwIDkyLjctMTYuNCAxMjgtNDR2MTYuM2MwIDYuNCAyLjUgMTIuNSA3IDE3bDk5LjcgOTkuN2M5LjQgOS40IDI0LjYgOS40IDMzLjkgMGwyOC4zLTI4LjNjOS40LTkuNCA5LjQtMjQuNi4xLTM0ek0yMDggMzM2Yy03MC43IDAtMTI4LTU3LjItMTI4LTEyOCAwLTcwLjcgNTcuMi0xMjggMTI4LTEyOCA3MC43IDAgMTI4IDU3LjIgMTI4IDEyOCAwIDcwLjctNTcuMiAxMjgtMTI4IDEyOHoiIGNsYXNzPSIiPjwvcGF0aD48L3N2Zz4=);
+  background-position: right .5rem center;
+  background-repeat: no-repeat;
+  background-size: auto 50%;
+  width: 100%;
+
+  .tt-input {
+    @extend .form-control;
+    background-color: transparent;
+    padding-right: 3rem;
+
+    @include hover-focus() {
+      // Sadly this !important is necessary to override complex selectors inherited from `@extend .form-control` above
+      // scss-lint:disable ImportantRule
+      background-color: transparent !important;
+      // scss-lint:enable ImportantRule
+    }
+  }
+
+  .tt-hint {
+    color: $gray-light;
+    height: 100%;
+    line-height: 1;
+    padding: calc(#{$input-padding-y} + #{$btn-border-width - $input-btn-border-width}) $input-padding-x;
+
+    @include media-breakpoint-up(md) {
+      padding: calc(#{$input-padding-y-md} + #{$btn-border-width - $input-btn-border-width}) $input-padding-x;
+    }
+  }
+
+  .tt-menu {
+    @extend .dropdown;
+    right: 0;
+  }
+
+  .tt-open {
+    @extend .show;
+  }
+
+  .tt-dataset {
+    @extend .dropdown-menu;
+    max-height: 40vh;
+    overflow-y: scroll;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      max-height: 75vh;
+      max-width: 100%;
+      width: 30rem;
+    }
+  }
+
+  .tt-suggestion {
+    @extend .dropdown-item;
+    white-space: normal;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .tt-cursor {
+    background-color: $dropdown-link-active-bg;
+    color: $dropdown-link-active-color;
+    text-decoration: none;
+  }
+}

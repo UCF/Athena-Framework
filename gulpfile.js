@@ -20,7 +20,8 @@ var browserSync = require('browser-sync').create(),
   path = require('path'),
   jsonToYaml = require('gulp-json-to-yaml'),
   fs = require('fs'),
-  shell = require('gulp-shell');
+  shell = require('gulp-shell'),
+  lunr = require('lunr');
 
 
 var configLocal = require('./gulp-config.json'),
@@ -50,6 +51,8 @@ var configLocal = require('./gulp-config.json'),
       distPath: './_docs/static',
       rootPath: './_docs'
     },
+    docsLocalPath: './docs-local',
+    ghPagesPath: './docs',
     examplesPath: './_examples',
     packagesPath: './node_modules',
     bootstrap: {
@@ -128,6 +131,29 @@ function buildJS(src, filename, dest, applyHeader, doBrowserSync, forceIncludePa
     .pipe(rename(filename))
     .pipe(gulp.dest(dest))
     .pipe(gulpif(doBrowserSync, browserSync.stream()));
+}
+
+// Generates a search index for the documentation.
+function buildDocsIndex(dataPath, indexPath) {
+  dataPath = dataPath || config.docsLocalPath + '/search-data.json';
+  indexPath = indexPath || config.docsLocalPath + '/search-index.json';
+
+  var documents = JSON.parse(fs.readFileSync(dataPath));
+
+  // Generate index
+  var idx = lunr(function () {
+    this.ref('id');
+    this.field('title');
+
+    documents.forEach(function (doc) {
+      this.add(doc);
+    }, this);
+  });
+
+  var searchIndex = (JSON.stringify(idx));
+
+  // Save search index
+  return fs.writeFileSync(indexPath, searchIndex);
 }
 
 
@@ -379,10 +405,20 @@ gulp.task('docs-default', function (callback) {
 });
 
 // Generates a new local build of the docs.
-gulp.task('docs-local', ['docs-config-local', 'docs-default'], shell.task('bundle exec jekyll build --config=_config.yml,_config_local.yml', {
+gulp.task('docs-local-build', ['docs-config-local', 'docs-default'], shell.task('bundle exec jekyll build --config=_config.yml,_config_local.yml', {
   cwd: __dirname + '/_docs',
   verbose: true
 }));
+
+// Generates a search index for the documentation's search feature.
+gulp.task('docs-local-index', function() {
+  return buildDocsIndex(config.docsLocalPath + '/search-data.json', config.docsLocalPath + '/search-index.json');
+});
+
+// Run all local documentation-related tasks.
+gulp.task('docs-local', function() {
+  return runSequence('docs-local-build', 'docs-local-index');
+});
 
 // Generates a new local build of the docs and reloads BrowserSync (if enabled).
 gulp.task('docs-onwatch', ['docs-local'], browserSyncReload);
@@ -400,15 +436,25 @@ gulp.task('docs-watch', function() {
   ], ['docs-onwatch'], { dot: true });
 });
 
-// Runs all tasks necessary to generate production-ready (Github Pages)
-// documentation.
-gulp.task('gh-pages', ['docs-default'], shell.task('bundle exec jekyll build --config=_config.yml,_config_prod.yml', {
+// Generates a new production-ready build of the docs.
+gulp.task('gh-pages-build', ['docs-default'], shell.task('bundle exec jekyll build --config=_config.yml,_config_prod.yml', {
   cwd: __dirname + '/_docs',
   verbose: true,
   env: {
     JEKYLL_ENV: 'production'
   }
 }));
+
+// Generates a search index for production-ready documentation.
+gulp.task('gh-pages-index', function() {
+  return buildDocsIndex(config.ghPagesPath + '/search-data.json', config.ghPagesPath + '/search-index.json');
+});
+
+// Runs all tasks necessary to generate production-ready (Github Pages)
+// documentation.
+gulp.task('gh-pages', function() {
+  return runSequence('gh-pages-build', 'gh-pages-index');
+});
 
 
 //
