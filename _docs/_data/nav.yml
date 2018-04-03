@@ -1,13 +1,11 @@
 - title: Getting started
   pages:
-    - title: Introduction
-    - title: Download
-    - title: Install
-    - title: Browsers & devices
-    - title: JavaScript
-    - title: Options
+    - title: Quick start
+    - title: Download & install
     - title: Build tools
-    - title: Best practices
+    - title: Options
+    - title: JavaScript
+    - title: Browsers & devices
     - title: Accessibility
 
 - title: Layout
@@ -19,7 +17,7 @@
 
 - title: Content
   pages:
-    - title: Reboot
+    - title: Resets
     - title: Typography
     - title: Code
     - title: Images
@@ -57,21 +55,18 @@
     - title: Close icon
     - title: Colors
     - title: Display property
+    - title: Embeds
     - title: Filters
     - title: Flexbox
+    - title: Float
     - title: Image replacement
-    - title: Invisible content
     - title: Media backgrounds
     - title: Pointer Events
     - title: Position
-    - title: Responsive helpers
     - title: Screenreaders
     - title: Sizing
     - title: Spacing
     - title: States
     - title: Typography
     - title: Vertical align
-
-- title: About
-
-- title: Migration
+    - title: Visibility property

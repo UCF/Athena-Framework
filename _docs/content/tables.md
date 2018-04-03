@@ -7,10 +7,12 @@ group: content
 
 Due to the widespread use of tables across third-party widgets like calendars and date pickers, we've designed our tables to be **opt-in**. Just add the base class `.table` to any `<table>`, then extend with custom styles or our various included modifier classes.
 
+
 ## Contents
 
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
+
 
 ## Examples
 
@@ -84,13 +86,14 @@ You can also invert the colors—with light text on dark backgrounds—with `.ta
 </table>
 {% endexample %}
 
+
 ## Table head options
 
 Similar to default and inverse tables, use one of two modifier classes to make `<thead>`s appear light or dark gray.
 
 {% example html %}
 <table class="table">
-  <thead class="thead-inverse">
+  <thead class="theafd-inverse">
     <tr>
       <th>#</th>
       <th>First Name</th>
@@ -121,7 +124,7 @@ Similar to default and inverse tables, use one of two modifier classes to make `
 </table>
 
 <table class="table">
-  <thead class="thead-default">
+  <thead class="theafd-default">
     <tr>
       <th>#</th>
       <th>First Name</th>
@@ -151,6 +154,7 @@ Similar to default and inverse tables, use one of two modifier classes to make `
   </tbody>
 </table>
 {% endexample %}
+
 
 ## Striped rows
 
@@ -221,6 +225,7 @@ Use `.table-striped` to add zebra-striping to any table row within the `<tbody>`
   </tbody>
 </table>
 {% endexample %}
+
 
 ## Bordered table
 
@@ -302,6 +307,7 @@ Add `.table-bordered` for borders on all sides of the table and cells.
 </table>
 {% endexample %}
 
+
 ## Hoverable rows
 
 Add `.table-hover` to enable a hover state on table rows within a `<tbody>`.
@@ -369,6 +375,7 @@ Add `.table-hover` to enable a hover state on table rows within a `<tbody>`.
   </tbody>
 </table>
 {% endexample %}
+
 
 ## Small table
 
@@ -438,6 +445,7 @@ Add `.table-sm` to make tables more compact by cutting cell padding in half.
 </table>
 {% endexample %}
 
+
 ## Contextual classes
 
 Use contextual classes to color table rows or individual cells.
@@ -450,7 +458,7 @@ Use contextual classes to color table rows or individual cells.
 | `.table-warning` | Indicates a warning that might need attention |
 | `.table-danger` | Indicates a dangerous or potentially negative action |
 
-<div class="bd-example">
+<div class="afd-example">
   <table class="table">
     <thead>
       <tr>
@@ -537,9 +545,9 @@ Use contextual classes to color table rows or individual cells.
 </tr>
 {% endhighlight %}
 
-Regular table background variants are not available with the inverse table, however, you may use [text or background utilities]({{ site.baseurl }}/utilities/colors/) to achieve similar styles.
+Regular table background variants are not available with the inverse table, however, you may use [text or background utilities]({{ site.baseurl }}{% link utilities/colors.md %}) to achieve similar styles.
 
-<div class="bd-example">
+<div class="afd-example">
   <table class="table table-inverse">
     <thead>
       <tr>
@@ -629,6 +637,7 @@ Regular table background variants are not available with the inverse table, howe
 {% capture callout-include %}{% include callout-warning-color-assistive-technologies.md %}{% endcapture %}
 {{ callout-include | markdownify }}
 
+
 ## Responsive tables
 
 Create responsive tables by adding `.table-responsive` to any `.table` to make them scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, you will not see any difference in these tables.
@@ -639,7 +648,7 @@ Create responsive tables by adding `.table-responsive` to any `.table` to make t
 Responsive tables make use of `overflow-y: hidden`, which clips off any content that goes beyond the bottom or top edges of the table. In particular, this can clip off dropdown menus and other third-party widgets.
 {% endcallout %}
 
-<div class="bd-example">
+<div class="afd-example">
   <table class="table table-responsive">
     <thead>
       <tr>

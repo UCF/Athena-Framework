@@ -175,6 +175,6 @@
 .card-img,
 .card-img-top,
 .card-img-bottom {
-  min-height: 1px; // fixes IE11 bug where img height doesn't scale properly. https://github.com/philipwalton/flexbugs/issues/75
+  min-height: 1px; // fixes IE 11 bug where img height doesn't scale properly. https://github.com/philipwalton/flexbugs/issues/75
   width: 100%; // TODO remove after upgrading to BS4 beta
 }

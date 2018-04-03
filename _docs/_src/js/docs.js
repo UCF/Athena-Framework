@@ -2,13 +2,17 @@
 // =require ./anchor-js/anchor.js
 // =require ./clipboard/dist/clipboard.js
 // =require ./holderjs/holder.js
+// =require ./lunr/lunr.js
+
+// =require search.js
+
 
 /*!
- * JavaScript for Bootstrap's docs (https://getbootstrap.com)
- * Copyright 2011-2017 The Bootstrap Authors
- * Copyright 2011-2017 Twitter, Inc.
- * Licensed under the Creative Commons Attribution 3.0 Unported License. For
- * details, see https://creativecommons.org/licenses/by/3.0/.
+ * JavaScript for Athena Framework's documentation, a derivative of
+ * JavaScript for Bootstrap's docs by The Bootstrap Authors and Twitter, Inc.
+ *
+ * Used under and licensed under the Creative Commons Attribution 3.0 Unported
+ * License (https://creativecommons.org/licenses/by/3.0/).
  */
 
 /* global Clipboard, anchors, Holder */
@@ -31,10 +35,10 @@
     $('.popover-test').popover();
 
     // Indeterminate checkbox example
-    $('.bd-example-indeterminate [type="checkbox"]').prop('indeterminate', true);
+    $('.afd-example-indeterminate [type="checkbox"]').prop('indeterminate', true);
 
     // Disable empty links in docs examples
-    $('.bd-content [href="#"]').click(function (e) {
+    $('.afd-content [href="#"]').click(function (e) {
       e.preventDefault();
     });
 
@@ -50,13 +54,13 @@
     });
 
     // Activate animated progress bar
-    $('.bd-toggle-animated-progress').on('click', function () {
+    $('.afd-toggle-animated-progress').on('click', function () {
       $(this).siblings('.progress').find('.progress-bar-striped').toggleClass('progress-bar-animated');
     });
 
     // Insert copy to clipboard button before .highlight
     $('.highlight').each(function () {
-      var btnHtml = '<div class="bd-clipboard"><span class="btn-clipboard" title="Copy to clipboard">Copy</span></div>'
+      var btnHtml = '<div class="afd-clipboard"><span class="btn-clipboard" title="Copy to clipboard">Copy</span></div>'
       $(this).before(btnHtml);
       $('.btn-clipboard').tooltip();
     });
@@ -98,7 +102,7 @@
   'use strict';
 
   anchors.options.placement = 'left';
-  anchors.add('.bd-content > h1, .bd-content > h2, .bd-content > h3, .bd-content > h4, .bd-content > h5');
+  anchors.add('.afd-content > h1, .afd-content > h2, .afd-content > h3, .afd-content > h4, .afd-content > h5');
 
   Holder.addTheme('gray', {
     bg: '#777',
