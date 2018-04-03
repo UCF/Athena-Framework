@@ -1,6 +1,6 @@
 {
   "name": "ucf-athena-framework",
-  "version": "1.0.0-beta.8",
+  "version": "1.0.0",
   "author": {
     "name": "UCF Web Communications",
     "email": "webcom@ucf.edu",
@@ -57,7 +57,8 @@
     "run-sequence": "^2.2.0"
   },
   "browserslist": [
-    "last 2 versions", "not ie 10"
+    "last 2 versions",
+    "not ie 10"
   ],
   "dependencies": {
     "jquery": ">=3.2.1",
