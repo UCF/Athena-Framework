@@ -29,7 +29,7 @@ Read more about the <a href="{{ site.baseurl }}{% link migration.md %}">differen
 
 ### HTML5 doctype
 
-Bootstrap requires the use of the HTML5 doctype. Make sure you've included it at the very top of your document.
+Athena requires the use of the HTML5 doctype. Make sure you've included it at the very top of your document.
 
 {% highlight html %}
 <!DOCTYPE html>
@@ -40,7 +40,7 @@ Bootstrap requires the use of the HTML5 doctype. Make sure you've included it at
 
 ### Responsive meta tag
 
-Bootstrap is developed *mobile first*, a strategy in which we optimize code for mobile devices first and then scale up components as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, **add the responsive viewport meta tag** to your `<head>`.
+Athena is developed *mobile first*, a strategy in which we optimize code for mobile devices first and then scale up components as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, **add the responsive viewport meta tag** to your `<head>`.
 
 {% highlight html %}
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
