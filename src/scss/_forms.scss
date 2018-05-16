@@ -147,10 +147,7 @@ select.form-control-lg {
 }
 // scss-lint:enable QualifyingElement
 
-.form-control-success,
-.form-control-warning,
-.form-control-danger,
-.search-icon {
+.form-control-search {
   padding-right: ($input-padding-x * 3);
   background-repeat: no-repeat;
   background-position: center right ($input-height / 4);
@@ -158,7 +155,7 @@ select.form-control-lg {
 }
 
 // Search input field icon
-.search-icon {
+.form-control-search {
   background-image: $form-icon-search;
 }
 

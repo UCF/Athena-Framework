@@ -858,12 +858,12 @@ Checkboxes and radios are also supported.
 
 
 ## Search Input Fields
-Search input fields can be customized with a magnifying glass icon by adding the `.search-icon` class to the `input` element. Note that this icon does not act as a submit button.
+Search input fields can be customized with a magnifying glass icon by adding the `.form-control-search` class to the `input` element. Note that this icon does not act as a submit button.
 
 {% example html %}
 <div class="form-group">
 <label class="form-control-label" for="inputSearch1">Input with Search Icon</label>
-<input type="text" class="form-control search-icon" id="inputSearch1">
+<input type="text" class="form-control form-control-search" id="inputSearch1">
 </div>
 {% endexample %}
 
