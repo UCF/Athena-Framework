@@ -857,6 +857,10 @@ $custom-file-text: (
 ) !default;
 
 
+// Search input field icon
+$form-icon-search-color: $gray !default;
+$form-icon-search: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15'%3E%3Cpath fill='#{$form-icon-search-color}' d='M14.66,13,11.57,9.94a6.3,6.3,0,0,0,1.11-3.58A6.36,6.36,0,1,0,10,11.58L13,14.66A1.15,1.15,0,0,0,14.66,13ZM6.35,10.38a4,4,0,1,1,4-4A4,4,0,0,1,6.35,10.38Z'/%3E%3C/svg%3E"), "#", "%23") !default;
+
 // Form validation icons
 $form-icon-success-color: $brand-success !default;
 $form-icon-success: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$form-icon-success-color}' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3E%3C/svg%3E"), "#", "%23") !default;

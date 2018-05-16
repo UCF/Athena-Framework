@@ -857,6 +857,16 @@ Checkboxes and radios are also supported.
 {% endexample %}
 
 
+## Search Input Fields
+Search input fields can be customized with a magnifying glass icon by adding the `.form-control-search` class to the `input` element. Note that this icon does not act as a submit button.
+
+{% example html %}
+<div class="form-group">
+<label class="form-control-label" for="inputSearch1">Input with Search Icon</label>
+<input type="text" class="form-control form-control-search" id="inputSearch1">
+</div>
+{% endexample %}
+
 ## Custom forms
 
 For even more customization and cross browser consistency, use our completely custom form elements to replace the browser defaults. They're built on top of semantic and accessible markup, so they're solid replacements for any default form control.
