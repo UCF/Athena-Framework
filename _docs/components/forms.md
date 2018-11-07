@@ -1004,6 +1004,23 @@ Custom `<select>` menus need only a custom class, `.custom-select` to trigger th
 </select>
 {% endexample %}
 
+You can also modify the size of custom `<select>`'s using size modifier classes:
+
+{% example html %}
+<select class="custom-select custom-select-sm">
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
+<select class="custom-select custom-select-lg">
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
+{% endexample %}
+
 ### File browser
 
 The file input is the most gnarly of the bunch and require additional JavaScript if you'd like to hook them up with functional *Choose file...* and selected file name text.
