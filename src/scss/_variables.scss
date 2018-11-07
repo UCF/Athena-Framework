@@ -825,19 +825,24 @@ $custom-select-indicator:     str-replace(url("data:image/svg+xml;charset=utf8,%
 $custom-select-border-width:  $input-btn-border-width !default;
 $custom-select-border-color:  $input-border-color !default;
 $custom-select-border-radius: $input-border-radius !default; // modified
+$custom-select-height:        calc(3rem + (#{$custom-select-border-width} * 2)) !default; // custom
 
 $custom-select-focus-border-color: lighten($brand-complementary, 25%) !default; // modified
 $custom-select-focus-box-shadow:   $input-box-shadow-focus !default; // modified
 
 $custom-select-sm-padding-y:  .2rem !default;
 $custom-select-sm-font-size:  75% !default;
+$custom-select-sm-height:     calc(1.825rem + (#{$custom-select-border-width} * 2)) !default; // custom
 
-$custom-file-height:           2.5rem !default;
+$custom-select-lg-font-size: 125% !default; // custom
+$custom-select-lg-height: calc(4.325rem + (#{$custom-select-border-width} * 2)) !default; // custom
+
+$custom-file-height:           calc(3rem + (#{$custom-select-border-width} * 2)) !default; // modified
 $custom-file-width:            14rem !default;
 $custom-file-focus-box-shadow: 0 0 0 .075rem $white, 0 0 0 .2rem $brand-complementary !default; // modified
 
-$custom-file-padding-x:     .5rem !default;
-$custom-file-padding-y:     1rem !default;
+$custom-file-padding-x:     1rem !default; // modified
+$custom-file-padding-y:     .75rem !default; // modified
 $custom-file-line-height:   1.5 !default;
 $custom-file-color:         $gray-darker !default; // modified
 $custom-file-bg:            $white !default;
@@ -856,6 +861,10 @@ $custom-file-text: (
   )
 ) !default;
 
+
+// Search input field icon
+$form-icon-search-color: $gray !default;
+$form-icon-search: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15'%3E%3Cpath fill='#{$form-icon-search-color}' d='M14.66,13,11.57,9.94a6.3,6.3,0,0,0,1.11-3.58A6.36,6.36,0,1,0,10,11.58L13,14.66A1.15,1.15,0,0,0,14.66,13ZM6.35,10.38a4,4,0,1,1,4-4A4,4,0,0,1,6.35,10.38Z'/%3E%3C/svg%3E"), "#", "%23") !default;
 
 // Form validation icons
 $form-icon-success-color: $brand-success !default;

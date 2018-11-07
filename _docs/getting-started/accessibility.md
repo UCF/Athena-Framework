@@ -27,7 +27,7 @@ The overall accessibility of any project built with Athena depends in large part
 
 ### Structural markup
 
-Athena's styling and layout can be applied to a wide range of markup structures. Athean's documentation aims to provide developers with best practice examples to demonstrate the use of Athena itself and illustrate appropriate semantic markup, including ways in which potential accessibility concerns can be addressed.
+Athena's styling and layout can be applied to a wide range of markup structures. Athena's documentation aims to provide developers with best practice examples to demonstrate the use of Athena itself and illustrate appropriate semantic markup, including ways in which potential accessibility concerns can be addressed.
 
 ### Interactive components
 
