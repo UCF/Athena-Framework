@@ -49,10 +49,26 @@
 //
 
 .custom-select {
+  height: $custom-select-height;
+
   &:focus {
     // Fix where Bootstrap calls box-shadow(), preventing outline replacements
     // from taking effect when $enable-shadows is false
     box-shadow: $custom-select-focus-box-shadow;
+  }
+}
+
+.custom-select-sm {
+  height: $custom-select-sm-height;
+}
+
+.custom-select-lg {
+  font-size: $custom-select-lg-font-size;
+  height: $custom-select-lg-height;
+
+  // Dumb hack to fix subpixel difference in height with input group buttons
+  .input-group & {
+    height: calc(#{$custom-select-lg-height} - .5px);
   }
 }
 
