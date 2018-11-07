@@ -84,3 +84,11 @@
     box-shadow: $custom-file-focus-box-shadow;
   }
 }
+
+.custom-file-control {
+  // Fix reversed variable usage in Bootstrap
+  &,
+  &::before {
+    padding: $custom-file-padding-y $custom-file-padding-x;
+  }
+}

@@ -837,12 +837,12 @@ $custom-select-sm-height:     calc(1.825rem + (#{$custom-select-border-width} * 
 $custom-select-lg-font-size: 125% !default; // custom
 $custom-select-lg-height: calc(4.325rem + (#{$custom-select-border-width} * 2)) !default; // custom
 
-$custom-file-height:           2.5rem !default;
+$custom-file-height:           calc(3rem + (#{$custom-select-border-width} * 2)) !default; // modified
 $custom-file-width:            14rem !default;
 $custom-file-focus-box-shadow: 0 0 0 .075rem $white, 0 0 0 .2rem $brand-complementary !default; // modified
 
-$custom-file-padding-x:     .5rem !default;
-$custom-file-padding-y:     1rem !default;
+$custom-file-padding-x:     1rem !default; // modified
+$custom-file-padding-y:     .75rem !default; // modified
 $custom-file-line-height:   1.5 !default;
 $custom-file-color:         $gray-darker !default; // modified
 $custom-file-bg:            $white !default;
