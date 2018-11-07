@@ -13,7 +13,7 @@
 
 // Bootstrap - Core variables and mixins
 @import 'bootstrap/variables';
-@import 'bootstrap/mixins';
+@import 'bootstrap-mixins'; // NOTE: Athena imports its own modified bootstrap mixin file.
 @import 'bootstrap/custom';
 
 // Bootstrap - Reset and dependencies
@@ -70,7 +70,6 @@
 @import 'reset';
 
 @import 'type';
-@import 'grid';
 @import 'tables';
 @import 'forms';
 @import 'buttons';
