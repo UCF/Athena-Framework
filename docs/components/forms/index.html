@@ -892,6 +892,7 @@
       <li><a href="#examples" id="markdown-toc-examples">Examples</a></li>
     </ul>
   </li>
+  <li><a href="#search-input-fields" id="markdown-toc-search-input-fields">Search Input Fields</a></li>
   <li><a href="#custom-forms" id="markdown-toc-custom-forms">Custom forms</a>    <ul>
       <li><a href="#checkboxes-and-radios-1" id="markdown-toc-checkboxes-and-radios-1">Checkboxes and radios</a>        <ul>
           <li><a href="#checkboxes" id="markdown-toc-checkboxes">Checkboxes</a></li>
@@ -2269,6 +2270,20 @@
   <span class="nt">&lt;/label&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></div>
 
+<h2 id="search-input-fields">Search Input Fields</h2>
+<p>Search input fields can be customized with a magnifying glass icon by adding the <code class="highlighter-rouge">.form-control-search</code> class to the <code class="highlighter-rouge">input</code> element. Note that this icon does not act as a submit button.</p>
+
+<div class="afd-example" data-example-id="">
+<div class="form-group">
+<label class="form-control-label" for="inputSearch1">Input with Search Icon</label>
+<input type="text" class="form-control form-control-search" id="inputSearch1" />
+</div>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-control-label"</span> <span class="na">for=</span><span class="s">"inputSearch1"</span><span class="nt">&gt;</span>Input with Search Icon<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control form-control-search"</span> <span class="na">id=</span><span class="s">"inputSearch1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
 <h2 id="custom-forms">Custom forms</h2>
 
 <p>For even more customization and cross browser consistency, use our completely custom form elements to replace the browser defaults. They’re built on top of semantic and accessible markup, so they’re solid replacements for any default form control.</p>
@@ -2471,6 +2486,35 @@
   <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"3"</span><span class="nt">&gt;</span>Three<span class="nt">&lt;/option&gt;</span>
 <span class="nt">&lt;/select&gt;</span></code></pre></div>
 
+<p>You can also modify the size of custom <code class="highlighter-rouge">&lt;select&gt;</code>’s using size modifier classes:</p>
+
+<div class="afd-example" data-example-id="">
+<select class="custom-select custom-select-sm">
+  <option selected="">Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
+<select class="custom-select custom-select-lg">
+  <option selected="">Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
+</div>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"custom-select custom-select-sm"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">selected</span><span class="nt">&gt;</span>Open this select menu<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"1"</span><span class="nt">&gt;</span>One<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2"</span><span class="nt">&gt;</span>Two<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"3"</span><span class="nt">&gt;</span>Three<span class="nt">&lt;/option&gt;</span>
+<span class="nt">&lt;/select&gt;</span>
+<span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"custom-select custom-select-lg"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">selected</span><span class="nt">&gt;</span>Open this select menu<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"1"</span><span class="nt">&gt;</span>One<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2"</span><span class="nt">&gt;</span>Two<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"3"</span><span class="nt">&gt;</span>Three<span class="nt">&lt;/option&gt;</span>
+<span class="nt">&lt;/select&gt;</span></code></pre></div>
+
 <h3 id="file-browser">File browser</h3>
 
 <p>The file input is the most gnarly of the bunch and require additional JavaScript if you’d like to hook them up with functional <em>Choose file…</em> and selected file name text.</p>
@@ -2539,7 +2583,7 @@
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.0.0</strong>.
+              Current version: <strong>v1.0.1</strong>.
             </p>
             <p>
               Documentation powered by <a class="bg-inverse-link" href="https://jekyllrb.com/" target="_blank">Jekyll</a>. Contents adapted from <a class="bg-inverse-link" href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.
@@ -2552,7 +2596,7 @@
             <div class="card card-outline-inverse card-github">
   <div class="card-block">
     <h2 class="card-title h4">Want to contribute?</h2>
-    <p class="card-text">If you're interested in contributing to the Athena Framework, please read our <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/CONTRIBUTING.md">contributing guidelines</a>, then submit a new issue or pull request.</p>
+    <p class="card-text">If you're interested in contributing to the Athena Framework, please read our <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/CONTRIBUTING.md">contributing guidelines</a>, then submit a new issue or pull request.</p>
     <a href="https://github.com/UCF/Athena-Framework" class="btn btn-primary btn-sm" target="_blank">GitHub Page</a>
   </div>
 </div>
