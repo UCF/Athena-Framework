@@ -47,13 +47,11 @@
     "gulp-shell": "^0.6.5",
     "gulp-sourcemaps": "^2.6.1",
     "gulp-uglify": "^3.0.1",
-    "gulp-util": "^3.0.8",
     "holderjs": "^2.9.6",
     "lunr": "^2.3.5",
     "merge": "^1.2.1",
     "objectFitPolyfill": "^2.1.1",
     "path": "^0.12.7",
-    "run-sequence": "^2.2.0",
     "stickyfilljs": "^2.1.0"
   },
   "browserslist": [

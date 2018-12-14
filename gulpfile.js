@@ -1,115 +1,135 @@
-var browserSync = require('browser-sync').create(),
-  gulp = require('gulp'),
-  autoprefixer = require('gulp-autoprefixer'),
-  cleanCSS = require('gulp-clean-css'),
-  include = require('gulp-include'),
-  eslint = require('gulp-eslint'),
-  isFixed = require('gulp-eslint-if-fixed'),
-  babel = require('gulp-babel'),
-  rename = require('gulp-rename'),
-  sass = require('gulp-sass'),
-  scsslint = require('gulp-scss-lint'),
-  uglify = require('gulp-uglify'),
-  replace = require('gulp-replace'),
-  runSequence = require('run-sequence'),
-  merge = require('merge'),
-  header = require('gulp-header'),
-  footer = require('gulp-footer'),
-  gulpif = require('gulp-if'),
-  gutil = require('gulp-util'),
-  path = require('path'),
-  jsonToYaml = require('gulp-json-to-yaml'),
-  fs = require('fs'),
-  shell = require('gulp-shell'),
-  lunr = require('lunr');
+/* eslint no-sync: "off" */
+
+const fs           = require('fs');
+const browserSync  = require('browser-sync').create();
+const gulp         = require('gulp');
+const autoprefixer = require('gulp-autoprefixer');
+const babel        = require('gulp-babel');
+const cleanCSS     = require('gulp-clean-css');
+const eslint       = require('gulp-eslint');
+const isFixed      = require('gulp-eslint-if-fixed');
+const footer       = require('gulp-footer');
+const header       = require('gulp-header');
+const gulpif       = require('gulp-if');
+const include      = require('gulp-include');
+const jsonToYaml   = require('gulp-json-to-yaml');
+const rename       = require('gulp-rename');
+const replace      = require('gulp-replace');
+const sass         = require('gulp-sass');
+const sassLint     = require('gulp-sass-lint');
+const shell        = require('gulp-shell');
+const uglify       = require('gulp-uglify');
+const lunr         = require('lunr');
+const merge        = require('merge');
+const path         = require('path');
 
 
-var configLocal = require('./gulp-config.json'),
-  configDefault = {
+let config = {
+  src: {
+    scssPath: './src/scss',
+    jsPath: './src/js',
+    fontPath: './src/fonts'
+  },
+  dist: {
+    cssPath: './dist/css',
+    jsPath: './dist/js',
+    fontPath: './dist/fonts'
+  },
+  docs: {
     src: {
-      scssPath: './src/scss',
-      jsPath: './src/js',
-      fontPath: './src/fonts'
+      scssPath: './_docs/_src/scss',
+      jsPath: './_docs/_src/js'
     },
     dist: {
-      cssPath: './dist/css',
-      jsPath: './dist/js',
-      fontPath: './dist/fonts'
+      cssPath: './_docs/static/css',
+      fontPath: './_docs/static/fonts',
+      jsPath: './_docs/static/js'
     },
-    docs: {
-      src: {
-        scssPath: './_docs/_src/scss',
-        jsPath: './_docs/_src/js'
-      },
-      dist: {
-        cssPath: './_docs/static/css',
-        fontPath: './_docs/static/fonts',
-        jsPath: './_docs/static/js'
-      },
-      dataPath: './_docs/_data',
-      srcPath: './_docs/_src',
-      distPath: './_docs/static',
-      rootPath: './_docs'
-    },
-    docsLocalPath: './docs-local',
-    ghPagesPath: './docs',
-    examplesPath: './_examples',
-    packagesPath: './node_modules',
-    bootstrap: {
-      base: './node_modules/bootstrap',
-      scss: './node_modules/bootstrap/scss',
-      js: './node_modules/bootstrap/js/src'
-    },
-    pkg: getAthenaPackage(),
-    prj: {
-      yearRange: getAthenaYearRange(),
-      header: getAthenaHeader()
-    },
-    sync: false,
-    syncOptions: {},
-    docSync: false,
-    docSyncOptions: {},
-    examplesCSSKey: ''
+    dataPath: './_docs/_data',
+    srcPath: './_docs/_src',
+    distPath: './_docs/static',
+    rootPath: './_docs'
   },
-  config = merge(configDefault, configLocal);
+  docsLocalPath: './docs-local',
+  ghPagesPath: './docs',
+  examplesPath: './_examples',
+  packagesPath: './node_modules',
+  bootstrap: {
+    base: './node_modules/bootstrap',
+    scss: './node_modules/bootstrap/scss',
+    js: './node_modules/bootstrap/js/src'
+  },
+  pkg: getAthenaPackage(),
+  prj: {
+    yearRange: getAthenaYearRange(),
+    header: getAthenaHeader()
+  },
+  sync: false,
+  syncOptions: {},
+  examplesCSSKey: '',
+  examplesBaseURL: '/examples',
+  docSync: false,
+  docSyncOptions: {},
+  docBaseURL: '/docs-local'
+};
+
+/* eslint-disable no-sync */
+if (fs.existsSync('./gulp-config.json')) {
+  const overrides = JSON.parse(fs.readFileSync('./gulp-config.json'));
+  config = merge(config, overrides);
+}
+/* eslint-enable no-sync */
 
 
 //
 // Helper functions
 //
 
-// Reload an open test page via BrowserSync and call a callback so that
-// streams resolve properly.  Will silently do nothing if BrowserSync isn't
-// initialized.
-function browserSyncReload(callback) {
-  browserSync.reload();
-  callback();
+// Base scss linting function
+function lintSCSS(src) {
+  return gulp.src(src)
+    .pipe(sassLint())
+    .pipe(sassLint.failOnError());
 }
 
 // Compile scss files
-function buildCSS(src, filename, dest, applyHeader, doBrowserSync) {
+function buildCSS(src, filename, dest, applyHeader) {
   dest = dest || config.dist.cssPath;
   applyHeader = applyHeader || false;
-  doBrowserSync = doBrowserSync || false;
 
   return gulp.src(src)
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({
+      includePaths: [config.src.scssPath, config.packagesPath]
+    })
+      .on('error', sass.logError))
     .pipe(cleanCSS())
     .pipe(autoprefixer({
       // Supported browsers added in package.json ("browserslist")
       cascade: false
     }))
-    .pipe(gulpif(applyHeader, header(config.prj.header, { config: config })))
+    .pipe(gulpif(applyHeader, header(config.prj.header, {
+      config: config
+    })))
     .pipe(rename(filename))
-    .pipe(gulp.dest(dest))
-    .pipe(gulpif(doBrowserSync, browserSync.stream()));
+    .pipe(gulp.dest(dest));
+}
+
+// Base JS linting function (with eslint). Fixes problems in-place.
+function lintJS(src, dest) {
+  dest = dest || config.src.jsPath;
+
+  return gulp.src(src)
+    .pipe(eslint({
+      fix: true
+    }))
+    .pipe(eslint.format())
+    .pipe(isFixed(dest));
 }
 
 // Concat and uglify js files through babel
-function buildJS(src, filename, dest, applyHeader, doBrowserSync, forceIncludePaths) {
+function buildJS(src, filename, dest, applyHeader, forceIncludePaths) {
   dest = dest || config.dist.jsPath;
   applyHeader = applyHeader || false;
-  doBrowserSync = doBrowserSync || false;
   forceIncludePaths = forceIncludePaths || false;
 
   return gulp.src(src)
@@ -124,24 +144,46 @@ function buildJS(src, filename, dest, applyHeader, doBrowserSync, forceIncludePa
       }),
       include()
     ))
-    .on('error', console.log)
+    .on('error', console.log) // eslint-disable-line no-console
     .pipe(babel())
-    .pipe(uglify({ output: { comments: /^(!|\---)/ } })) // try to preserve non-standard headers (e.g. from objectFitPolyfill)
-    .pipe(gulpif(applyHeader, header(config.prj.header, { config: config })))
+    .pipe(uglify({
+      output: {
+        // try to preserve non-standard headers (e.g. from objectFitPolyfill)
+        comments: /^(!|---)/
+      }
+    }))
+    .pipe(gulpif(applyHeader, header(config.prj.header, {
+      config: config
+    })))
     .pipe(rename(filename))
-    .pipe(gulp.dest(dest))
-    .pipe(gulpif(doBrowserSync, browserSync.stream()));
+    .pipe(gulp.dest(dest));
+}
+
+// BrowserSync reload function
+function serverReload(done) {
+  if (config.sync) {
+    browserSync.reload();
+  }
+  done();
+}
+
+// BrowserSync serve function
+function serverServe(done) {
+  if (config.sync) {
+    browserSync.init(config.syncOptions);
+  }
+  done();
 }
 
 // Generates a search index for the documentation.
 function buildDocsIndex(dataPath, indexPath) {
-  dataPath = dataPath || config.docsLocalPath + '/search-data.json';
-  indexPath = indexPath || config.docsLocalPath + '/search-index.json';
+  dataPath = dataPath || `${config.docsLocalPath}/search-data.json`;
+  indexPath = indexPath || `${config.docsLocalPath}/search-index.json`;
 
-  var documents = JSON.parse(fs.readFileSync(dataPath));
+  const documents = JSON.parse(fs.readFileSync(dataPath));
 
   // Generate index
-  var idx = lunr(function () {
+  const idx = lunr(function () {
     this.ref('id');
     this.field('title');
 
@@ -150,7 +192,7 @@ function buildDocsIndex(dataPath, indexPath) {
     }, this);
   });
 
-  var searchIndex = (JSON.stringify(idx));
+  const searchIndex = JSON.stringify(idx);
 
   // Save search index
   return fs.writeFileSync(indexPath, searchIndex);
@@ -166,14 +208,13 @@ function getAthenaPackage() {
 }
 
 function getAthenaYearRange() {
-  var year = '',
-    startYear = 2017,
-    currentYear = new Date().getFullYear();
-  if (startYear == currentYear) {
+  let year = '';
+  const startYear = 2017;
+  const currentYear = new Date().getFullYear();
+  if (startYear === currentYear) {
     year += startYear;
-  }
-  else {
-    year += startYear + '-' + currentYear;
+  } else {
+    year += `${startYear}-${currentYear}`;
   }
   return year;
 }
@@ -188,15 +229,13 @@ function getAthenaHeader() {
 }
 
 function getLicenseComment(fileString) {
-  var regex = /\/\*(\*(?!\/)|[^*])*\*\//,
-    comment = regex.exec(fileString);
+  const regex = /\/\*(\*(?!\/)|[^*])*\*\//;
+  const comment = regex.exec(fileString);
 
   if (!comment || !comment[0]) {
     return false;
   }
-  else {
-    return comment[0];
-  }
+  return comment[0];
 }
 
 
@@ -205,82 +244,102 @@ function getLicenseComment(fileString) {
 //
 
 // Web font processing
-gulp.task('move-components-font-sans-serif', function () {
+gulp.task('move-components-font-sans-serif', () => {
   return gulp.src([
-    config.src.fontPath + '/ucf-sans-serif-alt/*',
-    '!' + config.src.fontPath + '/ucf-sans-serif-alt/generator_config.txt'
+    `${config.src.fontPath}/ucf-sans-serif-alt/*`,
+    `!${config.src.fontPath}/ucf-sans-serif-alt/generator_config.txt`
   ])
-    .pipe(gulp.dest(config.dist.fontPath + '/ucf-sans-serif-alt'));
+    .pipe(gulp.dest(`${config.dist.fontPath}/ucf-sans-serif-alt`));
 });
 
-gulp.task('move-components-font-condensed', function () {
+gulp.task('move-components-font-condensed', () => {
   return gulp.src([
-    config.src.fontPath + '/ucf-condensed-alt/*',
-    '!' + config.src.fontPath + '/ucf-condensed-alt/generator_config.txt'
+    `${config.src.fontPath}/ucf-condensed-alt/*`,
+    `!${config.src.fontPath}/ucf-condensed-alt/generator_config.txt`
   ])
-    .pipe(gulp.dest(config.dist.fontPath + '/ucf-condensed-alt'));
+    .pipe(gulp.dest(`${config.dist.fontPath}/ucf-condensed-alt`));
 });
 
-gulp.task('move-components-font-slab-serif', function () {
+gulp.task('move-components-font-slab-serif', () => {
   return gulp.src([
-    config.src.fontPath + '/tulia/*',
-    '!' + config.src.fontPath + '/tulia/generator_config.txt'
+    `${config.src.fontPath}/tulia/*`,
+    `!${config.src.fontPath}/tulia/generator_config.txt`
   ])
-    .pipe(gulp.dest(config.dist.fontPath + '/tulia'));
+    .pipe(gulp.dest(`${config.dist.fontPath}/tulia`));
 });
 
-gulp.task('move-components-fonts', [
+gulp.task('move-components-fonts', gulp.parallel(
   'move-components-font-sans-serif',
   'move-components-font-condensed',
   'move-components-font-slab-serif'
-]);
+));
 
 // Copy Bootstrap scss files
-gulp.task('move-components-bootstrap-scss', function () {
-  return gulp.src(config.bootstrap.scss + '/**/*', { base: config.bootstrap.scss })
-    .pipe(gulp.dest(config.src.scssPath + '/bootstrap'));
+gulp.task('move-components-bootstrap-scss', () => {
+  return gulp.src(`${config.bootstrap.scss}/**/*`, {
+    base: config.bootstrap.scss
+  })
+    .pipe(gulp.dest(`${config.src.scssPath}/bootstrap`));
 });
 
 // Copy Bootstrap js files
-gulp.task('move-components-bootstrap-js', function () {
-  return gulp.src(config.bootstrap.js + '/*.js', { base: config.bootstrap.js })
-    .pipe(gulp.dest(config.src.jsPath + '/bootstrap'));
+gulp.task('move-components-bootstrap-js', () => {
+  return gulp.src(`${config.bootstrap.js}/*.js`, {
+    base: config.bootstrap.js
+  })
+    .pipe(gulp.dest(`${config.src.jsPath}/bootstrap`));
 });
 
 // Copy Bootstrap's license block comment for css and save to a new file
-gulp.task('move-components-bootstrap-license-css', function () {
-  var sampleFile = fs.readFileSync(config.bootstrap.base + '/dist/css/bootstrap.min.css', { base: config.bootstrap.base }).toString(),
-    comment = getLicenseComment(sampleFile);
+gulp.task('move-components-bootstrap-license-css', (done) => {
+  const sampleFile = fs.readFileSync(`${config.bootstrap.base}/dist/css/bootstrap.min.css`, {
+    base: config.bootstrap.base
+  }).toString();
+  const comment = getLicenseComment(sampleFile);
 
-  if (!comment) { return; }
+  if (!comment) {
+    done();
+    return;
+  }
 
-  return fs.writeFileSync(config.src.scssPath + '/bootstrap/_bootstrap-license.css', comment);
+  fs.writeFileSync(`${config.src.scssPath}/bootstrap/_bootstrap-license.css`, comment);
+  done();
 });
 
 // Copy Bootstrap's license block comment for js and save to a new file
-gulp.task('move-components-bootstrap-license-js', function () {
-  var sampleFile = fs.readFileSync(config.bootstrap.base + '/dist/js/bootstrap.min.js', { base: config.bootstrap.base }).toString();
-  comment = getLicenseComment(sampleFile);
+gulp.task('move-components-bootstrap-license-js', (done) => {
+  const sampleFile = fs.readFileSync(`${config.bootstrap.base}/dist/js/bootstrap.min.js`, {
+    base: config.bootstrap.base
+  }).toString();
+  const comment = getLicenseComment(sampleFile);
 
-  if (!comment) { return; }
+  if (!comment) {
+    done();
+    return;
+  }
 
-  return fs.writeFileSync(config.src.jsPath + '/bootstrap/_bootstrap-license.js', comment);
+  fs.writeFileSync(`${config.src.jsPath}/bootstrap/_bootstrap-license.js`, comment);
+  done();
 });
 
 // Copy objectFitPolyfill js
-gulp.task('move-components-objectfit', function () {
-  return gulp.src(config.packagesPath + '/objectFitPolyfill/src/objectFitPolyfill.js', { base: config.packagesPath + '/objectFitPolyfill/src' })
-    .pipe(gulp.dest(config.src.jsPath + '/objectFitPolyfill'));
+gulp.task('move-components-objectfit', () => {
+  return gulp.src(`${config.packagesPath}/objectFitPolyfill/src/objectFitPolyfill.js`, {
+    base: `${config.packagesPath}/objectFitPolyfill/src`
+  })
+    .pipe(gulp.dest(`${config.src.jsPath}/objectFitPolyfill`));
 });
 
 // Copy Stickyfill js
-gulp.task('move-components-stickyfill', function () {
-  return gulp.src(config.packagesPath + '/Stickyfill/dist/stickyfill.js', { base: config.packagesPath + '/Stickyfill/dist' })
-    .pipe(gulp.dest(config.src.jsPath + '/Stickyfill'));
+gulp.task('move-components-stickyfill', () => {
+  return gulp.src(`${config.packagesPath}/Stickyfill/dist/stickyfill.js`, {
+    base: `${config.packagesPath}/Stickyfill/dist`
+  })
+    .pipe(gulp.dest(`${config.src.jsPath}/Stickyfill`));
 });
 
 // Run all component-related tasks
-gulp.task('components', [
+gulp.task('components', gulp.parallel(
   'move-components-fonts',
   'move-components-bootstrap-scss',
   'move-components-bootstrap-js',
@@ -288,7 +347,7 @@ gulp.task('components', [
   'move-components-bootstrap-license-js',
   'move-components-objectfit',
   'move-components-stickyfill'
-]);
+));
 
 
 //
@@ -296,20 +355,17 @@ gulp.task('components', [
 //
 
 // Lint scss files
-gulp.task('scss-lint', function () {
-  return gulp.src(config.src.scssPath + '/*.scss')
-    .pipe(scsslint({
-      'maxBuffer': 400 * 1024  // default: 300 * 1024
-    }));
+gulp.task('scss-lint', () => {
+  return lintSCSS(`${config.src.scssPath}/*.scss`);
 });
 
 // Compile framework scss files
-gulp.task('scss-build', function () {
-  return buildCSS(config.src.scssPath + '/framework.scss', 'framework.min.css', config.dist.cssPath, true, true);
+gulp.task('scss-build', () => {
+  return buildCSS(`${config.src.scssPath}/framework.scss`, 'framework.min.css', config.dist.cssPath, true);
 });
 
 // All css-related tasks
-gulp.task('css', ['scss-lint', 'scss-build']);
+gulp.task('css', gulp.series('scss-lint', 'scss-build'));
 
 
 //
@@ -318,40 +374,35 @@ gulp.task('css', ['scss-lint', 'scss-build']);
 
 // Run eshint on js files in src.jsPath. Do not perform linting
 // on vendor js files.
-gulp.task('es-lint', function () {
-  var files = [
-    config.src.jsPath + '/*.js',
-    '!' + config.src.jsPath + '/_bootstrap-*.js',
+gulp.task('es-lint', () => {
+  const files = [
+    `${config.src.jsPath}/*.js`,
+    `!${config.src.jsPath}/_bootstrap-*.js`
   ];
-  return gulp.src(files)
-    .pipe(eslint({ fix: true }))
-    .pipe(eslint.format())
-    .pipe(isFixed(config.src.jsPath));
+  return lintJS(files, config.src.jsPath);
 });
 
 // Process Bootstrap js and saves it out to a single file. Handles various
 // js-related steps Bootstrap performs via its gruntfile.
-gulp.task('js-build-bootstrap', function () {
-  return gulp.src(config.src.jsPath + '/bootstrap-plugins.js')
+gulp.task('js-build-bootstrap', () => {
+  return gulp.src(`${config.src.jsPath}/bootstrap-plugins.js`)
     .pipe(include())
-    .on('error', console.log)
+    .on('error', console.log) // eslint-disable-line no-console
     .pipe(replace(/^(export|import).*/gm, ''))
     .pipe(babel())
-    .pipe(header(fs.readFileSync(config.src.jsPath + '/bootstrap/_bootstrap-header.js')))
-    .pipe(footer(fs.readFileSync(config.src.jsPath + '/bootstrap/_bootstrap-footer.js')))
+    .pipe(header(fs.readFileSync(`${config.src.jsPath}/bootstrap/_bootstrap-header.js`)))
+    .pipe(footer(fs.readFileSync(`${config.src.jsPath}/bootstrap/_bootstrap-footer.js`)))
     .pipe(rename('bootstrap.js'))
-    .pipe(gulp.dest(config.src.jsPath + '/bootstrap'));
+    .pipe(gulp.dest(`${config.src.jsPath}/bootstrap`));
 });
 
 // Concat and uglify framework js files through babel
-gulp.task('js-build', function () {
-  return buildJS(config.src.jsPath + '/framework.js', 'framework.min.js', config.dist.jsPath, true, true, false);
+gulp.task('js-build', () => {
+  return buildJS(`${config.src.jsPath}/framework.js`, 'framework.min.js', config.dist.jsPath, true, false);
 });
 
 // All js-related tasks
-gulp.task('js', function (callback) {
-  return runSequence('es-lint', 'js-build-bootstrap', 'js-build', callback);
-});
+gulp.task('js', gulp.series('es-lint', 'js-build-bootstrap', 'js-build'));
 
 
 //
@@ -362,99 +413,95 @@ gulp.task('js', function (callback) {
 // the project docs.
 // Allows us to not have to re-define values such as the project version number
 // within Jekyll.
-gulp.task('docs-config', function () {
+gulp.task('docs-config', () => {
   return gulp.src('./package.json')
     .pipe(jsonToYaml())
-    .pipe(header("# THIS FILE IS GENERATED AUTOMATICALLY VIA THE `docs-config` GULP TASK. DO NOT OVERRIDE VARIABLES HERE; MODIFY package.json INSTEAD.\n\n"))
+    .pipe(header('# THIS FILE IS GENERATED AUTOMATICALLY VIA THE `docs-config` GULP TASK. DO NOT OVERRIDE VARIABLES HERE; MODIFY package.json INSTEAD.\n\n'))
     .pipe(gulp.dest(config.docs.dataPath));
 });
 
 // Generates a custom local Jekyll config file for the project docs.
-gulp.task('docs-config-local', function() {
-  var localConfig = [
+gulp.task('docs-config-local', () => {
+  const localConfig = [
     '# THIS FILE IS GENERATED AUTOMATICALLY VIA THE `docs-config-local` GULP TASK. DO NOT OVERRIDE VARIABLES HERE; MODIFY gulp-config.json INSTEAD.\n',
-    'baseurl: "' + config.docBaseURL + '"'
+    `baseurl: "${config.docBaseURL}"`
   ].join('\n');
 
-  return fs.writeFileSync(config.docs.rootPath + '/_config_local.yml', localConfig);
+  return fs.writeFileSync(`${config.docs.rootPath}/_config_local.yml`, localConfig);
 });
 
 // Web font processing
-gulp.task('docs-move-components-athena-fonts', function () {
-  return gulp.src(config.dist.fontPath + '/**/*')
+gulp.task('docs-move-components-athena-fonts', () => {
+  return gulp.src(`${config.dist.fontPath}/**/*`)
     .pipe(gulp.dest(config.docs.dist.fontPath));
 });
 
 // All component-related tasks for docs
-gulp.task('docs-components', ['docs-move-components-athena-fonts']);
+gulp.task('docs-components', gulp.series('docs-move-components-athena-fonts'));
 
 // Process scss files
-gulp.task('docs-scss', function () {
-  return buildCSS(config.docs.src.scssPath + '/docs.scss', 'docs.min.css', config.docs.dist.cssPath, true, false);
+gulp.task('docs-scss', () => {
+  return buildCSS(`${config.docs.src.scssPath}/docs.scss`, 'docs.min.css', config.docs.dist.cssPath, true);
 });
 
 // Concat and uglify js files through babel
-gulp.task('docs-js', function () {
-  return buildJS(config.docs.src.jsPath + '/docs.js', 'docs.min.js', config.docs.dist.jsPath, true, false, true);
+gulp.task('docs-js', () => {
+  return buildJS(`${config.docs.src.jsPath}/docs.js`, 'docs.min.js', config.docs.dist.jsPath, true, true);
 });
 
 // Default task for docs.  Runs all preliminary docs-related tasks that do not
 // actually build the docs.
-gulp.task('docs-default', function (callback) {
-  return runSequence('docs-config', 'docs-components', ['docs-scss', 'docs-js'], callback);
-});
+gulp.task('docs-default', gulp.series('docs-config', 'docs-components', gulp.parallel('docs-scss', 'docs-js')));
 
 // Generates a new local build of the docs.
-gulp.task('docs-local-build', ['docs-config-local', 'docs-default'], shell.task('bundle exec jekyll build --config=_config.yml,_config_local.yml', {
-  cwd: __dirname + '/_docs',
+gulp.task('docs-local-build', gulp.series(gulp.parallel('docs-config-local', 'docs-default'), shell.task('bundle exec jekyll build --config=_config.yml,_config_local.yml', {
+  cwd: `${__dirname}/_docs`,
   verbose: true
-}));
+})));
 
 // Generates a search index for the documentation's search feature.
-gulp.task('docs-local-index', function() {
-  return buildDocsIndex(config.docsLocalPath + '/search-data.json', config.docsLocalPath + '/search-index.json');
+gulp.task('docs-local-index', () => {
+  return buildDocsIndex(`${config.docsLocalPath}/search-data.json`, `${config.docsLocalPath}/search-index.json`);
 });
 
 // Run all local documentation-related tasks.
-gulp.task('docs-local', function() {
-  return runSequence('docs-local-build', 'docs-local-index');
-});
-
-// Generates a new local build of the docs and reloads BrowserSync (if enabled).
-gulp.task('docs-onwatch', ['docs-local'], browserSyncReload);
+gulp.task('docs-local', gulp.series('docs-local-build', 'docs-local-index'));
 
 // Spins up a new environment for previewing changes to the docs.
 // Watches for file changes.
-gulp.task('docs-watch', function() {
-  if (config.docSync) {
-    browserSync.init(config.docSyncOptions);
-  }
+gulp.task('docs-watch', (done) => {
+  serverServe(done);
 
   gulp.watch([
-    config.docs.rootPath + '/**/*',
-    '!' + config.docs.distPath + '/**/*'
-  ], ['docs-onwatch'], { dot: true });
+    `${config.docs.rootPath}/**/*`,
+    `!${config.docs.distPath}/**/*`
+  ],
+  gulp.series('docs-local', serverReload),
+  {
+    dot: true
+  });
 });
 
 // Generates a new production-ready build of the docs.
-gulp.task('gh-pages-build', ['docs-default'], shell.task('bundle exec jekyll build --config=_config.yml,_config_prod.yml', {
-  cwd: __dirname + '/_docs',
-  verbose: true,
-  env: {
-    JEKYLL_ENV: 'production'
-  }
-}));
+gulp.task('gh-pages-build', gulp.series(
+  'docs-default',
+  shell.task('bundle exec jekyll build --config=_config.yml,_config_prod.yml', {
+    cwd: `${__dirname}/_docs`,
+    verbose: true,
+    env: {
+      JEKYLL_ENV: 'production'
+    }
+  })
+));
 
 // Generates a search index for production-ready documentation.
-gulp.task('gh-pages-index', function() {
-  return buildDocsIndex(config.ghPagesPath + '/search-data.json', config.ghPagesPath + '/search-index.json');
+gulp.task('gh-pages-index', () => {
+  return buildDocsIndex(`${config.ghPagesPath}/search-data.json`, `${config.ghPagesPath}/search-index.json`);
 });
 
 // Runs all tasks necessary to generate production-ready (Github Pages)
 // documentation.
-gulp.task('gh-pages', function() {
-  return runSequence('gh-pages-build', 'gh-pages-index');
-});
+gulp.task('gh-pages', gulp.series('gh-pages-build', 'gh-pages-index'));
 
 
 //
@@ -462,43 +509,40 @@ gulp.task('gh-pages', function() {
 //
 
 // Generates a custom local config file for the example files.
-gulp.task('examples-config', function() {
-  var localConfig = [
+gulp.task('examples-config', () => {
+  const localConfig = [
     '# THIS FILE IS GENERATED AUTOMATICALLY VIA THE `examples-config` GULP TASK. DO NOT OVERRIDE VARIABLES HERE; MODIFY gulp-config.json INSTEAD.\n',
-    'cloud_typography_key: "' + config.examplesCSSKey + '"',
-    'baseurl: "' + config.examplesBaseURL + '"'
+    `cloud_typography_key: "${config.examplesCSSKey}"`,
+    `baseurl: "${config.examplesBaseURL}"`
   ].join('\n');
 
-  return fs.writeFileSync(config.examplesPath + '/_config_local.yml', localConfig);
+  return fs.writeFileSync(`${config.examplesPath}/_config_local.yml`, localConfig);
 });
 
 // Generates a new local build of example files.
 gulp.task('examples-build', shell.task('bundle exec jekyll build --config=_config.yml,_config_local.yml', {
-  cwd: __dirname + '/_examples',
+  cwd: `${__dirname}/_examples`,
   verbose: true
 }));
 
 // All examples-related tasks.
-gulp.task('examples', function (callback) {
-  return runSequence('examples-config', 'examples-build', callback);
-});
-
-// Performs all examples-related tasks and reloads BrowserSync (if enabled).
-gulp.task('examples-onwatch', ['examples'], browserSyncReload);
+gulp.task('examples', gulp.series('examples-config', 'examples-build'));
 
 
 //
 // Rerun tasks when files change.
 //
 
-gulp.task('watch', function () {
-  if (config.sync) {
-    browserSync.init(config.syncOptions);
-  }
+gulp.task('watch', (done) => {
+  serverServe(done);
 
-  gulp.watch(config.src.scssPath + '/**/*.scss', ['css']);
-  gulp.watch(config.src.jsPath + '/**/*.js', ['js']);
-  gulp.watch([config.examplesPath + '/**/*', '!' + config.examplesPath + '/_config_local.yml'], ['examples-onwatch']);
+  gulp.watch(`${config.src.scssPath}/**/*.scss`, gulp.series('css', serverReload));
+  gulp.watch(`${config.src.jsPath}/**/*.js`, gulp.series('js', serverReload));
+  gulp.watch([
+    `${config.examplesPath}/**/*`,
+    `!${config.examplesPath}/_config_local.yml`
+  ],
+  gulp.series('examples', serverReload));
 });
 
 
@@ -506,16 +550,11 @@ gulp.task('watch', function () {
 // Default task
 //
 
-gulp.task('default', function (callback) {
-  // Make sure 'components' completes before 'css' or 'js' are allowed to run
-  return runSequence('components', ['css', 'js'], callback);
-});
+gulp.task('default', gulp.series('components', gulp.parallel('css', 'js')));
 
 
 //
 // Initial setup task for the project
 //
 
-gulp.task('setup', function (callback) {
-  return runSequence('default', 'docs-local', 'examples', callback);
-});
+gulp.task('setup', gulp.series('default', 'docs-local', 'examples'));
