@@ -52,7 +52,7 @@
     "merge": "^1.2.1",
     "objectFitPolyfill": "^2.1.1",
     "path": "^0.12.7",
-    "stickyfilljs": "^2.1.0"
+    "Stickyfill": "github:wilddeer/stickyfill#semver:^1.1.4"
   },
   "browserslist": [
     "last 2 versions",
