@@ -176,7 +176,7 @@ function serverServe(done) {
 }
 
 // Generates a search index for the documentation.
-function buildDocsIndex(dataPath, indexPath) {
+function buildDocsIndex(dataPath, indexPath, done) {
   dataPath = dataPath || `${config.docsLocalPath}/search-data.json`;
   indexPath = indexPath || `${config.docsLocalPath}/search-index.json`;
 
@@ -195,7 +195,9 @@ function buildDocsIndex(dataPath, indexPath) {
   const searchIndex = JSON.stringify(idx);
 
   // Save search index
-  return fs.writeFileSync(indexPath, searchIndex);
+  fs.writeFileSync(indexPath, searchIndex);
+
+  done();
 }
 
 
@@ -421,13 +423,14 @@ gulp.task('docs-config', () => {
 });
 
 // Generates a custom local Jekyll config file for the project docs.
-gulp.task('docs-config-local', () => {
+gulp.task('docs-config-local', (done) => {
   const localConfig = [
     '# THIS FILE IS GENERATED AUTOMATICALLY VIA THE `docs-config-local` GULP TASK. DO NOT OVERRIDE VARIABLES HERE; MODIFY gulp-config.json INSTEAD.\n',
     `baseurl: "${config.docBaseURL}"`
   ].join('\n');
 
-  return fs.writeFileSync(`${config.docs.rootPath}/_config_local.yml`, localConfig);
+  fs.writeFileSync(`${config.docs.rootPath}/_config_local.yml`, localConfig);
+  done();
 });
 
 // Web font processing
@@ -460,8 +463,8 @@ gulp.task('docs-local-build', gulp.series(gulp.parallel('docs-config-local', 'do
 })));
 
 // Generates a search index for the documentation's search feature.
-gulp.task('docs-local-index', () => {
-  return buildDocsIndex(`${config.docsLocalPath}/search-data.json`, `${config.docsLocalPath}/search-index.json`);
+gulp.task('docs-local-index', (done) => {
+  buildDocsIndex(`${config.docsLocalPath}/search-data.json`, `${config.docsLocalPath}/search-index.json`, done);
 });
 
 // Run all local documentation-related tasks.
@@ -495,8 +498,8 @@ gulp.task('gh-pages-build', gulp.series(
 ));
 
 // Generates a search index for production-ready documentation.
-gulp.task('gh-pages-index', () => {
-  return buildDocsIndex(`${config.ghPagesPath}/search-data.json`, `${config.ghPagesPath}/search-index.json`);
+gulp.task('gh-pages-index', (done) => {
+  buildDocsIndex(`${config.ghPagesPath}/search-data.json`, `${config.ghPagesPath}/search-index.json`, done);
 });
 
 // Runs all tasks necessary to generate production-ready (Github Pages)
@@ -509,14 +512,15 @@ gulp.task('gh-pages', gulp.series('gh-pages-build', 'gh-pages-index'));
 //
 
 // Generates a custom local config file for the example files.
-gulp.task('examples-config', () => {
+gulp.task('examples-config', (done) => {
   const localConfig = [
     '# THIS FILE IS GENERATED AUTOMATICALLY VIA THE `examples-config` GULP TASK. DO NOT OVERRIDE VARIABLES HERE; MODIFY gulp-config.json INSTEAD.\n',
     `cloud_typography_key: "${config.examplesCSSKey}"`,
     `baseurl: "${config.examplesBaseURL}"`
   ].join('\n');
 
-  return fs.writeFileSync(`${config.examplesPath}/_config_local.yml`, localConfig);
+  fs.writeFileSync(`${config.examplesPath}/_config_local.yml`, localConfig);
+  done();
 });
 
 // Generates a new local build of example files.
