@@ -34,14 +34,14 @@
 }
 
 // NOTE: qualifying element necessary to match Bootstrap selector
-// scss-lint:disable QualifyingElement
+// sass-lint:disable no-qualifying-elements
 select.form-control {
   &:not([size]):not([multiple]) {
     // Apply calc() here to set accurate vertical padding to line up with buttons.
     height: calc(#{$input-height} + #{($btn-border-width - $input-btn-border-width) * 2} + #{$input-btn-border-width * 2});
   }
 }
-// scss-lint:enable QualifyingElement
+// sass-lint:enable no-qualifying-elements
 
 .form-check-input {
   height: 1em; // for browsers that can display them a little bit larger
@@ -108,14 +108,14 @@ select.form-control {
 }
 
 // NOTE: qualifying element necessary to match Bootstrap selector
-// scss-lint:disable QualifyingElement
+// sass-lint:disable no-qualifying-elements
 select.form-control-sm {
   &:not([size]):not([multiple]) {
     // Apply calc() here to set accurate vertical padding to line up with buttons.
     height: calc(#{$input-height-sm} + #{($btn-border-width - $input-btn-border-width) * 2} + #{$input-btn-border-width * 2});
   }
 }
-// scss-lint:enable QualifyingElement
+// sass-lint:enable no-qualifying-elements
 
 .form-control-lg {
   // Re-declare font size to override the .form-control font size override above.
@@ -129,7 +129,7 @@ select.form-control-sm {
 }
 
 // NOTE: qualifying element necessary to match Bootstrap selector
-// scss-lint:disable QualifyingElement
+// sass-lint:disable no-qualifying-elements
 select.form-control-lg {
   &:not([size]):not([multiple]) {
     // Apply calc() here to set accurate vertical padding to line up with buttons.
@@ -145,7 +145,7 @@ select.form-control-lg {
     padding-top: $select-padding-y;
   }
 }
-// scss-lint:enable QualifyingElement
+// sass-lint:enable no-qualifying-elements
 
 .form-control-search {
   padding-right: ($input-padding-x * 3);

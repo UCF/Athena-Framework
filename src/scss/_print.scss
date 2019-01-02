@@ -1,4 +1,4 @@
-// scss-lint:disable QualifyingElement, ImportantRule, ColorVariable
+// sass-lint:disable no-qualifying-elements, no-important, no-color-literals
 
 @if $enable-print-styles {
   @media print {
@@ -33,9 +33,9 @@
     }
 
     abbr[title]::after {
-      // scss-lint:disable StringQuotes
+      // sass-lint:disable quotes
       content: " (" attr(title) ")";
-      // scss-lint:enable StringQuotes
+      // sass-lint:enable quotes
     }
 
     pre {
@@ -285,4 +285,4 @@
   }
 }
 
-// scss-lint:enable QualifyingElement, ImportantRule, ColorVariable
+// sass-lint:enable no-qualifying-elements, no-important, no-color-literals

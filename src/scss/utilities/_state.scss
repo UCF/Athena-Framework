@@ -47,41 +47,41 @@
 
 .hover-filter-none {
   @include hover-focus-active() {
-    // scss-lint:disable ImportantRule
+    // sass-lint:disable no-important
     filter: none !important;
-    // scss-lint:enable ImportantRule
+    // sass-lint:enable no-important
   }
 }
 
 @include link-selector('.hover-text-white') {
   @include hover-focus-active() {
-    // scss-lint:disable ImportantRule
+    // sass-lint:disable no-important
     color: $white !important;
-    // scss-lint:enable ImportantRule
+    // sass-lint:enable no-important
   }
 }
 
 @include link-selector('.hover-text-inverse') {
   @include hover-focus-active() {
-    // scss-lint:disable ImportantRule
+    // sass-lint:disable no-important
     color: $brand-inverse !important;
-    // scss-lint:enable ImportantRule
+    // sass-lint:enable no-important
   }
 }
 
 @include link-selector('.hover-text-black') {
   @include hover-focus-active() {
-    // scss-lint:disable ImportantRule
+    // sass-lint:disable no-important
     color: $black !important;
-    // scss-lint:enable ImportantRule
+    // sass-lint:enable no-important
   }
 }
 
 @include link-selector('.hover-text-secondary') {
   @include hover-focus-active() {
-    // scss-lint:disable ImportantRule
+    // sass-lint:disable no-important
     color: $brand-secondary-color !important;
-    // scss-lint:enable ImportantRule
+    // sass-lint:enable no-important
   }
 }
 
@@ -105,33 +105,33 @@
     }
 
     .hover-child-filter-none {
-      // scss-lint:disable ImportantRule
+      // sass-lint:disable no-important
       filter: none !important;
-      // scss-lint:enable ImportantRule
+      // sass-lint:enable no-important
     }
 
     @include link-selector('.hover-child-text-white') {
-      // scss-lint:disable ImportantRule
+      // sass-lint:disable no-important
       color: $white !important;
-      // scss-lint:enable ImportantRule
+      // sass-lint:enable no-important
     }
 
     @include link-selector('.hover-child-text-inverse') {
-      // scss-lint:disable ImportantRule
+      // sass-lint:disable no-important
       color: $brand-inverse !important;
-      // scss-lint:enable ImportantRule
+      // sass-lint:enable no-important
     }
 
     @include link-selector('.hover-child-text-black') {
-      // scss-lint:disable ImportantRule
+      // sass-lint:disable no-important
       color: $black !important;
-      // scss-lint:enable ImportantRule
+      // sass-lint:enable no-important
     }
 
     @include link-selector('.hover-child-text-secondary') {
-      // scss-lint:disable ImportantRule
+      // sass-lint:disable no-important
       color: $brand-secondary-color !important;
-      // scss-lint:enable ImportantRule
+      // sass-lint:enable no-important
     }
   }
 }
