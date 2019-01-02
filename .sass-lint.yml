@@ -15,6 +15,7 @@
 
 files:
   include: '**/*.scss'
+  ignore: 'src/scss/bootstrap/**/*.scss'
 options:
   formatter: stylish
   merge-default-rules: false
@@ -44,7 +45,7 @@ rules:
     - 1
     - include: true
   force-attribute-nesting: 1
-  force-element-nesting: 1
+  force-element-nesting: 0 # Modified - allow unnested selectors for more convenient selector overrides
   force-pseudo-nesting: 1
   function-name-format:
     - 1
@@ -69,7 +70,7 @@ rules:
     - 1
     - allow-leading-underscore: true
       convention: hyphenatedlowercase
-  mixins-before-declarations: 1
+  mixins-before-declarations: 0 # Modified - accommodates media query-like mixin includes within blocks
   nesting-depth:
     - 1
     - max-depth: 3
@@ -137,7 +138,7 @@ rules:
         - dppx
         - '%'
       per-property:
-        line-height: []
+        line-height: [] # Modified - always use unitless line-height values
   quotes:
     - 1
     - style: single

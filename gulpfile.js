@@ -86,9 +86,11 @@ if (fs.existsSync('./gulp-config.json')) {
 //
 
 // Base scss linting function
+// NOTE: see global linter rules and excluded files in .sass-lint.yml
 function lintSCSS(src) {
   return gulp.src(src)
     .pipe(sassLint())
+    .pipe(sassLint.format())
     .pipe(sassLint.failOnError());
 }
 
@@ -115,6 +117,8 @@ function buildCSS(src, filename, dest, applyHeader) {
 }
 
 // Base JS linting function (with eslint). Fixes problems in-place.
+// NOTE: see global linter rules in .eslintrc.json and excluded files
+// in .eslintignore
 function lintJS(src, dest) {
   dest = dest || config.src.jsPath;
 
@@ -356,9 +360,9 @@ gulp.task('components', gulp.parallel(
 // CSS
 //
 
-// Lint scss files
+// Lint scss files. Do not perform linting on vendor scss files.
 gulp.task('scss-lint', () => {
-  return lintSCSS(`${config.src.scssPath}/*.scss`);
+  return lintSCSS(`${config.src.scssPath}/**/*.scss`);
 });
 
 // Compile framework scss files
@@ -374,14 +378,10 @@ gulp.task('css', gulp.series('scss-lint', 'scss-build'));
 // JavaScript
 //
 
-// Run eshint on js files in src.jsPath. Do not perform linting
-// on vendor js files.
+// Run eslint on js files in src.jsPath. Do not perform linting
+// on vendor js files. See .eslintignore for globally ignored files.
 gulp.task('es-lint', () => {
-  const files = [
-    `${config.src.jsPath}/*.js`,
-    `!${config.src.jsPath}/_bootstrap-*.js`
-  ];
-  return lintJS(files, config.src.jsPath);
+  return lintJS(`${config.src.jsPath}/*.js`, config.src.jsPath);
 });
 
 // Process Bootstrap js and saves it out to a single file. Handles various
@@ -554,7 +554,7 @@ gulp.task('watch', (done) => {
 // Default task
 //
 
-gulp.task('default', gulp.series('components', gulp.parallel('css', 'js')));
+gulp.task('default', gulp.series('components', 'css', 'js'));
 
 
 //
