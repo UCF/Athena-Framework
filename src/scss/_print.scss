@@ -248,8 +248,9 @@
     }
 
     .progress {
+      // for browsers that can support it:
+      -webkit-print-color-adjust: exact; // sass-lint:disable-line no-vendor-prefixes
       border: $border-width solid #ddd !important;
-      -webkit-print-color-adjust: exact; // for browsers that can support it
     }
 
     .progress-bar {
