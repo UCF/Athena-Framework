@@ -3661,6 +3661,13 @@ permalink: /components/
     </label>
   </div>
 
+  <select class="custom-select custom-select-sm">
+    <option selected>Open this select menu</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+
   <select class="custom-select">
     <option selected>Open this select menu</option>
     <option value="1">One</option>
@@ -3668,10 +3675,62 @@ permalink: /components/
     <option value="3">Three</option>
   </select>
 
+  <select class="custom-select custom-select-lg">
+    <option selected>Open this select menu</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+
+  <br>
+
   <label class="custom-file">
     <input type="file" id="file" class="custom-file-input">
     <span class="custom-file-control"></span>
   </label>
+
+  <h4 class="mt-4 mb-3">Inline Custom Form Inputs</h4>
+
+  <form class="form-inline mt-3">
+    <label class="sr-only" for="custom-inline-select-sm">Name</label>
+    <select class="custom-select custom-select-sm" id="custom-inline-select-sm">
+      <option selected>Open this select menu</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+    <input type="text" class="form-control form-control-sm">
+    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+  </form>
+
+  <form class="form-inline mt-3">
+    <label class="sr-only" for="custom-inline-select">Name</label>
+    <select class="custom-select" id="custom-inline-select">
+      <option selected>Open this select menu</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+    <input type="text" class="form-control">
+    <label class="custom-file">
+      <input type="file" id="file" class="custom-file-input">
+      <span class="custom-file-control"></span>
+    </label>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  <form class="form-inline mt-3">
+    <label class="sr-only" for="custom-inline-select-lg">Name</label>
+    <select class="custom-select custom-select-lg" id="custom-inline-select-lg">
+      <option selected>Open this select menu</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+    <input type="text" class="form-control form-control-lg">
+    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+  </form>
+
 
 
   <hr class="mt-5 mb-5">
@@ -3877,6 +3936,52 @@ permalink: /components/
             <div role="separator" class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Separated link</a>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="input-group">
+        <select class="custom-select custom-select-sm" id="custom-input-group-select">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-primary btn-sm">Action</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="input-group">
+        <select class="custom-select" id="custom-input-group-select">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-primary">Action</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="input-group">
+        <select class="custom-select custom-select-lg" id="custom-input-group-select">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-primary btn-lg">Action</button>
         </div>
       </div>
     </div>
