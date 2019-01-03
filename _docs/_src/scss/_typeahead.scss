@@ -13,9 +13,9 @@
 
     @include hover-focus() {
       // Sadly this !important is necessary to override complex selectors inherited from `@extend .form-control` above
-      // scss-lint:disable ImportantRule
+      // sass-lint:disable no-important
       background-color: transparent !important;
-      // scss-lint:enable ImportantRule
+      // sass-lint:enable no-important
     }
   }
 
