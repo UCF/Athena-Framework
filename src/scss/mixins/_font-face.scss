@@ -8,9 +8,10 @@
 
 @mixin build-font-face($font-family, $font-path, $name, $style, $weight) {
   font-family: $font-family;
-  src: url(build-font-path($name, $font-path, 'woff2')) format('woff2'),
-       url(build-font-path($name, $font-path, 'woff')) format('woff');
-
   font-style: $style;
   font-weight: $weight;
+  // sass-lint:disable indentation
+  src: url(build-font-path($name, $font-path, 'woff2')) format('woff2'),
+       url(build-font-path($name, $font-path, 'woff')) format('woff');
+  // sass-lint:enable indentation
 }

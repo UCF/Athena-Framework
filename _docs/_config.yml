@@ -25,7 +25,7 @@ contributing_docs: https://github.com/UCF/Athena-Framework/blob/master/CONTRIBUT
 # Build settings
 markdown: kramdown
 permalink: /:title/
-gems:
+plugins:
   - jekyll-feed
   - jekyll-redirect-from
 exclude:
