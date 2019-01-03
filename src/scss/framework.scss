@@ -11,10 +11,13 @@
 // Bootstrap - Import copyright notice
 @import 'bootstrap/bootstrap-license';
 
-// Bootstrap - Core variables and mixins
-@import 'bootstrap/variables';
-@import 'bootstrap-mixins'; // NOTE: Athena imports its own modified bootstrap mixin file.
-@import 'bootstrap/custom';
+// Bootstrap + Athena - Core variables and mixins
+// NOTE: Athena intentionally *does not* include the following:
+// - bootstrap/variables: Bootstrap variables are explicitly redefined in src/scss/_variables.scss.
+// - bootstrap/mixins: Bootstrap mixins are cherry-picked in src/scss/_mixins.scss.
+// - bootstrap/custom
+@import 'functions';
+@import 'mixins';
 
 // Bootstrap - Reset and dependencies
 @import 'bootstrap/normalize';
@@ -61,11 +64,9 @@
 
 
 //
-// Athena assets
+// Remaining Athena assets
 //
 
-@import 'functions';
-@import 'mixins';
 @import 'fonts';
 @import 'reset';
 
