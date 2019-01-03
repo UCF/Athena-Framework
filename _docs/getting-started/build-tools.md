@@ -148,7 +148,7 @@ The following sample Sass file imports _all_ of Athena's styles into the project
 
 ### Including _just_ Athena variables and mixins in your project
 
-If you want to keep Athena contained to an individual file, but still have access to its variables and mixins, you'll need to import Athena's variable and mixin files into your stylesheet individually. Remember to also import variables and mixins from Athena's import of Bootstrap:
+If you want to keep Athena contained to an individual file, but still have access to its variables and mixins, you'll need to import Athena's variable and mixin files into your stylesheet individually.
 
 {% highlight scss %}
 // Project-specific variables
@@ -156,10 +156,13 @@ If you want to keep Athena contained to an individual file, but still have acces
 
 // Package assets
 @import './ucf-athena-framework/src/scss/variables';
-@import './ucf-athena-framework/src/scss/bootstrap/variables';
 @import './ucf-athena-framework/src/scss/mixins';
-@import './ucf-athena-framework/src/scss/bootstrap/mixins';
 
 // Project styles
 @import 'my-project-styles';
 {% endhighlight %}
+
+{% callout danger %}
+#### Importing Bootstrap variables/mixins prior to v1.0.2
+Prior to v1.0.2, these instructions recommended importing additional files from Athena's copy of Bootstrap when attempting to port in Athena's variables and mixins into your project.  **This is no longer recommended** and may result in Sass build errors or inconsistencies.  In v1.0.2 onward, you should only import the files as shown under "Package assets" in the example above.
+{% endcallout %}
