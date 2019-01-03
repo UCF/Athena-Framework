@@ -1,5 +1,6 @@
-/* eslint no-sync: "off" */
+/* eslint no-sync: "off", no-console: "off" */
 
+const childProcess = require('child_process');
 const fs           = require('fs');
 const browserSync  = require('browser-sync').create();
 const gulp         = require('gulp');
@@ -17,7 +18,6 @@ const rename       = require('gulp-rename');
 const replace      = require('gulp-replace');
 const sass         = require('gulp-sass');
 const sassLint     = require('gulp-sass-lint');
-const shell        = require('gulp-shell');
 const uglify       = require('gulp-uglify');
 const lunr         = require('lunr');
 const merge        = require('merge');
@@ -457,14 +457,33 @@ gulp.task('docs-js', () => {
 gulp.task('docs-default', gulp.series('docs-config', 'docs-components', gulp.parallel('docs-scss', 'docs-js')));
 
 // Generates a new local build of the docs.
-gulp.task('docs-local-build', gulp.series(gulp.parallel('docs-config-local', 'docs-default'), shell.task('bundle exec jekyll build --config=_config.yml,_config_local.yml', {
-  cwd: `${__dirname}/_docs`,
-  verbose: true
-})));
+gulp.task('docs-local-build', gulp.series(
+  gulp.parallel('docs-config-local', 'docs-default'),
+  () => {
+    return childProcess.exec(
+      'bundle exec jekyll build --config=_config.yml,_config_local.yml',
+      {
+        cwd: `${__dirname}/_docs`
+      },
+      (error, stdout, stderr) => {
+        if (error) {
+          console.error(`'docs-local-build' error:\n ${error}`);
+          return;
+        }
+        if (stdout) {
+          console.log(`'docs-local-build' stdout:\n ${stdout}`);
+        }
+        if (stderr) {
+          console.log(`'docs-local-build' stderr:\n ${stderr}`);
+        }
+      }
+    );
+  }
+));
 
 // Generates a search index for the documentation's search feature.
 gulp.task('docs-local-index', (done) => {
-  buildDocsIndex(`${config.docsLocalPath}/search-data.json`, `${config.docsLocalPath}/search-index.json`, done);
+  return buildDocsIndex(`${config.docsLocalPath}/search-data.json`, `${config.docsLocalPath}/search-index.json`, done);
 });
 
 // Run all local documentation-related tasks.
@@ -488,13 +507,26 @@ gulp.task('docs-watch', (done) => {
 // Generates a new production-ready build of the docs.
 gulp.task('gh-pages-build', gulp.series(
   'docs-default',
-  shell.task('bundle exec jekyll build --config=_config.yml,_config_prod.yml', {
-    cwd: `${__dirname}/_docs`,
-    verbose: true,
-    env: {
-      JEKYLL_ENV: 'production'
-    }
-  })
+  () => {
+    return childProcess.exec(
+      'JEKYLL_ENV=production bundle exec jekyll build --config=_config.yml,_config_prod.yml',
+      {
+        cwd: `${__dirname}/_docs`
+      },
+      (error, stdout, stderr) => {
+        if (error) {
+          console.error(`'gh-pages-build' error:\n ${error}`);
+          return;
+        }
+        if (stdout) {
+          console.log(`'gh-pages-build' stdout:\n ${stdout}`);
+        }
+        if (stderr) {
+          console.log(`'gh-pages-build' stderr:\n ${stderr}`);
+        }
+      }
+    );
+  }
 ));
 
 // Generates a search index for production-ready documentation.
@@ -524,10 +556,26 @@ gulp.task('examples-config', (done) => {
 });
 
 // Generates a new local build of example files.
-gulp.task('examples-build', shell.task('bundle exec jekyll build --config=_config.yml,_config_local.yml', {
-  cwd: `${__dirname}/_examples`,
-  verbose: true
-}));
+gulp.task('examples-build', () => {
+  return childProcess.exec(
+    'bundle exec jekyll build --config=_config.yml,_config_local.yml',
+    {
+      cwd: `${__dirname}/_examples`
+    },
+    (error, stdout, stderr) => {
+      if (error) {
+        console.error(`'examples-build' error:\n ${error}`);
+        return;
+      }
+      if (stdout) {
+        console.log(`'examples-build' stdout:\n ${stdout}`);
+      }
+      if (stderr) {
+        console.log(`'examples-build' stderr:\n ${stderr}`);
+      }
+    }
+  );
+});
 
 // All examples-related tasks.
 gulp.task('examples', gulp.series('examples-config', 'examples-build'));
