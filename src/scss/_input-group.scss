@@ -8,7 +8,7 @@
 .input-group-btn,
 .input-group .form-control {
   align-items: center;
-  flex-direction: unset;
+  flex-direction: row;
 }
 
 
@@ -42,6 +42,6 @@
 // https://github.com/twbs/bootstrap/pull/21716
 .input-group-btn {
   > .btn {
-    flex: unset;
+    flex: 0 1 auto;
   }
 }
