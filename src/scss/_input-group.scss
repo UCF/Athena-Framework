@@ -2,12 +2,15 @@
 // Base styles
 //
 
+.input-group {
+  align-items: stretch;
+}
+
 // TODO remove this block after upgrading to v4 beta
 // https://github.com/twbs/bootstrap/pull/21716
 .input-group-addon,
 .input-group-btn,
 .input-group .form-control {
-  align-items: center;
   flex-direction: row;
 }
 
@@ -17,6 +20,7 @@
 //
 
 .input-group-addon {
+  align-items: center;
   border-width: 0;
   color: $input-group-addon-color; // adjust color of this text separately from input color
 
@@ -41,6 +45,8 @@
 // TODO remove this block after upgrading to v4 beta
 // https://github.com/twbs/bootstrap/pull/21716
 .input-group-btn {
+  align-items: stretch;
+
   > .btn {
     flex: 0 1 auto;
   }
