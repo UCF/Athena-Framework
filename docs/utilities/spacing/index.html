@@ -42,7 +42,7 @@
           </nav>
           <form class="afd-search form-inline ml-lg-4">
             <label for="afd-search-input" class="sr-only">Search the Athena Framework documentation</label>
-            <input type="search" class="form-control" id="afd-search-input" placeholder="Search..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-owns="afd-search-results">
+            <input type="search" class="form-control form-control-search" id="afd-search-input" placeholder="Search..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-owns="afd-search-results">
             <div class="dropdown-menu" id="afd-search-results"></div>
           </form>
         </div>
@@ -869,7 +869,7 @@
 
 <p>Spacing utilities that apply to all breakpoints, from <code class="highlighter-rouge">xs</code> to <code class="highlighter-rouge">xl</code>, have no breakpoint abbreviation in them. This is because those classes are applied from <code class="highlighter-rouge">min-width: 0</code> and up, and thus are not bound by a media query. The remaining breakpoints, however, do include a breakpoint abbreviation.</p>
 
-<p>The classes are named using the format <code class="highlighter-rouge"><span class="p">{</span><span class="err">property</span><span class="p">}{</span><span class="err">sides</span><span class="p">}</span><span class="err">-</span><span class="p">{</span><span class="err">size</span><span class="p">}</span></code> for <code class="highlighter-rouge">xs</code> and <code class="highlighter-rouge"><span class="p">{</span><span class="err">property</span><span class="p">}{</span><span class="err">sides</span><span class="p">}</span><span class="err">-</span><span class="p">{</span><span class="err">breakpoint</span><span class="p">}</span><span class="err">-</span><span class="p">{</span><span class="err">size</span><span class="p">}</span></code> for <code class="highlighter-rouge">sm</code>, <code class="highlighter-rouge">md</code>, <code class="highlighter-rouge">lg</code>, and <code class="highlighter-rouge">xl</code>.</p>
+<p>The classes are named using the format <code class="highlighter-rouge">{property}{sides}-{size}</code> for <code class="highlighter-rouge">xs</code> and <code class="highlighter-rouge">{property}{sides}-{breakpoint}-{size}</code> for <code class="highlighter-rouge">sm</code>, <code class="highlighter-rouge">md</code>, <code class="highlighter-rouge">lg</code>, and <code class="highlighter-rouge">xl</code>.</p>
 
 <p>Where <em>property</em> is one of:</p>
 
@@ -962,7 +962,7 @@
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.0.1</strong>.
+              Current version: <strong>v1.0.2</strong>.
             </p>
             <p>
               Documentation powered by <a class="bg-inverse-link" href="https://jekyllrb.com/" target="_blank">Jekyll</a>. Contents adapted from <a class="bg-inverse-link" href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.
