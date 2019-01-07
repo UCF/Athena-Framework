@@ -279,16 +279,46 @@ gulp.task('move-components-fonts', gulp.parallel(
 ));
 
 // Copy Bootstrap scss files
-gulp.task('move-components-bootstrap-scss', () => {
-  return gulp.src(`${config.bootstrap.scss}/**/*`, {
+gulp.task('move-components-bootstrap-scss', (done) => {
+  gulp.src([
+    `${config.bootstrap.scss}/**/*`,
+    `!${config.bootstrap.scss}/_variables.scss`,
+    `!${config.bootstrap.scss}/_mixins.scss`,
+    `!${config.bootstrap.scss}/_carousel.scss`
+  ], {
     base: config.bootstrap.scss
   })
     .pipe(gulp.dest(`${config.src.scssPath}/bootstrap`));
+
+  // Instead of copying over Bootstrap's variables and mixin files, generate
+  // new files with @warn directives to notify users of import changes:
+  const bootstrapVarsImportWarning = ['@warn',
+    ' \'As of v1.0.2 of the Athena Framework,',
+    ' `/src/scss/bootstrap/_variables.scss` should no longer be explicitly',
+    ' imported. You should remove this Sass import from your project. See',
+    ' https://ucf.github.io/Athena-Framework/getting-started/build-tools/#importing-bootstrap-variablesmixins-prior-to-v102',
+    '\';',
+    '\n'].join('');
+  const bootstrapMixinsImportWarning = ['@warn',
+    ' \'As of v1.0.2 of the Athena Framework,',
+    ' `/src/scss/bootstrap/_mixins.scss` should no longer be explicitly',
+    ' imported. You should remove this Sass import from your project. See',
+    ' https://ucf.github.io/Athena-Framework/getting-started/build-tools/#importing-bootstrap-variablesmixins-prior-to-v102',
+    '\';',
+    '\n'].join('');
+
+  fs.writeFileSync(`${config.src.scssPath}/bootstrap/_variables.scss`, bootstrapVarsImportWarning);
+  fs.writeFileSync(`${config.src.scssPath}/bootstrap/_mixins.scss`, bootstrapMixinsImportWarning);
+
+  done();
 });
 
 // Copy Bootstrap js files
 gulp.task('move-components-bootstrap-js', () => {
-  return gulp.src(`${config.bootstrap.js}/*.js`, {
+  return gulp.src([
+    `${config.bootstrap.js}/*.js`,
+    `!${config.bootstrap.js}/carousel.js`
+  ], {
     base: config.bootstrap.js
   })
     .pipe(gulp.dest(`${config.src.jsPath}/bootstrap`));

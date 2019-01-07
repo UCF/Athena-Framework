@@ -164,5 +164,5 @@ If you want to keep Athena contained to an individual file, but still have acces
 
 {% callout danger %}
 #### Importing Bootstrap variables/mixins prior to v1.0.2
-Prior to v1.0.2, these instructions recommended importing additional files from Athena's copy of Bootstrap when attempting to port in Athena's variables and mixins into your project.  **This is no longer recommended** and may result in Sass build errors or inconsistencies.  In v1.0.2 onward, you should only import the files as shown under "Package assets" in the example above.
+Prior to v1.0.2, these instructions recommended importing additional files from Athena's copy of Bootstrap when attempting to port in Athena's variables and mixins into your project.  **This is no longer recommended** and will result in Sass warnings being thrown when imported.  In v1.0.2 onward, you should only import the files as shown under "Package assets" in the example above.
 {% endcallout %}
