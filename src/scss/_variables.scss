@@ -46,12 +46,13 @@
   $prev-key: null;
   $prev-num: null;
   @each $key, $num in $map {
+    // sass-lint:disable-block no-empty-rulesets
     @if $prev-num == null {
       // Do nothing
     } @else if not comparable($prev-num, $num) {
-      @warn "Potentially invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} whose unit makes it incomparable to #{$prev-num}, the value of the previous key '#{$prev-key}' !";
+      @warn 'Potentially invalid value for #{$map-name}: This map must be in ascending order, but key "#{$key}" has value #{$num} whose unit makes it incomparable to #{$prev-num}, the value of the previous key "#{$prev-key}" !';
     } @else if $prev-num >= $num {
-      @warn "Invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} which isn't greater than #{$prev-num}, the value of the previous key '#{$prev-key}' !";
+      @warn 'Invalid value for #{$map-name}: This map must be in ascending order, but key "#{$key}" has value #{$num} which isn\'t greater than #{$prev-num}, the value of the previous key "#{$prev-key}" !';
     }
     $prev-key: $key;
     $prev-num: $num;
@@ -78,7 +79,7 @@
   $values: map-values($map);
   $first-value: nth($values, 1);
   @if $first-value != 0 {
-    @warn "First breakpoint in `$grid-breakpoints` must start at 0, but starts at #{$first-value}.";
+    @warn 'First breakpoint in `$grid-breakpoints` must start at 0, but starts at #{$first-value}.';
   }
 }
 
@@ -799,17 +800,17 @@ $custom-control-active-indicator-bg:         $ucf-gold-lighter !default; // modi
 $custom-control-active-indicator-box-shadow: none !default;
 
 $custom-checkbox-radius: $input-border-radius !default; // modified
-$custom-checkbox-checked-icon: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$custom-control-checked-indicator-color}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E"), "#", "%23") !default;
+$custom-checkbox-checked-icon: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$custom-control-checked-indicator-color}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E"), '#', '%23') !default; // sass-lint:disable-line quotes
 
 $custom-checkbox-indeterminate-bg: $brand-primary !default;
 $custom-checkbox-indicator-bg-size: 75% 75% !default; // custom
 $custom-checkbox-indeterminate-indicator-color: $custom-control-checked-indicator-color !default;
-$custom-checkbox-indeterminate-icon: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath stroke='#{$custom-checkbox-indeterminate-indicator-color}' d='M0 2h4'/%3E%3C/svg%3E"), "#", "%23") !default;
+$custom-checkbox-indeterminate-icon: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath stroke='#{$custom-checkbox-indeterminate-indicator-color}' d='M0 2h4'/%3E%3C/svg%3E"), '#', '%23') !default; // sass-lint:disable-line quotes
 $custom-checkbox-indeterminate-box-shadow: none !default;
 
 $custom-radio-indicator-bg-size: $custom-control-indicator-bg-size !default; // custom
 $custom-radio-radius: 50% !default;
-$custom-radio-checked-icon: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='#{$custom-control-checked-indicator-color}'/%3E%3C/svg%3E"), "#", "%23") !default;
+$custom-radio-checked-icon: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='#{$custom-control-checked-indicator-color}'/%3E%3C/svg%3E"), '#', '%23') !default; // sass-lint:disable-line quotes
 
 $custom-select-padding-x:          .75rem !default;
 $custom-select-padding-y:          $select-padding-y !default; // modified
@@ -821,7 +822,7 @@ $custom-select-bg:            $white !default;
 $custom-select-disabled-bg:   $gray-lighter !default;
 $custom-select-bg-size:       8px 10px !default; // In pixels because image dimensions
 $custom-select-indicator-color: #333 !default;
-$custom-select-indicator:     str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E"), "#", "%23") !default;
+$custom-select-indicator:     str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E"), '#', '%23') !default; // sass-lint:disable-line quotes
 $custom-select-border-width:  $input-btn-border-width !default;
 $custom-select-border-color:  $input-border-color !default;
 $custom-select-border-radius: $input-border-radius !default; // modified
@@ -854,27 +855,27 @@ $custom-file-button-color:  $custom-file-color !default;
 $custom-file-button-bg:     $gray-lighter !default;
 $custom-file-text: (
   placeholder: (
-    en: "Choose file..."
+    en: 'Choose file...'
   ),
   button-label: (
-    en: "Browse"
+    en: 'Browse'
   )
 ) !default;
 
 
 // Search input field icon
 $form-icon-search-color: $gray !default;
-$form-icon-search: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15'%3E%3Cpath fill='#{$form-icon-search-color}' d='M14.66,13,11.57,9.94a6.3,6.3,0,0,0,1.11-3.58A6.36,6.36,0,1,0,10,11.58L13,14.66A1.15,1.15,0,0,0,14.66,13ZM6.35,10.38a4,4,0,1,1,4-4A4,4,0,0,1,6.35,10.38Z'/%3E%3C/svg%3E"), "#", "%23") !default;
+$form-icon-search: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15'%3E%3Cpath fill='#{$form-icon-search-color}' d='M14.66,13,11.57,9.94a6.3,6.3,0,0,0,1.11-3.58A6.36,6.36,0,1,0,10,11.58L13,14.66A1.15,1.15,0,0,0,14.66,13ZM6.35,10.38a4,4,0,1,1,4-4A4,4,0,0,1,6.35,10.38Z'/%3E%3C/svg%3E"), '#', '%23') !default; // sass-lint:disable-line quotes
 
 // Form validation icons
 $form-icon-success-color: $brand-success !default;
-$form-icon-success: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$form-icon-success-color}' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3E%3C/svg%3E"), "#", "%23") !default;
+$form-icon-success: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$form-icon-success-color}' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3E%3C/svg%3E"), '#', '%23') !default; // sass-lint:disable-line quotes
 
 $form-icon-warning-color: $brand-warning !default;
-$form-icon-warning: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$form-icon-warning-color}' d='M4.4 5.324h-.8v-2.46h.8zm0 1.42h-.8V5.89h.8zM3.76.63L.04 7.075c-.115.2.016.425.26.426h7.397c.242 0 .372-.226.258-.426C6.726 4.924 5.47 2.79 4.253.63c-.113-.174-.39-.174-.494 0z'/%3E%3C/svg%3E"), "#", "%23") !default;
+$form-icon-warning: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$form-icon-warning-color}' d='M4.4 5.324h-.8v-2.46h.8zm0 1.42h-.8V5.89h.8zM3.76.63L.04 7.075c-.115.2.016.425.26.426h7.397c.242 0 .372-.226.258-.426C6.726 4.924 5.47 2.79 4.253.63c-.113-.174-.39-.174-.494 0z'/%3E%3C/svg%3E"), '#', '%23') !default; // sass-lint:disable-line quotes
 
 $form-icon-danger-color: $brand-danger !default;
-$form-icon-danger: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$form-icon-danger-color}' viewBox='-2 -2 7 7'%3E%3Cpath stroke='%23d9534f' d='M0 0l3 3m0-3L0 3'/%3E%3Ccircle r='.5'/%3E%3Ccircle cx='3' r='.5'/%3E%3Ccircle cy='3' r='.5'/%3E%3Ccircle cx='3' cy='3' r='.5'/%3E%3C/svg%3E"), "#", "%23") !default;
+$form-icon-danger: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$form-icon-danger-color}' viewBox='-2 -2 7 7'%3E%3Cpath stroke='%23d9534f' d='M0 0l3 3m0-3L0 3'/%3E%3Ccircle r='.5'/%3E%3Ccircle cx='3' r='.5'/%3E%3Ccircle cy='3' r='.5'/%3E%3Ccircle cx='3' cy='3' r='.5'/%3E%3C/svg%3E"), '#', '%23') !default; // sass-lint:disable-line quotes
 
 
 // Dropdowns
@@ -950,7 +951,7 @@ $navbar-inverse-hover-color:               $navbar-inverse-color !default; // mo
 $navbar-inverse-hover-bg-color:            rgba($white, .3) !default; // custom
 $navbar-inverse-active-color:              $navbar-inverse-color !default; // modified
 $navbar-inverse-disabled-color:            rgba($white, .3) !default; // modified
-$navbar-inverse-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-inverse-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"), "#", "%23") !default;
+$navbar-inverse-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-inverse-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"), '#', '%23') !default; // sass-lint:disable-line quotes
 $navbar-inverse-toggler-border:            $navbar-inverse-color !default; // modified
 $navbar-inverse-dropdown-caret-border:     rgba($white, .5) !default; // custom
 $navbar-inverse-brand-hover-color:         rgba($white, .8) !default; // custom
@@ -960,7 +961,7 @@ $navbar-light-hover-color:               $navbar-light-color !default; // modifi
 $navbar-light-hover-bg-color:            rgba($black, .15) !default; // custom
 $navbar-light-active-color:              $navbar-light-color !default; // modified
 $navbar-light-disabled-color:            rgba($black, .2) !default; // modified
-$navbar-light-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"), "#", "%23") !default;
+$navbar-light-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"), '#', '%23') !default; // sass-lint:disable-line quotes
 $navbar-light-toggler-border:            $navbar-light-color !default; // modified
 $navbar-light-dropdown-caret-border:     rgba($black, .4) !default; // custom
 $navbar-light-brand-hover-color:         rgba($black, .6) !default; // custom
@@ -1294,7 +1295,7 @@ $breadcrumb-item-padding:       .5rem !default;
 $breadcrumb-bg:                 transparent !default; // modified
 $breadcrumb-divider-color:      #999 !default; // modified
 $breadcrumb-active-color:       #444 !default; // modified
-$breadcrumb-divider:            "/" !default;
+$breadcrumb-divider:            '/' !default;
 
 $breadcrumb-item-color:         $gray-dark !default; // custom
 

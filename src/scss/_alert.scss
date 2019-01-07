@@ -13,13 +13,13 @@
 
 .alert-dismissible {
   // button.close selector required to match Bootstrap's selector
-  // scss-lint:disable QualifyingElement
+  // sass-lint:disable no-qualifying-elements
   .close,
   button.close {
     margin-left: 0;
     padding: $alert-padding-y $alert-padding-x $spacer-y $spacer-x;
   }
-  // scss-lint:enable QualifyingElement
+  // sass-lint:enable no-qualifying-elements
 }
 
 
