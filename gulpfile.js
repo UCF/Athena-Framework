@@ -336,7 +336,7 @@ gulp.task('move-components-bootstrap-license-css', (done) => {
     return;
   }
 
-  fs.writeFileSync(`${config.src.scssPath}/bootstrap/_bootstrap-license.css`, comment);
+  fs.writeFileSync(`${config.src.scssPath}/bootstrap/_bootstrap-license.scss`, comment);
   done();
 });
 
