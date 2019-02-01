@@ -160,7 +160,7 @@
         justify-content: flex-start;
       }
 
-      // scss-lint:disable SelectorDepth NestingDepth
+      // sass-lint:disable-block nesting-depth
       // Nesting required to match Bootstrap selectors
 
       // Theme-specific overrides
@@ -332,8 +332,6 @@
           }
         }
       }
-
-      // scss-lint:enable SelectorDepth NestingDepth
     }
   }
 }
@@ -345,7 +343,7 @@
 
 .navbar-light,
 .navbar-inverse {
-  // scss-lint:disable SelectorDepth NestingDepth
+  // sass-lint:disable-block nesting-depth
   .navbar-nav {
     .nav-link.disabled {
       &:hover,
@@ -354,14 +352,13 @@
       }
     }
   }
-  // scss-lint:enable SelectorDepth NestingDepth
 }
 
 // Dark links against a light background
 .navbar-light {
   // Primary color-specific overrides
-  // scss-lint:disable SelectorDepth NestingDepth
   &.bg-primary {
+    // sass-lint:disable-block nesting-depth
     .navbar-nav {
       .nav-link {
         @include hover-focus {
@@ -388,7 +385,6 @@
       }
     }
   }
-  // scss-lint:enable SelectorDepth NestingDepth
 
   // Base light navbar styles
   .navbar-brand {
@@ -410,7 +406,7 @@
       }
     }
 
-    // scss-lint:disable SelectorDepth NestingDepth
+    // sass-lint:disable nesting-depth
     .show > .nav-link,
     .open > .nav-link,
     .active > .nav-link,
@@ -424,14 +420,14 @@
     .show > .nav-link.dropdown-toggle::after {
       border-top-color: $navbar-light-hover-color;
     }
-    // scss-lint:enable SelectorDepth NestingDepth
+    // sass-lint:enable nesting-depth
   }
 
   .navbar-toggler {
     &:not(.collapsed) {
+      // sass-lint:disable-block nesting-depth
       background-color: $navbar-light-toggler-border;
 
-      // scss-lint:disable SelectorDepth NestingDepth
       .navbar-toggler-text {
         color: $navbar-inverse-hover-color; // intentionally using -inverse variable here
       }
@@ -439,7 +435,6 @@
       .navbar-toggler-icon {
         background-image: $navbar-inverse-toggler-bg; // intentionally using -inverse variable here
       }
-      // scss-lint:enable SelectorDepth NestingDepth
     }
   }
 }
@@ -465,7 +460,7 @@
       }
     }
 
-    // scss-lint:disable SelectorDepth NestingDepth
+    // sass-lint:disable nesting-depth
     .show > .nav-link,
     .open > .nav-link,
     .active > .nav-link,
@@ -479,14 +474,14 @@
     .dropdown.show .dropdown-toggle::after {
       border-top-color: $navbar-inverse-hover-color;
     }
-    // scss-lint:enable SelectorDepth NestingDepth
+    // sass-lint:enable nesting-depth
   }
 
   .navbar-toggler {
     &:not(.collapsed) {
+      // sass-lint:disable-block nesting-depth
       background-color: $navbar-inverse-toggler-border;
 
-      // scss-lint:disable SelectorDepth NestingDepth
       .navbar-toggler-text {
         color: $navbar-light-hover-color; // intentionally using -light variable here
       }
@@ -494,7 +489,6 @@
       .navbar-toggler-icon {
         background-image: $navbar-light-toggler-bg; // intentionally using -light variable here
       }
-      // scss-lint:enable SelectorDepth NestingDepth
     }
   }
 }

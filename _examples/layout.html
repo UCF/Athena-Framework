@@ -6,9 +6,9 @@ permalink: /layout/
 
 <div class="container">
 
-  <h2 id="col-auto" class="mt-4 mb-4">.col-auto</h2>
+  <h2 id="col-auto" class="mt-4 mb-4">.col-auto (variable width column) testing</h2>
 
-  <div class="row justify-content-md-center mb-3">
+  <div class="row no-gutters justify-content-md-center mb-3">
     <div class="col col-lg-2 bg-faded">
       1 of 3
     </div>
@@ -20,7 +20,7 @@ permalink: /layout/
     </div>
   </div>
 
-  <div class="row justify-content-md-center">
+  <div class="row no-gutters justify-content-md-center">
     <div class="col col-lg-2 bg-faded">
       1 of 3
     </div>
@@ -34,7 +34,7 @@ permalink: /layout/
     </div>
   </div>
 
-  <div class="row mt-4 justify-content-between align-items-end">
+  <div class="row no-gutters mt-4 justify-content-between align-items-end">
     <div class="col-auto">
       <h2 class="mb-0">
         College of Arts and Humanities News
@@ -42,6 +42,25 @@ permalink: /layout/
     </div>
     <div class="col-auto">
       <a href="https://today.ucf.edu/" class="h6 text-uppercase d-block mb-1 mt-2 text-default">Check out more stories</a>
+    </div>
+  </div>
+
+  <hr class="my-5">
+
+  <h2 class="mt-4 mb-4">Alternating variable width, equal width (unitless), and fixed width columns</h2>
+
+  <div class="row no-gutters mb-4">
+    <div class="col-md-auto col-lg col-xl-2 bg-faded">
+      <code>.col-md-auto .col-lg .col-xl-2</code>
+    </div>
+  </div>
+
+  <div class="row no-gutters">
+    <div class="col-md-auto col-lg col-xl-2 bg-faded">
+      <code>.col-md-auto .col-lg .col-xl-2</code>
+    </div>
+    <div class="col-md col-lg-8 col-xl bg-faded">
+      <code>.col-md .col-lg-8 .col-xl</code>
     </div>
   </div>
 

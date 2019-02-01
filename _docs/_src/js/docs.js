@@ -7,7 +7,7 @@
 // =require search.js
 
 
-/*!
+/* !
  * JavaScript for Athena Framework's documentation, a derivative of
  * JavaScript for Bootstrap's docs by The Bootstrap Authors and Twitter, Inc.
  *
@@ -15,12 +15,11 @@
  * License (https://creativecommons.org/licenses/by/3.0/).
  */
 
-/* global Clipboard, anchors, Holder */
+/* global ClipboardJS, anchors, Holder */
 
 (function ($) {
-  'use strict';
 
-  $(function () {
+  $(() => {
 
     // Tooltip and popover demos
     $('.tooltip-demo').tooltip({
@@ -38,18 +37,18 @@
     $('.afd-example-indeterminate [type="checkbox"]').prop('indeterminate', true);
 
     // Disable empty links in docs examples
-    $('.afd-content [href="#"]').click(function (e) {
+    $('.afd-content [href="#"]').click((e) => {
       e.preventDefault();
     });
 
     // Modal relatedTarget demo
     $('#exampleModal').on('show.bs.modal', function (event) {
-      var $button = $(event.relatedTarget);      // Button that triggered the modal
-      var recipient = $button.data('whatever');  // Extract info from data-* attributes
+      const $button = $(event.relatedTarget); // Button that triggered the modal
+      const recipient = $button.data('whatever'); // Extract info from data-* attributes
       // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
       // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-      var $modal = $(this);
-      $modal.find('.modal-title').text('New message to ' + recipient);
+      const $modal = $(this);
+      $modal.find('.modal-title').text(`New message to ${recipient}`);
       $modal.find('.modal-body input').val(recipient);
     });
 
@@ -60,18 +59,18 @@
 
     // Insert copy to clipboard button before .highlight
     $('.highlight').each(function () {
-      var btnHtml = '<div class="afd-clipboard"><span class="btn-clipboard" title="Copy to clipboard">Copy</span></div>'
+      const btnHtml = '<div class="afd-clipboard"><span class="btn-clipboard" title="Copy to clipboard">Copy</span></div>';
       $(this).before(btnHtml);
       $('.btn-clipboard').tooltip();
     });
 
-    var clipboard = new Clipboard('.btn-clipboard', {
+    const clipboard = new ClipboardJS('.btn-clipboard', {
       target: function (trigger) {
         return trigger.parentNode.nextElementSibling;
       }
     });
 
-    clipboard.on('success', function (e) {
+    clipboard.on('success', (e) => {
       $(e.trigger)
         .attr('title', 'Copied!')
         .tooltip('_fixTitle')
@@ -82,9 +81,9 @@
       e.clearSelection();
     });
 
-    clipboard.on('error', function (e) {
-      var modifierKey = /Mac/i.test(navigator.userAgent) ? '\u2318' : 'Ctrl-';
-      var fallbackMsg = 'Press ' + modifierKey + 'C to copy';
+    clipboard.on('error', (e) => {
+      const modifierKey = /Mac/i.test(navigator.userAgent) ? '\u2318' : 'Ctrl-';
+      const fallbackMsg = `Press ${modifierKey} C to copy`;
 
       $(e.trigger)
         .attr('title', fallbackMsg)
@@ -99,8 +98,6 @@
 }(jQuery))
 
 ;(function () {
-  'use strict';
-
   anchors.options.placement = 'left';
   anchors.add('.afd-content > h1, .afd-content > h2, .afd-content > h3, .afd-content > h4, .afd-content > h5');
 

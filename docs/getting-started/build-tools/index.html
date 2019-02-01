@@ -42,7 +42,7 @@
           </nav>
           <form class="afd-search form-inline ml-lg-4">
             <label for="afd-search-input" class="sr-only">Search the Athena Framework documentation</label>
-            <input type="search" class="form-control" id="afd-search-input" placeholder="Search..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-owns="afd-search-results">
+            <input type="search" class="form-control form-control-search" id="afd-search-input" placeholder="Search..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-owns="afd-search-results">
             <div class="dropdown-menu" id="afd-search-results"></div>
           </form>
         </div>
@@ -995,32 +995,34 @@
 
 <p>The following sample Sass file imports <em>all</em> of Athena’s styles into the project’s stylesheet:</p>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Project-specific variables
-</span><span class="k">@import</span> <span class="s1">'my-project-variables'</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Project-specific variables</span>
+<span class="k">@import</span> <span class="s1">'my-project-variables'</span><span class="p">;</span>
 
-<span class="c1">// Package assets
-</span><span class="k">@import</span> <span class="s1">'./ucf-athena-framework/src/scss/framework'</span><span class="p">;</span>
-<span class="c1">// @import './some-other-vendor-package/some-stylesheet';
-</span>
-<span class="c1">// Project styles
-</span><span class="k">@import</span> <span class="s1">'my-project-styles'</span><span class="p">;</span></code></pre></figure>
+<span class="c1">// Package assets</span>
+<span class="k">@import</span> <span class="s1">'./ucf-athena-framework/src/scss/framework'</span><span class="p">;</span>
+<span class="c1">// @import './some-other-vendor-package/some-stylesheet';</span>
+
+<span class="c1">// Project styles</span>
+<span class="k">@import</span> <span class="s1">'my-project-styles'</span><span class="p">;</span></code></pre></figure>
 
 <h3 id="including-just-athena-variables-and-mixins-in-your-project">Including <em>just</em> Athena variables and mixins in your project</h3>
 
-<p>If you want to keep Athena contained to an individual file, but still have access to its variables and mixins, you’ll need to import Athena’s variable and mixin files into your stylesheet individually. Remember to also import variables and mixins from Athena’s import of Bootstrap:</p>
+<p>If you want to keep Athena contained to an individual file, but still have access to its variables and mixins, you’ll need to import Athena’s variable and mixin files into your stylesheet individually.</p>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Project-specific variables
-</span><span class="k">@import</span> <span class="s1">'my-project-variables'</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Project-specific variables</span>
+<span class="k">@import</span> <span class="s1">'my-project-variables'</span><span class="p">;</span>
 
-<span class="c1">// Package assets
-</span><span class="k">@import</span> <span class="s1">'./ucf-athena-framework/src/scss/variables'</span><span class="p">;</span>
-<span class="k">@import</span> <span class="s1">'./ucf-athena-framework/src/scss/bootstrap/variables'</span><span class="p">;</span>
+<span class="c1">// Package assets</span>
+<span class="k">@import</span> <span class="s1">'./ucf-athena-framework/src/scss/variables'</span><span class="p">;</span>
 <span class="k">@import</span> <span class="s1">'./ucf-athena-framework/src/scss/mixins'</span><span class="p">;</span>
-<span class="k">@import</span> <span class="s1">'./ucf-athena-framework/src/scss/bootstrap/mixins'</span><span class="p">;</span>
 
-<span class="c1">// Project styles
-</span><span class="k">@import</span> <span class="s1">'my-project-styles'</span><span class="p">;</span></code></pre></figure>
+<span class="c1">// Project styles</span>
+<span class="k">@import</span> <span class="s1">'my-project-styles'</span><span class="p">;</span></code></pre></figure>
 
+<div class="afd-callout afd-callout-danger">
+<h4 id="importing-bootstrap-variablesmixins-prior-to-v102">Importing Bootstrap variables/mixins prior to v1.0.2</h4>
+<p>Prior to v1.0.2, these instructions recommended importing additional files from Athena’s copy of Bootstrap when attempting to port in Athena’s variables and mixins into your project.  <strong>This is no longer recommended</strong> and will result in Sass warnings being thrown when imported.  In v1.0.2 onward, you should only import the files as shown under “Package assets” in the example above.</p>
+</div>
 
       </div>
     </div>
@@ -1046,7 +1048,7 @@
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.0.1</strong>.
+              Current version: <strong>v1.0.2</strong>.
             </p>
             <p>
               Documentation powered by <a class="bg-inverse-link" href="https://jekyllrb.com/" target="_blank">Jekyll</a>. Contents adapted from <a class="bg-inverse-link" href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.

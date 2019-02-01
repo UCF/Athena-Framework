@@ -218,9 +218,9 @@
   &.active {
     &:not(:disabled):not(.disabled) {
       // Force !important here, in case a text color utility class is used
-      // scss-lint:disable ImportantRule
+      // sass-lint:disable no-important
       color: $black !important;
-      // scss-lint:enable ImportantRule
+      // sass-lint:enable no-important
     }
   }
 }
@@ -236,9 +236,9 @@
   &:active {
     &:not(:disabled):not(.disabled) {
       // Force !important here, in case a text color utility class is used
-      // scss-lint:disable ImportantRule
+      // sass-lint:disable no-important
       color: $white !important;
-      // scss-lint:enable ImportantRule
+      // sass-lint:enable no-important
     }
   }
 }

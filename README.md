@@ -33,7 +33,7 @@ _These instructions are for installation and development of the project for core
    `cd Athena-Framework/`
 
    `npm install`
-3. Create a copy of `gulp-config.template.json`, modify settings as needed for your local development environment ([available options are listed below](#gulp-config-options)), and save as `gulp-config.json`.
+3. (Optional) Create a copy of `gulp-config.template.json`, modify settings as needed for your local development environment ([available options are listed below](#gulp-config-options)), and save as `gulp-config.json`.
 5. Navigate to the `_docs/` directory and install dependencies for the framework docs:
 
    `cd _docs/`

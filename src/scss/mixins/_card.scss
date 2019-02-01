@@ -31,7 +31,7 @@
     border-top-color: $border-color;
     color: $text-color;
 
-    &.active:not([class~="list-group-item-success"]):not([class~="list-group-item-info"]):not([class~="list-group-item-warning"]):not([class~="list-group-item-danger"]) {
+    &.active:not([class~='list-group-item-success']):not([class~='list-group-item-info']):not([class~='list-group-item-warning']):not([class~='list-group-item-danger']) {
       &,
       &:hover {
         background-color: $list-group-active-bg;
@@ -47,12 +47,14 @@
     }
   }
 
+  // sass-lint:disable no-qualifying-elements
   a.list-group-item,
   button.list-group-item {
     @include hover-focus {
       background-color: darken($bg-color, 5%);
     }
   }
+  // sass-lint:enable no-qualifying-elements
 
   @include list-group-item-variant(success, $state-success-bg, $state-success-text);
   @include list-group-item-variant(info, $state-info-bg, $state-info-text);

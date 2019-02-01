@@ -4,7 +4,9 @@
   "env": {
     "browser": true,
     "es6": true,
-    "jquery": true
+    "jquery": true,
+    "amd": true,
+    "node": true
   },
   "globals": {
     "objectFitPolyfill": true
@@ -216,7 +218,7 @@
     "no-useless-constructor": "error",
     "no-useless-rename": "error",
     "no-var": "error",
-    "object-shorthand": "error",
+    "object-shorthand": ["error", "never"], // MODIFIED webcom
     "prefer-arrow-callback": "error",
     "prefer-const": "error",
     "prefer-numeric-literals": "error",
