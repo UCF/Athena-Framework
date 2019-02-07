@@ -3,6 +3,7 @@
 //
 .modal {
   // Fix ability to scroll within scrollable inner contents
+  // on iOS Safari
   .modal-open & {
     -webkit-overflow-scrolling: touch; // sass-lint:disable-line no-vendor-prefixes
   }
