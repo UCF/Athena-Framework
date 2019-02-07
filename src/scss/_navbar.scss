@@ -172,7 +172,7 @@
             .dropdown-item {
               @include hover-focus {
                 @include media-breakpoint-down($breakpoint) {
-                  color: $white;
+                  background-color: rgba(0, 0, 0, .1);
                 }
               }
             }
