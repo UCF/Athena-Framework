@@ -46,7 +46,18 @@
 }
 
 .btn-primary {
-  @include button-variant-overrides($btn-primary-color, $btn-primary-bg, $btn-primary-border, $white);
+  @include button-variant-overrides($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active {
+    &:not(:disabled):not(.disabled) {
+      background-color: darken($btn-primary-bg, 6%);
+      border-color: darken($btn-primary-bg, 6%);
+    }
+  }
 }
 
 .btn-secondary {
