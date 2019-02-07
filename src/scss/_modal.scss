@@ -1,4 +1,14 @@
 //
+// Container that the modal scrolls within
+//
+.modal {
+  // Fix ability to scroll within scrollable inner contents
+  .modal-open & {
+    -webkit-overflow-scrolling: touch; // sass-lint:disable-line no-vendor-prefixes
+  }
+}
+
+//
 // Actual modal
 //
 .modal-content {
