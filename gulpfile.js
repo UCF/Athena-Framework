@@ -110,6 +110,10 @@ function buildCSS(src, filename, dest, applyHeader) {
     .pipe(gulpif(applyHeader, header(config.prj.header, {
       config: config
     })))
+    // Remove charset rule (if present) and add to the first
+    // line of the stylesheet (@charset must be on the first line)
+    .pipe(replace('@charset "UTF-8";', ''))
+    .pipe(header('@charset "UTF-8";\n'))
     .pipe(rename(filename))
     .pipe(gulp.dest(dest));
 }
