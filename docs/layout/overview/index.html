@@ -998,17 +998,16 @@
 
 <p>We don’t encourage customization of these values; should you change one, you likely need to change them all.</p>
 
-<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$z-index-ucf-header</span><span class="p">:</span>        <span class="m">10000</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
-<span class="nv">$zindex-dropdown-backdrop</span><span class="p">:</span>  <span class="m">10010</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
-<span class="nv">$zindex-navbar</span><span class="p">:</span>             <span class="m">10020</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
-<span class="nv">$zindex-dropdown</span><span class="p">:</span>           <span class="m">10030</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
-<span class="nv">$zindex-fixed</span><span class="p">:</span>              <span class="m">10040</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
-<span class="nv">$zindex-sticky</span><span class="p">:</span>             <span class="m">10040</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
-<span class="nv">$zindex-modal-backdrop</span><span class="p">:</span>     <span class="m">10050</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
-<span class="nv">$zindex-modal</span><span class="p">:</span>              <span class="m">10060</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
-<span class="nv">$zindex-popover</span><span class="p">:</span>            <span class="m">10070</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
-<span class="nv">$zindex-tooltip</span><span class="p">:</span>            <span class="m">10080</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
-</code></pre></div></div>
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nv">$zindex-dropdown-backdrop</span><span class="p">:</span>   <span class="m">9050</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$zindex-navbar</span><span class="p">:</span>              <span class="m">9060</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$zindex-dropdown</span><span class="p">:</span>            <span class="m">9070</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$zindex-sticky</span><span class="p">:</span>              <span class="m">9080</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$zindex-fixed</span><span class="p">:</span>               <span class="m">9090</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$zindex-ucf-header</span><span class="p">:</span>         <span class="m">10000</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$zindex-modal-backdrop</span><span class="p">:</span>     <span class="m">10010</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$zindex-modal</span><span class="p">:</span>              <span class="m">10020</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$zindex-popover</span><span class="p">:</span>            <span class="m">10030</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span>
+<span class="nv">$zindex-tooltip</span><span class="p">:</span>            <span class="m">10040</span> <span class="o">!</span><span class="nb">default</span><span class="p">;</span></code></pre></figure>
 
 <p>Background elements—like the backdrops that allow click-dismissing—tend to reside on a lower <code class="highlighter-rouge">z-index</code>s, while navigation and popovers utilize higher <code class="highlighter-rouge">z-index</code>s to ensure they overlay surrounding content.</p>
 
@@ -1036,7 +1035,7 @@
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.0.4</strong>.
+              Current version: <strong>v1.0.5</strong>.
             </p>
             <p>
               Documentation powered by <a class="bg-inverse-link" href="https://jekyllrb.com/" target="_blank">Jekyll</a>. Contents adapted from <a class="bg-inverse-link" href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.
