@@ -172,7 +172,7 @@
             .dropdown-item {
               @include hover-focus {
                 @include media-breakpoint-down($breakpoint) {
-                  color: $white;
+                  background-color: rgba(0, 0, 0, .1);
                 }
               }
             }
@@ -362,10 +362,10 @@
     .navbar-nav {
       .nav-link {
         @include hover-focus {
-          color: $white;
+          background-color: rgba(0, 0, 0, .1);
 
           &.dropdown-toggle::after {
-            border-top-color: $navbar-inverse-dropdown-caret-border;
+            border-top-color: $brand-primary-darkest;
           }
         }
       }
@@ -377,11 +377,11 @@
       .nav-link:hover,
       .nav-link.active,
       .nav-link:active {
-        color: $white;
+        background-color: rgba(0, 0, 0, .1);
       }
 
       .show > .nav-link.dropdown-toggle::after {
-        border-top-color: $white;
+        border-top-color: $brand-primary-color;
       }
     }
   }
