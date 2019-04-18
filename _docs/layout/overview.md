@@ -170,17 +170,17 @@ Several Athena components utilize `z-index`, the CSS property that helps control
 
 We don't encourage customization of these values; should you change one, you likely need to change them all.
 
-```scss
-$z-index-ucf-header:        10000 !default;
-$zindex-dropdown-backdrop:  10010 !default;
-$zindex-navbar:             10020 !default;
-$zindex-dropdown:           10030 !default;
-$zindex-fixed:              10040 !default;
-$zindex-sticky:             10040 !default;
-$zindex-modal-backdrop:     10050 !default;
-$zindex-modal:              10060 !default;
-$zindex-popover:            10070 !default;
-$zindex-tooltip:            10080 !default;
-```
+{% highlight scss %}
+$zindex-dropdown-backdrop:   9050 !default;
+$zindex-navbar:              9060 !default;
+$zindex-dropdown:            9070 !default;
+$zindex-sticky:              9080 !default;
+$zindex-fixed:               9090 !default;
+$zindex-ucf-header:         10000 !default;
+$zindex-modal-backdrop:     10010 !default;
+$zindex-modal:              10020 !default;
+$zindex-popover:            10030 !default;
+$zindex-tooltip:            10040 !default;
+{% endhighlight %}
 
 Background elements—like the backdrops that allow click-dismissing—tend to reside on a lower `z-index`s, while navigation and popovers utilize higher `z-index`s to ensure they overlay surrounding content.
