@@ -129,16 +129,17 @@ $ucf-metalgold-darker:   darken($ucf-metalgold, 5%) !default;
 $ucf-metalgold-darkest:  darken($ucf-metalgold, 10%) !default;
 
 // Start with assigning color names to specific hex values.
-$white:  #fff !default;
-$black:  #000 !default;
-$red:    #ff6445 !default;
-$orange: #f4b350 !default;
-$yellow: $ucf-gold !default; // modified
-$green:  #2ecc71 !default;
-$blue:   #0275d8 !default;
-$teal:   #81cfe0 !default;
-$pink:   #ff5b77 !default;
-$purple: #613d7c !default;
+$white:     #fff !default;
+$black:     #000 !default;
+$red:       #ff6445 !default;
+$orange:    #f4b350 !default;
+$yellow:    $ucf-gold !default; // modified
+$green:     #2ecc71 !default;
+$blue:      #0275d8 !default;
+$blue-dark: #0262b6 !default; // custom
+$teal:      #81cfe0 !default;
+$pink:      #ff5b77 !default;
+$purple:    #613d7c !default;
 
 // Create grayscale
 $gray-darkest:              #292b2c !default; // custom
@@ -409,7 +410,7 @@ $ucf-header-height: 50px; // custom
 //
 // Style anchor elements.
 
-$link-color:            $brand-complementary !default; // modified
+$link-color:            $blue-dark !default; // modified
 $link-decoration:       none !default;
 $link-hover-color:      darken($link-color, 15%) !default;
 $link-hover-decoration: underline !default;
