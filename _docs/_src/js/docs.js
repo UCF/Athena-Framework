@@ -1,8 +1,8 @@
 // =require ../../../dist/js/framework.min.js
-// =require ./anchor-js/anchor.js
-// =require ./clipboard/dist/clipboard.js
-// =require ./holderjs/holder.js
-// =require ./lunr/lunr.js
+// =require anchor-js/anchor.js
+// =require clipboard/dist/clipboard.js
+// =require holderjs/holder.js
+// =require lunr/lunr.js
 
 // =require search.js
 
