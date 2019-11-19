@@ -1,7 +1,7 @@
 # THIS FILE IS GENERATED AUTOMATICALLY VIA THE `docs-config` GULP TASK. DO NOT OVERRIDE VARIABLES HERE; MODIFY package.json INSTEAD.
 
 name: ucf-athena-framework
-version: 1.0.6
+version: 1.0.7
 author:
   name: UCF Web Communications
   email: webcom@ucf.edu
