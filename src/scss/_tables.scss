@@ -3,8 +3,10 @@
 //
 
 .table {
-  thead th {
-    border-top: 0 solid transparent;
+  &:not(.table-responsive) {
+    thead th {
+      border-top: 0 solid transparent;
+    }
   }
 }
 
@@ -30,10 +32,21 @@
 //
 
 .table-inverse {
+  // Unset Bootstrap styling for compatibility with .table-responsive
+  background-color: transparent;
+
+  > * {
+    background-color: $table-inverse-bg;
+  }
+
   th,
   td,
   thead th {
     border-color: $table-inverse-border-color;
+  }
+
+  caption {
+    color: $brand-default;
   }
 
   // Bordered version

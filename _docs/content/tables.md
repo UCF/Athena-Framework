@@ -93,7 +93,7 @@ Similar to default and inverse tables, use one of two modifier classes to make `
 
 {% example html %}
 <table class="table">
-  <thead class="theafd-inverse">
+  <thead class="thead-inverse">
     <tr>
       <th>#</th>
       <th>First Name</th>
@@ -124,7 +124,7 @@ Similar to default and inverse tables, use one of two modifier classes to make `
 </table>
 
 <table class="table">
-  <thead class="theafd-default">
+  <thead class="thead-default">
     <tr>
       <th>#</th>
       <th>First Name</th>
