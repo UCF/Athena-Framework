@@ -2,7 +2,7 @@
 layout: docs
 title: Code
 description: Documentation and examples for displaying inline and multiline blocks of code with Athena.
-group: content
+tags: content
 ---
 
 Styles for inline code snippets and longer, multiline blocks of code.

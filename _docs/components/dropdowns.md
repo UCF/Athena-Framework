@@ -2,7 +2,7 @@
 layout: docs
 title: Dropdowns
 description: Toggle contextual overlays for displaying lists of links and more with the Athena dropdown plugin.
-group: components
+tags: components
 ---
 
 Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They're made interactive with the included Athena dropdown JavaScript plugin. They're toggled by clicking, not by hovering; this is [an intentional design decision.](http://markdotto.com/2012/02/27/bootstrap-explained-dropdowns/)

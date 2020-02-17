@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: States
-group: utilities
+tags: utilities
 ---
 
 The Athena Framework provides utility classes for defining unique style changes on hover, focus, and active element states. These utility classes make it easy to develop complex interactive components on-the-fly, without the need for additional CSS.

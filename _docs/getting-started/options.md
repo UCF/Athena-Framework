@@ -2,7 +2,7 @@
 layout: docs
 title: Customization options
 description: Customize Athena with Sass variables, easily toggling global preferences with a quick recompile.
-group: getting-started
+tags: getting-started
 ---
 
 Customize Athena's CSS with Sass variables, easily toggling global preferences with a quick recompile.

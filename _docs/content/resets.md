@@ -2,7 +2,7 @@
 layout: docs
 title: Resets
 description: Athena includes various cross-browser style resets to provide an elegant, consistent, and simple baseline to build upon.
-group: content
+tags: content
 redirect_from: "/content/"
 ---
 

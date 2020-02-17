@@ -1,7 +1,6 @@
 ---
 layout: subpage
 title: Migrating to Athena from Bootstrap 3
-group: migration
 ---
 
 The most notable changes between Bootstrap 3 and Athena are summarized immediately below, followed by more specific class and behavioral changes to relevant components.

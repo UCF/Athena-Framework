@@ -2,7 +2,7 @@
 layout: docs
 title: Quick start
 description: Get started with Athena using these quick setup steps.
-group: getting-started
+tags: getting-started
 redirect_from: "/getting-started/"
 ---
 

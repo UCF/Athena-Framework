@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Position
-group: utilities
+tags: utilities
 ---
 
 Position utilities are helpful for quickly placing a component outside the normal document flow. Choose from a handful of fixed or sticky position classes as needed.

@@ -2,7 +2,7 @@
 layout: docs
 title: Navbar
 description: Documentation and examples for Athena's powerful, responsive navigation header, the navbar.
-group: components
+tags: components
 ---
 
 The navbar is a wrapper that positions branding, navigation, and other elements in a concise header. It's easily extensible and, thanks to Athena's JavaScript, can easily integrate responsive behaviors.

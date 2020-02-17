@@ -2,7 +2,7 @@
 layout: docs
 title: Dividers
 description: Documentation and examples for customizing dividers in Athena.
-group: content
+tags: content
 ---
 
 Athena provides utility classes for styling `<hr>` elements with alternate thicknesses, colors, and orientation.

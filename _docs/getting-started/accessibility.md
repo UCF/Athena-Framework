@@ -2,7 +2,7 @@
 layout: docs
 title: Accessibility
 description: A brief overview of Athena's features and limitations for the creation of accessible content.
-group: getting-started
+tags: getting-started
 ---
 
 The Athena Framework provides a rich suite of tools for building accessible websites and applications--but it's important that developers and content editors understand how to implement these tools to meet Section 508 compliance and <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0 AA requirements.

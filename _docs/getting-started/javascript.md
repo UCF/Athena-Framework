@@ -2,7 +2,7 @@
 layout: docs
 title: JavaScript
 description: Learn about Athena's JavaScript—how to include it, our data and programmatic API options, and more.
-group: getting-started
+tags: getting-started
 ---
 
 Athena includes a handful of JavaScript code, mostly inherited from Bootstrap, to help bring some of our components to life. Learn more about how to include it, our data and programmatic API options, and more.

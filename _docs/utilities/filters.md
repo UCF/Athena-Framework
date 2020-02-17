@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Filters
-group: utilities
+tags: utilities
 ---
 
 Apply unique effects to images using Athena's built-in filter classes.

@@ -2,7 +2,7 @@
 layout: docs
 title: Navs
 description: Documentation and examples for how to use Athena's included navigation components.
-group: components
+tags: components
 ---
 
 Navigation options available in Athena share general markup and styles, from the base `.nav` class to the active and disabled states. Swap modifier classes to switch between each style.

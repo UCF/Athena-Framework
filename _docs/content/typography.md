@@ -2,7 +2,7 @@
 layout: docs
 title: Typography
 description: Documentation and examples for Athena typography, including global settings, headings, body text, lists, and more.
-group: content
+tags: content
 ---
 
 Athena includes simple and easily customized typography for headings, body text, lists, and more. When more control is needed, check out the [textual utility classes]({{ '/utilities/typography' | url }}).

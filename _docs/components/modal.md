@@ -2,7 +2,7 @@
 layout: docs
 title: Modal
 description: Use Athena's modal JavaScript to add dialogs to your site for lightboxes, user notifications, or completely custom content.
-group: components
+tags: components
 ---
 
 Modals are streamlined, but flexible dialog prompts powered by JavaScript. They support a number of use cases from user notification to completely custom content and feature a handful of helpful subcomponents, sizes, and more.

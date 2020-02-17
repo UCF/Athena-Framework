@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Borders
-group: utilities
+tags: utilities
 redirect_from: "/utilities/"
 ---
 

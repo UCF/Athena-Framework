@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Typography
-group: utilities
+tags: utilities
 ---
 
 The following utilities can be used to add additional styles to text.

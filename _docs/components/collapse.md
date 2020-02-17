@@ -2,7 +2,7 @@
 layout: docs
 title: Collapse
 description: Toggle the visibility of content across your project with a few classes and Athena's JavaScript.
-group: components
+tags: components
 ---
 
 The Athena collapse component allows you to toggle content on your pages with a few classes thanks to some helpful JavaScript.

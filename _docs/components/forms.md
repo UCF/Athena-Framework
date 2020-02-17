@@ -2,7 +2,7 @@
 layout: docs
 title: Forms
 description: Examples and usage guidelines for form controls, form layouts, and custom forms.
-group: components
+tags: components
 ---
 
 Athena provides several form control styles, layout options, and custom components for creating a wide variety of forms.

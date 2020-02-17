@@ -2,7 +2,7 @@
 layout: docs
 title: Figures
 description: Documentation and examples for displaying related images and text with the figure component in Athena.
-group: content
+tags: content
 ---
 
 Anytime you need to display a piece of content—like an image with an optional caption, consider using a `<figure>`.

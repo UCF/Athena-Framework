@@ -1,49 +1,46 @@
 <div id="afd-toc" class="collapse d-md-block mb-4">
   <nav class="afd-links">
-    {% assign page_slug = page.url | split: '/' | last %}
-    {% for group in site.nav %}
-    {% assign link = group.pages | first %}
-    {% assign link_slug = link.title | slugify %}
-    {% assign group_slug = group.title | slugify %}
-    {% assign active = nil %}
+    {% assign page_slug = title | slug %}
 
-    {% if page.group == group_slug %}
-      {% assign active = 'active' %}
-    {% endif %}
+    {% for collection_name in nav-docs %}
+        {% assign collection_slug = collection_name | slug %}
+        {% assign active = nil %}
 
-    <div class="afd-toc-item">
-      <a class="afd-toc-link {{ active }}" {% if link_slug.size > 0 %}href="#sidenav-{{ group_slug }}" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-{{ group_slug }}"{% else %}href="{{ link_slug | url }}/"{% endif %}>
-        {{ group.title }}
-        <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
-      </a>
+        {% if tags[0] == collection_slug %}
+            {% assign active = 'active' %}
+        {% endif %}
 
-      {% if page.group == group_slug %}
-        {% assign active = 'show' %}
-      {% endif %}
+        <div class="afd-toc-item">
+            <a class="afd-toc-link {{ active }}" href="#sidenav-{{ collection_slug }}" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-{{ collection_slug }}">
+                {{ collection_name }}
+                <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+            </a>
 
-      {% if link_slug.size > 0 %}
-        <div class="ml-4 collapse afd-sidenav {{ active }}" id="sidenav-{{ group_slug }}">
-          <ul class="nav d-flex flex-column">
-            {% for doc in group.pages %}
-              {% assign doc_slug = doc.title | slugify %}
-              {% assign active = nil %}
+            {% if active == 'active' %}
+                {% assign active = 'show' %}
+            {% endif %}
 
-              {% if page.group == group_slug and page_slug == doc_slug %}
-                {% assign active = 'active afd-sidenav-active' %}
-              {% endif %}
+            <div class="ml-4 collapse afd-sidenav {{ active }}" id="sidenav-{{ collection_slug }}">
+                <ul class="nav d-flex flex-column">
+                    {% for item in collections[collection_slug] %}
+                        {% assign item_slug = item.data.title | slug %}
+                        {% assign active = nil %}
 
-              <li class="nav-item">
-                <a class="nav-link {{ active }}" href="{{ group_slug | url }}/{{ doc_slug }}/">
-                  {{ doc.title }}
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
+                        {% if item.data.tags[0] == collection_slug and page_slug == item_slug %}
+                            {% assign active = 'active afd-sidenav-active' %}
+                        {% endif %}
+
+                        <li class="nav-item">
+                            <a class="nav-link {{ active }}" href="{{ item.url | url }}">
+                                {{ item.data.title }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
-      {% endif %}
-
-    </div>
 
     {% endfor %}
+
   </nav>
 </div>

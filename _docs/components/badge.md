@@ -2,7 +2,7 @@
 layout: docs
 title: Badges
 description: Documentation and examples for badges, our small count and labeling component.
-group: components
+tags: components
 ---
 
 Small and adaptive tag for adding context to just about any content.

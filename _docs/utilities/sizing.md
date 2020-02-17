@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Sizing
-group: utilities
+tags: utilities
 ---
 
 Easily make an element as wide or as tall (relative to its parent) with our width and height utilities. Includes support for `25%`, `50%`, `75%`, and `100%` by default.

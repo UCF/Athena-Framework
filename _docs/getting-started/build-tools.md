@@ -2,7 +2,7 @@
 layout: docs
 title: Build tools
 description: Details on how to compile custom Athena builds and more.
-group: getting-started
+tags: getting-started
 ---
 
 If you choose to utilize Athena's source files in your project, they should be included using whatever build tools best suit your project, such as [Grunt](http://gruntjs.com/) or [Gulp](http://gulpjs.com/). However, regardless of the build tools you choose, they will need to build your project's front-end assets in such a way that preserves Athena's core code while applying your overrides in a non-destructive way. We've outlined some examples below using Gulp.

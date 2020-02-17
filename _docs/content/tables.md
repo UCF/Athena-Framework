@@ -2,7 +2,7 @@
 layout: docs
 title: Tables
 description: Documentation and examples for opt-in styling of tables with Athena.
-group: content
+tags: content
 ---
 
 Due to the widespread use of tables across third-party widgets like calendars and date pickers, we've designed our tables to be **opt-in**. Just add the base class `.table` to any `<table>`, then extend with custom styles or our various included modifier classes.

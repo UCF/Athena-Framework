@@ -2,7 +2,7 @@
 layout: docs
 title: Browsers and devices
 description: Learn which browsers and devices are supported by Athena.
-group: getting-started
+tags: getting-started
 ---
 
 Athena supports a wide variety of modern browsers and devices, and some older ones. See which exact ones below, as well as detailed information on known quirks and bugs.

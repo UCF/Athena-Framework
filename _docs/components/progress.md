@@ -2,7 +2,7 @@
 layout: docs
 title: Progress
 description: Documentation and examples for using Athena custom progress bars, featuring support for stacked bars, animated backgrounds, and text labels.
-group: components
+tags: components
 ---
 
 Use our custom progress component for displaying simple or complex progress bars. We don't use [the HTML5 `<progress>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress), ensuring you can stack progress bars, animate them, and place text labels over them.

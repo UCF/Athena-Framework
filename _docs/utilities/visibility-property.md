@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Visibility property
-group: utilities
+tags: utilities
 ---
 
 The `.invisible` class can be used to toggle only the visibility of an element, meaning its `display` is not modified and the element can still affect the flow of the document.

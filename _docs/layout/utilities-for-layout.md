@@ -2,7 +2,7 @@
 layout: docs
 title: Utilities for layout
 description: Use any of our dozens of responsive utility classes for showing, hiding, aligning, and spacing content.
-group: layout
+tags: layout
 ---
 
 For faster mobile-friendly and responsive development, Athena includes dozens of utility classes for showing, hiding, aligning, and spacing content. Below is a primer on what's included in Athena and how these utilities can help you with layout.

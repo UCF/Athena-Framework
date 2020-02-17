@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Screenreaders
-group: utilities
+tags: utilities
 ---
 
 ## Screenreader-only content

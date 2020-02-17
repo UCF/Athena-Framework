@@ -2,7 +2,7 @@
 layout: docs
 title: Buttons
 description: Use Athena's custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
-group: components
+tags: components
 redirect_from: "/components/"
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Image replacement
-group: utilities
+tags: utilities
 ---
 
 Utilize the `.text-hide` class or mixin to help replace an element's text content with a background image.

@@ -2,7 +2,7 @@
 layout: docs
 title: List group
 description: List groups are a flexible and powerful component for displaying a series of content. Modify and extend them to support just about any content within.
-group: components
+tags: components
 ---
 
 List groups are a flexible and powerful component for displaying a series of content. List group items can be modified and extended to support just about any content within.

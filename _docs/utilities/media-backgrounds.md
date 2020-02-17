@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Media Backgrounds
-group: utilities
+tags: utilities
 ---
 
 Media backgrounds are an easy way of applying large images or video as a background.  They behave similarly to an image applied to an element using `background-image`, but with the advantage of being able to utilize `srcset` and `<picture> <source>`s for automated responsive switchouts of images.  For videos, media backgrounds provide a consistent, responsive option for full-screen scaling, stretching, and positioning.

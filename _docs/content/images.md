@@ -2,7 +2,7 @@
 layout: docs
 title: Images
 description: Documentation and examples for styling images with Athena.
-group: content
+tags: content
 ---
 
 Opt your images into responsive behavior (so they never become larger than their parent elements) and add lightweight styles to them—all via classes.

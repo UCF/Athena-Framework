@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Float
-group: utilities
+tags: utilities
 ---
 
 Toggle floats on any element, across any breakpoint, using our responsive float utilities.

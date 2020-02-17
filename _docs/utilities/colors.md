@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Colors
-group: utilities
+tags: utilities
 ---
 
 ## Contents

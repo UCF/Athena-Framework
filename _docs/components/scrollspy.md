@@ -2,7 +2,7 @@
 layout: docs
 title: Scrollspy
 description: Documentation and examples for scrollspy logic with Athena's navigation components.
-group: components
+tags: components
 ---
 
 ## Contents

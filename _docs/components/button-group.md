@@ -2,7 +2,7 @@
 layout: docs
 title: Button group
 description: Group a series of buttons together on a single line with the button group, and super-power them with JavaScript.
-group: components
+tags: components
 ---
 
 Group a series of buttons together on a single line with the button group. Add on optional JavaScript radio and checkbox style behavior with [Athena's included JavaScript for buttons]({{ '/components/buttons' | url }}#button-plugin).

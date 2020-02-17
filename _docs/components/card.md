@@ -2,7 +2,7 @@
 layout: docs
 title: Cards
 description: Athena's cards provide a flexible and extensible content container with multiple variants and options.
-group: components
+tags: components
 ---
 
 A **card** is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.

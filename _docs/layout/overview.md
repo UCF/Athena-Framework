@@ -2,7 +2,7 @@
 layout: docs
 title: Overview
 description: Components and options for laying out your project, including wrapping containers, a powerful grid system, a flexible media object, and responsive utility classes.
-group: layout
+tags: layout
 redirect_from: "/layout/"
 ---
 
