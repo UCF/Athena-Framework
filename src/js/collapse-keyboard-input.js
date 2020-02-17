@@ -31,7 +31,9 @@
 
   function toggleCollapse(target) {
     const $target = getTarget(target);
-    $target.collapse('toggle');
+    if ($target.attr('role') === 'tabpanel') {
+      $target.collapse('toggle');
+    }
   }
 
   function goToNext(target) {
