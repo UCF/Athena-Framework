@@ -427,7 +427,7 @@ Athena provides the option of using `<button>` elements in your dropdowns instea
 
 By default, a dropdown menu is automatically positioned 100% from the top and along the left side of its parent. Add `.dropdown-menu-right` to a `.dropdown-menu` to right align the dropdown menu.
 
-{% callout info %}
+{% callout 'info' %}
 **Heads up!** Dropdowns are positioned only with CSS and may need some additional styles for exact alignment.
 {% endcallout %}
 
@@ -525,7 +525,7 @@ Call the dropdowns via JavaScript:
 $('.dropdown-toggle').dropdown()
 {% endhighlight %}
 
-{% callout info %}
+{% callout 'info' %}
 ##### `data-toggle="dropdown"` still required
 
 Regardless of whether you call your dropdown via JavaScript or instead use the data-api, `data-toggle="dropdown"` is always required to be present on the dropdown's trigger element.

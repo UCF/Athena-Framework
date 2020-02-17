@@ -26,7 +26,7 @@ Position an element at the bottom of the viewport, from edge to edge. Be sure yo
 
 Position an element at the top of the viewport, from edge to edge, but only after you scroll past it.
 
-{% callout warning %}
+{% callout 'warning' %}
 **Polyfill notes:** The `.sticky-top` utility uses CSS's `position: sticky`, which is polyfilled in Athena using Stickyfill for full cross-browser support; however, we still recommend testing its usage thoroughly in [browsers that require the polyfill](http://caniuse.com/#search=sticky) to ensure it behaves properly.
 {% endcallout %}
 

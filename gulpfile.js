@@ -476,7 +476,7 @@ gulp.task('docs-default', gulp.series('docs-config', 'docs-components', gulp.par
 
 // Generates a new local build of the docs.
 gulp.task('docs-local-build', gulp.series(
-  gulp.parallel('docs-default'),
+  gulp.series('docs-default'),
   () => {
     return childProcess.exec(
       'npx @11ty/eleventy',

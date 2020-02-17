@@ -27,7 +27,7 @@ Apply `display` utilities to create a flexbox container and transform **direct c
 
 Responsive variations also exist for `.d-flex` and `.d-inline-flex`.
 
-{% for bp in site.data.breakpoints %}
+{% for bp in breakpoints %}
 - `.d{{ bp.abbr }}-flex`
 - `.d{{ bp.abbr }}-inline-flex`{% endfor %}
 
@@ -68,7 +68,7 @@ Use `.flex-column` to set a vertical direction, or `.flex-column-reverse`  to st
 
 Responsive variations also exist for `flex-direction`.
 
-{% for bp in site.data.breakpoints %}
+{% for bp in breakpoints %}
 - `.flex{{ bp.abbr }}-row`
 - `.flex{{ bp.abbr }}-row-reverse`
 - `.flex{{ bp.abbr }}-column`
@@ -116,7 +116,7 @@ Use `justify-content` utilities on flexbox containers to change the alignment of
 
 Responsive variations also exist for `justify-content`.
 
-{% for bp in site.data.breakpoints %}
+{% for bp in breakpoints %}
 - `.justify-content{{ bp.abbr }}-start`
 - `.justify-content{{ bp.abbr }}-end`
 - `.justify-content{{ bp.abbr }}-center`
@@ -166,7 +166,7 @@ Use `align-items` utilities on flexbox containers to change the alignment of fle
 
 Responsive variations also exist for `align-items`.
 
-{% for bp in site.data.breakpoints %}
+{% for bp in breakpoints %}
 - `.align-items{{ bp.abbr }}-start`
 - `.align-items{{ bp.abbr }}-end`
 - `.align-items{{ bp.abbr }}-center`
@@ -216,7 +216,7 @@ Use `align-self` utilities on flexbox items to individually change their alignme
 
 Responsive variations also exist for `align-self`.
 
-{% for bp in site.data.breakpoints %}
+{% for bp in breakpoints %}
 - `.align-self{{ bp.abbr }}-start`
 - `.align-self{{ bp.abbr }}-end`
 - `.align-self{{ bp.abbr }}-center`
@@ -352,7 +352,7 @@ Change how flex items wrap in a flex container. Choose from no wrapping at all (
 
 Responsive variations also exist for `flex-wrap`.
 
-{% for bp in site.data.breakpoints %}
+{% for bp in breakpoints %}
 - `.flex{{ bp.abbr }}-nowrap`
 - `.flex{{ bp.abbr }}-wrap`
 - `.flex{{ bp.abbr }}-wrap-reverse`{% endfor %}
@@ -372,7 +372,7 @@ Change the _visual_ order of specific flex items with a handful of `order` utili
 
 Responsive variations also exist for `order`.
 
-{% for bp in site.data.breakpoints %}
+{% for bp in breakpoints %}
 - `.order{{ bp.abbr }}-first`
 - `.order{{ bp.abbr }}-last`
 - `.order{{ bp.abbr }}-unordered`{% endfor %}
@@ -526,7 +526,7 @@ Use `align-content` utilities on flexbox containers to align flex items *togethe
 
 Responsive variations also exist for `align-content`.
 
-{% for bp in site.data.breakpoints %}
+{% for bp in breakpoints %}
 - `.align-content{{ bp.abbr }}-start`
 - `.align-content{{ bp.abbr }}-end`
 - `.align-content{{ bp.abbr }}-center`

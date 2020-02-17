@@ -70,7 +70,7 @@ Apply `.media-background` and your `.object-fit-*` class to the inner `<img>` el
 </div>
 {% endhighlight %}
 
-{% callout info %}
+{% callout 'info' %}
 #### Picture elements and `srcset`
 
 Note that IE 11 [does not support the `<picture>` element and its `<source>` children](http://caniuse.com/#search=picture) natively.  In addition, because the `srcset` attribute is also not supported in IE nor Edge, make sure you always include an `<img>` as the last child element within any `<picture>`, and that that image uses the `src` attribute to define the url.
@@ -102,13 +102,13 @@ Note that media background videos must be included using the `<video>` element. 
 </div>
 {% endhighlight %}
 
-{% callout danger %}
+{% callout 'danger' %}
 #### Mute your video!
 
 **Never include sound on media background videos.** Ensure the `muted` attribute is _always_ present when using a video as a media background!
 {% endcallout %}
 
-{% callout warning %}
+{% callout 'warning' %}
 #### Media background video accessibility
 
 [For accessibility reasons](https://www.w3.org/TR/WCAG20/#time-limits-pause), **videos that play automatically and run for more than 5 seconds should be pauseable by the user**.  Athena does not include a means of doing this out of the box, but we suggest utilizing [button toggling]({{ '/components/buttons' | url }}#toggle-states) with some custom JavaScript that toggles video playback on click.  Whatever playback toggler you implement should be **visible for all users**, **positioned somewhere relative to the video**, and **work via keyboard input**.
@@ -116,7 +116,7 @@ Note that media background videos must be included using the `<video>` element. 
 Additionally, be mindful of the type of video content you use as a media background--flashing lights, fast cuts (transitions between scenes), and fast-moving imagery are not appropriate for use behind your site's content. Slow-moving vignettes with minimal cuts are ideal.
 {% endcallout %}
 
-{% callout warning %}
+{% callout 'warning' %}
 #### Media background videos on mobile devices
 
 Keep in mind that iOS Safari and Chrome for Android have stricter requirements for allowing autoplaying videos to load than most desktop browsers.  See [this document on Webkit `<video>` policies](https://webkit.org/blog/6784/new-video-policies-for-ios/) and [this document on Autoplay policies in Chrome](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes) for more information.

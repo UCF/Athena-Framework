@@ -58,7 +58,7 @@ Responsive variations also exist for each `float` value.
 
 All available support classes are listed below:
 
-{% for bp in site.data.breakpoints %}
+{% for bp in breakpoints %}
 - `.float{{ bp.abbr }}-left`
 - `.float{{ bp.abbr }}-right`
 - `.float{{ bp.abbr }}-none`{% endfor %}

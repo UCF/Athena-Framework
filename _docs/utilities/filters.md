@@ -6,7 +6,7 @@ group: utilities
 
 Apply unique effects to images using Athena's built-in filter classes.
 
-{% callout warning %}
+{% callout 'warning' %}
 ## Not compatible with IE 11
 Note that CSS filters are not compatible with and will have no effect in IE 11.
 {% endcallout %}

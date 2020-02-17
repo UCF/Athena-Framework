@@ -37,7 +37,7 @@ Navbars come with built-in support for a handful of sub-components. Choose from 
 - `.navbar-text` for adding vertically centered strings of text.
 - `.collapse.navbar-collapse` for grouping and hiding navbar contents by a parent breakpoint.
 
-{% callout warning %}
+{% callout 'warning' %}
 ### A note about navbar toggler positioning
 `.navbar-toggler-left` and `.navbar-toggler-right` classes should not be used to position the navbar toggler button in Athena navbars.  Athena's navbars have been modified from Bootstrap alpha.6 to utilize flex styles for positioning of inner elements, meaning that the toggler button is now positioned by **its order in the navbar markup**.  Athena currently supports right-aligned toggler buttons: if a toggler is added after a `.navbar-brand` (or other supported nested components), it will be positioned correctly without any additional markup; if the toggler button is the only child besides the collapsed content, you will need to add the `.ml-auto` class to push it to the right.
 

@@ -57,7 +57,7 @@ Because most of Athena's JavaScript is copied over directly from Bootstrap, you'
 
 In addition to data attributes, most of Athena's JavaScript functionality is also accessible through the JavaScript API. All public APIs are single, chainable methods, and return the collection acted upon.
 
-{% callout info %}
+{% callout 'info' %}
 <strong>Note: Programmatic API applies to plugins ported from Bootstrap only.</strong> Athena-specific plugins (`mediaBackground` and `stickyTop`) don't currently expose a constructor, `noConflict` method, version number or have any configurable options.
 {% endcallout %}
 
@@ -96,7 +96,7 @@ $.fn.AthenaBtn = AthenaButton            // give $().AthenaBtn the Athena functi
 The version of each of jQuery plugin ported from Bootstrap can be accessed via the `VERSION` property of the plugin's constructor. For example, for the tooltip plugin:
 
 {% highlight js %}
-$.fn.tooltip.Constructor.VERSION // => "{{ site.data.package.version }}"
+$.fn.tooltip.Constructor.VERSION // => "{{ package.version }}"
 {% endhighlight %}
 
 Note that these version numbers will correspond to the version of Bootstrap that they are ported from, _not_ the current version of the Athena Framework!
@@ -106,7 +106,7 @@ Note that these version numbers will correspond to the version of Bootstrap that
 
 Athena's components that depend on JavaScript logic don't fall back particularly gracefully when JavaScript is disabled. If you care about the user experience in this case, use [`<noscript>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript) to explain the situation (and how to re-enable JavaScript) to your users, and/or add your own custom fallbacks.
 
-{% callout warning %}
+{% callout 'warning' %}
 ### Third-party libraries
 
 **Athena does not officially support third-party JavaScript libraries** like Prototype or jQuery UI. Despite `.noConflict` and namespaced events, there may be compatibility problems that you need to fix on your own.

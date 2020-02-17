@@ -13,7 +13,7 @@ Group a series of buttons together on a single line with the button group. Add o
 * Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
-{% callout warning %}
+{% callout 'warning' %}
 ## Ensure correct `role` and provide a label
 
 In order for assistive technologies (such as screen readers) to convey that a series of buttons is grouped, an appropriate `role` attribute needs to be provided. For button groups, this would be `role="group"`, while toolbars should have a `role="toolbar"`.

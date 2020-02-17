@@ -139,7 +139,7 @@ sagittis lacus vel augue laoreet rutrum faucibus.">
 
 Use the `focus` trigger to dismiss popovers on the next click that the user makes.
 
-{% callout danger %}
+{% callout 'danger' %}
 #### Specific markup required for dismiss-on-next-click
 
 For proper cross-browser and cross-platform behavior, you must use the `<a>` tag, _not_ the `<button>` tag, and you also must include a [`tabindex`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) attribute.
@@ -272,7 +272,7 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
   </tbody>
 </table>
 
-{% callout info %}
+{% callout 'info' %}
 #### Data attributes for individual popovers
 
 Options for individual popovers can alternatively be specified through the use of data attributes, as explained above.

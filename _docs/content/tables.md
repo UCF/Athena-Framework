@@ -642,7 +642,7 @@ Regular table background variants are not available with the inverse table, howe
 
 Create responsive tables by adding `.table-responsive` to any `.table` to make them scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, you will not see any difference in these tables.
 
-{% callout warning %}
+{% callout 'warning' %}
 #### Vertical clipping/truncation
 
 Responsive tables make use of `overflow-y: hidden`, which clips off any content that goes beyond the bottom or top edges of the table. In particular, this can clip off dropdown menus and other third-party widgets.

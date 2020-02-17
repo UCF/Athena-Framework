@@ -1,7 +1,7 @@
 <div id="afd-toc" class="collapse d-md-block mb-4">
   <nav class="afd-links">
     {% assign page_slug = page.url | split: '/' | last %}
-    {% for group in site.data.nav %}
+    {% for group in site.nav %}
     {% assign link = group.pages | first %}
     {% assign link_slug = link.title | slugify %}
     {% assign group_slug = group.title | slugify %}
@@ -12,7 +12,7 @@
     {% endif %}
 
     <div class="afd-toc-item">
-      <a class="afd-toc-link {{ active }}" {% if link_slug.size > 0 %}href="#sidenav-{{ group_slug }}" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-{{ group_slug }}"{% else %}href="{{ site.baseurl }}/{{ group_slug }}/{{ link_slug }}/"{% endif %}>
+      <a class="afd-toc-link {{ active }}" {% if link_slug.size > 0 %}href="#sidenav-{{ group_slug }}" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-{{ group_slug }}"{% else %}href="{{ link_slug | url }}/"{% endif %}>
         {{ group.title }}
         <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
       </a>
@@ -33,7 +33,7 @@
               {% endif %}
 
               <li class="nav-item">
-                <a class="nav-link {{ active }}" href="{{ site.baseurl }}/{{ group_slug }}/{{ doc_slug }}/">
+                <a class="nav-link {{ active }}" href="{{ group_slug | url }}/{{ doc_slug }}/">
                   {{ doc.title }}
                 </a>
               </li>

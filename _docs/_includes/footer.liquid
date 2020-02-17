@@ -16,13 +16,13 @@
               </li>
             </ul>
             <p>
-              {% if site.data.package.version %}Current version: <strong>v{{ site.data.package.version }}</strong>.{% endif %}
+              {% if package.version %}Current version: <strong>v{{ package.version }}</strong>.{% endif %}
             </p>
             <p>
               Documentation powered by <a class="bg-inverse-link" href="https://jekyllrb.com/" target="_blank">Jekyll</a>. Contents adapted from <a class="bg-inverse-link" href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.
             </p>
             <p class="mb-0">
-              Code licensed <a class="bg-inverse-link" href="https://github.com/{{ site.data.package.repository.url }}/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/{{ site.data.package.repository.url }}/blob/master/docs/LICENSE">CC BY 3.0</a>.
+              Code licensed <a class="bg-inverse-link" href="https://github.com/{{ package.repository.url }}/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/{{ package.repository.url }}/blob/master/docs/LICENSE">CC BY 3.0</a>.
             </p>
           </div>
           <div class="col-lg-5 col-xl-4 mt-5 mt-lg-0">
@@ -37,10 +37,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.bundle.min.js" integrity="sha256-VCsWOz+0GuHdS/sIICtQNTFJdbaDI80rxvoB7BXabrU=" crossorigin="anonymous"></script>
 
     <script>
-      var SEARCH_INDEX_URL = '{{ site.host }}{{ site.baseurl }}/search-index.json';
-      var SEARCH_DATA_URL = '{{ site.host }}{{ site.baseurl }}/search-data.json';
+      var SEARCH_INDEX_URL = '{{ '/search-index.json' | url }}';
+      var SEARCH_DATA_URL = '{{ '/search-data.json' | url }}';
     </script>
-    <script src="{{ site.host }}{{ site.baseurl }}/static/js/docs.min.js"></script>
+    <script src="{{ '/static/js/docs.min.js' | url }}"></script>
 
   </body>
 </html>

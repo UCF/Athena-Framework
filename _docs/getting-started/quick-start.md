@@ -8,7 +8,7 @@ redirect_from: "/getting-started/"
 
 It's easy to get started with the Athena Framework. The steps below outline the minimum requirements for getting Athena set up using CDN assets.
 
-{% callout info %}
+{% callout 'info' %}
 
 ## A Note about Bootstrap
 
@@ -56,13 +56,13 @@ Add the Athena stylesheet before all other stylesheets in your document `<head>`
 ### Using fallback fonts only (no Cloud.typography fonts)
 
 {% highlight html %}
-<link rel="stylesheet" href="{{ site.cdn }}v{{ site.data.package.version }}/css/framework.min.css">
+<link rel="stylesheet" href="{{ site.cdn }}v{{ package.version }}/css/framework.min.css">
 {% endhighlight %}
 
 ### Using Cloud.typography fonts
 {% highlight html %}
 <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/xxxxxx/xxxxxx/css/fonts.css">
-<link rel="stylesheet" href="{{ site.cdn }}v{{ site.data.package.version }}/css/framework.min.css">
+<link rel="stylesheet" href="{{ site.cdn }}v{{ package.version }}/css/framework.min.css">
 {% endhighlight %}
 
 
@@ -73,7 +73,7 @@ Add jQuery, Tether, and Athena's JavaScript near the end of your pages, right be
 {% highlight html %}
 {{ site.jquery_script }}
 {{ site.tether_script }}
-<script src="{{ site.cdn }}v{{ site.data.package.version }}/js/framework.min.js"></script>
+<script src="{{ site.cdn }}v{{ package.version }}/js/framework.min.js"></script>
 {% endhighlight %}
 
 
@@ -90,7 +90,7 @@ Following the steps above, a basic starter template would look something like th
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Athena CSS -->
-    <link rel="stylesheet" href="{{ site.cdn }}v{{ site.data.package.version }}/css/framework.min.css">
+    <link rel="stylesheet" href="{{ site.cdn }}v{{ package.version }}/css/framework.min.css">
   </head>
   <body>
     <h1>Hello, world!</h1>
@@ -98,7 +98,7 @@ Following the steps above, a basic starter template would look something like th
     <!-- jQuery first, then Tether, then Athena JS. -->
     {{ site.jquery_script }}
     {{ site.tether_script }}
-    <script src="{{ site.cdn }}v{{ site.data.package.version }}/js/framework.min.js"></script>
+    <script src="{{ site.cdn }}v{{ package.version }}/js/framework.min.js"></script>
   </body>
 </html>
 {% endhighlight %}

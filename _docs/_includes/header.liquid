@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>
-      {% if page.title %}
-        {{ page.title }} &middot; {{ site.title }}
+      {% if title %}
+        {{ title }} &middot; {{ site.title }}
       {% else %}
-        {{ site.title }} &middot; {{ site.data.package.description }}
+        {{ site.title }} &middot; {{ package.description }}
       {% endif %}
     </title>
 
@@ -17,13 +17,13 @@
 
     <link href="{{ '/favicon.ico' | url }}" rel="shortcut icon" type="image/x-icon">
     <link rel="stylesheet" href="{{ '/static/css/docs.min.css' | url }}">
-    <link rel="canonical" href="{{ site.host }}{{ site.baseurl }}{{ page.url | slug }}">
+    <link rel="canonical" href="{{ page.url | url }}">
   </head>
 
   <body class="docs">
     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
       <div class="container">
-        <a class="navbar-brand" href="{{ '/index' | url }}">Athena Framework</a>
+        <a class="navbar-brand" href="{{ '/' | url }}">Athena Framework</a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-text">Menu</span>
           <span class="navbar-toggler-icon"></span>

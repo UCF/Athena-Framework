@@ -9,8 +9,9 @@ module.exports = function (eleventyConfig) {
     ]
   });
 
-  // TODO handle watch logic?
-  // eleventyConfig.addWatchTarget('../static/css/');
+  eleventyConfig.addPassthroughCopy('favicon.ico');
+  eleventyConfig.addPassthroughCopy('LICENSE');
+  eleventyConfig.addPassthroughCopy('static');
 
   eleventyConfig.addPairedShortcode('callout', function (content, callout_type) {
     return `<div class="afd-callout afd-callout-${callout_type}">${content}</div>`;
@@ -21,11 +22,11 @@ module.exports = function (eleventyConfig) {
   });
 
   return {
+    pathPrefix: '/Athena-Framework/docs-local',
     dir: {
-      input: "./", // Equivalent to Jekyll's source property
-      output: "../docs-local", // Equivalent to Jekyll's destination property
-      layouts: "_layouts",
-      pathPrefix: "/Athena-Framework/"
+      input: './', // Equivalent to Jekyll's source property
+      output: '../docs-local', // Equivalent to Jekyll's destination property
+      layouts: '_layouts'
     }
   };
 };
