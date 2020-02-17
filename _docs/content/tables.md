@@ -545,7 +545,7 @@ Use contextual classes to color table rows or individual cells.
 </tr>
 {% endhighlight %}
 
-Regular table background variants are not available with the inverse table, however, you may use [text or background utilities]({{ site.baseurl }}{% link utilities/colors.md %}) to achieve similar styles.
+Regular table background variants are not available with the inverse table, however, you may use [text or background utilities]({{ '/utilities/colors' | url }}) to achieve similar styles.
 
 <div class="afd-example">
   <table class="table table-inverse">

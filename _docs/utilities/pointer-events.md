@@ -4,7 +4,7 @@ title: Pointer Events
 group: utilities
 ---
 
-Disabling [pointer events](https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events) can be particularly useful when combining media backgrounds and certain [hover state]({{ site.baseurl }}{% link utilities/states.md %}) setups.
+Disabling [pointer events](https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events) can be particularly useful when combining media backgrounds and certain [hover state]({{ '/utilities/states' | url }}) setups.
 
 {% example html %}
 <a href="#">

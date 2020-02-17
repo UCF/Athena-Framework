@@ -19,7 +19,7 @@ Here are the big ticket items you'll want to be aware of when moving from Bootst
 
 ### Browser support
 
-- Dropped IE 8, IE 9, IE 10, and iOS 6 support. Athena only supports the [latest 2 versions of major browsers and IE 11]({{ site.baseurl }}{% link getting-started/browsers-devices.md %}#supported-browsers).
+- Dropped IE 8, IE 9, IE 10, and iOS 6 support. Athena only supports the [latest 2 versions of major browsers and IE 11]({{ '/getting-started/browsers-devices' | url }}#supported-browsers).
 - Added official support for Android v5.0 Lollipop’s Browser and WebView.
 
 ### Global changes
@@ -83,8 +83,8 @@ Athena includes a combination of opinionated element style resets and [Reboot](h
 - **Type:**
   - Added responsive variations to our text alignment classes `.text-{sm,md,lg,xl}-{left,center,right}`.
 - **Alignment and spacing:**
-  - Added new [responsive margin and padding utilities]({{ site.baseurl }}{% link utilities/spacing.md %}) for all sides, plus vertical and horizontal shorthands.
-  - Added lots of [flexbox utilities]({{ site.baseurl }}{% link utilities/flexbox.md %}).
+  - Added new [responsive margin and padding utilities]({{ '/utilities/spacing' | url }}) for all sides, plus vertical and horizontal shorthands.
+  - Added lots of [flexbox utilities]({{ '/utilities/flexbox' | url }}).
   - Dropped `.center-block` for the new `.mx-auto` class.
 
 #### Vendor prefix mixins
@@ -110,9 +110,9 @@ Note that the changes to the grid breakpoints in Athena means that you'll need t
 
 ### Components
 
-- **Dropped panels, thumbnails, and wells** for a new all-encompassing component, [cards]({{ site.baseurl }}{% link components/card.md %}).
+- **Dropped panels, thumbnails, and wells** for a new all-encompassing component, [cards]({{ '/link components/card' | url }}).
 - **Dropped the Glyphicons icon font.** If you need icons, we recommend including [Font Awesome](http://fontawesome.io/) or another icon library in your project as needed.
-- **Dropped the Affix jQuery plugin.** Use the [`.sticky-top` utility class]({{ site.baseurl }}{% link utilities/position.md %}#sticky-top) instead.
+- **Dropped the Affix jQuery plugin.** Use the [`.sticky-top` utility class]({{ '/utilities/position' | url }}#sticky-top) instead.
   - If you were using Affix to apply additional, non-`position` styles, `.sticky-top` might not support your use case. One option for such uses is the third-party [ScrollPos-Styler](https://github.com/acch/scrollpos-styler) library.
 - **Dropped the pager component** as it was essentially slightly customized buttons.
 - **Refactored nearly all components** to use more un-nested classes instead of children selectors.
@@ -212,7 +212,7 @@ The navbar has been entirely rewritten in flexbox with improved support for alig
 
 ### Panels, thumbnails, and wells
 
-Dropped entirely for the new [card component]({{ site.baseurl }}{% link components/card.md %}).
+Dropped entirely for the new [card component]({{ '/components/card' | url }}).
 
 #### Panels
 
@@ -220,7 +220,7 @@ Dropped entirely for the new [card component]({{ site.baseurl }}{% link componen
 - `.panel-default` removed and no replacement.
 - `.panel-group` removed and no replacement. `.card-group` is not a replacement, it is different.
 - `.panel-heading` to `.card-header`
-- `.panel-title` to `.card-title`. Depending on the desired look, you may also want to use [heading elements or classes]({{ site.baseurl }}{% link content/typography.md %}#headings) (e.g. `<h3>`, `.h3`) or bold elements or classes (e.g. `<strong>`, `<b>`, [`.font-weight-bold`]({{ site.baseurl }}{% link utilities/typography.md %}#font-weight-and-italics)). Note that `.card-title`, while similarly named, produces a different look than `.panel-title`.
+- `.panel-title` to `.card-title`. Depending on the desired look, you may also want to use [heading elements or classes]({{ '/content/typography' | url }}#headings) (e.g. `<h3>`, `.h3`) or bold elements or classes (e.g. `<strong>`, `<b>`, [`.font-weight-bold`]({{ '/utilities/typography' | url }}#font-weight-and-italics)). Note that `.card-title`, while similarly named, produces a different look than `.panel-title`.
 - `.panel-body` to `.card-block`
 - `.panel-footer` to `.card-footer`
 - `.panel-primary` to `.card-primary` and `.card-inverse` (or use `.bg-primary` on `.card-header`)

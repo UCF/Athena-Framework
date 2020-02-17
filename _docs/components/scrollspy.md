@@ -15,7 +15,7 @@ group: components
 
 Scrollspy has a few requirements to function properly:
 
-- It must be used on a [nav component]({{ site.baseurl }}{% link components/navs.md %}).
+- It must be used on a [nav component]({{ '/components/navs' | url }}).
 - Scrollspy requires `position: relative;` on the element you’re spying on, usually the `<body>`.
 - When spying on elements other than the <body>, be sure to have a height set and overflow-y: scroll; applied.
 - Anchors (`<a>`) are required and must point to an element with that ID.

@@ -72,7 +72,7 @@ Alerts can also contain additional HTML elements like headings, paragraphs and d
 
 Using Athena's provided JavaScript, it's possible to dismiss any alert inline. Here's how:
 
-- Be sure Athena's JavaScript is [included on your page correctly]({{ site.baseurl }}{% link getting-started/quick-start.md %}#3-add-javascript).
+- Be sure Athena's JavaScript is [included on your page correctly]({{ '/getting-started/quick-start' | url }}#3-add-javascript).
 - Add a dismiss button and the `.alert-dismissible` class, which adds extra padding to the right of the alert and positions the `.close` button.
 - On the dismiss button, add the `data-dismiss="alert"` attribute, which triggers the JavaScript functionality. Be sure to use the `<button>` element with it for proper behavior across all devices.
 - To animate alerts when dismissing them, be sure to add the `.fade` and `.show` classes.

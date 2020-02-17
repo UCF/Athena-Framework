@@ -12,9 +12,9 @@ It's easy to get started with the Athena Framework. The steps below outline the 
 
 ## A Note about Bootstrap
 
-Athena is a complete replacement for <a href="https://getbootstrap.com/">Bootstrap</a>.  If you are already using Bootstrap on an existing project and want to use Athena instead, you should [remove Bootstrap's CSS and JavaScript completely]({{ site.baseurl }}{% link getting-started/download-install.md %}#adding-to-existing-project-using-bootstrap).  Athena is designed to run as a completely standalone framework.
+Athena is a complete replacement for <a href="https://getbootstrap.com/">Bootstrap</a>.  If you are already using Bootstrap on an existing project and want to use Athena instead, you should [remove Bootstrap's CSS and JavaScript completely]({{ '/getting-started/download-install' | url }}#adding-to-existing-project-using-bootstrap).  Athena is designed to run as a completely standalone framework.
 
-Read more about the <a href="{{ site.baseurl }}{% link migration.md %}">differences between Athena and Bootstrap here.</a>
+Read more about the <a href="{{ migration | url }}">differences between Athena and Bootstrap here.</a>
 
 {% endcallout %}
 
@@ -51,7 +51,7 @@ You can see an example of this in action in the [starter template](#starter-temp
 
 ## 2. Add stylesheets
 
-Add the Athena stylesheet before all other stylesheets in your document `<head>`. If you're [using Cloud.typography]({{ site.baseurl }}{% link getting-started/download-install.md %}#webfont-configuration), your CSS key should go immediately before the Athena stylesheet.
+Add the Athena stylesheet before all other stylesheets in your document `<head>`. If you're [using Cloud.typography]({{ '/getting-started/download-install' | url }}#webfont-configuration), your CSS key should go immediately before the Athena stylesheet.
 
 ### Using fallback fonts only (no Cloud.typography fonts)
 
@@ -103,4 +103,4 @@ Following the steps above, a basic starter template would look something like th
 </html>
 {% endhighlight %}
 
-That's all you need for overall page requirements. Visit the [Layout docs]({{ site.baseurl }}{% link layout/overview.md %}) to start laying out your site's content and components.
+That's all you need for overall page requirements. Visit the [Layout docs]({{ '/layout/overview' | url }}) to start laying out your site's content and components.

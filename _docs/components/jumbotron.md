@@ -32,7 +32,7 @@ To make the jumbotron full width, add the `.jumbotron-fluid` modifier class and 
 </div>
 {% endexample %}
 
-Jumbotrons work great with many of Athena's utility classes. For instance, [text color]({{ site.baseurl }}{% link utilities/colors.md %}#text-color"), [background color]({{ site.baseurl }}{% link utilities/colors.md %}#background-colors), and [media background]({{ site.baseurl }}{% link utilities/media-backgrounds.md %}) utilities allow for quick and easy jumbotron customizations:
+Jumbotrons work great with many of Athena's utility classes. For instance, [text color]({{ '/utilities/colors' | url }}#text-color"), [background color]({{ '/utilities/colors' | url }}#background-colors), and [media background]({{ '/utilities/media-backgrounds' | url }}) utilities allow for quick and easy jumbotron customizations:
 
 {% example html %}
 <div class="jumbotron jumbotron-fluid bg-primary">

@@ -536,7 +536,7 @@ With custom toggler text:
 
 ### External content
 
-Sometimes you may want to use the [collapse component]({{ site.baseurl }}{% link components/collapse.md %}) to trigger hidden content elsewhere on the page. Because Athena's collapse JavaScript works on the `id` and `data-target` matching, that's easily done!
+Sometimes you may want to use the [collapse component]({{ '/components/collapse' | url }}) to trigger hidden content elsewhere on the page. Because Athena's collapse JavaScript works on the `id` and `data-target` matching, that's easily done!
 
 {% example html %}
 <div class="pos-f-t">

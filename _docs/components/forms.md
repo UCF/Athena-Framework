@@ -16,7 +16,7 @@ Athena provides several form control styles, layout options, and custom componen
 
 ## Form controls
 
-Athena's form controls expand on [our reset form styles]({{ site.baseurl }}{% link content/resets.md %}#forms) with classes. Use these classes to opt into their customized displays for a more consistent rendering across browsers and devices. The example form below demonstrates common HTML form elements that receive updated styles from Athena with additional classes.
+Athena's form controls expand on [our reset form styles]({{ '/content/resets' | url }}#forms) with classes. Use these classes to opt into their customized displays for a more consistent rendering across browsers and devices. The example form below demonstrates common HTML form elements that receive updated styles from Athena with additional classes.
 
 Remember, since Athena utilizes the HTML5 doctype, **all inputs must have a `type` attribute**.
 
@@ -104,24 +104,24 @@ Below is a complete list of the specific form controls supported by Athena and t
   <tbody>
     <tr>
       <td>
-        {% markdown %}`.form-group`{% endmarkdown %}
+        `.form-group`
       </td>
       <td class="text-nowrap">
         Any group of form controls
       </td>
       <td>
-        {% markdown %}Use with any block-level element like `<fieldset>` or `<div>`{% endmarkdown %}
+        Use with any block-level element like `<fieldset>` or `<div>`
       </td>
     </tr>
     <tr>
       <td rowspan="3">
-        {% markdown %}`.form-control`{% endmarkdown %}
+        `.form-control`
       </td>
       <td>
         Textual inputs
       </td>
       <td>
-        {% markdown %}`text`, `password`, `datetime-local`, `date`, `month`, `time`, `week`, `number`, `email`, `url`, `search`, `tel`, `color`{% endmarkdown %}
+        `text`, `password`, `datetime-local`, `date`, `month`, `time`, `week`, `number`, `email`, `url`, `search`, `tel`, `color`
       </td>
     </tr>
     <tr>
@@ -129,7 +129,7 @@ Below is a complete list of the specific form controls supported by Athena and t
         Select menus
       </td>
       <td>
-        {% markdown %}`multiple`, `size`{% endmarkdown %}
+        `multiple`, `size`
       </td>
     </tr>
     <tr>
@@ -142,20 +142,18 @@ Below is a complete list of the specific form controls supported by Athena and t
     </tr>
     <tr>
       <td class="text-nowrap">
-        {% markdown %}`.form-control-file`{% endmarkdown %}
+        `.form-control-file`
       </td>
       <td>
         File inputs
       </td>
       <td>
-        {% markdown %}`file`{% endmarkdown %}
+        `file`
       </td>
     </tr>
     <tr>
       <td class="text-nowrap">
-{% markdown %}
 `.form-check`
-{% endmarkdown %}
       </td>
       <td class="text-nowrap">
         Checkboxes and radios
@@ -278,11 +276,11 @@ The `.form-group` class is the easiest way to add some structure to forms. Its o
 
 Use the `.form-inline` class to display a series of labels, form controls, and buttons on a single horizontal row. Form controls within inline forms vary slightly from their default states.
 
-- Controls are `display: flex`, collapsing any HTML white space and allowing you to provide alignment control with [spacing]({{ site.baseurl }}{% link utilities/spacing.md %}) and [flexbox]({{ site.baseurl }}{% link utilities/flexbox.md %}) utilities.
+- Controls are `display: flex`, collapsing any HTML white space and allowing you to provide alignment control with [spacing]({{ utilities/spacing | url }}) and [flexbox]({{ '/utilities/flexbox' | url }}) utilities.
 - Controls and input groups receive `width: auto` to override the Athena default `width: 100%`.
 - Controls **only appear inline in viewports that are at least 576px wide** to account for narrow viewports on mobile devices.
 
-You may need to manually address the width and alignment of individual form controls with [spacing utilities]({{ site.baseurl }}{% link utilities/spacing.md %}) (as shown below). Lastly, be sure to always include a `<label>` with each form control, even if you need to hide it from non-screenreader visitors with `.sr-only`.
+You may need to manually address the width and alignment of individual form controls with [spacing utilities]({{ '/utilities/spacing' | url }}) (as shown below). Lastly, be sure to always include a `<label>` with each form control, even if you need to hide it from non-screenreader visitors with `.sr-only`.
 
 {% example html %}
 <form class="form-inline">
@@ -334,7 +332,7 @@ Assistive technologies such as screen readers will have trouble with your forms 
 
 ### Using the Grid
 
-For more structured form layouts that are also responsive, you can utilize Athena's [predefined grid classes]({{ site.baseurl }}{% link layout/grid.md %}) or [mixins]({{ site.baseurl }}{% link layout/grid.md %}#sass-mixins) to create horizontal forms. Add the `.row` class to form groups and use the `.col-*-*` classes to specify the width of your labels and controls.
+For more structured form layouts that are also responsive, you can utilize Athena's [predefined grid classes]({{ '/layout/grid' | url }}) or [mixins]({{ '/layout/grid' | url }}#sass-mixins) to create horizontal forms. Add the `.row` class to form groups and use the `.col-*-*` classes to specify the width of your labels and controls.
 
 Be sure to add `.col-form-label` to your `<label>`s as well so they're vertically centered with their associated form controls. For `<legend>` elements, you can use `.col-form-legend` to make them appear similar to regular `<label>` elements.
 
@@ -643,7 +641,7 @@ Add the `disabled` attribute to a `<fieldset>` to disable all the controls withi
 {% callout warning %}
 #### Caveat about link functionality of `<a>`
 
-By default, browsers will treat all native form controls (`<input>`, `<select>` and `<button>` elements) inside a `<fieldset disabled>` as disabled, preventing both keyboard and mouse interactions on them. However, if your form also includes `<a ... class="btn btn-*">` elements, these will only be given a style of `pointer-events: none`. As noted in the section about [disabled state for buttons]({{ site.baseurl }}{% link components/buttons.md %}#disabled-state) (and specifically in the sub-section for anchor elements), this CSS property is not yet standardized and isn't fully supported in Internet Explorer 11, and won't prevent keyboard users from being able to focus or activate these links. So to be safe, use custom JavaScript to disable such links.
+By default, browsers will treat all native form controls (`<input>`, `<select>` and `<button>` elements) inside a `<fieldset disabled>` as disabled, preventing both keyboard and mouse interactions on them. However, if your form also includes `<a ... class="btn btn-*">` elements, these will only be given a style of `pointer-events: none`. As noted in the section about [disabled state for buttons]({{ '/components/buttons' | url }}#disabled-state) (and specifically in the sub-section for anchor elements), this CSS property is not yet standardized and isn't fully supported in Internet Explorer 11, and won't prevent keyboard users from being able to focus or activate these links. So to be safe, use custom JavaScript to disable such links.
 {% endcallout %}
 
 {% callout danger %}

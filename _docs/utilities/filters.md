@@ -47,4 +47,4 @@ Note that CSS filters are not compatible with and will have no effect in IE 11.
 
 ## State Change Filter Overrides
 
-By combining a filter and [state classes]({{ site.baseurl }}{% link utilities/states.md %}), you can transition between filters on hover, active, and focus. Filter changes on state change (including parent/child element state changes) are documented in further detail in our [state class documentation]({{ site.baseurl }}{% link utilities/states.md %}).
+By combining a filter and [state classes]({{ '/utilities/states' | url }}), you can transition between filters on hover, active, and focus. Filter changes on state change (including parent/child element state changes) are documented in further detail in our [state class documentation]({{ '/utilities/states' | url }}).

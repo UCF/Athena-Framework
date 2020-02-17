@@ -13,7 +13,6 @@ const footer       = require('gulp-footer');
 const header       = require('gulp-header');
 const gulpif       = require('gulp-if');
 const include      = require('gulp-include');
-const jsonToYaml   = require('gulp-json-to-yaml');
 const rename       = require('gulp-rename');
 const replace      = require('gulp-replace');
 const sass         = require('gulp-sass');
@@ -449,20 +448,7 @@ gulp.task('js', gulp.series('es-lint', 'js-build-bootstrap', 'js-build'));
 // within Jekyll.
 gulp.task('docs-config', () => {
   return gulp.src('./package.json')
-    .pipe(jsonToYaml())
-    .pipe(header('# THIS FILE IS GENERATED AUTOMATICALLY VIA THE `docs-config` GULP TASK. DO NOT OVERRIDE VARIABLES HERE; MODIFY package.json INSTEAD.\n\n'))
     .pipe(gulp.dest(config.docs.dataPath));
-});
-
-// Generates a custom local Jekyll config file for the project docs.
-gulp.task('docs-config-local', (done) => {
-  const localConfig = [
-    '# THIS FILE IS GENERATED AUTOMATICALLY VIA THE `docs-config-local` GULP TASK. DO NOT OVERRIDE VARIABLES HERE; MODIFY gulp-config.json INSTEAD.\n',
-    `baseurl: "${config.docBaseURL}"`
-  ].join('\n');
-
-  fs.writeFileSync(`${config.docs.rootPath}/_config_local.yml`, localConfig);
-  done();
 });
 
 // Web font processing
@@ -490,10 +476,10 @@ gulp.task('docs-default', gulp.series('docs-config', 'docs-components', gulp.par
 
 // Generates a new local build of the docs.
 gulp.task('docs-local-build', gulp.series(
-  gulp.parallel('docs-config-local', 'docs-default'),
+  gulp.parallel('docs-default'),
   () => {
     return childProcess.exec(
-      'bundle exec jekyll build --config=_config.yml,_config_local.yml',
+      'npx @11ty/eleventy',
       {
         cwd: `${__dirname}/_docs`
       },
@@ -523,6 +509,7 @@ gulp.task('docs-local', gulp.series('docs-local-build', 'docs-local-index'));
 
 // Spins up a new environment for previewing changes to the docs.
 // Watches for file changes.
+// TODO use eleventy watch logic instead of browsersync directly?
 gulp.task('docs-watch', (done) => {
   serverServe(done);
 
@@ -541,7 +528,7 @@ gulp.task('gh-pages-build', gulp.series(
   'docs-default',
   () => {
     return childProcess.exec(
-      'JEKYLL_ENV=production bundle exec jekyll build --config=_config.yml,_config_prod.yml',
+      'npx @11ty/eleventy --config=eleventy-prod.js',
       {
         cwd: `${__dirname}/_docs`
       },

@@ -22,7 +22,7 @@ Before getting started with Athena's modal component, be sure to read the follow
 - Clicking on the modal "backdrop" will automatically close the modal.
 - Athena only supports one modal window at a time. Nested modals aren't supported as we believe them to be poor user experiences.
 - Modals use `position: fixed`, which can sometimes be a bit particular about its rendering. Whenever possible, place your modal HTML in a top-level position to avoid potential interference from other elements. You'll likely run into issues when nesting a `.modal` within another fixed element.
-- Once again, due to `position: fixed`, there are some caveats with using modals on mobile devices. [See our browser support docs]({{ site.baseurl }}{% link getting-started/browsers-devices.md %}#modals-and-dropdowns-on-mobile) for details.
+- Once again, due to `position: fixed`, there are some caveats with using modals on mobile devices. [See our browser support docs]({{ '/getting-started/browsers-devices' | url }}#modals-and-dropdowns-on-mobile) for details.
 - Due to how HTML5 defines its semantics, [the `autofocus` HTML attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-autofocus) has no effect in Athena modals. To achieve the same effect, use some custom JavaScript:
 
 {% highlight js %}
@@ -217,7 +217,7 @@ When modals become too long for the user's viewport or device, they scroll indep
 
 ### Tooltips and popovers
 
-[Tooltips]({{ site.baseurl }}{% link components/tooltips.md %}) and [popovers]({{ site.baseurl }}{% link components/popovers.md %}) are currently unsupported within modals. Support will be added in a future update.
+[Tooltips]({{ '/components/tooltips' | url }}) and [popovers]({{ '/components/popovers' | url }}) are currently unsupported within modals. Support will be added in a future update.
 
 ### Using the grid
 

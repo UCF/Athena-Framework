@@ -57,8 +57,7 @@ All heading elements—e.g., `<h1>`—and `<p>` are reset to have their `margin-
 
 Like with the base `<body>` font size, all headings increase in size at the `-md` breakpoint in Athena.
 
-<div class="afd-example">
-{% markdown %}
+{% example %}
 # h1 heading
 Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
 
@@ -76,16 +75,14 @@ Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem 
 
 ###### h6 heading
 Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-{% endmarkdown %}
-</div>
+{% endexample %}
 
 
 ## Lists
 
 All lists—`<ul>`, `<ol>`, and `<dl>`—have their `margin-top` removed and a `margin-bottom: 1rem`. Nested lists have no `margin-bottom`.
 
-<div class="afd-example">
-{% markdown %}
+{% example %}
 * Lorem ipsum dolor sit amet
 * Consectetur adipiscing elit
 * Integer molestie lorem at massa
@@ -107,13 +104,11 @@ All lists—`<ul>`, `<ol>`, and `<dl>`—have their `margin-top` removed and a `
 6. Faucibus porta lacus fringilla vel
 7. Aenean sit amet erat nunc
 8. Eget porttitor lorem
-{% endmarkdown %}
-</div>
+{% endexample %}
 
 For simpler styling, clear hierarchy, and better spacing, description lists have updated `margin`s. `<dd>`s reset `margin-left` to `0` and add `margin-bottom: .5rem`. `<dt>`s are **bolded**.
 
-<div class="afd-example">
-{% markdown %}
+{% example %}
 <dl>
   <dt>Description lists</dt>
   <dd>A description list is perfect for defining terms.</dd>
@@ -123,28 +118,25 @@ For simpler styling, clear hierarchy, and better spacing, description lists have
   <dt>Malesuada porta</dt>
   <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
 </dl>
-{% endmarkdown %}
-</div>
+{% endexample %}
 
 
 ## Preformatted text
 
 The `<pre>` element is reset to remove its `margin-top` and use `rem` units for its `margin-bottom`.
 
-<div class="afd-example">
-{% markdown %}
+{% example %}
 <pre>
 .example-element {
   margin-bottom: 1rem;
 }
 </pre>
-{% endmarkdown %}
-</div>
+{% endexample %}
 
 
 ## Tables
 
-Tables are slightly adjusted to style `<caption>`s, collapse borders, and ensure consistent `text-align` throughout. Additional changes for borders, padding, and more come with [the `.table` class]({{ site.baseurl }}{% link content/tables.md %}).
+Tables are slightly adjusted to style `<caption>`s, collapse borders, and ensure consistent `text-align` throughout. Additional changes for borders, padding, and more come with [the `.table` class]({{ '/content/tables' | url }}).
 
 <div class="afd-example">
   <table>
@@ -329,4 +321,4 @@ HTML5 adds [a new global attribute named `[hidden]`](https://developer.mozilla.o
 `[hidden]` is not compatible with jQuery's `$(...).hide()` and `$(...).show()` methods. Therefore, we don't currently especially endorse `[hidden]` over other techniques for managing the `display` of elements.
 {% endcallout %}
 
-To merely toggle the visibility of an element, meaning its `display` is not modified and the element can still affect the flow of the document, use [the `.invisible` class]({{ site.baseurl }}{% link utilities/visibility-property.md %}) instead.
+To merely toggle the visibility of an element, meaning its `display` is not modified and the element can still affect the flow of the document, use [the `.invisible` class]({{ '/utilities/visibility-property' | url }}) instead.

@@ -29,7 +29,7 @@ Responsive behavior for images in Athena is opt-in, via the `.img-fluid` class. 
 
 ## Image thumbnails
 
-In addition to our [border-radius utilities]({{ site.baseurl }}{% link utilities/borders.md %}), you can use `.img-thumbnail` to give an image a rounded 1px border appearance.
+In addition to our [border-radius utilities]({{ '/utilities/borders' | url }}), you can use `.img-thumbnail` to give an image a rounded 1px border appearance.
 
 <div class="afd-example afd-example-images">
   <img data-src="holder.js/200x200" class="img-thumbnail" alt="A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera">
@@ -42,7 +42,7 @@ In addition to our [border-radius utilities]({{ site.baseurl }}{% link utilities
 
 ## Aligning images
 
-Align images with the [helper float classes]({{ site.baseurl }}{% link utilities/float.md %}#responsive-floats) or [text alignment classes]({{ site.baseurl }}{% link utilities/typography.md %}#text-alignment). `block`-level images can be centered using [the `.mx-auto` margin utility class]({{ site.baseurl }}{% link utilities/spacing.md %}#horizontal-centering).
+Align images with the [helper float classes]({{ '/utilities/float' | url }}#responsive-floats) or [text alignment classes]({{ '/utilities/typography' | url }}#text-alignment). `block`-level images can be centered using [the `.mx-auto` margin utility class]({{ '/utilities/spacing' | url }}#horizontal-centering).
 
 <div class="afd-example afd-example-images">
   <img data-src="holder.js/200x200" class="rounded float-left" alt="A generic square placeholder image with rounded corners">

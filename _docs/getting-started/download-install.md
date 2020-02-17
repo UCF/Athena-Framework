@@ -5,7 +5,7 @@ description: Download Athena's compiled CSS and JavaScript, source code, or incl
 group: getting-started
 ---
 
-For [quick usage]({{ site.baseurl }}{% link getting-started/quick-start.md %}), the Athena Framework is hosted on UCF's CDN.  For those that want to utilize Athena's Sass variables and mixins directly, Athena can also be downloaded from [Github](https://github.com/{{ site.data.package.repository.url }}), or included in your project using npm or Bower.
+For [quick usage]({{ '/getting-started/quick-start' | url }}), the Athena Framework is hosted on UCF's CDN.  For those that want to utilize Athena's Sass variables and mixins directly, Athena can also be downloaded from [Github](https://github.com/{{ site.data.package.repository.url }}), or included in your project using npm or Bower.
 
 
 ## Contents
@@ -60,7 +60,7 @@ The framework download includes ready-to-use CSS, JavaScript, and webfont files 
 
 ### Source files
 
-Source Sass files and other full, non-minified, files can be found in the `/src/` folder. Projects that need to extend Athena and/or reference Athena's Sass variables should utilize the source code files in this folder. For more information on working with these files directly, see our [build tools notes]({{ site.baseurl }}{% link getting-started/build-tools.md %}).
+Source Sass files and other full, non-minified, files can be found in the `/src/` folder. Projects that need to extend Athena and/or reference Athena's Sass variables should utilize the source code files in this folder. For more information on working with these files directly, see our [build tools notes]({{ '/getting-started/build-tools' | url }}).
 
 <pre><code>├── src/
    ├── fonts/…
@@ -83,7 +83,7 @@ Source Sass files and other full, non-minified, files can be found in the `/src/
 
 After downloading and extracting the Athena-Framework, add the CSS, JS and font files from the `/dist/` directory to somewhere within your project. **You'll need to maintain the directory structure of the `/dist/` folder's contents**, since fallback font includes are imported using a relative, fixed path. See the [Included Fonts](#included-fallback-fonts) section for more information.
 
-For more information on embedding Athena's styles and scripts into your project's templates, or for instructions on installing CDN assets, see the [Quick Start]({{ site.baseurl }}{% link getting-started/quick-start.md %}) instructions.
+For more information on embedding Athena's styles and scripts into your project's templates, or for instructions on installing CDN assets, see the [Quick Start]({{ '/getting-started/quick-start' | url }}) instructions.
 
 {% callout warning %}
 #### Relative font paths in `/dist/`
@@ -96,7 +96,7 @@ If you cannot store Athena's fallback fonts in a folder called `/fonts/` that ex
 
 Athena is a complete replacement for Bootstrap. If you are already using Bootstrap on an existing project and want to use Athena instead, you should remove Bootstrap's CSS and JavaScript completely. Athena is designed to run as a completely standalone framework.
 
-If you're upgrading from Bootstrap 3, be sure to check out the [Migration Guide]({{ site.baseurl }}{% link migration.md %}) for the full list of differences between Bootstrap and Athena.
+If you're upgrading from Bootstrap 3, be sure to check out the [Migration Guide]({{ migration | url }}) for the full list of differences between Bootstrap and Athena.
 
 <pre><code><strike>&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;</strike>
 <span class="highlight-code">&lt;link rel="stylesheet" href="{{ site.cdn }}v{{ site.data.package.version }}/css/framework.min.css"&gt;</span>
@@ -155,7 +155,7 @@ To use Gotham on the web, _you must register for the Cloud.typography service._
 
 #### Font Family Extras
 
-To take advantage of the [font family overrides available with Athena]({{ site.baseurl }}{% link utilities/typography.md %}#font-family), the following fonts/weights can also be added to your Cloud.typography project *as needed&#42;*:
+To take advantage of the [font family overrides available with Athena]({{ '/utilities/typography' | url }}#font-family), the following fonts/weights can also be added to your Cloud.typography project *as needed&#42;*:
 
 * Chronicle Text Grade 3 (for `.font-serif` support)
   * Roman

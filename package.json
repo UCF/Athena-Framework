@@ -19,6 +19,8 @@
     "src"
   ],
   "devDependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "@babel/cli": "^7.7.0",
     "@babel/core": "^7.7.2",
     "@babel/preset-env": "^7.7.1",
@@ -40,7 +42,6 @@
     "gulp-header": "^2.0.9",
     "gulp-if": "^3.0.0",
     "gulp-include": "^2.4.1",
-    "gulp-json-to-yaml": "0.0.2",
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2",

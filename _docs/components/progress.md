@@ -43,7 +43,7 @@ Put that all together, and you have the following examples.
 </div>
 {% endexample %}
 
-Athena provides a handful of [utilities for setting width]({{ site.baseurl }}{% link utilities/sizing.md %}). Depending on your needs, these may help with quickly configuring progress.
+Athena provides a handful of [utilities for setting width]({{ '/utilities/sizing' | url }}). Depending on your needs, these may help with quickly configuring progress.
 
 {% example html %}
 <div class="progress">

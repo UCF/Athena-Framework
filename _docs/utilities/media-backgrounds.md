@@ -111,7 +111,7 @@ Note that media background videos must be included using the `<video>` element. 
 {% callout warning %}
 #### Media background video accessibility
 
-[For accessibility reasons](https://www.w3.org/TR/WCAG20/#time-limits-pause), **videos that play automatically and run for more than 5 seconds should be pauseable by the user**.  Athena does not include a means of doing this out of the box, but we suggest utilizing [button toggling]({{ site.baseurl }}{% link components/buttons.md %}#toggle-states) with some custom JavaScript that toggles video playback on click.  Whatever playback toggler you implement should be **visible for all users**, **positioned somewhere relative to the video**, and **work via keyboard input**.
+[For accessibility reasons](https://www.w3.org/TR/WCAG20/#time-limits-pause), **videos that play automatically and run for more than 5 seconds should be pauseable by the user**.  Athena does not include a means of doing this out of the box, but we suggest utilizing [button toggling]({{ '/components/buttons' | url }}#toggle-states) with some custom JavaScript that toggles video playback on click.  Whatever playback toggler you implement should be **visible for all users**, **positioned somewhere relative to the video**, and **work via keyboard input**.
 
 Additionally, be mindful of the type of video content you use as a media background--flashing lights, fast cuts (transitions between scenes), and fast-moving imagery are not appropriate for use behind your site's content. Slow-moving vignettes with minimal cuts are ideal.
 {% endcallout %}

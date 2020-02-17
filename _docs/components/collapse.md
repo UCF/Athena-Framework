@@ -43,7 +43,7 @@ You can use a link with the `href` attribute, or a button with the `data-target`
 
 ## Accordion example
 
-Using the [card]({{ site.baseurl }}{% link components/card.md %}) component, you can extend the default collapse behavior to create an accordion.
+Using the [card]({{ '/components/card' | url }}) component, you can extend the default collapse behavior to create an accordion.
 
 {% example html %}
 <div id="accordion" role="tablist">

@@ -55,7 +55,7 @@ Change the style of `.nav`s component with modifiers and utilities. Mix and matc
 
 ### Horizontal alignment
 
-Change the horizontal alignment of your nav with [flexbox utilities]({{ site.baseurl }}{% link layout/grid.md %}#horizontal-alignment). By default, navs are left-aligned, but you can easily change them to center or right aligned.
+Change the horizontal alignment of your nav with [flexbox utilities]({{ '/layout/grid' | url }}#horizontal-alignment). By default, navs are left-aligned, but you can easily change them to center or right aligned.
 
 Centered with `.justify-content-center`:
 
@@ -246,7 +246,7 @@ Similar to the `.nav-fill` example using a `<nav>`-based navigation, be sure to 
 
 ## Working with flex utilities
 
-If you need responsive nav variations, consider using a series of [flexbox utilities]({{ site.baseurl }}{% link utilities/flexbox.md %}). While more verbose, these utilities offer greater customization across responsive breakpoints. In the example below, our nav will be stacked on the lowest breakpoint, then adapt to a horizontal layout that fills the available width starting from the small breakpoint.
+If you need responsive nav variations, consider using a series of [flexbox utilities]({{ '/utilities/flexbox' | url }}). While more verbose, these utilities offer greater customization across responsive breakpoints. In the example below, our nav will be stacked on the lowest breakpoint, then adapt to a horizontal layout that fills the available width starting from the small breakpoint.
 
 {% example html %}
 <nav class="nav nav-pills flex-column flex-sm-row">
@@ -267,7 +267,7 @@ Note that navigation bars, even if visually styled as tabs with the `.nav-tabs` 
 
 ## Using dropdowns
 
-Add dropdown menus with a little extra HTML and Athena's [dropdowns JavaScript logic]({{ site.baseurl }}{% link components/dropdowns.md %}#usage).
+Add dropdown menus with a little extra HTML and Athena's [dropdowns JavaScript logic]({{ '/components/dropdowns' | url }}#usage).
 
 ### Tabs with dropdowns
 

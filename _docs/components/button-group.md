@@ -5,7 +5,7 @@ description: Group a series of buttons together on a single line with the button
 group: components
 ---
 
-Group a series of buttons together on a single line with the button group. Add on optional JavaScript radio and checkbox style behavior with [Athena's included JavaScript for buttons]({{ site.baseurl }}{% link components/buttons.md %}#button-plugin).
+Group a series of buttons together on a single line with the button group. Add on optional JavaScript radio and checkbox style behavior with [Athena's included JavaScript for buttons]({{ '/components/buttons' | url }}#button-plugin).
 
 
 ## Contents

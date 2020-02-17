@@ -5,7 +5,7 @@ description: Documentation and examples for Athena typography, including global 
 group: content
 ---
 
-Athena includes simple and easily customized typography for headings, body text, lists, and more. When more control is needed, check out the [textual utility classes]({{ site.baseurl }}{% link utilities/typography.md %}).
+Athena includes simple and easily customized typography for headings, body text, lists, and more. When more control is needed, check out the [textual utility classes]({{ '/utilities/typography' | url }}).
 
 
 ## Contents
@@ -18,7 +18,7 @@ Athena includes simple and easily customized typography for headings, body text,
 
 Athena sets basic global display, typography, and link styles. Specifically, we:
 
-- Use an [opinionated font stack]({{ site.baseurl }}{% link content/resets.md %}#font-stack) that sets UCF's preferred sans-serif font stack globally.
+- Use an [opinionated font stack]({{ '/content/resets' | url }}#font-stack) that sets UCF's preferred sans-serif font stack globally.
 - For a more inclusive and accessible type scale, we assume the browser default root `font-size` (typically 16px) so visitors can customize their browser defaults as needed.
 - Use the `$font-family-base`, `$font-size-base`, `$font-size-base-md`, and `$line-height-base` attributes as our typographic base applied to the `<body>`.
 - Set the global link color via `$link-color` and apply link underlines only on `:hover`.
@@ -95,7 +95,7 @@ Use the included utility classes to recreate the small secondary heading text fr
 
 ### With font family overrides
 
-When combined with [font family utility classes]({{ site.baseurl }}{% link utilities/typography.md %}#font-family), heading font sizes are adjusted slightly to help achieve balance of size between each available font family.
+When combined with [font family utility classes]({{ '/utilities/typography' | url }}#font-family), heading font sizes are adjusted slightly to help achieve balance of size between each available font family.
 
 <div class="afd-example afd-example-type">
   <table class="table">
@@ -215,7 +215,7 @@ Make a paragraph stand out by adding `.lead`.
 
 ### With font family overrides
 
-When combined with [font family utility classes]({{ site.baseurl }}{% link utilities/typography.md %}#font-family), lead text font sizes are adjusted slightly to help achieve balance of size between each available font family. Note that `.font-condensed` is _not_ a supported font family with `.lead` due to readability issues.
+When combined with [font family utility classes]({{ '/utilities/typography' | url }}#font-family), lead text font sizes are adjusted slightly to help achieve balance of size between each available font family. Note that `.font-condensed` is _not_ a supported font family with `.lead` due to readability issues.
 
 {% example html %}
 <p class="lead font-serif">
@@ -249,7 +249,7 @@ While not shown above, feel free to use `<b>` and `<i>` in HTML5. `<b>` is meant
 
 ## Text utilities
 
-Change text alignment, transform, style, weight, and color with our [text utilities]({{ site.baseurl }}{% link utilities/typography.md %}#text-alignment).
+Change text alignment, transform, style, weight, and color with our [text utilities]({{ '/utilities/typography' | url }}#text-alignment).
 
 
 ## Abbreviations
@@ -275,7 +275,7 @@ For quoting blocks of content from another source within your document. Wrap `<b
 {% endexample %}
 
 ### With font family overrides
-When combined with [font family utility classes]({{ site.baseurl }}{% link utilities/typography.md %}#font-family), blockquote font sizes are adjusted slightly to help achieve balance of size between each available font family. Note that `.font-condensed` is _not_ a supported font family with `.blockquote` due to readability issues.
+When combined with [font family utility classes]({{ '/utilities/typography' | url }}#font-family), blockquote font sizes are adjusted slightly to help achieve balance of size between each available font family. Note that `.font-condensed` is _not_ a supported font family with `.blockquote` due to readability issues.
 
 {% example html %}
 <blockquote class="blockquote font-serif">

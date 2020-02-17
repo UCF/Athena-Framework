@@ -1,0 +1,46 @@
+    <footer class="py-5 mt-5 bg-inverse">
+      <div class="container">
+        <div class="row d-flex justify-content-lg-between">
+          <div class="col-lg-7 col-xl-8">
+            <strong class="h6 heading-underline mb-4">Athena Framework</strong>
+            <ul class="nav flex-column align-items-start mb-5">
+              <li class="nav-item">
+                <a class="nav-link bg-inverse-link" href="https://github.com/UCF/" target="_blank">
+                  <span class="fa fa-github mr-2 text-primary" aria-hidden="true"></span>UCF GitHub
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link bg-inverse-link" href="{{ site.slack }}" target="_blank">
+                  <span class="fa fa-slack mr-2 text-primary" aria-hidden="true"></span>Athena Framework Slack Channel
+                </a>
+              </li>
+            </ul>
+            <p>
+              {% if site.data.package.version %}Current version: <strong>v{{ site.data.package.version }}</strong>.{% endif %}
+            </p>
+            <p>
+              Documentation powered by <a class="bg-inverse-link" href="https://jekyllrb.com/" target="_blank">Jekyll</a>. Contents adapted from <a class="bg-inverse-link" href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.
+            </p>
+            <p class="mb-0">
+              Code licensed <a class="bg-inverse-link" href="https://github.com/{{ site.data.package.repository.url }}/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/{{ site.data.package.repository.url }}/blob/master/docs/LICENSE">CC BY 3.0</a>.
+            </p>
+          </div>
+          <div class="col-lg-5 col-xl-4 mt-5 mt-lg-0">
+            {% include contribute %}
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    {{ site.jquery_script }}
+    {{ site.tether_script }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.bundle.min.js" integrity="sha256-VCsWOz+0GuHdS/sIICtQNTFJdbaDI80rxvoB7BXabrU=" crossorigin="anonymous"></script>
+
+    <script>
+      var SEARCH_INDEX_URL = '{{ site.host }}{{ site.baseurl }}/search-index.json';
+      var SEARCH_DATA_URL = '{{ site.host }}{{ site.baseurl }}/search-data.json';
+    </script>
+    <script src="{{ site.host }}{{ site.baseurl }}/static/js/docs.min.js"></script>
+
+  </body>
+</html>

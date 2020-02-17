@@ -211,7 +211,7 @@ Using the grid, wrap cards in columns and rows as needed.
 
 ### Using utilities
 
-Use our handful of [available sizing utilities]({{ site.baseurl }}{% link utilities/sizing.md %}) to quickly set a card's width.
+Use our handful of [available sizing utilities]({{ '/utilities/sizing' | url }}) to quickly set a card's width.
 
 {% example html %}
 <div class="card w-75">
@@ -248,7 +248,7 @@ Use custom CSS in your stylesheets or as inline styles to set a width.
 
 ## Text alignment
 
-You can quickly change the text alignment of any card—in its entirety or specific parts—with our [text align classes]({{ site.baseurl }}{% link utilities/typography.md %}#text-alignment).
+You can quickly change the text alignment of any card—in its entirety or specific parts—with our [text align classes]({{ '/utilities/typography' | url }}#text-alignment).
 
 {% example html %}
 <div class="card" style="width: 18rem;">
@@ -279,7 +279,7 @@ You can quickly change the text alignment of any card—in its entirety or speci
 
 ## Navigation
 
-Add some navigation to a card's header (or block) with Athena's [nav components]({{ site.baseurl }}{% link components/navs.md %}).
+Add some navigation to a card's header (or block) with Athena's [nav components]({{ '/components/navs' | url }}).
 
 {% example html %}
 <div class="card text-center">
@@ -357,7 +357,7 @@ Similar to headers and footers, cards can include top and bottom "image caps"—
 
 ### Image overlays (using media backgrounds)
 
-Cards are also compatible with Athena's [media backgrounds]({{ site.baseurl }}{% link utilities/media-backgrounds.md %}) utility classes for image overlays. You may need to add a `min-height` value or extra vertical padding to the card to achieve the desired card height.
+Cards are also compatible with Athena's [media backgrounds]({{ '/utilities/media-backgrounds' | url }}) utility classes for image overlays. You may need to add a `min-height` value or extra vertical padding to the card to achieve the desired card height.
 
 <div class="card card-inverse media-background-container">
   <img class="media-background object-fit-cover" src="//placehold.it/767x280" alt="Card image">
