@@ -35,9 +35,7 @@ function closeCollapse(target) {
 function goToFirst(target) {
   const $target = getTarget(target);
   const $parent = $($target.data('parent'));
-  const $first = $parent.find('.collapse').first();
-
-  console.log($first);
+  const $first = $parent.find('[data-toggle=collapse]').first();
 
   $first.focus();
 }
@@ -45,9 +43,7 @@ function goToFirst(target) {
 function goToLast(target) {
   const $target = getTarget(target);
   const $parent = $($target.data('parent'));
-  const $last = $parent.find('.collapse').last();
-
-  console.log($last);
+  const $last = $parent.find('[data-toggle=collapse]').last();
 
   $last.focus();
 }
