@@ -527,8 +527,7 @@ Cards include their own variant classes for quickly changing the `background-col
 </div>
 {% endexample %}
 
-{% capture callout-include %}{% include callout-warning-color-assistive-technologies.md %}{% endcapture %}
-{{ callout-include | markdownify }}
+{% include callout-warning-color-assistive-technologies.md %}
 
 ### Outline cards
 

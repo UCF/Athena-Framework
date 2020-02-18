@@ -634,8 +634,7 @@ Regular table background variants are not available with the inverse table, howe
 </tr>
 {% endhighlight %}
 
-{% capture callout-include %}{% include callout-warning-color-assistive-technologies.md %}{% endcapture %}
-{{ callout-include | markdownify }}
+{% include callout-warning-color-assistive-technologies.md %}
 
 
 ## Responsive tables

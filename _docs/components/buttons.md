@@ -32,8 +32,7 @@ Athena includes several predefined button styles:
 <button type="button" class="btn btn-link">Link</button>
 {% endexample %}
 
-{% capture callout-include %}{% include callout-warning-color-assistive-technologies.md %}{% endcapture %}
-{{ callout-include | markdownify }}
+{% include callout-warning-color-assistive-technologies.md %}
 
 
 ## Button tags
