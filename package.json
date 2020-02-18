@@ -49,11 +49,13 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
     "holderjs": "^2.9.6",
+    "html-entities": "^1.2.1",
     "lunr": "^2.3.8",
     "markdown-it": "^10.0.0",
     "merge": "^1.2.1",
     "objectFitPolyfill": "2.1.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "prismjs": "^1.19.0"
   },
   "browserslist": [
     "last 2 versions",
