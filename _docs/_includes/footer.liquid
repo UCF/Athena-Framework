@@ -35,12 +35,13 @@
     {{ site.jquery_script }}
     {{ site.tether_script }}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.bundle.min.js" integrity="sha256-VCsWOz+0GuHdS/sIICtQNTFJdbaDI80rxvoB7BXabrU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
 
     <script>
       var SEARCH_INDEX_URL = '{{ '/search-index.json' | url }}';
       var SEARCH_DATA_URL = '{{ '/search-data.json' | url }}';
     </script>
-    <script src="{{ '/static/js/docs.min.js' | url }}"></script>
+    <script src="{{ '/static/js/docs.min.js' | url }}?v={{ package.version }}"></script>
 
   </body>
 </html>
