@@ -2,13 +2,14 @@
 permalink: 'search-data.json'
 ---
 [
-  {% for item in site.pages %}
-
+  {% for item in collections.all %}
+    {% if item.data.title %}
     {
       "id": {{ forloop.index }},
       "title": "{{ item.data.title | xml_escape }}",
       "url": "{{ item.url | url | xml_escape }}"
     }
     {% unless forloop.last %},{% endunless %}
+    {% endif %}
   {% endfor %}
 ]
