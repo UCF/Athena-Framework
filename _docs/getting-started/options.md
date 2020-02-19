@@ -15,7 +15,7 @@ To apply your own custom overrides to Athena, copy and paste relevant lines from
 
 For example, to change out the `background-color` and `color` for the `<body>`, you'd do the following:
 
-{% highlight scss %}
+{% highlight 'scss' %}
 // my-project's _variables.scss
 
 $body-bg:    $gray-dark;

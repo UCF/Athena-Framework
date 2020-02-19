@@ -29,7 +29,7 @@ While containers *can* be nested, most layouts do not require a nested container
   </div>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <div class="container">
   <!-- Content here -->
 </div>
@@ -45,7 +45,7 @@ Use `.container-fluid` for a full width container, spanning the entire width of 
   </div>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <div class="container-fluid">
   ...
 </div>
@@ -58,7 +58,7 @@ Since Athena is developed to be mobile first, we use a handful of [media queries
 
 Athena primarily uses the following media query ranges—or breakpoints—in our source Sass files for our layout, grid system, and components.
 
-{% highlight scss %}
+{% highlight 'scss' %}
 // Extra small devices (portrait phones, less than 576px)
 // No media query since this is the default in Athena
 
@@ -77,7 +77,7 @@ Athena primarily uses the following media query ranges—or breakpoints—in our
 
 Since we write our source CSS in Sass, all our media queries are available via Sass mixins:
 
-{% highlight scss %}
+{% highlight 'scss' %}
 @include media-breakpoint-up(xs) { ... }
 @include media-breakpoint-up(sm) { ... }
 @include media-breakpoint-up(md) { ... }
@@ -94,7 +94,7 @@ Since we write our source CSS in Sass, all our media queries are available via S
 
 We occasionally use media queries that go in the other direction (the given screen size *or smaller*):
 
-{% highlight scss %}
+{% highlight 'scss' %}
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575px) { ... }
 
@@ -113,7 +113,7 @@ We occasionally use media queries that go in the other direction (the given scre
 
 Once again, these media queries are also available via Sass mixins:
 
-{% highlight scss %}
+{% highlight 'scss' %}
 @include media-breakpoint-down(xs) { ... }
 @include media-breakpoint-down(sm) { ... }
 @include media-breakpoint-down(md) { ... }
@@ -122,7 +122,7 @@ Once again, these media queries are also available via Sass mixins:
 
 There are also media queries and mixins for targeting a single segment of screen sizes using the minimum and maximum breakpoint widths.
 
-{% highlight scss %}
+{% highlight 'scss' %}
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575px) { ... }
 
@@ -141,7 +141,7 @@ There are also media queries and mixins for targeting a single segment of screen
 
 These media queries are also available via Sass mixins:
 
-{% highlight scss %}
+{% highlight 'scss' %}
 @include media-breakpoint-only(xs) { ... }
 @include media-breakpoint-only(sm) { ... }
 @include media-breakpoint-only(md) { ... }
@@ -151,7 +151,7 @@ These media queries are also available via Sass mixins:
 
 Similarly, media queries may span multiple breakpoint widths:
 
-{% highlight scss %}
+{% highlight 'scss' %}
 // Example
 // Apply styles starting from medium devices and up to extra large devices
 @media (min-width: 768px) and (max-width: 1199px) { ... }
@@ -159,7 +159,7 @@ Similarly, media queries may span multiple breakpoint widths:
 
 The Sass mixin for targeting the same screen size range would be:
 
-{% highlight scss %}
+{% highlight 'scss' %}
 @include media-breakpoint-between(md, xl) { ... }
 {% endhighlight %}
 
@@ -170,7 +170,7 @@ Several Athena components utilize `z-index`, the CSS property that helps control
 
 We don't encourage customization of these values; should you change one, you likely need to change them all.
 
-{% highlight scss %}
+{% highlight 'scss' %}
 $zindex-dropdown-backdrop:   9050 !default;
 $zindex-navbar:              9060 !default;
 $zindex-dropdown:            9070 !default;

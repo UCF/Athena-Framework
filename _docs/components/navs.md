@@ -355,7 +355,7 @@ Dynamic tabbed interfaces, as described in the [<abbr title="Web Accessibility I
     </div>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
@@ -401,7 +401,7 @@ Tab logic also works with pills.
   </div>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
@@ -451,7 +451,7 @@ And with vertical pills.
   </div>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
   <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-expanded="true">Home</a>
   <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-expanded="true">Profile</a>
@@ -470,7 +470,7 @@ And with vertical pills.
 
 You can activate a tab or pill navigation without writing any JavaScript by simply specifying `data-toggle="tab"` or `data-toggle="pill"` on an element. Use these data attributes on `.nav-tabs` or `.nav-pills`.
 
-{% highlight html %}
+{% highlight 'html' %}
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
@@ -500,7 +500,7 @@ You can activate a tab or pill navigation without writing any JavaScript by simp
 
 Enable tabbable tabs via JavaScript (each tab needs to be activated individually):
 
-{% highlight js %}
+{% highlight 'js' %}
 $('#myTab a').click(function (e) {
   e.preventDefault()
   $(this).tab('show')
@@ -509,7 +509,7 @@ $('#myTab a').click(function (e) {
 
 You can activate individual tabs in several ways:
 
-{% highlight js %}
+{% highlight 'js' %}
 $('#myTab a[href="#profile"]').tab('show') // Select tab by name
 $('#myTab a:first').tab('show') // Select first tab
 $('#myTab a:last').tab('show') // Select last tab
@@ -520,7 +520,7 @@ $('#myTab li:eq(2) a').tab('show') // Select third tab (0-indexed)
 
 To make tabs fade in, add `.fade` to each `.tab-pane`. The first tab pane must also have `.show` to make the initial content visible.
 
-{% highlight html %}
+{% highlight 'html' %}
 <div class="tab-content">
   <div class="tab-pane fade show active" id="home" role="tabpanel">...</div>
   <div class="tab-pane fade" id="profile" role="tabpanel">...</div>
@@ -535,7 +535,7 @@ To make tabs fade in, add `.fade` to each `.tab-pane`. The first tab pane must a
 
 Activates a tab element and content container. Tabs should have either a `data-target` or an `href` targeting a container node in the DOM.
 
-{% highlight html %}
+{% highlight 'html' %}
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" data-toggle="tab" href="#home" role="tab" aria-controls="home">Home</a>
@@ -569,7 +569,7 @@ Activates a tab element and content container. Tabs should have either a `data-t
 
 Selects the given tab and shows its associated pane. Any other tab that was previously selected becomes unselected and its associated pane is hidden. **Returns to the caller before the tab pane has actually been shown** (i.e. before the `shown.bs.tab` event occurs).
 
-{% highlight js %}
+{% highlight 'js' %}
 $('#someTab').tab('show')
 {% endhighlight %}
 
@@ -611,7 +611,7 @@ If no tab was already active, then the `hide.bs.tab` and `hidden.bs.tab` events 
   </tbody>
 </table>
 
-{% highlight js %}
+{% highlight 'js' %}
 $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
   e.target // newly activated tab
   e.relatedTarget // previous active tab

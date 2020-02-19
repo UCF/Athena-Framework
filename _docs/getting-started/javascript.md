@@ -27,13 +27,13 @@ Nearly all of Athena's JavaScript can be enabled and configured through HTML alo
 
 However, in some situations it may be desirable to disable this functionality. To disable the data attribute API for Bootstrap plugins, unbind all events on the document namespaced with `data-api` like so:
 
-{% highlight js %}
+{% highlight 'js' %}
 $(document).off('.data-api')
 {% endhighlight %}
 
 Alternatively, to target a specific Bootstrap plugin, just include the plugin's name as a namespace along with the data-api namespace like this:
 
-{% highlight js %}
+{% highlight 'js' %}
 $(document).off('.alert.data-api')
 {% endhighlight %}
 
@@ -44,7 +44,7 @@ Athena provides custom events for most components' unique actions. Generally, th
 
 All infinitive events provide [`preventDefault()`](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) functionality. This provides the ability to stop the execution of an action before it starts.
 
-{% highlight js %}
+{% highlight 'js' %}
 $('#myModal').on('show.bs.modal', function (e) {
   if (!data) return e.preventDefault() // stops modal from being shown
 })
@@ -61,13 +61,13 @@ In addition to data attributes, most of Athena's JavaScript functionality is als
 <strong>Note: Programmatic API applies to plugins ported from Bootstrap only.</strong> Athena-specific plugins (`mediaBackground` and `stickyTop`) don't currently expose a constructor, `noConflict` method, version number or have any configurable options.
 {% endcallout %}
 
-{% highlight js %}
+{% highlight 'js' %}
 $('.btn.danger').button('toggle').addClass('fat')
 {% endhighlight %}
 
 All methods should accept an optional options object, a string which targets a particular method, or nothing (which initiates default behavior):
 
-{% highlight js %}
+{% highlight 'js' %}
 $('#myModal').modal()                      // initialized with defaults
 $('#myModal').modal({ keyboard: false })   // initialized with no keyboard
 $('#myModal').modal('show')                // initializes and invokes show immediately
@@ -78,7 +78,7 @@ Each plugin from Bootstrap also exposes its raw constructor on a `Constructor` p
 ### Default settings
 You can change the default settings for a Bootstrap plugin by modifying the plugin's `Constructor.DEFAULTS` object:
 
-{% highlight js %}
+{% highlight 'js' %}
 $.fn.modal.Constructor.DEFAULT.keyboard = false // changes default for the modal plugin's `keyboard` option to false
 {% endhighlight %}
 
@@ -86,7 +86,7 @@ $.fn.modal.Constructor.DEFAULT.keyboard = false // changes default for the modal
 
 Sometimes it is necessary to use Athena's JavaScript with other UI frameworks. In these circumstances, namespace collisions can occasionally occur. If this happens, you may call `.noConflict` on the Bootstrap plugin you wish to revert the value of.
 
-{% highlight js %}
+{% highlight 'js' %}
 var AthenaButton = $.fn.button.noConflict() // return $.fn.button to previously assigned value
 $.fn.AthenaBtn = AthenaButton            // give $().AthenaBtn the Athena functionality
 {% endhighlight %}
@@ -95,7 +95,7 @@ $.fn.AthenaBtn = AthenaButton            // give $().AthenaBtn the Athena functi
 
 The version of each of jQuery plugin ported from Bootstrap can be accessed via the `VERSION` property of the plugin's constructor. For example, for the tooltip plugin:
 
-{% highlight js %}
+{% highlight 'js' %}
 $.fn.tooltip.Constructor.VERSION // => "{{ package.version }}"
 {% endhighlight %}
 

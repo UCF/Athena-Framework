@@ -33,7 +33,7 @@ Got all that? Great, let's see how they work with some examples.
 
 One way to initialize all popovers on a page would be to select them by their `data-toggle` attribute:
 
-{% highlight js %}
+{% highlight 'js' %}
 $(function () {
   $('[data-toggle="popover"]').popover()
 })
@@ -44,7 +44,7 @@ $(function () {
 
 When you have some styles on a parent element that interfere with a popover, you'll want to specify a custom `container` so that the popover's HTML appears within that element instead.
 
-{% highlight js %}
+{% highlight 'js' %}
 $(function () {
   $('.example-popover').popover({
     container: 'body'
@@ -116,7 +116,7 @@ Four options are available: top, right, bottom, and left aligned.
   </div>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
   Popover on top
 </button>
@@ -149,7 +149,7 @@ For proper cross-browser and cross-platform behavior, you must use the `<a>` tag
 <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
 {% endexample %}
 
-{% highlight js %}
+{% highlight 'js' %}
 $('.popover-dismiss').popover({
   trigger: 'focus'
 })
@@ -160,7 +160,7 @@ $('.popover-dismiss').popover({
 
 Enable popovers via JavaScript:
 
-{% highlight js %}$('#example').popover(options){% endhighlight %}
+{% highlight 'js' %}$('#example').popover(options){% endhighlight %}
 
 ### Options
 
@@ -288,26 +288,26 @@ Initializes popovers for an element collection.
 
 Reveals an element's popover. **Returns to the caller before the popover has actually been shown** (i.e. before the `shown.bs.popover` event occurs). This is considered a "manual" triggering of the popover. Popovers whose both title and content are zero-length are never displayed.
 
-{% highlight js %}$('#element').popover('show'){% endhighlight %}
+{% highlight 'js' %}$('#element').popover('show'){% endhighlight %}
 
 #### `.popover('hide')`
 
 Hides an element's popover. **Returns to the caller before the popover has actually been hidden** (i.e. before the `hidden.bs.popover` event occurs). This is considered a "manual" triggering of the popover.
 
-{% highlight js %}$('#element').popover('hide'){% endhighlight %}
+{% highlight 'js' %}$('#element').popover('hide'){% endhighlight %}
 
 #### `.popover('toggle')`
 
 Toggles an element's popover. **Returns to the caller before the popover has actually been shown or hidden** (i.e. before the `shown.bs.popover` or `hidden.bs.popover` event occurs). This is considered a "manual" triggering of the popover.
 
-{% highlight js %}$('#element').popover('toggle'){% endhighlight %}
+{% highlight 'js' %}$('#element').popover('toggle'){% endhighlight %}
 
 #### `.popover('dispose')`
 
 Hides and destroys an element's popover. Popovers that use delegation (which are created using [the `selector` option](#options)) cannot be individually destroyed on descendant trigger elements.
 
 
-{% highlight js %}$('#element').popover('dispose'){% endhighlight %}
+{% highlight 'js' %}$('#element').popover('dispose'){% endhighlight %}
 
 ### Events
 
@@ -338,7 +338,7 @@ Hides and destroys an element's popover. Popovers that use delegation (which are
   </tbody>
 </table>
 
-{% highlight js %}
+{% highlight 'js' %}
 $('#myPopover').on('hidden.bs.popover', function () {
   // do something…
 })

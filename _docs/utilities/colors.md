@@ -205,7 +205,7 @@ Note that transparent variants are not available for `.bg-faded`.
   </div>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <div class="bg-primary">
   Nullam id dolor id nibh ultricies vehicula ut id elit.
   <a class="bg-primary-link" href="#">Styled Link.</a>

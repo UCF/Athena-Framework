@@ -36,7 +36,7 @@ Apply `.media-background` and your `.object-fit-*` class directly to the `<img>`
   </div>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <div class="media-background-container">
   <img class="media-background object-fit-cover" srcset="..." src="..." alt="">
   Your content here...
@@ -59,7 +59,7 @@ Apply `.media-background` and your `.object-fit-*` class to the inner `<img>` el
   </div>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <div class="media-background-container">
   <picture>
     <source srcset="..." media="..."></source>
@@ -93,7 +93,7 @@ Note that media background videos must be included using the `<video>` element. 
   </div>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <div class="media-background-container">
   <video class="media-background object-fit-cover" muted playsinline>
     <source src="...">
@@ -139,7 +139,7 @@ An `object-fit` utility class is **required** for the media background to scale 
 
 Custom `object-position` values are supported by media backgrounds, but for full cross-browser support, they must also be added to the media background elements using the `data-object-position` attribute (so that the polyfill can apply them in IE/Edge).  See the [polyfill documentation](https://github.com/constancecchen/object-fit-polyfill#usage) for more information.
 
-{% highlight html %}
+{% highlight 'html' %}
 <img class="media-background object-fit-contain" style="object-position: 0 50%;" data-object-position="0 50%">
 {% endhighlight %}
 
@@ -148,7 +148,7 @@ Custom `object-position` values are supported by media backgrounds, but for full
 
 Any media backgrounds added to the DOM after the page has finished loading will need to re-trigger the object-fit polyfill by using Athena's mediaBackground plugin.  After dynamically inserting the new element into the dom, simply call:
 
-{% highlight javascript %}
+{% highlight 'javascript' %}
 $('#my-media-background').mediaBackground();
 {% endhighlight %}
 

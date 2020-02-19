@@ -22,7 +22,7 @@ Responsive behavior for images in Athena is opt-in, via the `.img-fluid` class. 
   <img data-src="holder.js/100px250" class="img-fluid" alt="Generic responsive image">
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <img src="..." class="img-fluid" alt="Responsive image">
 {% endhighlight %}
 
@@ -35,7 +35,7 @@ In addition to our [border-radius utilities]({{ '/utilities/borders' | url }}), 
   <img data-src="holder.js/200x200" class="img-thumbnail" alt="A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera">
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <img src="..." alt="..." class="img-thumbnail">
 {% endhighlight %}
 
@@ -49,7 +49,7 @@ Align images with the [helper float classes]({{ '/utilities/float' | url }}#resp
   <img data-src="holder.js/200x200" class="rounded float-right" alt="A generic square placeholder image with rounded corners">
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <img src="..." class="rounded float-left" alt="...">
 <img src="..." class="rounded float-right" alt="...">
 {% endhighlight %}
@@ -58,7 +58,7 @@ Align images with the [helper float classes]({{ '/utilities/float' | url }}#resp
   <img data-src="holder.js/200x200" class="rounded mx-auto d-block" alt="A generic square placeholder image with rounded corners">
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <img src="..." class="rounded mx-auto d-block" alt="...">
 {% endhighlight %}
 
@@ -68,7 +68,7 @@ Align images with the [helper float classes]({{ '/utilities/float' | url }}#resp
   </div>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <div class="text-center">
   <img src="..." class="rounded" alt="...">
 </div>
@@ -79,7 +79,7 @@ Align images with the [helper float classes]({{ '/utilities/float' | url }}#resp
 
 If you are using the `<picture>` element to specify multiple `<source>` elements for a specific `<img>`, make sure to add the `.img-*` classes to the `<img>` and not to the `<picture>` tag.
 
-{% highlight html %}
+{% highlight 'html' %}
 ​<picture>
   <source srcset="...">
   <img src="..." class="img-fluid img-thumbnail" alt="...">

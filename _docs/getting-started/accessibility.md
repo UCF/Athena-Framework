@@ -43,7 +43,7 @@ Colors in Athena have been modified from Bootstrap's defaults to ensure they mee
 
 Content which should be visually hidden, but remain accessible to assistive technologies such as screen readers, can be styled using the `.sr-only` class. This can be useful in situations where additional visual information or cues (such as meaning denoted through the use of color) need to also be conveyed to non-visual users.
 
-{% highlight html %}
+{% highlight 'html' %}
 <p class="text-danger">
   <span class="sr-only">Danger: </span>
   This action is not reversible
@@ -52,7 +52,7 @@ Content which should be visually hidden, but remain accessible to assistive tech
 
 For visually hidden interactive controls, such as traditional "skip" links, `.sr-only` can be combined with the `.sr-only-focusable` class. This will ensure that the control becomes visible once focused (for sighted keyboard users).
 
-{% highlight html %}
+{% highlight 'html' %}
 <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 {% endhighlight %}
 

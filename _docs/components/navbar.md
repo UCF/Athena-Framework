@@ -376,7 +376,7 @@ Theming the navbar is easy thanks to the combination of theming classes and `bac
   </nav>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <nav class="navbar navbar-inverse bg-inverse">
   <!-- Navbar content -->
 </nav>

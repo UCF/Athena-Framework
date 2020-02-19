@@ -67,13 +67,13 @@ Scroll the area below the navbar and watch the active class change. The dropdown
 
 To easily add scrollspy behavior to your topbar navigation, add `data-spy="scroll"` to the element you want to spy on (most typically this would be the `<body>`). Then add the `data-target` attribute with the ID or class of the parent element of any `.nav` component.
 
-{% highlight css %}
+{% highlight 'css' %}
 body {
   position: relative;
 }
 {% endhighlight %}
 
-{% highlight html %}
+{% highlight 'html' %}
 <body data-spy="scroll" data-target="#navbar-example">
   ...
   <div id="navbar-example">
@@ -89,7 +89,7 @@ body {
 
 After adding `position: relative;` in your CSS, call the scrollspy via JavaScript:
 
-{% highlight js %}
+{% highlight 'js' %}
 $('body').scrollspy({ target: '#navbar-example' })
 {% endhighlight %}
 
@@ -111,7 +111,7 @@ Target elements that are not [`:visible` according to jQuery](https://api.jquery
 
 When using scrollspy in conjunction with adding or removing of elements from the DOM, you'll need to call the refresh method like so:
 
-{% highlight js %}
+{% highlight 'js' %}
 $('[data-spy="scroll"]').each(function () {
   var $spy = $(this).scrollspy('refresh')
 })
@@ -157,7 +157,7 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
   </tbody>
 </table>
 
-{% highlight js %}
+{% highlight 'js' %}
 $('#myScrollspy').on('activate.bs.scrollspy', function () {
   // do something…
 })

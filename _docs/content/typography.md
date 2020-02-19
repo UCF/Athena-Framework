@@ -62,7 +62,7 @@ All HTML headings, `<h1>` through `<h6>`, are available.
   </table>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <h1>h1. Bootstrap heading</h1>
 <h2>h2. Bootstrap heading</h2>
 <h3>h3. Bootstrap heading</h3>
@@ -134,7 +134,7 @@ When combined with [font family utility classes]({{ '/utilities/typography' | ur
   </table>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <h1 class="font-serif">Heading 1</h1>
 <h2 class="font-serif">Heading 2</h2>
 <h3 class="font-serif">Heading 3</h3>
@@ -182,7 +182,7 @@ Display headings use fluid font sizing (`vw` units) at the `-xs` breakpoint to e
   </table>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <h1 class="display-1">Display 1</h1>
 <h1 class="display-2">Display 2</h1>
 <h1 class="display-3">Display 3</h1>

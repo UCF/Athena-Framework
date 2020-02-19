@@ -25,7 +25,7 @@ Before getting started with Athena's modal component, be sure to read the follow
 - Once again, due to `position: fixed`, there are some caveats with using modals on mobile devices. [See our browser support docs]({{ '/getting-started/browsers-devices' | url }}#modals-and-dropdowns-on-mobile) for details.
 - Due to how HTML5 defines its semantics, [the `autofocus` HTML attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-autofocus) has no effect in Athena modals. To achieve the same effect, use some custom JavaScript:
 
-{% highlight js %}
+{% highlight 'js' %}
 $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').focus()
 })
@@ -60,7 +60,7 @@ Below is a _static_ modal example (meaning its `position` and `display` have bee
   </div>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <div class="modal">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -112,7 +112,7 @@ Toggle a working modal demo by clicking the button below. It will slide down and
   </button>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Launch demo modal
@@ -187,7 +187,7 @@ When modals become too long for the user's viewport or device, they scroll indep
   </button>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
   Launch demo modal
@@ -272,7 +272,7 @@ Utilize the Athena grid system within a modal by nesting `.container-fluid` with
 </button>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <div class="modal-body">
   <div class="container-fluid">
     <div class="row">
@@ -344,7 +344,7 @@ Below is a live demo followed by example HTML and JavaScript. For more informati
 </div>
 {% endexample %}
 
-{% highlight js %}
+{% highlight 'js' %}
 $('#exampleModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
   var recipient = button.data('whatever') // Extract info from data-* attributes
@@ -360,7 +360,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
 
 For modals that simply appear rather than fade in to view, remove the `.fade` class from your modal markup.
 
-{% highlight html %}
+{% highlight 'html' %}
 <div class="modal" tabindex="-1" role="dialog" aria-labelledby="..." aria-hidden="true">
   ...
 </div>
@@ -389,7 +389,7 @@ Modals have two optional sizes, available via modifier classes to be placed on a
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".afd-example-modal-sm">Small modal</button>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <!-- Large modal -->
 <button class="btn btn-primary" data-toggle="modal" data-target=".afd-example-modal-lg">Large modal</button>
 
@@ -455,7 +455,7 @@ Athena's modal JavaScript toggles your hidden content on demand, via data attrib
 
 Activate a modal without writing JavaScript. Set `data-toggle="modal"` on a controller element, like a button, along with a `data-target="#foo"` or `href="#foo"` to target a specific modal to toggle.
 
-{% highlight html %}
+{% highlight 'html' %}
 <button type="button" data-toggle="modal" data-target="#myModal">Launch modal</button>
 {% endhighlight %}
 
@@ -463,7 +463,7 @@ Activate a modal without writing JavaScript. Set `data-toggle="modal"` on a cont
 
 Call a modal with id `myModal` with a single line of JavaScript:
 
-{% highlight js %}$('#myModal').modal(options){% endhighlight %}
+{% highlight 'js' %}$('#myModal').modal(options){% endhighlight %}
 
 ### Options
 
@@ -512,7 +512,7 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
 
 Activates your content as a modal. Accepts an optional options `object`.
 
-{% highlight js %}
+{% highlight 'js' %}
 $('#myModal').modal({
   keyboard: false
 })
@@ -522,19 +522,19 @@ $('#myModal').modal({
 
 Manually toggles a modal. **Returns to the caller before the modal has actually been shown or hidden** (i.e. before the `shown.bs.modal` or `hidden.bs.modal` event occurs).
 
-{% highlight js %}$('#myModal').modal('toggle'){% endhighlight %}
+{% highlight 'js' %}$('#myModal').modal('toggle'){% endhighlight %}
 
 #### `.modal('show')`
 
 Manually opens a modal. **Returns to the caller before the modal has actually been shown** (i.e. before the `shown.bs.modal` event occurs).
 
-{% highlight js %}$('#myModal').modal('show'){% endhighlight %}
+{% highlight 'js' %}$('#myModal').modal('show'){% endhighlight %}
 
 #### `.modal('hide')`
 
 Manually hides a modal. **Returns to the caller before the modal has actually been hidden** (i.e. before the `hidden.bs.modal` event occurs).
 
-{% highlight js %}$('#myModal').modal('hide'){% endhighlight %}
+{% highlight 'js' %}$('#myModal').modal('hide'){% endhighlight %}
 
 ### Events
 
@@ -567,7 +567,7 @@ Athena's modal class exposes a few events for hooking into modal functionality. 
   </tbody>
 </table>
 
-{% highlight js %}
+{% highlight 'js' %}
 $('#myModal').on('hidden.bs.modal', function (e) {
   // do something...
 })

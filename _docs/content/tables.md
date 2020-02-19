@@ -527,7 +527,7 @@ Use contextual classes to color table rows or individual cells.
   </table>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <!-- On rows -->
 <tr class="table-active">...</tr>
 <tr class="table-success">...</tr>
@@ -616,7 +616,7 @@ Regular table background variants are not available with the inverse table, howe
   </table>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <!-- On rows -->
 <tr class="bg-primary">...</tr>
 <tr class="bg-success">...</tr>
@@ -735,7 +735,7 @@ Responsive tables make use of `overflow-y: hidden`, which clips off any content 
   </table>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <table class="table table-responsive">
   ...
 </table>

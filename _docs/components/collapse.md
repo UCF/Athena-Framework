@@ -123,7 +123,7 @@ To add accordion-like group management to a collapsible area, add the data attri
 
 Enable manually with:
 
-{% highlight js %}
+{% highlight 'js' %}
 $('.collapse').collapse()
 {% endhighlight %}
 
@@ -162,7 +162,7 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
 
 Activates your content as a collapsible element. Accepts an optional options `object`.
 
-{% highlight js %}
+{% highlight 'js' %}
 $('#myCollapsible').collapse({
   toggle: false
 })
@@ -211,7 +211,7 @@ Athena's collapse class exposes a few events for hooking into collapse functiona
   </tbody>
 </table>
 
-{% highlight js %}
+{% highlight 'js' %}
 $('#myCollapsible').on('hidden.bs.collapse', function () {
   // do something…
 })

@@ -32,7 +32,7 @@ These utility classes float an element to the left or right, or disable floating
 
 Floats can also be toggled using Sass mixins:
 
-{% highlight scss %}
+{% highlight 'scss' %}
 .element {
   @include float-left;
 }

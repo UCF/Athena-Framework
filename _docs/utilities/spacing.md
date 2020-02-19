@@ -50,7 +50,7 @@ Where *size* is one of:
 
 Here are some representative examples of these classes:
 
-{% highlight scss %}
+{% highlight 'scss' %}
 .mt-0 {
   margin-top: 0 !important;
 }
@@ -78,7 +78,7 @@ Additionally, Athena also includes an `.mx-auto` class for horizontally centerin
   </div>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <div class="mx-auto" style="width: 200px;">
   Centered element
 </div>

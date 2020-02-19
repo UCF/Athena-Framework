@@ -94,13 +94,13 @@ You can see this in action with a live demo:
 
 Enable dismissal of an alert via JavaScript:
 
-{% highlight js %}
+{% highlight 'js' %}
 $(".alert").alert()
 {% endhighlight %}
 
 Or with `data` attributes on a button **within the alert**, as demonstrated above:
 
-{% highlight html %}
+{% highlight 'html' %}
 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
   <span aria-hidden="true">&times;</span>
 </button>
@@ -115,7 +115,7 @@ Note that closing an alert will remove it from the DOM.
 | `$().alert()` | Makes an alert listen for click events on descendant elements which have the `data-dismiss="alert"` attribute. (Not necessary when using the data-api's auto-initialization.) |
 | `$().alert('close')` | Closes an alert by removing it from the DOM. If the `.fade` and `.show` classes are present on the element, the alert will fade out before it is removed. |
 
-{% highlight js %}$(".alert").alert('close'){% endhighlight %}
+{% highlight 'js' %}$(".alert").alert('close'){% endhighlight %}
 
 ### Events
 
@@ -126,7 +126,7 @@ Athena's alert JavaScript exposes a few events for hooking into alert functional
 | `close.bs.alert` | This event fires immediately when the <code>close</code> instance method is called. |
 | `closed.bs.alert` | This event is fired when the alert has been closed (will wait for CSS transitions to complete). |
 
-{% highlight js %}
+{% highlight 'js' %}
 $('#myAlert').on('closed.bs.alert', function () {
   // do something…
 })

@@ -44,7 +44,7 @@ The `<html>` and `<body>` elements are updated to provide better page-wide defau
 
 Unlike Bootstrap 4, Athena provides an opinionated font stack and does not rely on system fonts unless no other font libraries can be loaded. Athena's base font family is its sans-serif stack:
 
-{% highlight sass %}
+{% highlight 'scss' %}
 $font-family-sans-serif: 'Gotham SSm A', 'Gotham SSm B', 'UCF Sans Serif Alt', 'Helvetica Neue', Arial, sans-serif;
 {% endhighlight %}
 
@@ -311,7 +311,7 @@ The `<abbr>` element receives basic styling to make it stand out amongst paragra
 
 HTML5 adds [a new global attribute named `[hidden]`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden), which is styled as `display: none` by default. Borrowing an idea from [PureCSS](https://purecss.io), we improve upon this default by making `[hidden] { display: none !important; }` to help prevent its `display` from getting accidentally overridden.
 
-{% highlight html %}
+{% highlight 'html' %}
 <input type="text" hidden>
 {% endhighlight %}
 

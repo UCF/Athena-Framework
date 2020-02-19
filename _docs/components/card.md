@@ -381,7 +381,7 @@ Cards are also compatible with Athena's [media backgrounds]({{ '/utilities/media
   </div>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <!-- with <img> media background -->
 <div class="card card-inverse media-background-container">
   <img class="media-background object-fit-cover" src="..." alt="Card image">
@@ -907,7 +907,7 @@ Cards can be organized into [Masonry](http://masonry.desandro.com)-like columns 
 
 Card columns can also be extended and customized with some additional code. Shown below is an extension of the `.card-columns` class using the same CSS we use—CSS columns— to generate a set of responsive tiers for changing the number of columns.
 
-{% highlight scss %}
+{% highlight 'scss' %}
 .card-columns {
   @include media-breakpoint-only(lg) {
     column-count: 4;

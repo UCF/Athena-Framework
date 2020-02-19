@@ -24,7 +24,7 @@ For [quick usage]({{ '/getting-started/quick-start' | url }}), the Athena Framew
 ### CDN
 Skip the download and use CDN-hosted files to deliver Athena's compiled CSS and JS to your project.
 
-{% highlight html %}
+{% highlight 'html' %}
 <link rel="stylesheet" href="{{ site.cdn }}v{{ package.version }}/css/framework.min.css">
 <script src="{{ site.cdn }}v{{ package.version }}/js/framework.min.js"></script>
 {% endhighlight %}

@@ -116,7 +116,7 @@ The best part is you can do this with any button variant, too:
   </div><!-- /btn-group -->
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <!-- Example single danger button -->
 <div class="btn-group">
   <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -219,7 +219,7 @@ We use this extra class to reduce the horizontal `padding` on either side of the
   </div><!-- /btn-group -->
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <!-- Example split danger button -->
 <div class="btn-group">
   <button type="button" class="btn btn-danger">Action</button>
@@ -298,7 +298,7 @@ Button dropdowns work with buttons of all sizes, including default and split dro
   </div><!-- /btn-toolbar -->
 </div><!-- /example -->
 
-{% highlight html %}
+{% highlight 'html' %}
 <!-- Large button groups (default and split) -->
 <div class="btn-group">
   <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -378,7 +378,7 @@ Trigger dropdown menus above elements by adding `.dropup` to the parent element.
   </div>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <!-- Default dropup button -->
 <div class="btn-group dropup">
   <button type="button" class="btn btn-default">Dropup</button>
@@ -506,7 +506,7 @@ Note: The `data-toggle="dropdown"` attribute is relied on for closing dropdown m
 
 Add `data-toggle="dropdown"` to a link or button to toggle a dropdown.
 
-{% highlight html %}
+{% highlight 'html' %}
 <div class="dropdown">
   <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Dropdown trigger
@@ -521,7 +521,7 @@ Add `data-toggle="dropdown"` to a link or button to toggle a dropdown.
 
 Call the dropdowns via JavaScript:
 
-{% highlight js %}
+{% highlight 'js' %}
 $('.dropdown-toggle').dropdown()
 {% endhighlight %}
 
@@ -552,7 +552,7 @@ All dropdown events are fired at the `.dropdown-menu`'s parent element and have 
 | `hide.bs.dropdown` | This event is fired immediately when the hide instance method has been called. |
 | `hidden.bs.dropdown`| This event is fired when the dropdown has finished being hidden from the user (will wait for CSS transitions, to complete). |
 
-{% highlight js %}
+{% highlight 'js' %}
 $('#myDropdown').on('show.bs.dropdown', function () {
   // do something…
 })

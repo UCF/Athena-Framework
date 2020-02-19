@@ -26,7 +26,7 @@ Use text color utility overrides against alternate background colors for greater
   </div>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <button type="button" class="close text-inverse" aria-label="Close">
   <span aria-hidden="true">&times;</span>
 </button>

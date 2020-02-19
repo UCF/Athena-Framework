@@ -42,7 +42,7 @@ Assuming a basic project structure that looks something like this:
 
 ...a sample Gulp file that copies Athena's font files and minified JS, and generates a single, minified CSS file, might look like this:
 
-{% highlight js %}
+{% highlight 'js' %}
 var gulp = require('gulp'),
   cleanCSS = require('gulp-clean-css'),
   rename = require('gulp-rename'),
@@ -134,7 +134,7 @@ Your project's variables _must_ be included before anything else to ensure they 
 
 The following sample Sass file imports _all_ of Athena's styles into the project's stylesheet:
 
-{% highlight scss %}
+{% highlight 'scss' %}
 // Project-specific variables
 @import 'my-project-variables';
 
@@ -150,7 +150,7 @@ The following sample Sass file imports _all_ of Athena's styles into the project
 
 If you want to keep Athena contained to an individual file, but still have access to its variables and mixins, you'll need to import Athena's variable and mixin files into your stylesheet individually.
 
-{% highlight scss %}
+{% highlight 'scss' %}
 // Project-specific variables
 @import 'my-project-variables';
 
