@@ -30,7 +30,7 @@ The rest of these examples will assume you have basic knowledge of setting up yo
 ## Running Tasks
 
 Assuming a basic project structure that looks something like this:
-<pre><code> ├── dist/
+<pre><code class="nohighlight"> ├── dist/
  ├── src/
  │   └── scss/
  │       ├── my-project.scss
@@ -96,7 +96,7 @@ With this setup, you could automate the process of setting up your front-end ass
 
 After running those build steps, your project would look something like:
 
-<pre><code> ├── dist/
+<pre><code class="nohighlight"> ├── dist/
  │   ├── css/
  │   │   └── my-project.min.css
  │   ├── js/

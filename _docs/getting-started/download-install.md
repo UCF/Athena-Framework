@@ -47,7 +47,7 @@ The project folder will contain minified files (`/dist/`) as well as source code
 ### Minified, pre-compiled assets
 The framework download includes ready-to-use CSS, JavaScript, and webfont files in the `/dist/` folder. Projects that just need to include Athena without modifications can use the already-minified files in this folder; see the [Installing Minified Files section](#installing-minified-files) for more information.
 
-<pre><code>├── dist/
+<pre><code class="nohighlight">├── dist/
    ├── css/
    │   └── framework.min.css
    ├── fonts/
@@ -62,7 +62,7 @@ The framework download includes ready-to-use CSS, JavaScript, and webfont files 
 
 Source Sass files and other full, non-minified, files can be found in the `/src/` folder. Projects that need to extend Athena and/or reference Athena's Sass variables should utilize the source code files in this folder. For more information on working with these files directly, see our [build tools notes]({{ '/getting-started/build-tools' | url }}).
 
-<pre><code>├── src/
+<pre><code class="nohighlight">├── src/
    ├── fonts/…
    ├── js/…
    └── scss/
@@ -120,7 +120,7 @@ If you're loading Athena from UCF's CDN, fallback fonts will be used without any
 
 To utilize fallback webfonts in a manual installation, copy the `/fonts/` directory (from the `/dist/fonts/` in the framework's files) to the same folder in your project that you added the framework's CSS and JS files to. The framework's CSS is built to include webfonts from that directory.
 
-<pre><code> ├── css/
+<pre><code class="nohighlight"> ├── css/
 <strong> ├── fonts/
  │   ├── tulia/
  │   ├── ucf-condensed-alt/

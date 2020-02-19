@@ -38,19 +38,25 @@ module.exports = function (eleventyConfig) {
   // Shortcode | Highlighted Code
   //
   eleventyConfig.addPairedShortcode('highlight', function (content, language) {
+    code_class = `language-${language}`;
+
     // Markdown has a bad time with multiple linebreaks between HTML.
     // Force a &NewLine; entity between new lines to ensure Markdown
     // doesn't choke:
     highlighted = content.replace(/\n\n/g, '\n&NewLine;\n');
 
-    // Perform syntax highlighting on code sample
-    highlighted = hljs.highlight(language, highlighted).value
+    // Perform syntax highlighting on code sample if it's a
+    // language that can be reliably highlighted from Markdown:
+    if (language === 'html') {
+      highlighted = hljs.highlight(language, highlighted).value;
+      code_class = 'nohighlight'; // disable front-end highlighting
+    }
 
     // Now that our transformed HTML has been succesfully highlighted,
     // remove our manual newline entity insertions in the code sample:
     highlighted = highlighted.replace(/&amp;NewLine;/g, '');
 
-    return `<div class="highlight"><pre><code>${highlighted}</code></pre></div>`;
+    return `<div class="highlight"><pre><code class="${code_class}">${highlighted}</code></pre></div>`;
   });
 
   //
@@ -69,7 +75,7 @@ module.exports = function (eleventyConfig) {
     // remove our manual newline entity insertions in the code sample:
     highlighted = highlighted.replace(/&amp;NewLine;/g, '');
 
-    return `<div class="afd-example">${content}</div><div class="highlight"><pre><code>${highlighted}</code></pre></div>`;
+    return `<div class="afd-example">${content}</div><div class="highlight"><pre><code class="nohighlight">${highlighted}</code></pre></div>`;
   });
 
   //
