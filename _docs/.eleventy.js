@@ -30,7 +30,7 @@ module.exports = function (eleventyConfig) {
     // Render content as markdown first; otherwise
     // it gets parsed as HTML and markdown isn't translated.
     // https://www.11ty.dev/docs/languages/markdown/#why-cant-i-return-markdown-from-paired-shortcodes-to-use-in-a-markdown-file
-    content = entities.decode(md.render(content));
+    content = entities.decode(entities.encode(md.render(content)));
     return `<div class="afd-callout afd-callout-${callout_type}">${content}</div>`;
   });
 
