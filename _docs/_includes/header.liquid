@@ -35,13 +35,13 @@
         </button>
         <div class="collapse navbar-collapse" id="main-nav">
           <nav class="navbar-nav ml-auto mb-2 mb-lg-0">
-            <a class="nav-link {% if page.layout == 'docs' %}active{% endif %}" href="{{ '/getting-started/quick-start' | url }}">
+            <a class="nav-link {% if layout == 'docs' %}active{% endif %}" href="{{ '/getting-started/quick-start' | url }}">
               Documentation
             </a>
-            <a class="nav-link {% if page.group == 'about' %}active{% endif %}" href="{{ '/about' | url }}">
+            <a class="nav-link {% if page.url == '/about/' %}active{% endif %}" href="{{ '/about' | url }}">
               About
             </a>
-            <a class="nav-link {% if page.group == 'migration' %}active{% endif %}" href="{{ '/migration' | url }}">
+            <a class="nav-link {% if page.url == '/migration/' %}active{% endif %}" href="{{ '/migration' | url }}">
               Migration
             </a>
           </nav>
