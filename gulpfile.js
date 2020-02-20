@@ -2,7 +2,6 @@
 
 const childProcess = require('child_process');
 const fs           = require('fs');
-const browserSync  = require('browser-sync').create();
 const gulp         = require('gulp');
 const autoprefixer = require('gulp-autoprefixer');
 const babel        = require('gulp-babel');
@@ -162,22 +161,6 @@ function buildJS(src, filename, dest, applyHeader, forceIncludePaths) {
     })))
     .pipe(rename(filename))
     .pipe(gulp.dest(dest));
-}
-
-// BrowserSync reload function
-function serverReload(done) {
-  if (config.sync) {
-    browserSync.reload();
-  }
-  done();
-}
-
-// BrowserSync serve function
-function serverServe(done) {
-  if (config.sync) {
-    browserSync.init(config.syncOptions);
-  }
-  done();
 }
 
 // Generates a search index for the documentation.
@@ -482,20 +465,10 @@ gulp.task('docs-local-build', gulp.series(
       'ELEVENTY_ENV=development npx @11ty/eleventy',
       {
         cwd: `${__dirname}/_docs`
-      },
-      (error, stdout, stderr) => {
-        if (error) {
-          console.error(`'docs-local-build' error:\n ${error}`);
-          return;
-        }
-        if (stdout) {
-          console.log(`'docs-local-build' stdout:\n ${stdout}`);
-        }
-        if (stderr) {
-          console.log(`'docs-local-build' stderr:\n ${stderr}`);
-        }
       }
-    );
+    ).stdout.on('data', (data) => {
+      console.log(data);
+    });
   }
 ));
 
@@ -509,17 +482,17 @@ gulp.task('docs-local', gulp.series('docs-local-build', 'docs-local-index'));
 
 // Spins up a new environment for previewing changes to the docs.
 // Watches for file changes.
-// TODO use eleventy watch logic instead of browsersync directly?
-gulp.task('docs-watch', (done) => {
-  serverServe(done);
+gulp.task('docs-watch', () => {
+  gulp.watch(`${config.docs.src.scssPath}/**/*.scss`, gulp.series('docs-scss'));
+  gulp.watch(`${config.docs.src.jsPath}/**/*.js`, gulp.series('docs-js'));
 
-  gulp.watch([
-    `${config.docs.rootPath}/**/*`,
-    `!${config.docs.distPath}/**/*`
-  ],
-  gulp.series('docs-local', serverReload),
-  {
-    dot: true
+  return childProcess.exec(
+    'npx @11ty/eleventy --serve',
+    {
+      cwd: `${__dirname}/_docs`
+    }
+  ).stdout.on('data', (data) => {
+    console.log(data);
   });
 });
 
@@ -531,20 +504,10 @@ gulp.task('gh-pages-build', gulp.series(
       'ELEVENTY_ENV=production npx @11ty/eleventy',
       {
         cwd: `${__dirname}/_docs`
-      },
-      (error, stdout, stderr) => {
-        if (error) {
-          console.error(`'gh-pages-build' error:\n ${error}`);
-          return;
-        }
-        if (stdout) {
-          console.log(`'gh-pages-build' stdout:\n ${stdout}`);
-        }
-        if (stderr) {
-          console.log(`'gh-pages-build' stderr:\n ${stderr}`);
-        }
       }
-    );
+    ).stdout.on('data', (data) => {
+      console.log(data);
+    });
   }
 ));
 
@@ -564,36 +527,24 @@ gulp.task('gh-pages', gulp.series('gh-pages-build', 'gh-pages-index'));
 
 // Generates a custom local config file for the example files.
 gulp.task('examples-config', (done) => {
-  const localConfig = [
-    '# THIS FILE IS GENERATED AUTOMATICALLY VIA THE `examples-config` GULP TASK. DO NOT OVERRIDE VARIABLES HERE; MODIFY gulp-config.json INSTEAD.\n',
-    `cloud_typography_key: "${config.examplesCSSKey}"`,
-    `baseurl: "${config.examplesBaseURL}"`
-  ].join('\n');
+  // const localConfig = [
+  //   '# THIS FILE IS GENERATED AUTOMATICALLY VIA THE `examples-config` GULP TASK. DO NOT OVERRIDE VARIABLES HERE; MODIFY gulp-config.json INSTEAD.\n',
+  //   `cloud_typography_key: "${config.examplesCSSKey}"`,
+  //   `baseurl: "${config.examplesBaseURL}"`
+  // ].join('\n');
 
-  fs.writeFileSync(`${config.examplesPath}/_config_local.yml`, localConfig);
-  done();
+  // fs.writeFileSync(`${config.examplesPath}/_config_local.yml`, localConfig);
+  // done();
 });
 
 // Generates a new local build of example files.
 gulp.task('examples-build', () => {
-  return childProcess.exec(
-    'bundle exec jekyll build --config=_config.yml,_config_local.yml',
-    {
-      cwd: `${__dirname}/_examples`
-    },
-    (error, stdout, stderr) => {
-      if (error) {
-        console.error(`'examples-build' error:\n ${error}`);
-        return;
-      }
-      if (stdout) {
-        console.log(`'examples-build' stdout:\n ${stdout}`);
-      }
-      if (stderr) {
-        console.log(`'examples-build' stderr:\n ${stderr}`);
-      }
-    }
-  );
+  // return childProcess.exec(
+  //   'bundle exec jekyll build --config=_config.yml,_config_local.yml',
+  //   {
+  //     cwd: `${__dirname}/_examples`
+  //   }
+  // );
 });
 
 // All examples-related tasks.
@@ -605,15 +556,15 @@ gulp.task('examples', gulp.series('examples-config', 'examples-build'));
 //
 
 gulp.task('watch', (done) => {
-  serverServe(done);
+  // serverServe(done);
 
-  gulp.watch(`${config.src.scssPath}/**/*.scss`, gulp.series('css', serverReload));
-  gulp.watch(`${config.src.jsPath}/**/*.js`, gulp.series('js', serverReload));
-  gulp.watch([
-    `${config.examplesPath}/**/*`,
-    `!${config.examplesPath}/_config_local.yml`
-  ],
-  gulp.series('examples', serverReload));
+  // gulp.watch(`${config.src.scssPath}/**/*.scss`, gulp.series('css', serverReload));
+  // gulp.watch(`${config.src.jsPath}/**/*.js`, gulp.series('js', serverReload));
+  // gulp.watch([
+  //   `${config.examplesPath}/**/*`,
+  //   `!${config.examplesPath}/_config_local.yml`
+  // ],
+  // gulp.series('examples', serverReload));
 });
 
 
