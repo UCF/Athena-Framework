@@ -10,7 +10,6 @@ Add small overlay content, like those found in iOS, to any element for housing s
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

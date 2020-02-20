@@ -1,10 +1,44 @@
-const MarkdownIt = require('markdown-it');
-const md = new MarkdownIt({
-  html: true
-}).disable('code');
+const markdownIt = require('markdown-it');
+const markdownItAnchor = require('markdown-it-anchor');
+const markdownItTOC = require('markdown-it-toc-done-right');
 const Entities = require('html-entities').XmlEntities;
 const entities = new Entities();
 const hljs = require('highlight.js');
+
+// Slug-generation function ported over from AnchorJS
+// for consistent slug-generation from prior Jekyll docs:
+const urlify = function (text) {
+  // Regex for finding the non-safe URL characters (many need escaping): & +$,:;=?@"#{}|^~[`%!'<>]./()*\ (newlines, tabs, backspace, & vertical tabs)
+  var nonsafeChars = /[& +$,:;=?@"#{}|^~[`%!'<>\]\.\/\(\)\*\\\n\t\b\v]/g,
+    urlText;
+
+  // Note: we trim hyphens after truncating because truncating can cause dangling hyphens.
+  // Example string:                      // " ⚡⚡ Don't forget: URL fragments should be i18n-friendly, hyphenated, short, and clean."
+  urlText = text.trim()                   // "⚡⚡ Don't forget: URL fragments should be i18n-friendly, hyphenated, short, and clean."
+    .replace(/\'/gi, '')                  // "⚡⚡ Dont forget: URL fragments should be i18n-friendly, hyphenated, short, and clean."
+    .replace(nonsafeChars, '-')           // "⚡⚡-Dont-forget--URL-fragments-should-be-i18n-friendly--hyphenated--short--and-clean-"
+    .replace(/-{2,}/g, '-')               // "⚡⚡-Dont-forget-URL-fragments-should-be-i18n-friendly-hyphenated-short-and-clean-"
+    .substring(0, 64)                     // "⚡⚡-Dont-forget-URL-fragments-should-be-i18n-friendly-hyphenated-"
+    .replace(/^-+|-+$/gm, '')             // "⚡⚡-Dont-forget-URL-fragments-should-be-i18n-friendly-hyphenated"
+    .toLowerCase();                       // "⚡⚡-dont-forget-url-fragments-should-be-i18n-friendly-hyphenated"
+
+  return urlText;
+};
+
+const mdInline = new markdownIt({
+  html: true
+}).disable('code');
+
+const md = mdInline.use(markdownItAnchor, {
+  level: [1, 2, 3, 4, 5],
+  slugify: urlify,
+  permalink: true,
+  permalinkSymbol: '<span class="fa fa-link" aria-label="Anchor"></span>'
+}).use(markdownItTOC, {
+  placeholder: '\{\:toc\}',
+  slugify: urlify,
+  listType: 'ul'
+});
 
 
 module.exports = function (eleventyConfig) {
@@ -30,7 +64,7 @@ module.exports = function (eleventyConfig) {
     // Render content as markdown first; otherwise
     // it gets parsed as HTML and markdown isn't translated.
     // https://www.11ty.dev/docs/languages/markdown/#why-cant-i-return-markdown-from-paired-shortcodes-to-use-in-a-markdown-file
-    content = entities.decode(entities.encode(md.render(content)));
+    content = entities.decode(entities.encode(mdInline.render(content)));
     return `<div class="afd-callout afd-callout-${callout_type}">${content}</div>`;
   });
 

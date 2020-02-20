@@ -11,7 +11,6 @@ Use Athena's custom button styles for actions in forms, dialogs, and more. Inclu
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

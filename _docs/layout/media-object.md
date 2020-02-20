@@ -10,7 +10,6 @@ The [media object](http://www.stubbornella.org/content/2010/06/25/the-media-obje
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

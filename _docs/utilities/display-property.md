@@ -9,7 +9,6 @@ Change the value of the [`display` property](https://developer.mozilla.org/en-US
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

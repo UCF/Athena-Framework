@@ -14,7 +14,6 @@ Note that CSS filters are not compatible with and will have no effect in IE 11.
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

@@ -9,7 +9,6 @@ Assign responsive-friendly `margin` or `padding` values to an element or a subse
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

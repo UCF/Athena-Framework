@@ -9,7 +9,6 @@ Athena supports a wide variety of modern browsers and devices, and some older on
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 ## Supported browsers

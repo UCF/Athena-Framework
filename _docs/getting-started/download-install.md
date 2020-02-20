@@ -10,7 +10,6 @@ For [quick usage]({{ '/getting-started/quick-start' | url }}), the Athena Framew
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

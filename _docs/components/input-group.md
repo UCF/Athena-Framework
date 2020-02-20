@@ -10,7 +10,6 @@ Easily extend form controls by adding text, buttons, or button groups on either 
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

@@ -10,7 +10,6 @@ Opt your images into responsive behavior (so they never become larger than their
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

@@ -10,7 +10,6 @@ Modals are streamlined, but flexible dialog prompts powered by JavaScript. They 
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

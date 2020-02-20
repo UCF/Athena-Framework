@@ -10,7 +10,6 @@ If you choose to utilize Athena's source files in your project, they should be i
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

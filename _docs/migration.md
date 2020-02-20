@@ -8,7 +8,6 @@ The most notable changes between Bootstrap 3 and Athena are summarized immediate
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

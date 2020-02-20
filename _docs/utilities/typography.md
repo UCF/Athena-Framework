@@ -9,7 +9,6 @@ The following utilities can be used to add additional styles to text.
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

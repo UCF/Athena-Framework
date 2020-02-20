@@ -10,7 +10,6 @@ Athena includes a powerful mobile-first flexbox grid system for building layouts
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

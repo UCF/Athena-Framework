@@ -10,7 +10,6 @@ Group a series of buttons together on a single line with the button group. Add o
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 {% callout 'warning' %}

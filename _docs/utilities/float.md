@@ -9,7 +9,6 @@ Toggle floats on any element, across any breakpoint, using our responsive float 
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

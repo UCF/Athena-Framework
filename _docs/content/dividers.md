@@ -10,7 +10,6 @@ Athena provides utility classes for styling `<hr>` elements with alternate thick
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

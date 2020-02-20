@@ -21,7 +21,6 @@ Read more about the <a href="{{ migration | url }}">differences between Athena a
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

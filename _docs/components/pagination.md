@@ -10,7 +10,6 @@ Pagination links indicate a series of related content exists across multiple pag
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

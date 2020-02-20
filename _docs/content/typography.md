@@ -10,7 +10,6 @@ Athena includes simple and easily customized typography for headings, body text,
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

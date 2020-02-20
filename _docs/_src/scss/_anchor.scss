@@ -1,20 +1,50 @@
-.anchorjs-link {
-  color: inherit;
-}
+.afd-content {
+  // sass-lint:disable-block no-qualifying-elements
+  h1[id],
+  h2[id],
+  h3[id],
+  h4[id],
+  h5[id] {
+    position: relative;
 
-@media (max-width: 480px) {
-  .anchorjs-link {
-    display: none;
+    // Extra breathing room for hover around anchor icon:
+    &::before {
+      bottom: -1rem;
+      content: '';
+      display: block;
+      left: -2.5rem;
+      position: absolute;
+      top: -1rem;
+      width: 2.5rem;
+    }
+
+    @include hover-focus-active() {
+      .header-anchor {
+        @include media-breakpoint-up(sm) {
+          opacity: 1;
+        }
+      }
+    }
   }
 }
 
-*:hover > .anchorjs-link {
-  opacity: .75;
-  transition: color .16s linear;
-}
+.header-anchor {
+  color: $brand-default;
+  display: inline-block;
+  left: -2rem;
+  opacity: .35;
+  position: absolute;
+  top: 0;
 
-*:hover > .anchorjs-link:hover,
-.anchorjs-link:focus {
-  text-decoration: none;
-  opacity: 1;
+  @include hover-focus-active() {
+    .header-anchor {
+      @include media-breakpoint-up(sm) {
+        opacity: 1;
+      }
+    }
+  }
+
+  .afd-callout & {
+    position: static;
+  }
 }

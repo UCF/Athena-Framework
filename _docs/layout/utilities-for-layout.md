@@ -10,7 +10,6 @@ For faster mobile-friendly and responsive development, Athena includes dozens of
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

@@ -10,7 +10,6 @@ Athena provides several form control styles, layout options, and custom componen
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

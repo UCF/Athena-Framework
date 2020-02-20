@@ -9,7 +9,6 @@ Quickly manage the layout, alignment, and sizing of grid columns, navigation, co
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

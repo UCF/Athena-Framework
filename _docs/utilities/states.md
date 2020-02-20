@@ -11,7 +11,6 @@ Despite the names starting with just `.hover-`, these style adjustments are appl
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

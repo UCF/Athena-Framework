@@ -1,5 +1,4 @@
 // =require ../../../dist/js/framework.min.js
-// =require anchor-js/anchor.js
 // =require clipboard/dist/clipboard.js
 // =require holderjs/holder.js
 // =require lunr/lunr.js
@@ -15,7 +14,7 @@
  * License (https://creativecommons.org/licenses/by/3.0/).
  */
 
-/* global ClipboardJS, hljs, anchors, Holder */
+/* global ClipboardJS, hljs, Holder */
 
 (function ($) {
 
@@ -101,10 +100,6 @@
   // Perform syntax highlighting on snippets we haven't
   // already highlighted during docs processing:
   hljs.initHighlightingOnLoad();
-
-
-  anchors.options.placement = 'left';
-  anchors.add('.afd-content > h1, .afd-content > h2, .afd-content > h3, .afd-content > h4, .afd-content > h5');
 
   Holder.addTheme('gray', {
     bg: '#777',

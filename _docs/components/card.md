@@ -12,7 +12,6 @@ If you're familiar with Bootstrap 3, cards replace its old panels, wells, and th
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

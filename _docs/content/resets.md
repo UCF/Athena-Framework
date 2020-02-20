@@ -13,7 +13,6 @@ Reboot builds upon [Normalize](https://necolas.github.io/normalize.css/), provid
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

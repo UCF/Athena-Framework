@@ -10,7 +10,6 @@ The navbar is a wrapper that positions branding, navigation, and other elements 
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

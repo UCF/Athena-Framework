@@ -10,7 +10,6 @@ Navigation options available in Athena share general markup and styles, from the
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

@@ -9,7 +9,6 @@ Media backgrounds are an easy way of applying large images or video as a backgro
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

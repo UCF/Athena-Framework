@@ -10,7 +10,6 @@ The Athena collapse component allows you to toggle content on your pages with a 
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

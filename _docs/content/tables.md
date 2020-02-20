@@ -10,7 +10,6 @@ Due to the widespread use of tables across third-party widgets like calendars an
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

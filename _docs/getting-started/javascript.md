@@ -10,7 +10,6 @@ Athena includes a handful of JavaScript code, mostly inherited from Bootstrap, t
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

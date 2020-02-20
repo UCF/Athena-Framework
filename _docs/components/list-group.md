@@ -10,7 +10,6 @@ List groups are a flexible and powerful component for displaying a series of con
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

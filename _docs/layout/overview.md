@@ -11,7 +11,6 @@ Athena includes several components and options for laying out your project, incl
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

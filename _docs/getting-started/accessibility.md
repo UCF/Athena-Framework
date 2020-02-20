@@ -17,7 +17,6 @@ Please see our [Additional Resources](#additional-resources) section for further
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

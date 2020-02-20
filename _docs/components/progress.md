@@ -10,7 +10,6 @@ Use our custom progress component for displaying simple or complex progress bars
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

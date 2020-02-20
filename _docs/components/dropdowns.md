@@ -10,7 +10,6 @@ Dropdowns are toggleable, contextual overlays for displaying lists of links and 
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
