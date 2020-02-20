@@ -1,0 +1,40 @@
+<nav class="navbar sticky-top navbar-toggleable-md navbar-light bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="{{ '/' | url }}">Athena Framework</a>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-text">Menu</span>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="main-nav">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item {% if title == 'Layout' %}active{% endif %}"><a class="nav-link" href="{{ '/layout' | url }}">Layout</a></li>
+        <li class="nav-item {% if title == 'Content' %}active{% endif %}"><a class="nav-link" href="{{ '/content' | url }}">Content</a></li>
+        <li class="nav-item dropdown {% if title == 'Components' or title == 'Modals' %}active{% endif %}">
+          <a class="nav-link dropdown-toggle" href="{{ '/components' | url }}" id="nav-components-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Components</a>
+          <div class="dropdown-menu" aria-labelledby="nav-components-link">
+            <a class="dropdown-item {% if title == 'Components' %}active{% endif %}" href="{{ '/components' | url }}">Base Components</a>
+            <a class="dropdown-item {% if title == 'Modals' %}active{% endif %}" href="{{ '/modals' | url }}">Modals</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown {% if title == 'Utilities' or title == 'Media Backgrounds' %}active{% endif %}">
+          <a class="nav-link dropdown-toggle" href="{{ '/utilities' | url }}" id="nav-utilities-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Utilities</a>
+          <div class="dropdown-menu" aria-labelledby="nav-utilities-link">
+            <a class="dropdown-item {% if title == 'Utilities' %}active{% endif %}" href="{{ '/utilities' | url }}">Base Utilities</a>
+            <a class="dropdown-item {% if title == 'Media Backgrounds' %}active{% endif %}" href="{{ '/media-backgrounds' | url }}">Media Backgrounds</a>
+          </div>
+        </li>
+      </ul>
+
+      {% if site.cloud_typography_key and site.cloud_typography_key.size > 1 %}
+      <form class="form-inline ml-auto mb-3 mb-lg-0">
+        <div class="form-check form-check-inline">
+          <label class="form-check-label form-control-sm">
+            <input class="form-check-input" type="checkbox" id="js-webfont-toggle" checked value="on"> Enable Premium Webfonts
+          </label>
+        </div>
+      </form>
+      {% endif %}
+    </div>
+  </div>
+</nav>

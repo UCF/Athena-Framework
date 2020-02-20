@@ -486,6 +486,7 @@ gulp.task('docs-watch', () => {
   gulp.watch(`${config.docs.src.scssPath}/**/*.scss`, gulp.series('docs-scss'));
   gulp.watch(`${config.docs.src.jsPath}/**/*.js`, gulp.series('docs-js'));
 
+  // TODO make optional with gulp-config setting?
   return childProcess.exec(
     'npx @11ty/eleventy --serve',
     {
@@ -527,24 +528,26 @@ gulp.task('gh-pages', gulp.series('gh-pages-build', 'gh-pages-index'));
 
 // Generates a custom local config file for the example files.
 gulp.task('examples-config', (done) => {
-  // const localConfig = [
-  //   '# THIS FILE IS GENERATED AUTOMATICALLY VIA THE `examples-config` GULP TASK. DO NOT OVERRIDE VARIABLES HERE; MODIFY gulp-config.json INSTEAD.\n',
-  //   `cloud_typography_key: "${config.examplesCSSKey}"`,
-  //   `baseurl: "${config.examplesBaseURL}"`
-  // ].join('\n');
+  const localConfig = [
+    '{',
+    `"cloud_typography_key": "${config.examplesCSSKey}"`,
+    '}'
+  ].join('\n');
 
-  // fs.writeFileSync(`${config.examplesPath}/_config_local.yml`, localConfig);
-  // done();
+  fs.writeFileSync(`${config.examplesPath}/_data/config.json`, localConfig);
+  done();
 });
 
 // Generates a new local build of example files.
 gulp.task('examples-build', () => {
-  // return childProcess.exec(
-  //   'bundle exec jekyll build --config=_config.yml,_config_local.yml',
-  //   {
-  //     cwd: `${__dirname}/_examples`
-  //   }
-  // );
+  return childProcess.exec(
+    'npx @11ty/eleventy',
+    {
+      cwd: `${__dirname}/_examples`
+    }
+  ).stdout.on('data', (data) => {
+    console.log(data);
+  });
 });
 
 // All examples-related tasks.
@@ -555,16 +558,19 @@ gulp.task('examples', gulp.series('examples-config', 'examples-build'));
 // Rerun tasks when files change.
 //
 
-gulp.task('watch', (done) => {
-  // serverServe(done);
+gulp.task('watch', () => {
+  gulp.watch(`${config.src.scssPath}/**/*.scss`, gulp.series('css'));
+  gulp.watch(`${config.src.jsPath}/**/*.js`, gulp.series('js'));
 
-  // gulp.watch(`${config.src.scssPath}/**/*.scss`, gulp.series('css', serverReload));
-  // gulp.watch(`${config.src.jsPath}/**/*.js`, gulp.series('js', serverReload));
-  // gulp.watch([
-  //   `${config.examplesPath}/**/*`,
-  //   `!${config.examplesPath}/_config_local.yml`
-  // ],
-  // gulp.series('examples', serverReload));
+  // TODO make optional with gulp-config setting?
+  return childProcess.exec(
+    'npx @11ty/eleventy --serve',
+    {
+      cwd: `${__dirname}/_examples`
+    }
+  ).stdout.on('data', (data) => {
+    console.log(data);
+  });
 });
 
 
