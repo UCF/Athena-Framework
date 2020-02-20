@@ -1,5 +1,6 @@
 {
     "title": "Athena Framework",
+    "prod_domain": "https://ucf.github.io",
     "slack": "https://ucf-wp.slack.com/messages/prj-athena-framework/",
     "cdn": "https://cdn.ucf.edu/athena-framework/",
     "jquery_script": "<script src=\"https://code.jquery.com/jquery-3.3.1.min.js\" integrity=\"sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=\" crossorigin=\"anonymous\"></script>",

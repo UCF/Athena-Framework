@@ -116,10 +116,10 @@ module.exports = function (eleventyConfig) {
   // Build options
   //
   return {
-    pathPrefix: '/Athena-Framework/docs-local',
+    pathPrefix: process.env.ELEVENTY_ENV === 'production' ? '/Athena-Framework' : '/Athena-Framework/docs-local',
     dir: {
       input: './', // Equivalent to Jekyll's source property
-      output: '../docs-local', // Equivalent to Jekyll's destination property
+      output: process.env.ELEVENTY_ENV === 'production' ? '../docs' : '../docs-local', // Equivalent to Jekyll's destination property
       layouts: '_layouts'
     }
   };

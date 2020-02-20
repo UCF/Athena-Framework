@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+      
+        Flexbox &middot; Athena Framework
+      
+    </title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    
+    
+
+    <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.0.7">
+    <link rel="canonical" href="https://ucf.github.io/Athena-Framework/utilities/flexbox/">
+  </head>
+
+  <body class="docs">
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+      <div class="container">
+        <a class="navbar-brand" href="/Athena-Framework/">Athena Framework</a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-text">Menu</span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-nav">
+          <nav class="navbar-nav ml-auto mb-2 mb-lg-0">
+            <a class="nav-link " href="/Athena-Framework/getting-started/quick-start">
+              Documentation
+            </a>
+            <a class="nav-link " href="/Athena-Framework/about">
+              About
+            </a>
+            <a class="nav-link " href="/Athena-Framework/migration">
+              Migration
+            </a>
+          </nav>
+          <form class="afd-search form-inline ml-lg-4">
+            <label for="afd-search-input" class="sr-only">Search the Athena Framework documentation</label>
+            <input type="search" class="form-control form-control-search" id="afd-search-input" placeholder="Search..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-owns="afd-search-results">
+            <div class="dropdown-menu" id="afd-search-results"></div>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+
+<header class="header bg-inverse">
+  <div class="container">
+    <h1 class="display-4 heading-underline mb-4">Flexbox</h1>
+    <div class="row">
+      <div class="col-xl-10">
+        <span class="lead font-slab-serif">
+          
+        </span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="navbar-light bg-primary hidden-md-up">
+    <div class="container d-flex flex-column align-items-end">
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#afd-toc" aria-controls="afd-toc" aria-expanded="false" aria-label="Toggle documentation navigation">
+        <span class="navbar-toggler-text">Documentation<span class="sr-only"> Menu</span></span>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+  <article class="container">
+    <div class="row">
+      <div class="col-md-4 push-md-8 pt-3 pt-md-5 pl-lg-5">
+        <div id="afd-toc" class="collapse d-md-block mb-4">
+  <nav class="afd-links">
+    
+
+    
+        
+        
+
+        
+
+        <div class="afd-toc-item">
+            <a class="afd-toc-link " href="#sidenav-getting-started" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-getting-started">
+                Getting Started
+                <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+            </a>
+
+            
+
+            <div class="ml-4 collapse afd-sidenav " id="sidenav-getting-started">
+                <ul class="nav d-flex flex-column">
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/getting-started/accessibility/">
+                                Accessibility
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/getting-started/browsers-devices/">
+                                Browsers and devices
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/getting-started/build-tools/">
+                                Build tools
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/getting-started/download-install/">
+                                Download & install
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/getting-started/javascript/">
+                                JavaScript
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/getting-started/options/">
+                                Customization options
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/getting-started/quick-start/">
+                                Quick start
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+    
+        
+        
+
+        
+
+        <div class="afd-toc-item">
+            <a class="afd-toc-link " href="#sidenav-layout" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-layout">
+                Layout
+                <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+            </a>
+
+            
+
+            <div class="ml-4 collapse afd-sidenav " id="sidenav-layout">
+                <ul class="nav d-flex flex-column">
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/layout/grid/">
+                                Grid system
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/layout/media-object/">
+                                Media object
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/layout/overview/">
+                                Overview
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/layout/utilities-for-layout/">
+                                Utilities for layout
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+    
+        
+        
+
+        
+
+        <div class="afd-toc-item">
+            <a class="afd-toc-link " href="#sidenav-content" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-content">
+                Content
+                <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+            </a>
+
+            
+
+            <div class="ml-4 collapse afd-sidenav " id="sidenav-content">
+                <ul class="nav d-flex flex-column">
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/content/figures/">
+                                Figures
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/content/code/">
+                                Code
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/content/dividers/">
+                                Dividers
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/content/images/">
+                                Images
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/content/resets/">
+                                Resets
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/content/tables/">
+                                Tables
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/content/typography/">
+                                Typography
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+    
+        
+        
+
+        
+
+        <div class="afd-toc-item">
+            <a class="afd-toc-link " href="#sidenav-components" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-components">
+                Components
+                <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+            </a>
+
+            
+
+            <div class="ml-4 collapse afd-sidenav " id="sidenav-components">
+                <ul class="nav d-flex flex-column">
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/alerts/">
+                                Alerts
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/badge/">
+                                Badges
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/breadcrumb/">
+                                Breadcrumb
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/button-group/">
+                                Button group
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/buttons/">
+                                Buttons
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/card/">
+                                Cards
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/collapse/">
+                                Collapse
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/dropdowns/">
+                                Dropdowns
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/forms/">
+                                Forms
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/input-group/">
+                                Input group
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/jumbotron/">
+                                Jumbotron
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/list-group/">
+                                List group
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/modal/">
+                                Modal
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/navbar/">
+                                Navbar
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/navs/">
+                                Navs
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/pagination/">
+                                Pagination
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/popovers/">
+                                Popovers
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/progress/">
+                                Progress
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/scrollspy/">
+                                Scrollspy
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/tooltips/">
+                                Tooltips
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+    
+        
+        
+
+        
+            
+        
+
+        <div class="afd-toc-item">
+            <a class="afd-toc-link active" href="#sidenav-utilities" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-utilities">
+                Utilities
+                <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+            </a>
+
+            
+                
+            
+
+            <div class="ml-4 collapse afd-sidenav show" id="sidenav-utilities">
+                <ul class="nav d-flex flex-column">
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/image-replacement/">
+                                Image replacement
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/borders/">
+                                Borders
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/clearfix/">
+                                Clearfix
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/close-icon/">
+                                Close icon
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/colors/">
+                                Colors
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/display-property/">
+                                Display property
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/embeds/">
+                                Embeds
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/filters/">
+                                Filters
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+                            
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link active afd-sidenav-active" href="/Athena-Framework/utilities/flexbox/">
+                                Flexbox
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/float/">
+                                Float
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/pointer-events/">
+                                Pointer Events
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/screenreaders/">
+                                Screenreaders
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/sizing/">
+                                Sizing
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/spacing/">
+                                Spacing
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/states/">
+                                States
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/typography/">
+                                Typography
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/vertical-align/">
+                                Vertical alignment
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/visibility-property/">
+                                Visibility property
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/media-backgrounds/">
+                                Media Backgrounds
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/position/">
+                                Position
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+    
+
+  </nav>
+</div>
+
+      </div>
+      <div class="col-md-8 pull-md-4 pt-3 pt-md-5 afd-content">
+        <p>Quickly manage the layout, alignment, and sizing of grid columns, navigation, components, and more with a full suite of responsive flexbox utilities. For more complex implementations, custom CSS may be necessary.</p>
+<h2 id="contents">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#enable-flex-behaviors">Enable flex behaviors </a></li><li><a href="#direction">Direction </a></li><li><a href="#justify-content">Justify content </a></li><li><a href="#align-items">Align items </a></li><li><a href="#align-self">Align self </a></li><li><a href="#auto-margins">Auto margins </a><ul><li><a href="#with-justify-content">With justify-content </a></li><li><a href="#with-align-items">With align-items </a></li></ul></li><li><a href="#wrap">Wrap </a></li><li><a href="#order">Order </a></li><li><a href="#align-content">Align content </a></li></ul></nav><h2 id="enable-flex-behaviors">Enable flex behaviors <a class="header-anchor" href="#enable-flex-behaviors"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<p>Apply <code>display</code> utilities to create a flexbox container and transform <strong>direct children elements</strong> into flex items. Flex containers and items are able to be modified further with additional flex properties.</p>
+<div class="afd-example">
+<div class="d-flex p-2 afd-highlight">I'm a flexbox container!</div>
+</div><div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex p-2 afd-highlight"</span>&gt;</span>I'm a flexbox container!<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<div class="afd-example">
+<div class="d-inline-flex p-2 afd-highlight">I'm an inline flexbox container!</div>
+</div><div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-inline-flex p-2 afd-highlight"</span>&gt;</span>I'm an inline flexbox container!<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<p>Responsive variations also exist for <code>.d-flex</code> and <code>.d-inline-flex</code>.</p>
+<ul>
+<li><code>.d-flex</code></li>
+<li><code>.d-inline-flex</code></li>
+<li><code>.d-sm-flex</code></li>
+<li><code>.d-sm-inline-flex</code></li>
+<li><code>.d-md-flex</code></li>
+<li><code>.d-md-inline-flex</code></li>
+<li><code>.d-lg-flex</code></li>
+<li><code>.d-lg-inline-flex</code></li>
+<li><code>.d-xl-flex</code></li>
+<li><code>.d-xl-inline-flex</code></li>
+</ul>
+<h2 id="direction">Direction <a class="header-anchor" href="#direction"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<p>Set the direction of flex items in a flex container with direction utilities. In most cases you can omit the horizontal class here as the browser default is <code>row</code>. However, you may encounter situations where you needed to explicitly set this value (like responsive layouts).</p>
+<p>Use <code>.flex-row</code> to set a horizontal direction (the browser default), or <code>.flex-row-reverse</code> to start the horizontal direction from the opposite side.</p>
+<div class="afd-example">
+<div class="d-flex flex-row afd-highlight mb-3">
+  <div class="p-2 afd-highlight">Flex item 1</div>
+  <div class="p-2 afd-highlight">Flex item 2</div>
+  <div class="p-2 afd-highlight">Flex item 3</div>
+</div>
+<div class="d-flex flex-row-reverse afd-highlight">
+  <div class="p-2 afd-highlight">Flex item 1</div>
+  <div class="p-2 afd-highlight">Flex item 2</div>
+  <div class="p-2 afd-highlight">Flex item 3</div>
+</div>
+</div><div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex flex-row afd-highlight mb-3"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-2 afd-highlight"</span>&gt;</span>Flex item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-2 afd-highlight"</span>&gt;</span>Flex item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-2 afd-highlight"</span>&gt;</span>Flex item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex flex-row-reverse afd-highlight"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-2 afd-highlight"</span>&gt;</span>Flex item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-2 afd-highlight"</span>&gt;</span>Flex item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-2 afd-highlight"</span>&gt;</span>Flex item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<p>Use <code>.flex-column</code> to set a vertical direction, or <code>.flex-column-reverse</code>  to start the vertical direction from the opposite side.</p>
+<div class="afd-example">
+<div class="d-flex flex-column afd-highlight mb-3">
+  <div class="p-2 afd-highlight">Flex item 1</div>
+  <div class="p-2 afd-highlight">Flex item 2</div>
+  <div class="p-2 afd-highlight">Flex item 3</div>
+</div>
+<div class="d-flex flex-column-reverse afd-highlight">
+  <div class="p-2 afd-highlight">Flex item 1</div>
+  <div class="p-2 afd-highlight">Flex item 2</div>
+  <div class="p-2 afd-highlight">Flex item 3</div>
+</div>
+</div><div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex flex-column afd-highlight mb-3"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-2 afd-highlight"</span>&gt;</span>Flex item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-2 afd-highlight"</span>&gt;</span>Flex item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-2 afd-highlight"</span>&gt;</span>Flex item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex flex-column-reverse afd-highlight"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-2 afd-highlight"</span>&gt;</span>Flex item 1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-2 afd-highlight"</span>&gt;</span>Flex item 2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-2 afd-highlight"</span>&gt;</span>Flex item 3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<p>Responsive variations also exist for <code>flex-direction</code>.</p>
+<ul>
+<li><code>.flex-row</code></li>
+<li><code>.flex-row-reverse</code></li>
+<li><code>.flex-column</code></li>
+<li><code>.flex-column-reverse</code></li>
+<li><code>.flex-sm-row</code></li>
+<li><code>.flex-sm-row-reverse</code></li>
+<li><code>.flex-sm-column</code></li>
+<li><code>.flex-sm-column-reverse</code></li>
+<li><code>.flex-md-row</code></li>
+<li><code>.flex-md-row-reverse</code></li>
+<li><code>.flex-md-column</code></li>
+<li><code>.flex-md-column-reverse</code></li>
+<li><code>.flex-lg-row</code></li>
+<li><code>.flex-lg-row-reverse</code></li>
+<li><code>.flex-lg-column</code></li>
+<li><code>.flex-lg-column-reverse</code></li>
+<li><code>.flex-xl-row</code></li>
+<li><code>.flex-xl-row-reverse</code></li>
+<li><code>.flex-xl-column</code></li>
+<li><code>.flex-xl-column-reverse</code></li>
+</ul>
+<h2 id="justify-content">Justify content <a class="header-anchor" href="#justify-content"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<p>Use <code>justify-content</code> utilities on flexbox containers to change the alignment of flex items on the main axis (the x-axis to start, y-axis if <code>flex-direction: column</code>). Choose from <code>start</code> (browser default), <code>end</code>, <code>center</code>, <code>between</code>, or <code>around</code>.</p>
+<div class="afd-example">
+  <div class="d-flex justify-content-start afd-highlight mb-3">
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+  </div>
+  <div class="d-flex justify-content-end afd-highlight mb-3">
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+  </div>
+  <div class="d-flex justify-content-center afd-highlight mb-3">
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+  </div>
+  <div class="d-flex justify-content-between afd-highlight mb-3">
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+  </div>
+  <div class="d-flex justify-content-around afd-highlight">
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+  </div>
+</div>
+<div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex justify-content-start"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex justify-content-end"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex justify-content-center"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex justify-content-between"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex justify-content-around"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<p>Responsive variations also exist for <code>justify-content</code>.</p>
+<ul>
+<li><code>.justify-content-start</code></li>
+<li><code>.justify-content-end</code></li>
+<li><code>.justify-content-center</code></li>
+<li><code>.justify-content-between</code></li>
+<li><code>.justify-content-around</code></li>
+<li><code>.justify-content-sm-start</code></li>
+<li><code>.justify-content-sm-end</code></li>
+<li><code>.justify-content-sm-center</code></li>
+<li><code>.justify-content-sm-between</code></li>
+<li><code>.justify-content-sm-around</code></li>
+<li><code>.justify-content-md-start</code></li>
+<li><code>.justify-content-md-end</code></li>
+<li><code>.justify-content-md-center</code></li>
+<li><code>.justify-content-md-between</code></li>
+<li><code>.justify-content-md-around</code></li>
+<li><code>.justify-content-lg-start</code></li>
+<li><code>.justify-content-lg-end</code></li>
+<li><code>.justify-content-lg-center</code></li>
+<li><code>.justify-content-lg-between</code></li>
+<li><code>.justify-content-lg-around</code></li>
+<li><code>.justify-content-xl-start</code></li>
+<li><code>.justify-content-xl-end</code></li>
+<li><code>.justify-content-xl-center</code></li>
+<li><code>.justify-content-xl-between</code></li>
+<li><code>.justify-content-xl-around</code></li>
+</ul>
+<h2 id="align-items">Align items <a class="header-anchor" href="#align-items"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<p>Use <code>align-items</code> utilities on flexbox containers to change the alignment of flex items on the cross axis (the y-axis to start, x-axis if <code>flex-direction: column</code>). Choose from <code>start</code>, <code>end</code>, <code>center</code>, <code>baseline</code>, or <code>stretch</code> (browser default).</p>
+<div class="afd-example">
+  <div class="d-flex align-items-start afd-highlight mb-3" style="height: 100px">
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+  </div>
+  <div class="d-flex align-items-end afd-highlight mb-3" style="height: 100px">
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+  </div>
+  <div class="d-flex align-items-center afd-highlight mb-3" style="height: 100px">
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+  </div>
+  <div class="d-flex align-items-baseline afd-highlight mb-3" style="height: 100px">
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+  </div>
+  <div class="d-flex align-items-stretch afd-highlight" style="height: 100px">
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+  </div>
+</div>
+<div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex align-items-start"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex align-items-end"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex align-items-center"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex align-items-baseline"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex align-items-stretch"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<p>Responsive variations also exist for <code>align-items</code>.</p>
+<ul>
+<li><code>.align-items-start</code></li>
+<li><code>.align-items-end</code></li>
+<li><code>.align-items-center</code></li>
+<li><code>.align-items-baseline</code></li>
+<li><code>.align-items-stretch</code></li>
+<li><code>.align-items-sm-start</code></li>
+<li><code>.align-items-sm-end</code></li>
+<li><code>.align-items-sm-center</code></li>
+<li><code>.align-items-sm-baseline</code></li>
+<li><code>.align-items-sm-stretch</code></li>
+<li><code>.align-items-md-start</code></li>
+<li><code>.align-items-md-end</code></li>
+<li><code>.align-items-md-center</code></li>
+<li><code>.align-items-md-baseline</code></li>
+<li><code>.align-items-md-stretch</code></li>
+<li><code>.align-items-lg-start</code></li>
+<li><code>.align-items-lg-end</code></li>
+<li><code>.align-items-lg-center</code></li>
+<li><code>.align-items-lg-baseline</code></li>
+<li><code>.align-items-lg-stretch</code></li>
+<li><code>.align-items-xl-start</code></li>
+<li><code>.align-items-xl-end</code></li>
+<li><code>.align-items-xl-center</code></li>
+<li><code>.align-items-xl-baseline</code></li>
+<li><code>.align-items-xl-stretch</code></li>
+</ul>
+<h2 id="align-self">Align self <a class="header-anchor" href="#align-self"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<p>Use <code>align-self</code> utilities on flexbox items to individually change their alignment on the cross axis (the y-axis to start, x-axis if <code>flex-direction: column</code>). Choose from the same options as <code>align-items</code>: <code>start</code>, <code>end</code>, <code>center</code>, <code>baseline</code>, or <code>stretch</code> (browser default).</p>
+<div class="afd-example">
+  <div class="d-flex afd-highlight mb-3" style="height: 100px">
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="align-self-start p-2 afd-highlight">Aligned flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+  </div>
+  <div class="d-flex afd-highlight mb-3" style="height: 100px">
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="align-self-end p-2 afd-highlight">Aligned flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+  </div>
+  <div class="d-flex afd-highlight mb-3" style="height: 100px">
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="align-self-center p-2 afd-highlight">Aligned flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+  </div>
+  <div class="d-flex afd-highlight mb-3" style="height: 100px">
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="align-self-baseline p-2 afd-highlight">Aligned flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+  </div>
+  <div class="d-flex afd-highlight" style="height: 100px">
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="align-self-stretch p-2 afd-highlight">Aligned flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+  </div>
+</div>
+<div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"align-self-start"</span>&gt;</span>Aligned flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"align-self-end"</span>&gt;</span>Aligned flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"align-self-center"</span>&gt;</span>Aligned flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"align-self-baseline"</span>&gt;</span>Aligned flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"align-self-stretch"</span>&gt;</span>Aligned flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<p>Responsive variations also exist for <code>align-self</code>.</p>
+<ul>
+<li><code>.align-self-start</code></li>
+<li><code>.align-self-end</code></li>
+<li><code>.align-self-center</code></li>
+<li><code>.align-self-baseline</code></li>
+<li><code>.align-self-stretch</code></li>
+<li><code>.align-self-sm-start</code></li>
+<li><code>.align-self-sm-end</code></li>
+<li><code>.align-self-sm-center</code></li>
+<li><code>.align-self-sm-baseline</code></li>
+<li><code>.align-self-sm-stretch</code></li>
+<li><code>.align-self-md-start</code></li>
+<li><code>.align-self-md-end</code></li>
+<li><code>.align-self-md-center</code></li>
+<li><code>.align-self-md-baseline</code></li>
+<li><code>.align-self-md-stretch</code></li>
+<li><code>.align-self-lg-start</code></li>
+<li><code>.align-self-lg-end</code></li>
+<li><code>.align-self-lg-center</code></li>
+<li><code>.align-self-lg-baseline</code></li>
+<li><code>.align-self-lg-stretch</code></li>
+<li><code>.align-self-xl-start</code></li>
+<li><code>.align-self-xl-end</code></li>
+<li><code>.align-self-xl-center</code></li>
+<li><code>.align-self-xl-baseline</code></li>
+<li><code>.align-self-xl-stretch</code></li>
+</ul>
+<h2 id="auto-margins">Auto margins <a class="header-anchor" href="#auto-margins"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<p>Flexbox can do some pretty awesome things when you mix flex alignments with auto margins. Shown below are three examples of controlling flex items via auto margins: default (no auto margin), pushing two items to the right (<code>.mr-auto</code>), and pushing two items to the left (<code>.ml-auto</code>).</p>
+<div class="afd-example">
+<div class="d-flex afd-highlight mb-3">
+  <div class="p-2 afd-highlight">Flex item</div>
+  <div class="p-2 afd-highlight">Flex item</div>
+  <div class="p-2 afd-highlight">Flex item</div>
+</div>
+<div class="d-flex afd-highlight mb-3">
+  <div class="mr-auto p-2 afd-highlight">Flex item</div>
+  <div class="p-2 afd-highlight">Flex item</div>
+  <div class="p-2 afd-highlight">Flex item</div>
+</div>
+<div class="d-flex afd-highlight">
+  <div class="p-2 afd-highlight">Flex item</div>
+  <div class="p-2 afd-highlight">Flex item</div>
+  <div class="ml-auto p-2 afd-highlight">Flex item</div>
+</div>
+</div><div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex afd-highlight mb-3"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-2 afd-highlight"</span>&gt;</span>Flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-2 afd-highlight"</span>&gt;</span>Flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-2 afd-highlight"</span>&gt;</span>Flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-symbol"></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex afd-highlight mb-3"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mr-auto p-2 afd-highlight"</span>&gt;</span>Flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-2 afd-highlight"</span>&gt;</span>Flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-2 afd-highlight"</span>&gt;</span>Flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-symbol"></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex afd-highlight"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-2 afd-highlight"</span>&gt;</span>Flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-2 afd-highlight"</span>&gt;</span>Flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"ml-auto p-2 afd-highlight"</span>&gt;</span>Flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<h3 id="with-justify-content">With justify-content <a class="header-anchor" href="#with-justify-content"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<p><strong>Unfortunately, IE 11 does not properly support auto margins on flex items whose parent has a non-default <code>justify-content</code> value.</strong> <a href="https://stackoverflow.com/a/37535548">See this StackOverflow answer</a> for more details.</p>
+<h3 id="with-align-items">With align-items <a class="header-anchor" href="#with-align-items"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<p>Move one flex item to the top or bottom of a container by mixing <code>align-items</code>, <code>flex-direction: column</code>, and <code>margin-top: auto</code> or <code>margin-bottom: auto</code>.</p>
+<div class="afd-example">
+<div class="d-flex align-items-start flex-column afd-highlight mb-3" style="height: 200px;">
+  <div class="mb-auto p-2 afd-highlight">Flex item</div>
+  <div class="p-2 afd-highlight">Flex item</div>
+  <div class="p-2 afd-highlight">Flex item</div>
+</div>
+<div class="d-flex align-items-end flex-column afd-highlight mb-3" style="height: 200px;">
+  <div class="p-2 afd-highlight">Flex item</div>
+  <div class="p-2 afd-highlight">Flex item</div>
+  <div class="mt-auto p-2 afd-highlight">Flex item</div>
+</div>
+</div><div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex align-items-start flex-column afd-highlight mb-3"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 200px;"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mb-auto p-2 afd-highlight"</span>&gt;</span>Flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-2 afd-highlight"</span>&gt;</span>Flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-2 afd-highlight"</span>&gt;</span>Flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-symbol"></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex align-items-end flex-column afd-highlight mb-3"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 200px;"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-2 afd-highlight"</span>&gt;</span>Flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-2 afd-highlight"</span>&gt;</span>Flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mt-auto p-2 afd-highlight"</span>&gt;</span>Flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<h2 id="wrap">Wrap <a class="header-anchor" href="#wrap"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<p>Change how flex items wrap in a flex container. Choose from no wrapping at all (the browser default) with <code>.flex-nowrap</code>, wrapping with <code>.flex-wrap</code>, or reverse wrapping with <code>.flex-wrap-reverse</code>.</p>
+<div class="afd-example">
+  <div class="d-flex flex-nowrap afd-highlight">
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+  </div>
+</div>
+<div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex flex-nowrap"</span>&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<div class="afd-example">
+  <div class="d-flex flex-wrap afd-highlight">
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+  </div>
+</div>
+<div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex flex-wrap"</span>&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<div class="afd-example">
+  <div class="d-flex flex-wrap-reverse afd-highlight">
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+  </div>
+</div>
+<div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex flex-wrap-reverse"</span>&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<p>Responsive variations also exist for <code>flex-wrap</code>.</p>
+<ul>
+<li><code>.flex-nowrap</code></li>
+<li><code>.flex-wrap</code></li>
+<li><code>.flex-wrap-reverse</code></li>
+<li><code>.flex-sm-nowrap</code></li>
+<li><code>.flex-sm-wrap</code></li>
+<li><code>.flex-sm-wrap-reverse</code></li>
+<li><code>.flex-md-nowrap</code></li>
+<li><code>.flex-md-wrap</code></li>
+<li><code>.flex-md-wrap-reverse</code></li>
+<li><code>.flex-lg-nowrap</code></li>
+<li><code>.flex-lg-wrap</code></li>
+<li><code>.flex-lg-wrap-reverse</code></li>
+<li><code>.flex-xl-nowrap</code></li>
+<li><code>.flex-xl-wrap</code></li>
+<li><code>.flex-xl-wrap-reverse</code></li>
+</ul>
+<h2 id="order">Order <a class="header-anchor" href="#order"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<p>Change the <em>visual</em> order of specific flex items with a handful of <code>order</code> utilities. We only provide options for making an item first or last, as well as a reset to use the DOM order. As <code>order</code> takes any integer value (e.g., <code>5</code>), add custom CSS for any additional values needed.</p>
+<div class="afd-example">
+<div class="d-flex flex-nowrap afd-highlight">
+  <div class="flex-last p-2 afd-highlight">First flex item</div>
+  <div class="p-2 afd-highlight">Second flex item</div>
+  <div class="flex-first p-2 afd-highlight">Third flex item</div>
+</div>
+</div><div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex flex-nowrap afd-highlight"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"flex-last p-2 afd-highlight"</span>&gt;</span>First flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"p-2 afd-highlight"</span>&gt;</span>Second flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"flex-first p-2 afd-highlight"</span>&gt;</span>Third flex item<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<p>Responsive variations also exist for <code>order</code>.</p>
+<ul>
+<li><code>.order-first</code></li>
+<li><code>.order-last</code></li>
+<li><code>.order-unordered</code></li>
+<li><code>.order-sm-first</code></li>
+<li><code>.order-sm-last</code></li>
+<li><code>.order-sm-unordered</code></li>
+<li><code>.order-md-first</code></li>
+<li><code>.order-md-last</code></li>
+<li><code>.order-md-unordered</code></li>
+<li><code>.order-lg-first</code></li>
+<li><code>.order-lg-last</code></li>
+<li><code>.order-lg-unordered</code></li>
+<li><code>.order-xl-first</code></li>
+<li><code>.order-xl-last</code></li>
+<li><code>.order-xl-unordered</code></li>
+</ul>
+<h2 id="align-content">Align content <a class="header-anchor" href="#align-content"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<p>Use <code>align-content</code> utilities on flexbox containers to align flex items <em>together</em> on the cross axis. Choose from <code>start</code> (browser default), <code>end</code>, <code>center</code>, <code>between</code>, <code>around</code>, or <code>stretch</code>. To demonstrate these utilities, we've enforced <code>flex-wrap: wrap</code> and increased the number of flex items.</p>
+<p><strong>Heads up!</strong> This property has no effect on single rows of flex items.</p>
+<div class="afd-example">
+  <div class="d-flex align-content-start flex-wrap afd-highlight mb-3" style="height: 200px">
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+  </div>
+</div>
+<div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex align-content-start flex-wrap"</span>&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<div class="afd-example">
+  <div class="d-flex align-content-end flex-wrap afd-highlight mb-3" style="height: 200px">
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+  </div>
+</div>
+<div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex align-content-end flex-wrap"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<div class="afd-example">
+  <div class="d-flex align-content-center flex-wrap afd-highlight mb-3" style="height: 200px">
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+  </div>
+</div>
+<div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex align-content-center flex-wrap"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<div class="afd-example">
+  <div class="d-flex align-content-between flex-wrap afd-highlight mb-3" style="height: 200px">
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+  </div>
+</div>
+<div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex align-content-between flex-wrap"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<div class="afd-example">
+  <div class="d-flex align-content-around flex-wrap afd-highlight mb-3" style="height: 200px">
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+  </div>
+</div>
+<div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex align-content-around flex-wrap"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<div class="afd-example">
+  <div class="d-flex align-content-stretch flex-wrap afd-highlight mb-3" style="height: 200px">
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+    <div class="p-2 afd-highlight">Flex item</div>
+  </div>
+</div>
+<div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-flex align-content-stretch flex-wrap"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<p>Responsive variations also exist for <code>align-content</code>.</p>
+<ul>
+<li><code>.align-content-start</code></li>
+<li><code>.align-content-end</code></li>
+<li><code>.align-content-center</code></li>
+<li><code>.align-content-around</code></li>
+<li><code>.align-content-stretch</code></li>
+<li><code>.align-content-sm-start</code></li>
+<li><code>.align-content-sm-end</code></li>
+<li><code>.align-content-sm-center</code></li>
+<li><code>.align-content-sm-around</code></li>
+<li><code>.align-content-sm-stretch</code></li>
+<li><code>.align-content-md-start</code></li>
+<li><code>.align-content-md-end</code></li>
+<li><code>.align-content-md-center</code></li>
+<li><code>.align-content-md-around</code></li>
+<li><code>.align-content-md-stretch</code></li>
+<li><code>.align-content-lg-start</code></li>
+<li><code>.align-content-lg-end</code></li>
+<li><code>.align-content-lg-center</code></li>
+<li><code>.align-content-lg-around</code></li>
+<li><code>.align-content-lg-stretch</code></li>
+<li><code>.align-content-xl-start</code></li>
+<li><code>.align-content-xl-end</code></li>
+<li><code>.align-content-xl-center</code></li>
+<li><code>.align-content-xl-around</code></li>
+<li><code>.align-content-xl-stretch</code></li>
+</ul>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer class="py-5 mt-5 bg-inverse">
+      <div class="container">
+        <div class="row d-flex justify-content-lg-between">
+          <div class="col-lg-7 col-xl-8">
+            <strong class="h6 heading-underline mb-4">Athena Framework</strong>
+            <ul class="nav flex-column align-items-start mb-5">
+              <li class="nav-item">
+                <a class="nav-link bg-inverse-link" href="https://github.com/UCF/" target="_blank">
+                  <span class="fa fa-github mr-2 text-primary" aria-hidden="true"></span>UCF GitHub
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link bg-inverse-link" href="https://ucf-wp.slack.com/messages/prj-athena-framework/" target="_blank">
+                  <span class="fa fa-slack mr-2 text-primary" aria-hidden="true"></span>Athena Framework Slack Channel
+                </a>
+              </li>
+            </ul>
+            <p>
+              Current version: <strong>v1.0.7</strong>.
+            </p>
+            <p>
+              Documentation powered by <a class="bg-inverse-link" href="https://jekyllrb.com/" target="_blank">Jekyll</a>. Contents adapted from <a class="bg-inverse-link" href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.
+            </p>
+            <p class="mb-0">
+              Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
+            </p>
+          </div>
+          <div class="col-lg-5 col-xl-4 mt-5 mt-lg-0">
+            <div class="card card-outline-inverse card-github">
+  <div class="card-block">
+    <h2 class="card-title h4">Want to contribute?</h2>
+    <p class="card-text">If you're interested in contributing to the Athena Framework, please read our <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/CONTRIBUTING.md">contributing guidelines</a>, then submit a new issue or pull request.</p>
+    <a href="https://github.com/UCF/Athena-Framework" class="btn btn-primary btn-sm" target="_blank">GitHub Page</a>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js" integrity="sha256-mIiWebTG82x+OcV3vUA49ffGDIAJ53uC9jflw5/+REs=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.bundle.min.js" integrity="sha256-VCsWOz+0GuHdS/sIICtQNTFJdbaDI80rxvoB7BXabrU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+
+    <script>
+      var SEARCH_INDEX_URL = '/Athena-Framework/search-index.json';
+      var SEARCH_DATA_URL = '/Athena-Framework/search-data.json';
+    </script>
+    <script src="/Athena-Framework/static/js/docs.min.js?v=1.0.7"></script>
+
+  </body>
+</html>
+

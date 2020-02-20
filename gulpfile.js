@@ -479,7 +479,7 @@ gulp.task('docs-local-build', gulp.series(
   gulp.series('docs-default'),
   () => {
     return childProcess.exec(
-      'npx @11ty/eleventy',
+      'ELEVENTY_ENV=development npx @11ty/eleventy',
       {
         cwd: `${__dirname}/_docs`
       },
@@ -528,7 +528,7 @@ gulp.task('gh-pages-build', gulp.series(
   'docs-default',
   () => {
     return childProcess.exec(
-      'npx @11ty/eleventy --config=eleventy-prod.js',
+      'ELEVENTY_ENV=production npx @11ty/eleventy',
       {
         cwd: `${__dirname}/_docs`
       },

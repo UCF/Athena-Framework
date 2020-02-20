@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+      
+        Dropdowns &middot; Athena Framework
+      
+    </title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    
+    
+
+    <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.0.7">
+    <link rel="canonical" href="https://ucf.github.io/Athena-Framework/components/dropdowns/">
+  </head>
+
+  <body class="docs">
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+      <div class="container">
+        <a class="navbar-brand" href="/Athena-Framework/">Athena Framework</a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-text">Menu</span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-nav">
+          <nav class="navbar-nav ml-auto mb-2 mb-lg-0">
+            <a class="nav-link " href="/Athena-Framework/getting-started/quick-start">
+              Documentation
+            </a>
+            <a class="nav-link " href="/Athena-Framework/about">
+              About
+            </a>
+            <a class="nav-link " href="/Athena-Framework/migration">
+              Migration
+            </a>
+          </nav>
+          <form class="afd-search form-inline ml-lg-4">
+            <label for="afd-search-input" class="sr-only">Search the Athena Framework documentation</label>
+            <input type="search" class="form-control form-control-search" id="afd-search-input" placeholder="Search..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-owns="afd-search-results">
+            <div class="dropdown-menu" id="afd-search-results"></div>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+
+<header class="header bg-inverse">
+  <div class="container">
+    <h1 class="display-4 heading-underline mb-4">Dropdowns</h1>
+    <div class="row">
+      <div class="col-xl-10">
+        <span class="lead font-slab-serif">
+          
+            Toggle contextual overlays for displaying lists of links and more with the Athena dropdown plugin.
+          
+        </span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="navbar-light bg-primary hidden-md-up">
+    <div class="container d-flex flex-column align-items-end">
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#afd-toc" aria-controls="afd-toc" aria-expanded="false" aria-label="Toggle documentation navigation">
+        <span class="navbar-toggler-text">Documentation<span class="sr-only"> Menu</span></span>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+  <article class="container">
+    <div class="row">
+      <div class="col-md-4 push-md-8 pt-3 pt-md-5 pl-lg-5">
+        <div id="afd-toc" class="collapse d-md-block mb-4">
+  <nav class="afd-links">
+    
+
+    
+        
+        
+
+        
+
+        <div class="afd-toc-item">
+            <a class="afd-toc-link " href="#sidenav-getting-started" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-getting-started">
+                Getting Started
+                <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+            </a>
+
+            
+
+            <div class="ml-4 collapse afd-sidenav " id="sidenav-getting-started">
+                <ul class="nav d-flex flex-column">
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/getting-started/accessibility/">
+                                Accessibility
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/getting-started/browsers-devices/">
+                                Browsers and devices
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/getting-started/build-tools/">
+                                Build tools
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/getting-started/download-install/">
+                                Download & install
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/getting-started/javascript/">
+                                JavaScript
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/getting-started/options/">
+                                Customization options
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/getting-started/quick-start/">
+                                Quick start
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+    
+        
+        
+
+        
+
+        <div class="afd-toc-item">
+            <a class="afd-toc-link " href="#sidenav-layout" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-layout">
+                Layout
+                <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+            </a>
+
+            
+
+            <div class="ml-4 collapse afd-sidenav " id="sidenav-layout">
+                <ul class="nav d-flex flex-column">
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/layout/grid/">
+                                Grid system
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/layout/media-object/">
+                                Media object
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/layout/overview/">
+                                Overview
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/layout/utilities-for-layout/">
+                                Utilities for layout
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+    
+        
+        
+
+        
+
+        <div class="afd-toc-item">
+            <a class="afd-toc-link " href="#sidenav-content" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-content">
+                Content
+                <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+            </a>
+
+            
+
+            <div class="ml-4 collapse afd-sidenav " id="sidenav-content">
+                <ul class="nav d-flex flex-column">
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/content/figures/">
+                                Figures
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/content/code/">
+                                Code
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/content/dividers/">
+                                Dividers
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/content/images/">
+                                Images
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/content/resets/">
+                                Resets
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/content/tables/">
+                                Tables
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/content/typography/">
+                                Typography
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+    
+        
+        
+
+        
+            
+        
+
+        <div class="afd-toc-item">
+            <a class="afd-toc-link active" href="#sidenav-components" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-components">
+                Components
+                <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+            </a>
+
+            
+                
+            
+
+            <div class="ml-4 collapse afd-sidenav show" id="sidenav-components">
+                <ul class="nav d-flex flex-column">
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/alerts/">
+                                Alerts
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/badge/">
+                                Badges
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/breadcrumb/">
+                                Breadcrumb
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/button-group/">
+                                Button group
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/buttons/">
+                                Buttons
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/card/">
+                                Cards
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/collapse/">
+                                Collapse
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+                            
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link active afd-sidenav-active" href="/Athena-Framework/components/dropdowns/">
+                                Dropdowns
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/forms/">
+                                Forms
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/input-group/">
+                                Input group
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/jumbotron/">
+                                Jumbotron
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/list-group/">
+                                List group
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/modal/">
+                                Modal
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/navbar/">
+                                Navbar
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/navs/">
+                                Navs
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/pagination/">
+                                Pagination
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/popovers/">
+                                Popovers
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/progress/">
+                                Progress
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/scrollspy/">
+                                Scrollspy
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/tooltips/">
+                                Tooltips
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+    
+        
+        
+
+        
+
+        <div class="afd-toc-item">
+            <a class="afd-toc-link " href="#sidenav-utilities" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-utilities">
+                Utilities
+                <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+            </a>
+
+            
+
+            <div class="ml-4 collapse afd-sidenav " id="sidenav-utilities">
+                <ul class="nav d-flex flex-column">
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/image-replacement/">
+                                Image replacement
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/borders/">
+                                Borders
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/clearfix/">
+                                Clearfix
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/close-icon/">
+                                Close icon
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/colors/">
+                                Colors
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/display-property/">
+                                Display property
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/embeds/">
+                                Embeds
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/filters/">
+                                Filters
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/flexbox/">
+                                Flexbox
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/float/">
+                                Float
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/pointer-events/">
+                                Pointer Events
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/screenreaders/">
+                                Screenreaders
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/sizing/">
+                                Sizing
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/spacing/">
+                                Spacing
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/states/">
+                                States
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/typography/">
+                                Typography
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/vertical-align/">
+                                Vertical alignment
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/visibility-property/">
+                                Visibility property
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/media-backgrounds/">
+                                Media Backgrounds
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/position/">
+                                Position
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+    
+
+  </nav>
+</div>
+
+      </div>
+      <div class="col-md-8 pull-md-4 pt-3 pt-md-5 afd-content">
+        <p>Dropdowns are toggleable, contextual overlays for displaying lists of links and more. They're made interactive with the included Athena dropdown JavaScript plugin. They're toggled by clicking, not by hovering; this is <a href="http://markdotto.com/2012/02/27/bootstrap-explained-dropdowns/">an intentional design decision.</a></p>
+<h2 id="contents">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#examples">Examples </a><ul><li><a href="#single-button-dropdowns">Single button dropdowns </a></li><li><a href="#split-button-dropdowns">Split button dropdowns </a></li></ul></li><li><a href="#sizing">Sizing </a></li><li><a href="#dropup-variation">Dropup variation </a></li><li><a href="#menu-items">Menu items </a></li><li><a href="#menu-alignment">Menu alignment </a></li><li><a href="#menu-headers">Menu headers </a></li><li><a href="#menu-dividers">Menu dividers </a></li><li><a href="#disabled-menu-items">Disabled menu items </a></li><li><a href="#accessibility">Accessibility </a></li><li><a href="#usage">Usage </a><ul><li><a href="#via-data-attributes">Via data attributes </a></li><li><a href="#via-javascript">Via JavaScript </a></li><li><a href="#options">Options </a></li><li><a href="#methods">Methods </a></li><li><a href="#events">Events </a></li></ul></li></ul></nav><h2 id="examples">Examples <a class="header-anchor" href="#examples"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<p>Wrap the dropdown's toggle (your button or link) and the dropdown menu within <code>.dropdown</code>, or another element that declares <code>position: relative;</code>. Dropdowns can be triggered from <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code> elements to better fit your potential needs.</p>
+<h3 id="single-button-dropdowns">Single button dropdowns <a class="header-anchor" href="#single-button-dropdowns"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<p>Any single <code>.btn</code> can be turned into a dropdown toggle with some markup changes. Here's how you can put them to work with either <code>&lt;button&gt;</code> elements:</p>
+<div class="afd-example">
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+</div><div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-default dropdown-toggle"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"dropdownMenuButton"</span> <span class="hljs-attr">data-toggle</span>=<span class="hljs-string">"dropdown"</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span>&gt;</span>
+    Dropdown button
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-menu"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"dropdownMenuButton"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Action<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Another action<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Something else here<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<p>And with <code>&lt;a&gt;</code> elements:</p>
+<div class="afd-example">
+<div class="dropdown show">
+  <a class="btn btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown link
+  </a>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+</div><div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown show"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-default dropdown-toggle"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"dropdownMenuLink"</span> <span class="hljs-attr">data-toggle</span>=<span class="hljs-string">"dropdown"</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span>&gt;</span>
+    Dropdown link
+  <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-symbol"></span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-menu"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"dropdownMenuLink"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Action<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Another action<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Something else here<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<p>The best part is you can do this with any button variant, too:</p>
+<div class="afd-example">
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Primary</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div><!-- /btn-group -->
+  <div class="btn-group">
+    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Secondary</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div><!-- /btn-group -->
+  <div class="btn-group">
+    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Success</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div><!-- /btn-group -->
+  <div class="btn-group">
+    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Info</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div><!-- /btn-group -->
+  <div class="btn-group">
+    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Warning</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div><!-- /btn-group -->
+  <div class="btn-group">
+    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Danger</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div><!-- /btn-group -->
+</div>
+<div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-comment">&lt;!-- Example single danger button --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-danger dropdown-toggle"</span> <span class="hljs-attr">data-toggle</span>=<span class="hljs-string">"dropdown"</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span>&gt;</span>
+    Action
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-menu"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Action<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Another action<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Something else here<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-divider"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Separated link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<h3 id="split-button-dropdowns">Split button dropdowns <a class="header-anchor" href="#split-button-dropdowns"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<p>Similarly, create split button dropdowns with virtually the same markup as single button dropdowns, but with the addition of <code>.dropdown-toggle-split</code> for proper spacing around the dropdown caret.</p>
+<p>We use this extra class to reduce the horizontal <code>padding</code> on either side of the caret by 25% and remove the <code>margin-left</code> that's added for regular button dropdowns. Those extra changes keep the caret centered in the split button and provide a more appropriately sized hit area next to the main button.</p>
+<div class="afd-example">
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div><!-- /btn-group -->
+  <div class="btn-group">
+    <button type="button" class="btn btn-secondary">Secondary</button>
+    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div><!-- /btn-group -->
+  <div class="btn-group">
+    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div><!-- /btn-group -->
+  <div class="btn-group">
+    <button type="button" class="btn btn-info">Info</button>
+    <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div><!-- /btn-group -->
+  <div class="btn-group">
+    <button type="button" class="btn btn-warning">Warning</button>
+    <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div><!-- /btn-group -->
+  <div class="btn-group">
+    <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div><!-- /btn-group -->
+</div>
+<div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-comment">&lt;!-- Example split danger button --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-danger"</span>&gt;</span>Action<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-danger dropdown-toggle dropdown-toggle-split"</span> <span class="hljs-attr">data-toggle</span>=<span class="hljs-string">"dropdown"</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"sr-only"</span>&gt;</span>Toggle Dropdown<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-menu"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Action<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Another action<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Something else here<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-divider"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Separated link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<h2 id="sizing">Sizing <a class="header-anchor" href="#sizing"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<p>Button dropdowns work with buttons of all sizes, including default and split dropdown buttons.</p>
+<div class="afd-example">
+  <div class="btn-toolbar" role="toolbar">
+    <div class="btn-group">
+      <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Large button
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Separated link</a>
+      </div>
+    </div><!-- /btn-group -->
+    <div class="btn-group ml-2">
+      <button type="button" class="btn btn-lg btn-default">Large split button</button>
+      <button type="button" class="btn btn-lg btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Separated link</a>
+      </div>
+    </div><!-- /btn-group -->
+  </div><!-- /btn-toolbar -->
+  <div class="btn-toolbar" role="toolbar">
+    <div class="btn-group">
+      <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Small button
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Separated link</a>
+      </div>
+    </div><!-- /btn-group -->
+    <div class="btn-group ml-2">
+      <button type="button" class="btn btn-sm btn-default">Small split button</button>
+      <button type="button" class="btn btn-sm btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Separated link</a>
+      </div>
+    </div><!-- /btn-group -->
+  </div><!-- /btn-toolbar -->
+</div><!-- /example -->
+<div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-comment">&lt;!-- Large button groups (default and split) --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-default btn-lg dropdown-toggle"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">data-toggle</span>=<span class="hljs-string">"dropdown"</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span>&gt;</span>
+    Large button
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-menu"</span>&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-default btn-lg dropdown-toggle"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">data-toggle</span>=<span class="hljs-string">"dropdown"</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span>&gt;</span>
+    Large button
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-lg btn-default dropdown-toggle dropdown-toggle-split"</span> <span class="hljs-attr">data-toggle</span>=<span class="hljs-string">"dropdown"</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"sr-only"</span>&gt;</span>Toggle Dropdown<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-menu"</span>&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-symbol"></span>
+<span class="hljs-comment">&lt;!-- Small button groups (default and split) --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-default btn-sm dropdown-toggle"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">data-toggle</span>=<span class="hljs-string">"dropdown"</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span>&gt;</span>
+    Small button
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-menu"</span>&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-default btn-sm dropdown-toggle"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">data-toggle</span>=<span class="hljs-string">"dropdown"</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span>&gt;</span>
+    Small button
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-sm btn-default dropdown-toggle dropdown-toggle-split"</span> <span class="hljs-attr">data-toggle</span>=<span class="hljs-string">"dropdown"</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"sr-only"</span>&gt;</span>Toggle Dropdown<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-menu"</span>&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<h2 id="dropup-variation">Dropup variation <a class="header-anchor" href="#dropup-variation"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<p>Trigger dropdown menus above elements by adding <code>.dropup</code> to the parent element.</p>
+<div class="afd-example">
+  <div class="btn-group dropup">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Dropup
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div>
+  <div class="btn-group dropup">
+    <button type="button" class="btn btn-default">
+      Split dropup
+    </button>
+    <button type="button" class="btn btn-default dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div>
+</div>
+<div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-comment">&lt;!-- Default dropup button --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn-group dropup"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-default"</span>&gt;</span>Dropup<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-default dropdown-toggle"</span> <span class="hljs-attr">data-toggle</span>=<span class="hljs-string">"dropdown"</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"sr-only"</span>&gt;</span>Toggle Dropdown<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-menu"</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Dropdown menu links --&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-symbol"></span>
+<span class="hljs-comment">&lt;!-- Split dropup button --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn-group dropup"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-default"</span>&gt;</span>
+    Split dropup
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-default dropdown-toggle"</span> <span class="hljs-attr">data-toggle</span>=<span class="hljs-string">"dropdown"</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"sr-only"</span>&gt;</span>Toggle Dropdown<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-menu"</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Dropdown menu links --&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<h2 id="menu-items">Menu items <a class="header-anchor" href="#menu-items"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<p>Athena provides the option of using <code>&lt;button&gt;</code> elements in your dropdowns instead of just <code>&lt;a&gt;</code>s.</p>
+<div class="afd-example">
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <button class="dropdown-item" type="button">Action</button>
+    <button class="dropdown-item" type="button">Another action</button>
+    <button class="dropdown-item" type="button">Something else here</button>
+  </div>
+</div>
+</div><div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-default dropdown-toggle"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"dropdownMenu2"</span> <span class="hljs-attr">data-toggle</span>=<span class="hljs-string">"dropdown"</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span>&gt;</span>
+    Dropdown
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-menu"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"dropdownMenu2"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Action<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Another action<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Something else here<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<h2 id="menu-alignment">Menu alignment <a class="header-anchor" href="#menu-alignment"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<p>By default, a dropdown menu is automatically positioned 100% from the top and along the left side of its parent. Add <code>.dropdown-menu-right</code> to a <code>.dropdown-menu</code> to right align the dropdown menu.</p>
+<div class="afd-callout afd-callout-info"><p><strong>Heads up!</strong> Dropdowns are positioned only with CSS and may need some additional styles for exact alignment.</p>
+</div>
+<div class="afd-example">
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    This dropdown's menu is right-aligned
+  </button>
+  <div class="dropdown-menu dropdown-menu-right">
+    <button class="dropdown-item" type="button">Action</button>
+    <button class="dropdown-item" type="button">Another action</button>
+    <button class="dropdown-item" type="button">Something else here</button>
+  </div>
+</div>
+</div><div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn-group"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-default dropdown-toggle"</span> <span class="hljs-attr">data-toggle</span>=<span class="hljs-string">"dropdown"</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span>&gt;</span>
+    This dropdown's menu is right-aligned
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-menu dropdown-menu-right"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Action<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Another action<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Something else here<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<h2 id="menu-headers">Menu headers <a class="header-anchor" href="#menu-headers"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<p>Add a header to label sections of actions in any dropdown menu.</p>
+<div class="afd-example">
+<div class="dropdown-menu">
+  <h6 class="dropdown-header">Dropdown header</h6>
+  <a class="dropdown-item" href="#">Action</a>
+  <a class="dropdown-item" href="#">Another action</a>
+</div>
+</div><div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-menu"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h6</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-header"</span>&gt;</span>Dropdown header<span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Action<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Another action<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<h2 id="menu-dividers">Menu dividers <a class="header-anchor" href="#menu-dividers"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<p>Separate groups of related menu items with a divider.</p>
+<div class="afd-example">
+<div class="dropdown-menu">
+  <a class="dropdown-item" href="#">Action</a>
+  <a class="dropdown-item" href="#">Another action</a>
+  <a class="dropdown-item" href="#">Something else here</a>
+  <div class="dropdown-divider"></div>
+  <a class="dropdown-item" href="#">Separated link</a>
+</div>
+</div><div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-menu"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Action<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Another action<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Something else here<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-divider"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Separated link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<h2 id="disabled-menu-items">Disabled menu items <a class="header-anchor" href="#disabled-menu-items"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<p>Add <code>.disabled</code> to items in the dropdown to <strong>style them as disabled</strong>.</p>
+<div class="afd-example">
+<div class="dropdown-menu">
+  <a class="dropdown-item" href="#">Regular link</a>
+  <a class="dropdown-item disabled" href="#">Disabled link</a>
+  <a class="dropdown-item" href="#">Another link</a>
+</div>
+</div><div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-menu"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Regular link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item disabled"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Disabled link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-item"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Another link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<h2 id="accessibility">Accessibility <a class="header-anchor" href="#accessibility"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<p>The <a href="https://www.w3.org/TR/wai-aria/"><abbr title="Web Accessibility Initiative">WAI</abbr> <abbr title="Accessible Rich Internet Applications">ARIA</abbr></a> standard defines an actual <a href="https://www.w3.org/TR/wai-aria/roles#menu"><code>role=&quot;menu&quot;</code> widget</a>, but this is specific to application-like menus which trigger actions or functions. <abbr title="Accessible Rich Internet Applications">ARIA</abbr> menus can only contain menu items, checkbox menu items, radio button menu items, radio button groups, and sub-menus.</p>
+<p>Athena's dropdowns, on the other hand, are designed to be generic and applicable to a variety of situations and markup structures. For instance, it is possible to create dropdowns that contain additional inputs and form controls, such as search fields or login forms. For this reason, Athena does not expect (nor automatically add) any of the <code>role</code> and <code>aria-</code> attributes required for true <abbr title="Accessible Rich Internet Applications">ARIA</abbr> menus. Authors will have to include these more specific attributes themselves.</p>
+<p>However, Athena does add built-in support for most standard keyboard menu interactions, such as the ability to move through individual <code>.dropdown-item</code> elements using the cursor keys and close the menu with the <kbd>ESC</kbd> key.</p>
+<h2 id="usage">Usage <a class="header-anchor" href="#usage"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<p>Dropdown menu content is toggled by toggling the <code>.show</code> class on the parent list item, via data attributes or JavaScript.</p>
+<p>On mobile devices, opening a dropdown adds a <code>.dropdown-backdrop</code> as a tap area for closing dropdown menus when tapping outside the menu, a requirement for proper iOS support. <strong>This means that switching from an open dropdown menu to a different dropdown menu requires an extra tap on mobile.</strong></p>
+<p>Note: The <code>data-toggle=&quot;dropdown&quot;</code> attribute is relied on for closing dropdown menus at an application level, so it's a good idea to always use it.</p>
+<h3 id="via-data-attributes">Via data attributes <a class="header-anchor" href="#via-data-attributes"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<p>Add <code>data-toggle=&quot;dropdown&quot;</code> to a link or button to toggle a dropdown.</p>
+<div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"dLabel"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">data-toggle</span>=<span class="hljs-string">"dropdown"</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">aria-expanded</span>=<span class="hljs-string">"false"</span>&gt;</span>
+    Dropdown trigger
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"dropdown-menu"</span> <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">"dLabel"</span>&gt;</span>
+    ...
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<h3 id="via-javascript">Via JavaScript <a class="header-anchor" href="#via-javascript"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<p>Call the dropdowns via JavaScript:</p>
+<div class="highlight"><pre><code class="language-js">
+$('.dropdown-toggle').dropdown()
+</code></pre></div>
+<div class="afd-callout afd-callout-info"><h5 id="data-toggle-dropdown-still-required"><code>data-toggle=&quot;dropdown&quot;</code> still required <a class="header-anchor" href="#data-toggle-dropdown-still-required"><span class="fa fa-link" aria-label="Anchor"></span></a></h5>
+<p>Regardless of whether you call your dropdown via JavaScript or instead use the data-api, <code>data-toggle=&quot;dropdown&quot;</code> is always required to be present on the dropdown's trigger element.</p>
+</div>
+<h3 id="options">Options <a class="header-anchor" href="#options"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<p>-<em>None.</em></p>
+<h3 id="methods">Methods <a class="header-anchor" href="#methods"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$().dropdown('toggle')</code></td>
+<td>Toggles the dropdown menu of a given navbar or tabbed navigation.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="events">Events <a class="header-anchor" href="#events"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<p>All dropdown events are fired at the <code>.dropdown-menu</code>'s parent element and have a <code>relatedTarget</code> property, whose value is the toggling anchor element.</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>show.bs.dropdown</code></td>
+<td>This event fires immediately when the show instance method is called.</td>
+</tr>
+<tr>
+<td><code>shown.bs.dropdown</code></td>
+<td>This event is fired when the dropdown has been made visible to the user (will wait for CSS transitions, to complete).</td>
+</tr>
+<tr>
+<td><code>hide.bs.dropdown</code></td>
+<td>This event is fired immediately when the hide instance method has been called.</td>
+</tr>
+<tr>
+<td><code>hidden.bs.dropdown</code></td>
+<td>This event is fired when the dropdown has finished being hidden from the user (will wait for CSS transitions, to complete).</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><code class="language-js">
+$('#myDropdown').on('show.bs.dropdown', function () {
+  // do something…
+})
+</code></pre></div>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer class="py-5 mt-5 bg-inverse">
+      <div class="container">
+        <div class="row d-flex justify-content-lg-between">
+          <div class="col-lg-7 col-xl-8">
+            <strong class="h6 heading-underline mb-4">Athena Framework</strong>
+            <ul class="nav flex-column align-items-start mb-5">
+              <li class="nav-item">
+                <a class="nav-link bg-inverse-link" href="https://github.com/UCF/" target="_blank">
+                  <span class="fa fa-github mr-2 text-primary" aria-hidden="true"></span>UCF GitHub
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link bg-inverse-link" href="https://ucf-wp.slack.com/messages/prj-athena-framework/" target="_blank">
+                  <span class="fa fa-slack mr-2 text-primary" aria-hidden="true"></span>Athena Framework Slack Channel
+                </a>
+              </li>
+            </ul>
+            <p>
+              Current version: <strong>v1.0.7</strong>.
+            </p>
+            <p>
+              Documentation powered by <a class="bg-inverse-link" href="https://jekyllrb.com/" target="_blank">Jekyll</a>. Contents adapted from <a class="bg-inverse-link" href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.
+            </p>
+            <p class="mb-0">
+              Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
+            </p>
+          </div>
+          <div class="col-lg-5 col-xl-4 mt-5 mt-lg-0">
+            <div class="card card-outline-inverse card-github">
+  <div class="card-block">
+    <h2 class="card-title h4">Want to contribute?</h2>
+    <p class="card-text">If you're interested in contributing to the Athena Framework, please read our <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/CONTRIBUTING.md">contributing guidelines</a>, then submit a new issue or pull request.</p>
+    <a href="https://github.com/UCF/Athena-Framework" class="btn btn-primary btn-sm" target="_blank">GitHub Page</a>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js" integrity="sha256-mIiWebTG82x+OcV3vUA49ffGDIAJ53uC9jflw5/+REs=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.bundle.min.js" integrity="sha256-VCsWOz+0GuHdS/sIICtQNTFJdbaDI80rxvoB7BXabrU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+
+    <script>
+      var SEARCH_INDEX_URL = '/Athena-Framework/search-index.json';
+      var SEARCH_DATA_URL = '/Athena-Framework/search-data.json';
+    </script>
+    <script src="/Athena-Framework/static/js/docs.min.js?v=1.0.7"></script>
+
+  </body>
+</html>
+

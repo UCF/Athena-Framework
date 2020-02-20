@@ -15,9 +15,14 @@
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
+    {% capture domain %}
+    {% if build.environment == 'production' %}{{ site.prod_domain }}{% endif %}
+    {% endcapture %}
+    {% assign domain = domain | strip %}
+
     <link href="{{ '/favicon.ico' | url }}" rel="shortcut icon" type="image/x-icon">
     <link rel="stylesheet" href="{{ '/static/css/docs.min.css' | url }}?v={{ package.version }}">
-    <link rel="canonical" href="{{ page.url | url }}">
+    <link rel="canonical" href="{{ domain }}{{ page.url | url }}">
   </head>
 
   <body class="docs">

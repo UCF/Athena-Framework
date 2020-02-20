@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+      
+        Popovers &middot; Athena Framework
+      
+    </title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    
+    
+
+    <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.0.7">
+    <link rel="canonical" href="https://ucf.github.io/Athena-Framework/components/popovers/">
+  </head>
+
+  <body class="docs">
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+      <div class="container">
+        <a class="navbar-brand" href="/Athena-Framework/">Athena Framework</a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-text">Menu</span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-nav">
+          <nav class="navbar-nav ml-auto mb-2 mb-lg-0">
+            <a class="nav-link " href="/Athena-Framework/getting-started/quick-start">
+              Documentation
+            </a>
+            <a class="nav-link " href="/Athena-Framework/about">
+              About
+            </a>
+            <a class="nav-link " href="/Athena-Framework/migration">
+              Migration
+            </a>
+          </nav>
+          <form class="afd-search form-inline ml-lg-4">
+            <label for="afd-search-input" class="sr-only">Search the Athena Framework documentation</label>
+            <input type="search" class="form-control form-control-search" id="afd-search-input" placeholder="Search..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-owns="afd-search-results">
+            <div class="dropdown-menu" id="afd-search-results"></div>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+
+<header class="header bg-inverse">
+  <div class="container">
+    <h1 class="display-4 heading-underline mb-4">Popovers</h1>
+    <div class="row">
+      <div class="col-xl-10">
+        <span class="lead font-slab-serif">
+          
+            Documentation and examples for adding Bootstrap popovers, like those found in iOS, to any element on your site.
+          
+        </span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="navbar-light bg-primary hidden-md-up">
+    <div class="container d-flex flex-column align-items-end">
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#afd-toc" aria-controls="afd-toc" aria-expanded="false" aria-label="Toggle documentation navigation">
+        <span class="navbar-toggler-text">Documentation<span class="sr-only"> Menu</span></span>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+  <article class="container">
+    <div class="row">
+      <div class="col-md-4 push-md-8 pt-3 pt-md-5 pl-lg-5">
+        <div id="afd-toc" class="collapse d-md-block mb-4">
+  <nav class="afd-links">
+    
+
+    
+        
+        
+
+        
+
+        <div class="afd-toc-item">
+            <a class="afd-toc-link " href="#sidenav-getting-started" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-getting-started">
+                Getting Started
+                <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+            </a>
+
+            
+
+            <div class="ml-4 collapse afd-sidenav " id="sidenav-getting-started">
+                <ul class="nav d-flex flex-column">
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/getting-started/accessibility/">
+                                Accessibility
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/getting-started/browsers-devices/">
+                                Browsers and devices
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/getting-started/build-tools/">
+                                Build tools
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/getting-started/download-install/">
+                                Download & install
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/getting-started/javascript/">
+                                JavaScript
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/getting-started/options/">
+                                Customization options
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/getting-started/quick-start/">
+                                Quick start
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+    
+        
+        
+
+        
+
+        <div class="afd-toc-item">
+            <a class="afd-toc-link " href="#sidenav-layout" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-layout">
+                Layout
+                <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+            </a>
+
+            
+
+            <div class="ml-4 collapse afd-sidenav " id="sidenav-layout">
+                <ul class="nav d-flex flex-column">
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/layout/grid/">
+                                Grid system
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/layout/media-object/">
+                                Media object
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/layout/overview/">
+                                Overview
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/layout/utilities-for-layout/">
+                                Utilities for layout
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+    
+        
+        
+
+        
+
+        <div class="afd-toc-item">
+            <a class="afd-toc-link " href="#sidenav-content" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-content">
+                Content
+                <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+            </a>
+
+            
+
+            <div class="ml-4 collapse afd-sidenav " id="sidenav-content">
+                <ul class="nav d-flex flex-column">
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/content/figures/">
+                                Figures
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/content/code/">
+                                Code
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/content/dividers/">
+                                Dividers
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/content/images/">
+                                Images
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/content/resets/">
+                                Resets
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/content/tables/">
+                                Tables
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/content/typography/">
+                                Typography
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+    
+        
+        
+
+        
+            
+        
+
+        <div class="afd-toc-item">
+            <a class="afd-toc-link active" href="#sidenav-components" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-components">
+                Components
+                <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+            </a>
+
+            
+                
+            
+
+            <div class="ml-4 collapse afd-sidenav show" id="sidenav-components">
+                <ul class="nav d-flex flex-column">
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/alerts/">
+                                Alerts
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/badge/">
+                                Badges
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/breadcrumb/">
+                                Breadcrumb
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/button-group/">
+                                Button group
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/buttons/">
+                                Buttons
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/card/">
+                                Cards
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/collapse/">
+                                Collapse
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/dropdowns/">
+                                Dropdowns
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/forms/">
+                                Forms
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/input-group/">
+                                Input group
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/jumbotron/">
+                                Jumbotron
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/list-group/">
+                                List group
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/modal/">
+                                Modal
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/navbar/">
+                                Navbar
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/navs/">
+                                Navs
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/pagination/">
+                                Pagination
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+                            
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link active afd-sidenav-active" href="/Athena-Framework/components/popovers/">
+                                Popovers
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/progress/">
+                                Progress
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/scrollspy/">
+                                Scrollspy
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/components/tooltips/">
+                                Tooltips
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+    
+        
+        
+
+        
+
+        <div class="afd-toc-item">
+            <a class="afd-toc-link " href="#sidenav-utilities" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-utilities">
+                Utilities
+                <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+            </a>
+
+            
+
+            <div class="ml-4 collapse afd-sidenav " id="sidenav-utilities">
+                <ul class="nav d-flex flex-column">
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/image-replacement/">
+                                Image replacement
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/borders/">
+                                Borders
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/clearfix/">
+                                Clearfix
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/close-icon/">
+                                Close icon
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/colors/">
+                                Colors
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/display-property/">
+                                Display property
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/embeds/">
+                                Embeds
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/filters/">
+                                Filters
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/flexbox/">
+                                Flexbox
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/float/">
+                                Float
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/pointer-events/">
+                                Pointer Events
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/screenreaders/">
+                                Screenreaders
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/sizing/">
+                                Sizing
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/spacing/">
+                                Spacing
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/states/">
+                                States
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/typography/">
+                                Typography
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/vertical-align/">
+                                Vertical alignment
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/visibility-property/">
+                                Visibility property
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/media-backgrounds/">
+                                Media Backgrounds
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/position/">
+                                Position
+                            </a>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+    
+
+  </nav>
+</div>
+
+      </div>
+      <div class="col-md-8 pull-md-4 pt-3 pt-md-5 afd-content">
+        <p>Add small overlay content, like those found in iOS, to any element for housing secondary information.</p>
+<h2 id="contents">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#overview">Overview </a></li><li><a href="#example-enable-popovers-everywhere">Example: Enable popovers everywhere </a></li><li><a href="#example-using-the-container-option">Example: Using the container option </a></li><li><a href="#static-popover">Static popover </a></li><li><a href="#live-demo">Live demo </a><ul><li><a href="#four-directions">Four directions </a></li><li><a href="#dismiss-on-next-click">Dismiss on next click </a></li></ul></li><li><a href="#usage">Usage </a><ul><li><a href="#options">Options </a></li><li><a href="#methods">Methods </a><ul><li><a href="#popover-options">$().popover(options) </a></li><li><a href="#popover-show">.popover(&#39;show&#39;) </a></li><li><a href="#popover-hide">.popover(&#39;hide&#39;) </a></li><li><a href="#popover-toggle">.popover(&#39;toggle&#39;) </a></li><li><a href="#popover-dispose">.popover(&#39;dispose&#39;) </a></li></ul></li><li><a href="#events">Events </a></li></ul></li></ul></nav><h2 id="overview">Overview <a class="header-anchor" href="#overview"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<p>Things to know when using popovers:</p>
+<ul>
+<li>Popovers rely on the 3rd party library <a href="http://tether.io/">Tether</a> as well as Athena's JavaScript for positioning. You must include <a href="https://github.com/HubSpot/tether/blob/master/dist/js/tether.min.js">tether.min.js</a> before framework.min.js in order for popovers to work!</li>
+<li>Popovers are opt-in for performance reasons, so <strong>you must initialize them yourself</strong>.</li>
+<li>Zero-length <code>title</code> and <code>content</code> values will never show a popover.</li>
+<li>Specify <code>container: 'body'</code> to avoid rendering problems in more complex components (like our input groups, button groups, etc).</li>
+<li>Triggering popovers on hidden elements will not work.</li>
+<li>Popovers for <code>.disabled</code> or <code>disabled</code> elements must be triggered on a wrapper element.</li>
+<li>When triggered from hyperlinks that span multiple lines, popovers will be centered. Use <code>white-space: nowrap;</code> on your <code>&lt;a&gt;</code>s to avoid this behavior.</li>
+</ul>
+<p>Got all that? Great, let's see how they work with some examples.</p>
+<h2 id="example-enable-popovers-everywhere">Example: Enable popovers everywhere <a class="header-anchor" href="#example-enable-popovers-everywhere"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<p>One way to initialize all popovers on a page would be to select them by their <code>data-toggle</code> attribute:</p>
+<div class="highlight"><pre><code class="language-js">
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+</code></pre></div>
+<h2 id="example-using-the-container-option">Example: Using the <code>container</code> option <a class="header-anchor" href="#example-using-the-container-option"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<p>When you have some styles on a parent element that interfere with a popover, you'll want to specify a custom <code>container</code> so that the popover's HTML appears within that element instead.</p>
+<div class="highlight"><pre><code class="language-js">
+$(function () {
+  $('.example-popover').popover({
+    container: 'body'
+  })
+})
+</code></pre></div>
+<h2 id="static-popover">Static popover <a class="header-anchor" href="#static-popover"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<p>Four options are available: top, right, bottom, and left aligned.</p>
+<div class="afd-example afd-example-popover-static">
+  <div class="popover popover-top">
+    <h3 class="popover-title">Popover top</h3>
+    <div class="popover-content">
+      <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+    </div>
+  </div>
+  <div class="popover popover-right">
+    <h3 class="popover-title">Popover right</h3>
+    <div class="popover-content">
+      <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+    </div>
+  </div>
+  <div class="popover popover-bottom">
+    <h3 class="popover-title">Popover bottom</h3>
+<p><div class="popover-content">
+<p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+</div></p>
+  </div>
+  <div class="popover popover-left">
+    <h3 class="popover-title">Popover left</h3>
+    <div class="popover-content">
+      <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>
+<h2 id="live-demo">Live demo <a class="header-anchor" href="#live-demo"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<div class="afd-example">
+<button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+</div><div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-lg btn-danger"</span> <span class="hljs-attr">data-toggle</span>=<span class="hljs-string">"popover"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Popover title"</span> <span class="hljs-attr">data-content</span>=<span class="hljs-string">"And here's some amazing content. It's very engaging. Right?"</span>&gt;</span>Click to toggle popover<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre></div>
+<h3 id="four-directions">Four directions <a class="header-anchor" href="#four-directions"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<div class="afd-example popover-demo">
+  <div class="afd-example-popovers">
+    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+      Popover on top
+    </button>
+    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+      Popover on right
+    </button>
+    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+      Popover on bottom
+    </button>
+    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+      Popover on left
+    </button>
+  </div>
+</div>
+<div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-default"</span> <span class="hljs-attr">data-container</span>=<span class="hljs-string">"body"</span> <span class="hljs-attr">data-toggle</span>=<span class="hljs-string">"popover"</span> <span class="hljs-attr">data-placement</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">data-content</span>=<span class="hljs-string">"Vivamus sagittis lacus vel augue laoreet rutrum faucibus."</span>&gt;</span>
+  Popover on top
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-symbol"></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-default"</span> <span class="hljs-attr">data-container</span>=<span class="hljs-string">"body"</span> <span class="hljs-attr">data-toggle</span>=<span class="hljs-string">"popover"</span> <span class="hljs-attr">data-placement</span>=<span class="hljs-string">"right"</span> <span class="hljs-attr">data-content</span>=<span class="hljs-string">"Vivamus sagittis lacus vel augue laoreet rutrum faucibus."</span>&gt;</span>
+  Popover on right
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-symbol"></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-default"</span> <span class="hljs-attr">data-container</span>=<span class="hljs-string">"body"</span> <span class="hljs-attr">data-toggle</span>=<span class="hljs-string">"popover"</span> <span class="hljs-attr">data-placement</span>=<span class="hljs-string">"bottom"</span> <span class="hljs-attr">data-content</span>=<span class="hljs-string">"Vivamus
+sagittis lacus vel augue laoreet rutrum faucibus."</span>&gt;</span>
+  Popover on bottom
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-symbol"></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-default"</span> <span class="hljs-attr">data-container</span>=<span class="hljs-string">"body"</span> <span class="hljs-attr">data-toggle</span>=<span class="hljs-string">"popover"</span> <span class="hljs-attr">data-placement</span>=<span class="hljs-string">"left"</span> <span class="hljs-attr">data-content</span>=<span class="hljs-string">"Vivamus sagittis lacus vel augue laoreet rutrum faucibus."</span>&gt;</span>
+  Popover on left
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre></div>
+<h3 id="dismiss-on-next-click">Dismiss on next click <a class="header-anchor" href="#dismiss-on-next-click"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<p>Use the <code>focus</code> trigger to dismiss popovers on the next click that the user makes.</p>
+<div class="afd-callout afd-callout-danger"><h4 id="specific-markup-required-for-dismiss-on-next-click">Specific markup required for dismiss-on-next-click <a class="header-anchor" href="#specific-markup-required-for-dismiss-on-next-click"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
+<p>For proper cross-browser and cross-platform behavior, you must use the <code>&lt;a&gt;</code> tag, <em>not</em> the <code>&lt;button&gt;</code> tag, and you also must include a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex"><code>tabindex</code></a> attribute.</p>
+</div>
+<div class="afd-example">
+<a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
+</div><div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-lg btn-danger"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">data-toggle</span>=<span class="hljs-string">"popover"</span> <span class="hljs-attr">data-trigger</span>=<span class="hljs-string">"focus"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Dismissible popover"</span> <span class="hljs-attr">data-content</span>=<span class="hljs-string">"And here's some amazing content. It's very engaging. Right?"</span>&gt;</span>Dismissible popover<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><code class="language-js">
+$('.popover-dismiss').popover({
+  trigger: 'focus'
+})
+</code></pre></div>
+<h2 id="usage">Usage <a class="header-anchor" href="#usage"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<p>Enable popovers via JavaScript:</p>
+<div class="highlight"><pre><code class="language-js">$('#example').popover(options)</code></pre></div>
+<h3 id="options">Options <a class="header-anchor" href="#options"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as in <code>data-animation=&quot;&quot;</code>.</p>
+<table class="table table-bordered table-striped table-responsive">
+  <thead>
+    <tr>
+      <th style="width: 100px;">Name</th>
+      <th style="width: 100px;">Type</th>
+      <th style="width: 50px;">Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>animation</td>
+      <td>boolean</td>
+      <td>true</td>
+      <td>Apply a CSS fade transition to the popover</td>
+    </tr>
+    <tr>
+      <td>container</td>
+      <td>string | false</td>
+      <td>false</td>
+      <td>
+        <p>Appends the popover to a specific element. Example: <code>container: 'body'</code>. This option is particularly useful in that it allows you to position the popover in the flow of the document near the triggering element - which will prevent the popover from floating away from the triggering element during a window resize.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>content</td>
+      <td>string | element | function</td>
+      <td>''</td>
+      <td>
+        <p>Default content value if <code>data-content</code> attribute isn't present.</p>
+        <p>If a function is given, it will be called with its <code>this</code> reference set to the element that the popover is attached to.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>delay</td>
+      <td>number | object</td>
+      <td>0</td>
+      <td>
+        <p>Delay showing and hiding the popover (ms) - does not apply to manual trigger type</p>
+        <p>If a number is supplied, delay is applied to both hide/show</p>
+        <p>Object structure is: <code>delay: { "show": 500, "hide": 100 }</code></p>
+      </td>
+    </tr>
+    <tr>
+      <td>html</td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Insert HTML into the popover. If false, jQuery's <code>text</code> method will be used to insert content into the DOM. Use text if you're worried about XSS attacks.</td>
+    </tr>
+    <tr>
+      <td>placement</td>
+      <td>string | function</td>
+      <td>'right'</td>
+      <td>
+        <p>How to position the popover - top | bottom | left | right.</p>
+        <p>When a function is used to determine the placement, it is called with the popover DOM node as its first argument and the triggering element DOM node as its second. The <code>this</code> context is set to the popover instance.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>selector</td>
+      <td>string</td>
+      <td>false</td>
+      <td>If a selector is provided, popover objects will be delegated to the specified targets. In practice, this is used to enable dynamic HTML content to have popovers added. See <a href="https://github.com/twbs/bootstrap/issues/4215">this</a> and <a href="https://jsbin.com/zopod/1/edit">an informative example</a>.</td>
+    </tr>
+    <tr>
+      <td>template</td>
+      <td>string</td>
+      <td><code>'&lt;div class="popover" role="tooltip"&gt;&lt;div class="popover-arrow"&gt;&lt;/div&gt;&lt;h3 class="popover-title"&gt;&lt;/h3&gt;&lt;div class="popover-content"&gt;&lt;/div&gt;&lt;/div&gt;'</code></td>
+      <td>
+        <p>Base HTML to use when creating the popover.</p>
+        <p>The popover's <code>title</code> will be injected into the <code>.popover-title</code>.</p>
+        <p>The popover's <code>content</code> will be injected into the <code>.popover-content</code>.</p>
+        <p><code>.popover-arrow</code> will become the popover's arrow.</p>
+        <p>The outermost wrapper element should have the <code>.popover</code> class.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>string | element | function</td>
+      <td>''</td>
+      <td>
+        <p>Default title value if <code>title</code> attribute isn't present.</p>
+        <p>If a function is given, it will be called with its <code>this</code> reference set to the element that the popover is attached to.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>trigger</td>
+      <td>string</td>
+      <td>'click'</td>
+      <td>How popover is triggered - click | hover | focus | manual. You may pass multiple triggers; separate them with a space. `manual` cannot be combined with any other trigger.</td>
+    </tr>
+    <tr>
+      <td>constraints</td>
+      <td>Array</td>
+      <td>'hover focus'</td>
+      <td>An array of constraints - passed through to Tether. For more information refer to Tether's <a href="http://tether.io/#constraints">constraint docs</a>.</td>
+    </tr>
+    <tr>
+      <td>offset</td>
+      <td>string</td>
+      <td>'0 0'</td>
+      <td>Offset of the popover relative to its target. For more information refer to Tether's <a href="http://tether.io/#offset">offset docs</a>.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="afd-callout afd-callout-info"><h4 id="data-attributes-for-individual-popovers">Data attributes for individual popovers <a class="header-anchor" href="#data-attributes-for-individual-popovers"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
+<p>Options for individual popovers can alternatively be specified through the use of data attributes, as explained above.</p>
+</div>
+<h3 id="methods">Methods <a class="header-anchor" href="#methods"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h4 id="popover-options"><code>$().popover(options)</code> <a class="header-anchor" href="#popover-options"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
+<p>Initializes popovers for an element collection.</p>
+<h4 id="popover-show"><code>.popover('show')</code> <a class="header-anchor" href="#popover-show"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
+<p>Reveals an element's popover. <strong>Returns to the caller before the popover has actually been shown</strong> (i.e. before the <code>shown.bs.popover</code> event occurs). This is considered a &quot;manual&quot; triggering of the popover. Popovers whose both title and content are zero-length are never displayed.</p>
+<div class="highlight"><pre><code class="language-js">$('#element').popover('show')</code></pre></div>
+<h4 id="popover-hide"><code>.popover('hide')</code> <a class="header-anchor" href="#popover-hide"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
+<p>Hides an element's popover. <strong>Returns to the caller before the popover has actually been hidden</strong> (i.e. before the <code>hidden.bs.popover</code> event occurs). This is considered a &quot;manual&quot; triggering of the popover.</p>
+<div class="highlight"><pre><code class="language-js">$('#element').popover('hide')</code></pre></div>
+<h4 id="popover-toggle"><code>.popover('toggle')</code> <a class="header-anchor" href="#popover-toggle"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
+<p>Toggles an element's popover. <strong>Returns to the caller before the popover has actually been shown or hidden</strong> (i.e. before the <code>shown.bs.popover</code> or <code>hidden.bs.popover</code> event occurs). This is considered a &quot;manual&quot; triggering of the popover.</p>
+<div class="highlight"><pre><code class="language-js">$('#element').popover('toggle')</code></pre></div>
+<h4 id="popover-dispose"><code>.popover('dispose')</code> <a class="header-anchor" href="#popover-dispose"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
+<p>Hides and destroys an element's popover. Popovers that use delegation (which are created using <a href="#options">the <code>selector</code> option</a>) cannot be individually destroyed on descendant trigger elements.</p>
+<div class="highlight"><pre><code class="language-js">$('#element').popover('dispose')</code></pre></div>
+<h3 id="events">Events <a class="header-anchor" href="#events"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<table class="table table-bordered table-striped table-responsive">
+  <thead>
+   <tr>
+      <th style="width: 150px;">Event Type</th>
+      <th>Description</th>
+   </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>show.bs.popover</td>
+      <td>This event fires immediately when the <code>show</code> instance method is called.</td>
+    </tr>
+    <tr>
+      <td>shown.bs.popover</td>
+      <td>This event is fired when the popover has been made visible to the user (will wait for CSS transitions to complete).</td>
+    </tr>
+    <tr>
+      <td>hide.bs.popover</td>
+      <td>This event is fired immediately when the <code>hide</code> instance method has been called.</td>
+    </tr>
+    <tr>
+      <td>hidden.bs.popover</td>
+      <td>This event is fired when the popover has finished being hidden from the user (will wait for CSS transitions to complete).</td>
+    </tr>
+  </tbody>
+</table>
+<div class="highlight"><pre><code class="language-js">
+$('#myPopover').on('hidden.bs.popover', function () {
+  // do something…
+})
+</code></pre></div>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer class="py-5 mt-5 bg-inverse">
+      <div class="container">
+        <div class="row d-flex justify-content-lg-between">
+          <div class="col-lg-7 col-xl-8">
+            <strong class="h6 heading-underline mb-4">Athena Framework</strong>
+            <ul class="nav flex-column align-items-start mb-5">
+              <li class="nav-item">
+                <a class="nav-link bg-inverse-link" href="https://github.com/UCF/" target="_blank">
+                  <span class="fa fa-github mr-2 text-primary" aria-hidden="true"></span>UCF GitHub
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link bg-inverse-link" href="https://ucf-wp.slack.com/messages/prj-athena-framework/" target="_blank">
+                  <span class="fa fa-slack mr-2 text-primary" aria-hidden="true"></span>Athena Framework Slack Channel
+                </a>
+              </li>
+            </ul>
+            <p>
+              Current version: <strong>v1.0.7</strong>.
+            </p>
+            <p>
+              Documentation powered by <a class="bg-inverse-link" href="https://jekyllrb.com/" target="_blank">Jekyll</a>. Contents adapted from <a class="bg-inverse-link" href="https://v4-alpha.getbootstrap.com/">Bootstrap</a>.
+            </p>
+            <p class="mb-0">
+              Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
+            </p>
+          </div>
+          <div class="col-lg-5 col-xl-4 mt-5 mt-lg-0">
+            <div class="card card-outline-inverse card-github">
+  <div class="card-block">
+    <h2 class="card-title h4">Want to contribute?</h2>
+    <p class="card-text">If you're interested in contributing to the Athena Framework, please read our <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/CONTRIBUTING.md">contributing guidelines</a>, then submit a new issue or pull request.</p>
+    <a href="https://github.com/UCF/Athena-Framework" class="btn btn-primary btn-sm" target="_blank">GitHub Page</a>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js" integrity="sha256-mIiWebTG82x+OcV3vUA49ffGDIAJ53uC9jflw5/+REs=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.bundle.min.js" integrity="sha256-VCsWOz+0GuHdS/sIICtQNTFJdbaDI80rxvoB7BXabrU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+
+    <script>
+      var SEARCH_INDEX_URL = '/Athena-Framework/search-index.json';
+      var SEARCH_DATA_URL = '/Athena-Framework/search-data.json';
+    </script>
+    <script src="/Athena-Framework/static/js/docs.min.js?v=1.0.7"></script>
+
+  </body>
+</html>
+
