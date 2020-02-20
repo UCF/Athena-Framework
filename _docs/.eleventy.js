@@ -5,6 +5,7 @@ const Entities = require('html-entities').XmlEntities;
 const entities = new Entities();
 const hljs = require('highlight.js');
 
+
 // Slug-generation function ported over from AnchorJS
 // for consistent slug-generation from prior Jekyll docs:
 const urlify = function (text) {
@@ -25,12 +26,14 @@ const urlify = function (text) {
   return urlText;
 };
 
+// Markdown parser for content within shortcodes
 const mdInline = new markdownIt({
   html: true
 }).disable('code');
 
+// Markdown parser for 11ty-processed content
 const md = mdInline.use(markdownItAnchor, {
-  level: [1, 2, 3, 4, 5],
+  level: [2, 3, 4, 5],
   slugify: urlify,
   permalink: true,
   permalinkSymbol: '<span class="fa fa-link" aria-label="Anchor"></span>'
