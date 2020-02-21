@@ -3,6 +3,7 @@ layout: docs
 title: Customization options
 description: Customize Athena with Sass variables, easily toggling global preferences with a quick recompile.
 tags: getting-started
+date: 2020-01-04 # for ordering purposes only
 ---
 
 Customize Athena's CSS with Sass variables, easily toggling global preferences with a quick recompile.

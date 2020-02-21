@@ -4,6 +4,7 @@ title: Quick start
 description: Get started with Athena using these quick setup steps.
 tags: getting-started
 redirect_from: "/getting-started/"
+date: 2020-01-01 # for ordering purposes only
 ---
 
 It's easy to get started with the Athena Framework. The steps below outline the minimum requirements for getting Athena set up using CDN assets.

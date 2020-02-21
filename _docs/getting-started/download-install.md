@@ -3,6 +3,7 @@ layout: docs
 title: Download & install
 description: Download Athena's compiled CSS and JavaScript, source code, or include it with your favorite package manager.
 tags: getting-started
+date: 2020-01-02 # for ordering purposes only
 ---
 
 For [quick usage]({{ '/getting-started/quick-start' | url }}), the Athena Framework is hosted on UCF's CDN.  For those that want to utilize Athena's Sass variables and mixins directly, Athena can also be downloaded from [Github](https://github.com/{{ package.repository.url }}), or included in your project using npm or Bower.
