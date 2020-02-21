@@ -3,7 +3,6 @@ layout: docs
 title: Overview
 description: Components and options for laying out your project, including wrapping containers, a powerful grid system, a flexible media object, and responsive utility classes.
 tags: layout
-redirect_from: "/layout/"
 ---
 
 Athena includes several components and options for laying out your project, including wrapping containers, a powerful flexbox grid system, a flexible media object, and responsive utility classes.

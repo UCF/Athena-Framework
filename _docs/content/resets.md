@@ -3,7 +3,6 @@ layout: docs
 title: Resets
 description: Athena includes various cross-browser style resets to provide an elegant, consistent, and simple baseline to build upon.
 tags: content
-redirect_from: "/content/"
 ---
 
 Part of Athena's job is to provide an elegant, consistent, and simple baseline to build upon. We use a combination of our own opinionated resets and [Bootstrap's Reboot](https://v4-alpha.getbootstrap.com/content/reboot/), a collection of element-specific CSS changes in a single file, to kickstart that.

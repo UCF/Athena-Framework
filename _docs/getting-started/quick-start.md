@@ -3,7 +3,6 @@ layout: docs
 title: Quick start
 description: Get started with Athena using these quick setup steps.
 tags: getting-started
-redirect_from: "/getting-started/"
 date: 2020-01-01 # for ordering purposes only
 ---
 

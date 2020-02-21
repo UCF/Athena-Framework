@@ -1,0 +1,22 @@
+[
+    {
+        "slug": "components/",
+        "redirect_to": "/components/buttons/"
+    },
+    {
+        "slug": "content/",
+        "redirect_to": "/content/resets/"
+    },
+    {
+        "slug": "getting-started/",
+        "redirect_to": "/getting-started/quick-start/"
+    },
+    {
+        "slug": "layout/",
+        "redirect_to": "/layout/overview/"
+    },
+    {
+        "slug": "utilities/",
+        "redirect_to": "/utilities/borders/"
+    }
+]
