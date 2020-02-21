@@ -11,6 +11,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('../src/scss/');
   eleventyConfig.addWatchTarget('../src/js/');
 
+  eleventyConfig.setBrowserSyncConfig({
+    startPath: '/Athena-Framework/examples',
+    server: {
+      baseDir: '../../'
+    }
+  });
+
   //
   // Build options
   //
