@@ -3,6 +3,69 @@
     
     {
       "id": 1,
+      "title": "Quick start",
+      "url": "/Athena-Framework/getting-started/quick-start/"
+    }
+    ,
+    
+  
+    
+    {
+      "id": 2,
+      "title": "Download & install",
+      "url": "/Athena-Framework/getting-started/download-install/"
+    }
+    ,
+    
+  
+    
+    {
+      "id": 3,
+      "title": "Build tools",
+      "url": "/Athena-Framework/getting-started/build-tools/"
+    }
+    ,
+    
+  
+    
+    {
+      "id": 4,
+      "title": "Customization options",
+      "url": "/Athena-Framework/getting-started/options/"
+    }
+    ,
+    
+  
+    
+    {
+      "id": 5,
+      "title": "JavaScript",
+      "url": "/Athena-Framework/getting-started/javascript/"
+    }
+    ,
+    
+  
+    
+    {
+      "id": 6,
+      "title": "Browsers and devices",
+      "url": "/Athena-Framework/getting-started/browsers-devices/"
+    }
+    ,
+    
+  
+    
+    {
+      "id": 7,
+      "title": "Accessibility",
+      "url": "/Athena-Framework/getting-started/accessibility/"
+    }
+    ,
+    
+  
+    
+    {
+      "id": 8,
       "title": "Athena Framework",
       "url": "/Athena-Framework/"
     }
@@ -13,7 +76,7 @@
   
     
     {
-      "id": 3,
+      "id": 10,
       "title": "Figures",
       "url": "/Athena-Framework/content/figures/"
     }
@@ -22,7 +85,7 @@
   
     
     {
-      "id": 4,
+      "id": 11,
       "title": "Image replacement",
       "url": "/Athena-Framework/utilities/image-replacement/"
     }
@@ -31,7 +94,7 @@
   
     
     {
-      "id": 5,
+      "id": 12,
       "title": "About",
       "url": "/Athena-Framework/about/"
     }
@@ -40,7 +103,7 @@
   
     
     {
-      "id": 6,
+      "id": 13,
       "title": "Alerts",
       "url": "/Athena-Framework/components/alerts/"
     }
@@ -49,7 +112,7 @@
   
     
     {
-      "id": 7,
+      "id": 14,
       "title": "Badges",
       "url": "/Athena-Framework/components/badge/"
     }
@@ -58,7 +121,7 @@
   
     
     {
-      "id": 8,
+      "id": 15,
       "title": "Breadcrumb",
       "url": "/Athena-Framework/components/breadcrumb/"
     }
@@ -67,7 +130,7 @@
   
     
     {
-      "id": 9,
+      "id": 16,
       "title": "Button group",
       "url": "/Athena-Framework/components/button-group/"
     }
@@ -76,7 +139,7 @@
   
     
     {
-      "id": 10,
+      "id": 17,
       "title": "Buttons",
       "url": "/Athena-Framework/components/buttons/"
     }
@@ -85,7 +148,7 @@
   
     
     {
-      "id": 11,
+      "id": 18,
       "title": "Cards",
       "url": "/Athena-Framework/components/card/"
     }
@@ -94,7 +157,7 @@
   
     
     {
-      "id": 12,
+      "id": 19,
       "title": "Collapse",
       "url": "/Athena-Framework/components/collapse/"
     }
@@ -103,7 +166,7 @@
   
     
     {
-      "id": 13,
+      "id": 20,
       "title": "Dropdowns",
       "url": "/Athena-Framework/components/dropdowns/"
     }
@@ -112,7 +175,7 @@
   
     
     {
-      "id": 14,
+      "id": 21,
       "title": "Forms",
       "url": "/Athena-Framework/components/forms/"
     }
@@ -121,7 +184,7 @@
   
     
     {
-      "id": 15,
+      "id": 22,
       "title": "Input group",
       "url": "/Athena-Framework/components/input-group/"
     }
@@ -130,7 +193,7 @@
   
     
     {
-      "id": 16,
+      "id": 23,
       "title": "Jumbotron",
       "url": "/Athena-Framework/components/jumbotron/"
     }
@@ -139,7 +202,7 @@
   
     
     {
-      "id": 17,
+      "id": 24,
       "title": "List group",
       "url": "/Athena-Framework/components/list-group/"
     }
@@ -148,7 +211,7 @@
   
     
     {
-      "id": 18,
+      "id": 25,
       "title": "Modal",
       "url": "/Athena-Framework/components/modal/"
     }
@@ -157,7 +220,7 @@
   
     
     {
-      "id": 19,
+      "id": 26,
       "title": "Navbar",
       "url": "/Athena-Framework/components/navbar/"
     }
@@ -166,7 +229,7 @@
   
     
     {
-      "id": 20,
+      "id": 27,
       "title": "Navs",
       "url": "/Athena-Framework/components/navs/"
     }
@@ -175,7 +238,7 @@
   
     
     {
-      "id": 21,
+      "id": 28,
       "title": "Pagination",
       "url": "/Athena-Framework/components/pagination/"
     }
@@ -184,7 +247,7 @@
   
     
     {
-      "id": 22,
+      "id": 29,
       "title": "Popovers",
       "url": "/Athena-Framework/components/popovers/"
     }
@@ -193,7 +256,7 @@
   
     
     {
-      "id": 23,
+      "id": 30,
       "title": "Progress",
       "url": "/Athena-Framework/components/progress/"
     }
@@ -202,7 +265,7 @@
   
     
     {
-      "id": 24,
+      "id": 31,
       "title": "Scrollspy",
       "url": "/Athena-Framework/components/scrollspy/"
     }
@@ -211,7 +274,7 @@
   
     
     {
-      "id": 25,
+      "id": 32,
       "title": "Tooltips",
       "url": "/Athena-Framework/components/tooltips/"
     }
@@ -220,7 +283,7 @@
   
     
     {
-      "id": 26,
+      "id": 33,
       "title": "Code",
       "url": "/Athena-Framework/content/code/"
     }
@@ -229,7 +292,7 @@
   
     
     {
-      "id": 27,
+      "id": 34,
       "title": "Dividers",
       "url": "/Athena-Framework/content/dividers/"
     }
@@ -238,7 +301,7 @@
   
     
     {
-      "id": 28,
+      "id": 35,
       "title": "Images",
       "url": "/Athena-Framework/content/images/"
     }
@@ -247,7 +310,7 @@
   
     
     {
-      "id": 29,
+      "id": 36,
       "title": "Resets",
       "url": "/Athena-Framework/content/resets/"
     }
@@ -256,7 +319,7 @@
   
     
     {
-      "id": 30,
+      "id": 37,
       "title": "Tables",
       "url": "/Athena-Framework/content/tables/"
     }
@@ -265,72 +328,9 @@
   
     
     {
-      "id": 31,
+      "id": 38,
       "title": "Typography",
       "url": "/Athena-Framework/content/typography/"
-    }
-    ,
-    
-  
-    
-    {
-      "id": 32,
-      "title": "Accessibility",
-      "url": "/Athena-Framework/getting-started/accessibility/"
-    }
-    ,
-    
-  
-    
-    {
-      "id": 33,
-      "title": "Browsers and devices",
-      "url": "/Athena-Framework/getting-started/browsers-devices/"
-    }
-    ,
-    
-  
-    
-    {
-      "id": 34,
-      "title": "Build tools",
-      "url": "/Athena-Framework/getting-started/build-tools/"
-    }
-    ,
-    
-  
-    
-    {
-      "id": 35,
-      "title": "Download & install",
-      "url": "/Athena-Framework/getting-started/download-install/"
-    }
-    ,
-    
-  
-    
-    {
-      "id": 36,
-      "title": "JavaScript",
-      "url": "/Athena-Framework/getting-started/javascript/"
-    }
-    ,
-    
-  
-    
-    {
-      "id": 37,
-      "title": "Customization options",
-      "url": "/Athena-Framework/getting-started/options/"
-    }
-    ,
-    
-  
-    
-    {
-      "id": 38,
-      "title": "Quick start",
-      "url": "/Athena-Framework/getting-started/quick-start/"
     }
     ,
     
