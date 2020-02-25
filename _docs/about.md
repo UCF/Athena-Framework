@@ -23,4 +23,4 @@ The Athena Framework is actively developed by [UCF Marketing's Web Communication
 
 Want to get involved with the development of the Athena Framework?  Take a look at our [contributing guidelines]({{ site.contributing_docs }}) first, then submit a new issue or pull request in Github.
 
-For general questions/discussion about the project as a whole, please join us on our [Slack channel]({{ site.slack }}) (requires a **@ucf.edu** email address.)
+For general questions/discussion about the project as a whole, please join us on our [Teams channel]({{ site.teams }}).  Note that if you're not already a member of this Team, you'll need to request access.
