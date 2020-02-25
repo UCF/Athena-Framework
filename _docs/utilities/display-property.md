@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Display property
-group: utilities
+tags: utilities
 ---
 
 Change the value of the [`display` property](https://developer.mozilla.org/en-US/docs/Web/CSS/display) with our responsive display utility classes. We purposely support only a subset of all possible values for `display`. Classes can be combined for various effects as you need.
@@ -9,7 +9,6 @@ Change the value of the [`display` property](https://developer.mozilla.org/en-US
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
@@ -17,7 +16,7 @@ Change the value of the [`display` property](https://developer.mozilla.org/en-US
 
 ### Notation
 
-Display utility classes that apply to all [breakpoints]({{ site.baseurl }}{% link layout/overview.md %}#responsive-breakpoints), from `xs` to `xl`, have no breakpoint abbreviation in them. This is because those classes are applied from `min-width: 0;` and up, and thus are not bound by a media query. The remaining breakpoints, however, do include a breakpoint abbreviation.
+Display utility classes that apply to all [breakpoints]({{ '/layout/overview' | url }}#responsive-breakpoints), from `xs` to `xl`, have no breakpoint abbreviation in them. This is because those classes are applied from `min-width: 0;` and up, and thus are not bound by a media query. The remaining breakpoints, however, do include a breakpoint abbreviation.
 
 As such, the classes are named using the format:
 

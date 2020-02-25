@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Spacing
-group: utilities
+tags: utilities
 ---
 
 Assign responsive-friendly `margin` or `padding` values to an element or a subset of its sides with shorthand classes. Includes support for individual properties, all properties, and vertical and horizontal properties. Classes are built from a default Sass map ranging from `.25rem` to `3rem`.
@@ -9,7 +9,6 @@ Assign responsive-friendly `margin` or `padding` values to an element or a subse
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
@@ -50,7 +49,7 @@ Where *size* is one of:
 
 Here are some representative examples of these classes:
 
-{% highlight scss %}
+{% highlight 'scss' %}
 .mt-0 {
   margin-top: 0 !important;
 }
@@ -78,7 +77,7 @@ Additionally, Athena also includes an `.mx-auto` class for horizontally centerin
   </div>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <div class="mx-auto" style="width: 200px;">
   Centered element
 </div>

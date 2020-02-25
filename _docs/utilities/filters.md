@@ -1,12 +1,12 @@
 ---
 layout: docs
 title: Filters
-group: utilities
+tags: utilities
 ---
 
 Apply unique effects to images using Athena's built-in filter classes.
 
-{% callout warning %}
+{% callout 'warning' %}
 ## Not compatible with IE 11
 Note that CSS filters are not compatible with and will have no effect in IE 11.
 {% endcallout %}
@@ -14,7 +14,6 @@ Note that CSS filters are not compatible with and will have no effect in IE 11.
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
@@ -47,4 +46,4 @@ Note that CSS filters are not compatible with and will have no effect in IE 11.
 
 ## State Change Filter Overrides
 
-By combining a filter and [state classes]({{ site.baseurl }}{% link utilities/states.md %}), you can transition between filters on hover, active, and focus. Filter changes on state change (including parent/child element state changes) are documented in further detail in our [state class documentation]({{ site.baseurl }}{% link utilities/states.md %}).
+By combining a filter and [state classes]({{ '/utilities/states' | url }}), you can transition between filters on hover, active, and focus. Filter changes on state change (including parent/child element state changes) are documented in further detail in our [state class documentation]({{ '/utilities/states' | url }}).

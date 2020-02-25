@@ -2,7 +2,7 @@
 layout: docs
 title: Pagination
 description: Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.
-group: components
+tags: components
 ---
 
 Pagination links indicate a series of related content exists across multiple pages. Typically these are used where a multi-page approach to long lists of content improves general performance, such as in search results or inboxes.
@@ -10,7 +10,6 @@ Pagination links indicate a series of related content exists across multiple pag
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
@@ -147,7 +146,7 @@ Fancy larger or smaller pagination? Add `.pagination-lg` or `.pagination-sm` for
 
 ## Alignment
 
-Change the alignment of pagination components with [flexbox utilities]({{ site.baseurl }}{% link utilities/flexbox.md %}).
+Change the alignment of pagination components with [flexbox utilities]({{ '/utilities/flexbox' | url }}).
 
 {% example html %}
 <nav aria-label="Page navigation example">

@@ -1,16 +1,16 @@
 ---
 layout: docs
 title: Visibility property
-group: utilities
+tags: utilities
 ---
 
 The `.invisible` class can be used to toggle only the visibility of an element, meaning its `display` is not modified and the element can still affect the flow of the document.
 
-{% highlight html %}
+{% highlight 'html' %}
 <div class="invisible">...</div>
 {% endhighlight %}
 
-{% highlight scss %}
+{% highlight 'scss' %}
 // Class
 .invisible {
   visibility: hidden;

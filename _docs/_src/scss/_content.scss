@@ -96,15 +96,19 @@
 // Markdown generated ToC
 //
 
-#markdown-toc {
+.table-of-contents {
   // Hide the first child li because it's always going to be "Contents".
-  > li:first-child {
+  > ul > li:first-child {
     display: none;
   }
 
   ul {
-    padding-left: 2rem;
-    margin-top: .25rem;
     margin-bottom: .25rem;
+    margin-top: .25rem;
+    padding-left: 2rem;
+
+    li {
+      margin-bottom: .25rem;
+    }
   }
 }

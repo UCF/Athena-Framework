@@ -2,12 +2,13 @@
 layout: docs
 title: Accessibility
 description: A brief overview of Athena's features and limitations for the creation of accessible content.
-group: getting-started
+tags: getting-started
+date: 2020-01-07 # for ordering purposes only
 ---
 
 The Athena Framework provides a rich suite of tools for building accessible websites and applications--but it's important that developers and content editors understand how to implement these tools to meet Section 508 compliance and <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0 AA requirements.
 
-{% callout info %}
+{% callout 'info' %}
 ## Accessibility Basics
 The Athena Framework provides utilities and pre-styled components that are designed to be accessible, but **it is the responsibility of the developers and content editors using the framework to implement them appropriately**.
 
@@ -17,7 +18,6 @@ Please see our [Additional Resources](#additional-resources) section for further
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
@@ -43,7 +43,7 @@ Colors in Athena have been modified from Bootstrap's defaults to ensure they mee
 
 Content which should be visually hidden, but remain accessible to assistive technologies such as screen readers, can be styled using the `.sr-only` class. This can be useful in situations where additional visual information or cues (such as meaning denoted through the use of color) need to also be conveyed to non-visual users.
 
-{% highlight html %}
+{% highlight 'html' %}
 <p class="text-danger">
   <span class="sr-only">Danger: </span>
   This action is not reversible
@@ -52,7 +52,7 @@ Content which should be visually hidden, but remain accessible to assistive tech
 
 For visually hidden interactive controls, such as traditional "skip" links, `.sr-only` can be combined with the `.sr-only-focusable` class. This will ensure that the control becomes visible once focused (for sighted keyboard users).
 
-{% highlight html %}
+{% highlight 'html' %}
 <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 {% endhighlight %}
 

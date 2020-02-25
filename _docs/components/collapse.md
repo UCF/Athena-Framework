@@ -2,7 +2,7 @@
 layout: docs
 title: Collapse
 description: Toggle the visibility of content across your project with a few classes and Athena's JavaScript.
-group: components
+tags: components
 ---
 
 The Athena collapse component allows you to toggle content on your pages with a few classes thanks to some helpful JavaScript.
@@ -10,7 +10,6 @@ The Athena collapse component allows you to toggle content on your pages with a 
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
@@ -43,7 +42,7 @@ You can use a link with the `href` attribute, or a button with the `data-target`
 
 ## Accordion example
 
-Using the [card]({{ site.baseurl }}{% link components/card.md %}) component, you can extend the default collapse behavior to create an accordion.
+Using the [card]({{ '/components/card' | url }}) component, you can extend the default collapse behavior to create an accordion.
 
 {% example html %}
 <div id="accordion" role="tablist">
@@ -55,7 +54,6 @@ Using the [card]({{ site.baseurl }}{% link components/card.md %}) component, you
         </a>
       </h5>
     </div>
-
     <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="card-block">
         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
@@ -123,7 +121,7 @@ To add accordion-like group management to a collapsible area, add the data attri
 
 Enable manually with:
 
-{% highlight js %}
+{% highlight 'js' %}
 $('.collapse').collapse()
 {% endhighlight %}
 
@@ -162,7 +160,7 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
 
 Activates your content as a collapsible element. Accepts an optional options `object`.
 
-{% highlight js %}
+{% highlight 'js' %}
 $('#myCollapsible').collapse({
   toggle: false
 })
@@ -211,7 +209,7 @@ Athena's collapse class exposes a few events for hooking into collapse functiona
   </tbody>
 </table>
 
-{% highlight js %}
+{% highlight 'js' %}
 $('#myCollapsible').on('hidden.bs.collapse', function () {
   // do something…
 })

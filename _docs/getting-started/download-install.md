@@ -2,37 +2,37 @@
 layout: docs
 title: Download & install
 description: Download Athena's compiled CSS and JavaScript, source code, or include it with your favorite package manager.
-group: getting-started
+tags: getting-started
+date: 2020-01-02 # for ordering purposes only
 ---
 
-For [quick usage]({{ site.baseurl }}{% link getting-started/quick-start.md %}), the Athena Framework is hosted on UCF's CDN.  For those that want to utilize Athena's Sass variables and mixins directly, Athena can also be downloaded from [Github](https://github.com/{{ site.data.package.repository.url }}), or included in your project using npm or Bower.
+For [quick usage]({{ '/getting-started/quick-start' | url }}), the Athena Framework is hosted on UCF's CDN.  For those that want to utilize Athena's Sass variables and mixins directly, Athena can also be downloaded from [Github](https://github.com/{{ package.repository.url }}), or included in your project using npm or Bower.
 
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
 ## Download Options
 
 ### Direct Download (.zip)
-<a class="btn btn-outline-primary" href="https://github.com/{{ site.data.package.repository.url }}/archive/v{{ site.data.package.version }}.zip">
-    <span class="fa fa-file-archive-o"></span> Download Athena Framework <span class="small muted">v{{ site.data.package.version }}</span>
+<a class="btn btn-outline-primary" href="https://github.com/{{ package.repository.url }}/archive/v{{ package.version }}.zip">
+    <span class="fa fa-file-archive-o"></span> Download Athena Framework <span class="small muted">v{{ package.version }}</span>
 </a>
 
 ### CDN
 Skip the download and use CDN-hosted files to deliver Athena's compiled CSS and JS to your project.
 
-{% highlight html %}
-<link rel="stylesheet" href="{{ site.cdn }}v{{ site.data.package.version }}/css/framework.min.css">
-<script src="{{ site.cdn }}v{{ site.data.package.version }}/js/framework.min.js"></script>
+{% highlight 'html' %}
+<link rel="stylesheet" href="{{ site.cdn }}v{{ package.version }}/css/framework.min.css">
+<script src="{{ site.cdn }}v{{ package.version }}/js/framework.min.js"></script>
 {% endhighlight %}
 
 ### Github
 You can also clone a copy of the git project to your computer locally:
 
-<pre><code>git clone <a href="https://github.com/{{ site.data.package.repository.url }}/">git@github.com:{{ site.data.package.repository.url }}.git</a></code></pre>
+<pre><code>git clone <a href="https://github.com/{{ package.repository.url }}/">git@github.com:{{ package.repository.url }}.git</a></code></pre>
 
 ### npm
 `npm install --save ucf-athena-framework`
@@ -47,7 +47,7 @@ The project folder will contain minified files (`/dist/`) as well as source code
 ### Minified, pre-compiled assets
 The framework download includes ready-to-use CSS, JavaScript, and webfont files in the `/dist/` folder. Projects that just need to include Athena without modifications can use the already-minified files in this folder; see the [Installing Minified Files section](#installing-minified-files) for more information.
 
-<pre><code>├── dist/
+<pre><code class="nohighlight">├── dist/
    ├── css/
    │   └── framework.min.css
    ├── fonts/
@@ -60,9 +60,9 @@ The framework download includes ready-to-use CSS, JavaScript, and webfont files 
 
 ### Source files
 
-Source Sass files and other full, non-minified, files can be found in the `/src/` folder. Projects that need to extend Athena and/or reference Athena's Sass variables should utilize the source code files in this folder. For more information on working with these files directly, see our [build tools notes]({{ site.baseurl }}{% link getting-started/build-tools.md %}).
+Source Sass files and other full, non-minified, files can be found in the `/src/` folder. Projects that need to extend Athena and/or reference Athena's Sass variables should utilize the source code files in this folder. For more information on working with these files directly, see our [build tools notes]({{ '/getting-started/build-tools' | url }}).
 
-<pre><code>├── src/
+<pre><code class="nohighlight">├── src/
    ├── fonts/…
    ├── js/…
    └── scss/
@@ -83,9 +83,9 @@ Source Sass files and other full, non-minified, files can be found in the `/src/
 
 After downloading and extracting the Athena-Framework, add the CSS, JS and font files from the `/dist/` directory to somewhere within your project. **You'll need to maintain the directory structure of the `/dist/` folder's contents**, since fallback font includes are imported using a relative, fixed path. See the [Included Fonts](#included-fallback-fonts) section for more information.
 
-For more information on embedding Athena's styles and scripts into your project's templates, or for instructions on installing CDN assets, see the [Quick Start]({{ site.baseurl }}{% link getting-started/quick-start.md %}) instructions.
+For more information on embedding Athena's styles and scripts into your project's templates, or for instructions on installing CDN assets, see the [Quick Start]({{ '/getting-started/quick-start' | url }}) instructions.
 
-{% callout warning %}
+{% callout 'warning' %}
 #### Relative font paths in `/dist/`
 Keep in mind that Athena's minified CSS references font files relative to the folder structure in `/dist/`--meaning that, in projects using these files, this existing folder structure _must_ be maintained for fonts to load properly.
 
@@ -96,17 +96,17 @@ If you cannot store Athena's fallback fonts in a folder called `/fonts/` that ex
 
 Athena is a complete replacement for Bootstrap. If you are already using Bootstrap on an existing project and want to use Athena instead, you should remove Bootstrap's CSS and JavaScript completely. Athena is designed to run as a completely standalone framework.
 
-If you're upgrading from Bootstrap 3, be sure to check out the [Migration Guide]({{ site.baseurl }}{% link migration.md %}) for the full list of differences between Bootstrap and Athena.
+If you're upgrading from Bootstrap 3, be sure to check out the [Migration Guide]({{ migration | url }}) for the full list of differences between Bootstrap and Athena.
 
 <pre><code><strike>&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;</strike>
-<span class="highlight-code">&lt;link rel="stylesheet" href="{{ site.cdn }}v{{ site.data.package.version }}/css/framework.min.css"&gt;</span>
+<span class="highlight-code">&lt;link rel="stylesheet" href="{{ site.cdn }}v{{ package.version }}/css/framework.min.css"&gt;</span>
 
 &hellip;
 
 {{ site.jquery_script | escape }}
 {{ site.tether_script | escape }}
 <strike>&lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"&gt;</strike>
-<span class="highlight-code">&lt;script type="text/javascript" src="{{ site.cdn }}v{{ site.data.package.version }}/js/framework.min.js"&gt;&lt;/script&gt;</span>
+<span class="highlight-code">&lt;script type="text/javascript" src="{{ site.cdn }}v{{ package.version }}/js/framework.min.js"&gt;&lt;/script&gt;</span>
 </code></pre>
 
 
@@ -120,7 +120,7 @@ If you're loading Athena from UCF's CDN, fallback fonts will be used without any
 
 To utilize fallback webfonts in a manual installation, copy the `/fonts/` directory (from the `/dist/fonts/` in the framework's files) to the same folder in your project that you added the framework's CSS and JS files to. The framework's CSS is built to include webfonts from that directory.
 
-<pre><code> ├── css/
+<pre><code class="nohighlight"> ├── css/
 <strong> ├── fonts/
  │   ├── tulia/
  │   ├── ucf-condensed-alt/
@@ -144,7 +144,7 @@ For base support with Athena, your Cloud.typography project should be configured
   * Bold
   * Bold Italic
 
-{% callout danger %}
+{% callout 'danger' %}
 #### Gotham Licensing for the Web
 Any existing _print_ license for Gotham usage, whether purchased via the [UCF Computer Store](https://cstore.ucf.edu/gotham/) or separately, [does not cover usage of webfonts](https://www.typography.com/faq/question.php?faqID=15).
 
@@ -155,7 +155,7 @@ To use Gotham on the web, _you must register for the Cloud.typography service._
 
 #### Font Family Extras
 
-To take advantage of the [font family overrides available with Athena]({{ site.baseurl }}{% link utilities/typography.md %}#font-family), the following fonts/weights can also be added to your Cloud.typography project *as needed&#42;*:
+To take advantage of the [font family overrides available with Athena]({{ '/utilities/typography' | url }}#font-family), the following fonts/weights can also be added to your Cloud.typography project *as needed&#42;*:
 
 * Chronicle Text Grade 3 (for `.font-serif` support)
   * Roman
@@ -174,6 +174,6 @@ Because Athena does not support older browsers, enabling Legacy Support is not n
 
 More weights can be added as needed per-project, however, we don't recommend usage of most "thin" or "extra light" weights due to readability concerns.
 
-{% callout info %}
+{% callout 'info' %}
 <strong>*Note:</strong> Avoid adding webfonts that aren't needed for your project; as the number of fonts in a project increases, the average load time for the font project increases.
 {% endcallout %}

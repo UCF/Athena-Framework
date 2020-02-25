@@ -20,8 +20,6 @@ _These instructions are for installation and development of the project for core
 
 - [Node.js 5.6.0+](https://nodejs.org/en/download/)
 - [gulp-cli 2.0.0+](https://github.com/gulpjs/gulp/blob/v3.9.1/docs/getting-started.md#1-install-gulp-globally)
-- [Ruby 2.4.1+](https://www.ruby-lang.org/en/documentation/installation/)
-- [Bundler 1.16.1+](http://bundler.io/#getting-started)
 
 ### Installation instructions
 
@@ -34,17 +32,7 @@ _These instructions are for installation and development of the project for core
 
    `npm install`
 3. (Optional) Create a copy of `gulp-config.template.json`, modify settings as needed for your local development environment ([available options are listed below](#gulp-config-options)), and save as `gulp-config.json`.
-5. Navigate to the `_docs/` directory and install dependencies for the framework docs:
-
-   `cd _docs/`
-
-   `bundle install`
-5. Navigate to the `_examples/` directory and install dependencies for the examples site:
-
-   `cd _examples/`
-
-   `bundle install`
-6. Navigate back to the **root directory** of the project, and run an initial full build of the framework, documentation, and examples:
+4. Run an initial full build of the framework, documentation, and examples:
 
    `gulp setup`
 
@@ -68,13 +56,13 @@ Here's a rundown of what's in each of these directories:
 
 #### _docs/
 
-Contains source files for the framework's documentation.  Athena's docs are built on [Jekyll](https://jekyllrb.com/), meaning that they consist primarily of Markdown files.
+Contains source files for the framework's documentation.  Athena's docs are built on [11ty](https://www.11ty.dev/), a Node-based static site generator, meaning that they consist primarily of Markdown files.
 
 Documentation files get built to one of two locations: `docs-local/` or `docs/`.  `docs/` contains production-ready files intended to be served via Github Pages, and requires some unique options that we can't use for local testing.  Because of this, the documentation site will only get built to `docs/` when Athena's maintainers publish a new tag.  If you're working on updates to Athena's documentation, you'll always build changes to `docs-local/`.
 
 #### _examples/
 
-Contains source files for local example pages that you can use to test changes to the framework against.  Like the framework docs, these framework pages are built on Jekyll (but they are totally separate Jekyll instances.)
+Contains source files for local example pages that you can use to test changes to the framework against.  Like the framework docs, these framework pages are built on 11ty (but they are totally separate 11ty instances.)
 
 The examples site will get built to `examples/`.
 
@@ -134,58 +122,9 @@ Some key settings used in the framework's gulpfile are configurable via your `gu
 </thead>
 <tbody>
 <tr>
-<td><code>sync</code></td>
-<td><code>false</code></td>
-<td>Whether or not BrowserSync should be initialized when <code>gulp watch</code> is run.
-<br><br>
-If you'd like to automatically spin up a virtual test server when <code>gulp watch</code> is run and auto-refresh your browser when changes are made, set this to <code>true</code>.</td>
-</tr>
-<tr>
-<td><code>syncOptions</code></td>
-<td><pre><code>{
-  "server": {
-    "baseDir": "."
-  },
-  "startPath": "/examples"
-}</code></pre></td>
-<td>Options to pass to BrowserSync when it is initialized during <code>gulp watch</code>. Will have no effect if <code>sync</code> is <code>false</code>.
-<br><br>
-See <a href="https://browsersync.io/docs/options">BrowserSync's documentation</a> for available options. Function-based options are not supported.
-</td>
-</tr>
-<tr>
 <td><code>examplesCSSKey</code></td>
 <td><code>""</code></td>
 <td>If you'd like to enable premium webfonts on your local examples files, you can specify the URL of a Cloud.Typography CSS key here (e.g. <code>https://cloud.typography.com/000000/000000/css/fonts.css</code>).</td>
-</tr>
-<tr>
-<td><code>examplesBaseURL</code></td>
-<td><code>"/examples"</code></td>
-<td>The <code>baseurl</code> setting to pass to Jekyll when building your local examples site.  This value gets prepended to all internal links within the example files.</td>
-</tr>
-<tr>
-<td><code>docSync</code></td>
-<td><code>false</code></td>
-<td>Whether or not BrowserSync should be initialized when <code>gulp docs-watch</code> is run.
-<br><br>
-If you'd like to automatically spin up a virtual test server when <code>gulp docs-watch</code> is run, set this to <code>true</code>.</td>
-</tr>
-<tr>
-<td><code>docSyncOptions</code></td>
-<td><pre><code>{
-  "server": {
-    "baseDir": "."
-  },
-  "startPath": "/docs-local"
-}</code></pre></td>
-<td>Options to pass to BrowserSync when it is initialized during <code>gulp docs-watch</code>. Will have no effect if <code>docSync</code> is <code>false</code>.
-<br><br>
-See <a href="https://browsersync.io/docs/options">BrowserSync's documentation</a> for available options. Function-based options are not supported.</td>
-</tr>
-<tr>
-<td><code>docBaseURL</code></td>
-<td><code>"/docs-local"</code></td>
-<td>The <code>baseurl</code> setting to pass to Jekyll when building your local documentation site.  This value gets prepended to all internal links within the docs.</td>
 </tr>
 </tbody>
 </table>

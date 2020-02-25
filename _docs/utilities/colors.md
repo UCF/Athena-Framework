@@ -1,19 +1,18 @@
 ---
 layout: docs
 title: Colors
-group: utilities
+tags: utilities
 ---
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 ## Text colors
 
 Style text with brand-specific colors with a handful of emphasis utility classes. These may also be applied to links and will darken on hover just like our default link styles.
 
-{% callout warning %}
+{% callout 'warning' %}
 ### Color contrast
 
 Keep in mind that most of Athena's text utilities do _not_ meet WCAG 2.0 AA color contrast requirements against white or other light backgrounds.  If you're looking to apply color to text against a white background, please use our [accessible-over-white utility classes](#accessible-over-white-colors).
@@ -205,7 +204,7 @@ Note that transparent variants are not available for `.bg-faded`.
   </div>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <div class="bg-primary">
   Nullam id dolor id nibh ultricies vehicula ut id elit.
   <a class="bg-primary-link" href="#">Styled Link.</a>
@@ -224,11 +223,10 @@ Note that transparent variants are not available for `.bg-faded`.
 </div>
 {% endhighlight %}
 
-{% callout info %}
+{% callout 'info' %}
 #### Dealing with specificity
 
 Sometimes contextual classes cannot be applied due to the specificity of another selector. In some cases, a sufficient workaround is to wrap your element's content in a `<div>` with the class.
 {% endcallout %}
 
-{% capture callout-include %}{% include callout-warning-color-assistive-technologies.md %}{% endcapture %}
-{{ callout-include | markdownify }}
+{% include callout-warning-color-assistive-technologies.md %}

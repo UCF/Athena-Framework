@@ -2,7 +2,8 @@
 layout: docs
 title: Build tools
 description: Details on how to compile custom Athena builds and more.
-group: getting-started
+tags: getting-started
+date: 2020-01-03 # for ordering purposes only
 ---
 
 If you choose to utilize Athena's source files in your project, they should be included using whatever build tools best suit your project, such as [Grunt](http://gruntjs.com/) or [Gulp](http://gulpjs.com/). However, regardless of the build tools you choose, they will need to build your project's front-end assets in such a way that preserves Athena's core code while applying your overrides in a non-destructive way. We've outlined some examples below using Gulp.
@@ -10,7 +11,6 @@ If you choose to utilize Athena's source files in your project, they should be i
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
@@ -30,7 +30,7 @@ The rest of these examples will assume you have basic knowledge of setting up yo
 ## Running Tasks
 
 Assuming a basic project structure that looks something like this:
-<pre><code> ├── dist/
+<pre><code class="nohighlight"> ├── dist/
  ├── src/
  │   └── scss/
  │       ├── my-project.scss
@@ -42,7 +42,7 @@ Assuming a basic project structure that looks something like this:
 
 ...a sample Gulp file that copies Athena's font files and minified JS, and generates a single, minified CSS file, might look like this:
 
-{% highlight js %}
+{% highlight 'js' %}
 var gulp = require('gulp'),
   cleanCSS = require('gulp-clean-css'),
   rename = require('gulp-rename'),
@@ -96,7 +96,7 @@ With this setup, you could automate the process of setting up your front-end ass
 
 After running those build steps, your project would look something like:
 
-<pre><code> ├── dist/
+<pre><code class="nohighlight"> ├── dist/
  │   ├── css/
  │   │   └── my-project.min.css
  │   ├── js/
@@ -134,7 +134,7 @@ Your project's variables _must_ be included before anything else to ensure they 
 
 The following sample Sass file imports _all_ of Athena's styles into the project's stylesheet:
 
-{% highlight scss %}
+{% highlight 'scss' %}
 // Project-specific variables
 @import 'my-project-variables';
 
@@ -150,7 +150,7 @@ The following sample Sass file imports _all_ of Athena's styles into the project
 
 If you want to keep Athena contained to an individual file, but still have access to its variables and mixins, you'll need to import Athena's variable and mixin files into your stylesheet individually.
 
-{% highlight scss %}
+{% highlight 'scss' %}
 // Project-specific variables
 @import 'my-project-variables';
 
@@ -162,7 +162,7 @@ If you want to keep Athena contained to an individual file, but still have acces
 @import 'my-project-styles';
 {% endhighlight %}
 
-{% callout danger %}
+{% callout 'danger' %}
 #### Importing Bootstrap variables/mixins prior to v1.0.2
 Prior to v1.0.2, these instructions recommended importing additional files from Athena's copy of Bootstrap when attempting to port in Athena's variables and mixins into your project.  **This is no longer recommended** and will result in Sass warnings being thrown when imported.  In v1.0.2 onward, you should only import the files as shown under "Package assets" in the example above.
 {% endcallout %}

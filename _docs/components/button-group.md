@@ -2,18 +2,17 @@
 layout: docs
 title: Button group
 description: Group a series of buttons together on a single line with the button group, and super-power them with JavaScript.
-group: components
+tags: components
 ---
 
-Group a series of buttons together on a single line with the button group. Add on optional JavaScript radio and checkbox style behavior with [Athena's included JavaScript for buttons]({{ site.baseurl }}{% link components/buttons.md %}#button-plugin).
+Group a series of buttons together on a single line with the button group. Add on optional JavaScript radio and checkbox style behavior with [Athena's included JavaScript for buttons]({{ '/components/buttons' | url }}#button-plugin).
 
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
-{% callout warning %}
+{% callout 'warning' %}
 ## Ensure correct `role` and provide a label
 
 In order for assistive technologies (such as screen readers) to convey that a series of buttons is grouped, an appropriate `role` attribute needs to be provided. For button groups, this would be `role="group"`, while toolbars should have a `role="toolbar"`.
@@ -113,7 +112,7 @@ Instead of applying button sizing classes to every button in a group, just add `
   </div>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <div class="btn-group btn-group-lg" role="group" aria-label="...">...</div>
 <div class="btn-group" role="group" aria-label="...">...</div>
 <div class="btn-group btn-group-sm" role="group" aria-label="...">...</div>
@@ -202,7 +201,7 @@ Make a set of buttons appear vertically stacked rather than horizontally. **Spli
   </div>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <div class="btn-group-vertical">
   ...
 </div>

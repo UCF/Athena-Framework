@@ -2,7 +2,7 @@
 layout: docs
 title: Forms
 description: Examples and usage guidelines for form controls, form layouts, and custom forms.
-group: components
+tags: components
 ---
 
 Athena provides several form control styles, layout options, and custom components for creating a wide variety of forms.
@@ -10,13 +10,12 @@ Athena provides several form control styles, layout options, and custom componen
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
 ## Form controls
 
-Athena's form controls expand on [our reset form styles]({{ site.baseurl }}{% link content/resets.md %}#forms) with classes. Use these classes to opt into their customized displays for a more consistent rendering across browsers and devices. The example form below demonstrates common HTML form elements that receive updated styles from Athena with additional classes.
+Athena's form controls expand on [our reset form styles]({{ '/content/resets' | url }}#forms) with classes. Use these classes to opt into their customized displays for a more consistent rendering across browsers and devices. The example form below demonstrates common HTML form elements that receive updated styles from Athena with additional classes.
 
 Remember, since Athena utilizes the HTML5 doctype, **all inputs must have a `type` attribute**.
 
@@ -104,24 +103,24 @@ Below is a complete list of the specific form controls supported by Athena and t
   <tbody>
     <tr>
       <td>
-        {% markdown %}`.form-group`{% endmarkdown %}
+        `.form-group`
       </td>
       <td class="text-nowrap">
         Any group of form controls
       </td>
       <td>
-        {% markdown %}Use with any block-level element like `<fieldset>` or `<div>`{% endmarkdown %}
+        Use with any block-level element like `<fieldset>` or `<div>`
       </td>
     </tr>
     <tr>
       <td rowspan="3">
-        {% markdown %}`.form-control`{% endmarkdown %}
+        `.form-control`
       </td>
       <td>
         Textual inputs
       </td>
       <td>
-        {% markdown %}`text`, `password`, `datetime-local`, `date`, `month`, `time`, `week`, `number`, `email`, `url`, `search`, `tel`, `color`{% endmarkdown %}
+        `text`, `password`, `datetime-local`, `date`, `month`, `time`, `week`, `number`, `email`, `url`, `search`, `tel`, `color`
       </td>
     </tr>
     <tr>
@@ -129,7 +128,7 @@ Below is a complete list of the specific form controls supported by Athena and t
         Select menus
       </td>
       <td>
-        {% markdown %}`multiple`, `size`{% endmarkdown %}
+        `multiple`, `size`
       </td>
     </tr>
     <tr>
@@ -142,20 +141,18 @@ Below is a complete list of the specific form controls supported by Athena and t
     </tr>
     <tr>
       <td class="text-nowrap">
-        {% markdown %}`.form-control-file`{% endmarkdown %}
+        `.form-control-file`
       </td>
       <td>
         File inputs
       </td>
       <td>
-        {% markdown %}`file`{% endmarkdown %}
+        `file`
       </td>
     </tr>
     <tr>
       <td class="text-nowrap">
-{% markdown %}
 `.form-check`
-{% endmarkdown %}
       </td>
       <td class="text-nowrap">
         Checkboxes and radios
@@ -278,11 +275,11 @@ The `.form-group` class is the easiest way to add some structure to forms. Its o
 
 Use the `.form-inline` class to display a series of labels, form controls, and buttons on a single horizontal row. Form controls within inline forms vary slightly from their default states.
 
-- Controls are `display: flex`, collapsing any HTML white space and allowing you to provide alignment control with [spacing]({{ site.baseurl }}{% link utilities/spacing.md %}) and [flexbox]({{ site.baseurl }}{% link utilities/flexbox.md %}) utilities.
+- Controls are `display: flex`, collapsing any HTML white space and allowing you to provide alignment control with [spacing]({{ utilities/spacing | url }}) and [flexbox]({{ '/utilities/flexbox' | url }}) utilities.
 - Controls and input groups receive `width: auto` to override the Athena default `width: 100%`.
 - Controls **only appear inline in viewports that are at least 576px wide** to account for narrow viewports on mobile devices.
 
-You may need to manually address the width and alignment of individual form controls with [spacing utilities]({{ site.baseurl }}{% link utilities/spacing.md %}) (as shown below). Lastly, be sure to always include a `<label>` with each form control, even if you need to hide it from non-screenreader visitors with `.sr-only`.
+You may need to manually address the width and alignment of individual form controls with [spacing utilities]({{ '/utilities/spacing' | url }}) (as shown below). Lastly, be sure to always include a `<label>` with each form control, even if you need to hide it from non-screenreader visitors with `.sr-only`.
 
 {% example html %}
 <form class="form-inline">
@@ -327,14 +324,14 @@ Custom form controls and selects are also supported.
 </form>
 {% endexample %}
 
-{% callout warning %}
+{% callout 'warning' %}
 #### Alternatives to hidden labels
 Assistive technologies such as screen readers will have trouble with your forms if you don't include a label for every input. For these inline forms, you can hide the labels using the `.sr-only` class. There are further alternative methods of providing a label for assistive technologies, such as the `aria-label`, `aria-labelledby` or `title` attribute. If none of these are present, assistive technologies may resort to using the `placeholder` attribute, if present, but note that use of `placeholder` as a replacement for other labelling methods is not advised.
 {% endcallout %}
 
 ### Using the Grid
 
-For more structured form layouts that are also responsive, you can utilize Athena's [predefined grid classes]({{ site.baseurl }}{% link layout/grid.md %}) or [mixins]({{ site.baseurl }}{% link layout/grid.md %}#sass-mixins) to create horizontal forms. Add the `.row` class to form groups and use the `.col-*-*` classes to specify the width of your labels and controls.
+For more structured form layouts that are also responsive, you can utilize Athena's [predefined grid classes]({{ '/layout/grid' | url }}) or [mixins]({{ '/layout/grid' | url }}#sass-mixins) to create horizontal forms. Add the `.row` class to form groups and use the `.col-*-*` classes to specify the width of your labels and controls.
 
 Be sure to add `.col-form-label` to your `<label>`s as well so they're vertically centered with their associated form controls. For `<legend>` elements, you can use `.col-form-legend` to make them appear similar to regular `<label>` elements.
 
@@ -611,7 +608,7 @@ If you want to have reafd-only fields in your form styled as plain text, use the
 
 Add the `disabled` boolean attribute on an input to prevent user interactions and make it appear lighter.
 
-{% highlight html %}
+{% highlight 'html' %}
 <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
 {% endhighlight %}
 
@@ -640,13 +637,13 @@ Add the `disabled` attribute to a `<fieldset>` to disable all the controls withi
 </form>
 {% endexample %}
 
-{% callout warning %}
+{% callout 'warning' %}
 #### Caveat about link functionality of `<a>`
 
-By default, browsers will treat all native form controls (`<input>`, `<select>` and `<button>` elements) inside a `<fieldset disabled>` as disabled, preventing both keyboard and mouse interactions on them. However, if your form also includes `<a ... class="btn btn-*">` elements, these will only be given a style of `pointer-events: none`. As noted in the section about [disabled state for buttons]({{ site.baseurl }}{% link components/buttons.md %}#disabled-state) (and specifically in the sub-section for anchor elements), this CSS property is not yet standardized and isn't fully supported in Internet Explorer 11, and won't prevent keyboard users from being able to focus or activate these links. So to be safe, use custom JavaScript to disable such links.
+By default, browsers will treat all native form controls (`<input>`, `<select>` and `<button>` elements) inside a `<fieldset disabled>` as disabled, preventing both keyboard and mouse interactions on them. However, if your form also includes `<a ... class="btn btn-*">` elements, these will only be given a style of `pointer-events: none`. As noted in the section about [disabled state for buttons]({{ '/components/buttons' | url }}#disabled-state) (and specifically in the sub-section for anchor elements), this CSS property is not yet standardized and isn't fully supported in Internet Explorer 11, and won't prevent keyboard users from being able to focus or activate these links. So to be safe, use custom JavaScript to disable such links.
 {% endcallout %}
 
-{% callout danger %}
+{% callout 'danger' %}
 #### Cross-browser compatibility
 
 While Athena will apply these styles in all browsers, Internet Explorer 11 doesn't fully support the `disabled` attribute on a `<fieldset>`. Use custom JavaScript to disable the fieldset in IE 11.
@@ -655,7 +652,7 @@ While Athena will apply these styles in all browsers, Internet Explorer 11 doesn
 
 ## Readonly inputs
 
-Add the `readonly` boolean attribute on an input to prevent modification of the input's value. Reafd-only inputs appear lighter (just like disabled inputs), but retain the standard cursor.
+Add the `readonly` boolean attribute on an input to prevent modification of the input's value. Read-only inputs appear lighter (just like disabled inputs), but retain the standard cursor.
 
 {% example html %}
 <input class="form-control" type="text" placeholder="Readonly input here…" readonly>
@@ -708,7 +705,7 @@ Wrap inputs in grid columns, or any custom parent element, to easily enforce des
 
 Block-level help text in forms can be created using `.form-text` (previously known as `.help-block` in v3). Inline help text can be flexibly implemented using any inline HTML element and utility classes like `.text-muted`.
 
-{% callout warning %}
+{% callout 'warning' %}
 #### Associating help text with form controls
 
 Help text should be explicitly associated with the form control it relates to using the `aria-describedby` attribute. This will ensure that assistive technologies – such as screen readers – will announce this help text when the user focuses or enters the control.
@@ -766,7 +763,7 @@ Generally speaking, you'll want to use a particular state for specific types of 
 - And lastly, **success** is ideal for situations when you have per-field validation throughout a form and want to encourage a user through the rest of the fields.
 
 {% comment %}
-{% callout warning %}
+{% callout 'warning' %}
 #### Conveying validation state to assistive technologies and colorblind users
 
 Using these validation styles to denote the state of a form control only provides a visual, color-based indication, which will not be conveyed to users of assistive technologies - such as screen readers - or to colorblind users.
@@ -907,7 +904,7 @@ Custom checkboxes can also utilize the `:indeterminate` pseudo class when manual
 
 If you're using jQuery, something like this should suffice:
 
-{% highlight js %}
+{% highlight 'js' %}
 $('.your-checkbox').prop('indeterminate', true)
 {% endhighlight %}
 
@@ -1046,7 +1043,7 @@ In other words, it's an entirely custom element, all generated via CSS.
 
 The [`:lang()` pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/:lang) is used to allow for easy translation of the "Browse" and "Choose file..." text into other languages. Simply override or add entries to the `$custom-file-text` SCSS variable with the relevant [language tag](https://en.wikipedia.org/wiki/IETF_language_tag) and localized strings. The English strings can be customized the same way. For example, here's how one might add a Spanish translation (Spanish's language code is `es`):
 
-{% highlight scss %}
+{% highlight 'scss' %}
 $custom-file-text: (
   placeholder: (
     en: "Choose file...",

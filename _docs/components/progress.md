@@ -2,7 +2,7 @@
 layout: docs
 title: Progress
 description: Documentation and examples for using Athena custom progress bars, featuring support for stacked bars, animated backgrounds, and text labels.
-group: components
+tags: components
 ---
 
 Use our custom progress component for displaying simple or complex progress bars. We don't use [the HTML5 `<progress>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress), ensuring you can stack progress bars, animate them, and place text labels over them.
@@ -10,7 +10,6 @@ Use our custom progress component for displaying simple or complex progress bars
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
@@ -43,7 +42,7 @@ Put that all together, and you have the following examples.
 </div>
 {% endexample %}
 
-Athena provides a handful of [utilities for setting width]({{ site.baseurl }}{% link utilities/sizing.md %}). Depending on your needs, these may help with quickly configuring progress.
+Athena provides a handful of [utilities for setting width]({{ '/utilities/sizing' | url }}). Depending on your needs, these may help with quickly configuring progress.
 
 {% example html %}
 <div class="progress">
@@ -112,7 +111,7 @@ Use the `.progress-inverse` class on `.progress` for improved styles against dar
   </div>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <div class="progress progress-inverse">
   <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
@@ -177,7 +176,7 @@ The striped gradient can also be animated. Add `.progress-bar-animated` to `.pro
   </button>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <div class="progress">
   <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
 </div>

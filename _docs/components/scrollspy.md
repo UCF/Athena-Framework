@@ -2,12 +2,11 @@
 layout: docs
 title: Scrollspy
 description: Documentation and examples for scrollspy logic with Athena's navigation components.
-group: components
+tags: components
 ---
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
@@ -15,7 +14,7 @@ group: components
 
 Scrollspy has a few requirements to function properly:
 
-- It must be used on a [nav component]({{ site.baseurl }}{% link components/navs.md %}).
+- It must be used on a [nav component]({{ '/components/navs' | url }}).
 - Scrollspy requires `position: relative;` on the element you’re spying on, usually the `<body>`.
 - When spying on elements other than the <body>, be sure to have a height set and overflow-y: scroll; applied.
 - Anchors (`<a>`) are required and must point to an element with that ID.
@@ -67,13 +66,13 @@ Scroll the area below the navbar and watch the active class change. The dropdown
 
 To easily add scrollspy behavior to your topbar navigation, add `data-spy="scroll"` to the element you want to spy on (most typically this would be the `<body>`). Then add the `data-target` attribute with the ID or class of the parent element of any `.nav` component.
 
-{% highlight css %}
+{% highlight 'css' %}
 body {
   position: relative;
 }
 {% endhighlight %}
 
-{% highlight html %}
+{% highlight 'html' %}
 <body data-spy="scroll" data-target="#navbar-example">
   ...
   <div id="navbar-example">
@@ -89,17 +88,17 @@ body {
 
 After adding `position: relative;` in your CSS, call the scrollspy via JavaScript:
 
-{% highlight js %}
+{% highlight 'js' %}
 $('body').scrollspy({ target: '#navbar-example' })
 {% endhighlight %}
 
-{% callout danger %}
+{% callout 'danger' %}
 #### Resolvable ID targets required
 
 Navbar links must have resolvable id targets. For example, a `<a href="#home">home</a>` must correspond to something in the DOM like `<div id="home"></div>`.
 {% endcallout %}
 
-{% callout info %}
+{% callout 'info' %}
 #### Non-`:visible` target elements ignored
 
 Target elements that are not [`:visible` according to jQuery](https://api.jquery.com/visible-selector/) will be ignored and their corresponding nav items will never be highlighted.
@@ -111,7 +110,7 @@ Target elements that are not [`:visible` according to jQuery](https://api.jquery
 
 When using scrollspy in conjunction with adding or removing of elements from the DOM, you'll need to call the refresh method like so:
 
-{% highlight js %}
+{% highlight 'js' %}
 $('[data-spy="scroll"]').each(function () {
   var $spy = $(this).scrollspy('refresh')
 })
@@ -157,7 +156,7 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
   </tbody>
 </table>
 
-{% highlight js %}
+{% highlight 'js' %}
 $('#myScrollspy').on('activate.bs.scrollspy', function () {
   // do something…
 })

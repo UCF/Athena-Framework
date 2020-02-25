@@ -2,7 +2,7 @@
 layout: docs
 title: Tables
 description: Documentation and examples for opt-in styling of tables with Athena.
-group: content
+tags: content
 ---
 
 Due to the widespread use of tables across third-party widgets like calendars and date pickers, we've designed our tables to be **opt-in**. Just add the base class `.table` to any `<table>`, then extend with custom styles or our various included modifier classes.
@@ -10,7 +10,6 @@ Due to the widespread use of tables across third-party widgets like calendars an
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
@@ -527,7 +526,7 @@ Use contextual classes to color table rows or individual cells.
   </table>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <!-- On rows -->
 <tr class="table-active">...</tr>
 <tr class="table-success">...</tr>
@@ -545,7 +544,7 @@ Use contextual classes to color table rows or individual cells.
 </tr>
 {% endhighlight %}
 
-Regular table background variants are not available with the inverse table, however, you may use [text or background utilities]({{ site.baseurl }}{% link utilities/colors.md %}) to achieve similar styles.
+Regular table background variants are not available with the inverse table, however, you may use [text or background utilities]({{ '/utilities/colors' | url }}) to achieve similar styles.
 
 <div class="afd-example">
   <table class="table table-inverse">
@@ -616,7 +615,7 @@ Regular table background variants are not available with the inverse table, howe
   </table>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <!-- On rows -->
 <tr class="bg-primary">...</tr>
 <tr class="bg-success">...</tr>
@@ -634,15 +633,14 @@ Regular table background variants are not available with the inverse table, howe
 </tr>
 {% endhighlight %}
 
-{% capture callout-include %}{% include callout-warning-color-assistive-technologies.md %}{% endcapture %}
-{{ callout-include | markdownify }}
+{% include callout-warning-color-assistive-technologies.md %}
 
 
 ## Responsive tables
 
 Create responsive tables by adding `.table-responsive` to any `.table` to make them scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, you will not see any difference in these tables.
 
-{% callout warning %}
+{% callout 'warning' %}
 #### Vertical clipping/truncation
 
 Responsive tables make use of `overflow-y: hidden`, which clips off any content that goes beyond the bottom or top edges of the table. In particular, this can clip off dropdown menus and other third-party widgets.
@@ -736,7 +734,7 @@ Responsive tables make use of `overflow-y: hidden`, which clips off any content 
   </table>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <table class="table table-responsive">
   ...
 </table>
