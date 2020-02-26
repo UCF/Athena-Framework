@@ -2,7 +2,7 @@
 layout: docs
 title: Figures
 description: Documentation and examples for displaying related images and text with the figure component in Athena.
-group: content
+tags: content
 ---
 
 Anytime you need to display a piece of content—like an image with an optional caption, consider using a `<figure>`.
@@ -16,7 +16,7 @@ Use the included `.figure` , `.figure-img` and `.figure-caption` classes to prov
 </figure>
 {% endexample %}
 
-Aligning the figure's caption is easy with our [text utilities]({{ site.baseurl }}/utilities/typography/#text-alignment).
+Aligning the figure's caption is easy with our [text utilities](/utilities/typography/#text-alignment).
 
 {% example html %}
 <figure class="figure">

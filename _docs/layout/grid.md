@@ -2,15 +2,14 @@
 layout: docs
 title: Grid system
 description: Use our powerful mobile-first flexbox grid to build layouts of all shapes and sizes thanks to a twelve column system, five default responsive tiers, Sass variables and mixins, and dozens of predefined classes.
-group: layout
+tags: layout
 ---
 
-Athena includes a powerful mobile-first flexbox grid system for building layouts of all shapes and sizes. It's based on a 12 column layout and has multiple tiers, one for each [media query range]({{ site.baseurl }}{% link layout/overview.md %}#responsive-breakpoints). You can use it with Sass mixins or our predefined classes.
+Athena includes a powerful mobile-first flexbox grid system for building layouts of all shapes and sizes. It's based on a 12 column layout and has multiple tiers, one for each [media query range]({{ '/layout/overview' | url }}#responsive-breakpoints). You can use it with Sass mixins or our predefined classes.
 
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
@@ -45,7 +44,7 @@ Breaking it down, here's how it works:
 - Column classes indicate the number of columns you'd like to use out of the possible 12 per row. So, if you want three equal-width columns, you can use `.col-sm-4`.
 - Column `width`s are set in percentages, so they're always fluid and sized relative to their parent element.
 - Columns have horizontal `padding` to create the gutters between individual columns, however, you can remove the `margin` from rows and `padding` from columns with `.no-gutters` on the `.row`.
-- There are five grid tiers, one for each [responsive breakpoint]({{ site.baseurl }}{% link layout/overview.md %}#responsive-breakpoints): all breakpoints (extra small), small, medium, large, and extra large.
+- There are five grid tiers, one for each [responsive breakpoint]({{ '/layout/overview' | url }}#responsive-breakpoints): all breakpoints (extra small), small, medium, large, and extra large.
 - Grid tiers are based on minimum widths, meaning they apply to that one tier and all those above it (e.g., `.col-sm-4` applies to small, medium, large, and extra large devices).
 - You can use predefined grid classes or Sass mixins for more semantic markup.
 
@@ -263,7 +262,7 @@ Use `col-{breakpoint}-auto` classes to size columns based on the natural width o
 
 ### Equal-width multi-row
 
-Create equal-width columns that span multiple rows by inserting a `.w-100` where you want the columns to break to a new line. Make the breaks responsive by mixing the `.w-100` with some [responsive display utilities]({{ site.baseurl }}{% link utilities/display-property.md %}).
+Create equal-width columns that span multiple rows by inserting a `.w-100` where you want the columns to break to a new line. Make the breaks responsive by mixing the `.w-100` with some [responsive display utilities]({{ '/utilities/display-property' | url }}).
 
 <div class="afd-example-row">
 {% example html %}
@@ -464,9 +463,9 @@ Use flexbox alignment utilities to vertically and horizontally align columns.
 
 The gutters between columns in our predefined grid classes can be removed with `.no-gutters`. This removes the negative `margin`s from `.row` and the horizontal `padding` from all immediate children columns.
 
-Here's the source code for creating these styles. Note that column overrides are scoped to only the first children columns and are targeted via [attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors). While this generates a more specific selector, column padding can still be further customized with [spacing utilities]({{ site.baseurl }}{% link utilities/spacing.md %}).
+Here's the source code for creating these styles. Note that column overrides are scoped to only the first children columns and are targeted via [attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors). While this generates a more specific selector, column padding can still be further customized with [spacing utilities]({{ '/utilities/spacing' | url }}).
 
-{% highlight sass %}
+{% highlight 'scss' %}
 .no-gutters {
   margin-right: 0;
   margin-left: 0;
@@ -523,7 +522,7 @@ Breaking columns to a new line in flexbox requires a small hack: add an element 
 {% endexample %}
 </div>
 
-You may also apply this break at specific breakpoints with our [responsive display utilities]({{ site.baseurl }}{% link utilities/display-property.md %}).
+You may also apply this break at specific breakpoints with our [responsive display utilities]({{ '/utilities/display-property' | url }}).
 
 <div class="afd-example-row">
 {% example html %}
@@ -646,7 +645,7 @@ When using Athena's source Sass files, you have the option of using Sass variabl
 
 Variables and maps determine the number of columns, the gutter width, and the media query point at which to begin floating columns. We use these to generate the predefined grid classes documented above, as well as for the custom mixins listed below.
 
-{% highlight scss %}
+{% highlight 'scss' %}
 $grid-columns:      12;
 $grid-gutter-width-base: 30px;
 
@@ -683,7 +682,7 @@ $container-max-widths: (
 
 Mixins are used in conjunction with the grid variables to generate semantic CSS for individual grid columns.
 
-{% highlight scss %}
+{% highlight 'scss' %}
 // Creates a wrapper for a series of columns
 @include make-row($gutters: $grid-gutter-widths);
 
@@ -701,7 +700,7 @@ Mixins are used in conjunction with the grid variables to generate semantic CSS 
 
 You can modify the variables to your own custom values, or just use the mixins with their default values. Here's an example of using the default settings to create a two-column layout with a gap between.
 
-{% highlight scss %}
+{% highlight 'scss' %}
 .example-container {
   width: 800px;
   @include make-container();
@@ -743,7 +742,7 @@ Using our built-in grid Sass variables and maps, it's possible to completely cus
 
 The number of grid columns and their horizontal padding (aka, gutters) can be modified via Sass variables. `$grid-columns` is used to generate the widths (in percent) of each individual column while `$grid-gutter-widths` allows breakpoint-specific widths that are divided evenly across `padding-left` and `padding-right` for the column gutters.
 
-{% highlight scss %}
+{% highlight 'scss' %}
 $grid-columns:               12 !default;
 $grid-gutter-width-base:     30px !default;
 $grid-gutter-widths: (
@@ -759,7 +758,7 @@ $grid-gutter-widths: (
 
 Moving beyond the columns themselves, you may also customize the number of grid tiers. If you wanted just four grid tiers, you'd update the `$grid-breakpoints` and `$container-max-widths` to something like this:
 
-{% highlight scss %}
+{% highlight 'scss' %}
 $grid-breakpoints: (
   xs: 0,
   sm: 480px,

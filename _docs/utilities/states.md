@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: States
-group: utilities
+tags: utilities
 ---
 
 The Athena Framework provides utility classes for defining unique style changes on hover, focus, and active element states. These utility classes make it easy to develop complex interactive components on-the-fly, without the need for additional CSS.
@@ -11,7 +11,6 @@ Despite the names starting with just `.hover-`, these style adjustments are appl
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
@@ -47,7 +46,7 @@ Show/hide states can be combined with Athena's `.fade` class for a smoother tran
 
 ### Filters
 
-Athena's [available filters]({{ site.baseurl }}{% link utilities/filters.md %}) also have their own set of state classes, which apply filter effects on hover/active/focus:
+Athena's [available filters]({{ '/utilities/filters' | url }}) also have their own set of state classes, which apply filter effects on hover/active/focus:
 
 {% example html %}
 <img src="https://unsplash.it/100/100" class="hover-filter-sepia">
@@ -138,4 +137,4 @@ Hover over the blue backgrounds in the examples below, and you'll see the child 
 
 ### Pointer events
 
-Depending on the complexity of the element you're using parent + child state utilities with, you may also need to apply pointer event adjustments to the parent or child element.  See our [pointer event utility class]({{ site.baseurl }}{% link utilities/pointer-events.md %}) docs for more information.
+Depending on the complexity of the element you're using parent + child state utilities with, you may also need to apply pointer event adjustments to the parent or child element.  See our [pointer event utility class]({{ '/utilities/pointer-events' | url }}) docs for more information.

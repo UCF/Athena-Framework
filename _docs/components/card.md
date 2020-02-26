@@ -2,7 +2,7 @@
 layout: docs
 title: Cards
 description: Athena's cards provide a flexible and extensible content container with multiple variants and options.
-group: components
+tags: components
 ---
 
 A **card** is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.
@@ -12,7 +12,6 @@ If you're familiar with Bootstrap 3, cards replace its old panels, wells, and th
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
@@ -211,7 +210,7 @@ Using the grid, wrap cards in columns and rows as needed.
 
 ### Using utilities
 
-Use our handful of [available sizing utilities]({{ site.baseurl }}{% link utilities/sizing.md %}) to quickly set a card's width.
+Use our handful of [available sizing utilities]({{ '/utilities/sizing' | url }}) to quickly set a card's width.
 
 {% example html %}
 <div class="card w-75">
@@ -248,7 +247,7 @@ Use custom CSS in your stylesheets or as inline styles to set a width.
 
 ## Text alignment
 
-You can quickly change the text alignment of any card—in its entirety or specific parts—with our [text align classes]({{ site.baseurl }}{% link utilities/typography.md %}#text-alignment).
+You can quickly change the text alignment of any card—in its entirety or specific parts—with our [text align classes]({{ '/utilities/typography' | url }}#text-alignment).
 
 {% example html %}
 <div class="card" style="width: 18rem;">
@@ -279,7 +278,7 @@ You can quickly change the text alignment of any card—in its entirety or speci
 
 ## Navigation
 
-Add some navigation to a card's header (or block) with Athena's [nav components]({{ site.baseurl }}{% link components/navs.md %}).
+Add some navigation to a card's header (or block) with Athena's [nav components]({{ '/components/navs' | url }}).
 
 {% example html %}
 <div class="card text-center">
@@ -357,7 +356,7 @@ Similar to headers and footers, cards can include top and bottom "image caps"—
 
 ### Image overlays (using media backgrounds)
 
-Cards are also compatible with Athena's [media backgrounds]({{ site.baseurl }}{% link utilities/media-backgrounds.md %}) utility classes for image overlays. You may need to add a `min-height` value or extra vertical padding to the card to achieve the desired card height.
+Cards are also compatible with Athena's [media backgrounds]({{ '/utilities/media-backgrounds' | url }}) utility classes for image overlays. You may need to add a `min-height` value or extra vertical padding to the card to achieve the desired card height.
 
 <div class="card card-inverse media-background-container">
   <img class="media-background object-fit-cover" src="//placehold.it/767x280" alt="Card image">
@@ -381,7 +380,7 @@ Cards are also compatible with Athena's [media backgrounds]({{ site.baseurl }}{%
   </div>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <!-- with <img> media background -->
 <div class="card card-inverse media-background-container">
   <img class="media-background object-fit-cover" src="..." alt="Card image">
@@ -527,8 +526,7 @@ Cards include their own variant classes for quickly changing the `background-col
 </div>
 {% endexample %}
 
-{% capture callout-include %}{% include callout-warning-color-assistive-technologies.md %}{% endcapture %}
-{{ callout-include | markdownify }}
+{% include callout-warning-color-assistive-technologies.md %}
 
 ### Outline cards
 
@@ -908,7 +906,7 @@ Cards can be organized into [Masonry](http://masonry.desandro.com)-like columns 
 
 Card columns can also be extended and customized with some additional code. Shown below is an extension of the `.card-columns` class using the same CSS we use—CSS columns— to generate a set of responsive tiers for changing the number of columns.
 
-{% highlight scss %}
+{% highlight 'scss' %}
 .card-columns {
   @include media-breakpoint-only(lg) {
     column-count: 4;

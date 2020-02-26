@@ -2,7 +2,7 @@
 layout: docs
 title: List group
 description: List groups are a flexible and powerful component for displaying a series of content. Modify and extend them to support just about any content within.
-group: components
+tags: components
 ---
 
 List groups are a flexible and powerful component for displaying a series of content. List group items can be modified and extended to support just about any content within.
@@ -10,7 +10,6 @@ List groups are a flexible and powerful component for displaying a series of con
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
@@ -132,13 +131,12 @@ Contextual classes also work with `.list-group-item-action`. Note the addition o
 </div>
 {% endexample %}
 
-{% capture callout-include %}{% include callout-warning-color-assistive-technologies.md %}{% endcapture %}
-{{ callout-include | markdownify }}
+{% include callout-warning-color-assistive-technologies.md %}
 
 
 ## With badges
 
-Add badges to any list group item to show unread counts, activity, and more with the help of some [utilities]({{ site.baseurl }}{% link utilities/flexbox.md %}).
+Add badges to any list group item to show unread counts, activity, and more with the help of some [utilities]({{ '/utilities/flexbox' | url }}).
 
 {% example html %}
 <ul class="list-group">
@@ -160,7 +158,7 @@ Add badges to any list group item to show unread counts, activity, and more with
 
 ## Custom content
 
-Add nearly any HTML within, even for linked list groups like the one below, with the help of [flexbox utilities]({{ site.baseurl }}{% link utilities/flexbox.md %}).
+Add nearly any HTML within, even for linked list groups like the one below, with the help of [flexbox utilities]({{ '/utilities/flexbox' | url }}).
 
 {% example html %}
 <div class="list-group">

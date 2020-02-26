@@ -28,9 +28,11 @@ gulp-config.json
 typings
 
 # Locally-generated documentation
+_docs/_data/package.json
 docs-local/*
 
 # Locally-generated example files
+_examples/_data/config.json
 examples/*
 
 # debug files

@@ -13,3 +13,4 @@
 
 // =require media-background.js
 // =require sticky-top.js
+// =require collapse-keyboard-input.js

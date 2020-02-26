@@ -2,8 +2,7 @@
 layout: docs
 title: Buttons
 description: Use Athena's custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
-group: components
-redirect_from: "/components/"
+tags: components
 ---
 
 Use Athena's custom button styles for actions in forms, dialogs, and more. Includes support for a handful of contextual variations, sizes, states, and more.
@@ -11,7 +10,6 @@ Use Athena's custom button styles for actions in forms, dialogs, and more. Inclu
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
@@ -32,8 +30,7 @@ Athena includes several predefined button styles:
 <button type="button" class="btn btn-link">Link</button>
 {% endexample %}
 
-{% capture callout-include %}{% include callout-warning-color-assistive-technologies.md %}{% endcapture %}
-{{ callout-include | markdownify }}
+{% include callout-warning-color-assistive-technologies.md %}
 
 
 ## Button tags
@@ -136,7 +133,7 @@ Disabled buttons using the `<a>` element behave a bit different:
 <a href="#" class="btn btn-secondary btn-lg disabled" role="button" aria-disabled="true">Link</a>
 {% endexample %}
 
-{% callout warning %}
+{% callout 'warning' %}
 #### Link functionality caveat
 
 The `.disabled` class uses `pointer-events: none` to try to disable the link functionality of `<a>`s, but that CSS property is not yet standardized. In addition, even in browsers that do support `pointer-events: none`, keyboard navigation remains unaffected, meaning that sighted keyboard users and users of assistive technologies will still be able to activate these links. So to be safe, add a `tabindex="-1"` attribute on these links (to prevent them from receiving keyboard focus) and use custom JavaScript to disable their functionality.

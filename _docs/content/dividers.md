@@ -2,7 +2,7 @@
 layout: docs
 title: Dividers
 description: Documentation and examples for customizing dividers in Athena.
-group: content
+tags: content
 ---
 
 Athena provides utility classes for styling `<hr>` elements with alternate thicknesses, colors, and orientation.
@@ -10,7 +10,6 @@ Athena provides utility classes for styling `<hr>` elements with alternate thick
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
@@ -40,7 +39,7 @@ Use the `.hr-black`, `.hr-white`, or `.hr-primary` classes to modify the color o
 
 You can modify a divider to be oriented vertically using the `.hr-vertical` class. Vertical dividers are best used within columns (or some other block-level parent element) to help define how tall the divider should be.
 
-{% callout warning %}
+{% callout 'warning' %}
 <h3 class="h5">Browser Compatibility</h3>
 Keep in mind that vertical dividers will not display as expected in versions of Safari older than 11.
 {% endcallout %}

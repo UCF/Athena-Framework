@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Typography
-group: utilities
+tags: utilities
 ---
 
 The following utilities can be used to add additional styles to text.
@@ -9,7 +9,6 @@ The following utilities can be used to add additional styles to text.
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
@@ -74,7 +73,7 @@ Note that `.font-weight-black` and `.font-weight-light` will only take effect on
 
 ## Font family
 
-Use `font-family` utility classes to quickly change the font family on an element.  These classes are optimized for use with [headings]({{ site.baseurl }}{% link content/typography.md %}#with-font-family-overrides), [`.lead` text]({{ site.baseurl }}{% link content/typography.md %}#with-font-family-overrides-1), and [`.blockquote` text]({{ site.baseurl }}{% link content/typography.md %}#with-font-family-overrides-2).
+Use `font-family` utility classes to quickly change the font family on an element.  These classes are optimized for use with [headings]({{ '/content/typography' | url }}#with-font-family-overrides), [`.lead` text]({{ '/content/typography' | url }}#with-font-family-overrides-1), and [`.blockquote` text]({{ '/content/typography' | url }}#with-font-family-overrides-2).
 
 Note that `.font-condensed` is only optimized for heading usage due to readability concerns.
 

@@ -1,0 +1,44 @@
+    <footer class="py-5 mt-5 bg-inverse">
+      <div class="container">
+        <div class="row d-flex justify-content-lg-between">
+          <div class="col-lg-7 col-xl-8">
+            <strong class="h6 heading-underline mb-4">Athena Framework</strong>
+            <ul class="nav flex-column align-items-start mb-5">
+              <li class="nav-item">
+                <a class="nav-link bg-inverse-link" href="https://github.com/UCF/" target="_blank">
+                  <span class="fa fa-github-alt fa-fw mr-2 text-primary" aria-hidden="true"></span>UCF GitHub
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link bg-inverse-link" href="{{ site.teams }}" target="_blank">
+                  <span class="fa fa-users fa-fw mr-2 text-primary" aria-hidden="true"></span>Athena Framework Teams Channel
+                </a>
+              </li>
+            </ul>
+            <p>
+              {% if package.version %}Current version: <strong>v{{ package.version }}</strong>.{% endif %}
+            </p>
+            <p class="mb-0">
+              Code licensed <a class="bg-inverse-link" href="https://github.com/{{ package.repository.url }}/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/{{ package.repository.url }}/blob/master/docs/LICENSE">CC BY 3.0</a>.
+            </p>
+          </div>
+          <div class="col-lg-5 col-xl-4 mt-5 mt-lg-0">
+            {% include contribute %}
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    {{ site.jquery_script }}
+    {{ site.tether_script }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.bundle.min.js" integrity="sha256-VCsWOz+0GuHdS/sIICtQNTFJdbaDI80rxvoB7BXabrU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+
+    <script>
+      var SEARCH_INDEX_URL = '{{ '/search-index.json' | url }}';
+      var SEARCH_DATA_URL = '{{ '/search-data.json' | url }}';
+    </script>
+    <script src="{{ '/static/js/docs.min.js' | url }}?v={{ package.version }}"></script>
+
+  </body>
+</html>

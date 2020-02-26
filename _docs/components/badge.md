@@ -2,7 +2,7 @@
 layout: docs
 title: Badges
 description: Documentation and examples for badges, our small count and labeling component.
-group: components
+tags: components
 ---
 
 Small and adaptive tag for adding context to just about any content.
@@ -10,7 +10,6 @@ Small and adaptive tag for adding context to just about any content.
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
@@ -44,8 +43,7 @@ Add any of the below mentioned modifier classes to change the appearance of a ba
 <span class="badge badge-inverse">Inverse</span>
 {% endexample %}
 
-{% capture callout-include %}{% include callout-warning-color-assistive-technologies.md %}{% endcapture %}
-{{ callout-include | markdownify }}
+{% include callout-warning-color-assistive-technologies.md %}
 
 
 ## Pill badges

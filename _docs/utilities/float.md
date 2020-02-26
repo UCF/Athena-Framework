@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Float
-group: utilities
+tags: utilities
 ---
 
 Toggle floats on any element, across any breakpoint, using our responsive float utilities.
@@ -9,7 +9,6 @@ Toggle floats on any element, across any breakpoint, using our responsive float 
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
@@ -32,7 +31,7 @@ These utility classes float an element to the left or right, or disable floating
 
 Floats can also be toggled using Sass mixins:
 
-{% highlight scss %}
+{% highlight 'scss' %}
 .element {
   @include float-left;
 }
@@ -58,7 +57,7 @@ Responsive variations also exist for each `float` value.
 
 All available support classes are listed below:
 
-{% for bp in site.data.breakpoints %}
+{% for bp in breakpoints %}
 - `.float{{ bp.abbr }}-left`
 - `.float{{ bp.abbr }}-right`
 - `.float{{ bp.abbr }}-none`{% endfor %}

@@ -1,16 +1,16 @@
 ---
 layout: docs
 title: Clearfix
-group: utilities
+tags: utilities
 ---
 
 Easily clear `float`s by adding `.clearfix` **to the parent element**. Can also be used as a mixin.
 
-{% highlight html %}
+{% highlight 'html' %}
 <div class="clearfix">...</div>
 {% endhighlight %}
 
-{% highlight scss %}
+{% highlight 'scss' %}
 // Mixin itself
 @mixin clearfix() {
   &::after {

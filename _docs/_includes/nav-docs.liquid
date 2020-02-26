@@ -1,0 +1,46 @@
+<div id="afd-toc" class="collapse d-md-block mb-4">
+  <nav class="afd-links">
+    {% assign page_slug = title | slug %}
+
+    {% for collection_name in nav-docs %}
+        {% assign collection_slug = collection_name | slug %}
+        {% assign active = nil %}
+
+        {% if tags[0] == collection_slug %}
+            {% assign active = 'active' %}
+        {% endif %}
+
+        <div class="afd-toc-item">
+            <a class="afd-toc-link {{ active }}" href="#sidenav-{{ collection_slug }}" data-toggle="collapse" aria-expanded="false" aria-controls="sidenav-{{ collection_slug }}">
+                {{ collection_name }}
+                <span class="fa fa-chevron-down ml-auto" aria-hidden="true"></span>
+            </a>
+
+            {% if active == 'active' %}
+                {% assign active = 'show' %}
+            {% endif %}
+
+            <div class="ml-4 collapse afd-sidenav {{ active }}" id="sidenav-{{ collection_slug }}">
+                <ul class="nav d-flex flex-column">
+                    {% for item in collections[collection_slug] %}
+                        {% assign item_slug = item.data.title | slug %}
+                        {% assign active = nil %}
+
+                        {% if item.data.tags[0] == collection_slug and page_slug == item_slug %}
+                            {% assign active = 'active afd-sidenav-active' %}
+                        {% endif %}
+
+                        <li class="nav-item">
+                            <a class="nav-link {{ active }}" href="{{ item.url | url }}">
+                                {{ item.data.title }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+    {% endfor %}
+
+  </nav>
+</div>

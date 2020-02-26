@@ -2,12 +2,11 @@
 layout: docs
 title: Tooltips
 description: Documentation and examples for adding custom Athena tooltips with CSS and JavaScript.
-group: components
+tags: components
 ---
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
@@ -30,7 +29,7 @@ Got all that? Great, let's see how they work with some examples.
 
 One way to initialize all tooltips on a page would be to select them by their `data-toggle` attribute:
 
-{% highlight js %}
+{% highlight 'js' %}
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
@@ -58,7 +57,7 @@ Hover over the buttons below to see the four tooltips directions: top, right, bo
   </div>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <button type="button" class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
   Tooltip on top
 </button>
@@ -75,7 +74,7 @@ Hover over the buttons below to see the four tooltips directions: top, right, bo
 
 And with custom HTML added:
 
-{% highlight html %}
+{% highlight 'html' %}
 <button type="button" class="btn btn-default" data-toggle="tooltip" data-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
   Tooltip with HTML
 </button>
@@ -88,7 +87,7 @@ Tooltip content and markup is generated on demand. By default, tooltips are plac
 
 Trigger the tooltip via JavaScript:
 
-{% highlight js %}
+{% highlight 'js' %}
 $('#example').tooltip(options)
 {% endhighlight %}
 
@@ -96,7 +95,7 @@ $('#example').tooltip(options)
 
 The required markup for a tooltip is only a `data` attribute and `title` on the HTML element you wish to have a tooltip. The generated markup of a tooltip is rather simple, though it does require a position (by default, set to `top`).
 
-{% callout warning %}
+{% callout 'warning' %}
 #### Making tooltips work for keyboard and assistive technology users
 
 You should only add tooltips to HTML elements that are traditionally keyboard-focusable and interactive (such as links or form controls). Although arbitrary HTML elements (such as `<span>`s) can be made focusable by adding the `tabindex="0"` attribute, this will add potentially annoying and confusing tab stops on non-interactive elements for keyboard users. In addition, most assistive technologies currently do not announce the tooltip in this situation.
@@ -104,7 +103,7 @@ You should only add tooltips to HTML elements that are traditionally keyboard-fo
 Additionally, do not rely solely on `hover` as the trigger for your tooltip, as this will make your tooltips impossible to trigger for keyboard users.
 {% endcallout %}
 
-{% highlight html %}
+{% highlight 'html' %}
 <!-- HTML to write -->
 <a href="#" data-toggle="tooltip" title="Some tooltip text!">Hover over me</a>
 
@@ -221,7 +220,7 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
   </tbody>
 </table>
 
-{% callout info %}
+{% callout 'info' %}
 #### Data attributes for individual tooltips
 
 Options for individual tooltips can alternatively be specified through the use of data attributes, as explained above.
@@ -237,25 +236,25 @@ Attaches a tooltip handler to an element collection.
 
 Reveals an element's tooltip. **Returns to the caller before the tooltip has actually been shown** (i.e. before the `shown.bs.tooltip` event occurs). This is considered a "manual" triggering of the tooltip. Tooltips with zero-length titles are never displayed.
 
-{% highlight js %}$('#element').tooltip('show'){% endhighlight %}
+{% highlight 'js' %}$('#element').tooltip('show'){% endhighlight %}
 
 #### `.tooltip('hide')`
 
 Hides an element's tooltip. **Returns to the caller before the tooltip has actually been hidden** (i.e. before the `hidden.bs.tooltip` event occurs). This is considered a "manual" triggering of the tooltip.
 
-{% highlight js %}$('#element').tooltip('hide'){% endhighlight %}
+{% highlight 'js' %}$('#element').tooltip('hide'){% endhighlight %}
 
 #### `.tooltip('toggle')`
 
 Toggles an element's tooltip. **Returns to the caller before the tooltip has actually been shown or hidden** (i.e. before the `shown.bs.tooltip` or `hidden.bs.tooltip` event occurs). This is considered a "manual" triggering of the tooltip.
 
-{% highlight js %}$('#element').tooltip('toggle'){% endhighlight %}
+{% highlight 'js' %}$('#element').tooltip('toggle'){% endhighlight %}
 
 #### `.tooltip('dispose')`
 
 Hides and destroys an element's tooltip. Tooltips that use delegation (which are created using [the `selector` option](#options)) cannot be individually destroyed on descendant trigger elements.
 
-{% highlight js %}$('#element').tooltip('dispose'){% endhighlight %}
+{% highlight 'js' %}$('#element').tooltip('dispose'){% endhighlight %}
 
 ### Events
 
@@ -286,7 +285,7 @@ Hides and destroys an element's tooltip. Tooltips that use delegation (which are
   </tbody>
 </table>
 
-{% highlight js %}
+{% highlight 'js' %}
 $('#myTooltip').on('hidden.bs.tooltip', function () {
   // do something…
 })

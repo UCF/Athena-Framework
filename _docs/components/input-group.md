@@ -2,7 +2,7 @@
 layout: docs
 title: Input group
 description: Easily extend form controls by adding text, buttons, or button groups on either side of textual inputs.
-group: components
+tags: components
 ---
 
 Easily extend form controls by adding text, buttons, or button groups on either side of textual `<input>`s.
@@ -10,7 +10,6 @@ Easily extend form controls by adding text, buttons, or button groups on either 
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 

@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Embeds
-group: utilities
+tags: utilities
 ---
 
 Create responsive video or slideshow embeds based on the width of the parent by creating an intrinsic ratio that scales on any device.
@@ -26,7 +26,7 @@ Wrap any embed like an `<iframe>` in a parent element with `.embed-responsive` a
 
 Aspect ratios can be customized with modifier classes.
 
-{% highlight html %}
+{% highlight 'html' %}
 <!-- 21:9 aspect ratio -->
 <div class="embed-responsive embed-responsive-21by9">
   <iframe class="embed-responsive-item" src="..."></iframe>

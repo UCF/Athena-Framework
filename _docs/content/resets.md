@@ -2,8 +2,7 @@
 layout: docs
 title: Resets
 description: Athena includes various cross-browser style resets to provide an elegant, consistent, and simple baseline to build upon.
-group: content
-redirect_from: "/content/"
+tags: content
 ---
 
 Part of Athena's job is to provide an elegant, consistent, and simple baseline to build upon. We use a combination of our own opinionated resets and [Bootstrap's Reboot](https://v4-alpha.getbootstrap.com/content/reboot/), a collection of element-specific CSS changes in a single file, to kickstart that.
@@ -13,7 +12,6 @@ Reboot builds upon [Normalize](https://necolas.github.io/normalize.css/), provid
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
@@ -44,7 +42,7 @@ The `<html>` and `<body>` elements are updated to provide better page-wide defau
 
 Unlike Bootstrap 4, Athena provides an opinionated font stack and does not rely on system fonts unless no other font libraries can be loaded. Athena's base font family is its sans-serif stack:
 
-{% highlight sass %}
+{% highlight 'scss' %}
 $font-family-sans-serif: 'Gotham SSm A', 'Gotham SSm B', 'UCF Sans Serif Alt', 'Helvetica Neue', Arial, sans-serif;
 {% endhighlight %}
 
@@ -57,63 +55,65 @@ All heading elements—e.g., `<h1>`—and `<p>` are reset to have their `margin-
 
 Like with the base `<body>` font size, all headings increase in size at the `-md` breakpoint in Athena.
 
-<div class="afd-example">
-{% markdown %}
-# h1 heading
-Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+{% example %}
+<h1>h1 heading</h1>
+<p>Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
 
-## h2 heading
-Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+<h2>h2 heading</h2>
+<p>Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
 
-### h3 heading
-Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+<h3>h3 heading</h3>
+<p>Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
 
-#### h4 heading
-Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+<h4>h4 heading</h4>
+<p>Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
 
-##### h5 heading
-Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+<h5>h5 heading</h5>
+<p>Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
 
-###### h6 heading
-Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-{% endmarkdown %}
-</div>
+<h6>h6 heading</h6>
+<p>Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+{% endexample %}
 
 
 ## Lists
 
 All lists—`<ul>`, `<ol>`, and `<dl>`—have their `margin-top` removed and a `margin-bottom: 1rem`. Nested lists have no `margin-bottom`.
 
-<div class="afd-example">
-{% markdown %}
-* Lorem ipsum dolor sit amet
-* Consectetur adipiscing elit
-* Integer molestie lorem at massa
-* Facilisis in pretium nisl aliquet
-* Nulla volutpat aliquam velit
-  * Phasellus iaculis neque
-  * Purus sodales ultricies
-  * Vestibulum laoreet porttitor sem
-  * Ac tristique libero volutpat at
-* Faucibus porta lacus fringilla vel
-* Aenean sit amet erat nunc
-* Eget porttitor lorem
+{% example %}
+<ul>
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit</li>
+  <li>Integer molestie lorem at massa</li>
+  <li>Facilisis in pretium nisl aliquet</li>
+  <li>Nulla volutpat aliquam velit
+    <ul>
+      <li>Phasellus iaculis neque</li>
+      <li>Purus sodales ultricies</li>
+      <li>Vestibulum laoreet porttitor sem</li>
+      <li>Ac tristique libero volutpat at</li>
+    </ul>
+  </li>
+  <li>Faucibus porta lacus fringilla vel</li>
+  <li>Aenean sit amet erat nunc</li>
+  <li>Eget porttitor lorem</li>
+</ul>
 
-1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit
-3. Integer molestie lorem at massa
-4. Facilisis in pretium nisl aliquet
-5. Nulla volutpat aliquam velit
-6. Faucibus porta lacus fringilla vel
-7. Aenean sit amet erat nunc
-8. Eget porttitor lorem
-{% endmarkdown %}
-</div>
+<ol>
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit</li>
+  <li>Integer molestie lorem at massa</li>
+  <li>Facilisis in pretium nisl aliquet</li>
+  <li>Nulla volutpat aliquam velit</li>
+  <li>Faucibus porta lacus fringilla vel</li>
+  <li>Aenean sit amet erat nunc</li>
+  <li>Eget porttitor lorem</li>
+</ol>
+{% endexample %}
 
 For simpler styling, clear hierarchy, and better spacing, description lists have updated `margin`s. `<dd>`s reset `margin-left` to `0` and add `margin-bottom: .5rem`. `<dt>`s are **bolded**.
 
-<div class="afd-example">
-{% markdown %}
+{% example %}
 <dl>
   <dt>Description lists</dt>
   <dd>A description list is perfect for defining terms.</dd>
@@ -123,28 +123,25 @@ For simpler styling, clear hierarchy, and better spacing, description lists have
   <dt>Malesuada porta</dt>
   <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
 </dl>
-{% endmarkdown %}
-</div>
+{% endexample %}
 
 
 ## Preformatted text
 
 The `<pre>` element is reset to remove its `margin-top` and use `rem` units for its `margin-bottom`.
 
-<div class="afd-example">
-{% markdown %}
+{% example %}
 <pre>
 .example-element {
   margin-bottom: 1rem;
 }
 </pre>
-{% endmarkdown %}
-</div>
+{% endexample %}
 
 
 ## Tables
 
-Tables are slightly adjusted to style `<caption>`s, collapse borders, and ensure consistent `text-align` throughout. Additional changes for borders, padding, and more come with [the `.table` class]({{ site.baseurl }}{% link content/tables.md %}).
+Tables are slightly adjusted to style `<caption>`s, collapse borders, and ensure consistent `text-align` throughout. Additional changes for borders, padding, and more come with [the `.table` class]({{ '/content/tables' | url }}).
 
 <div class="afd-example">
   <table>
@@ -319,14 +316,14 @@ The `<abbr>` element receives basic styling to make it stand out amongst paragra
 
 HTML5 adds [a new global attribute named `[hidden]`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden), which is styled as `display: none` by default. Borrowing an idea from [PureCSS](https://purecss.io), we improve upon this default by making `[hidden] { display: none !important; }` to help prevent its `display` from getting accidentally overridden.
 
-{% highlight html %}
+{% highlight 'html' %}
 <input type="text" hidden>
 {% endhighlight %}
 
-{% callout warning %}
+{% callout 'warning' %}
 #### jQuery incompatibility
 
 `[hidden]` is not compatible with jQuery's `$(...).hide()` and `$(...).show()` methods. Therefore, we don't currently especially endorse `[hidden]` over other techniques for managing the `display` of elements.
 {% endcallout %}
 
-To merely toggle the visibility of an element, meaning its `display` is not modified and the element can still affect the flow of the document, use [the `.invisible` class]({{ site.baseurl }}{% link utilities/visibility-property.md %}) instead.
+To merely toggle the visibility of an element, meaning its `display` is not modified and the element can still affect the flow of the document, use [the `.invisible` class]({{ '/utilities/visibility-property' | url }}) instead.

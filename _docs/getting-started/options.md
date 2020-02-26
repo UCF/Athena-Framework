@@ -2,20 +2,21 @@
 layout: docs
 title: Customization options
 description: Customize Athena with Sass variables, easily toggling global preferences with a quick recompile.
-group: getting-started
+tags: getting-started
+date: 2020-01-04 # for ordering purposes only
 ---
 
 Customize Athena's CSS with Sass variables, easily toggling global preferences with a quick recompile.
 
 ## Customizing variables
 
-Unlike Bootstrap 4, Athena doesn't provide a `_custom.scss` file; instead, Athena's source files are expected to be included into projects that require manual builds using [properly-ordered .scss and .js file imports]({{ site.baseurl }}{% link getting-started/build-tools.md %}).
+Unlike Bootstrap 4, Athena doesn't provide a `_custom.scss` file; instead, Athena's source files are expected to be included into projects that require manual builds using [properly-ordered .scss and .js file imports]({{ '/getting-started/build-tools' | url }}).
 
 To apply your own custom overrides to Athena, copy and paste relevant lines from Athena's `_variables.scss` into your project's unique `_variables.scss` file, modify the values, and recompile your Sass to change our default values. **Be sure to remove the `!default` flag from override values.**
 
 For example, to change out the `background-color` and `color` for the `<body>`, you'd do the following:
 
-{% highlight scss %}
+{% highlight 'scss' %}
 // my-project's _variables.scss
 
 $body-bg:    $gray-dark;

@@ -2,7 +2,7 @@
 layout: docs
 title: Media object
 description: Documentation and examples for Athena's media object to construct highly repetitive components like blog comments, tweets, and the like.
-group: layout
+tags: layout
 ---
 
 The [media object](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/) helps build complex and repetitive components where some media is positioned alongside content that doesn't wrap around said media. Plus, it does this with only two required classes thanks to flexbox.
@@ -10,13 +10,12 @@ The [media object](http://www.stubbornella.org/content/2010/06/25/the-media-obje
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
 ## Example
 
-Below is an example of a single media object. Only two classes are required—the wrapping `.media` and the `.media-body` around your content. Optional padding and margin can be controlled through [spacing utilities]({{ site.baseurl }}/utilities/spacing/).
+Below is an example of a single media object. Only two classes are required—the wrapping `.media` and the `.media-body` around your content. Optional padding and margin can be controlled through [spacing utilities](/utilities/spacing/).
 
 {% example html %}
 <div class="media">
@@ -28,10 +27,10 @@ Below is an example of a single media object. Only two classes are required—th
 </div>
 {% endexample %}
 
-{% callout warning %}
+{% callout 'warning' %}
 ##### Flexbug #12: Inline elements aren't treated as flex items
 
-Internet Explorer 11 does not render inline elements like links or images (or `::before` and `::after` pseudo-elements) as flex items. The only workaround is to set a non-inline `display` value (e.g., `block`, `inline-block`, or `flex`). We suggest using `.d-flex`, one of our [display utilities]({{ site.baseurl }}/utilities/display-property/), as seen above for an easy fix.
+Internet Explorer 11 does not render inline elements like links or images (or `::before` and `::after` pseudo-elements) as flex items. The only workaround is to set a non-inline `display` value (e.g., `block`, `inline-block`, or `flex`). We suggest using `.d-flex`, one of our [display utilities](/utilities/display-property/), as seen above for an easy fix.
 
 **Source:** [Flexbugs on GitHub](https://github.com/philipwalton/flexbugs#12-inline-elements-are-not-treated-as-flex-items)
 {% endcallout %}
@@ -46,7 +45,7 @@ Media objects can be infinitely nested, though we suggest you stop at some point
   <img class="d-flex mr-3" data-src="holder.js/64x64" alt="Generic placeholder image">
   <div class="media-body">
     <h5 class="mt-0">Media heading</h5>
-    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
 
     <div class="media mt-3">
       <a class="d-flex pr-3" href="#">
@@ -54,7 +53,7 @@ Media objects can be infinitely nested, though we suggest you stop at some point
       </a>
       <div class="media-body">
         <h5 class="mt-0">Media heading</h5>
-        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
       </div>
     </div>
   </div>

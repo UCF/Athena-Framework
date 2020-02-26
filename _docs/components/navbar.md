@@ -2,7 +2,7 @@
 layout: docs
 title: Navbar
 description: Documentation and examples for Athena's powerful, responsive navigation header, the navbar.
-group: components
+tags: components
 ---
 
 The navbar is a wrapper that positions branding, navigation, and other elements in a concise header. It's easily extensible and, thanks to Athena's JavaScript, can easily integrate responsive behaviors.
@@ -10,7 +10,6 @@ The navbar is a wrapper that positions branding, navigation, and other elements 
 
 ## Contents
 
-* Will be replaced with the ToC, excluding the "Contents" header
 {:toc}
 
 
@@ -37,7 +36,7 @@ Navbars come with built-in support for a handful of sub-components. Choose from 
 - `.navbar-text` for adding vertically centered strings of text.
 - `.collapse.navbar-collapse` for grouping and hiding navbar contents by a parent breakpoint.
 
-{% callout warning %}
+{% callout 'warning' %}
 ### A note about navbar toggler positioning
 `.navbar-toggler-left` and `.navbar-toggler-right` classes should not be used to position the navbar toggler button in Athena navbars.  Athena's navbars have been modified from Bootstrap alpha.6 to utilize flex styles for positioning of inner elements, meaning that the toggler button is now positioned by **its order in the navbar markup**.  Athena currently supports right-aligned toggler buttons: if a toggler is added after a `.navbar-brand` (or other supported nested components), it will be positioned correctly without any additional markup; if the toggler button is the only child besides the collapsed content, you will need to add the `.ml-auto` class to push it to the right.
 
@@ -376,7 +375,7 @@ Theming the navbar is easy thanks to the combination of theming classes and `bac
   </nav>
 </div>
 
-{% highlight html %}
+{% highlight 'html' %}
 <nav class="navbar navbar-inverse bg-inverse">
   <!-- Navbar content -->
 </nav>
@@ -536,7 +535,7 @@ With custom toggler text:
 
 ### External content
 
-Sometimes you may want to use the [collapse component]({{ site.baseurl }}{% link components/collapse.md %}) to trigger hidden content elsewhere on the page. Because Athena's collapse JavaScript works on the `id` and `data-target` matching, that's easily done!
+Sometimes you may want to use the [collapse component]({{ '/components/collapse' | url }}) to trigger hidden content elsewhere on the page. Because Athena's collapse JavaScript works on the `id` and `data-target` matching, that's easily done!
 
 {% example html %}
 <div class="pos-f-t">
