@@ -29,7 +29,7 @@ Media backgrounds can be `<img>`, `<picture>` or `<video>` elements.  However, t
 Apply `.media-background` and your `.object-fit-*` class directly to the `<img>` element:
 
 <div class="media-background-container">
-  <img class="media-background object-fit-cover" src="//placehold.it/600x300/" alt="">
+  <img class="media-background object-fit-cover" src="//via.placeholder.com/600x300/" alt="">
   <div class="p-5">
     Your content here...
   </div>
@@ -48,10 +48,10 @@ Apply `.media-background` and your `.object-fit-*` class to the inner `<img>` el
 
 <div class="media-background-container">
   <picture>
-    <source srcset="//placehold.it/800x300" media="(min-width: 768px)">
-    <source srcset="//placehold.it/767x300" media="(min-width: 576px)">
-    <source srcset="//placehold.it/575x300" media="(max-width: 575px)">
-    <img class="media-background object-fit-cover" src="//placehold.it/800x300" alt="">
+    <source srcset="//via.placeholder.com/800x300" media="(min-width: 768px)">
+    <source srcset="//via.placeholder.com/767x300" media="(min-width: 576px)">
+    <source srcset="//via.placeholder.com/575x300" media="(max-width: 575px)">
+    <img class="media-background object-fit-cover" src="//via.placeholder.com/800x300" alt="">
   </picture>
   <div class="p-5">
     Your content here...

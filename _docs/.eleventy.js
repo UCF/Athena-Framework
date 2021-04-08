@@ -1,8 +1,7 @@
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItTOC = require('markdown-it-toc-done-right');
-const Entities = require('html-entities').XmlEntities;
-const entities = new Entities();
+const entities = require('html-entities');
 const hljs = require('highlight.js');
 
 
@@ -67,7 +66,17 @@ module.exports = function (eleventyConfig) {
     // Render content as markdown first; otherwise
     // it gets parsed as HTML and markdown isn't translated.
     // https://www.11ty.dev/docs/languages/markdown/#why-cant-i-return-markdown-from-paired-shortcodes-to-use-in-a-markdown-file
-    content = entities.decode(entities.encode(mdInline.render(content)));
+    content = entities.decode(
+      entities.encode(
+        mdInline.render(content),
+        {
+          level: 'xml'
+        }
+      ),
+      {
+        level: 'xml'
+      }
+    );
     return `<div class="afd-callout afd-callout-${callout_type}">${content}</div>`;
   });
 
@@ -85,7 +94,7 @@ module.exports = function (eleventyConfig) {
     // Perform syntax highlighting on code sample if it's a
     // language that can be reliably highlighted from Markdown:
     if (language === 'html') {
-      highlighted = hljs.highlight(language, highlighted).value;
+      highlighted = hljs.highlight(highlighted, { language }).value;
       code_class = 'nohighlight'; // disable front-end highlighting
     }
 
@@ -106,7 +115,17 @@ module.exports = function (eleventyConfig) {
     highlighted = content.replace(/\n\n/g, '\n&NewLine;\n');
 
     // Perform syntax highlighting on code sample
-    highlighted = hljs.highlight('html', entities.decode(highlighted)).value;
+    highlighted = hljs.highlight(
+      entities.decode(
+        highlighted,
+        {
+          level: 'xml'
+        }
+      ),
+      {
+        language: 'html'
+      }
+    ).value;
 
     // Now that our transformed HTML has been succesfully highlighted,
     // remove our manual newline entity insertions in the code sample:

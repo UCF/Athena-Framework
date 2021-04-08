@@ -48,7 +48,7 @@ Jumbotrons work great with many of Athena's utility classes. For instance, [text
   </div>
 </div>
 <div class="jumbotron jumbotron-fluid media-background-container">
-  <img class="media-background object-fit-cover" src="//placehold.it/800x400" alt="">
+  <img class="media-background object-fit-cover" src="//via.placeholder.com/800x400" alt="">
   <div class="container">
     <h1 class="display-3">Fluid jumbotron</h1>
     <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>

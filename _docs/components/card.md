@@ -359,7 +359,7 @@ Similar to headers and footers, cards can include top and bottom "image caps"—
 Cards are also compatible with Athena's [media backgrounds]({{ '/utilities/media-backgrounds' | url }}) utility classes for image overlays. You may need to add a `min-height` value or extra vertical padding to the card to achieve the desired card height.
 
 <div class="card card-inverse media-background-container">
-  <img class="media-background object-fit-cover" src="//placehold.it/767x280" alt="Card image">
+  <img class="media-background object-fit-cover" src="//via.placeholder.com/767x280" alt="Card image">
   <div class="pt-3 pb-5 px-3">
     <h4 class="card-title">Card title</h4>
     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -369,9 +369,9 @@ Cards are also compatible with Athena's [media backgrounds]({{ '/utilities/media
 
 <div class="card card-inverse media-background-container">
   <picture>
-    <source class="media-background object-fit-cover" srcset="//placehold.it/1920x1080/" media="(min-width: 1800px)">
-    <source class="media-background object-fit-cover" srcset="//placehold.it/500x300/" media="(max-width: 500px)">
-    <img class="media-background object-fit-cover" src="//placehold.it/1000x720/" alt="">
+    <source class="media-background object-fit-cover" srcset="//via.placeholder.com/1920x1080/" media="(min-width: 1800px)">
+    <source class="media-background object-fit-cover" srcset="//via.placeholder.com/500x300/" media="(max-width: 500px)">
+    <img class="media-background object-fit-cover" src="//via.placeholder.com/1000x720/" alt="">
   </picture>
   <div class="pt-3 pb-5 px-3">
     <h4 class="card-title">Card title</h4>
