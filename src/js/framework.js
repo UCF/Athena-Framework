@@ -1,8 +1,8 @@
 /*! START Athena Framework vendor assets */
 
 // =require bootstrap-plugins.js
-// =require objectFitPolyfill/objectFitPolyfill.js
-// =require Stickyfill/stickyfill.js
+// =require objectFitPolyfill/src/objectFitPolyfill.js
+// =require Stickyfill/dist/stickyfill.js
 
 /*! END Athena Framework vendor assets */
 

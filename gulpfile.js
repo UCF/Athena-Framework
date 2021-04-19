@@ -253,28 +253,8 @@ gulp.task('move-components-fonts', gulp.parallel(
   'move-components-font-slab-serif'
 ));
 
-// Copy objectFitPolyfill js
-gulp.task('move-components-objectfit', () => {
-  return gulp.src(`${config.packagesPath}/objectFitPolyfill/src/objectFitPolyfill.js`, {
-    base: `${config.packagesPath}/objectFitPolyfill/src`
-  })
-    .pipe(gulp.dest(`${config.src.jsPath}/objectFitPolyfill`));
-});
-
-// Copy Stickyfill js
-gulp.task('move-components-stickyfill', () => {
-  return gulp.src(`${config.packagesPath}/Stickyfill/dist/stickyfill.js`, {
-    base: `${config.packagesPath}/Stickyfill/dist`
-  })
-    .pipe(gulp.dest(`${config.src.jsPath}/Stickyfill`));
-});
-
 // Run all component-related tasks
-gulp.task('components', gulp.parallel(
-  'move-components-fonts',
-  'move-components-objectfit',
-  'move-components-stickyfill'
-));
+gulp.task('components', gulp.parallel('move-components-fonts'));
 
 
 //
@@ -307,7 +287,7 @@ gulp.task('es-lint', () => {
 
 // Concat and uglify framework js files through babel
 gulp.task('js-build', () => {
-  return buildJS(`${config.src.jsPath}/framework.js`, 'framework.min.js', config.dist.jsPath, true, false);
+  return buildJS(`${config.src.jsPath}/framework.js`, 'framework.min.js', config.dist.jsPath, true, true);
 });
 
 // All js-related tasks
