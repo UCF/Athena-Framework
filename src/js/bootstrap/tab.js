@@ -1,6 +1,3 @@
-import Util from './util'
-
-
 /**
  * --------------------------------------------------------------------------
  * Bootstrap (v4.0.0-alpha.6): tab.js
@@ -274,5 +271,3 @@ const Tab = (($) => {
   return Tab
 
 })(jQuery)
-
-export default Tab
