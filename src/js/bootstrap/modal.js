@@ -1,6 +1,3 @@
-import Util from './util'
-
-
 /**
  * --------------------------------------------------------------------------
  * Bootstrap (v4.0.0-alpha.6): modal.js
@@ -541,5 +538,3 @@ const Modal = (($) => {
   return Modal
 
 })(jQuery)
-
-export default Modal

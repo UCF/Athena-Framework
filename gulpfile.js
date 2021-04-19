@@ -8,7 +8,6 @@ const babel        = require('gulp-babel');
 const cleanCSS     = require('gulp-clean-css');
 const eslint       = require('gulp-eslint');
 const isFixed      = require('gulp-eslint-if-fixed');
-const footer       = require('gulp-footer');
 const header       = require('gulp-header');
 const gulpif       = require('gulp-if');
 const include      = require('gulp-include');
@@ -218,16 +217,6 @@ function getAthenaHeader() {
     ''].join('\n');
 }
 
-function getLicenseComment(fileString) {
-  const regex = /\/\*(\*(?!\/)|[^*])*\*\//;
-  const comment = regex.exec(fileString);
-
-  if (!comment || !comment[0]) {
-    return false;
-  }
-  return comment[0];
-}
-
 
 //
 // Installation of components/dependencies
@@ -264,84 +253,6 @@ gulp.task('move-components-fonts', gulp.parallel(
   'move-components-font-slab-serif'
 ));
 
-// Copy Bootstrap scss files
-gulp.task('move-components-bootstrap-scss', (done) => {
-  gulp.src([
-    `${config.bootstrap.scss}/**/*`,
-    `!${config.bootstrap.scss}/_variables.scss`,
-    `!${config.bootstrap.scss}/_mixins.scss`,
-    `!${config.bootstrap.scss}/_carousel.scss`
-  ], {
-    base: config.bootstrap.scss
-  })
-    .pipe(gulp.dest(`${config.src.scssPath}/bootstrap`));
-
-  // Instead of copying over Bootstrap's variables and mixin files, generate
-  // new files with @warn directives to notify users of import changes:
-  const bootstrapVarsImportWarning = ['@warn',
-    ' \'As of v1.0.2 of the Athena Framework,',
-    ' `/src/scss/bootstrap/_variables.scss` should no longer be explicitly',
-    ' imported. You should remove this Sass import from your project. See',
-    ' https://ucf.github.io/Athena-Framework/getting-started/build-tools/#importing-bootstrap-variablesmixins-prior-to-v102',
-    '\';',
-    '\n'].join('');
-  const bootstrapMixinsImportWarning = ['@warn',
-    ' \'As of v1.0.2 of the Athena Framework,',
-    ' `/src/scss/bootstrap/_mixins.scss` should no longer be explicitly',
-    ' imported. You should remove this Sass import from your project. See',
-    ' https://ucf.github.io/Athena-Framework/getting-started/build-tools/#importing-bootstrap-variablesmixins-prior-to-v102',
-    '\';',
-    '\n'].join('');
-
-  fs.writeFileSync(`${config.src.scssPath}/bootstrap/_variables.scss`, bootstrapVarsImportWarning);
-  fs.writeFileSync(`${config.src.scssPath}/bootstrap/_mixins.scss`, bootstrapMixinsImportWarning);
-
-  done();
-});
-
-// Copy Bootstrap js files
-gulp.task('move-components-bootstrap-js', () => {
-  return gulp.src([
-    `${config.bootstrap.js}/*.js`,
-    `!${config.bootstrap.js}/carousel.js`
-  ], {
-    base: config.bootstrap.js
-  })
-    .pipe(gulp.dest(`${config.src.jsPath}/bootstrap`));
-});
-
-// Copy Bootstrap's license block comment for css and save to a new file
-gulp.task('move-components-bootstrap-license-css', (done) => {
-  const sampleFile = fs.readFileSync(`${config.bootstrap.base}/dist/css/bootstrap.min.css`, {
-    base: config.bootstrap.base
-  }).toString();
-  const comment = getLicenseComment(sampleFile);
-
-  if (!comment) {
-    done();
-    return;
-  }
-
-  fs.writeFileSync(`${config.src.scssPath}/bootstrap/_bootstrap-license.scss`, comment);
-  done();
-});
-
-// Copy Bootstrap's license block comment for js and save to a new file
-gulp.task('move-components-bootstrap-license-js', (done) => {
-  const sampleFile = fs.readFileSync(`${config.bootstrap.base}/dist/js/bootstrap.min.js`, {
-    base: config.bootstrap.base
-  }).toString();
-  const comment = getLicenseComment(sampleFile);
-
-  if (!comment) {
-    done();
-    return;
-  }
-
-  fs.writeFileSync(`${config.src.jsPath}/bootstrap/_bootstrap-license.js`, comment);
-  done();
-});
-
 // Copy objectFitPolyfill js
 gulp.task('move-components-objectfit', () => {
   return gulp.src(`${config.packagesPath}/objectFitPolyfill/src/objectFitPolyfill.js`, {
@@ -361,10 +272,6 @@ gulp.task('move-components-stickyfill', () => {
 // Run all component-related tasks
 gulp.task('components', gulp.parallel(
   'move-components-fonts',
-  'move-components-bootstrap-scss',
-  'move-components-bootstrap-js',
-  'move-components-bootstrap-license-css',
-  'move-components-bootstrap-license-js',
   'move-components-objectfit',
   'move-components-stickyfill'
 ));
@@ -398,27 +305,13 @@ gulp.task('es-lint', () => {
   return lintJS(`${config.src.jsPath}/*.js`, config.src.jsPath);
 });
 
-// Process Bootstrap js and saves it out to a single file. Handles various
-// js-related steps Bootstrap performs via its gruntfile.
-gulp.task('js-build-bootstrap', () => {
-  return gulp.src(`${config.src.jsPath}/bootstrap-plugins.js`)
-    .pipe(include())
-    .on('error', console.log) // eslint-disable-line no-console
-    .pipe(replace(/^(export|import).*/gm, ''))
-    .pipe(babel())
-    .pipe(header(fs.readFileSync(`${config.src.jsPath}/bootstrap/_bootstrap-header.js`)))
-    .pipe(footer(fs.readFileSync(`${config.src.jsPath}/bootstrap/_bootstrap-footer.js`)))
-    .pipe(rename('bootstrap.js'))
-    .pipe(gulp.dest(`${config.src.jsPath}/bootstrap`));
-});
-
 // Concat and uglify framework js files through babel
 gulp.task('js-build', () => {
   return buildJS(`${config.src.jsPath}/framework.js`, 'framework.min.js', config.dist.jsPath, true, false);
 });
 
 // All js-related tasks
-gulp.task('js', gulp.series('es-lint', 'js-build-bootstrap', 'js-build'));
+gulp.task('js', gulp.series('es-lint', 'js-build'));
 
 
 //
@@ -450,7 +343,7 @@ gulp.task('docs-scss', () => {
 
 // Concat and uglify js files through babel
 gulp.task('docs-js', () => {
-  return buildJS(`${config.docs.src.jsPath}/docs.js`, 'docs.min.js', config.docs.dist.jsPath, true, true);
+  return buildJS(`${config.docs.src.jsPath}/docs.js`, 'docs.min.js', config.docs.dist.jsPath, false, true);
 });
 
 // Default task for docs.  Runs all preliminary docs-related tasks that do not

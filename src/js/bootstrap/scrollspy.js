@@ -1,6 +1,3 @@
-import Util from './util'
-
-
 /**
  * --------------------------------------------------------------------------
  * Bootstrap (v4.0.0-alpha.6): scrollspy.js
@@ -328,5 +325,3 @@ const ScrollSpy = (($) => {
   return ScrollSpy
 
 })(jQuery)
-
-export default ScrollSpy
