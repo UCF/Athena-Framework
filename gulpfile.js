@@ -51,11 +51,6 @@ let config = {
   ghPagesPath: './docs',
   examplesPath: './_examples',
   packagesPath: './node_modules',
-  bootstrap: {
-    base: './node_modules/bootstrap',
-    scss: './node_modules/bootstrap/scss',
-    js: './node_modules/bootstrap/js/src'
-  },
   pkg: getAthenaPackage(),
   prj: {
     yearRange: getAthenaYearRange(),
