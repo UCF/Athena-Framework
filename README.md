@@ -163,13 +163,13 @@ Our gulpfile contains a lot of functions and tasks--however, you likely won't (a
 </tr>
 <tr>
 <td><code>gulp js</code></td>
-<td>The primary JS processing task for the framework.  Lints JS files in <code>src/js/</code>, processes and saves out Bootstrap's source JS files into <code>src/js/bootstrap/</code>, and then concatenates + minifies JS files in <code>src/js/</code>, saving distributable JS to <code>dist/js/</code>.  The framework's copyright header also gets prepended to the distributable JS during this step.</td>
+<td>The primary JS processing task for the framework.  Lints (most) JS files in <code>src/js/</code>, and then concatenates + minifies JS files in <code>src/js/</code>, saving distributable JS to <code>dist/js/</code>.  The framework's copyright header also gets prepended to the distributable JS during this step.</td>
 </t>
 <tr>
 <td><code>gulp docs-local</code></td>
 <td>The primary task for building out minified CSS and JS for the framework documentation, and for building a new local copy of the documentation site. The static documentation site will be built from <code>_docs/</code> and saved to <code>docs-local/</code>.
 <br><br>
-Due to the way our documentation project is set up, and how Jekyll performs new site builds, we actually create minified CSS and JS within <code>_docs/</code> (in <code>_docs/static/</code>) <b>before</b> building the local site, <b>not during</b> the <code>jekyll build</code> process.  This means that, whenever changes are made to the documentation's styles or scripts, the full <code>gulp docs-local</code> task should always be run, so that the generated minified files get copied to your local <code>docs-local/</code> directory for you to view and test the changes.</td>
+Due to the way our documentation project is set up, we create minified CSS and JS within <code>_docs/</code> (in <code>_docs/static/</code>) <b>before</b> building the local site, <b>not during</b> the 11ty build process.  This means that, whenever changes are made to the documentation's styles or scripts, the full <code>gulp docs-local</code> task should always be run, so that the generated minified files get copied to your local <code>docs-local/</code> directory for you to view and test the changes.</td>
 </tr>
 <tr>
 <td><code>gulp docs-watch</code></td>
