@@ -135,6 +135,15 @@ module.exports = function (eleventyConfig) {
   });
 
   //
+  // Filter | Alphabetize a collection
+  //
+  eleventyConfig.addFilter('alphabetizeCollection', function (collection) {
+    return collection.sort(
+      (a, b) => (a.data.title > b.data.title) ? 1 : -1
+    );
+  });
+
+  //
   // Build options
   //
   return {

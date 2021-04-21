@@ -22,7 +22,13 @@
 
             <div class="ml-4 collapse afd-sidenav {{ active }}" id="sidenav-{{ collection_slug }}">
                 <ul class="nav d-flex flex-column">
-                    {% for item in collections[collection_slug] %}
+                    {% if collection_slug != 'getting-started' %}
+                        {% assign collection = collections[collection_slug] | alphabetizeCollection %}
+                    {% else %}
+                        {% assign collection = collections[collection_slug] %}
+                    {% endif %}
+
+                    {% for item in collection %}
                         {% assign item_slug = item.data.title | slug %}
                         {% assign active = nil %}
 
