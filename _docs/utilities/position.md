@@ -138,10 +138,14 @@ Position an element at the top of the viewport, from edge to edge, but only afte
 
 You can also use the alias `.sticky-top` for backward compatibility with previous versions of Athena.
 
-Note that responsive variants for the sticky top utility are currently not available.  Because Athena polyfills this utility class, you shouldn't mix it with other position utility classes to avoid cross-browser compatibility issues.
+{% callout 'warning' %}
+### Not compatible with other position utilities
+Note that responsive variants for the sticky top utility are currently not available, and the sticky top utility is not compatible with Athena's other position utilities.
+{% endcallout %}
 
 {% callout 'warning' %}
-**Polyfill notes:** The sticky top utility uses CSS's `position: sticky`, which is polyfilled in Athena using Stickyfill for full cross-browser support; however, we still recommend testing its usage thoroughly in [browsers that require the polyfill](http://caniuse.com/#search=sticky) to ensure it behaves properly.
+### Polyfill for `position: sticky`
+The sticky top utility uses CSS's `position: sticky`, which is polyfilled in Athena using Stickyfill for full cross-browser support; however, we still recommend testing its usage thoroughly in [browsers that require the polyfill](http://caniuse.com/#search=sticky) to ensure it behaves properly.
 {% endcallout %}
 
 ### Dynamic `.position-sticky-top` insertion
