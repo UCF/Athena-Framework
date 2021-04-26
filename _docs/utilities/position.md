@@ -31,7 +31,7 @@ Responsive variations also exist for `.position-static`:
 
 ## Relative
 
-Assign `position: relative` to an element.  This utility class also unsets any previously-set directional position values on the element (`top`, `right`, `bottom`, `left`), and `z-index` is reset (via `z-index: initial`).
+Assign `position: relative` to an element.  This utility class also unsets any previously-set directional position values on the element (`top`, `right`, `bottom`, `left`), and `z-index` is reset (via `z-index: auto`).
 
 {% highlight 'html' %}
 <div class="position-relative">...</div>
@@ -50,7 +50,7 @@ Responsive variations also exist for `.position-relative`:
 
 Position an element at the top or bottom of its [containing block](./../stretched-links/#identifying-the-containing-block), from edge to edge. Keep in mind that an absolutely-positioned element without a containing block will be positioned relative to the document.
 
-Note that `z-index` is reset with this class (`z-index: initial`); if you need to adjust z-index stacking, you'll need custom CSS.
+Note that `z-index` is reset with this class (via `z-index: auto`); if you need to adjust z-index stacking, you'll need custom CSS.
 
 ### Absolute Top
 

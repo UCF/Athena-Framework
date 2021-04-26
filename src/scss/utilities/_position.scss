@@ -1,27 +1,34 @@
 @each $breakpoint in map-keys($grid-breakpoints) {
   @include media-breakpoint-up($breakpoint) {
+
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    //
+    // NOTE: in the next version of Athena that drops IE11 support,
+    // look into using `unset` or `initial` for z-index and
+    // top/right/bottom/left resets instead of `auto`
+    //
 
     .position#{$infix}-static {
       position: static;
     }
 
     .position#{$infix}-relative {
-      bottom: unset;
-      left: unset;
+      bottom: auto;
+      left: auto;
       position: relative;
-      right: unset;
-      top: unset;
-      z-index: initial;
+      right: auto;
+      top: auto;
+      z-index: auto;
     }
 
     .position#{$infix}-absolute-top {
-      bottom: unset;
+      bottom: auto;
       left: 0;
       position: absolute;
       right: 0;
       top: 0;
-      z-index: initial;
+      z-index: auto;
     }
 
     .position#{$infix}-absolute-bottom {
@@ -29,13 +36,13 @@
       left: 0;
       position: absolute;
       right: 0;
-      top: unset;
-      z-index: initial;
+      top: auto;
+      z-index: auto;
     }
 
     .position#{$infix}-fixed-top,
     .fixed#{$infix}-top {
-      bottom: unset;
+      bottom: auto;
       left: 0;
       position: fixed;
       right: 0;
@@ -49,7 +56,7 @@
       left: 0;
       position: fixed;
       right: 0;
-      top: unset;
+      top: auto;
       z-index: $zindex-fixed;
     }
 
