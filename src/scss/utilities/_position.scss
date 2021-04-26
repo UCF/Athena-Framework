@@ -1,0 +1,72 @@
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .position#{$infix}-static {
+      position: static;
+    }
+
+    .position#{$infix}-relative {
+      bottom: unset;
+      left: unset;
+      position: relative;
+      right: unset;
+      top: unset;
+      z-index: initial;
+    }
+
+    .position#{$infix}-absolute-top {
+      bottom: unset;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: initial;
+    }
+
+    .position#{$infix}-absolute-bottom {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: unset;
+      z-index: initial;
+    }
+
+    .position#{$infix}-fixed-top,
+    .fixed#{$infix}-top {
+      bottom: unset;
+      left: 0;
+      position: fixed;
+      right: 0;
+      top: 0;
+      z-index: $zindex-fixed;
+    }
+
+    .position#{$infix}-fixed-bottom,
+    .fixed#{$infix}-bottom {
+      bottom: 0;
+      left: 0;
+      position: fixed;
+      right: 0;
+      top: unset;
+      z-index: $zindex-fixed;
+    }
+
+  }
+}
+
+//
+// Because sticky-top is polyfilled in IE11, it's not possible
+// for us to support responsive sticky classes and overrides with
+// other position utilities.
+//
+.position-sticky-top,
+.sticky-top {
+  bottom: unset;
+  left: unset;
+  position: sticky;
+  right: unset;
+  top: 0;
+  z-index: $zindex-sticky;
+}
