@@ -415,6 +415,9 @@ $link-decoration:       none !default;
 $link-hover-color:      darken($link-color, 15%) !default;
 $link-hover-decoration: underline !default;
 
+$stretched-link-pseudo-element: after !default; // custom
+$stretched-link-z-index:        1 !default; // custom
+
 
 // Grid breakpoints
 //

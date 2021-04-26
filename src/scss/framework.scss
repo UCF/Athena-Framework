@@ -8,15 +8,21 @@
 // Import vendor assets
 //
 
-// Bootstrap - Import copyright notice
-@import 'bootstrap/bootstrap-license';
-
 // Bootstrap + Athena - Core variables and mixins
 // NOTE: Athena intentionally *does not* include the following:
 // - bootstrap/variables: Bootstrap variables are explicitly redefined in src/scss/_variables.scss.
 // - bootstrap/mixins: Bootstrap mixins are cherry-picked in src/scss/_mixins.scss.
 // - bootstrap/custom
 @import 'mixins';
+
+/*! START Athena Framework vendor assets */
+
+/*!
+ * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
+ * Copyright 2011-2017 The Bootstrap Authors
+ * Copyright 2011-2017 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
 
 // Bootstrap - Reset and dependencies
 @import 'bootstrap/normalize';
@@ -61,6 +67,8 @@
 // Bootstrap - Utility classes
 @import 'bootstrap/utilities';
 
+
+/*! END Athena Framework vendor assets */
 
 //
 // Remaining Athena assets
