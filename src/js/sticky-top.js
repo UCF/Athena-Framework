@@ -13,6 +13,6 @@
 
   };
 
-  $('.sticky-top').stickyTop();
+  $('.sticky-top, .position-sticky-top').stickyTop();
 
 }(jQuery));
