@@ -70,10 +70,7 @@
 //
 .position-sticky-top,
 .sticky-top {
-  bottom: unset;
-  left: unset;
   position: sticky;
-  right: unset;
   top: 0;
   z-index: $zindex-sticky;
 }
