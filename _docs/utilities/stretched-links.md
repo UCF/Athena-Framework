@@ -38,14 +38,14 @@ Cards have `position: relative` by default in Athena, so in this case you can sa
 ### With rows and columns
 Note that columns have `position: relative` by default in Athena, so a stretched link included within a column will be limited to stretching within that column (assuming the link isn't additionally wrapped in another containing block).
 
-To make a component containing rows/columns clickable, the column(s) containing the stretched link will need their `position` to be reset to `static`, and the desired top-most element in the component should be made the containing block (e.g. by setting `position: relative`).
+To make an entire component containing rows/columns clickable, the column(s) containing the stretched link will need their `position` to be reset to `static`, and the desired top-most element in the component should be made the containing block (e.g. by using the [`.position-relative` utility class](./../position/)).
 
 {% example html %}
-<div class="row mt-4" style="position: relative;">
+<div class="row mt-4 position-relative">
     <div class="col-3">
         <img src="//via.placeholder.com/250x150/" class="img-fluid" alt="">
     </div>
-    <div class="col-9" style="position: static;">
+    <div class="col-9 position-static">
         <strong class="d-block mb-2">
             <a href="#" class="stretched-link">Columns with stretched link</a>
         </strong>
