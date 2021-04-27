@@ -1,0 +1,10 @@
+//
+// Line height utility class variants
+//
+@mixin line-height-variants() {
+  @each $key, $val in $line-height {
+    .line-height-#{$key} {
+      line-height: $val;
+    }
+  }
+}

@@ -23,10 +23,14 @@
 
 .pagination-lg {
   // allow configurable border-radius
-  @include pagination-size($pagination-padding-y-lg, $pagination-padding-x-lg, $font-size-lg, $line-height-lg, $pagination-border-radius-lg);
+  // NOTE: Bootstrap does not actually use the line-height param
+  // in this mixin, so we set it to null here
+  @include pagination-size($pagination-padding-y-lg, $pagination-padding-x-lg, $font-size-lg, null, $pagination-border-radius-lg);
 }
 
 .pagination-sm {
   // allow configurable border-radius
-  @include pagination-size($pagination-padding-y-sm, $pagination-padding-x-sm, $font-size-sm, $line-height-sm, $pagination-border-radius-sm);
+  // NOTE: Bootstrap does not actually use the line-height param
+  // in this mixin, so we set it to null here
+  @include pagination-size($pagination-padding-y-sm, $pagination-padding-x-sm, $font-size-sm, null, $pagination-border-radius-sm);
 }
