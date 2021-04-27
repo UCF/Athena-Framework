@@ -252,13 +252,32 @@ hr {
   border-color: $brand-primary;
 }
 
-.hr-vertical {
-  border-left-style: solid;
-  border-top: 0 solid transparent;
-  height: 100%;
-  margin-bottom: 0;
-  margin-left: $spacer-x;
-  margin-right: $spacer-x;
-  margin-top: 0;
-  width: 0;
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .hr#{$infix}-vertical {
+      border-left-style: solid;
+      border-top-style: none;
+      height: 100%;
+      margin-bottom: 0;
+      margin-left: $spacer-x;
+      margin-right: $spacer-x;
+      margin-top: 0;
+      width: 0;
+    }
+
+    .hr#{$infix}-horizontal {
+      border-left-style: none;
+      border-top-style: solid;
+      height: auto;
+      margin-bottom: $spacer-y;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: $spacer-y;
+      width: auto;
+    }
+
+  }
 }
