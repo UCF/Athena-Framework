@@ -1253,22 +1253,62 @@ permalink: /utilities/
 
   <h2 class="mb-3">Sizing</h2>
 
-  <div class="w-25 p-3 mb-2 bg-faded">Width 25%</div>
-  <div class="w-50 p-3 mb-2 bg-faded">Width 50%</div>
-  <div class="w-75 p-3 mb-2 bg-faded">Width 75%</div>
-  <div class="w-100 p-3 mb-2 bg-faded">Width 100%</div>
-
-  <div class="bg-faded mb-3" style="height: 100px;">
-    <div class="h-25 d-inline-block bg-default" style="width: 120px;">Height 25%</div>
-    <div class="h-50 d-inline-block bg-default" style="width: 120px;">Height 50%</div>
-    <div class="h-75 d-inline-block bg-default" style="width: 120px;">Height 75%</div>
-    <div class="h-100 d-inline-block bg-default" style="width: 120px;">Height 100%</div>
+  <div class="mb-3">
+    <div class="w-25 p-3 mb-2 bg-default">Width 25%</div>
+    <div class="w-50 p-3 mb-2 bg-default">Width 50%</div>
+    <div class="w-75 p-3 mb-2 bg-default">Width 75%</div>
+    <div class="w-100 p-3 mb-2 bg-default">Width 100%</div>
+    <div class="w-auto p-3 mb-2 bg-default">Width auto</div>
   </div>
 
-  <img class="mw-100 mb-2" src="//via.placeholder.com/1600x300" alt="Max-width 100%">
+  <div class="bg-default p-3 mb-3 w-100 w-sm-75 w-md-50 w-lg-25 w-xl-auto">
+    <div class="hidden-sm-up">-xs: Width 100%</div>
+    <div class="hidden-xs-down hidden-md-up">-sm: Width 75%</div>
+    <div class="hidden-sm-down hidden-lg-up">-md: Width 50%</div>
+    <div class="hidden-md-down hidden-xl-up">-lg: Width 25%</div>
+    <div class="hidden-lg-down">-xl: Width auto</div>
+  </div>
+
+  <div class="bg-faded mb-3" style="height: 125px;">
+    <div class="h-25 d-inline-block align-top bg-default" style="width: 18%;">Height 25%</div>
+    <div class="h-50 d-inline-block align-top bg-default" style="width: 18%;">Height 50%</div>
+    <div class="h-75 d-inline-block align-top bg-default" style="width: 18%;">Height 75%</div>
+    <div class="h-100 d-inline-block align-top bg-default" style="width: 18%;">Height 100%</div>
+    <div class="h-auto d-inline-block align-top bg-default" style="width: 18%;">Height auto</div>
+  </div>
+
+  <div class="bg-faded mb-3" style="height: 125px;">
+    <div class="bg-default h-100 h-sm-75 h-md-50 h-lg-25 h-xl-auto" style="width: 200px;">
+      <div class="hidden-sm-up">-xs: Height 100%</div>
+      <div class="hidden-xs-down hidden-md-up">-sm: Height 75%</div>
+      <div class="hidden-sm-down hidden-lg-up">-md: Height 50%</div>
+      <div class="hidden-md-down hidden-xl-up">-lg: Height 25%</div>
+      <div class="hidden-lg-down">-xl: Height auto</div>
+    </div>
+  </div>
+
+  <div class="bg-faded p-3 mb-3">
+    <img class="mw-100" src="//via.placeholder.com/1150x100?text=Max-width:+100%" alt="Max-width 100%">
+    <img class="mw-none" src="//via.placeholder.com/1150x100?text=Max-width:+none" alt="Max-width none">
+  </div>
+
+  <div class="bg-faded p-3 mb-3">
+    <img class="mw-none mw-sm-100 mw-md-none mw-lg-100 mw-xl-none" src="//placehold.it/1150x100/" alt="Max-width responsive variants test">
+  </div>
 
   <div class="bg-faded mb-3" style="height: 100px;">
-    <div class="mh-100 bg-primary" style="width: 100px; height: 200px;">Max-height 100%</div>
+    <div class="mh-100 d-inline-block bg-default mr-2" style="width: 100px; height: 130px;">Max-height 100%</div>
+    <div class="mh-none d-inline-block bg-default mr-2" style="width: 100px; height: 130px;">Max-height none</div>
+  </div>
+
+  <div class="bg-faded mb-3" style="height: 100px;">
+    <div class="bg-default mh-100 mh-sm-none mh-md-100 mh-lg-none mh-xl-100" style="width: 200px; height: 130px;">
+      <div class="hidden-sm-up">-xs: Max-height 100%</div>
+      <div class="hidden-xs-down hidden-md-up">-sm: Max-height none</div>
+      <div class="hidden-sm-down hidden-lg-up">-md: Max-height 100%</div>
+      <div class="hidden-md-down hidden-xl-up">-lg: Max-height none</div>
+      <div class="hidden-lg-down">-xl: Max-height 100%</div>
+    </div>
   </div>
 
 
