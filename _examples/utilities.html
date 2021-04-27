@@ -1130,11 +1130,46 @@ permalink: /utilities/
 
   <h2 class="mb-3">Position</h2>
 
-  <h3 class="mt-4 mb-3"><a href="./navbar-fixed-top.html">Fixed Top</a></h3>
+  <h3 class="mt-4 mb-3">Static</h3>
 
-  <h3 class="mt-4 mb-3"><a href="./navbar-fixed-bottom.html">Fixed Bottom</a></h3>
+  <div class="position-static bg-default">Static</div>
 
-  <h3 class="mt-4 mb-3"><a href="./navbar-sticky-top.html">Sticky Top</a></h3>
+  <h3 class="mt-4 mb-3">Relative</h3>
+
+  <div class="position-relative bg-default">Relative</div>
+
+  <h3 class="mt-4 mb-3">Absolute</h3>
+
+  <div class="position-relative bg-default mb-3" style="height: 8rem;">
+    <div class="position-absolute-top bg-inverse-t-3">Absolute Top</div>
+  </div>
+
+  <div class="position-relative bg-default mb-3" style="height: 8rem;">
+    <div class="position-absolute-bottom bg-inverse-t-3">Absolute Bottom</div>
+  </div>
+
+  <h3 class="mt-4 mb-3">Responsive Examples</h3>
+
+  <div class="position-relative bg-default p-3 mb-3" style="height: 8rem;">
+    <div class="bg-inverse-t-3 position-static position-md-relative position-lg-absolute-top position-xl-absolute-bottom">
+      <span class="hidden-md-up">-xs-sm: <code>position-static</code></span>
+      <span class="hidden-sm-down hidden-lg-up">-md: <code>position-md-relative</code></span>
+      <span class="hidden-md-down hidden-xl-up">-lg: <code>position-lg-absolute-top</code></span>
+      <span class="hidden-lg-down">-xl: <code>position-xl-absolute-bottom</code></span>
+    </div>
+    <div class="bg-inverse-t-3 position-absolute-top position-md-static position-lg-absolute-bottom position-xl-relative">
+      <span class="hidden-md-up">-xs-sm: <code>position-absolute-top</code></span>
+      <span class="hidden-sm-down hidden-lg-up">-md: <code>position-md-static</code></span>
+      <span class="hidden-md-down hidden-xl-up">-lg: <code>position-lg-absolute-bottom</code></span>
+      <span class="hidden-lg-down">-xl: <code>position-xl-relative</code></span>
+    </div>
+  </div>
+
+  <h3 class="mt-4 mb-3"><a href="./../navbar-fixed-top/">Fixed Top</a></h3>
+
+  <h3 class="mt-4 mb-3"><a href="./../navbar-fixed-bottom/">Fixed Bottom</a></h3>
+
+  <h3 class="mt-4 mb-3"><a href="./../navbar-sticky-top/">Sticky Top</a></h3>
 
 
   <hr class="mt-5 mb-5">
@@ -1266,7 +1301,7 @@ permalink: /utilities/
 
   <h2 class="mb-3">Stretched Links</h2>
 
-  <div class="bg-default p-5 text-center" style="width: 300px; position: relative;">
+  <div class="bg-default p-5 text-center position-relative">
     <a class="stretched-link bg-default-link" href="#">Stretched Link</a>
   </div>
 
@@ -1281,11 +1316,11 @@ permalink: /utilities/
     </div>
   </div>
 
-  <div class="row mt-4" style="position: relative;">
+  <div class="row mt-4 position-relative">
     <div class="col-3">
       <img src="//via.placeholder.com/250x150/" class="img-fluid" alt="">
     </div>
-    <div class="col-9" style="position: static;">
+    <div class="col-9 position-static">
       <strong class="d-block mb-3">
         <a href="#" class="stretched-link">Columns with stretched link</a>
       </strong>
@@ -1524,39 +1559,44 @@ permalink: /utilities/
   <a href="#" class="d-inline-block hover-scale-down">Zooms out on hover (scale-)</a><br>
   <a href="#" class="hover-text-white">Transitions to white on hover</a><br>
   <a href="#" class="hover-text-black">Transitions to black on hover</a><br>
+  <p class="hover-text-underline">Underlines on hover</p>
 
   <h3 class="mt-4 mb-3">Hover Parents and Children</h3>
 
   <div class="hover-parent bg-faded mb-1">
-    <p class="hover-child-show p-2 d-inline-block bg-default">Lorem ipsum dolor sit amet</p>
+    <p class="hover-child-show p-2 d-inline-block bg-default">Child shown on hover</p>
   </div>
 
   <div class="hover-parent bg-faded mb-1">
-    <p class="hover-child-hide p-2 d-inline-block bg-default">Lorem ipsum dolor sit amet</p>
+    <p class="hover-child-hide p-2 d-inline-block bg-default">Child hidden on hover</p>
   </div>
 
   <div class="hover-parent bg-faded mb-1">
-    <p class="hover-child-show fade p-2 d-inline-block bg-default">Lorem ipsum dolor sit amet</p>
+    <p class="hover-child-show fade p-2 d-inline-block bg-default">Child shown on hover (with fade)</p>
   </div>
 
   <div class="hover-parent bg-faded mb-1">
-    <p class="hover-child-hide fade p-2 d-inline-block bg-default">Lorem ipsum dolor sit amet</p>
+    <p class="hover-child-hide fade p-2 d-inline-block bg-default">Child hidden on hover (with fade)</p>
   </div>
 
   <div class="hover-parent bg-faded mb-1">
-    <p class="hover-child-scale-up p-2 d-inline-block bg-default">Lorem ipsum dolor sit amet</p>
+    <p class="hover-child-scale-up p-2 d-inline-block bg-default">Child zooms in on hover (scale+)</p>
   </div>
 
   <div class="hover-parent bg-faded mb-1">
-    <p class="hover-child-scale-down p-2 d-inline-block bg-default">Lorem ipsum dolor sit amet</p>
+    <p class="hover-child-scale-down p-2 d-inline-block bg-default">Child zooms out on hover (scale-)</p>
   </div>
 
   <div class="hover-parent bg-faded mb-1">
-    <p class="hover-child-text-white text-primary p-2 d-inline-block bg-default">Lorem ipsum dolor sit amet</p>
+    <p class="hover-child-text-white text-primary p-2 d-inline-block bg-default">Child transitions to white on hover</p>
   </div>
 
   <div class="hover-parent bg-faded mb-1">
-    <p class="hover-child-text-black p-2 d-inline-block bg-default">Lorem ipsum dolor sit amet</p>
+    <p class="hover-child-text-black p-2 d-inline-block bg-default">Child transitions to black on hover</p>
+  </div>
+
+  <div class="hover-parent bg-faded mb-1">
+    <p class="hover-child-text-underline p-2 d-inline-block bg-default">Child is underlined on hover</p>
   </div>
 
   <h3 class="mt-4 mb-3">Advanced Examples</h3>

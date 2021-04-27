@@ -1,0 +1,76 @@
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    //
+    // NOTE: in the next version of Athena that drops IE11 support,
+    // look into using `unset` or `initial` for z-index and
+    // top/right/bottom/left resets instead of `auto`
+    //
+
+    .position#{$infix}-static {
+      position: static;
+    }
+
+    .position#{$infix}-relative {
+      bottom: auto;
+      left: auto;
+      position: relative;
+      right: auto;
+      top: auto;
+      z-index: auto;
+    }
+
+    .position#{$infix}-absolute-top {
+      bottom: auto;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: auto;
+    }
+
+    .position#{$infix}-absolute-bottom {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: auto;
+      z-index: auto;
+    }
+
+    .position#{$infix}-fixed-top,
+    .fixed#{$infix}-top {
+      bottom: auto;
+      left: 0;
+      position: fixed;
+      right: 0;
+      top: 0;
+      z-index: $zindex-fixed;
+    }
+
+    .position#{$infix}-fixed-bottom,
+    .fixed#{$infix}-bottom {
+      bottom: 0;
+      left: 0;
+      position: fixed;
+      right: 0;
+      top: auto;
+      z-index: $zindex-fixed;
+    }
+
+  }
+}
+
+//
+// Because sticky-top is polyfilled in IE11, it's not possible
+// for us to support responsive sticky classes and overrides with
+// other position utilities.
+//
+.position-sticky-top,
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: $zindex-sticky;
+}
