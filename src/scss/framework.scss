@@ -15,8 +15,6 @@
 // - bootstrap/custom
 @import 'mixins';
 
-/*! START Athena Framework vendor assets */
-
 /*!
  * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors
@@ -64,11 +62,8 @@
 @import 'bootstrap/tooltip';
 @import 'bootstrap/popover';
 
-// Bootstrap - Utility classes
-@import 'bootstrap/utilities';
+// NOTE: Bootstrap utilities are cherry-picked in src/scss/_utilities.scss
 
-
-/*! END Athena Framework vendor assets */
 
 //
 // Remaining Athena assets
