@@ -10,7 +10,9 @@
 // @import 'bootstrap/utilities/position';
 @import 'utilities/position';
 @import 'bootstrap/utilities/screenreaders';
-@import 'bootstrap/utilities/sizing';
+// NOTE: We exclude this file in favor of our own in Athena
+// @import 'bootstrap/utilities/sizing';
+@import 'utilities/sizing';
 @import 'bootstrap/utilities/spacing';
 @import 'bootstrap/utilities/text';
 @import 'bootstrap/utilities/visibility';
