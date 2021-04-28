@@ -87,7 +87,7 @@ Note that `.font-condensed` is only optimized for heading usage due to readabili
 
 ## Letter spacing
 
-Athena includes new letter spacing classes, which can be modified via the `$letter-spacing` Sass variable.
+Athena includes a set of letter spacing classes, which can be modified via the `$letter-spacing` Sass variable.
 
 {% example html %}
 <p class="text-uppercase letter-spacing-0">Ambitioni dedisse scripsisse iudicaretur</p>
@@ -96,4 +96,33 @@ Athena includes new letter spacing classes, which can be modified via the `$lett
 <p class="text-uppercase letter-spacing-3">Ambitioni dedisse scripsisse iudicaretur</p>
 <p class="text-uppercase letter-spacing-4">Ambitioni dedisse scripsisse iudicaretur</p>
 <p class="text-uppercase letter-spacing-5">Ambitioni dedisse scripsisse iudicaretur</p>
+{% endexample %}
+
+
+## Line height
+
+Adjust line height on the fly with line height classes.  Available classes and their line-height values can be modified via the `$line-height` Sass variable.
+
+{% example html %}
+<p class="line-height-0">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sollicitudin congue dictum. Fusce a turpis non libero euismod blandit. Cras porta ipsum vel massa faucibus pulvinar.
+</p>
+<p class="line-height-1">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sollicitudin congue dictum. Fusce a turpis non libero euismod blandit. Cras porta ipsum vel massa faucibus pulvinar.
+</p>
+<p class="line-height-2">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sollicitudin congue dictum. Fusce a turpis non libero euismod blandit. Cras porta ipsum vel massa faucibus pulvinar.
+</p>
+<p class="line-height-3">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sollicitudin congue dictum. Fusce a turpis non libero euismod blandit. Cras porta ipsum vel massa faucibus pulvinar.
+</p>
+<p class="line-height-4">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sollicitudin congue dictum. Fusce a turpis non libero euismod blandit. Cras porta ipsum vel massa faucibus pulvinar.
+</p>
+<p class="line-height-5">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sollicitudin congue dictum. Fusce a turpis non libero euismod blandit. Cras porta ipsum vel massa faucibus pulvinar.
+</p>
+<p class="line-height-6">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sollicitudin congue dictum. Fusce a turpis non libero euismod blandit. Cras porta ipsum vel massa faucibus pulvinar.
+</p>
 {% endexample %}
