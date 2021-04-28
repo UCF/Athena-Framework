@@ -28,30 +28,30 @@ Width and height utilities are generated from the `$sizes` Sass map in `_variabl
 
 Responsive variants also exist for width modifiers:
 - `.w-25`
-- `.w-25-sm`
-- `.w-25-md`
-- `.w-25-lg`
-- `.w-25-xl`
+- `.w-sm-25`
+- `.w-md-25`
+- `.w-lg-25`
+- `.w-xl-25`
 - `.w-50`
-- `.w-50-sm`
-- `.w-50-md`
-- `.w-50-lg`
-- `.w-50-xl`
+- `.w-sm-50`
+- `.w-md-50`
+- `.w-lg-50`
+- `.w-xl-50`
 - `.w-75`
-- `.w-75-sm`
-- `.w-75-md`
-- `.w-75-lg`
-- `.w-75-xl`
+- `.w-sm-75`
+- `.w-md-75`
+- `.w-lg-75`
+- `.w-xl-75`
 - `.w-100`
-- `.w-100-sm`
-- `.w-100-md`
-- `.w-100-lg`
-- `.w-100-xl`
+- `.w-sm-100`
+- `.w-md-100`
+- `.w-lg-100`
+- `.w-xl-100`
 - `.w-auto`
-- `.w-auto-sm`
-- `.w-auto-md`
-- `.w-auto-lg`
-- `.w-auto-xl`
+- `.w-sm-auto`
+- `.w-md-auto`
+- `.w-lg-auto`
+- `.w-xl-auto`
 
 
 ## Height
@@ -68,30 +68,30 @@ Responsive variants also exist for width modifiers:
 
 Responsive variants also exist for height modifiers:
 - `.h-25`
-- `.h-25-sm`
-- `.h-25-md`
-- `.h-25-lg`
-- `.h-25-xl`
+- `.h-sm-25`
+- `.h-md-25`
+- `.h-lg-25`
+- `.h-xl-25`
 - `.h-50`
-- `.h-50-sm`
-- `.h-50-md`
-- `.h-50-lg`
-- `.h-50-xl`
+- `.h-sm-50`
+- `.h-md-50`
+- `.h-lg-50`
+- `.h-xl-50`
 - `.h-75`
-- `.h-75-sm`
-- `.h-75-md`
-- `.h-75-lg`
-- `.h-75-xl`
+- `.h-sm-75`
+- `.h-md-75`
+- `.h-lg-75`
+- `.h-xl-75`
 - `.h-100`
-- `.h-100-sm`
-- `.h-100-md`
-- `.h-100-lg`
-- `.h-100-xl`
+- `.h-sm-100`
+- `.h-md-100`
+- `.h-lg-100`
+- `.h-xl-100`
 - `.h-auto`
-- `.h-auto-sm`
-- `.h-auto-md`
-- `.h-auto-lg`
-- `.h-auto-xl`
+- `.h-sm-auto`
+- `.h-md-auto`
+- `.h-lg-auto`
+- `.h-xl-auto`
 
 
 ## Max-width
@@ -105,15 +105,15 @@ Responsive variants also exist for height modifiers:
 
 Responsive variants also exist for max-width:
 - `.mw-100`
-- `.mw-100-sm`
-- `.mw-100-md`
-- `.mw-100-lg`
-- `.mw-100-xl`
+- `.mw-sm-100`
+- `.mw-md-100`
+- `.mw-lg-100`
+- `.mw-xl-100`
 - `.mw-none`
-- `.mw-none-sm`
-- `.mw-none-md`
-- `.mw-none-lg`
-- `.mw-none-xl`
+- `.mw-sm-none`
+- `.mw-md-none`
+- `.mw-lg-none`
+- `.mw-xl-none`
 
 
 ## Max-height
@@ -127,12 +127,12 @@ Responsive variants also exist for max-width:
 
 Responsive variants also exist for max-height:
 - `.mh-100`
-- `.mh-100-sm`
-- `.mh-100-md`
-- `.mh-100-lg`
-- `.mh-100-xl`
+- `.mh-sm-100`
+- `.mh-md-100`
+- `.mh-lg-100`
+- `.mh-xl-100`
 - `.mh-none`
-- `.mh-none-sm`
-- `.mh-none-md`
-- `.mh-none-lg`
-- `.mh-none-xl`
+- `.mh-sm-none`
+- `.mh-md-none`
+- `.mh-lg-none`
+- `.mh-xl-none`
