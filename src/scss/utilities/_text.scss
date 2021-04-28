@@ -23,6 +23,35 @@
 
 
 //
+// Font size classes
+//
+
+.font-size-base {
+  font-size: $font-size-base;
+
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-base-md;
+  }
+}
+
+.font-size-sm {
+  font-size: $font-size-sm-xs;
+
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-sm;
+  }
+}
+
+.font-size-lg {
+  font-size: $font-size-lg-xs;
+
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-lg;
+  }
+}
+
+
+//
 // Extended text-transform classes
 //
 

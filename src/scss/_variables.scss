@@ -490,6 +490,8 @@ $font-size-sm:   .875rem !default;
 $font-size-xs:   .75rem !default;
 $font-size-base:    $font-size-sm !default; // modified, moved
 $font-size-base-md: $font-size-md !default; // custom
+$font-size-lg-xs:   .925rem; // custom; using non-mobile-first var name for backward compat.
+$font-size-sm-xs:   $font-size-xs; // custom; using non-mobile-first var name for backward compat.
 
 $font-weight-normal: normal !default;
 $font-weight-bold: bold !default;
