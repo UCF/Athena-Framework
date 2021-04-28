@@ -43,13 +43,13 @@ Assuming a basic project structure that looks something like this:
 ...a sample Gulp file that copies Athena's font files and minified JS, and generates a single, minified CSS file, might look like this:
 
 {% highlight 'js' %}
-var gulp = require('gulp'),
-  cleanCSS = require('gulp-clean-css'),
-  rename = require('gulp-rename'),
-  sass = require('gulp-sass');
+const gulp = require('gulp');
+const cleanCSS = require('gulp-clean-css');
+const rename = require('gulp-rename');
+const sass = require('gulp-sass');
 
 // Config
-var config = {
+let config = {
   src: {
     scssPath: './src/scss'
   },
@@ -62,14 +62,14 @@ var config = {
 };
 
 // Fonts
-gulp.task('fonts', function() {
-  return gulp.src(config.packagesPath + '/ucf-athena-framework/dist/fonts/**/*')
+gulp.task('fonts', () => {
+  return gulp.src(`${config.packagesPath}/ucf-athena-framework/dist/fonts/**/*`)
     .pipe(gulp.dest(config.dist.fontPath));
 });
 
 // CSS
-gulp.task('css', function() {
-  return gulp.src(config.src.scssPath + '/my-project.scss')
+gulp.task('css', () => {
+  return gulp.src(`${config.src.scssPath}/my-project.scss`)
     .pipe(sass({
       includePaths: [config.src.scssPath, config.packagesPath]
     })
@@ -80,13 +80,13 @@ gulp.task('css', function() {
 });
 
 // JS
-gulp.task('js', function() {
-  return gulp.src(config.packagesPath + '/ucf-athena-framework/dist/js/framework.min.js')
+gulp.task('js', () => {
+  return gulp.src(`${config.packagesPath}/ucf-athena-framework/dist/js/framework.min.js`)
     .pipe(gulp.dest(config.dist.jsPath));
 });
 
 // Default
-gulp.task('default', ['fonts', 'css', 'js']);
+gulp.task('default', gulp.series('fonts', 'css', 'js'));
 
 {% endhighlight %}
 
