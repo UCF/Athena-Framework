@@ -4,7 +4,7 @@ title: Position
 tags: utilities
 ---
 
-Position utilities are helpful for quickly placing a component outside the normal document flow, or for adjusting/defining the containing block for things like [stretched links](./../stretched-links/).
+Position utilities are helpful for quickly placing a component outside the normal document flow, or for adjusting/defining the containing block for things like [stretched links]({{ '/utilities/stretched-links/' | url }}).
 
 
 ## Contents
@@ -48,7 +48,7 @@ Responsive variations also exist for `.position-relative`:
 
 ## Absolute
 
-Position an element at the top or bottom of its [containing block](./../stretched-links/#identifying-the-containing-block), from edge to edge. Keep in mind that an absolutely-positioned element without a containing block will be positioned relative to the document.
+Position an element at the top or bottom of its [containing block]({{ '/utilities/stretched-links/' | url }}#identifying-the-containing-block), from edge to edge. Keep in mind that an absolutely-positioned element without a containing block will be positioned relative to the document.
 
 Note that `z-index` is reset with this class (via `z-index: auto`); if you need to adjust z-index stacking, you'll need custom CSS.
 
