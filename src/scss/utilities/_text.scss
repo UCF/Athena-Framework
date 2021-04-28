@@ -27,26 +27,29 @@
 //
 
 .font-size-base {
-  font-size: $font-size-base;
+  // sass-lint:disable-block no-important
+  font-size: $font-size-base !important;
 
   @include media-breakpoint-up(md) {
-    font-size: $font-size-base-md;
+    font-size: $font-size-base-md !important;
   }
 }
 
 .font-size-sm {
-  font-size: $font-size-sm-xs;
+  // sass-lint:disable-block no-important
+  font-size: $font-size-sm-xs !important;
 
   @include media-breakpoint-up(md) {
-    font-size: $font-size-sm;
+    font-size: $font-size-sm !important;
   }
 }
 
 .font-size-lg {
-  font-size: $font-size-lg-xs;
+  // sass-lint:disable-block no-important
+  font-size: $font-size-lg-xs !important;
 
   @include media-breakpoint-up(md) {
-    font-size: $font-size-lg;
+    font-size: $font-size-lg !important;
   }
 }
 

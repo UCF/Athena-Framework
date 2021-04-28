@@ -87,7 +87,7 @@ Note that `.font-condensed` is only optimized for heading usage due to readabili
 
 ## Font size
 
-In addition to using [`.lead`]({{ '/content/typography' | url }}#lead) and [`.small`]({{ '/content/typography' | url }}#inline-text-elements), you can adjust the font size of your content using font size classes.  Like base body copy and most components, font size will scale down at the -xs-sm breakpoints using these classes.
+In addition to using [`.lead`]({{ '/content/typography' | url }}#lead) and [`.small`]({{ '/content/typography' | url }}#inline-text-elements), you can adjust the font size of your content using font size utility classes.  Like base body copy and most components, font size will scale down at the -xs-sm breakpoints using these classes.
 
 {% example html %}
 <p class="font-size-sm">Smaller text</p>
