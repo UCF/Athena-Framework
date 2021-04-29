@@ -103,24 +103,24 @@ Below is a complete list of the specific form controls supported by Athena and t
   <tbody>
     <tr>
       <td>
-        `.form-group`
+        <code>.form-group</code>
       </td>
       <td class="text-nowrap">
         Any group of form controls
       </td>
       <td>
-        Use with any block-level element like `<fieldset>` or `<div>`
+        Use with any block-level element like <code>&lt;fieldset&gt;</code> or <code>&lt;div&gt;</code>
       </td>
     </tr>
     <tr>
       <td rowspan="3">
-        `.form-control`
+        <code>.form-control</code>
       </td>
       <td>
         Textual inputs
       </td>
       <td>
-        `text`, `password`, `datetime-local`, `date`, `month`, `time`, `week`, `number`, `email`, `url`, `search`, `tel`, `color`
+        <code>text</code>, <code>password</code>, <code>datetime-local</code>, <code>date</code>, <code>month</code>, <code>time</code>, <code>week</code>, <code>number</code>, <code>email</code>, <code>url</code>, <code>search</code>, <code>tel</code>, <code>color</code>
       </td>
     </tr>
     <tr>
@@ -128,7 +128,7 @@ Below is a complete list of the specific form controls supported by Athena and t
         Select menus
       </td>
       <td>
-        `multiple`, `size`
+        <code>multiple</code>, <code>size</code>
       </td>
     </tr>
     <tr>
@@ -141,18 +141,18 @@ Below is a complete list of the specific form controls supported by Athena and t
     </tr>
     <tr>
       <td class="text-nowrap">
-        `.form-control-file`
+        <code>.form-control-file</code>
       </td>
       <td>
         File inputs
       </td>
       <td>
-        `file`
+        <code>file</code>
       </td>
     </tr>
     <tr>
       <td class="text-nowrap">
-`.form-check`
+        <code>.form-check</code>
       </td>
       <td class="text-nowrap">
         Checkboxes and radios
