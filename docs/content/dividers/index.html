@@ -17,7 +17,7 @@
     
 
     <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.0.8">
+    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.0">
     <link rel="canonical" href="https://ucf.github.io/Athena-Framework/content/dividers/">
   </head>
 
@@ -98,6 +98,10 @@
 
             <div class="ml-4 collapse afd-sidenav " id="sidenav-getting-started">
                 <ul class="nav d-flex flex-column">
+                    
+                        
+                    
+
                     
                         
                         
@@ -198,6 +202,10 @@
                 <ul class="nav d-flex flex-column">
                     
                         
+                    
+
+                    
+                        
                         
 
                         
@@ -265,6 +273,10 @@
 
             <div class="ml-4 collapse afd-sidenav show" id="sidenav-content">
                 <ul class="nav d-flex flex-column">
+                    
+                        
+                    
+
                     
                         
                         
@@ -365,6 +377,10 @@
 
             <div class="ml-4 collapse afd-sidenav " id="sidenav-components">
                 <ul class="nav d-flex flex-column">
+                    
+                        
+                    
+
                     
                         
                         
@@ -608,6 +624,10 @@
                 <ul class="nav d-flex flex-column">
                     
                         
+                    
+
+                    
+                        
                         
 
                         
@@ -800,6 +820,17 @@
                         
 
                         <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/stretched-links/">
+                                Stretched Links
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
                             <a class="nav-link " href="/Athena-Framework/utilities/typography/">
                                 Typography
                             </a>
@@ -840,7 +871,7 @@
       <div class="col-md-8 pull-md-4 pt-3 pt-md-5 afd-content">
         <p>Athena provides utility classes for styling <code>&lt;hr&gt;</code> elements with alternate thicknesses, colors, and orientation.</p>
 <h2 id="contents">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
-<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#thickness">Thickness </a></li><li><a href="#color">Color </a></li><li><a href="#vertical-orientation">Vertical Orientation </a></li></ul></nav><h2 id="thickness">Thickness <a class="header-anchor" href="#thickness"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#thickness">Thickness </a></li><li><a href="#color">Color </a></li><li><a href="#vertical-orientation">Vertical Orientation </a><ul><li><a href="#responsive-orientation">Responsive Orientation </a></li></ul></li></ul></nav><h2 id="thickness">Thickness <a class="header-anchor" href="#thickness"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Modify the weight of a divider using the <code>.hr-2</code> or <code>.hr-3</code> classes. The weight of these dividers is set via the <code>$border-width-thicker</code> and <code>$border-width-thickest</code> Sass variables, respectively.</p>
 <div class="afd-example">
 <hr>
@@ -848,8 +879,8 @@
 <hr class="hr-3">
 </div><div class="highlight"><pre><code class="nohighlight">
 <span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">hr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hr-2"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">hr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hr-3"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">hr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hr-2&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">hr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hr-3&quot;</span>&gt;</span>
 </code></pre></div>
 <h2 id="color">Color <a class="header-anchor" href="#color"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Use the <code>.hr-black</code>, <code>.hr-white</code>, or <code>.hr-primary</code> classes to modify the color of the divider.</p>
@@ -858,15 +889,12 @@
 <hr class="hr-white">
 <hr class="hr-primary">
 </div><div class="highlight"><pre><code class="nohighlight">
-<span class="hljs-tag">&lt;<span class="hljs-name">hr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hr-black"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">hr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hr-white"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">hr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hr-primary"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">hr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hr-black&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">hr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hr-white&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">hr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hr-primary&quot;</span>&gt;</span>
 </code></pre></div>
 <h2 id="vertical-orientation">Vertical Orientation <a class="header-anchor" href="#vertical-orientation"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>You can modify a divider to be oriented vertically using the <code>.hr-vertical</code> class. Vertical dividers are best used within columns (or some other block-level parent element) to help define how tall the divider should be.</p>
-<div class="afd-callout afd-callout-warning"><h3 class="h5">Browser Compatibility</h3>
-Keep in mind that vertical dividers will not display as expected in versions of Safari older than 11.
-</div>
 <div class="afd-example">
 <div class="row">
   <div class="col">
@@ -880,14 +908,14 @@ Keep in mind that vertical dividers will not display as expected in versions of 
   </div>
 </div>
 </div><div class="highlight"><pre><code class="nohighlight">
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"row"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;row&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col&quot;</span>&gt;</span>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra felis vel nisl aliquet vehicula. Curabitur suscipit neque risus, id semper purus elementum nec. Proin commodo gravida lectus ac tincidunt. Vestibulum eleifend, lectus in ornare elementum, purus nisl tincidunt ligula, congue sodales neque felis at nisi. Sed elementum ut purus vel egestas. Nunc eget ultricies arcu. Nam eget elit id ligula euismod imperdiet. Fusce faucibus lectus quis tincidunt sagittis. Integer volutpat interdum libero, non bibendum ante rhoncus non.
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col-auto"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hr-vertical"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-auto&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hr-vertical&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col&quot;</span>&gt;</span>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra felis vel nisl aliquet vehicula. Curabitur suscipit neque risus, id semper purus elementum nec. Proin commodo gravida lectus ac tincidunt.
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -912,20 +940,20 @@ Keep in mind that vertical dividers will not display as expected in versions of 
   </div>
 </div>
 </div><div class="highlight"><pre><code class="nohighlight">
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"row"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;row&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col&quot;</span>&gt;</span>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col-auto"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hr-vertical hr-2"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-auto&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hr-vertical hr-2&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col&quot;</span>&gt;</span>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col-auto"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hr-vertical hr-primary hr-3"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-auto&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hr-vertical hr-primary hr-3&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col&quot;</span>&gt;</span>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -950,24 +978,90 @@ Keep in mind that vertical dividers will not display as expected in versions of 
   </div>
 </div>
 </div><div class="highlight"><pre><code class="nohighlight">
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"row"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col-3"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;row&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-3&quot;</span>&gt;</span>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra felis vel nisl aliquet vehicula. Curabitur suscipit neque risus, id semper purus elementum nec. Proin commodo gravida lectus ac tincidunt.
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col-auto d-flex align-items-center"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hr-vertical h-75"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-auto d-flex align-items-center&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hr-vertical h-75&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col-2"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-2&quot;</span>&gt;</span>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col-2"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hr-vertical mx-auto"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-2&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hr-vertical mx-auto&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"col-3"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-3&quot;</span>&gt;</span>
    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra felis vel nisl aliquet vehicula. Curabitur suscipit neque risus, id semper purus elementum nec. Proin commodo gravida lectus ac tincidunt.
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
+<h3 id="responsive-orientation">Responsive Orientation <a class="header-anchor" href="#responsive-orientation"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<p>A divider can transition between horizontal and vertical orientations using responsive class variants:</p>
+<div class="afd-example">
+<div class="row">
+  <div class="col-12 col-lg">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra felis vel nisl aliquet vehicula. Curabitur suscipit neque risus, id semper purus elementum nec. Proin commodo gravida lectus ac tincidunt.
+  </div>
+  <div class="col-12 col-lg-auto">
+    <hr class="hr-lg-vertical">
+  </div>
+  <div class="col-12 col-lg">
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra felis vel nisl aliquet vehicula. Curabitur suscipit neque risus, id semper purus elementum nec. Proin commodo gravida lectus ac tincidunt.
+  </div>
+</div>
+</div><div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;row&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-12 col-lg&quot;</span>&gt;</span>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra felis vel nisl aliquet vehicula. Curabitur suscipit neque risus, id semper purus elementum nec. Proin commodo gravida lectus ac tincidunt.
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-12 col-lg-auto&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hr-lg-vertical&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-12 col-lg&quot;</span>&gt;</span>
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra felis vel nisl aliquet vehicula. Curabitur suscipit neque risus, id semper purus elementum nec. Proin commodo gravida lectus ac tincidunt.
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<p>You can additionally use the <code>.hr-horizontal</code> class and responsive variants to reset a vertical divider to horizontal:</p>
+<div class="afd-example">
+<div class="row">
+  <div class="col col-lg-12">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra felis vel nisl aliquet vehicula. Curabitur suscipit neque risus, id semper purus elementum nec. Proin commodo gravida lectus ac tincidunt.
+  </div>
+  <div class="col-auto col-lg-12">
+    <hr class="hr-vertical hr-lg-horizontal">
+  </div>
+  <div class="col col-lg-12">
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra felis vel nisl aliquet vehicula. Curabitur suscipit neque risus, id semper purus elementum nec. Proin commodo gravida lectus ac tincidunt.
+  </div>
+</div>
+</div><div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;row&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col col-lg-12&quot;</span>&gt;</span>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra felis vel nisl aliquet vehicula. Curabitur suscipit neque risus, id semper purus elementum nec. Proin commodo gravida lectus ac tincidunt.
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col-auto col-lg-12&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">hr</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hr-vertical hr-lg-horizontal&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;col col-lg-12&quot;</span>&gt;</span>
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra felis vel nisl aliquet vehicula. Curabitur suscipit neque risus, id semper purus elementum nec. Proin commodo gravida lectus ac tincidunt.
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre></div>
+<p>Available responsive class variants for vertical and horizontal dividers include:</p>
+<ul>
+<li><code>.hr-vertical</code></li>
+<li><code>.hr-sm-vertical</code></li>
+<li><code>.hr-md-vertical</code></li>
+<li><code>.hr-lg-vertical</code></li>
+<li><code>.hr-xl-vertical</code></li>
+<li><code>.hr-horizontal</code></li>
+<li><code>.hr-sm-horizontal</code></li>
+<li><code>.hr-md-horizontal</code></li>
+<li><code>.hr-lg-horizontal</code></li>
+<li><code>.hr-xl-horizontal</code></li>
+</ul>
 
       </div>
     </div>
@@ -993,7 +1087,7 @@ Keep in mind that vertical dividers will not display as expected in versions of 
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.0.8</strong>.
+              Current version: <strong>v1.1.0</strong>.
             </p>
             <p class="mb-0">
               Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
@@ -1013,8 +1107,8 @@ Keep in mind that vertical dividers will not display as expected in versions of 
       </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js" integrity="sha256-mIiWebTG82x+OcV3vUA49ffGDIAJ53uC9jflw5/+REs=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.7/js/tether.min.js" integrity="sha384-CPFFlrdhp9pDDCqRqdTKNZ5oAHsnfnvHGt0CsRIeL5Gc7V/OkP1Y4w8zTxlV3mat" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.bundle.min.js" integrity="sha256-VCsWOz+0GuHdS/sIICtQNTFJdbaDI80rxvoB7BXabrU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
 
@@ -1022,7 +1116,7 @@ Keep in mind that vertical dividers will not display as expected in versions of 
       var SEARCH_INDEX_URL = '/Athena-Framework/search-index.json';
       var SEARCH_DATA_URL = '/Athena-Framework/search-data.json';
     </script>
-    <script src="/Athena-Framework/static/js/docs.min.js?v=1.0.8"></script>
+    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.0"></script>
 
   </body>
 </html>

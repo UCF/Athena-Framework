@@ -17,7 +17,7 @@
     
 
     <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.0.8">
+    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.0">
     <link rel="canonical" href="https://ucf.github.io/Athena-Framework/utilities/sizing/">
   </head>
 
@@ -96,6 +96,10 @@
 
             <div class="ml-4 collapse afd-sidenav " id="sidenav-getting-started">
                 <ul class="nav d-flex flex-column">
+                    
+                        
+                    
+
                     
                         
                         
@@ -196,6 +200,10 @@
                 <ul class="nav d-flex flex-column">
                     
                         
+                    
+
+                    
+                        
                         
 
                         
@@ -259,6 +267,10 @@
 
             <div class="ml-4 collapse afd-sidenav " id="sidenav-content">
                 <ul class="nav d-flex flex-column">
+                    
+                        
+                    
+
                     
                         
                         
@@ -357,6 +369,10 @@
 
             <div class="ml-4 collapse afd-sidenav " id="sidenav-components">
                 <ul class="nav d-flex flex-column">
+                    
+                        
+                    
+
                     
                         
                         
@@ -604,6 +620,10 @@
                 <ul class="nav d-flex flex-column">
                     
                         
+                    
+
+                    
+                        
                         
 
                         
@@ -798,6 +818,17 @@
                         
 
                         <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/stretched-links/">
+                                Stretched Links
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
                             <a class="nav-link " href="/Athena-Framework/utilities/typography/">
                                 Typography
                             </a>
@@ -836,49 +867,144 @@
 
       </div>
       <div class="col-md-8 pull-md-4 pt-3 pt-md-5 afd-content">
-        <p>Easily make an element as wide or as tall (relative to its parent) with our width and height utilities. Includes support for <code>25%</code>, <code>50%</code>, <code>75%</code>, and <code>100%</code> by default.</p>
+        <p>Easily make an element as wide or as tall (relative to its parent) with our width and height utilities. Includes support for <code>25%</code>, <code>50%</code>, <code>75%</code>, <code>100%</code>, and <code>auto</code> by default.</p>
+<p>Max-width and max-height utilities are also available; <code>100%</code> and <code>none</code> max-values are supported out-of-the-box.</p>
 <p>Width and height utilities are generated from the <code>$sizes</code> Sass map in <code>_variables.scss</code>. Modify those values as you need to generate different utilities here.</p>
+<h2 id="contents">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#width">Width </a></li><li><a href="#height">Height </a></li><li><a href="#max-width">Max-width </a></li><li><a href="#max-height">Max-height </a></li></ul></nav><h2 id="width">Width <a class="header-anchor" href="#width"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <div class="afd-example">
 <div class="w-25 p-3" style="background-color: #eee;">Width 25%</div>
 <div class="w-50 p-3" style="background-color: #eee;">Width 50%</div>
 <div class="w-75 p-3" style="background-color: #eee;">Width 75%</div>
 <div class="w-100 p-3" style="background-color: #eee;">Width 100%</div>
+<div class="w-auto p-3" style="background-color: #eee;">Width auto</div>
 </div><div class="highlight"><pre><code class="nohighlight">
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"w-25 p-3"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"background-color: #eee;"</span>&gt;</span>Width 25%<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"w-50 p-3"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"background-color: #eee;"</span>&gt;</span>Width 50%<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"w-75 p-3"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"background-color: #eee;"</span>&gt;</span>Width 75%<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"w-100 p-3"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"background-color: #eee;"</span>&gt;</span>Width 100%<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;w-25 p-3&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: #eee;&quot;</span>&gt;</span>Width 25%<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;w-50 p-3&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: #eee;&quot;</span>&gt;</span>Width 50%<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;w-75 p-3&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: #eee;&quot;</span>&gt;</span>Width 75%<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;w-100 p-3&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: #eee;&quot;</span>&gt;</span>Width 100%<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;w-auto p-3&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;background-color: #eee;&quot;</span>&gt;</span>Width auto<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
+<p>Responsive variants also exist for width modifiers:</p>
+<ul>
+<li><code>.w-25</code></li>
+<li><code>.w-sm-25</code></li>
+<li><code>.w-md-25</code></li>
+<li><code>.w-lg-25</code></li>
+<li><code>.w-xl-25</code></li>
+<li><code>.w-50</code></li>
+<li><code>.w-sm-50</code></li>
+<li><code>.w-md-50</code></li>
+<li><code>.w-lg-50</code></li>
+<li><code>.w-xl-50</code></li>
+<li><code>.w-75</code></li>
+<li><code>.w-sm-75</code></li>
+<li><code>.w-md-75</code></li>
+<li><code>.w-lg-75</code></li>
+<li><code>.w-xl-75</code></li>
+<li><code>.w-100</code></li>
+<li><code>.w-sm-100</code></li>
+<li><code>.w-md-100</code></li>
+<li><code>.w-lg-100</code></li>
+<li><code>.w-xl-100</code></li>
+<li><code>.w-auto</code></li>
+<li><code>.w-sm-auto</code></li>
+<li><code>.w-md-auto</code></li>
+<li><code>.w-lg-auto</code></li>
+<li><code>.w-xl-auto</code></li>
+</ul>
+<h2 id="height">Height <a class="header-anchor" href="#height"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <div class="afd-example">
 <div style="height: 100px; background-color: rgba(255,0,0,0.1);">
   <div class="h-25 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 25%</div>
   <div class="h-50 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 50%</div>
   <div class="h-75 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 75%</div>
   <div class="h-100 d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height 100%</div>
+  <div class="h-auto d-inline-block" style="width: 120px; background-color: rgba(0,0,255,.1)">Height auto</div>
 </div>
 </div><div class="highlight"><pre><code class="nohighlight">
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 100px; background-color: rgba(255,0,0,0.1);"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"h-25 d-inline-block"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 120px; background-color: rgba(0,0,255,.1)"</span>&gt;</span>Height 25%<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"h-50 d-inline-block"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 120px; background-color: rgba(0,0,255,.1)"</span>&gt;</span>Height 50%<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"h-75 d-inline-block"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 120px; background-color: rgba(0,0,255,.1)"</span>&gt;</span>Height 75%<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"h-100 d-inline-block"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 120px; background-color: rgba(0,0,255,.1)"</span>&gt;</span>Height 100%<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;height: 100px; background-color: rgba(255,0,0,0.1);&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;h-25 d-inline-block&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 120px; background-color: rgba(0,0,255,.1)&quot;</span>&gt;</span>Height 25%<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;h-50 d-inline-block&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 120px; background-color: rgba(0,0,255,.1)&quot;</span>&gt;</span>Height 50%<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;h-75 d-inline-block&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 120px; background-color: rgba(0,0,255,.1)&quot;</span>&gt;</span>Height 75%<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;h-100 d-inline-block&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 120px; background-color: rgba(0,0,255,.1)&quot;</span>&gt;</span>Height 100%<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;h-auto d-inline-block&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 120px; background-color: rgba(0,0,255,.1)&quot;</span>&gt;</span>Height auto<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
-<p>You can also use <code>max-width: 100%;</code> and <code>max-height: 100%;</code> utilities as needed.</p>
+<p>Responsive variants also exist for height modifiers:</p>
+<ul>
+<li><code>.h-25</code></li>
+<li><code>.h-sm-25</code></li>
+<li><code>.h-md-25</code></li>
+<li><code>.h-lg-25</code></li>
+<li><code>.h-xl-25</code></li>
+<li><code>.h-50</code></li>
+<li><code>.h-sm-50</code></li>
+<li><code>.h-md-50</code></li>
+<li><code>.h-lg-50</code></li>
+<li><code>.h-xl-50</code></li>
+<li><code>.h-75</code></li>
+<li><code>.h-sm-75</code></li>
+<li><code>.h-md-75</code></li>
+<li><code>.h-lg-75</code></li>
+<li><code>.h-xl-75</code></li>
+<li><code>.h-100</code></li>
+<li><code>.h-sm-100</code></li>
+<li><code>.h-md-100</code></li>
+<li><code>.h-lg-100</code></li>
+<li><code>.h-xl-100</code></li>
+<li><code>.h-auto</code></li>
+<li><code>.h-sm-auto</code></li>
+<li><code>.h-md-auto</code></li>
+<li><code>.h-lg-auto</code></li>
+<li><code>.h-xl-auto</code></li>
+</ul>
+<h2 id="max-width">Max-width <a class="header-anchor" href="#max-width"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <div class="afd-example">
-<img class="mw-100" data-src="holder.js/1000px100?text=Max-width%20%3D%20100%25" alt="Max-width 100%">
+<img class="mw-100" src="//via.placeholder.com/1000x100?text=Max-width:+100%" alt="Max-width 100%">
+<img class="ml-0 mw-none" src="//via.placeholder.com/1000x100?text=Max-width:+none" alt="Max-width none">
 </div><div class="highlight"><pre><code class="nohighlight">
-<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mw-100"</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">"holder.js/1000px100?text=Max-width%20%3D%20100%25"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Max-width 100%"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;mw-100&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;//via.placeholder.com/1000x100?text=Max-width:+100%&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Max-width 100%&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;ml-0 mw-none&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;//via.placeholder.com/1000x100?text=Max-width:+none&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Max-width none&quot;</span>&gt;</span>
 </code></pre></div>
+<p>Responsive variants also exist for max-width:</p>
+<ul>
+<li><code>.mw-100</code></li>
+<li><code>.mw-sm-100</code></li>
+<li><code>.mw-md-100</code></li>
+<li><code>.mw-lg-100</code></li>
+<li><code>.mw-xl-100</code></li>
+<li><code>.mw-none</code></li>
+<li><code>.mw-sm-none</code></li>
+<li><code>.mw-md-none</code></li>
+<li><code>.mw-lg-none</code></li>
+<li><code>.mw-xl-none</code></li>
+</ul>
+<h2 id="max-height">Max-height <a class="header-anchor" href="#max-height"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <div class="afd-example">
 <div style="height: 100px; background-color: rgba(255,0,0,0.1);">
-  <div class="mh-100" style="width: 100px; height: 200px; background-color: rgba(0,0,255,0.1);">Max-height 100%</div>
+  <div class="d-inline-block mh-100" style="width: 100px; height: 130px; background-color: rgba(0,0,255,0.1);">Max-height 100%</div>
+  <div class="d-inline-block mh-none" style="width: 100px; height: 130px; background-color: rgba(0,0,255,0.1);">Max-height none</div>
 </div>
 </div><div class="highlight"><pre><code class="nohighlight">
-<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 100px; background-color: rgba(255,0,0,0.1);"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"mh-100"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 100px; height: 200px; background-color: rgba(0,0,255,0.1);"</span>&gt;</span>Max-height 100%<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;height: 100px; background-color: rgba(255,0,0,0.1);&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;d-inline-block mh-100&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 100px; height: 130px; background-color: rgba(0,0,255,0.1);&quot;</span>&gt;</span>Max-height 100%<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;d-inline-block mh-none&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 100px; height: 130px; background-color: rgba(0,0,255,0.1);&quot;</span>&gt;</span>Max-height none<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
+<p>Responsive variants also exist for max-height:</p>
+<ul>
+<li><code>.mh-100</code></li>
+<li><code>.mh-sm-100</code></li>
+<li><code>.mh-md-100</code></li>
+<li><code>.mh-lg-100</code></li>
+<li><code>.mh-xl-100</code></li>
+<li><code>.mh-none</code></li>
+<li><code>.mh-sm-none</code></li>
+<li><code>.mh-md-none</code></li>
+<li><code>.mh-lg-none</code></li>
+<li><code>.mh-xl-none</code></li>
+</ul>
 
       </div>
     </div>
@@ -904,7 +1030,7 @@
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.0.8</strong>.
+              Current version: <strong>v1.1.0</strong>.
             </p>
             <p class="mb-0">
               Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
@@ -924,8 +1050,8 @@
       </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js" integrity="sha256-mIiWebTG82x+OcV3vUA49ffGDIAJ53uC9jflw5/+REs=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.7/js/tether.min.js" integrity="sha384-CPFFlrdhp9pDDCqRqdTKNZ5oAHsnfnvHGt0CsRIeL5Gc7V/OkP1Y4w8zTxlV3mat" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.bundle.min.js" integrity="sha256-VCsWOz+0GuHdS/sIICtQNTFJdbaDI80rxvoB7BXabrU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
 
@@ -933,7 +1059,7 @@
       var SEARCH_INDEX_URL = '/Athena-Framework/search-index.json';
       var SEARCH_DATA_URL = '/Athena-Framework/search-data.json';
     </script>
-    <script src="/Athena-Framework/static/js/docs.min.js?v=1.0.8"></script>
+    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.0"></script>
 
   </body>
 </html>

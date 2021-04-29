@@ -17,7 +17,7 @@
     
 
     <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.0.8">
+    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.0">
     <link rel="canonical" href="https://ucf.github.io/Athena-Framework/getting-started/quick-start/">
   </head>
 
@@ -102,6 +102,10 @@
 
             <div class="ml-4 collapse afd-sidenav show" id="sidenav-getting-started">
                 <ul class="nav d-flex flex-column">
+                    
+                        
+                    
+
                     
                         
                         
@@ -204,6 +208,10 @@
                 <ul class="nav d-flex flex-column">
                     
                         
+                    
+
+                    
+                        
                         
 
                         
@@ -267,6 +275,10 @@
 
             <div class="ml-4 collapse afd-sidenav " id="sidenav-content">
                 <ul class="nav d-flex flex-column">
+                    
+                        
+                    
+
                     
                         
                         
@@ -365,6 +377,10 @@
 
             <div class="ml-4 collapse afd-sidenav " id="sidenav-components">
                 <ul class="nav d-flex flex-column">
+                    
+                        
+                    
+
                     
                         
                         
@@ -608,6 +624,10 @@
                 <ul class="nav d-flex flex-column">
                     
                         
+                    
+
+                    
+                        
                         
 
                         
@@ -800,6 +820,17 @@
                         
 
                         <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/stretched-links/">
+                                Stretched Links
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
                             <a class="nav-link " href="/Athena-Framework/utilities/typography/">
                                 Typography
                             </a>
@@ -849,54 +880,54 @@
 <p>Athena requires the use of the HTML5 doctype. Make sure you've included it at the very top of your document.</p>
 <div class="highlight"><pre><code class="nohighlight">
 <span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
   ...
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre></div>
 <h3 id="responsive-meta-tag">Responsive meta tag <a class="header-anchor" href="#responsive-meta-tag"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Athena is developed <em>mobile first</em>, a strategy in which we optimize code for mobile devices first and then scale up components as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, <strong>add the responsive viewport meta tag</strong> to your <code>&lt;head&gt;</code>.</p>
 <div class="highlight"><pre><code class="nohighlight">
-<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1, shrink-to-fit=no"</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;</span> /&gt;</span>
 </code></pre></div>
 <p>You can see an example of this in action in the <a href="#starter-template">starter template</a>.</p>
 <h2 id="2-add-stylesheets">2. Add stylesheets <a class="header-anchor" href="#2-add-stylesheets"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Add the Athena stylesheet before all other stylesheets in your document <code>&lt;head&gt;</code>. If you're <a href="/Athena-Framework/getting-started/download-install#webfont-configuration">using Cloud.typography</a>, your CSS key should go immediately before the Athena stylesheet.</p>
 <h3 id="using-fallback-fonts-only-no-cloud-typography-fonts">Using fallback fonts only (no Cloud.typography fonts) <a class="header-anchor" href="#using-fallback-fonts-only-no-cloud-typography-fonts"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <div class="highlight"><pre><code class="nohighlight">
-<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://cdn.ucf.edu/athena-framework/v1.0.8/css/framework.min.css"</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://cdn.ucf.edu/athena-framework/v1.1.0/css/framework.min.css&quot;</span> /&gt;</span>
 </code></pre></div>
 <h3 id="using-cloud-typography-fonts">Using Cloud.typography fonts <a class="header-anchor" href="#using-cloud-typography-fonts"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <div class="highlight"><pre><code class="nohighlight">
-<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://cloud.typography.com/xxxxxx/xxxxxx/css/fonts.css"</span> /&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://cdn.ucf.edu/athena-framework/v1.0.8/css/framework.min.css"</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://cloud.typography.com/xxxxxx/xxxxxx/css/fonts.css&quot;</span> /&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://cdn.ucf.edu/athena-framework/v1.1.0/css/framework.min.css&quot;</span> /&gt;</span>
 </code></pre></div>
 <h2 id="3-add-javascript">3. Add JavaScript <a class="header-anchor" href="#3-add-javascript"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Add jQuery, Tether, and Athena's JavaScript near the end of your pages, right before the closing <code>&lt;/body&gt;</code> tag. Be sure to place jQuery and Tether first, as our code depends on them. While we use jQuery's full build in our docs, the slim version is also supported.</p>
 <div class="highlight"><pre><code class="nohighlight">
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://code.jquery.com/jquery-3.3.1.min.js"</span> <span class="hljs-attr">integrity</span>=<span class="hljs-string">"sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="</span> <span class="hljs-attr">crossorigin</span>=<span class="hljs-string">"anonymous"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js"</span> <span class="hljs-attr">integrity</span>=<span class="hljs-string">"sha256-mIiWebTG82x+OcV3vUA49ffGDIAJ53uC9jflw5/+REs="</span> <span class="hljs-attr">crossorigin</span>=<span class="hljs-string">"anonymous"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.ucf.edu/athena-framework/v1.0.8/js/framework.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js&quot;</span> <span class="hljs-attr">integrity</span>=<span class="hljs-string">&quot;sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK&quot;</span> <span class="hljs-attr">crossorigin</span>=<span class="hljs-string">&quot;anonymous&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.7/js/tether.min.js&quot;</span> <span class="hljs-attr">integrity</span>=<span class="hljs-string">&quot;sha384-CPFFlrdhp9pDDCqRqdTKNZ5oAHsnfnvHGt0CsRIeL5Gc7V/OkP1Y4w8zTxlV3mat&quot;</span> <span class="hljs-attr">crossorigin</span>=<span class="hljs-string">&quot;anonymous&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.ucf.edu/athena-framework/v1.1.0/js/framework.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre></div>
 <h2 id="starter-template">Starter template <a class="header-anchor" href="#starter-template"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Following the steps above, a basic starter template would look something like this:</p>
 <div class="highlight"><pre><code class="nohighlight">
 <span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
     <span class="hljs-comment">&lt;!-- Required meta tags --&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1, shrink-to-fit=no"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;</span> /&gt;</span>
 <span class="hljs-symbol"></span>
     <span class="hljs-comment">&lt;!-- Athena CSS --&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://cdn.ucf.edu/athena-framework/v1.0.8/css/framework.min.css"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://cdn.ucf.edu/athena-framework/v1.1.0/css/framework.min.css&quot;</span> /&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello, world!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
 <span class="hljs-symbol"></span>
     <span class="hljs-comment">&lt;!-- jQuery first, then Tether, then Athena JS. --&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://code.jquery.com/jquery-3.3.1.min.js"</span> <span class="hljs-attr">integrity</span>=<span class="hljs-string">"sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="</span> <span class="hljs-attr">crossorigin</span>=<span class="hljs-string">"anonymous"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js"</span> <span class="hljs-attr">integrity</span>=<span class="hljs-string">"sha256-mIiWebTG82x+OcV3vUA49ffGDIAJ53uC9jflw5/+REs="</span> <span class="hljs-attr">crossorigin</span>=<span class="hljs-string">"anonymous"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.ucf.edu/athena-framework/v1.0.8/js/framework.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js&quot;</span> <span class="hljs-attr">integrity</span>=<span class="hljs-string">&quot;sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK&quot;</span> <span class="hljs-attr">crossorigin</span>=<span class="hljs-string">&quot;anonymous&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.7/js/tether.min.js&quot;</span> <span class="hljs-attr">integrity</span>=<span class="hljs-string">&quot;sha384-CPFFlrdhp9pDDCqRqdTKNZ5oAHsnfnvHGt0CsRIeL5Gc7V/OkP1Y4w8zTxlV3mat&quot;</span> <span class="hljs-attr">crossorigin</span>=<span class="hljs-string">&quot;anonymous&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.ucf.edu/athena-framework/v1.1.0/js/framework.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre></div>
@@ -926,7 +957,7 @@
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.0.8</strong>.
+              Current version: <strong>v1.1.0</strong>.
             </p>
             <p class="mb-0">
               Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
@@ -946,8 +977,8 @@
       </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js" integrity="sha256-mIiWebTG82x+OcV3vUA49ffGDIAJ53uC9jflw5/+REs=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.7/js/tether.min.js" integrity="sha384-CPFFlrdhp9pDDCqRqdTKNZ5oAHsnfnvHGt0CsRIeL5Gc7V/OkP1Y4w8zTxlV3mat" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.bundle.min.js" integrity="sha256-VCsWOz+0GuHdS/sIICtQNTFJdbaDI80rxvoB7BXabrU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
 
@@ -955,7 +986,7 @@
       var SEARCH_INDEX_URL = '/Athena-Framework/search-index.json';
       var SEARCH_DATA_URL = '/Athena-Framework/search-data.json';
     </script>
-    <script src="/Athena-Framework/static/js/docs.min.js?v=1.0.8"></script>
+    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.0"></script>
 
   </body>
 </html>

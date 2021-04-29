@@ -17,7 +17,7 @@
     
 
     <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.0.8">
+    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.0">
     <link rel="canonical" href="https://ucf.github.io/Athena-Framework/content/resets/">
   </head>
 
@@ -98,6 +98,10 @@
 
             <div class="ml-4 collapse afd-sidenav " id="sidenav-getting-started">
                 <ul class="nav d-flex flex-column">
+                    
+                        
+                    
+
                     
                         
                         
@@ -198,6 +202,10 @@
                 <ul class="nav d-flex flex-column">
                     
                         
+                    
+
+                    
+                        
                         
 
                         
@@ -265,6 +273,10 @@
 
             <div class="ml-4 collapse afd-sidenav show" id="sidenav-content">
                 <ul class="nav d-flex flex-column">
+                    
+                        
+                    
+
                     
                         
                         
@@ -365,6 +377,10 @@
 
             <div class="ml-4 collapse afd-sidenav " id="sidenav-components">
                 <ul class="nav d-flex flex-column">
+                    
+                        
+                    
+
                     
                         
                         
@@ -608,6 +624,10 @@
                 <ul class="nav d-flex flex-column">
                     
                         
+                    
+
+                    
+                        
                         
 
                         
@@ -791,6 +811,17 @@
                         <li class="nav-item">
                             <a class="nav-link " href="/Athena-Framework/utilities/states/">
                                 States
+                            </a>
+                        </li>
+                    
+                        
+                        
+
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/Athena-Framework/utilities/stretched-links/">
+                                Stretched Links
                             </a>
                         </li>
                     
@@ -1148,7 +1179,7 @@ Option three is disabled
 <h2 id="html5-hidden-attribute">HTML5 <code>[hidden]</code> attribute <a class="header-anchor" href="#html5-hidden-attribute"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>HTML5 adds <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden">a new global attribute named <code>[hidden]</code></a>, which is styled as <code>display: none</code> by default. Borrowing an idea from <a href="https://purecss.io">PureCSS</a>, we improve upon this default by making <code>[hidden] { display: none !important; }</code> to help prevent its <code>display</code> from getting accidentally overridden.</p>
 <div class="highlight"><pre><code class="nohighlight">
-<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">hidden</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">hidden</span>&gt;</span>
 </code></pre></div>
 <div class="afd-callout afd-callout-warning"><h4 id="jquery-incompatibility">jQuery incompatibility <a class="header-anchor" href="#jquery-incompatibility"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
 <p><code>[hidden]</code> is not compatible with jQuery's <code>$(...).hide()</code> and <code>$(...).show()</code> methods. Therefore, we don't currently especially endorse <code>[hidden]</code> over other techniques for managing the <code>display</code> of elements.</p>
@@ -1179,7 +1210,7 @@ Option three is disabled
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.0.8</strong>.
+              Current version: <strong>v1.1.0</strong>.
             </p>
             <p class="mb-0">
               Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
@@ -1199,8 +1230,8 @@ Option three is disabled
       </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js" integrity="sha256-mIiWebTG82x+OcV3vUA49ffGDIAJ53uC9jflw5/+REs=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.7/js/tether.min.js" integrity="sha384-CPFFlrdhp9pDDCqRqdTKNZ5oAHsnfnvHGt0CsRIeL5Gc7V/OkP1Y4w8zTxlV3mat" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.bundle.min.js" integrity="sha256-VCsWOz+0GuHdS/sIICtQNTFJdbaDI80rxvoB7BXabrU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
 
@@ -1208,7 +1239,7 @@ Option three is disabled
       var SEARCH_INDEX_URL = '/Athena-Framework/search-index.json';
       var SEARCH_DATA_URL = '/Athena-Framework/search-data.json';
     </script>
-    <script src="/Athena-Framework/static/js/docs.min.js?v=1.0.8"></script>
+    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.0"></script>
 
   </body>
 </html>
