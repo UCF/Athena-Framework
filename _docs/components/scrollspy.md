@@ -16,7 +16,7 @@ Scrollspy has a few requirements to function properly:
 
 - It must be used on a [nav component]({{ '/components/navs' | url }}).
 - Scrollspy requires `position: relative;` on the element you’re spying on, usually the `<body>`.
-- When spying on elements other than the <body>, be sure to have a height set and overflow-y: scroll; applied.
+- When spying on elements other than the `<body>`, be sure to have a height set and overflow-y: scroll; applied.
 - Anchors (`<a>`) are required and must point to an element with that ID.
 
 When successfully implemented, your nav will update accordingly, moving the `.active` class from one item to the next based on their associated targets.
@@ -66,14 +66,8 @@ Scroll the area below the navbar and watch the active class change. The dropdown
 
 To easily add scrollspy behavior to your topbar navigation, add `data-spy="scroll"` to the element you want to spy on (most typically this would be the `<body>`). Then add the `data-target` attribute with the ID or class of the parent element of any `.nav` component.
 
-{% highlight 'css' %}
-body {
-  position: relative;
-}
-{% endhighlight %}
-
 {% highlight 'html' %}
-<body data-spy="scroll" data-target="#navbar-example">
+<body class="position-relative" data-spy="scroll" data-target="#navbar-example">
   ...
   <div id="navbar-example">
     <ul class="nav nav-tabs" role="tablist">
@@ -86,7 +80,7 @@ body {
 
 ### Via JavaScript
 
-After adding `position: relative;` in your CSS, call the scrollspy via JavaScript:
+After applying `position: relative;` to the target element, call the scrollspy via JavaScript:
 
 {% highlight 'js' %}
 $('body').scrollspy({ target: '#navbar-example' })
