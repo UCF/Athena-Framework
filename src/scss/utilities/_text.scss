@@ -23,6 +23,38 @@
 
 
 //
+// Font size classes
+//
+
+.font-size-base {
+  // sass-lint:disable-block no-important
+  font-size: $font-size-base !important;
+
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-base-md !important;
+  }
+}
+
+.font-size-sm {
+  // sass-lint:disable-block no-important
+  font-size: $font-size-sm-xs !important;
+
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-sm !important;
+  }
+}
+
+.font-size-lg {
+  // sass-lint:disable-block no-important
+  font-size: $font-size-lg-xs !important;
+
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-lg !important;
+  }
+}
+
+
+//
 // Extended text-transform classes
 //
 

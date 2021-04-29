@@ -85,6 +85,17 @@ Note that `.font-condensed` is only optimized for heading usage due to readabili
 {% endexample %}
 
 
+## Font size
+
+In addition to using [`.lead`]({{ '/content/typography' | url }}#lead) and [`.small`]({{ '/content/typography' | url }}#inline-text-elements), you can adjust the font size of your content using font size utility classes.  Like base body copy and most components, font size will scale down at the -xs-sm breakpoints using these classes.
+
+{% example html %}
+<p class="font-size-sm">Smaller text</p>
+<p class="font-size-base">Standard sized text (matches base body font size)</p>
+<p class="font-size-lg">Larger text</p>
+{% endexample %}
+
+
 ## Letter spacing
 
 Athena includes a set of letter spacing classes, which can be modified via the `$letter-spacing` Sass variable.
@@ -102,6 +113,12 @@ Athena includes a set of letter spacing classes, which can be modified via the `
 ## Line height
 
 Adjust line height on the fly with line height classes.  Available classes and their line-height values can be modified via the `$line-height` Sass variable.
+
+{% callout 'info' %}
+### Line height on inline text
+
+Keep in mind that [`line-height` behaves differently](https://developer.mozilla.org/en-US/docs/Web/CSS/line-height) for block-level vs inline elements.  If you're having trouble with line height on [inline elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#elements) (such as `<span>`, `<strong>`, and `<em>`) that span multiple lines, try adding `.d-inline-block` (or another display modifier) to the element instead.
+{% endcallout %}
 
 {% example html %}
 <p class="line-height-0">
