@@ -39,11 +39,6 @@ Use the `.hr-black`, `.hr-white`, or `.hr-primary` classes to modify the color o
 
 You can modify a divider to be oriented vertically using the `.hr-vertical` class. Vertical dividers are best used within columns (or some other block-level parent element) to help define how tall the divider should be.
 
-{% callout 'warning' %}
-<h3 class="h5">Browser Compatibility</h3>
-Keep in mind that vertical dividers will not display as expected in versions of Safari older than 11.
-{% endcallout %}
-
 {% example html %}
 <div class="row">
   <div class="col">
@@ -101,3 +96,49 @@ Vertical dividers can also be used with flex, height, and margin utility classes
   </div>
 </div>
 {% endexample %}
+
+### Responsive Orientation
+
+A divider can transition between horizontal and vertical orientations using responsive class variants:
+
+{% example html %}
+<div class="row">
+  <div class="col-12 col-lg">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra felis vel nisl aliquet vehicula. Curabitur suscipit neque risus, id semper purus elementum nec. Proin commodo gravida lectus ac tincidunt.
+  </div>
+  <div class="col-12 col-lg-auto">
+    <hr class="hr-lg-vertical">
+  </div>
+  <div class="col-12 col-lg">
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra felis vel nisl aliquet vehicula. Curabitur suscipit neque risus, id semper purus elementum nec. Proin commodo gravida lectus ac tincidunt.
+  </div>
+</div>
+{% endexample %}
+
+You can additionally use the `.hr-horizontal` class and responsive variants to reset a vertical divider to horizontal:
+
+{% example html %}
+<div class="row">
+  <div class="col col-lg-12">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra felis vel nisl aliquet vehicula. Curabitur suscipit neque risus, id semper purus elementum nec. Proin commodo gravida lectus ac tincidunt.
+  </div>
+  <div class="col-auto col-lg-12">
+    <hr class="hr-vertical hr-lg-horizontal">
+  </div>
+  <div class="col col-lg-12">
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra felis vel nisl aliquet vehicula. Curabitur suscipit neque risus, id semper purus elementum nec. Proin commodo gravida lectus ac tincidunt.
+  </div>
+</div>
+{% endexample %}
+
+Available responsive class variants for vertical and horizontal dividers include:
+- `.hr-vertical`
+- `.hr-sm-vertical`
+- `.hr-md-vertical`
+- `.hr-lg-vertical`
+- `.hr-xl-vertical`
+- `.hr-horizontal`
+- `.hr-sm-horizontal`
+- `.hr-md-horizontal`
+- `.hr-lg-horizontal`
+- `.hr-xl-horizontal`

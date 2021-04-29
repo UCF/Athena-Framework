@@ -1,8 +1,5 @@
 /* global Tether */
 
-import Util from './util'
-
-
 /**
  * --------------------------------------------------------------------------
  * Bootstrap (v4.0.0-alpha.6): tooltip.js
@@ -671,5 +668,3 @@ const Tooltip = (($) => {
   return Tooltip
 
 })(jQuery)
-
-export default Tooltip

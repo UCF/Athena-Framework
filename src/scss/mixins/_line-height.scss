@@ -1,0 +1,11 @@
+//
+// Line height utility class variants
+//
+@mixin line-height-variants() {
+  @each $key, $val in $line-height {
+    .line-height-#{$key} {
+      // sass-lint:disable-block no-important
+      line-height: $val !important;
+    }
+  }
+}

@@ -45,13 +45,13 @@ permalink: /utilities/
 
   <h3 class="mt-4 mb-3">Border-radius</h3>
 
-  <img src="//placehold.it/75x75" alt="..." class="rounded">
-  <img src="//placehold.it/75x75" alt="..." class="rounded-top">
-  <img src="//placehold.it/75x75" alt="..." class="rounded-right">
-  <img src="//placehold.it/75x75" alt="..." class="rounded-bottom">
-  <img src="//placehold.it/75x75" alt="..." class="rounded-left">
-  <img src="//placehold.it/75x75" alt="..." class="rounded-circle">
-  <img src="//placehold.it/75x75" alt="..." class="rounded-0">
+  <img src="//via.placeholder.com/75x75" alt="..." class="rounded">
+  <img src="//via.placeholder.com/75x75" alt="..." class="rounded-top">
+  <img src="//via.placeholder.com/75x75" alt="..." class="rounded-right">
+  <img src="//via.placeholder.com/75x75" alt="..." class="rounded-bottom">
+  <img src="//via.placeholder.com/75x75" alt="..." class="rounded-left">
+  <img src="//via.placeholder.com/75x75" alt="..." class="rounded-circle">
+  <img src="//via.placeholder.com/75x75" alt="..." class="rounded-0">
 
 
   <hr class="mt-5 mb-5">
@@ -1130,11 +1130,46 @@ permalink: /utilities/
 
   <h2 class="mb-3">Position</h2>
 
-  <h3 class="mt-4 mb-3"><a href="./navbar-fixed-top.html">Fixed Top</a></h3>
+  <h3 class="mt-4 mb-3">Static</h3>
 
-  <h3 class="mt-4 mb-3"><a href="./navbar-fixed-bottom.html">Fixed Bottom</a></h3>
+  <div class="position-static bg-default">Static</div>
 
-  <h3 class="mt-4 mb-3"><a href="./navbar-sticky-top.html">Sticky Top</a></h3>
+  <h3 class="mt-4 mb-3">Relative</h3>
+
+  <div class="position-relative bg-default">Relative</div>
+
+  <h3 class="mt-4 mb-3">Absolute</h3>
+
+  <div class="position-relative bg-default mb-3" style="height: 8rem;">
+    <div class="position-absolute-top bg-inverse-t-3">Absolute Top</div>
+  </div>
+
+  <div class="position-relative bg-default mb-3" style="height: 8rem;">
+    <div class="position-absolute-bottom bg-inverse-t-3">Absolute Bottom</div>
+  </div>
+
+  <h3 class="mt-4 mb-3">Responsive Examples</h3>
+
+  <div class="position-relative bg-default p-3 mb-3" style="height: 8rem;">
+    <div class="bg-inverse-t-3 position-static position-md-relative position-lg-absolute-top position-xl-absolute-bottom">
+      <span class="hidden-md-up">-xs-sm: <code>position-static</code></span>
+      <span class="hidden-sm-down hidden-lg-up">-md: <code>position-md-relative</code></span>
+      <span class="hidden-md-down hidden-xl-up">-lg: <code>position-lg-absolute-top</code></span>
+      <span class="hidden-lg-down">-xl: <code>position-xl-absolute-bottom</code></span>
+    </div>
+    <div class="bg-inverse-t-3 position-absolute-top position-md-static position-lg-absolute-bottom position-xl-relative">
+      <span class="hidden-md-up">-xs-sm: <code>position-absolute-top</code></span>
+      <span class="hidden-sm-down hidden-lg-up">-md: <code>position-md-static</code></span>
+      <span class="hidden-md-down hidden-xl-up">-lg: <code>position-lg-absolute-bottom</code></span>
+      <span class="hidden-lg-down">-xl: <code>position-xl-relative</code></span>
+    </div>
+  </div>
+
+  <h3 class="mt-4 mb-3"><a href="./../navbar-fixed-top/">Fixed Top</a></h3>
+
+  <h3 class="mt-4 mb-3"><a href="./../navbar-fixed-bottom/">Fixed Bottom</a></h3>
+
+  <h3 class="mt-4 mb-3"><a href="./../navbar-sticky-top/">Sticky Top</a></h3>
 
 
   <hr class="mt-5 mb-5">
@@ -1218,22 +1253,62 @@ permalink: /utilities/
 
   <h2 class="mb-3">Sizing</h2>
 
-  <div class="w-25 p-3 mb-2 bg-faded">Width 25%</div>
-  <div class="w-50 p-3 mb-2 bg-faded">Width 50%</div>
-  <div class="w-75 p-3 mb-2 bg-faded">Width 75%</div>
-  <div class="w-100 p-3 mb-2 bg-faded">Width 100%</div>
-
-  <div class="bg-faded mb-3" style="height: 100px;">
-    <div class="h-25 d-inline-block bg-default" style="width: 120px;">Height 25%</div>
-    <div class="h-50 d-inline-block bg-default" style="width: 120px;">Height 50%</div>
-    <div class="h-75 d-inline-block bg-default" style="width: 120px;">Height 75%</div>
-    <div class="h-100 d-inline-block bg-default" style="width: 120px;">Height 100%</div>
+  <div class="mb-3">
+    <div class="w-25 p-3 mb-2 bg-default">Width 25%</div>
+    <div class="w-50 p-3 mb-2 bg-default">Width 50%</div>
+    <div class="w-75 p-3 mb-2 bg-default">Width 75%</div>
+    <div class="w-100 p-3 mb-2 bg-default">Width 100%</div>
+    <div class="w-auto p-3 mb-2 bg-default">Width auto</div>
   </div>
 
-  <img class="mw-100 mb-2" src="//placehold.it/1600x300" alt="Max-width 100%">
+  <div class="bg-default p-3 mb-3 w-100 w-sm-75 w-md-50 w-lg-25 w-xl-auto">
+    <div class="hidden-sm-up">-xs: Width 100%</div>
+    <div class="hidden-xs-down hidden-md-up">-sm: Width 75%</div>
+    <div class="hidden-sm-down hidden-lg-up">-md: Width 50%</div>
+    <div class="hidden-md-down hidden-xl-up">-lg: Width 25%</div>
+    <div class="hidden-lg-down">-xl: Width auto</div>
+  </div>
+
+  <div class="bg-faded mb-3" style="height: 125px;">
+    <div class="h-25 d-inline-block align-top bg-default" style="width: 18%;">Height 25%</div>
+    <div class="h-50 d-inline-block align-top bg-default" style="width: 18%;">Height 50%</div>
+    <div class="h-75 d-inline-block align-top bg-default" style="width: 18%;">Height 75%</div>
+    <div class="h-100 d-inline-block align-top bg-default" style="width: 18%;">Height 100%</div>
+    <div class="h-auto d-inline-block align-top bg-default" style="width: 18%;">Height auto</div>
+  </div>
+
+  <div class="bg-faded mb-3" style="height: 125px;">
+    <div class="bg-default h-100 h-sm-75 h-md-50 h-lg-25 h-xl-auto" style="width: 200px;">
+      <div class="hidden-sm-up">-xs: Height 100%</div>
+      <div class="hidden-xs-down hidden-md-up">-sm: Height 75%</div>
+      <div class="hidden-sm-down hidden-lg-up">-md: Height 50%</div>
+      <div class="hidden-md-down hidden-xl-up">-lg: Height 25%</div>
+      <div class="hidden-lg-down">-xl: Height auto</div>
+    </div>
+  </div>
+
+  <div class="bg-faded p-3 mb-3">
+    <img class="mw-100" src="//via.placeholder.com/1150x100?text=Max-width:+100%" alt="Max-width 100%">
+    <img class="mw-none" src="//via.placeholder.com/1150x100?text=Max-width:+none" alt="Max-width none">
+  </div>
+
+  <div class="bg-faded p-3 mb-3">
+    <img class="mw-none mw-sm-100 mw-md-none mw-lg-100 mw-xl-none" src="//placehold.it/1150x100/" alt="Max-width responsive variants test">
+  </div>
 
   <div class="bg-faded mb-3" style="height: 100px;">
-    <div class="mh-100 bg-primary" style="width: 100px; height: 200px;">Max-height 100%</div>
+    <div class="mh-100 d-inline-block bg-default mr-2" style="width: 100px; height: 130px;">Max-height 100%</div>
+    <div class="mh-none d-inline-block bg-default mr-2" style="width: 100px; height: 130px;">Max-height none</div>
+  </div>
+
+  <div class="bg-faded mb-3" style="height: 100px;">
+    <div class="bg-default mh-100 mh-sm-none mh-md-100 mh-lg-none mh-xl-100" style="width: 200px; height: 130px;">
+      <div class="hidden-sm-up">-xs: Max-height 100%</div>
+      <div class="hidden-xs-down hidden-md-up">-sm: Max-height none</div>
+      <div class="hidden-sm-down hidden-lg-up">-md: Max-height 100%</div>
+      <div class="hidden-md-down hidden-xl-up">-lg: Max-height none</div>
+      <div class="hidden-lg-down">-xl: Max-height 100%</div>
+    </div>
   </div>
 
 
@@ -1252,6 +1327,47 @@ permalink: /utilities/
 
   <div class="bg-default text-center mx-auto" style="width: 200px;">
     Centered element
+  </div>
+
+
+  <hr class="mt-5 mb-5">
+
+
+  <!--
+  ================================================
+  STRETCHED LINKS
+  ================================================
+  -->
+
+  <h2 class="mb-3">Stretched Links</h2>
+
+  <div class="bg-default p-5 text-center position-relative">
+    <a class="stretched-link bg-default-link" href="#">Stretched Link</a>
+  </div>
+
+  <div class="card mt-4" style="width: 18rem;">
+    <img src="//via.placeholder.com/250x150/" class="card-img-top" alt="">
+    <div class="card-block">
+      <strong class="card-title">Card with stretched link</strong>
+      <p class="card-text">
+        Some quick example text to build on the card title and make up the bulk of the card's content.
+      </p>
+      <a href="#" class="btn btn-primary stretched-link">Go somewhere</a>
+    </div>
+  </div>
+
+  <div class="row mt-4 position-relative">
+    <div class="col-3">
+      <img src="//via.placeholder.com/250x150/" class="img-fluid" alt="">
+    </div>
+    <div class="col-9 position-static">
+      <strong class="d-block mb-3">
+        <a href="#" class="stretched-link">Columns with stretched link</a>
+      </strong>
+      <p>
+        Note that columns have relative positioning by default, so we must override their position to <code>static</code> manually for an inner stretched link to work as intended.
+      </p>
+    </div>
   </div>
 
 
@@ -1317,6 +1433,12 @@ permalink: /utilities/
   <p class="font-slab-serif"><strong>Slab serif:</strong> Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum.</p>
   <p class="font-condensed"><strong>Condensed:</strong> Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum.</p>
 
+  <h3 class="mt-4 mb-3">Font size</h3>
+
+  <p class="font-size-sm">Small font size</p>
+  <p class="font-size-base">Base font size</p>
+  <p class="font-size-lg">Large font size</p>
+
   <h3 class="mt-4 mb-3">Letter Spacing</h3>
 
   <p class="text-uppercase letter-spacing-0">Ambitioni dedisse scripsisse iudicaretur</p>
@@ -1325,6 +1447,91 @@ permalink: /utilities/
   <p class="text-uppercase letter-spacing-3">Ambitioni dedisse scripsisse iudicaretur</p>
   <p class="text-uppercase letter-spacing-4">Ambitioni dedisse scripsisse iudicaretur</p>
   <p class="text-uppercase letter-spacing-5">Ambitioni dedisse scripsisse iudicaretur</p>
+
+  <h3 class="mt-4 mb-3">Line Height</h3>
+
+  <p class="line-height-0">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta ipsum vitae urna euismod commodo. Phasellus sed
+    nisl nec purus molestie volutpat ac eu ipsum. Pellentesque fringilla, dolor sodales cursus pulvinar, dolor leo imperdiet
+    odio, eget vehicula nulla nisl quis velit. In a tortor nunc. Cras tincidunt felis ut eros aliquam, sit amet ultricies
+    lorem posuere. Proin fringilla velit dui, eu laoreet lorem efficitur a. Nulla ullamcorper mi sed tellus scelerisque
+    cursus.
+  </p>
+  <p class="line-height-1">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta ipsum vitae urna euismod commodo. Phasellus sed
+    nisl nec purus molestie volutpat ac eu ipsum. Pellentesque fringilla, dolor sodales cursus pulvinar, dolor leo imperdiet
+    odio, eget vehicula nulla nisl quis velit. In a tortor nunc. Cras tincidunt felis ut eros aliquam, sit amet ultricies
+    lorem posuere. Proin fringilla velit dui, eu laoreet lorem efficitur a. Nulla ullamcorper mi sed tellus scelerisque
+    cursus.
+  </p>
+  <p class="line-height-2">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta ipsum vitae urna euismod commodo. Phasellus sed
+    nisl nec purus molestie volutpat ac eu ipsum. Pellentesque fringilla, dolor sodales cursus pulvinar, dolor leo imperdiet
+    odio, eget vehicula nulla nisl quis velit. In a tortor nunc. Cras tincidunt felis ut eros aliquam, sit amet ultricies
+    lorem posuere. Proin fringilla velit dui, eu laoreet lorem efficitur a. Nulla ullamcorper mi sed tellus scelerisque
+    cursus.
+  </p>
+  <p class="line-height-3">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta ipsum vitae urna euismod commodo. Phasellus sed
+    nisl nec purus molestie volutpat ac eu ipsum. Pellentesque fringilla, dolor sodales cursus pulvinar, dolor leo imperdiet
+    odio, eget vehicula nulla nisl quis velit. In a tortor nunc. Cras tincidunt felis ut eros aliquam, sit amet ultricies
+    lorem posuere. Proin fringilla velit dui, eu laoreet lorem efficitur a. Nulla ullamcorper mi sed tellus scelerisque
+    cursus.
+  </p>
+  <p class="line-height-4">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta ipsum vitae urna euismod commodo. Phasellus sed
+    nisl nec purus molestie volutpat ac eu ipsum. Pellentesque fringilla, dolor sodales cursus pulvinar, dolor leo imperdiet
+    odio, eget vehicula nulla nisl quis velit. In a tortor nunc. Cras tincidunt felis ut eros aliquam, sit amet ultricies
+    lorem posuere. Proin fringilla velit dui, eu laoreet lorem efficitur a. Nulla ullamcorper mi sed tellus scelerisque
+    cursus.
+  </p>
+  <p class="line-height-5">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta ipsum vitae urna euismod commodo. Phasellus sed
+    nisl nec purus molestie volutpat ac eu ipsum. Pellentesque fringilla, dolor sodales cursus pulvinar, dolor leo imperdiet
+    odio, eget vehicula nulla nisl quis velit. In a tortor nunc. Cras tincidunt felis ut eros aliquam, sit amet ultricies
+    lorem posuere. Proin fringilla velit dui, eu laoreet lorem efficitur a. Nulla ullamcorper mi sed tellus scelerisque
+    cursus.
+  </p>
+  <p class="line-height-6">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta ipsum vitae urna euismod commodo. Phasellus sed
+    nisl nec purus molestie volutpat ac eu ipsum. Pellentesque fringilla, dolor sodales cursus pulvinar, dolor leo imperdiet
+    odio, eget vehicula nulla nisl quis velit. In a tortor nunc. Cras tincidunt felis ut eros aliquam, sit amet ultricies
+    lorem posuere. Proin fringilla velit dui, eu laoreet lorem efficitur a. Nulla ullamcorper mi sed tellus scelerisque
+    cursus.
+  </p>
+
+  <h2 class="line-height-6">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta ipsum vitae urna euismod commodo. Phasellus sed
+    nisl nec purus molestie volutpat ac eu ipsum. Pellentesque fringilla, dolor sodales cursus pulvinar, dolor leo
+    imperdiet
+    odio, eget vehicula nulla nisl quis velit. In a tortor nunc. Cras tincidunt felis ut eros aliquam, sit amet ultricies
+    lorem posuere. Proin fringilla velit dui, eu laoreet lorem efficitur a. Nulla ullamcorper mi sed tellus scelerisque
+    cursus.
+  </h2>
+  <h2 class="h6 line-height-6">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta ipsum vitae urna euismod commodo. Phasellus sed
+    nisl nec purus molestie volutpat ac eu ipsum. Pellentesque fringilla, dolor sodales cursus pulvinar, dolor leo
+    imperdiet
+    odio, eget vehicula nulla nisl quis velit. In a tortor nunc. Cras tincidunt felis ut eros aliquam, sit amet ultricies
+    lorem posuere. Proin fringilla velit dui, eu laoreet lorem efficitur a. Nulla ullamcorper mi sed tellus scelerisque
+    cursus.
+  </h2>
+  <p class="lead line-height-1">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta ipsum vitae urna euismod commodo. Phasellus sed
+    nisl nec purus molestie volutpat ac eu ipsum. Pellentesque fringilla, dolor sodales cursus pulvinar, dolor leo
+    imperdiet
+    odio, eget vehicula nulla nisl quis velit. In a tortor nunc. Cras tincidunt felis ut eros aliquam, sit amet ultricies
+    lorem posuere. Proin fringilla velit dui, eu laoreet lorem efficitur a. Nulla ullamcorper mi sed tellus scelerisque
+    cursus.
+  </p>
+  <p class="small line-height-2">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porta ipsum vitae urna euismod commodo. Phasellus sed
+    nisl nec purus molestie volutpat ac eu ipsum. Pellentesque fringilla, dolor sodales cursus pulvinar, dolor leo
+    imperdiet
+    odio, eget vehicula nulla nisl quis velit. In a tortor nunc. Cras tincidunt felis ut eros aliquam, sit amet ultricies
+    lorem posuere. Proin fringilla velit dui, eu laoreet lorem efficitur a. Nulla ullamcorper mi sed tellus scelerisque
+    cursus.
+  </p>
 
 
   <hr class="mt-5 mb-5">
@@ -1483,39 +1690,44 @@ permalink: /utilities/
   <a href="#" class="d-inline-block hover-scale-down">Zooms out on hover (scale-)</a><br>
   <a href="#" class="hover-text-white">Transitions to white on hover</a><br>
   <a href="#" class="hover-text-black">Transitions to black on hover</a><br>
+  <p class="hover-text-underline">Underlines on hover</p>
 
   <h3 class="mt-4 mb-3">Hover Parents and Children</h3>
 
   <div class="hover-parent bg-faded mb-1">
-    <p class="hover-child-show p-2 d-inline-block bg-default">Lorem ipsum dolor sit amet</p>
+    <p class="hover-child-show p-2 d-inline-block bg-default">Child shown on hover</p>
   </div>
 
   <div class="hover-parent bg-faded mb-1">
-    <p class="hover-child-hide p-2 d-inline-block bg-default">Lorem ipsum dolor sit amet</p>
+    <p class="hover-child-hide p-2 d-inline-block bg-default">Child hidden on hover</p>
   </div>
 
   <div class="hover-parent bg-faded mb-1">
-    <p class="hover-child-show fade p-2 d-inline-block bg-default">Lorem ipsum dolor sit amet</p>
+    <p class="hover-child-show fade p-2 d-inline-block bg-default">Child shown on hover (with fade)</p>
   </div>
 
   <div class="hover-parent bg-faded mb-1">
-    <p class="hover-child-hide fade p-2 d-inline-block bg-default">Lorem ipsum dolor sit amet</p>
+    <p class="hover-child-hide fade p-2 d-inline-block bg-default">Child hidden on hover (with fade)</p>
   </div>
 
   <div class="hover-parent bg-faded mb-1">
-    <p class="hover-child-scale-up p-2 d-inline-block bg-default">Lorem ipsum dolor sit amet</p>
+    <p class="hover-child-scale-up p-2 d-inline-block bg-default">Child zooms in on hover (scale+)</p>
   </div>
 
   <div class="hover-parent bg-faded mb-1">
-    <p class="hover-child-scale-down p-2 d-inline-block bg-default">Lorem ipsum dolor sit amet</p>
+    <p class="hover-child-scale-down p-2 d-inline-block bg-default">Child zooms out on hover (scale-)</p>
   </div>
 
   <div class="hover-parent bg-faded mb-1">
-    <p class="hover-child-text-white text-primary p-2 d-inline-block bg-default">Lorem ipsum dolor sit amet</p>
+    <p class="hover-child-text-white text-primary p-2 d-inline-block bg-default">Child transitions to white on hover</p>
   </div>
 
   <div class="hover-parent bg-faded mb-1">
-    <p class="hover-child-text-black p-2 d-inline-block bg-default">Lorem ipsum dolor sit amet</p>
+    <p class="hover-child-text-black p-2 d-inline-block bg-default">Child transitions to black on hover</p>
+  </div>
+
+  <div class="hover-parent bg-faded mb-1">
+    <p class="hover-child-text-underline p-2 d-inline-block bg-default">Child is underlined on hover</p>
   </div>
 
   <h3 class="mt-4 mb-3">Advanced Examples</h3>
@@ -1590,7 +1802,7 @@ permalink: /utilities/
   <h4 class="mt-4 mb-3">Media Background Color Overlay with Transition on Hover</h4>
 
   <div class="media-background-container hover-parent">
-    <img class="media-background object-fit-cover hover-child hover-child-scale-up" src="//placehold.it/600x300">
+    <img class="media-background object-fit-cover hover-child hover-child-scale-up" src="//via.placeholder.com/600x300">
     <div class="bg-primary-t-3 hover-child hover-child-show fade media-background"></div>
     <div class="p-5 my-5">
       <p class="text-center">Learn more about our programs.  <a href="https://www.ucf.edu/">Click Here</a></p>

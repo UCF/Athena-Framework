@@ -94,7 +94,7 @@ Adding images to the `.navbar-brand` will likely always require custom styles or
 <!-- Just an image -->
 <nav class="navbar navbar-light bg-faded">
   <a class="navbar-brand" href="#">
-    <img src="//placehold.it/30x30" width="30" height="30" alt="">
+    <img src="//via.placeholder.com/30x30" width="30" height="30" alt="">
   </a>
 </nav>
 {% endexample %}
@@ -103,7 +103,7 @@ Adding images to the `.navbar-brand` will likely always require custom styles or
 <!-- Image and text -->
 <nav class="navbar navbar-light bg-faded">
   <a class="navbar-brand" href="#">
-    <img src="//placehold.it/30x30" width="30" height="30" class="d-inline-block align-top" alt="">
+    <img src="//via.placeholder.com/30x30" width="30" height="30" class="d-inline-block align-top" alt="">
     Athena
   </a>
 </nav>

@@ -37,11 +37,17 @@ Show/hide states can be combined with Athena's `.fade` class for a smoother tran
 <a href="#" class="d-inline-block hover-scale-down">Zooms out on hover (scale-)</a>
 {% endexample %}
 
-### Color Transitions
+### Color transitions
 
 {% example html %}
 <a href="#" class="hover-text-white">Transitions to white on hover</a>
 <a href="#" class="hover-text-black">Transitions to black on hover</a>
+{% endexample %}
+
+### Text underline
+
+{% example html %}
+<p class="hover-text-underline">Underlines on hover</p>
 {% endexample %}
 
 ### Filters
@@ -103,7 +109,7 @@ Hover over the blue backgrounds in the examples below, and you'll see the child 
 </div>
 {% endexample %}
 
-### Color Transitions
+### Color transitions
 
 {% example html %}
 <div class="hover-parent bg-info mb-1">
@@ -112,6 +118,14 @@ Hover over the blue backgrounds in the examples below, and you'll see the child 
 
 <div class="hover-parent bg-info mb-1">
   <p class="hover-child-text-black p-2 d-inline-block bg-default">Transitions to black on hover</p>
+</div>
+{% endexample %}
+
+### Text underline
+
+{% example html %}
+<div class="hover-parent bg-info mb-1">
+  <p class="hover-child-text-underline p-2 d-inline-block bg-default">Underlines on hover</p>
 </div>
 {% endexample %}
 

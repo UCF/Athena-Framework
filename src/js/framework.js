@@ -1,16 +1,15 @@
-//
-// Import vendor assets
-//
+/*! START Athena Framework vendor assets */
 
-// =require bootstrap/bootstrap.js
-// =require objectFitPolyfill/objectFitPolyfill.js
-// =require Stickyfill/stickyfill.js
+// =require bootstrap-plugins.js
+// =require objectFitPolyfill/src/objectFitPolyfill.js
+// =require Stickyfill/dist/stickyfill.js
 
+/*! END Athena Framework vendor assets */
 
-//
-// Import our assets
-//
+/*! START Athena Framework assets */
 
 // =require media-background.js
 // =require sticky-top.js
 // =require collapse-keyboard-input.js
+
+/*! END Athena Framework assets */

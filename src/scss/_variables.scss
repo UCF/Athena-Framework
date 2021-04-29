@@ -374,7 +374,8 @@ $sizes: (
   25: 25%,
   50: 50%,
   75: 75%,
-  100: 100%
+  100: 100%,
+  auto: auto
 ) !default;
 
 // Custom - letter spacing sizing
@@ -387,6 +388,17 @@ $letter-spacing: (
   5: .2em
 ) !default;
 $letter-spacing-base: map-get($letter-spacing, 3) !default;
+
+// Custom - line height sizing
+$line-height: (
+  0: 0,
+  1: 1.1,
+  2: 1.25,
+  3: 1.325,
+  4: 1.4,
+  5: 1.5,
+  6: 1.65
+) !default;
 
 
 // Body
@@ -414,6 +426,9 @@ $link-color:            $blue-dark !default; // modified
 $link-decoration:       none !default;
 $link-hover-color:      darken($link-color, 15%) !default;
 $link-hover-decoration: underline !default;
+
+$stretched-link-pseudo-element: after !default; // custom
+$stretched-link-z-index:        1 !default; // custom
 
 
 // Grid breakpoints
@@ -476,12 +491,14 @@ $font-size-sm:   .875rem !default;
 $font-size-xs:   .75rem !default;
 $font-size-base:    $font-size-sm !default; // modified, moved
 $font-size-base-md: $font-size-md !default; // custom
+$font-size-lg-xs:   .925rem; // custom; using non-mobile-first var name for backward compat.
+$font-size-sm-xs:   $font-size-xs; // custom; using non-mobile-first var name for backward compat.
 
 $font-weight-normal: normal !default;
 $font-weight-bold: bold !default;
 
 $font-weight-base: $font-weight-normal !default;
-$line-height-base: 1.5 !default;
+$line-height-base: map-get($line-height, 5) !default; // modified, but same calculated value as Bootstrap
 
 $font-size-h1: 2rem !default; // modified
 $font-size-h2: 1.7rem !default; // modified
@@ -503,7 +520,7 @@ $font-condensed-heading-size-ratio:  1.75 !default; // custom
 $headings-margin-bottom:   ($spacer / 2) !default;
 $headings-font-family:     inherit !default;
 $headings-font-weight:     600 !default; // modified
-$headings-line-height:     1.1 !default;
+$headings-line-height:     map-get($line-height, 1) !default; // modified, but same calculated value as Bootstrap
 $headings-line-height-min: .875 !default; // custom
 $headings-color:           inherit !default;
 
@@ -536,8 +553,8 @@ $font-serif-lead-size:         $lead-font-size * 1.2 !default; // custom
 $font-serif-lead-size-md:      $lead-font-size-md * 1.14 !default; // custom
 $font-slab-serif-lead-size:    $lead-font-size * 1.25 !default; // custom
 $font-slab-serif-lead-size-md: $lead-font-size-md * 1.2 !default; // custom
-$font-serif-lead-line-height:      1.325 !default; // custom
-$font-slab-serif-lead-line-height: 1.325 !default; // custom
+$font-serif-lead-line-height:      map-get($line-height, 3) !default; // custom
+$font-slab-serif-lead-line-height: map-get($line-height, 3) !default; // custom
 
 $small-font-size: 80% !default;
 
@@ -585,9 +602,6 @@ $focus-inset-box-shadow: inset 0 0 0 2px rgba($brand-complementary, .7) !default
 // Components
 //
 // Define common padding and border radius sizes and more.
-
-$line-height-lg:         (4 / 3) !default;
-$line-height-sm:         1.5 !default;
 
 $border-radius:          .25rem !default;
 $border-radius-lg:       .3rem !default;
@@ -638,7 +652,7 @@ $table-border-color:            $gray-lighter !default;
 
 $btn-padding-x:                  1.25rem !default; // modified
 $btn-padding-y:                  .75rem !default; // modified
-$btn-line-height:                1.25 !default;
+$btn-line-height:                map-get($line-height, 2) !default; // modified, but same calculated value as Bootstrap
 $btn-font-weight:                $font-weight-bold !default; // modified
 $btn-box-shadow:                 inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075) !default;
 $btn-focus-box-shadow:           0 0 0 transparent !default; // modified
@@ -845,7 +859,7 @@ $custom-file-focus-box-shadow: 0 0 0 .075rem $white, 0 0 0 .2rem $brand-compleme
 
 $custom-file-padding-x:     1rem !default; // modified
 $custom-file-padding-y:     .75rem !default; // modified
-$custom-file-line-height:   1.5 !default;
+$custom-file-line-height:   map-get($line-height, 5) !default; // modified, but same calculated value as Bootstrap
 $custom-file-color:         $gray-darker !default; // modified
 $custom-file-bg:            $white !default;
 $custom-file-border-width:  $border-width !default;
@@ -1011,7 +1025,7 @@ $pagination-padding-x-sm:             .5rem !default;
 $pagination-padding-y-sm:             .25rem !default;
 $pagination-padding-x-lg:             1.5rem !default;
 $pagination-padding-y-lg:             .75rem !default;
-$pagination-line-height:              1.25 !default;
+$pagination-line-height:              map-get($line-height, 2) !default; // modified, but same calculated value as Bootstrap
 
 $pagination-color:                     $link-color !default;
 $pagination-bg:                        $white !default;
@@ -1335,3 +1349,12 @@ $filter-sepia:      grayscale(1) sepia(.15) contrast(.65) brightness(.65) !defau
 $filter-grayscale:  grayscale(1) !default; // custom
 $filter-brightness: brightness(120%) !default; // custom
 $filter-blur:       blur(5px) !default; // custom
+
+
+// Deprecated
+//
+// Variables below are no longer utilized in Athena and will be removed
+// in a future major release.  They should not be used in new projects.
+
+$line-height-lg: (4 / 3) !default;
+$line-height-sm: map-get($line-height, 5) !default; // modified, but same calculated value as Bootstrap

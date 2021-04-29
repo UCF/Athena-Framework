@@ -1,6 +1,27 @@
+// Base utilities
+@import 'bootstrap/utilities/align';
+@import 'bootstrap/utilities/background';
+@import 'bootstrap/utilities/borders';
+@import 'bootstrap/utilities/clearfix';
+@import 'bootstrap/utilities/display';
+@import 'bootstrap/utilities/flex';
+@import 'bootstrap/utilities/float';
+// NOTE: We exclude this file in favor of our own in Athena
+// @import 'bootstrap/utilities/position';
+@import 'utilities/position';
+@import 'bootstrap/utilities/screenreaders';
+// NOTE: We exclude this file in favor of our own in Athena
+// @import 'bootstrap/utilities/sizing';
+@import 'utilities/sizing';
+@import 'bootstrap/utilities/spacing';
+@import 'bootstrap/utilities/text';
+@import 'bootstrap/utilities/visibility';
+
+// Custom Athena utilities
 @import 'utilities/background';
 @import 'utilities/media-background';
 @import 'utilities/text';
 @import 'utilities/state';
 @import 'utilities/filter';
 @import 'utilities/pointer-events';
+@import 'utilities/stretched-link';

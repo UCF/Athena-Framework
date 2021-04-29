@@ -1,7 +1,15 @@
 // =require ../../../dist/js/framework.min.js
+
+
+/*! START Athena Framework documentation vendor assets */
+
 // =require clipboard/dist/clipboard.js
 // =require holderjs/holder.js
 // =require lunr/lunr.js
+
+/*! END Athena Framework documentation vendor assets */
+
+/*! START Athena Framework documentation assets */
 
 // =require search.js
 

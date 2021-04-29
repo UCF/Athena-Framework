@@ -85,6 +85,14 @@
   }
 }
 
+@include link-selector('.hover-text-underline') {
+  @include hover-focus-active() {
+    // sass-lint:disable no-important
+    text-decoration: underline !important;
+    // sass-lint:enable no-important
+  }
+}
+
 
 .hover-parent {
   @include hover-focus-active() {
@@ -131,6 +139,12 @@
     @include link-selector('.hover-child-text-secondary') {
       // sass-lint:disable no-important
       color: $brand-secondary-color !important;
+      // sass-lint:enable no-important
+    }
+
+    @include link-selector('.hover-child-text-underline') {
+      // sass-lint:disable no-important
+      text-decoration: underline !important;
       // sass-lint:enable no-important
     }
   }
