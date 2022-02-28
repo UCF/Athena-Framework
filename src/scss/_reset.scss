@@ -1,3 +1,11 @@
+a {
+  text-decoration: underline;
+
+  @include hover-focus-active {
+    text-decoration: underline;
+  }
+}
+
 a,
 button {
   // Add transitions on link hover.
