@@ -66,6 +66,15 @@
   }
 }
 
+a.navbar-brand {
+  // Modify underlines for .navbar-brand applied to links only
+  text-decoration: none;
+
+  @include hover-focus-active {
+    text-decoration: underline;
+  }
+}
+
 
 //
 // Navbar nav
@@ -387,7 +396,7 @@
   }
 
   // Base light navbar styles
-  .navbar-brand {
+  a.navbar-brand {
     // Allow brand hover state color to be modified separately from
     // other link colors
     @include hover-focus {
@@ -441,7 +450,7 @@
 
 // White links against a dark background
 .navbar-inverse {
-  .navbar-brand {
+  a.navbar-brand { // sass-lint:disable-line no-qualifying-elements
     // Allow brand hover state color to be modified separately from
     // other link colors
     @include hover-focus {

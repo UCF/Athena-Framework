@@ -19,6 +19,7 @@
 }
 
 .nav-link {
+  @include unset-link-underline();
   padding: $nav-link-padding-y $nav-link-padding-x;
 
   @include hover-focus {

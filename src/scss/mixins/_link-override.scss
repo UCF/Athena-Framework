@@ -8,3 +8,15 @@
     @content;
   }
 }
+
+//
+// Unsets underlined text styles on the given link.
+//
+@mixin unset-link-underline() {
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
+}
