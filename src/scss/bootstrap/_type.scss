@@ -108,7 +108,7 @@ mark,
 
 // Blockquotes
 .blockquote {
-  padding: ($spacer / 2) $spacer;
+  padding: ($spacer * .5) $spacer;
   margin-bottom: $spacer;
   font-size: $blockquote-font-size;
   border-left: $blockquote-border-width solid $blockquote-border-color;
