@@ -329,7 +329,7 @@
 
 .highlight {
   background-color: $gray-lightest;
-  margin: 1rem (-$grid-gutter-width-base / 2);
+  margin: 1rem (-$grid-gutter-width-base * .5);
   -ms-overflow-style: -ms-autohiding-scrollbar;
   padding: 1rem;
 
