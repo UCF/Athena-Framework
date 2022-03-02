@@ -28,8 +28,8 @@
   }
 
   &.active {
-    // Force underline on active state for basic nav links
-    text-decoration: $link-hover-decoration;
+    // Force bolding on active state for basic nav links
+    font-weight: $font-weight-bold;
   }
 }
 
