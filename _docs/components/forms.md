@@ -275,7 +275,7 @@ The `.form-group` class is the easiest way to add some structure to forms. Its o
 
 Use the `.form-inline` class to display a series of labels, form controls, and buttons on a single horizontal row. Form controls within inline forms vary slightly from their default states.
 
-- Controls are `display: flex`, collapsing any HTML white space and allowing you to provide alignment control with [spacing]({{ 'utilities/spacing | url' }}) and [flexbox]({{ '/utilities/flexbox' | url }}) utilities.
+- Controls are `display: flex`, collapsing any HTML white space and allowing you to provide alignment control with [spacing]({{ 'utilities/spacing' | url }}) and [flexbox]({{ '/utilities/flexbox' | url }}) utilities.
 - Controls and input groups receive `width: auto` to override the Athena default `width: 100%`.
 - Controls **only appear inline in viewports that are at least 576px wide** to account for narrow viewports on mobile devices.
 
