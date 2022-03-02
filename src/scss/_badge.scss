@@ -1,4 +1,5 @@
 .badge {
+  @include unset-link-underline();
   @include border-radius($badge-border-radius); // allow badge border radius to be customized outside of the global border-radius rules
   letter-spacing: $letter-spacing-base;
   text-align: left; // unset Bootstrap default
