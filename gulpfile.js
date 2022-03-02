@@ -1,6 +1,6 @@
 /* eslint no-sync: "off", no-console: "off" */
 
-const childProcess = require('child_process');
+const exec         = require('child_process').exec;
 const fs           = require('fs');
 const gulp         = require('gulp');
 const autoprefixer = require('gulp-autoprefixer');
@@ -328,15 +328,17 @@ gulp.task('docs-default', gulp.series('docs-config', 'docs-components', gulp.par
 // Generates a new local build of the docs.
 gulp.task('docs-local-build', gulp.series(
   gulp.series('docs-default'),
-  () => {
-    return childProcess.exec(
+  (done) => {
+    exec(
       'ELEVENTY_ENV=development npx @11ty/eleventy',
       {
         cwd: `${__dirname}/_docs`
+      },
+      (error, stdout, stderr) => {
+        console.log(stdout);
+        done(error);
       }
-    ).stdout.on('data', (data) => {
-      console.log(data);
-    });
+    );
   }
 ));
 
@@ -351,11 +353,23 @@ gulp.task('docs-local', gulp.series('docs-local-build', 'docs-local-index'));
 // Spins up a new environment for previewing changes to the docs.
 // Watches for file changes.
 gulp.task('docs-watch', () => {
-  gulp.watch(`${config.docs.src.scssPath}/**/*.scss`, gulp.series('docs-scss'));
-  gulp.watch(`${config.docs.src.jsPath}/**/*.js`, gulp.series('docs-js'));
+  gulp.watch(
+    [
+      `${config.docs.src.scssPath}/**/*.scss`,
+      `${config.src.scssPath}/**/*.scss`
+    ],
+    gulp.series('docs-scss')
+  );
+  gulp.watch(
+    [
+      `${config.docs.src.jsPath}/**/*.js`,
+      `${config.src.jsPath}/**/*.js`
+    ],
+    gulp.series('docs-js')
+  );
 
   // TODO make optional with gulp-config setting?
-  return childProcess.exec(
+  return exec(
     'npx @11ty/eleventy --serve',
     {
       cwd: `${__dirname}/_docs`
@@ -368,15 +382,17 @@ gulp.task('docs-watch', () => {
 // Generates a new production-ready build of the docs.
 gulp.task('gh-pages-build', gulp.series(
   'docs-default',
-  () => {
-    return childProcess.exec(
+  (done) => {
+    exec(
       'ELEVENTY_ENV=production npx @11ty/eleventy',
       {
         cwd: `${__dirname}/_docs`
+      },
+      (error, stdout, stderr) => {
+        console.log(stdout);
+        done(error);
       }
-    ).stdout.on('data', (data) => {
-      console.log(data);
-    });
+    );
   }
 ));
 
@@ -407,15 +423,17 @@ gulp.task('examples-config', (done) => {
 });
 
 // Generates a new local build of example files.
-gulp.task('examples-build', () => {
-  return childProcess.exec(
+gulp.task('examples-build', (done) => {
+  exec(
     'npx @11ty/eleventy',
     {
       cwd: `${__dirname}/_examples`
+    },
+    (error, stdout, stderr) => {
+      console.log(stdout);
+      done(error);
     }
-  ).stdout.on('data', (data) => {
-    console.log(data);
-  });
+  );
 });
 
 // All examples-related tasks.
@@ -431,7 +449,7 @@ gulp.task('watch', () => {
   gulp.watch(`${config.src.jsPath}/**/*.js`, gulp.series('js'));
 
   // TODO make optional with gulp-config setting?
-  return childProcess.exec(
+  return exec(
     'npx @11ty/eleventy --serve',
     {
       cwd: `${__dirname}/_examples`
