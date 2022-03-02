@@ -5,7 +5,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setLiquidOptions({
     root: [
       '_includes'
-    ]
+    ],
+    dynamicPartials: false
   });
 
   eleventyConfig.addWatchTarget('../src/scss/');
