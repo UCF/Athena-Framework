@@ -3,6 +3,7 @@ const markdownItAnchor = require('markdown-it-anchor');
 const markdownItTOC = require('markdown-it-toc-done-right');
 const entities = require('html-entities');
 const hljs = require('highlight.js');
+const xmlFiltersPlugin = require('eleventy-xml-plugin')
 
 
 // Slug-generation function ported over from AnchorJS
@@ -52,12 +53,18 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setLiquidOptions({
     root: [
       '_includes'
-    ]
+    ],
+    dynamicPartials: false
   });
 
   eleventyConfig.addPassthroughCopy('favicon.ico');
   eleventyConfig.addPassthroughCopy('LICENSE');
   eleventyConfig.addPassthroughCopy('static');
+
+  //
+  // Plugins
+  //
+  eleventyConfig.addPlugin(xmlFiltersPlugin);
 
   //
   // Shortcode | Callout (Alert)
