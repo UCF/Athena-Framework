@@ -71,7 +71,7 @@ a.navbar-brand {
   text-decoration: none;
 
   @include hover-focus-active {
-    text-decoration: underline;
+    text-decoration: $link-hover-decoration;
   }
 }
 

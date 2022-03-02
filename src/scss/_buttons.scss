@@ -204,6 +204,7 @@
   cursor: pointer;
   font-size: $font-size-base;
   letter-spacing: 0;
+  text-decoration: $link-decoration;
   text-transform: none;
 
   @include media-breakpoint-up(md) {
@@ -211,11 +212,10 @@
   }
 
   // Undo unset-link-underline()
-  &,
   &:hover,
   &:focus,
   &:active {
-    text-decoration: underline;
+    text-decoration: $link-hover-decoration;
   }
 }
 

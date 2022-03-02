@@ -1,8 +1,8 @@
 a {
-  text-decoration: underline;
+  text-decoration: $link-decoration;
 
   @include hover-focus-active {
-    text-decoration: underline;
+    text-decoration: $link-hover-decoration;
   }
 }
 
