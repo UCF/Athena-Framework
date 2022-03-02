@@ -14,11 +14,9 @@
 
   .card-link {
     color: $text-color;
-    text-decoration: underline;
 
     @include hover-focus {
       color: get-hover-color($text-color);
-      text-decoration: underline;
     }
   }
 }
