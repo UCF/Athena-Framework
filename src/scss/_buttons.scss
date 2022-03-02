@@ -3,6 +3,7 @@
 //
 
 .btn {
+  @include unset-link-underline();
   border-width: $btn-border-width;
   font-size: $btn-font-size;
   letter-spacing: $letter-spacing-base;
@@ -193,6 +194,29 @@
 .btn-outline-i-danger {
   @include button-outline-variant($btn-danger-bg);
   @include button-outline-variant-overrides($brand-inverse, $btn-danger-bg, $btn-danger-border, $brand-inverse, $white);
+}
+
+
+//
+// Link buttons
+//
+.btn-link {
+  cursor: pointer;
+  font-size: $font-size-base;
+  letter-spacing: 0;
+  text-transform: none;
+
+  @include media-breakpoint-up(md) {
+    font-size: $font-size-base-md;
+  }
+
+  // Undo unset-link-underline()
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: underline;
+  }
 }
 
 
