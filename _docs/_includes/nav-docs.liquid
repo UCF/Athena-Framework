@@ -5,9 +5,11 @@
     {% for collection_name in nav-docs %}
         {% assign collection_slug = collection_name | slug %}
         {% assign active = nil %}
+        {% assign active_collection_slug = nil %}
 
         {% if tags[0] == collection_slug %}
             {% assign active = 'active' %}
+            {% assign active_collection_slug = collection_slug %}
         {% endif %}
 
         <div class="afd-toc-item">
@@ -32,7 +34,7 @@
                         {% assign item_slug = item.data.title | slug %}
                         {% assign active = nil %}
 
-                        {% if item.data.tags[0] == collection_slug and page_slug == item_slug %}
+                        {% if item.data.tags[0] == active_collection_slug and page_slug == item_slug %}
                             {% assign active = 'active afd-sidenav-active' %}
                         {% endif %}
 
