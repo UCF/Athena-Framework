@@ -216,6 +216,10 @@ body {
 .blockquote-quotation-inverse {
   @extend %blockquote-quotation;
 
+  .blockquote-footer {
+    color: $gray-darker;
+  }
+
   &::before {
     color: $brand-inverse;
   }
