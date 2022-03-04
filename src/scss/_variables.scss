@@ -425,7 +425,7 @@ $ucf-header-height: 50px; // custom
 // Style anchor elements.
 
 $link-color:            $blue-dark !default; // modified
-$link-decoration:       none !default;
+$link-decoration:       underline !default; // modified
 $link-hover-color:      darken($link-color, 15%) !default;
 $link-hover-decoration: underline !default;
 
