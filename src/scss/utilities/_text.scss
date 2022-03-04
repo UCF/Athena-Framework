@@ -69,6 +69,12 @@
 // text-decoration reset class
 //
 
+.text-underline {
+  // sass-lint:disable no-important
+  text-decoration: underline !important;
+  // sass-lint:enable no-important
+}
+
 .text-decoration-none {
   // sass-lint:disable no-important
   text-decoration: none !important;

@@ -50,6 +50,7 @@
 //
 
 .navbar-brand {
+  @include unset-link-underline();
   // Allow customization of brand font size
   font-size: $navbar-brand-font-size;
   font-weight: bold;
@@ -387,9 +388,10 @@
   }
 
   // Base light navbar styles
-  .navbar-brand {
+  a.navbar-brand { // sass-lint:disable-line no-qualifying-elements
     // Allow brand hover state color to be modified separately from
-    // other link colors
+    // other link colors. Must use qualifying selector here to not
+    // target .navbar-brand applied to non-link elements
     @include hover-focus {
       color: $navbar-light-brand-hover-color;
     }
@@ -441,9 +443,10 @@
 
 // White links against a dark background
 .navbar-inverse {
-  .navbar-brand {
+  a.navbar-brand { // sass-lint:disable-line no-qualifying-elements
     // Allow brand hover state color to be modified separately from
-    // other link colors
+    // other link colors. Must use qualifying selector here to not
+    // target .navbar-brand applied to non-link elements
     @include hover-focus {
       color: $navbar-inverse-brand-hover-color;
     }

@@ -97,18 +97,51 @@
 //
 
 .table-of-contents {
-  // Hide the first child li because it's always going to be "Contents".
-  > ul > li:first-child {
-    display: none;
-  }
+  margin-top: 1rem;
 
   ul {
-    margin-bottom: .25rem;
-    margin-top: .25rem;
+    @extend .nav;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
     padding-left: 2rem;
 
+    ul {
+      font-size: .9rem;
+      padding-top: .25rem;
+    }
+
     li {
-      margin-bottom: .25rem;
+      @extend .nav-item;
+      border-left: 3px solid $gray-lighter;
+
+      &:not(:last-of-type) {
+        padding-bottom: .25rem;
+      }
+    }
+
+    a {
+      @extend .nav-link;
+      display: inline-block;
+      padding-bottom: .25em;
+      padding-top: .25em;
+    }
+  }
+
+  > ul {
+    padding-left: 1rem;
+
+    > li {
+      border-left: 0 solid;
+
+      &:not(:last-of-type) {
+        padding-bottom: .5rem;
+      }
+
+      // Hide the first child li because it's always going to be "Contents".
+      &:first-child {
+        display: none;
+      }
     }
   }
 }

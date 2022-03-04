@@ -1,4 +1,5 @@
 .close {
+  @include unset-link-underline();
   // Allow font family to be set separately
   font-family: $close-font-family;
   line-height: .8;

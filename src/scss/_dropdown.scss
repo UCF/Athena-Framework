@@ -10,6 +10,7 @@
 
 // Links, buttons, and more within the dropdown menu
 .dropdown-item {
+  @include unset-link-underline();
   // Add a proper vertical padding variable
   padding: $dropdown-item-padding-y $dropdown-item-padding-x;
   // Remove white-space:nowrap to prevent long list items from creating scrollbars
