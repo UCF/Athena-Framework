@@ -25,13 +25,6 @@
       font-size: 10pt !important;
     }
 
-    a,
-    a:visited {
-      &:not(.btn) {
-        text-decoration: underline;
-      }
-    }
-
     abbr[title]::after {
       // sass-lint:disable quotes
       content: " (" attr(title) ")";
