@@ -331,13 +331,13 @@ Dynamic tabbed interfaces, as described in the [<abbr title="Web Accessibility I
 
 <div class="afd-example afd-example-tabs">
   <ul class="nav nav-tabs" id="myTab" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
     </li>
     </ul>
@@ -356,13 +356,13 @@ Dynamic tabbed interfaces, as described in the [<abbr title="Web Accessibility I
 
 {% highlight 'html' %}
 <ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
     <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
   </li>
 </ul>
@@ -377,13 +377,13 @@ Tab logic also works with pills.
 
 <div class="afd-example afd-example-tabs">
   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" role="presentation">
         <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
     </li>
   </ul>
@@ -402,13 +402,13 @@ Tab logic also works with pills.
 
 {% highlight 'html' %}
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
     <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</a>
   </li>
 </ul>
@@ -472,16 +472,16 @@ You can activate a tab or pill navigation without writing any JavaScript by simp
 {% highlight 'html' %}
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
     <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Home</a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
     <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Profile</a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
     <a class="nav-link" data-toggle="tab" href="#messages" role="tab">Messages</a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
     <a class="nav-link" data-toggle="tab" href="#settings" role="tab">Settings</a>
   </li>
 </ul>
@@ -536,16 +536,16 @@ Activates a tab element and content container. Tabs should have either a `data-t
 
 {% highlight 'html' %}
 <ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
     <a class="nav-link active" data-toggle="tab" href="#home" role="tab" aria-controls="home">Home</a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
     <a class="nav-link" data-toggle="tab" href="#profile" role="tab" aria-controls="profile">Profile</a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
     <a class="nav-link" data-toggle="tab" href="#messages" role="tab" aria-controls="messages">Messages</a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" role="presentation">
     <a class="nav-link" data-toggle="tab" href="#settings" role="tab" aria-controls="settings">Settings</a>
   </li>
 </ul>
