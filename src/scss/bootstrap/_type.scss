@@ -64,8 +64,12 @@ hr {
 
 small,
 .small {
-  font-size: $small-font-size;
+  font-size: $small-font-size-fixed; // IE11
   font-weight: $font-weight-normal;
+
+  @supports (font-size: $small-font-size) {
+    font-size: $small-font-size;
+  }
 }
 
 mark,

@@ -558,7 +558,12 @@ $font-slab-serif-lead-size-md: $lead-font-size-md * 1.2 !default; // custom
 $font-serif-lead-line-height:      map-get($line-height, 3) !default; // custom
 $font-slab-serif-lead-line-height: map-get($line-height, 3) !default; // custom
 
-$small-font-size: 80% !default;
+$small-font-size: max(.7rem, .7em) !default;
+$small-font-size-fixed: .725rem !default; // custom
+$sub-font-size: max(.6rem, .6em) !default; // custom
+$sub-font-size-fixed: .7rem !default; // custom
+$sup-font-size: max(.6rem, .6em) !default; // custom
+$sup-font-size-fixed: .7rem !default; // custom
 
 $text-muted: $gray-dark !default; // modified
 
