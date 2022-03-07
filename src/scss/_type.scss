@@ -120,7 +120,6 @@ body {
 //
 
 .blockquote {
-  font-style: italic;
   padding: 1rem 0;
 }
 
@@ -216,6 +215,10 @@ body {
 
 .blockquote-quotation-inverse {
   @extend %blockquote-quotation;
+
+  .blockquote-footer {
+    color: $gray-darker;
+  }
 
   &::before {
     color: $brand-inverse;
