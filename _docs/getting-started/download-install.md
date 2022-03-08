@@ -6,7 +6,7 @@ tags: getting-started
 date: 2020-01-02 # for ordering purposes only
 ---
 
-For [quick usage]({{ '/getting-started/quick-start' | url }}), the Athena Framework is hosted on UCF's CDN.  For those that want to utilize Athena's Sass variables and mixins directly, Athena can also be downloaded from [Github](https://github.com/{{ package.repository.url }}), or included in your project using npm or Bower.
+For [quick usage]({{ '/getting-started/quick-start' | url }}), the Athena Framework is hosted on UCF's CDN.  For those that want to utilize Athena's Sass variables and mixins directly, Athena can also be downloaded from [Github](https://github.com/{{ package.repository.url }}), or included in your project using npm.
 
 
 ## Contents
@@ -36,9 +36,6 @@ You can also clone a copy of the git project to your computer locally:
 
 ### npm
 `npm install --save ucf-athena-framework`
-
-### Bower
-`bower install --save ucf-athena-framework`
 
 
 ## What's Included
@@ -96,7 +93,7 @@ If you cannot store Athena's fallback fonts in a folder called `/fonts/` that ex
 
 Athena is a complete replacement for Bootstrap. If you are already using Bootstrap on an existing project and want to use Athena instead, you should remove Bootstrap's CSS and JavaScript completely. Athena is designed to run as a completely standalone framework.
 
-If you're upgrading from Bootstrap 3, be sure to check out the [Migration Guide]({{ migration | url }}) for the full list of differences between Bootstrap and Athena.
+If you're upgrading from Bootstrap 3, be sure to check out the [Migration Guide]({{ '../../migration' | url }}) for the full list of differences between Bootstrap and Athena.
 
 <pre><code><strike>&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;</strike>
 <span class="highlight-code">&lt;link rel="stylesheet" href="{{ site.cdn }}v{{ package.version }}/css/framework.min.css"&gt;</span>

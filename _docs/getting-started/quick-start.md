@@ -14,7 +14,7 @@ It's easy to get started with the Athena Framework. The steps below outline the 
 
 Athena is a complete replacement for <a href="https://getbootstrap.com/">Bootstrap</a>.  If you are already using Bootstrap on an existing project and want to use Athena instead, you should [remove Bootstrap's CSS and JavaScript completely]({{ '/getting-started/download-install' | url }}#adding-to-existing-project-using-bootstrap).  Athena is designed to run as a completely standalone framework.
 
-Read more about the <a href="{{ migration | url }}">differences between Athena and Bootstrap here.</a>
+Read more about the <a href="{{ '../../migration' | url }}">differences between Athena and Bootstrap here.</a>
 
 {% endcallout %}
 
