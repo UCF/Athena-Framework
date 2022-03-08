@@ -58,7 +58,7 @@ Note how `text-capitalize` only changes the first letter of each word, leaving t
 
 ## Text underline
 
-Force underline styles on an element with the `.text-underline` class, and unset existing underline styles with `text-decoration-none`.
+Force underline styles on an element with the `.text-underline` class, and unset existing underline styles with `.text-decoration-none`.
 
 These classes are useful when working with links containing multiple block-level elements where [stretched links]({{ '/utilities/stretched-links' | url }}) cannot be utilized.
 
