@@ -120,7 +120,6 @@ body {
 //
 
 .blockquote {
-  font-style: italic;
   padding: 1rem 0;
 }
 
@@ -217,6 +216,10 @@ body {
 .blockquote-quotation-inverse {
   @extend %blockquote-quotation;
 
+  .blockquote-footer {
+    color: $gray-darker;
+  }
+
   &::before {
     color: $brand-inverse;
   }
@@ -279,5 +282,25 @@ hr {
       width: auto;
     }
 
+  }
+}
+
+
+//
+// Sub, sup
+//
+sub {
+  font-size: $sub-font-size-fixed; // IE11
+
+  @supports (font-size: $sub-font-size) {
+    font-size: $sub-font-size;
+  }
+}
+
+sup {
+  font-size: $sup-font-size-fixed; // IE11
+
+  @supports (font-size: $sup-font-size) {
+    font-size: $sup-font-size;
   }
 }

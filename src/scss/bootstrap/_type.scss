@@ -64,8 +64,12 @@ hr {
 
 small,
 .small {
-  font-size: $small-font-size;
+  font-size: $small-font-size-fixed; // IE11
   font-weight: $font-weight-normal;
+
+  @supports (font-size: $small-font-size) {
+    font-size: $small-font-size;
+  }
 }
 
 mark,
@@ -108,7 +112,7 @@ mark,
 
 // Blockquotes
 .blockquote {
-  padding: ($spacer / 2) $spacer;
+  padding: ($spacer * .5) $spacer;
   margin-bottom: $spacer;
   font-size: $blockquote-font-size;
   border-left: $blockquote-border-width solid $blockquote-border-color;

@@ -16,6 +16,10 @@
   }
 }
 
+.page-link {
+  @include unset-link-underline();
+}
+
 
 //
 // Sizing

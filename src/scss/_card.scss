@@ -1,4 +1,15 @@
 //
+// Base styles
+//
+
+.card-link {
+  @include hover() {
+    text-decoration: $link-hover-decoration;
+  }
+}
+
+
+//
 // Background variations
 //
 
@@ -21,11 +32,9 @@
   // Unset card-variant-text() overrides (to match other light and default card variants)
   .card-link {
     color: $link-color;
-    text-decoration: $link-decoration;
 
     @include hover-focus {
       color: $link-hover-color;
-      text-decoration: none;
     }
   }
 }
@@ -159,11 +168,9 @@
   // Unset card-variant-text() overrides (to match other light and default card variants)
   .card-link {
     color: $link-color;
-    text-decoration: $link-decoration;
 
     @include hover-focus {
       color: $link-hover-color;
-      text-decoration: none;
     }
   }
 }

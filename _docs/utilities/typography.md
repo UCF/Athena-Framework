@@ -56,6 +56,30 @@ Transform text in components with text capitalization classes.
 Note how `text-capitalize` only changes the first letter of each word, leaving the case of any other letters unaffected.
 
 
+## Text underline
+
+Force underline styles on an element with the `.text-underline` class, and unset existing underline styles with `.text-decoration-none`.
+
+These classes are useful when working with links containing multiple block-level elements where [stretched links]({{ '/utilities/stretched-links' | url }}) cannot be utilized.
+
+{% callout 'warning' %}
+### Non-clickable content shouldn't be underlined
+**Do not add `.text-underline` to content unless it's contained within a link or other interactive element that provides a click affordance.**  Links in Athena are underlined by default to ensure they have enough visual contrast against surrounding text.  To ensure users can distinguish links from non-links, underlines should not be used as a presentational/decorative feature or to provide emphasis.  Use [semantic inline text elements]({{ '/content/typography' | url }}#inline-text-elements) like `<strong>` or `<em>` to denote importance or emphasis when necessary.
+{% endcallout %}
+
+{% callout 'danger' %}
+### Inline links must have an underline!
+Do not use `.text-decoration-none` to remove underlines from links within paragraphs or that are otherwise surrounded by static text.
+{% endcallout %}
+
+{% example html %}
+<a href="#" class="text-secondary text-decoration-none">
+  <h3 class="text-underline">Article title</h3>
+  <div>Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.</div>
+</a>
+{% endexample %}
+
+
 ## Font weight and italics
 
 Quickly change the weight (boldness) of text or italicize text.

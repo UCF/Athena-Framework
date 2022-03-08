@@ -18,69 +18,15 @@ Athena supports the **latest two stable releases** of all major browsers and pla
 
 ### Mobile browser support
 
-<table class="table table-bordered table-responsive">
-  <thead class="thead-default">
-    <tr>
-      <td></td>
-      <th>Chrome</th>
-      <th>Firefox</th>
-      <th>Safari</th>
-      <th>Android Browser &amp; WebView</th>
-      <th>Microsoft Edge</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Android</th>
-      <td class="text-success-aw">Supported</td>
-      <td class="text-success-aw">Supported</td>
-      <td>N/A</td>
-      <td class="text-success-aw">Android v5.0+ supported</td>
-      <td>N/A</td>
-    </tr>
-    <tr>
-      <th scope="row">iOS</th>
-      <td class="text-success-aw">Supported</td>
-      <td class="text-success-aw">Supported</td>
-      <td class="text-success-aw">Supported</td>
-      <td>N/A</td>
-      <td>N/A</td>
-    </tr>
-  </tbody>
-</table>
+- Chrome (Android)
+- Safari (iOS)
 
 ### Desktop browser support
 
-<table class="table table-bordered table-responsive">
-  <thead class="thead-default">
-    <tr>
-      <td></td>
-      <th>Chrome</th>
-      <th>Firefox</th>
-      <th>Internet Explorer</th>
-      <th>Microsoft Edge</th>
-      <th>Safari</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Mac</th>
-      <td class="text-success-aw">Supported</td>
-      <td class="text-success-aw">Supported</td>
-      <td>N/A</td>
-      <td>N/A</td>
-      <td class="text-success-aw">Supported</td>
-    </tr>
-    <tr>
-      <th scope="row">Windows</th>
-      <td class="text-success-aw">Supported</td>
-      <td class="text-success-aw">Supported</td>
-      <td class="text-success-aw">Supported, IE 11</td>
-      <td class="text-success-aw">Supported</td>
-      <td class="text-danger-aw">Not supported</td>
-    </tr>
-  </tbody>
-</table>
+- Chrome (Windows, MacOS)
+- Firefox (Windows, MacOS)
+- Edge (Windows, MacOS)
+- Safari (MacOS)
 
 ### Internet Explorer
 
