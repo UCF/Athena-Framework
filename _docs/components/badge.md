@@ -15,7 +15,12 @@ Small and adaptive tag for adding context to just about any content.
 
 ## Example
 
-Badges scale to match the size of the immediate parent element by using relative font sizing and `em` units.
+Badges scale to match the size of the immediate parent element. A minimum font size is enforced to ensure badge text is readable.
+
+{% callout 'info' %}
+### IE11 badge sizes
+Note that as of v1.1.1 of the Athena Framework, badge sizes do _not_ scale up in IE11 (due to lack of support for the `max()` CSS function.)
+{% endcallout %}
 
 {% example html %}
 <h1>Example heading <span class="badge badge-default">New</span></h1>
@@ -48,7 +53,7 @@ Add any of the below mentioned modifier classes to change the appearance of a ba
 
 ## Pill badges
 
-Use the `.badge-pill` modifier class to make badges more rounded (with a larger `border-radius` and additional horizontal `padding`). Useful if you miss the badges from v3.
+Use the `.badge-pill` modifier class to make badges more rounded (with a larger `border-radius` and additional horizontal `padding`).
 
 {% example html %}
 <span class="badge badge-pill badge-default">Default</span>
