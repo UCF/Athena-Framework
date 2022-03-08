@@ -284,3 +284,23 @@ hr {
 
   }
 }
+
+
+//
+// Sub, sup
+//
+sub {
+  font-size: $sub-font-size-fixed; // IE11
+
+  @supports (font-size: $sub-font-size) {
+    font-size: $sub-font-size;
+  }
+}
+
+sup {
+  font-size: $sup-font-size-fixed; // IE11
+
+  @supports (font-size: $sup-font-size) {
+    font-size: $sup-font-size;
+  }
+}

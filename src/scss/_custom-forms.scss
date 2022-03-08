@@ -49,6 +49,7 @@
 //
 
 .custom-select {
+  font-size: $font-size-base-md; // Match default select input font sizes
   height: $custom-select-height;
 
   &:focus {
@@ -59,6 +60,7 @@
 }
 
 .custom-select-sm {
+  font-size: $custom-select-sm-font-size; // Re-declare to override .custom-select above
   height: $custom-select-sm-height;
 }
 
@@ -78,6 +80,8 @@
 //
 
 .custom-file-input {
+  font-size: $font-size-base-md;
+
   &:focus ~ .custom-file-control {
     // Fix where Bootstrap calls box-shadow(), preventing outline replacements
     // from taking effect when $enable-shadows is false
@@ -86,6 +90,8 @@
 }
 
 .custom-file-control {
+  font-size: $font-size-base-md;
+
   // Fix reversed variable usage in Bootstrap
   &,
   &::before {

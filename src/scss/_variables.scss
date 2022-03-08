@@ -558,7 +558,12 @@ $font-slab-serif-lead-size-md: $lead-font-size-md * 1.2 !default; // custom
 $font-serif-lead-line-height:      map-get($line-height, 3) !default; // custom
 $font-slab-serif-lead-line-height: map-get($line-height, 3) !default; // custom
 
-$small-font-size: 80% !default;
+$small-font-size: max(.7rem, .7em) !default;
+$small-font-size-fixed: .725rem !default; // custom
+$sub-font-size: max(.6rem, .6em) !default; // custom
+$sub-font-size-fixed: .7rem !default; // custom
+$sup-font-size: max(.6rem, .6em) !default; // custom
+$sup-font-size-fixed: .7rem !default; // custom
 
 $text-muted: $gray-dark !default; // modified
 
@@ -849,10 +854,10 @@ $custom-select-focus-border-color: lighten($brand-complementary, 25%) !default; 
 $custom-select-focus-box-shadow:   $input-box-shadow-focus !default; // modified
 
 $custom-select-sm-padding-y:  .2rem !default;
-$custom-select-sm-font-size:  75% !default;
+$custom-select-sm-font-size:  $font-size-sm !default; // modified
 $custom-select-sm-height:     calc(1.825rem + (#{$custom-select-border-width} * 2)) !default; // custom
 
-$custom-select-lg-font-size: 125% !default; // custom
+$custom-select-lg-font-size: $font-size-lg !default; // custom
 $custom-select-lg-height: calc(4.325rem + (#{$custom-select-border-width} * 2)) !default; // custom
 
 $custom-file-height:           calc(3rem + (#{$custom-select-border-width} * 2)) !default; // modified
@@ -1167,7 +1172,8 @@ $badge-danger-color:          $brand-danger-color !default;
 $badge-inverse-color:         $brand-inverse-color !default;
 
 $badge-link-hover-color:      $white !default;
-$badge-font-size:             75% !default;
+$badge-font-size-fixed:       .75rem !default; // custom
+$badge-font-size:             max(.75rem, .75em) !default; // modified
 $badge-font-weight:           $font-weight-bold !default;
 $badge-padding-x:             .8em !default; // modified
 $badge-padding-y:             .35em !default; // modified
