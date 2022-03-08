@@ -17,7 +17,7 @@
     
 
     <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.0">
+    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.1">
     <link rel="canonical" href="https://ucf.github.io/Athena-Framework/utilities/position/">
   </head>
 
@@ -81,6 +81,7 @@
     
 
     
+        
         
         
 
@@ -185,6 +186,7 @@
     
         
         
+        
 
         
 
@@ -252,6 +254,7 @@
         </div>
 
     
+        
         
         
 
@@ -354,6 +357,7 @@
         </div>
 
     
+        
         
         
 
@@ -601,8 +605,10 @@
     
         
         
+        
 
         
+            
             
         
 
@@ -868,8 +874,8 @@
       </div>
       <div class="col-md-8 pull-md-4 pt-3 pt-md-5 afd-content">
         <p>Position utilities are helpful for quickly placing a component outside the normal document flow, or for adjusting/defining the containing block for things like <a href="/Athena-Framework/utilities/stretched-links/">stretched links</a>.</p>
-<h2 id="contents">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
-<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#static">Static </a></li><li><a href="#relative">Relative </a></li><li><a href="#absolute">Absolute </a><ul><li><a href="#absolute-top">Absolute Top </a></li><li><a href="#absolute-bottom">Absolute Bottom </a></li></ul></li><li><a href="#fixed">Fixed </a><ul><li><a href="#fixed-top">Fixed Top </a></li><li><a href="#fixed-bottom">Fixed Bottom </a></li></ul></li><li><a href="#sticky-top">Sticky top </a><ul><li><a href="#dynamic-position-sticky-top-insertion">Dynamic .position-sticky-top insertion </a></li></ul></li></ul></nav><h2 id="static">Static <a class="header-anchor" href="#static"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="contents" tabindex="-1">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#static">Static </a></li><li><a href="#relative">Relative </a></li><li><a href="#absolute">Absolute </a><ul><li><a href="#absolute-top">Absolute Top </a></li><li><a href="#absolute-bottom">Absolute Bottom </a></li></ul></li><li><a href="#fixed">Fixed </a><ul><li><a href="#fixed-top">Fixed Top </a></li><li><a href="#fixed-bottom">Fixed Bottom </a></li></ul></li><li><a href="#sticky-top">Sticky top </a><ul><li><a href="#dynamic-position-sticky-top-insertion">Dynamic .position-sticky-top insertion </a></li></ul></li></ul></nav><h2 id="static" tabindex="-1">Static <a class="header-anchor" href="#static"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Assign <code>position: static</code> to an element.  Note that directional position values previously set on the element (<code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>) and <code>z-index</code> will have no effect.</p>
 <div class="highlight"><pre><code class="nohighlight">
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;position-static&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -882,7 +888,7 @@
 <li><code>.position-lg-static</code></li>
 <li><code>.position-xl-static</code></li>
 </ul>
-<h2 id="relative">Relative <a class="header-anchor" href="#relative"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="relative" tabindex="-1">Relative <a class="header-anchor" href="#relative"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Assign <code>position: relative</code> to an element.  This utility class also unsets any previously-set directional position values on the element (<code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>), and <code>z-index</code> is reset (via <code>z-index: auto</code>).</p>
 <div class="highlight"><pre><code class="nohighlight">
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;position-relative&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
@@ -895,10 +901,10 @@
 <li><code>.position-lg-relative</code></li>
 <li><code>.position-xl-relative</code></li>
 </ul>
-<h2 id="absolute">Absolute <a class="header-anchor" href="#absolute"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="absolute" tabindex="-1">Absolute <a class="header-anchor" href="#absolute"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Position an element at the top or bottom of its <a href="/Athena-Framework/utilities/stretched-links/#identifying-the-containing-block">containing block</a>, from edge to edge. Keep in mind that an absolutely-positioned element without a containing block will be positioned relative to the document.</p>
 <p>Note that <code>z-index</code> is reset with this class (via <code>z-index: auto</code>); if you need to adjust z-index stacking, you'll need custom CSS.</p>
-<h3 id="absolute-top">Absolute Top <a class="header-anchor" href="#absolute-top"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="absolute-top" tabindex="-1">Absolute Top <a class="header-anchor" href="#absolute-top"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <div class="highlight"><pre><code class="nohighlight">
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;position-absolute-top&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
@@ -910,7 +916,7 @@
 <li><code>.position-lg-absolute-top</code></li>
 <li><code>.position-xl-absolute-top</code></li>
 </ul>
-<h3 id="absolute-bottom">Absolute Bottom <a class="header-anchor" href="#absolute-bottom"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="absolute-bottom" tabindex="-1">Absolute Bottom <a class="header-anchor" href="#absolute-bottom"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <div class="highlight"><pre><code class="nohighlight">
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;position-absolute-bottom&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
@@ -922,9 +928,9 @@
 <li><code>.position-lg-absolute-bottom</code></li>
 <li><code>.position-xl-absolute-bottom</code></li>
 </ul>
-<h2 id="fixed">Fixed <a class="header-anchor" href="#fixed"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="fixed" tabindex="-1">Fixed <a class="header-anchor" href="#fixed"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Position an element at the top or bottom of the viewport, from edge to edge. Be sure you understand the ramifications of fixed position in your project; you may need to add aditional CSS.</p>
-<h3 id="fixed-top">Fixed Top <a class="header-anchor" href="#fixed-top"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="fixed-top" tabindex="-1">Fixed Top <a class="header-anchor" href="#fixed-top"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <div class="highlight"><pre><code class="nohighlight">
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;position-fixed-top&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
@@ -942,7 +948,7 @@
 <li><code>.fixed-lg-top</code></li>
 <li><code>.fixed-xl-top</code></li>
 </ul>
-<h3 id="fixed-bottom">Fixed Bottom <a class="header-anchor" href="#fixed-bottom"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="fixed-bottom" tabindex="-1">Fixed Bottom <a class="header-anchor" href="#fixed-bottom"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <div class="highlight"><pre><code class="nohighlight">
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;position-fixed-bottom&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
@@ -960,19 +966,19 @@
 <li><code>.fixed-lg-bottom</code></li>
 <li><code>.fixed-xl-bottom</code></li>
 </ul>
-<h2 id="sticky-top">Sticky top <a class="header-anchor" href="#sticky-top"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="sticky-top" tabindex="-1">Sticky top <a class="header-anchor" href="#sticky-top"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Position an element at the top of the viewport, from edge to edge, but only after you scroll past it.</p>
 <div class="highlight"><pre><code class="nohighlight">
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;position-sticky-top&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
 <p>You can also use the alias <code>.sticky-top</code> for backward compatibility with previous versions of Athena.</p>
-<div class="afd-callout afd-callout-warning"><h3 id="not-compatible-with-other-position-utilities">Not compatible with other position utilities <a class="header-anchor" href="#not-compatible-with-other-position-utilities"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<div class="afd-callout afd-callout-warning"><h3 id="not-compatible-with-other-position-utilities" tabindex="-1">Not compatible with other position utilities <a class="header-anchor" href="#not-compatible-with-other-position-utilities"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Note that responsive variants for the sticky top utility are currently not available, and the sticky top utility is not compatible with Athena's other position utilities.</p>
 </div>
-<div class="afd-callout afd-callout-warning"><h3 id="polyfill-for-position-sticky">Polyfill for <code>position: sticky</code> <a class="header-anchor" href="#polyfill-for-position-sticky"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<div class="afd-callout afd-callout-warning"><h3 id="polyfill-for-position-sticky" tabindex="-1">Polyfill for <code>position: sticky</code> <a class="header-anchor" href="#polyfill-for-position-sticky"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>The sticky top utility uses CSS's <code>position: sticky</code>, which is polyfilled in Athena using Stickyfill for full cross-browser support; however, we still recommend testing its usage thoroughly in <a href="http://caniuse.com/#search=sticky">browsers that require the polyfill</a> to ensure it behaves properly.</p>
 </div>
-<h3 id="dynamic-position-sticky-top-insertion">Dynamic <code>.position-sticky-top</code> insertion <a class="header-anchor" href="#dynamic-position-sticky-top-insertion"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="dynamic-position-sticky-top-insertion" tabindex="-1">Dynamic <code>.position-sticky-top</code> insertion <a class="header-anchor" href="#dynamic-position-sticky-top-insertion"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>For any sticky top element inserted into the document after it has finished loading, or for elements whose sticky top class was added to an element on-the-fly, you'll need to use Athena's stickyTop plugin to initialize polyfill support for that element:</p>
 <div class="highlight"><pre><code class="language-javascript">
 $('#my-sticky-elem').stickyTop();
@@ -1003,7 +1009,7 @@ $('#my-sticky-elem').stickyTop();
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.1.0</strong>.
+              Current version: <strong>v1.1.1</strong>.
             </p>
             <p class="mb-0">
               Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
@@ -1032,7 +1038,7 @@ $('#my-sticky-elem').stickyTop();
       var SEARCH_INDEX_URL = '/Athena-Framework/search-index.json';
       var SEARCH_DATA_URL = '/Athena-Framework/search-data.json';
     </script>
-    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.0"></script>
+    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.1"></script>
 
   </body>
 </html>

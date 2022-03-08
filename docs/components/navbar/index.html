@@ -17,7 +17,7 @@
     
 
     <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.0">
+    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.1">
     <link rel="canonical" href="https://ucf.github.io/Athena-Framework/components/navbar/">
   </head>
 
@@ -83,6 +83,7 @@
     
 
     
+        
         
         
 
@@ -187,6 +188,7 @@
     
         
         
+        
 
         
 
@@ -254,6 +256,7 @@
         </div>
 
     
+        
         
         
 
@@ -358,8 +361,10 @@
     
         
         
+        
 
         
+            
             
         
 
@@ -607,6 +612,7 @@
         </div>
 
     
+        
         
         
 
@@ -870,8 +876,8 @@
       </div>
       <div class="col-md-8 pull-md-4 pt-3 pt-md-5 afd-content">
         <p>The navbar is a wrapper that positions branding, navigation, and other elements in a concise header. It's easily extensible and, thanks to Athena's JavaScript, can easily integrate responsive behaviors.</p>
-<h2 id="contents">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
-<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#how-it-works">How it works </a></li><li><a href="#supported-content">Supported content </a><ul><li><a href="#brand">Brand </a></li><li><a href="#nav">Nav </a></li><li><a href="#forms">Forms </a></li><li><a href="#text">Text </a></li></ul></li><li><a href="#color-schemes">Color schemes </a></li><li><a href="#containers">Containers </a></li><li><a href="#placement">Placement </a></li><li><a href="#responsive-behaviors">Responsive behaviors </a><ul><li><a href="#toggler">Toggler </a></li><li><a href="#external-content">External content </a></li></ul></li></ul></nav><h2 id="how-it-works">How it works <a class="header-anchor" href="#how-it-works"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="contents" tabindex="-1">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#how-it-works">How it works </a></li><li><a href="#supported-content">Supported content </a><ul><li><a href="#brand">Brand </a></li><li><a href="#nav">Nav </a></li><li><a href="#forms">Forms </a></li><li><a href="#text">Text </a></li></ul></li><li><a href="#color-schemes">Color schemes </a></li><li><a href="#containers">Containers </a></li><li><a href="#placement">Placement </a></li><li><a href="#responsive-behaviors">Responsive behaviors </a><ul><li><a href="#toggler">Toggler </a></li><li><a href="#external-content">External content </a></li></ul></li></ul></nav><h2 id="how-it-works" tabindex="-1">How it works <a class="header-anchor" href="#how-it-works"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Here's what you need to know before getting started with the navbar:</p>
 <ul>
 <li>Navbars require a wrapping <code>.navbar</code> with <code>.navbar-toggleable{-sm|-md|-lg|-xl}</code> for responsive collapsing and <a href="#color-schemes">color scheme</a> classes.</li>
@@ -881,7 +887,7 @@
 <li>Ensure accessibility by using a <code>&lt;nav&gt;</code> element or, if using a more generic element such as a <code>&lt;div&gt;</code>, add a <code>role=&quot;navigation&quot;</code> to every navbar to explicitly identify it as a landmark region for users of assistive technologies.</li>
 </ul>
 <p>Read on for an example and list of supported sub-components.</p>
-<h2 id="supported-content">Supported content <a class="header-anchor" href="#supported-content"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="supported-content" tabindex="-1">Supported content <a class="header-anchor" href="#supported-content"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Navbars come with built-in support for a handful of sub-components. Choose from the following as needed:</p>
 <ul>
 <li><code>.navbar-brand</code> for your department, organization, or project name.</li>
@@ -890,7 +896,7 @@
 <li><code>.navbar-text</code> for adding vertically centered strings of text.</li>
 <li><code>.collapse.navbar-collapse</code> for grouping and hiding navbar contents by a parent breakpoint.</li>
 </ul>
-<div class="afd-callout afd-callout-warning"><h3 id="a-note-about-navbar-toggler-positioning">A note about navbar toggler positioning <a class="header-anchor" href="#a-note-about-navbar-toggler-positioning"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<div class="afd-callout afd-callout-warning"><h3 id="a-note-about-navbar-toggler-positioning" tabindex="-1">A note about navbar toggler positioning <a class="header-anchor" href="#a-note-about-navbar-toggler-positioning"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p><code>.navbar-toggler-left</code> and <code>.navbar-toggler-right</code> classes should not be used to position the navbar toggler button in Athena navbars.  Athena's navbars have been modified from Bootstrap alpha.6 to utilize flex styles for positioning of inner elements, meaning that the toggler button is now positioned by <strong>its order in the navbar markup</strong>.  Athena currently supports right-aligned toggler buttons: if a toggler is added after a <code>.navbar-brand</code> (or other supported nested components), it will be positioned correctly without any additional markup; if the toggler button is the only child besides the collapsed content, you will need to add the <code>.ml-auto</code> class to push it to the right.</p>
 <p>Left-aligned toggler buttons are not currently supported in Athena.</p>
 </div>
@@ -945,7 +951,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
 </code></pre></div>
-<h3 id="brand">Brand <a class="header-anchor" href="#brand"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="brand" tabindex="-1">Brand <a class="header-anchor" href="#brand"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>The <code>.navbar-brand</code> can be applied to most elements, but an anchor works best as some elements might require utility classes or custom styles.</p>
 <div class="afd-example">
 <!-- As a link -->
@@ -1000,7 +1006,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
 </code></pre></div>
-<h3 id="nav">Nav <a class="header-anchor" href="#nav"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="nav" tabindex="-1">Nav <a class="header-anchor" href="#nav"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Navbar navigation links build on our <code>.nav</code> options with their own modifier class. <strong>Navigation in navbars will grow to occupy as much horizontal space as possible</strong> to keep your navbar contents securely aligned.</p>
 <p>Active states—with <code>.active</code>—to indicate the current page can be applied directly to <code>.nav-link</code>s or their immediate parent <code>.nav-item</code>s.</p>
 <div class="afd-example">
@@ -1144,7 +1150,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
 </code></pre></div>
-<h3 id="forms">Forms <a class="header-anchor" href="#forms"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="forms" tabindex="-1">Forms <a class="header-anchor" href="#forms"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Place various form controls and components within a navbar with <code>.form-inline</code>.</p>
 <div class="afd-example">
 <nav class="navbar navbar-light bg-faded">
@@ -1215,7 +1221,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
 </code></pre></div>
-<h3 id="text">Text <a class="header-anchor" href="#text"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="text" tabindex="-1">Text <a class="header-anchor" href="#text"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Navbars may contain bits of text with the help of <code>.navbar-text</code>. This class adjusts vertical alignment and horizontal spacing for strings of text.</p>
 <div class="afd-example">
 <nav class="navbar navbar-light bg-faded">
@@ -1278,7 +1284,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
 </code></pre></div>
-<h2 id="color-schemes">Color schemes <a class="header-anchor" href="#color-schemes"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="color-schemes" tabindex="-1">Color schemes <a class="header-anchor" href="#color-schemes"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Theming the navbar is easy thanks to the combination of theming classes and <code>background-color</code> utilities. Choose from <code>.navbar-light</code> for use with light background colors, or <code>.navbar-inverse</code> for dark background colors. Then, customize with <code>.bg-*</code> utilities.</p>
 <div class="afd-example">
   <nav class="navbar navbar-toggleable-lg navbar-inverse bg-inverse">
@@ -1376,7 +1382,7 @@
   <span class="hljs-comment">&lt;!-- Navbar content --&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
 </code></pre></div>
-<h2 id="containers">Containers <a class="header-anchor" href="#containers"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="containers" tabindex="-1">Containers <a class="header-anchor" href="#containers"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Although it's not required, you can wrap a navbar in a <code>.container</code> to center it on a page or add one within to only center the contents of a <a href="#placement">fixed or static top navbar</a>.</p>
 <div class="afd-example">
 <div class="container">
@@ -1405,7 +1411,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
 </code></pre></div>
-<h2 id="placement">Placement <a class="header-anchor" href="#placement"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="placement" tabindex="-1">Placement <a class="header-anchor" href="#placement"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Use our position utilities to place navbars in non-static positions. Choose from fixed to the top, fixed to the bottom, or stickied to the top.</p>
 <div class="afd-example">
 <nav class="navbar navbar-light bg-faded">
@@ -1443,10 +1449,10 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;navbar-brand&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span>Sticky top<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
 </code></pre></div>
-<h2 id="responsive-behaviors">Responsive behaviors <a class="header-anchor" href="#responsive-behaviors"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="responsive-behaviors" tabindex="-1">Responsive behaviors <a class="header-anchor" href="#responsive-behaviors"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Navbars can utilize <code>.navbar-toggler</code>, <code>.navbar-collapse</code>, and <code>.navbar-toggleable{-sm|-md|-lg|-xl}</code> classes to change when their content collapses behind a button. In combination with other utilities, you can easily choose when to show or hide particular elements.</p>
 <p>For navbars that never collapse, add the <code>.navbar-toggleable</code> class on the navbar. For navbars that always collapse, don't add any <code>.navbar-toggleable</code> class.</p>
-<h3 id="toggler">Toggler <a class="header-anchor" href="#toggler"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="toggler" tabindex="-1">Toggler <a class="header-anchor" href="#toggler"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Navbar togglers should be forced to the right using <code>.ml-auto</code> to avoid gutter stacking issues. However, should they follow a sibling element like a <code>.navbar-brand</code>, they'll automatically be aligned to the far right, and no margin utility class is needed. Below are examples of different toggle styles.</p>
 <p>With <code>.navbar-brand</code> nested in the collapsible portion of the navbar:</p>
 <div class="afd-example">
@@ -1592,7 +1598,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
 </code></pre></div>
-<h3 id="external-content">External content <a class="header-anchor" href="#external-content"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="external-content" tabindex="-1">External content <a class="header-anchor" href="#external-content"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Sometimes you may want to use the <a href="/Athena-Framework/components/collapse">collapse component</a> to trigger hidden content elsewhere on the page. Because Athena's collapse JavaScript works on the <code>id</code> and <code>data-target</code> matching, that's easily done!</p>
 <div class="afd-example">
 <div class="pos-f-t">
@@ -1648,7 +1654,7 @@
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.1.0</strong>.
+              Current version: <strong>v1.1.1</strong>.
             </p>
             <p class="mb-0">
               Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
@@ -1677,7 +1683,7 @@
       var SEARCH_INDEX_URL = '/Athena-Framework/search-index.json';
       var SEARCH_DATA_URL = '/Athena-Framework/search-data.json';
     </script>
-    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.0"></script>
+    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.1"></script>
 
   </body>
 </html>

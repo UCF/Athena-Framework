@@ -17,7 +17,7 @@
     
 
     <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.0">
+    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.1">
     <link rel="canonical" href="https://ucf.github.io/Athena-Framework/getting-started/accessibility/">
   </head>
 
@@ -85,8 +85,10 @@
     
         
         
+        
 
         
+            
             
         
 
@@ -193,6 +195,7 @@
     
         
         
+        
 
         
 
@@ -260,6 +263,7 @@
         </div>
 
     
+        
         
         
 
@@ -362,6 +366,7 @@
         </div>
 
     
+        
         
         
 
@@ -607,6 +612,7 @@
         </div>
 
     
+        
         
         
 
@@ -870,21 +876,21 @@
       </div>
       <div class="col-md-8 pull-md-4 pt-3 pt-md-5 afd-content">
         <p>The Athena Framework provides a rich suite of tools for building accessible websites and applications--but it's important that developers and content editors understand how to implement these tools to meet Section 508 compliance and <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0 AA requirements.</p>
-<div class="afd-callout afd-callout-info"><h2 id="accessibility-basics">Accessibility Basics <a class="header-anchor" href="#accessibility-basics"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<div class="afd-callout afd-callout-info"><h2 id="accessibility-basics" tabindex="-1">Accessibility Basics <a class="header-anchor" href="#accessibility-basics"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>The Athena Framework provides utilities and pre-styled components that are designed to be accessible, but <strong>it is the responsibility of the developers and content editors using the framework to implement them appropriately</strong>.</p>
 <p>Please see our <a href="#additional-resources">Additional Resources</a> section for further reading on accessibility requirements.</p>
 </div>
-<h2 id="contents">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
-<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#overview-and-limitations">Overview and limitations </a><ul><li><a href="#structural-markup">Structural markup </a></li><li><a href="#interactive-components">Interactive components </a></li><li><a href="#color-contrast">Color contrast </a></li><li><a href="#visually-hidden-content">Visually hidden content </a></li></ul></li><li><a href="#additional-resources">Additional resources </a><ul><li><a href="#further-reading">Further reading </a></li><li><a href="#accessibility-validation-tools">Accessibility validation tools </a></li></ul></li></ul></nav><h2 id="overview-and-limitations">Overview and limitations <a class="header-anchor" href="#overview-and-limitations"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="contents" tabindex="-1">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#overview-and-limitations">Overview and limitations </a><ul><li><a href="#structural-markup">Structural markup </a></li><li><a href="#interactive-components">Interactive components </a></li><li><a href="#color-contrast">Color contrast </a></li><li><a href="#visually-hidden-content">Visually hidden content </a></li></ul></li><li><a href="#additional-resources">Additional resources </a><ul><li><a href="#further-reading">Further reading </a></li><li><a href="#accessibility-validation-tools">Accessibility validation tools </a></li></ul></li></ul></nav><h2 id="overview-and-limitations" tabindex="-1">Overview and limitations <a class="header-anchor" href="#overview-and-limitations"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>The overall accessibility of any project built with Athena depends in large part on the author's markup, additional styling, and scripting they've included. However, provided that these have been implemented correctly, websites and applications using Athena should be able to fulfill WCAG 2.0 AA and Section 508 accessibility requirements.</p>
-<h3 id="structural-markup">Structural markup <a class="header-anchor" href="#structural-markup"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="structural-markup" tabindex="-1">Structural markup <a class="header-anchor" href="#structural-markup"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Athena's styling and layout can be applied to a wide range of markup structures. Athena's documentation aims to provide developers with best practice examples to demonstrate the use of Athena itself and illustrate appropriate semantic markup, including ways in which potential accessibility concerns can be addressed.</p>
-<h3 id="interactive-components">Interactive components <a class="header-anchor" href="#interactive-components"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="interactive-components" tabindex="-1">Interactive components <a class="header-anchor" href="#interactive-components"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Athena's interactive components—such as modal dialogs, dropdown menus and custom tooltips—are designed to work for touch, mouse and keyboard users. Through the use of relevant <a href="https://www.w3.org/WAI/intro/aria"><abbr title="Web Accessibility Initiative">WAI</abbr> <abbr title="Accessible Rich Internet Applications">ARIA</abbr></a> roles and attributes, these components should also be understandable and operable using assistive technologies (such as screen readers).</p>
 <p>Because Athena's components are purposely designed to be fairly generic, authors may need to include further <abbr title="Accessible Rich Internet Applications">ARIA</abbr> roles and attributes, as well as JavaScript behavior, to more accurately convey the precise nature and functionality of their component. This is usually noted in the documentation.</p>
-<h3 id="color-contrast">Color contrast <a class="header-anchor" href="#color-contrast"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="color-contrast" tabindex="-1">Color contrast <a class="header-anchor" href="#color-contrast"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Colors in Athena have been modified from Bootstrap's defaults to ensure they meet <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html">WCAG 2.0 AA color contrast requirements</a> (color contrast ratio of at least 4.5 to 1). In addition, most components include overrides unique to Athena that apply accessible text colors out-of-the-box. However, projects that apply custom color overrides should be tested on a per-case basis to ensure they still meet color contrast requirements.</p>
-<h3 id="visually-hidden-content">Visually hidden content <a class="header-anchor" href="#visually-hidden-content"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="visually-hidden-content" tabindex="-1">Visually hidden content <a class="header-anchor" href="#visually-hidden-content"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Content which should be visually hidden, but remain accessible to assistive technologies such as screen readers, can be styled using the <code>.sr-only</code> class. This can be useful in situations where additional visual information or cues (such as meaning denoted through the use of color) need to also be conveyed to non-visual users.</p>
 <div class="highlight"><pre><code class="nohighlight">
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;text-danger&quot;</span>&gt;</span>
@@ -896,14 +902,14 @@
 <div class="highlight"><pre><code class="nohighlight">
 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;sr-only sr-only-focusable&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#content&quot;</span>&gt;</span>Skip to main content<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 </code></pre></div>
-<h2 id="additional-resources">Additional resources <a class="header-anchor" href="#additional-resources"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
-<h3 id="further-reading">Further reading <a class="header-anchor" href="#further-reading"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h2 id="additional-resources" tabindex="-1">Additional resources <a class="header-anchor" href="#additional-resources"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h3 id="further-reading" tabindex="-1">Further reading <a class="header-anchor" href="#further-reading"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <ul>
 <li><a href="http://a11yproject.com/">The A11Y Project</a></li>
 <li><a href="https://er.educause.edu/articles/2017/12/the-section-508-refresh-and-what-it-means-for-higher-education">The Section 508 Refresh and What It Means for Higher Education</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility">MDN accessibility documentation</a></li>
 </ul>
-<h3 id="accessibility-validation-tools">Accessibility validation tools <a class="header-anchor" href="#accessibility-validation-tools"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="accessibility-validation-tools" tabindex="-1">Accessibility validation tools <a class="header-anchor" href="#accessibility-validation-tools"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <ul>
 <li><a href="https://wave.webaim.org/">WAVE accessibility evaluation tool (browser extensions available)</a></li>
 <li><a href="https://webaim.org/resources/contrastchecker/">WebAIM Color Contrast Checker</a></li>
@@ -937,7 +943,7 @@
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.1.0</strong>.
+              Current version: <strong>v1.1.1</strong>.
             </p>
             <p class="mb-0">
               Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
@@ -966,7 +972,7 @@
       var SEARCH_INDEX_URL = '/Athena-Framework/search-index.json';
       var SEARCH_DATA_URL = '/Athena-Framework/search-data.json';
     </script>
-    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.0"></script>
+    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.1"></script>
 
   </body>
 </html>

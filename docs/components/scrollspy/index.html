@@ -17,7 +17,7 @@
     
 
     <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.0">
+    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.1">
     <link rel="canonical" href="https://ucf.github.io/Athena-Framework/components/scrollspy/">
   </head>
 
@@ -83,6 +83,7 @@
     
 
     
+        
         
         
 
@@ -187,6 +188,7 @@
     
         
         
+        
 
         
 
@@ -254,6 +256,7 @@
         </div>
 
     
+        
         
         
 
@@ -358,8 +361,10 @@
     
         
         
+        
 
         
+            
             
         
 
@@ -607,6 +612,7 @@
         </div>
 
     
+        
         
         
 
@@ -869,8 +875,8 @@
 
       </div>
       <div class="col-md-8 pull-md-4 pt-3 pt-md-5 afd-content">
-        <h2 id="contents">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
-<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#how-it-works">How it works </a></li><li><a href="#example-in-navbar">Example in navbar </a></li><li><a href="#usage">Usage </a><ul><li><a href="#via-data-attributes">Via data attributes </a></li><li><a href="#via-javascript">Via JavaScript </a></li><li><a href="#methods">Methods </a><ul><li><a href="#scrollspy-refresh">.scrollspy(&#39;refresh&#39;) </a></li></ul></li><li><a href="#options">Options </a></li><li><a href="#events">Events </a></li></ul></li></ul></nav><h2 id="how-it-works">How it works <a class="header-anchor" href="#how-it-works"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+        <h2 id="contents" tabindex="-1">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#how-it-works">How it works </a></li><li><a href="#example-in-navbar">Example in navbar </a></li><li><a href="#usage">Usage </a><ul><li><a href="#via-data-attributes">Via data attributes </a></li><li><a href="#via-javascript">Via JavaScript </a></li><li><a href="#methods">Methods </a><ul><li><a href="#scrollspy-refresh">.scrollspy(&#39;refresh&#39;) </a></li></ul></li><li><a href="#options">Options </a></li><li><a href="#events">Events </a></li></ul></li></ul></nav><h2 id="how-it-works" tabindex="-1">How it works <a class="header-anchor" href="#how-it-works"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Scrollspy has a few requirements to function properly:</p>
 <ul>
 <li>It must be used on a <a href="/Athena-Framework/components/navs">nav component</a>.</li>
@@ -879,7 +885,7 @@
 <li>Anchors (<code>&lt;a&gt;</code>) are required and must point to an element with that ID.</li>
 </ul>
 <p>When successfully implemented, your nav will update accordingly, moving the <code>.active</code> class from one item to the next based on their associated targets.</p>
-<h2 id="example-in-navbar">Example in navbar <a class="header-anchor" href="#example-in-navbar"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="example-in-navbar" tabindex="-1">Example in navbar <a class="header-anchor" href="#example-in-navbar"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Scroll the area below the navbar and watch the active class change. The dropdown sub items will be highlighted as well.</p>
 <div class="afd-example">
   <nav id="navbar-example2" class="navbar navbar-light bg-faded">
@@ -913,8 +919,8 @@
     </p>
   </div>
 </div>
-<h2 id="usage">Usage <a class="header-anchor" href="#usage"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
-<h3 id="via-data-attributes">Via data attributes <a class="header-anchor" href="#via-data-attributes"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h2 id="usage" tabindex="-1">Usage <a class="header-anchor" href="#usage"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h3 id="via-data-attributes" tabindex="-1">Via data attributes <a class="header-anchor" href="#via-data-attributes"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>To easily add scrollspy behavior to your topbar navigation, add <code>data-spy=&quot;scroll&quot;</code> to the element you want to spy on (most typically this would be the <code>&lt;body&gt;</code>). Then add the <code>data-target</code> attribute with the ID or class of the parent element of any <code>.nav</code> component.</p>
 <div class="highlight"><pre><code class="nohighlight">
 <span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;position-relative&quot;</span> <span class="hljs-attr">data-spy</span>=<span class="hljs-string">&quot;scroll&quot;</span> <span class="hljs-attr">data-target</span>=<span class="hljs-string">&quot;#navbar-example&quot;</span>&gt;</span>
@@ -927,26 +933,26 @@
   ...
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 </code></pre></div>
-<h3 id="via-javascript">Via JavaScript <a class="header-anchor" href="#via-javascript"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="via-javascript" tabindex="-1">Via JavaScript <a class="header-anchor" href="#via-javascript"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>After applying <code>position: relative;</code> to the target element, call the scrollspy via JavaScript:</p>
 <div class="highlight"><pre><code class="language-js">
 $('body').scrollspy({ target: '#navbar-example' })
 </code></pre></div>
-<div class="afd-callout afd-callout-danger"><h4 id="resolvable-id-targets-required">Resolvable ID targets required <a class="header-anchor" href="#resolvable-id-targets-required"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
+<div class="afd-callout afd-callout-danger"><h4 id="resolvable-id-targets-required" tabindex="-1">Resolvable ID targets required <a class="header-anchor" href="#resolvable-id-targets-required"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
 <p>Navbar links must have resolvable id targets. For example, a <code>&lt;a href=&quot;#home&quot;&gt;home&lt;/a&gt;</code> must correspond to something in the DOM like <code>&lt;div id=&quot;home&quot;&gt;&lt;/div&gt;</code>.</p>
 </div>
-<div class="afd-callout afd-callout-info"><h4 id="non-visible-target-elements-ignored">Non-<code>:visible</code> target elements ignored <a class="header-anchor" href="#non-visible-target-elements-ignored"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
+<div class="afd-callout afd-callout-info"><h4 id="non-visible-target-elements-ignored" tabindex="-1">Non-<code>:visible</code> target elements ignored <a class="header-anchor" href="#non-visible-target-elements-ignored"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
 <p>Target elements that are not <a href="https://api.jquery.com/visible-selector/"><code>:visible</code> according to jQuery</a> will be ignored and their corresponding nav items will never be highlighted.</p>
 </div>
-<h3 id="methods">Methods <a class="header-anchor" href="#methods"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
-<h4 id="scrollspy-refresh"><code>.scrollspy('refresh')</code> <a class="header-anchor" href="#scrollspy-refresh"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
+<h3 id="methods" tabindex="-1">Methods <a class="header-anchor" href="#methods"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h4 id="scrollspy-refresh" tabindex="-1"><code>.scrollspy('refresh')</code> <a class="header-anchor" href="#scrollspy-refresh"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
 <p>When using scrollspy in conjunction with adding or removing of elements from the DOM, you'll need to call the refresh method like so:</p>
 <div class="highlight"><pre><code class="language-js">
 $('[data-spy="scroll"]').each(function () {
   var $spy = $(this).scrollspy('refresh')
 })
 </code></pre></div>
-<h3 id="options">Options <a class="header-anchor" href="#options"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="options" tabindex="-1">Options <a class="header-anchor" href="#options"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <code>data-</code>, as in <code>data-offset=&quot;&quot;</code>.</p>
 <table class="table table-bordered table-striped table-responsive">
   <thead>
@@ -966,7 +972,7 @@ $('[data-spy="scroll"]').each(function () {
    </tr>
   </tbody>
 </table>
-<h3 id="events">Events <a class="header-anchor" href="#events"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="events" tabindex="-1">Events <a class="header-anchor" href="#events"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <table class="table table-bordered table-striped table-responsive">
   <thead>
    <tr>
@@ -1011,7 +1017,7 @@ $('#myScrollspy').on('activate.bs.scrollspy', function () {
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.1.0</strong>.
+              Current version: <strong>v1.1.1</strong>.
             </p>
             <p class="mb-0">
               Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
@@ -1040,7 +1046,7 @@ $('#myScrollspy').on('activate.bs.scrollspy', function () {
       var SEARCH_INDEX_URL = '/Athena-Framework/search-index.json';
       var SEARCH_DATA_URL = '/Athena-Framework/search-data.json';
     </script>
-    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.0"></script>
+    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.1"></script>
 
   </body>
 </html>

@@ -17,7 +17,7 @@
     
 
     <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.0">
+    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.1">
     <link rel="canonical" href="https://ucf.github.io/Athena-Framework/utilities/display-property/">
   </head>
 
@@ -81,6 +81,7 @@
     
 
     
+        
         
         
 
@@ -185,6 +186,7 @@
     
         
         
+        
 
         
 
@@ -252,6 +254,7 @@
         </div>
 
     
+        
         
         
 
@@ -354,6 +357,7 @@
         </div>
 
     
+        
         
         
 
@@ -601,8 +605,10 @@
     
         
         
+        
 
         
+            
             
         
 
@@ -868,9 +874,9 @@
       </div>
       <div class="col-md-8 pull-md-4 pt-3 pt-md-5 afd-content">
         <p>Change the value of the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display"><code>display</code> property</a> with our responsive display utility classes. We purposely support only a subset of all possible values for <code>display</code>. Classes can be combined for various effects as you need.</p>
-<h2 id="contents">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
-<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#display-classes">Display classes </a><ul><li><a href="#notation">Notation </a></li><li><a href="#examples">Examples </a></li></ul></li><li><a href="#responsive-hiding-classes">Responsive hiding classes </a><ul><li><a href="#available-classes">Available classes </a></li><li><a href="#test-cases">Test cases </a></li></ul></li><li><a href="#print-visibility-classes">Print visibility classes </a></li></ul></nav><h2 id="display-classes">Display classes <a class="header-anchor" href="#display-classes"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
-<h3 id="notation">Notation <a class="header-anchor" href="#notation"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h2 id="contents" tabindex="-1">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#display-classes">Display classes </a><ul><li><a href="#notation">Notation </a></li><li><a href="#examples">Examples </a></li></ul></li><li><a href="#responsive-hiding-classes">Responsive hiding classes </a><ul><li><a href="#available-classes">Available classes </a></li><li><a href="#test-cases">Test cases </a></li></ul></li><li><a href="#print-visibility-classes">Print visibility classes </a></li></ul></nav><h2 id="display-classes" tabindex="-1">Display classes <a class="header-anchor" href="#display-classes"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h3 id="notation" tabindex="-1">Notation <a class="header-anchor" href="#notation"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Display utility classes that apply to all <a href="/Athena-Framework/layout/overview#responsive-breakpoints">breakpoints</a>, from <code>xs</code> to <code>xl</code>, have no breakpoint abbreviation in them. This is because those classes are applied from <code>min-width: 0;</code> and up, and thus are not bound by a media query. The remaining breakpoints, however, do include a breakpoint abbreviation.</p>
 <p>As such, the classes are named using the format:</p>
 <ul>
@@ -889,7 +895,7 @@
 <li><code>inline-flex</code></li>
 </ul>
 <p>The media queries effect screen widths with the given breakpoint <em>or larger</em>. For example, <code>.d-lg-none</code> sets <code>display: none;</code> on both <code>lg</code> and <code>xl</code> screens.</p>
-<h3 id="examples">Examples <a class="header-anchor" href="#examples"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="examples" tabindex="-1">Examples <a class="header-anchor" href="#examples"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <div class="afd-example">
 <div class="d-inline p-2 bg-primary">d-inline</div>
 <div class="d-inline p-2 bg-inverse">d-inline</div>
@@ -904,10 +910,10 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;d-block p-2 bg-primary&quot;</span>&gt;</span>d-block<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;d-block p-2 bg-inverse&quot;</span>&gt;</span>d-block<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
 </code></pre></div>
-<h2 id="responsive-hiding-classes">Responsive hiding classes <a class="header-anchor" href="#responsive-hiding-classes"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="responsive-hiding-classes" tabindex="-1">Responsive hiding classes <a class="header-anchor" href="#responsive-hiding-classes"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>For convenience, you can use <code>.hidden-*-up</code> and <code>.hidden-*-down</code> classes for showing and hiding content by breakpoint, as an alternative to combining multiple <code>.d-*</code> classes.</p>
 <p>Try to use these on a limited basis and avoid creating entirely different versions of the same site. Instead, use them to complement each device's presentation.</p>
-<h3 id="available-classes">Available classes <a class="header-anchor" href="#available-classes"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="available-classes" tabindex="-1">Available classes <a class="header-anchor" href="#available-classes"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <ul>
 <li>The <code>.hidden-*-up</code> classes hide the element when the viewport is at the given breakpoint or wider. For example, <code>.hidden-md-up</code> hides an element on medium, large, and extra-large viewports. They can be considered aliases to <code>.d-*-none</code> classes.</li>
 <li>The <code>.hidden-*-down</code> classes hide the element when the viewport is at the given breakpoint or smaller. For example, <code>.hidden-md-down</code> hides an element on extra-small, small, and medium viewports.</li>
@@ -1022,7 +1028,7 @@
     </tr>
   </tbody>
 </table>
-<h3 id="test-cases">Test cases <a class="header-anchor" href="#test-cases"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="test-cases" tabindex="-1">Test cases <a class="header-anchor" href="#test-cases"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Resize your browser or load on different devices to test the responsive utility classes.</p>
 <p>Green checkmarks indicate the element <strong>is visible</strong> in your current viewport.</p>
 <div class="row responsive-utilities-test visible-on">
@@ -1087,7 +1093,7 @@
     <span class="hidden-xl-only not-visible">Your viewport is NOT exactly extra large</span>
   </div>
 </div>
-<h2 id="print-visibility-classes">Print visibility classes <a class="header-anchor" href="#print-visibility-classes"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="print-visibility-classes" tabindex="-1">Print visibility classes <a class="header-anchor" href="#print-visibility-classes"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Similar to the responsive hiding classes noted above, use these for toggling content for print.</p>
 <table class="table table-bordered table-striped responsive-utilities table-responsive">
   <thead>
@@ -1145,7 +1151,7 @@
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.1.0</strong>.
+              Current version: <strong>v1.1.1</strong>.
             </p>
             <p class="mb-0">
               Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
@@ -1174,7 +1180,7 @@
       var SEARCH_INDEX_URL = '/Athena-Framework/search-index.json';
       var SEARCH_DATA_URL = '/Athena-Framework/search-data.json';
     </script>
-    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.0"></script>
+    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.1"></script>
 
   </body>
 </html>

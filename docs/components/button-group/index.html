@@ -17,7 +17,7 @@
     
 
     <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.0">
+    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.1">
     <link rel="canonical" href="https://ucf.github.io/Athena-Framework/components/button-group/">
   </head>
 
@@ -83,6 +83,7 @@
     
 
     
+        
         
         
 
@@ -187,6 +188,7 @@
     
         
         
+        
 
         
 
@@ -254,6 +256,7 @@
         </div>
 
     
+        
         
         
 
@@ -358,8 +361,10 @@
     
         
         
+        
 
         
+            
             
         
 
@@ -607,6 +612,7 @@
         </div>
 
     
+        
         
         
 
@@ -870,12 +876,12 @@
       </div>
       <div class="col-md-8 pull-md-4 pt-3 pt-md-5 afd-content">
         <p>Group a series of buttons together on a single line with the button group. Add on optional JavaScript radio and checkbox style behavior with <a href="/Athena-Framework/components/buttons#button-plugin">Athena's included JavaScript for buttons</a>.</p>
-<h2 id="contents">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
-<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#basic-example">Basic example </a></li><li><a href="#button-toolbar">Button toolbar </a></li><li><a href="#sizing">Sizing </a></li><li><a href="#nesting">Nesting </a></li><li><a href="#vertical-variation">Vertical variation </a></li><li><a href="#tooltips-and-popovers">Tooltips and popovers </a></li></ul></nav><div class="afd-callout afd-callout-warning"><h2 id="ensure-correct-role-and-provide-a-label">Ensure correct <code>role</code> and provide a label <a class="header-anchor" href="#ensure-correct-role-and-provide-a-label"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="contents" tabindex="-1">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#basic-example">Basic example </a></li><li><a href="#button-toolbar">Button toolbar </a></li><li><a href="#sizing">Sizing </a></li><li><a href="#nesting">Nesting </a></li><li><a href="#vertical-variation">Vertical variation </a></li><li><a href="#tooltips-and-popovers">Tooltips and popovers </a></li></ul></nav><div class="afd-callout afd-callout-warning"><h2 id="ensure-correct-role-and-provide-a-label" tabindex="-1">Ensure correct <code>role</code> and provide a label <a class="header-anchor" href="#ensure-correct-role-and-provide-a-label"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>In order for assistive technologies (such as screen readers) to convey that a series of buttons is grouped, an appropriate <code>role</code> attribute needs to be provided. For button groups, this would be <code>role=&quot;group&quot;</code>, while toolbars should have a <code>role=&quot;toolbar&quot;</code>.</p>
 <p>In addition, groups and toolbars should be given an explicit label, as most assistive technologies will otherwise not announce them, despite the presence of the correct role attribute. In the examples provided here, we use <code>aria-label</code>, but alternatives such as <code>aria-labelledby</code> can also be used.</p>
 </div>
-<h2 id="basic-example">Basic example <a class="header-anchor" href="#basic-example"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="basic-example" tabindex="-1">Basic example <a class="header-anchor" href="#basic-example"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Wrap a series of buttons with <code>.btn</code> in <code>.btn-group</code>.</p>
 <div class="afd-example">
 <div class="btn-group" role="group" aria-label="Basic example">
@@ -890,7 +896,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-default&quot;</span>&gt;</span>Right<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
-<h2 id="button-toolbar">Button toolbar <a class="header-anchor" href="#button-toolbar"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="button-toolbar" tabindex="-1">Button toolbar <a class="header-anchor" href="#button-toolbar"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Combine sets of button groups into button toolbars for more complex components. Use utility classes as needed to space out groups, buttons, and more.</p>
 <div class="afd-example">
 <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
@@ -980,7 +986,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
-<h2 id="sizing">Sizing <a class="header-anchor" href="#sizing"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="sizing" tabindex="-1">Sizing <a class="header-anchor" href="#sizing"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Instead of applying button sizing classes to every button in a group, just add <code>.btn-group-*</code> to each <code>.btn-group</code>, including each one when nesting multiple groups.</p>
 <div class="afd-example">
   <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
@@ -1006,7 +1012,7 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn-group&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;group&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;...&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn-group btn-group-sm&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;group&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;...&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
-<h2 id="nesting">Nesting <a class="header-anchor" href="#nesting"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="nesting" tabindex="-1">Nesting <a class="header-anchor" href="#nesting"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Place a <code>.btn-group</code> within another <code>.btn-group</code> when you want dropdown menus mixed with a series of buttons.</p>
 <div class="afd-example">
 <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
@@ -1038,7 +1044,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
-<h2 id="vertical-variation">Vertical variation <a class="header-anchor" href="#vertical-variation"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="vertical-variation" tabindex="-1">Vertical variation <a class="header-anchor" href="#vertical-variation"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Make a set of buttons appear vertically stacked rather than horizontally. <strong>Split button dropdowns are not supported here.</strong></p>
 <div class="afd-example">
   <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
@@ -1099,7 +1105,7 @@
   ...
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
-<h2 id="tooltips-and-popovers">Tooltips and popovers <a class="header-anchor" href="#tooltips-and-popovers"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="tooltips-and-popovers" tabindex="-1">Tooltips and popovers <a class="header-anchor" href="#tooltips-and-popovers"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Due to the specific implementation (and some other components), a bit of special casing is required for tooltips and popovers within button groups. <strong>You'll have to specify the option <code>container: 'body'</code></strong> to avoid unwanted side effects (such as the element growing wider and/or losing its rounded corners when the tooltip or popover is triggered).</p>
 
       </div>
@@ -1126,7 +1132,7 @@
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.1.0</strong>.
+              Current version: <strong>v1.1.1</strong>.
             </p>
             <p class="mb-0">
               Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
@@ -1155,7 +1161,7 @@
       var SEARCH_INDEX_URL = '/Athena-Framework/search-index.json';
       var SEARCH_DATA_URL = '/Athena-Framework/search-data.json';
     </script>
-    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.0"></script>
+    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.1"></script>
 
   </body>
 </html>

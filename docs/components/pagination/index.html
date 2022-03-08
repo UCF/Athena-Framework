@@ -17,7 +17,7 @@
     
 
     <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.0">
+    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.1">
     <link rel="canonical" href="https://ucf.github.io/Athena-Framework/components/pagination/">
   </head>
 
@@ -83,6 +83,7 @@
     
 
     
+        
         
         
 
@@ -187,6 +188,7 @@
     
         
         
+        
 
         
 
@@ -254,6 +256,7 @@
         </div>
 
     
+        
         
         
 
@@ -358,8 +361,10 @@
     
         
         
+        
 
         
+            
             
         
 
@@ -607,6 +612,7 @@
         </div>
 
     
+        
         
         
 
@@ -870,8 +876,8 @@
       </div>
       <div class="col-md-8 pull-md-4 pt-3 pt-md-5 afd-content">
         <p>Pagination links indicate a series of related content exists across multiple pages. Typically these are used where a multi-page approach to long lists of content improves general performance, such as in search results or inboxes.</p>
-<h2 id="contents">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
-<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#overview">Overview </a></li><li><a href="#working-with-icons">Working with icons </a></li><li><a href="#disabled-and-active-states">Disabled and active states </a></li><li><a href="#sizing">Sizing </a></li><li><a href="#alignment">Alignment </a></li></ul></nav><h2 id="overview">Overview <a class="header-anchor" href="#overview"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="contents" tabindex="-1">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#overview">Overview </a></li><li><a href="#working-with-icons">Working with icons </a></li><li><a href="#disabled-and-active-states">Disabled and active states </a></li><li><a href="#sizing">Sizing </a></li><li><a href="#alignment">Alignment </a></li></ul></nav><h2 id="overview" tabindex="-1">Overview <a class="header-anchor" href="#overview"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>We use a large block of connected links for our pagination, making links hard to miss and easily scalable—all while providing large hit areas. Pagination is built with list HTML elements so screen readers can announce the number of available links. Use a wrapping <code>&lt;nav&gt;</code> element to identify it as a navigation section to screen readers and other assistive technologies.</p>
 <p>In addition, as pages likely have more than one such navigation section, it's advisable to provide a descriptive <code>aria-label</code> for the <code>&lt;nav&gt;</code> to reflect its purpose. For example, if the pagination component is used to navigate between a set of search results, an appropriate label could be <code>aria-label=&quot;Search results pages&quot;</code>.</p>
 <div class="afd-example">
@@ -895,7 +901,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
 </code></pre></div>
-<h2 id="working-with-icons">Working with icons <a class="header-anchor" href="#working-with-icons"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="working-with-icons" tabindex="-1">Working with icons <a class="header-anchor" href="#working-with-icons"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Looking to use an icon or symbol in place of text for some pagination links? Be sure to provide proper screen reader support with <code>aria</code> attributes and the <code>.sr-only</code> utility.</p>
 <div class="afd-example">
 <nav aria-label="Page navigation example">
@@ -938,7 +944,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
 </code></pre></div>
-<h2 id="disabled-and-active-states">Disabled and active states <a class="header-anchor" href="#disabled-and-active-states"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="disabled-and-active-states" tabindex="-1">Disabled and active states <a class="header-anchor" href="#disabled-and-active-states"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Pagination links are customizable for different circumstances. Use <code>.disabled</code> for links that appear un-clickable and <code>.active</code> to indicate the current page.</p>
 <p>While the <code>.disabled</code> class uses <code>pointer-events: none</code> to <em>try</em> to disable the link functionality of <code>&lt;a&gt;</code>s, that CSS property is not yet standardized and doesn't account for keyboard navigation. As such, you should always add <code>tabindex=&quot;-1&quot;</code> on disabled links and use custom JavaScript to fully disable their functionality.</p>
 <div class="afd-example">
@@ -1014,7 +1020,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
 </code></pre></div>
-<h2 id="sizing">Sizing <a class="header-anchor" href="#sizing"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="sizing" tabindex="-1">Sizing <a class="header-anchor" href="#sizing"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Fancy larger or smaller pagination? Add <code>.pagination-lg</code> or <code>.pagination-sm</code> for additional sizes.</p>
 <div class="afd-example">
 <nav aria-label="...">
@@ -1074,7 +1080,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
 </code></pre></div>
-<h2 id="alignment">Alignment <a class="header-anchor" href="#alignment"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="alignment" tabindex="-1">Alignment <a class="header-anchor" href="#alignment"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Change the alignment of pagination components with <a href="/Athena-Framework/utilities/flexbox">flexbox utilities</a>.</p>
 <div class="afd-example">
 <nav aria-label="Page navigation example">
@@ -1159,7 +1165,7 @@
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.1.0</strong>.
+              Current version: <strong>v1.1.1</strong>.
             </p>
             <p class="mb-0">
               Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
@@ -1188,7 +1194,7 @@
       var SEARCH_INDEX_URL = '/Athena-Framework/search-index.json';
       var SEARCH_DATA_URL = '/Athena-Framework/search-data.json';
     </script>
-    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.0"></script>
+    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.1"></script>
 
   </body>
 </html>

@@ -17,7 +17,7 @@
     
 
     <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.0">
+    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.1">
     <link rel="canonical" href="https://ucf.github.io/Athena-Framework/components/buttons/">
   </head>
 
@@ -83,6 +83,7 @@
     
 
     
+        
         
         
 
@@ -187,6 +188,7 @@
     
         
         
+        
 
         
 
@@ -254,6 +256,7 @@
         </div>
 
     
+        
         
         
 
@@ -358,8 +361,10 @@
     
         
         
+        
 
         
+            
             
         
 
@@ -607,6 +612,7 @@
         </div>
 
     
+        
         
         
 
@@ -870,8 +876,8 @@
       </div>
       <div class="col-md-8 pull-md-4 pt-3 pt-md-5 afd-content">
         <p>Use Athena's custom button styles for actions in forms, dialogs, and more. Includes support for a handful of contextual variations, sizes, states, and more.</p>
-<h2 id="contents">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
-<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#examples">Examples </a></li><li><a href="#button-tags">Button tags </a></li><li><a href="#outline-buttons">Outline buttons </a></li><li><a href="#sizes">Sizes </a></li><li><a href="#active-state">Active state </a></li><li><a href="#disabled-state">Disabled state </a></li><li><a href="#javascript-behavior">JavaScript behavior </a><ul><li><a href="#toggle-states">Toggle states </a></li><li><a href="#checkbox-and-radio-buttons">Checkbox and radio buttons </a></li><li><a href="#methods">Methods </a></li></ul></li></ul></nav><h2 id="examples">Examples <a class="header-anchor" href="#examples"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="contents" tabindex="-1">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#examples">Examples </a></li><li><a href="#button-tags">Button tags </a></li><li><a href="#outline-buttons">Outline buttons </a></li><li><a href="#sizes">Sizes </a></li><li><a href="#active-state">Active state </a></li><li><a href="#disabled-state">Disabled state </a></li><li><a href="#javascript-behavior">JavaScript behavior </a><ul><li><a href="#toggle-states">Toggle states </a></li><li><a href="#checkbox-and-radio-buttons">Checkbox and radio buttons </a></li><li><a href="#methods">Methods </a></li></ul></li></ul></nav><h2 id="examples" tabindex="-1">Examples <a class="header-anchor" href="#examples"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Athena includes several predefined button styles:</p>
 <div class="afd-example">
 <button type="button" class="btn btn-default">Default</button>
@@ -896,10 +902,10 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-inverse&quot;</span>&gt;</span>Inverse<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-link&quot;</span>&gt;</span>Link<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 </code></pre></div>
-<div class="afd-callout afd-callout-warning"><h4 id="conveying-meaning-to-assistive-technologies">Conveying meaning to assistive technologies <a class="header-anchor" href="#conveying-meaning-to-assistive-technologies"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
+<div class="afd-callout afd-callout-warning"><h4 id="conveying-meaning-to-assistive-technologies" tabindex="-1">Conveying meaning to assistive technologies <a class="header-anchor" href="#conveying-meaning-to-assistive-technologies"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
 <p>Using color to add meaning only provides a visual indication, which will not be conveyed to users of assistive technologies – such as screen readers. Ensure that information denoted by the color is either obvious from the content itself (e.g. the visible text), or is included through alternative means, such as additional text hidden with the <code>.sr-only</code> class.</p>
 </div>
-<h2 id="button-tags">Button tags <a class="header-anchor" href="#button-tags"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="button-tags" tabindex="-1">Button tags <a class="header-anchor" href="#button-tags"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>The <code>.btn</code> classes are designed to be used with the <code>&lt;button&gt;</code> element. However, you can also use these classes on <code>&lt;a&gt;</code> or <code>&lt;input&gt;</code> elements (though some browsers may apply a slightly different rendering).</p>
 <p>When using button classes on <code>&lt;a&gt;</code> elements that are used to trigger in-page functionality (like collapsing content), rather than linking to new pages or sections within the current page, these links should be given a <code>role=&quot;button&quot;</code> to appropriately convey their purpose to assistive technologies such as screen readers.</p>
 <div class="afd-example">
@@ -915,7 +921,7 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-primary&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Submit&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-primary&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;reset&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Reset&quot;</span>&gt;</span>
 </code></pre></div>
-<h2 id="outline-buttons">Outline buttons <a class="header-anchor" href="#outline-buttons"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="outline-buttons" tabindex="-1">Outline buttons <a class="header-anchor" href="#outline-buttons"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>In need of a button, but not the hefty background colors they bring? Replace the default modifier classes with the <code>.btn-outline-*</code> ones for a stylish bordered button with white background.</p>
 <p>Note that a &quot;default&quot; outline button variant is not provided, since <code>.btn-default</code> is already styled with an outline.</p>
 <div class="afd-example">
@@ -958,7 +964,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-outline-i-danger&quot;</span>&gt;</span>Danger<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
-<h2 id="sizes">Sizes <a class="header-anchor" href="#sizes"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="sizes" tabindex="-1">Sizes <a class="header-anchor" href="#sizes"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Fancy larger or smaller buttons? Add <code>.btn-lg</code> or <code>.btn-sm</code> for additional sizes.</p>
 <div class="afd-example">
 <button type="button" class="btn btn-primary btn-lg">Large button</button>
@@ -982,7 +988,7 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-primary btn-lg btn-block&quot;</span>&gt;</span>Block level button<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-secondary btn-lg btn-block&quot;</span>&gt;</span>Block level button<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 </code></pre></div>
-<h2 id="active-state">Active state <a class="header-anchor" href="#active-state"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="active-state" tabindex="-1">Active state <a class="header-anchor" href="#active-state"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Buttons will appear pressed (with a darker background, darker border, and inset shadow) when active. <strong>There's no need to add a class to <code>&lt;button&gt;</code>s as they use a pseudo-class</strong>. However, you can still force the same active appearance with <code>.active</code> (and include the <code>aria-pressed=&quot;true&quot;</code> attribute) should you need to replicate the state programmatically.</p>
 <div class="afd-example">
 <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Primary link</a>
@@ -991,7 +997,7 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-primary btn-lg active&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-pressed</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>Primary link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-secondary btn-lg active&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-pressed</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 </code></pre></div>
-<h2 id="disabled-state">Disabled state <a class="header-anchor" href="#disabled-state"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="disabled-state" tabindex="-1">Disabled state <a class="header-anchor" href="#disabled-state"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Make buttons look inactive by adding the <code>disabled</code> boolean attribute to any <code>&lt;button&gt;</code> element.</p>
 <div class="afd-example">
 <button type="button" class="btn btn-lg btn-primary" disabled>Primary button</button>
@@ -1013,12 +1019,12 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-primary btn-lg disabled&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-disabled</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>Primary link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-secondary btn-lg disabled&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">aria-disabled</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 </code></pre></div>
-<div class="afd-callout afd-callout-warning"><h4 id="link-functionality-caveat">Link functionality caveat <a class="header-anchor" href="#link-functionality-caveat"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
+<div class="afd-callout afd-callout-warning"><h4 id="link-functionality-caveat" tabindex="-1">Link functionality caveat <a class="header-anchor" href="#link-functionality-caveat"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
 <p>The <code>.disabled</code> class uses <code>pointer-events: none</code> to try to disable the link functionality of <code>&lt;a&gt;</code>s, but that CSS property is not yet standardized. In addition, even in browsers that do support <code>pointer-events: none</code>, keyboard navigation remains unaffected, meaning that sighted keyboard users and users of assistive technologies will still be able to activate these links. So to be safe, add a <code>tabindex=&quot;-1&quot;</code> attribute on these links (to prevent them from receiving keyboard focus) and use custom JavaScript to disable their functionality.</p>
 </div>
-<h2 id="javascript-behavior">JavaScript behavior <a class="header-anchor" href="#javascript-behavior"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="javascript-behavior" tabindex="-1">JavaScript behavior <a class="header-anchor" href="#javascript-behavior"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Do more with buttons using Athena's included JavaScript. Control button states or create groups of buttons for more components like toolbars.</p>
-<h3 id="toggle-states">Toggle states <a class="header-anchor" href="#toggle-states"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="toggle-states" tabindex="-1">Toggle states <a class="header-anchor" href="#toggle-states"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Add <code>data-toggle=&quot;button&quot;</code> to toggle a button's <code>active</code> state. If you're pre-toggling a button, you must manually add the <code>.active</code> class <strong>and</strong> <code>aria-pressed=&quot;true&quot;</code> to the <code>&lt;button&gt;</code>.</p>
 <div class="afd-example">
 <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
@@ -1029,7 +1035,7 @@
   Single toggle
 <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 </code></pre></div>
-<h3 id="checkbox-and-radio-buttons">Checkbox and radio buttons <a class="header-anchor" href="#checkbox-and-radio-buttons"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="checkbox-and-radio-buttons" tabindex="-1">Checkbox and radio buttons <a class="header-anchor" href="#checkbox-and-radio-buttons"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Athena's <code>.button</code> styles can be applied to other elements, such as <code>&lt;label&gt;</code>s, to provide checkbox or radio style button toggling. Add <code>data-toggle=&quot;buttons&quot;</code> to a <code>.btn-group</code> containing those modified buttons to enable toggling in their respective styles.</p>
 <p>The checked state for these buttons is <strong>only updated via <code>click</code> event</strong> on the button. If you use another method to update the input—e.g., with <code>&lt;input type=&quot;reset&quot;&gt;</code> or by manually applying the input's <code>checked</code> property—you'll need to toggle <code>.active</code> on the <code>&lt;label&gt;</code> manually.</p>
 <p>Note that pre-checked buttons require you to manually add the <code>.active</code> class to the input's <code>&lt;label&gt;</code>.</p>
@@ -1083,7 +1089,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
-<h3 id="methods">Methods <a class="header-anchor" href="#methods"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="methods" tabindex="-1">Methods <a class="header-anchor" href="#methods"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <table>
 <thead>
 <tr>
@@ -1123,7 +1129,7 @@
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.1.0</strong>.
+              Current version: <strong>v1.1.1</strong>.
             </p>
             <p class="mb-0">
               Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
@@ -1152,7 +1158,7 @@
       var SEARCH_INDEX_URL = '/Athena-Framework/search-index.json';
       var SEARCH_DATA_URL = '/Athena-Framework/search-data.json';
     </script>
-    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.0"></script>
+    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.1"></script>
 
   </body>
 </html>

@@ -17,7 +17,7 @@
     
 
     <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.0">
+    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.1">
     <link rel="canonical" href="https://ucf.github.io/Athena-Framework/utilities/typography/">
   </head>
 
@@ -81,6 +81,7 @@
     
 
     
+        
         
         
 
@@ -185,6 +186,7 @@
     
         
         
+        
 
         
 
@@ -252,6 +254,7 @@
         </div>
 
     
+        
         
         
 
@@ -342,11 +345,9 @@
                         
 
                         
-                            
-                        
 
                         <li class="nav-item">
-                            <a class="nav-link active afd-sidenav-active" href="/Athena-Framework/content/typography/">
+                            <a class="nav-link " href="/Athena-Framework/content/typography/">
                                 Typography
                             </a>
                         </li>
@@ -356,6 +357,7 @@
         </div>
 
     
+        
         
         
 
@@ -603,8 +605,10 @@
     
         
         
+        
 
         
+            
             
         
 
@@ -870,8 +874,8 @@
       </div>
       <div class="col-md-8 pull-md-4 pt-3 pt-md-5 afd-content">
         <p>The following utilities can be used to add additional styles to text.</p>
-<h2 id="contents">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
-<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#text-alignment">Text alignment </a></li><li><a href="#text-transform">Text transform </a></li><li><a href="#font-weight-and-italics">Font weight and italics </a></li><li><a href="#font-family">Font family </a></li><li><a href="#font-size">Font size </a></li><li><a href="#letter-spacing">Letter spacing </a></li><li><a href="#line-height">Line height </a></li></ul></nav><h2 id="text-alignment">Text alignment <a class="header-anchor" href="#text-alignment"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="contents" tabindex="-1">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#text-alignment">Text alignment </a></li><li><a href="#text-transform">Text transform </a></li><li><a href="#text-underline">Text underline </a></li><li><a href="#font-weight-and-italics">Font weight and italics </a></li><li><a href="#font-family">Font family </a></li><li><a href="#font-size">Font size </a></li><li><a href="#letter-spacing">Letter spacing </a></li><li><a href="#line-height">Line height </a></li></ul></nav><h2 id="text-alignment" tabindex="-1">Text alignment <a class="header-anchor" href="#text-alignment"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Easily realign text to components with text alignment classes.</p>
 <div class="afd-example">
 <p class="text-justify">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
@@ -910,7 +914,7 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;text-lg-left&quot;</span>&gt;</span>Left aligned text on viewports sized LG (large) or wider.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;text-xl-left&quot;</span>&gt;</span>Left aligned text on viewports sized XL (extra-large) or wider.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </code></pre></div>
-<h2 id="text-transform">Text transform <a class="header-anchor" href="#text-transform"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="text-transform" tabindex="-1">Text transform <a class="header-anchor" href="#text-transform"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Transform text in components with text capitalization classes.</p>
 <div class="afd-example">
 <p class="text-lowercase">Lowercased text.</p>
@@ -924,7 +928,27 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;text-uppercase&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;text-transform-none&quot;</span>&gt;</span>Reset transform text.<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </code></pre></div>
 <p>Note how <code>text-capitalize</code> only changes the first letter of each word, leaving the case of any other letters unaffected.</p>
-<h2 id="font-weight-and-italics">Font weight and italics <a class="header-anchor" href="#font-weight-and-italics"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="text-underline" tabindex="-1">Text underline <a class="header-anchor" href="#text-underline"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<p>Force underline styles on an element with the <code>.text-underline</code> class, and unset existing underline styles with <code>.text-decoration-none</code>.</p>
+<p>These classes are useful when working with links containing multiple block-level elements where <a href="/Athena-Framework/utilities/stretched-links">stretched links</a> cannot be utilized.</p>
+<div class="afd-callout afd-callout-warning"><h3 id="non-clickable-content-shouldnt-be-underlined" tabindex="-1">Non-clickable content shouldn't be underlined <a class="header-anchor" href="#non-clickable-content-shouldnt-be-underlined"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<p><strong>Do not add <code>.text-underline</code> to content unless it's contained within a link or other interactive element that provides a click affordance.</strong>  Links in Athena are underlined by default to ensure they have enough visual contrast against surrounding text.  To ensure users can distinguish links from non-links, underlines should not be used as a presentational/decorative feature or to provide emphasis.  Use <a href="/Athena-Framework/content/typography#inline-text-elements">semantic inline text elements</a> like <code>&lt;strong&gt;</code> or <code>&lt;em&gt;</code> to denote importance or emphasis when necessary.</p>
+</div>
+<div class="afd-callout afd-callout-danger"><h3 id="inline-links-must-have-an-underline" tabindex="-1">Inline links must have an underline! <a class="header-anchor" href="#inline-links-must-have-an-underline"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<p>Do not use <code>.text-decoration-none</code> to remove underlines from links within paragraphs or that are otherwise surrounded by static text.</p>
+</div>
+<div class="afd-example">
+<a href="#" class="text-secondary text-decoration-none">
+  <h3 class="text-underline">Article title</h3>
+  <div>Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.</div>
+</a>
+</div><div class="highlight"><pre><code class="nohighlight">
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;text-secondary text-decoration-none&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;text-underline&quot;</span>&gt;</span>Article title<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus.<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</code></pre></div>
+<h2 id="font-weight-and-italics" tabindex="-1">Font weight and italics <a class="header-anchor" href="#font-weight-and-italics"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Quickly change the weight (boldness) of text or italicize text.</p>
 <p>Note that <code>.font-weight-black</code> and <code>.font-weight-light</code> will only take effect on font stacks that provide those explicit weight styles.</p>
 <div class="afd-example">
@@ -940,7 +964,7 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;font-weight-light&quot;</span>&gt;</span>Light weight text.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;font-italic&quot;</span>&gt;</span>Italic text.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </code></pre></div>
-<h2 id="font-family">Font family <a class="header-anchor" href="#font-family"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="font-family" tabindex="-1">Font family <a class="header-anchor" href="#font-family"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Use <code>font-family</code> utility classes to quickly change the font family on an element.  These classes are optimized for use with <a href="/Athena-Framework/content/typography#with-font-family-overrides">headings</a>, <a href="/Athena-Framework/content/typography#with-font-family-overrides-1"><code>.lead</code> text</a>, and <a href="/Athena-Framework/content/typography#with-font-family-overrides-2"><code>.blockquote</code> text</a>.</p>
 <p>Note that <code>.font-condensed</code> is only optimized for heading usage due to readability concerns.</p>
 <div class="afd-example">
@@ -954,7 +978,7 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;font-slab-serif&quot;</span>&gt;</span>Slab serif<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;font-condensed&quot;</span>&gt;</span>Condensed<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </code></pre></div>
-<h2 id="font-size">Font size <a class="header-anchor" href="#font-size"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="font-size" tabindex="-1">Font size <a class="header-anchor" href="#font-size"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>In addition to using <a href="/Athena-Framework/content/typography#lead"><code>.lead</code></a> and <a href="/Athena-Framework/content/typography#inline-text-elements"><code>.small</code></a>, you can adjust the font size of your content using font size utility classes.  Like base body copy and most components, font size will scale down at the -xs-sm breakpoints using these classes.</p>
 <div class="afd-example">
 <p class="font-size-sm">Smaller text</p>
@@ -965,7 +989,7 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;font-size-base&quot;</span>&gt;</span>Standard sized text (matches base body font size)<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;font-size-lg&quot;</span>&gt;</span>Larger text<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </code></pre></div>
-<h2 id="letter-spacing">Letter spacing <a class="header-anchor" href="#letter-spacing"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="letter-spacing" tabindex="-1">Letter spacing <a class="header-anchor" href="#letter-spacing"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Athena includes a set of letter spacing classes, which can be modified via the <code>$letter-spacing</code> Sass variable.</p>
 <div class="afd-example">
 <p class="text-uppercase letter-spacing-0">Ambitioni dedisse scripsisse iudicaretur</p>
@@ -982,9 +1006,9 @@
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;text-uppercase letter-spacing-4&quot;</span>&gt;</span>Ambitioni dedisse scripsisse iudicaretur<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;text-uppercase letter-spacing-5&quot;</span>&gt;</span>Ambitioni dedisse scripsisse iudicaretur<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </code></pre></div>
-<h2 id="line-height">Line height <a class="header-anchor" href="#line-height"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="line-height" tabindex="-1">Line height <a class="header-anchor" href="#line-height"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Adjust line height on the fly with line height classes.  Available classes and their line-height values can be modified via the <code>$line-height</code> Sass variable.</p>
-<div class="afd-callout afd-callout-info"><h3 id="line-height-on-inline-text">Line height on inline text <a class="header-anchor" href="#line-height-on-inline-text"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<div class="afd-callout afd-callout-info"><h3 id="line-height-on-inline-text" tabindex="-1">Line height on inline text <a class="header-anchor" href="#line-height-on-inline-text"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Keep in mind that <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/line-height"><code>line-height</code> behaves differently</a> for block-level vs inline elements.  If you're having trouble with line height on <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#elements">inline elements</a> (such as <code>&lt;span&gt;</code>, <code>&lt;strong&gt;</code>, and <code>&lt;em&gt;</code>) that span multiple lines, try adding <code>.d-inline-block</code> (or another display modifier) to the element instead.</p>
 </div>
 <div class="afd-example">
@@ -1057,7 +1081,7 @@
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.1.0</strong>.
+              Current version: <strong>v1.1.1</strong>.
             </p>
             <p class="mb-0">
               Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
@@ -1086,7 +1110,7 @@
       var SEARCH_INDEX_URL = '/Athena-Framework/search-index.json';
       var SEARCH_DATA_URL = '/Athena-Framework/search-data.json';
     </script>
-    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.0"></script>
+    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.1"></script>
 
   </body>
 </html>

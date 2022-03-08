@@ -17,7 +17,7 @@
     
 
     <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.0">
+    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.1">
     <link rel="canonical" href="https://ucf.github.io/Athena-Framework/layout/media-object/">
   </head>
 
@@ -83,6 +83,7 @@
     
 
     
+        
         
         
 
@@ -187,8 +188,10 @@
     
         
         
+        
 
         
+            
             
         
 
@@ -260,6 +263,7 @@
         </div>
 
     
+        
         
         
 
@@ -362,6 +366,7 @@
         </div>
 
     
+        
         
         
 
@@ -607,6 +612,7 @@
         </div>
 
     
+        
         
         
 
@@ -870,8 +876,8 @@
       </div>
       <div class="col-md-8 pull-md-4 pt-3 pt-md-5 afd-content">
         <p>The <a href="http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/">media object</a> helps build complex and repetitive components where some media is positioned alongside content that doesn't wrap around said media. Plus, it does this with only two required classes thanks to flexbox.</p>
-<h2 id="contents">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
-<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#example">Example </a></li><li><a href="#nesting">Nesting </a></li><li><a href="#alignment">Alignment </a></li><li><a href="#order">Order </a></li><li><a href="#media-list">Media list </a></li></ul></nav><h2 id="example">Example <a class="header-anchor" href="#example"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="contents" tabindex="-1">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#example">Example </a></li><li><a href="#nesting">Nesting </a></li><li><a href="#alignment">Alignment </a></li><li><a href="#order">Order </a></li><li><a href="#media-list">Media list </a></li></ul></nav><h2 id="example" tabindex="-1">Example <a class="header-anchor" href="#example"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Below is an example of a single media object. Only two classes are required—the wrapping <code>.media</code> and the <code>.media-body</code> around your content. Optional padding and margin can be controlled through <a href="/utilities/spacing/">spacing utilities</a>.</p>
 <div class="afd-example">
 <div class="media">
@@ -890,11 +896,11 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
-<div class="afd-callout afd-callout-warning"><h5 id="flexbug-12-inline-elements-arent-treated-as-flex-items">Flexbug #12: Inline elements aren't treated as flex items <a class="header-anchor" href="#flexbug-12-inline-elements-arent-treated-as-flex-items"><span class="fa fa-link" aria-label="Anchor"></span></a></h5>
+<div class="afd-callout afd-callout-warning"><h5 id="flexbug-12-inline-elements-arent-treated-as-flex-items" tabindex="-1">Flexbug #12: Inline elements aren't treated as flex items <a class="header-anchor" href="#flexbug-12-inline-elements-arent-treated-as-flex-items"><span class="fa fa-link" aria-label="Anchor"></span></a></h5>
 <p>Internet Explorer 11 does not render inline elements like links or images (or <code>::before</code> and <code>::after</code> pseudo-elements) as flex items. The only workaround is to set a non-inline <code>display</code> value (e.g., <code>block</code>, <code>inline-block</code>, or <code>flex</code>). We suggest using <code>.d-flex</code>, one of our <a href="/utilities/display-property/">display utilities</a>, as seen above for an easy fix.</p>
 <p><strong>Source:</strong> <a href="https://github.com/philipwalton/flexbugs#12-inline-elements-are-not-treated-as-flex-items">Flexbugs on GitHub</a></p>
 </div>
-<h2 id="nesting">Nesting <a class="header-anchor" href="#nesting"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="nesting" tabindex="-1">Nesting <a class="header-anchor" href="#nesting"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Media objects can be infinitely nested, though we suggest you stop at some point. Place nested <code>.media</code> within the <code>.media-body</code> of a parent media object.</p>
 <div class="afd-example">
 <div class="media">
@@ -932,7 +938,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
-<h2 id="alignment">Alignment <a class="header-anchor" href="#alignment"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="alignment" tabindex="-1">Alignment <a class="header-anchor" href="#alignment"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Media in a media object can be aligned with flexbox utilities to the top (default), middle, or end of your <code>.media-body</code> content.</p>
 <div class="afd-example">
 <div class="media">
@@ -991,7 +997,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
-<h2 id="order">Order <a class="header-anchor" href="#order"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="order" tabindex="-1">Order <a class="header-anchor" href="#order"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Change the order of content in media objects by modifying the HTML itself, or by adding some custom flexbox CSS to set the <code>order</code> property (to an integer of your choosing).</p>
 <div class="afd-example">
 <div class="media">
@@ -1010,7 +1016,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;d-flex ml-3&quot;</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">&quot;holder.js/64x64&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;Generic placeholder image&quot;</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
-<h2 id="media-list">Media list <a class="header-anchor" href="#media-list"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="media-list" tabindex="-1">Media list <a class="header-anchor" href="#media-list"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Because the media object has so few structural requirements, you can also use these classes on list HTML elements. On your <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code>, add the <code>.list-unstyled</code> to remove any browser default list styles, and then apply <code>.media</code> to your <code>&lt;li&gt;</code>s. As always, use spacing utilities wherever needed to fine tune.</p>
 <div class="afd-example">
 <ul class="list-unstyled">
@@ -1086,7 +1092,7 @@
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.1.0</strong>.
+              Current version: <strong>v1.1.1</strong>.
             </p>
             <p class="mb-0">
               Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
@@ -1115,7 +1121,7 @@
       var SEARCH_INDEX_URL = '/Athena-Framework/search-index.json';
       var SEARCH_DATA_URL = '/Athena-Framework/search-data.json';
     </script>
-    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.0"></script>
+    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.1"></script>
 
   </body>
 </html>

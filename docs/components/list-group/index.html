@@ -17,7 +17,7 @@
     
 
     <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.0">
+    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.1">
     <link rel="canonical" href="https://ucf.github.io/Athena-Framework/components/list-group/">
   </head>
 
@@ -83,6 +83,7 @@
     
 
     
+        
         
         
 
@@ -187,6 +188,7 @@
     
         
         
+        
 
         
 
@@ -254,6 +256,7 @@
         </div>
 
     
+        
         
         
 
@@ -358,8 +361,10 @@
     
         
         
+        
 
         
+            
             
         
 
@@ -607,6 +612,7 @@
         </div>
 
     
+        
         
         
 
@@ -870,8 +876,8 @@
       </div>
       <div class="col-md-8 pull-md-4 pt-3 pt-md-5 afd-content">
         <p>List groups are a flexible and powerful component for displaying a series of content. List group items can be modified and extended to support just about any content within.</p>
-<h2 id="contents">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
-<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#basic-example">Basic example </a></li><li><a href="#active-items">Active items </a></li><li><a href="#disabled-items">Disabled items </a></li><li><a href="#links-and-buttons">Links and buttons </a></li><li><a href="#flush">Flush </a></li><li><a href="#contextual-classes">Contextual classes </a></li><li><a href="#with-badges">With badges </a></li><li><a href="#custom-content">Custom content </a></li></ul></nav><h2 id="basic-example">Basic example <a class="header-anchor" href="#basic-example"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="contents" tabindex="-1">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#basic-example">Basic example </a></li><li><a href="#active-items">Active items </a></li><li><a href="#disabled-items">Disabled items </a></li><li><a href="#links-and-buttons">Links and buttons </a></li><li><a href="#flush">Flush </a></li><li><a href="#contextual-classes">Contextual classes </a></li><li><a href="#with-badges">With badges </a></li><li><a href="#custom-content">Custom content </a></li></ul></nav><h2 id="basic-example" tabindex="-1">Basic example <a class="header-anchor" href="#basic-example"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>The most basic list group is an unordered list with list items and the proper classes. Build upon it with the options that follow, or with your own CSS as needed.</p>
 <div class="afd-example">
 <ul class="list-group">
@@ -890,7 +896,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;list-group-item&quot;</span>&gt;</span>Vestibulum at eros<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 </code></pre></div>
-<h2 id="active-items">Active items <a class="header-anchor" href="#active-items"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="active-items" tabindex="-1">Active items <a class="header-anchor" href="#active-items"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Add <code>.active</code> to a <code>.list-group-item</code> to indicate the current active selection.</p>
 <div class="afd-example">
 <ul class="list-group">
@@ -909,7 +915,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;list-group-item&quot;</span>&gt;</span>Vestibulum at eros<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 </code></pre></div>
-<h2 id="disabled-items">Disabled items <a class="header-anchor" href="#disabled-items"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="disabled-items" tabindex="-1">Disabled items <a class="header-anchor" href="#disabled-items"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Add <code>.disabled</code> to a <code>.list-group-item</code> to make it <em>appear</em> disabled. Note that some elements with <code>.disabled</code> will also require custom JavaScript to fully disable their click events (e.g., links).</p>
 <div class="afd-example">
 <ul class="list-group">
@@ -928,7 +934,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;list-group-item&quot;</span>&gt;</span>Vestibulum at eros<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 </code></pre></div>
-<h2 id="links-and-buttons">Links and buttons <a class="header-anchor" href="#links-and-buttons"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="links-and-buttons" tabindex="-1">Links and buttons <a class="header-anchor" href="#links-and-buttons"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Use <code>&lt;a&gt;</code>s or <code>&lt;button&gt;</code>s to create <em>actionable</em> list group items with hover, disabled, and active states by adding <code>.list-group-item-action</code>. We separate these pseudo-classes to ensure list groups made of non-interactive elements (like <code>&lt;li&gt;</code>s or <code>&lt;div&gt;</code>s) don't provide a click or tap affordance.</p>
 <p>Be sure to <strong>not use the standard <code>.btn</code> classes here</strong>.</p>
 <div class="afd-example">
@@ -974,7 +980,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;list-group-item list-group-item-action&quot;</span> <span class="hljs-attr">disabled</span>&gt;</span>Vestibulum at eros<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
-<h2 id="flush">Flush <a class="header-anchor" href="#flush"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="flush" tabindex="-1">Flush <a class="header-anchor" href="#flush"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Add <code>.list-group-flush</code> to remove outer borders and render list group items edge-to-edge in a parent container (e.g., cards).</p>
 <div class="afd-example">
 <ul class="list-group list-group-flush">
@@ -993,7 +999,7 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;list-group-item&quot;</span>&gt;</span>Vestibulum at eros<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 </code></pre></div>
-<h2 id="contextual-classes">Contextual classes <a class="header-anchor" href="#contextual-classes"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="contextual-classes" tabindex="-1">Contextual classes <a class="header-anchor" href="#contextual-classes"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Use contextual classes to style list items with a stateful background and color.</p>
 <div class="afd-example">
 <ul class="list-group">
@@ -1030,10 +1036,10 @@
   <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;list-group-item list-group-item-action list-group-item-danger&quot;</span>&gt;</span>Vestibulum at eros<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
-<div class="afd-callout afd-callout-warning"><h4 id="conveying-meaning-to-assistive-technologies">Conveying meaning to assistive technologies <a class="header-anchor" href="#conveying-meaning-to-assistive-technologies"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
+<div class="afd-callout afd-callout-warning"><h4 id="conveying-meaning-to-assistive-technologies" tabindex="-1">Conveying meaning to assistive technologies <a class="header-anchor" href="#conveying-meaning-to-assistive-technologies"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
 <p>Using color to add meaning only provides a visual indication, which will not be conveyed to users of assistive technologies – such as screen readers. Ensure that information denoted by the color is either obvious from the content itself (e.g. the visible text), or is included through alternative means, such as additional text hidden with the <code>.sr-only</code> class.</p>
 </div>
-<h2 id="with-badges">With badges <a class="header-anchor" href="#with-badges"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="with-badges" tabindex="-1">With badges <a class="header-anchor" href="#with-badges"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Add badges to any list group item to show unread counts, activity, and more with the help of some <a href="/Athena-Framework/utilities/flexbox">utilities</a>.</p>
 <div class="afd-example">
 <ul class="list-group">
@@ -1066,7 +1072,7 @@
   <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 </code></pre></div>
-<h2 id="custom-content">Custom content <a class="header-anchor" href="#custom-content"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="custom-content" tabindex="-1">Custom content <a class="header-anchor" href="#custom-content"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Add nearly any HTML within, even for linked list groups like the one below, with the help of <a href="/Athena-Framework/utilities/flexbox">flexbox utilities</a>.</p>
 <div class="afd-example">
 <div class="list-group">
@@ -1148,7 +1154,7 @@
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.1.0</strong>.
+              Current version: <strong>v1.1.1</strong>.
             </p>
             <p class="mb-0">
               Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
@@ -1177,7 +1183,7 @@
       var SEARCH_INDEX_URL = '/Athena-Framework/search-index.json';
       var SEARCH_DATA_URL = '/Athena-Framework/search-data.json';
     </script>
-    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.0"></script>
+    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.1"></script>
 
   </body>
 </html>

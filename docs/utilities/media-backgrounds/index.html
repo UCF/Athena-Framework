@@ -17,7 +17,7 @@
     
 
     <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.0">
+    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.1">
     <link rel="canonical" href="https://ucf.github.io/Athena-Framework/utilities/media-backgrounds/">
   </head>
 
@@ -81,6 +81,7 @@
     
 
     
+        
         
         
 
@@ -185,6 +186,7 @@
     
         
         
+        
 
         
 
@@ -252,6 +254,7 @@
         </div>
 
     
+        
         
         
 
@@ -354,6 +357,7 @@
         </div>
 
     
+        
         
         
 
@@ -601,8 +605,10 @@
     
         
         
+        
 
         
+            
             
         
 
@@ -868,17 +874,17 @@
       </div>
       <div class="col-md-8 pull-md-4 pt-3 pt-md-5 afd-content">
         <p>Media backgrounds are an easy way of applying large images or video as a background.  They behave similarly to an image applied to an element using <code>background-image</code>, but with the advantage of being able to utilize <code>srcset</code> and <code>&lt;picture&gt; &lt;source&gt;</code>s for automated responsive switchouts of images.  For videos, media backgrounds provide a consistent, responsive option for full-screen scaling, stretching, and positioning.</p>
-<h2 id="contents">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
-<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#how-it-works">How it works </a></li><li><a href="#usage">Usage </a><ul><li><a href="#image">Image </a></li><li><a href="#picture">Picture </a></li><li><a href="#video">Video </a></li><li><a href="#object-fit">Object-fit </a></li><li><a href="#object-position">Object-position </a></li></ul></li><li><a href="#dynamic-media-background-insertion">Dynamic media background insertion </a></li></ul></nav><h2 id="how-it-works">How it works <a class="header-anchor" href="#how-it-works"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="contents" tabindex="-1">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#how-it-works">How it works </a></li><li><a href="#usage">Usage </a><ul><li><a href="#image">Image </a></li><li><a href="#picture">Picture </a></li><li><a href="#video">Video </a></li><li><a href="#object-fit">Object-fit </a></li><li><a href="#object-position">Object-position </a></li></ul></li><li><a href="#dynamic-media-background-insertion">Dynamic media background insertion </a></li></ul></nav><h2 id="how-it-works" tabindex="-1">How it works <a class="header-anchor" href="#how-it-works"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <ul>
 <li>Media backgrounds require a parent element, <code>.media-background-container</code>, and one or more <code>.media-background</code> child elements.</li>
 <li><code>.media-background-container</code> can be any element, as long as it is capable of being relatively-positioned.  The parent element wraps the media background and any content that should be overlaid on top of the media background.  The media background is absolutely positioned within the parent, and sized using an <code>object-fit</code> utility class.</li>
 <li>Because the media background is absolutely positioned within the parent element, it will not affect the parent element's height–similarly to a standard background image.  You may wish to apply a <code>min-height</code> value to the parent element if you want to force a certain amount of the background image to always be shown.</li>
 <li>Because media backgrounds rely on the <code>object-fit</code> property, which isn't supported in IE or Edge, Athena includes the objectFitPolyfill.js library out-of-the-box for consistent functionality cross-browser.</li>
 </ul>
-<h2 id="usage">Usage <a class="header-anchor" href="#usage"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="usage" tabindex="-1">Usage <a class="header-anchor" href="#usage"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Media backgrounds can be <code>&lt;img&gt;</code>, <code>&lt;picture&gt;</code> or <code>&lt;video&gt;</code> elements.  However, the <code>.media-background</code> and <code>.object-fit-*</code> classes are applied differently depending on the element:</p>
-<h3 id="image">Image <a class="header-anchor" href="#image"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="image" tabindex="-1">Image <a class="header-anchor" href="#image"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Apply <code>.media-background</code> and your <code>.object-fit-*</code> class directly to the <code>&lt;img&gt;</code> element:</p>
 <div class="media-background-container">
   <img class="media-background object-fit-cover" src="//via.placeholder.com/600x300/" alt="">
@@ -892,7 +898,7 @@
   Your content here...
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
-<h3 id="picture">Picture <a class="header-anchor" href="#picture"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="picture" tabindex="-1">Picture <a class="header-anchor" href="#picture"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Apply <code>.media-background</code> and your <code>.object-fit-*</code> class to the inner <code>&lt;img&gt;</code> element (do not apply to <code>&lt;source&gt;</code>s):</p>
 <div class="media-background-container">
   <picture>
@@ -915,11 +921,11 @@
   Your content here...
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
-<div class="afd-callout afd-callout-info"><h4 id="picture-elements-and-srcset">Picture elements and <code>srcset</code> <a class="header-anchor" href="#picture-elements-and-srcset"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
+<div class="afd-callout afd-callout-info"><h4 id="picture-elements-and-srcset" tabindex="-1">Picture elements and <code>srcset</code> <a class="header-anchor" href="#picture-elements-and-srcset"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
 <p>Note that IE 11 <a href="http://caniuse.com/#search=picture">does not support the <code>&lt;picture&gt;</code> element and its <code>&lt;source&gt;</code> children</a> natively.  In addition, because the <code>srcset</code> attribute is also not supported in IE nor Edge, make sure you always include an <code>&lt;img&gt;</code> as the last child element within any <code>&lt;picture&gt;</code>, and that that image uses the <code>src</code> attribute to define the url.</p>
 <p>For better cross-browser handling of the <code>&lt;picture&gt;</code> element and srcset attribute, you may wish to incorporate a polyfill into your project, such as <a href="http://scottjehl.github.io/picturefill/">Picturefill</a>.  Note that polyfills such as Picturefill have their own usage guidelines that may differ from what's noted above.</p>
 </div>
-<h3 id="video">Video <a class="header-anchor" href="#video"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="video" tabindex="-1">Video <a class="header-anchor" href="#video"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Apply <code>.media-background</code> and your <code>.object-fit-*</code> class directly to the <code>&lt;video&gt;</code> element (do not apply to <code>&lt;source&gt;</code>s).</p>
 <p>Note that media background videos must be included using the <code>&lt;video&gt;</code> element.  Embedded YouTube videos (and most other video embed services) are not supported due to their usage of iframes.</p>
 <div class="media-background-container">
@@ -938,19 +944,19 @@
   Your content here...
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
-<div class="afd-callout afd-callout-danger"><h4 id="mute-your-video">Mute your video! <a class="header-anchor" href="#mute-your-video"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
+<div class="afd-callout afd-callout-danger"><h4 id="mute-your-video" tabindex="-1">Mute your video! <a class="header-anchor" href="#mute-your-video"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
 <p><strong>Never include sound on media background videos.</strong> Ensure the <code>muted</code> attribute is <em>always</em> present when using a video as a media background!</p>
 </div>
-<div class="afd-callout afd-callout-warning"><h4 id="media-background-video-accessibility">Media background video accessibility <a class="header-anchor" href="#media-background-video-accessibility"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
+<div class="afd-callout afd-callout-warning"><h4 id="media-background-video-accessibility" tabindex="-1">Media background video accessibility <a class="header-anchor" href="#media-background-video-accessibility"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
 <p><a href="https://www.w3.org/TR/WCAG20/#time-limits-pause">For accessibility reasons</a>, <strong>videos that play automatically and run for more than 5 seconds should be pauseable by the user</strong>.  Athena does not include a means of doing this out of the box, but we suggest utilizing <a href="/Athena-Framework/components/buttons#toggle-states">button toggling</a> with some custom JavaScript that toggles video playback on click.  Whatever playback toggler you implement should be <strong>visible for all users</strong>, <strong>positioned somewhere relative to the video</strong>, and <strong>work via keyboard input</strong>.</p>
 <p>Additionally, be mindful of the type of video content you use as a media background--flashing lights, fast cuts (transitions between scenes), and fast-moving imagery are not appropriate for use behind your site's content. Slow-moving vignettes with minimal cuts are ideal.</p>
 </div>
-<div class="afd-callout afd-callout-warning"><h4 id="media-background-videos-on-mobile-devices">Media background videos on mobile devices <a class="header-anchor" href="#media-background-videos-on-mobile-devices"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
+<div class="afd-callout afd-callout-warning"><h4 id="media-background-videos-on-mobile-devices" tabindex="-1">Media background videos on mobile devices <a class="header-anchor" href="#media-background-videos-on-mobile-devices"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
 <p>Keep in mind that iOS Safari and Chrome for Android have stricter requirements for allowing autoplaying videos to load than most desktop browsers.  See <a href="https://webkit.org/blog/6784/new-video-policies-for-ios/">this document on Webkit <code>&lt;video&gt;</code> policies</a> and <a href="https://developers.google.com/web/updates/2017/09/autoplay-policy-changes">this document on Autoplay policies in Chrome</a> for more information.</p>
 <p>The best way to ensure your videos work as expected on mobile devices is to always include the <code>muted</code> and <code>playsinline</code> attributes on your <code>&lt;video&gt;</code> elements.  Additionally, we strongly recommend providing a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#attr-poster"><code>poster</code> image</a> to accommodate devices that enable &quot;data saving&quot; features (such as <a href="https://developer.chrome.com/multidevice/data-compression">Chrome for Android's Data Saver setting</a>, which will not display video at all when enabled, but will still show poster images).  Poster images are also good to have on desktop browsers, to use as a placeholder until the video finishes loading in.</p>
 <p>Finally, <strong>be mindful of your video's filesize</strong>--excessively large media background videos will slow down your website, which is harmful to the user experience, hurts SEO, and drains your users' device battery and data usage.  Make sure your video file is optimized for web; compression tools such as <a href="https://www.ffmpeg.org/">ffmpeg</a> can help reduce your video's filesize significantly when used properly.  If you have the ability to use a static image instead of video on mobile devices, we encourage you to do so.</p>
 </div>
-<h3 id="object-fit">Object-fit <a class="header-anchor" href="#object-fit"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="object-fit" tabindex="-1">Object-fit <a class="header-anchor" href="#object-fit"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>An <code>object-fit</code> utility class is <strong>required</strong> for the media background to scale properly.  The following options are available; for more information on how they behave, see <a href="https://css-tricks.com/almanac/properties/o/object-fit/">https://css-tricks.com/almanac/properties/o/object-fit/</a>:</p>
 <ul>
 <li><code>.object-fit-contain</code></li>
@@ -959,12 +965,12 @@
 <li><code>.object-fit-none</code> (unsets an existing object-fit rule)</li>
 <li><code>.object-fit-scale-down</code></li>
 </ul>
-<h3 id="object-position">Object-position <a class="header-anchor" href="#object-position"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="object-position" tabindex="-1">Object-position <a class="header-anchor" href="#object-position"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Custom <code>object-position</code> values are supported by media backgrounds, but for full cross-browser support, they must also be added to the media background elements using the <code>data-object-position</code> attribute (so that the polyfill can apply them in IE/Edge).  See the <a href="https://github.com/constancecchen/object-fit-polyfill#usage">polyfill documentation</a> for more information.</p>
 <div class="highlight"><pre><code class="nohighlight">
 <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;media-background object-fit-contain&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;object-position: 0 50%;&quot;</span> <span class="hljs-attr">data-object-position</span>=<span class="hljs-string">&quot;0 50%&quot;</span>&gt;</span>
 </code></pre></div>
-<h2 id="dynamic-media-background-insertion">Dynamic media background insertion <a class="header-anchor" href="#dynamic-media-background-insertion"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="dynamic-media-background-insertion" tabindex="-1">Dynamic media background insertion <a class="header-anchor" href="#dynamic-media-background-insertion"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Any media backgrounds added to the DOM after the page has finished loading will need to re-trigger the object-fit polyfill by using Athena's mediaBackground plugin.  After dynamically inserting the new element into the dom, simply call:</p>
 <div class="highlight"><pre><code class="language-javascript">
 $('#my-media-background').mediaBackground();
@@ -995,7 +1001,7 @@ $('#my-media-background').mediaBackground();
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.1.0</strong>.
+              Current version: <strong>v1.1.1</strong>.
             </p>
             <p class="mb-0">
               Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
@@ -1024,7 +1030,7 @@ $('#my-media-background').mediaBackground();
       var SEARCH_INDEX_URL = '/Athena-Framework/search-index.json';
       var SEARCH_DATA_URL = '/Athena-Framework/search-data.json';
     </script>
-    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.0"></script>
+    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.1"></script>
 
   </body>
 </html>

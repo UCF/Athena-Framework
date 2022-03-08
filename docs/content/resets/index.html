@@ -17,7 +17,7 @@
     
 
     <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.0">
+    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.1">
     <link rel="canonical" href="https://ucf.github.io/Athena-Framework/content/resets/">
   </head>
 
@@ -83,6 +83,7 @@
     
 
     
+        
         
         
 
@@ -187,6 +188,7 @@
     
         
         
+        
 
         
 
@@ -256,8 +258,10 @@
     
         
         
+        
 
         
+            
             
         
 
@@ -362,6 +366,7 @@
         </div>
 
     
+        
         
         
 
@@ -607,6 +612,7 @@
         </div>
 
     
+        
         
         
 
@@ -871,8 +877,8 @@
       <div class="col-md-8 pull-md-4 pt-3 pt-md-5 afd-content">
         <p>Part of Athena's job is to provide an elegant, consistent, and simple baseline to build upon. We use a combination of our own opinionated resets and <a href="https://v4-alpha.getbootstrap.com/content/reboot/">Bootstrap's Reboot</a>, a collection of element-specific CSS changes in a single file, to kickstart that.</p>
 <p>Reboot builds upon <a href="https://necolas.github.io/normalize.css/">Normalize</a>, providing many HTML elements with somewhat opinionated styles using only element selectors. Additional styling is done only with classes. For example, we reboot some <code>&lt;table&gt;</code> styles for a simpler baseline and later provide <code>.table</code>, <code>.table-bordered</code>, and more.</p>
-<h2 id="contents">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
-<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#approach">Approach </a></li><li><a href="#page-defaults">Page defaults </a></li><li><a href="#font-stack">Font stack </a></li><li><a href="#headings-and-paragraphs">Headings and paragraphs </a></li><li><a href="#lists">Lists </a></li><li><a href="#preformatted-text">Preformatted text </a></li><li><a href="#tables">Tables </a></li><li><a href="#forms">Forms </a></li><li><a href="#misc-elements">Misc elements </a><ul><li><a href="#address">Address </a></li><li><a href="#blockquote">Blockquote </a></li><li><a href="#inline-elements">Inline elements </a></li></ul></li><li><a href="#html5-hidden-attribute">HTML5 [hidden] attribute </a></li></ul></nav><h2 id="approach">Approach <a class="header-anchor" href="#approach"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="contents" tabindex="-1">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#approach">Approach </a></li><li><a href="#page-defaults">Page defaults </a></li><li><a href="#font-stack">Font stack </a></li><li><a href="#headings-and-paragraphs">Headings and paragraphs </a></li><li><a href="#lists">Lists </a></li><li><a href="#preformatted-text">Preformatted text </a></li><li><a href="#tables">Tables </a></li><li><a href="#forms">Forms </a></li><li><a href="#misc-elements">Misc elements </a><ul><li><a href="#address">Address </a></li><li><a href="#blockquote">Blockquote </a></li><li><a href="#inline-elements">Inline elements </a></li></ul></li><li><a href="#html5-hidden-attribute">HTML5 [hidden] attribute </a></li></ul></nav><h2 id="approach" tabindex="-1">Approach <a class="header-anchor" href="#approach"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Listed below are guidelines and reasons for resetting element styles in Athena:</p>
 <ul>
 <li>Update some browser default values to use <code>rem</code>s instead of <code>em</code>s for scalable component spacing.</li>
@@ -880,7 +886,7 @@
 <li>For easier scaling across device sizes, block elements should use <code>rem</code>s for <code>margin</code>s.</li>
 <li>Keep declarations of <code>font</code>-related properties to a minimum, using <code>inherit</code> whenever possible.</li>
 </ul>
-<h2 id="page-defaults">Page defaults <a class="header-anchor" href="#page-defaults"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="page-defaults" tabindex="-1">Page defaults <a class="header-anchor" href="#page-defaults"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>The <code>&lt;html&gt;</code> and <code>&lt;body&gt;</code> elements are updated to provide better page-wide defaults. More specifically:</p>
 <ul>
 <li>The <code>box-sizing</code> is globally set on every element—including <code>*:before</code> and <code>*:after</code>, to <code>border-box</code>. This ensures that the declared width of element is never exceeded due to padding or border.</li>
@@ -894,13 +900,13 @@
 <li>For safety, the <code>&lt;body&gt;</code> has a declared <code>background-color</code>, defaulting to <code>#fff</code>.</li>
 <li>Global <code>&lt;a&gt;</code> and <code>&lt;button&gt;</code> transitions are applied when $enable-transitions is true.</li>
 </ul>
-<h2 id="font-stack">Font stack <a class="header-anchor" href="#font-stack"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="font-stack" tabindex="-1">Font stack <a class="header-anchor" href="#font-stack"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Unlike Bootstrap 4, Athena provides an opinionated font stack and does not rely on system fonts unless no other font libraries can be loaded. Athena's base font family is its sans-serif stack:</p>
 <div class="highlight"><pre><code class="language-scss">
 $font-family-sans-serif: 'Gotham SSm A', 'Gotham SSm B', 'UCF Sans Serif Alt', 'Helvetica Neue', Arial, sans-serif;
 </code></pre></div>
 <p>This <code>font-family</code> is applied to the <code>&lt;body&gt;</code> and automatically inherited globally throughout Athena.</p>
-<h2 id="headings-and-paragraphs">Headings and paragraphs <a class="header-anchor" href="#headings-and-paragraphs"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="headings-and-paragraphs" tabindex="-1">Headings and paragraphs <a class="header-anchor" href="#headings-and-paragraphs"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>All heading elements—e.g., <code>&lt;h1&gt;</code>—and <code>&lt;p&gt;</code> are reset to have their <code>margin-top</code> removed. Headings have <code>margin-bottom: .5rem</code> added and paragraphs <code>margin-bottom: 1rem</code> for easy spacing.</p>
 <p>Like with the base <code>&lt;body&gt;</code> font size, all headings increase in size at the <code>-md</code> breakpoint in Athena.</p>
 <div class="afd-example">
@@ -935,7 +941,7 @@ $font-family-sans-serif: 'Gotham SSm A', 'Gotham SSm B', 'UCF Sans Serif Alt', '
 <span class="hljs-tag">&lt;<span class="hljs-name">h6</span>&gt;</span>h6 heading<span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
 </code></pre></div>
-<h2 id="lists">Lists <a class="header-anchor" href="#lists"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="lists" tabindex="-1">Lists <a class="header-anchor" href="#lists"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>All lists—<code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, and <code>&lt;dl&gt;</code>—have their <code>margin-top</code> removed and a <code>margin-bottom: 1rem</code>. Nested lists have no <code>margin-bottom</code>.</p>
 <div class="afd-example">
 <ul>
@@ -1017,7 +1023,7 @@ $font-family-sans-serif: 'Gotham SSm A', 'Gotham SSm B', 'UCF Sans Serif Alt', '
   <span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>Etiam porta sem malesuada magna mollis euismod.<span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">dl</span>&gt;</span>
 </code></pre></div>
-<h2 id="preformatted-text">Preformatted text <a class="header-anchor" href="#preformatted-text"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="preformatted-text" tabindex="-1">Preformatted text <a class="header-anchor" href="#preformatted-text"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>The <code>&lt;pre&gt;</code> element is reset to remove its <code>margin-top</code> and use <code>rem</code> units for its <code>margin-bottom</code>.</p>
 <div class="afd-example">
 <pre>
@@ -1032,7 +1038,7 @@ $font-family-sans-serif: 'Gotham SSm A', 'Gotham SSm B', 'UCF Sans Serif Alt', '
 }
 <span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
 </code></pre></div>
-<h2 id="tables">Tables <a class="header-anchor" href="#tables"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="tables" tabindex="-1">Tables <a class="header-anchor" href="#tables"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Tables are slightly adjusted to style <code>&lt;caption&gt;</code>s, collapse borders, and ensure consistent <code>text-align</code> throughout. Additional changes for borders, padding, and more come with <a href="/Athena-Framework/content/tables">the <code>.table</code> class</a>.</p>
 <div class="afd-example">
   <table>
@@ -1069,7 +1075,7 @@ $font-family-sans-serif: 'Gotham SSm A', 'Gotham SSm B', 'UCF Sans Serif Alt', '
     </tbody>
   </table>
 </div>
-<h2 id="forms">Forms <a class="header-anchor" href="#forms"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="forms" tabindex="-1">Forms <a class="header-anchor" href="#forms"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Various form elements have been rebooted for simpler base styles. Here are some of the most notable changes:</p>
 <ul>
 <li><code>&lt;fieldset&gt;</code>s have no borders, padding, or margin so they can be easily used as wrappers for individual inputs or groups of inputs.</li>
@@ -1147,8 +1153,8 @@ Option three is disabled
 </p></p>
   </fieldset>
 </form>
-<h2 id="misc-elements">Misc elements <a class="header-anchor" href="#misc-elements"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
-<h3 id="address">Address <a class="header-anchor" href="#address"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h2 id="misc-elements" tabindex="-1">Misc elements <a class="header-anchor" href="#misc-elements"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h3 id="address" tabindex="-1">Address <a class="header-anchor" href="#address"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>The <code>&lt;address&gt;</code> element is updated to reset the browser default <code>font-style</code> from <code>italic</code> to <code>normal</code>. <code>line-height</code> is also now inherited, and <code>margin-bottom: 1rem</code> has been added. <code>&lt;address&gt;</code>s are for presenting contact information for the nearest ancestor (or an entire body of work). Preserve formatting by ending lines with <code>&lt;br&gt;</code>.</p>
 <div class="afd-example">
   <address>
@@ -1162,7 +1168,7 @@ Option three is disabled
     <a href="mailto:#">first.last@example.com</a>
   </address>
 </div>
-<h3 id="blockquote">Blockquote <a class="header-anchor" href="#blockquote"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="blockquote" tabindex="-1">Blockquote <a class="header-anchor" href="#blockquote"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>The default <code>margin</code> on blockquotes is <code>1em 40px</code>, so we reset that to <code>0 0 1rem</code> for something more consistent with other elements.</p>
 <p><code>&lt;cite&gt;</code> elements have forced unitalicized text in Athena.</p>
 <div class="afd-example">
@@ -1171,17 +1177,17 @@ Option three is disabled
     <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
   </blockquote>
 </div>
-<h3 id="inline-elements">Inline elements <a class="header-anchor" href="#inline-elements"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="inline-elements" tabindex="-1">Inline elements <a class="header-anchor" href="#inline-elements"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>The <code>&lt;abbr&gt;</code> element receives basic styling to make it stand out amongst paragraph text.</p>
 <div class="afd-example">
   Nulla <abbr title="attribute">attr</abbr> vitae elit libero, a pharetra augue.
 </div>
-<h2 id="html5-hidden-attribute">HTML5 <code>[hidden]</code> attribute <a class="header-anchor" href="#html5-hidden-attribute"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="html5-hidden-attribute" tabindex="-1">HTML5 <code>[hidden]</code> attribute <a class="header-anchor" href="#html5-hidden-attribute"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>HTML5 adds <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden">a new global attribute named <code>[hidden]</code></a>, which is styled as <code>display: none</code> by default. Borrowing an idea from <a href="https://purecss.io">PureCSS</a>, we improve upon this default by making <code>[hidden] { display: none !important; }</code> to help prevent its <code>display</code> from getting accidentally overridden.</p>
 <div class="highlight"><pre><code class="nohighlight">
 <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">hidden</span>&gt;</span>
 </code></pre></div>
-<div class="afd-callout afd-callout-warning"><h4 id="jquery-incompatibility">jQuery incompatibility <a class="header-anchor" href="#jquery-incompatibility"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
+<div class="afd-callout afd-callout-warning"><h4 id="jquery-incompatibility" tabindex="-1">jQuery incompatibility <a class="header-anchor" href="#jquery-incompatibility"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
 <p><code>[hidden]</code> is not compatible with jQuery's <code>$(...).hide()</code> and <code>$(...).show()</code> methods. Therefore, we don't currently especially endorse <code>[hidden]</code> over other techniques for managing the <code>display</code> of elements.</p>
 </div>
 <p>To merely toggle the visibility of an element, meaning its <code>display</code> is not modified and the element can still affect the flow of the document, use <a href="/Athena-Framework/utilities/visibility-property">the <code>.invisible</code> class</a> instead.</p>
@@ -1210,7 +1216,7 @@ Option three is disabled
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.1.0</strong>.
+              Current version: <strong>v1.1.1</strong>.
             </p>
             <p class="mb-0">
               Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
@@ -1239,7 +1245,7 @@ Option three is disabled
       var SEARCH_INDEX_URL = '/Athena-Framework/search-index.json';
       var SEARCH_DATA_URL = '/Athena-Framework/search-data.json';
     </script>
-    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.0"></script>
+    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.1"></script>
 
   </body>
 </html>

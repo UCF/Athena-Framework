@@ -17,7 +17,7 @@
     
 
     <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.0">
+    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.1">
     <link rel="canonical" href="https://ucf.github.io/Athena-Framework/migration/">
   </head>
 
@@ -67,15 +67,14 @@
 <main>
   <article class="py-5 container afd-content">
     <p>The most notable changes between Bootstrap 3 and Athena are summarized immediately below, followed by more specific class and behavioral changes to relevant components.</p>
-<h2 id="contents">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
-<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#summary">Summary </a><ul><li><a href="#browser-support">Browser support </a></li><li><a href="#global-changes">Global changes </a></li><li><a href="#grid-system">Grid system </a></li><li><a href="#content">Content </a><ul><li><a href="#style-resets">Style resets </a></li><li><a href="#typography">Typography </a></li><li><a href="#images">Images </a></li><li><a href="#tables">Tables </a></li></ul></li><li><a href="#utilities">Utilities </a><ul><li><a href="#vendor-prefix-mixins">Vendor prefix mixins </a></li><li><a href="#responsive-utilities">Responsive utilities </a></li></ul></li><li><a href="#components">Components </a></li></ul></li><li><a href="#by-component">By component </a><ul><li><a href="#breadcrumbs">Breadcrumbs </a></li><li><a href="#buttons">Buttons </a></li><li><a href="#button-group">Button group </a></li><li><a href="#carousel">Carousel </a></li><li><a href="#dropdowns">Dropdowns </a></li><li><a href="#forms">Forms </a></li><li><a href="#labels-and-badges">Labels and badges </a></li><li><a href="#list-groups">List groups </a></li><li><a href="#modal">Modal </a></li><li><a href="#navs">Navs </a></li><li><a href="#navbar">Navbar </a></li><li><a href="#pagination">Pagination </a></li><li><a href="#panels-thumbnails-and-wells">Panels, thumbnails, and wells </a><ul><li><a href="#panels">Panels </a></li></ul></li><li><a href="#progress">Progress </a></li><li><a href="#tooltips-and-popovers">Tooltips and Popovers </a></li></ul></li></ul></nav><h2 id="summary">Summary <a class="header-anchor" href="#summary"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="contents" tabindex="-1">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#summary">Summary </a><ul><li><a href="#browser-support">Browser support </a></li><li><a href="#global-changes">Global changes </a></li><li><a href="#grid-system">Grid system </a></li><li><a href="#content">Content </a><ul><li><a href="#style-resets">Style resets </a></li><li><a href="#typography">Typography </a></li><li><a href="#images">Images </a></li><li><a href="#tables">Tables </a></li></ul></li><li><a href="#utilities">Utilities </a><ul><li><a href="#vendor-prefix-mixins">Vendor prefix mixins </a></li><li><a href="#responsive-utilities">Responsive utilities </a></li></ul></li><li><a href="#components">Components </a></li></ul></li><li><a href="#by-component">By component </a><ul><li><a href="#breadcrumbs">Breadcrumbs </a></li><li><a href="#buttons">Buttons </a></li><li><a href="#button-group">Button group </a></li><li><a href="#carousel">Carousel </a></li><li><a href="#dropdowns">Dropdowns </a></li><li><a href="#forms">Forms </a></li><li><a href="#labels-and-badges">Labels and badges </a></li><li><a href="#list-groups">List groups </a></li><li><a href="#modal">Modal </a></li><li><a href="#navs">Navs </a></li><li><a href="#navbar">Navbar </a></li><li><a href="#pagination">Pagination </a></li><li><a href="#panels-thumbnails-and-wells">Panels, thumbnails, and wells </a><ul><li><a href="#panels">Panels </a></li></ul></li><li><a href="#progress">Progress </a></li><li><a href="#tooltips-and-popovers">Tooltips and Popovers </a></li></ul></li></ul></nav><h2 id="summary" tabindex="-1">Summary <a class="header-anchor" href="#summary"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Here are the big ticket items you'll want to be aware of when moving from Bootstrap 3 to Athena.</p>
-<h3 id="browser-support">Browser support <a class="header-anchor" href="#browser-support"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="browser-support" tabindex="-1">Browser support <a class="header-anchor" href="#browser-support"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <ul>
-<li>Dropped IE 8, IE 9, IE 10, and iOS 6 support. Athena only supports the <a href="/Athena-Framework/getting-started/browsers-devices#supported-browsers">latest 2 versions of major browsers and IE 11</a>.</li>
-<li>Added official support for Android v5.0 Lollipop’s Browser and WebView.</li>
+<li>Dropped IE 8, IE 9, and IE 10. Athena only supports the <a href="/Athena-Framework/getting-started/browsers-devices#supported-browsers">latest 2 versions of major browsers and IE 11</a>.</li>
 </ul>
-<h3 id="global-changes">Global changes <a class="header-anchor" href="#global-changes"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="global-changes" tabindex="-1">Global changes <a class="header-anchor" href="#global-changes"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <ul>
 <li><strong>Flexbox is enabled by default.</strong> In general this means a move away from floats and more across components.</li>
 <li>Switched from <a href="http://lesscss.org/">Less</a> to <a href="http://sass-lang.com/">Sass</a> for source CSS files.</li>
@@ -85,7 +84,7 @@
 <li>Non-responsive usage of the framework is not supported.</li>
 <li>Added dozens of new utility classes for common CSS property-value pairs and margin/padding spacing shortcuts.</li>
 </ul>
-<h3 id="grid-system">Grid system <a class="header-anchor" href="#grid-system"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="grid-system" tabindex="-1">Grid system <a class="header-anchor" href="#grid-system"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <ul>
 <li><strong>Moved to flexbox.</strong>
 <ul>
@@ -109,23 +108,23 @@
 </ul>
 </li>
 </ul>
-<h3 id="content">Content <a class="header-anchor" href="#content"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
-<h4 id="style-resets">Style resets <a class="header-anchor" href="#style-resets"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
+<h3 id="content" tabindex="-1">Content <a class="header-anchor" href="#content"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h4 id="style-resets" tabindex="-1">Style resets <a class="header-anchor" href="#style-resets"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
 <p>Athena includes a combination of opinionated element style resets and <a href="https://v4-alpha.getbootstrap.com/content/reboot/">Reboot</a>, a new stylesheet from Bootstrap 4 that builds on Normalize with somewhat opinionated reset styles. Selectors appearing in this file only use elements—there are no classes here. This isolates our reset styles from our component styles for a more modular approach. Some of the most important resets this includes are the <code>box-sizing: border-box</code> change, moving from <code>em</code> to <code>rem</code> units on many elements, link styles, and many form element resets.</p>
-<h4 id="typography">Typography <a class="header-anchor" href="#typography"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
+<h4 id="typography" tabindex="-1">Typography <a class="header-anchor" href="#typography"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
 <ul>
 <li>Dropped <code>.page-header</code> as, aside from the border, all its styles can be applied via utilities.</li>
 <li><code>.dl-horizontal</code> has been dropped. Instead, use <code>.row</code> on <code>&lt;dl&gt;</code> and use grid column classes (or mixins) on its <code>&lt;dt&gt;</code> and <code>&lt;dd&gt;</code> children.</li>
 <li>Custom <code>&lt;blockquote&gt;</code> styling has moved to classes—<code>.blockquote</code> and the <code>.blockquote-reverse</code> modifier.</li>
 <li><code>.list-inline</code> now requires that its children list items have the new <code>.list-inline-item</code> class applied to them.</li>
 </ul>
-<h4 id="images">Images <a class="header-anchor" href="#images"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
+<h4 id="images" tabindex="-1">Images <a class="header-anchor" href="#images"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
 <ul>
 <li>Renamed <code>.img-responsive</code> to <code>.img-fluid</code>.</li>
 <li>Renamed <code>.img-rounded</code> to <code>.rounded</code>.</li>
 <li>Renamed <code>.img-circle</code> to <code>.rounded-circle</code>.</li>
 </ul>
-<h4 id="tables">Tables <a class="header-anchor" href="#tables"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
+<h4 id="tables" tabindex="-1">Tables <a class="header-anchor" href="#tables"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
 <ul>
 <li>Nearly all instances of the <code>&gt;</code> selector have been removed from table styles, meaning nested tables will now automatically inherit styles from their parents. This greatly simplifies our selectors and potential customizations.</li>
 <li>Responsive tables no longer require a wrapping element. Instead, just put the <code>.table-responsive</code> right on the <code>&lt;table&gt;</code>.</li>
@@ -134,7 +133,7 @@
 <li>Added table header modifiers: <code>.thead-default</code> and <code>.thead-inverse</code>.</li>
 <li>Renamed contextual classes to have a <code>.table-</code>-prefix. Hence <code>.active</code>, <code>.success</code>, <code>.warning</code>, <code>.danger</code> and <code>.table-info</code> to <code>.table-active</code>, <code>.table-success</code>, <code>.table-warning</code>, <code>.table-danger</code> and <code>.table-info</code>.</li>
 </ul>
-<h3 id="utilities">Utilities <a class="header-anchor" href="#utilities"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="utilities" tabindex="-1">Utilities <a class="header-anchor" href="#utilities"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <ul>
 <li><strong>Display, hidden, and more:</strong>
 <ul>
@@ -155,10 +154,10 @@
 </ul>
 </li>
 </ul>
-<h4 id="vendor-prefix-mixins">Vendor prefix mixins <a class="header-anchor" href="#vendor-prefix-mixins"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
+<h4 id="vendor-prefix-mixins" tabindex="-1">Vendor prefix mixins <a class="header-anchor" href="#vendor-prefix-mixins"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
 <p>Bootstrap 3's <a href="http://webdesign.about.com/od/css/a/css-vendor-prefixes.htm">vendor prefix</a> mixins, which were deprecated in v3.2.0, have been removed in Athena. Since we use <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a>, they're no longer necessary.</p>
 <p>Removed the following mixins: <code>animation</code>, <code>animation-delay</code>, <code>animation-direction</code>, <code>animation-duration</code>, <code>animation-fill-mode</code>, <code>animation-iteration-count</code>, <code>animation-name</code>, <code>animation-timing-function</code>, <code>backface-visibility</code>, <code>box-sizing</code>, <code>content-columns</code>, <code>hyphens</code>, <code>opacity</code>, <code>perspective</code>, <code>perspective-origin</code>, <code>rotate</code>, <code>rotateX</code>, <code>rotateY</code>, <code>scale</code>, <code>scaleX</code>, <code>scaleY</code>, <code>skew</code>, <code>transform-origin</code>, <code>transition-delay</code>, <code>transition-duration</code>, <code>transition-property</code>, <code>transition-timing-function</code>, <code>transition-transform</code>, <code>translate</code>, <code>translate3d</code>, <code>user-select</code></p>
-<h4 id="responsive-utilities">Responsive utilities <a class="header-anchor" href="#responsive-utilities"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
+<h4 id="responsive-utilities" tabindex="-1">Responsive utilities <a class="header-anchor" href="#responsive-utilities"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
 <p>All <code>@screen-</code> variables have been removed in Athena. Use the <code>media-breakpoint-up()</code>, <code>media-breakpoint-down()</code>, or <code>media-breakpoint-only()</code> Sass mixins or the <code>$grid-breakpoints</code> Sass map instead.</p>
 <p>The responsive utility classes have also been overhauled.</p>
 <ul>
@@ -170,7 +169,7 @@
 </ul>
 <p>Rather than using explicit <code>.visible-*</code> classes, you make an element visible by simply not hiding it at that screen size. You can combine one <code>.hidden-*-up</code> class with one <code>.hidden-*-down</code> class to show an element only on a given interval of screen sizes (e.g. <code>.hidden-sm-down.hidden-xl-up</code> shows the element only on medium and large devices).</p>
 <p>Note that the changes to the grid breakpoints in Athena means that you'll need to go one breakpoint larger to achieve the same results (e.g. <code>.hidden-md</code> is more similar to <code>.hidden-lg-down</code> than to <code>.hidden-md-down</code>). The new responsive utility classes don't attempt to accommodate less common cases where an element's visibility can't be expressed as a single contiguous range of viewport sizes; you will instead need to use custom CSS in such cases.</p>
-<h3 id="components">Components <a class="header-anchor" href="#components"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="components" tabindex="-1">Components <a class="header-anchor" href="#components"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <ul>
 <li><strong>Dropped panels, thumbnails, and wells</strong> for a new all-encompassing component, [cards](/Athena-Framework/link components/card).</li>
 <li><strong>Dropped the Glyphicons icon font.</strong> If you need icons, we recommend including <a href="http://fontawesome.io/">Font Awesome</a> or another icon library in your project as needed.</li>
@@ -183,13 +182,13 @@
 <li><strong>Refactored nearly all components</strong> to use more un-nested classes instead of children selectors.</li>
 </ul>
 <hr>
-<h2 id="by-component">By component <a class="header-anchor" href="#by-component"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="by-component" tabindex="-1">By component <a class="header-anchor" href="#by-component"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>This list highlights key changes by component between Bootstrap v3.x.x and Athena.</p>
-<h3 id="breadcrumbs">Breadcrumbs <a class="header-anchor" href="#breadcrumbs"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="breadcrumbs" tabindex="-1">Breadcrumbs <a class="header-anchor" href="#breadcrumbs"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <ul>
 <li>An explicit class, <code>.breadcrumb-item</code>, is now required on the descendants of <code>.breadcrumb</code>s.</li>
 </ul>
-<h3 id="buttons">Buttons <a class="header-anchor" href="#buttons"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="buttons" tabindex="-1">Buttons <a class="header-anchor" href="#buttons"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <ul>
 <li>Dropped the <code>.btn-xs</code> class entirely.</li>
 <li>The <a href="https://getbootstrap.com/docs/3.3/javascript/#buttons-stateful">stateful button</a> feature of Bootstrap's <code>button.js</code> jQuery plugin has been dropped. This includes the <code>$().button(string)</code> and <code>$().button('reset')</code> methods. We advise using a tiny bit of custom JavaScript instead, which will have the benefit of behaving exactly the way you want it to.
@@ -198,7 +197,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="button-group">Button group <a class="header-anchor" href="#button-group"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="button-group" tabindex="-1">Button group <a class="header-anchor" href="#button-group"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <ul>
 <li>Rewrote component with flexbox.</li>
 <li>Removed <code>.btn-group-justified</code>. As a replacement you can use <code>&lt;div class=&quot;btn-group d-flex&quot; role=&quot;group&quot;&gt;&lt;/div&gt;</code> as a wrapper around elements with <code>.w-100</code>.</li>
@@ -206,11 +205,11 @@
 <li>Removed explicit spacing between button groups in button toolbars; use margin utilities now.</li>
 <li>Improved documentation for use with other components.</li>
 </ul>
-<h3 id="carousel">Carousel <a class="header-anchor" href="#carousel"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="carousel" tabindex="-1">Carousel <a class="header-anchor" href="#carousel"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <ul>
 <li>Carousels are intentionally not included in Athena.  If you <a href="http://shouldiuseacarousel.com/">still <em>really</em> need a carousel</a>, use a third-party JavaScript plugin that is responsive, provides adequate touch device support, and is accessible.</li>
 </ul>
-<h3 id="dropdowns">Dropdowns <a class="header-anchor" href="#dropdowns"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="dropdowns" tabindex="-1">Dropdowns <a class="header-anchor" href="#dropdowns"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <ul>
 <li>Switched from parent selectors to singular classes for all components, modifiers, etc.</li>
 <li>Simplified dropdown styles to no longer ship with upward or downward facing arrows attached to the dropdown menu.</li>
@@ -220,7 +219,7 @@
 <li>Dropdown items now require <code>.dropdown-item</code>.</li>
 <li>Dropdown toggles no longer require an explicit <code>&lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;</code>; this is now provided automatically via CSS's <code>::after</code> on <code>.dropdown-toggle</code>.</li>
 </ul>
-<h3 id="forms">Forms <a class="header-anchor" href="#forms"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="forms" tabindex="-1">Forms <a class="header-anchor" href="#forms"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <ul>
 <li>Renamed <code>.control-label</code> to <code>.form-control-label</code>.</li>
 <li>Renamed <code>.input-lg</code> and <code>.input-sm</code> to <code>.form-control-lg</code> and <code>.form-control-sm</code>, respectively.</li>
@@ -235,29 +234,29 @@
 </li>
 <li>Added custom forms support (for checkboxes, radios, selects, and file inputs).</li>
 </ul>
-<h3 id="labels-and-badges">Labels and badges <a class="header-anchor" href="#labels-and-badges"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="labels-and-badges" tabindex="-1">Labels and badges <a class="header-anchor" href="#labels-and-badges"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <ul>
 <li>Merged <code>.label</code> into a single <code>.badge</code> component to disambiguate from the <code>&lt;label&gt;</code> element.</li>
 </ul>
-<h3 id="list-groups">List groups <a class="header-anchor" href="#list-groups"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="list-groups" tabindex="-1">List groups <a class="header-anchor" href="#list-groups"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <ul>
 <li>Rewrote component with flexbox.</li>
 <li>Replaced <code>a.list-group-item</code> with an explicit class, <code>.list-group-item-action</code>, for styling link and button versions of list group items.</li>
 <li>Added <code>.list-group-flush</code> class for use with cards.</li>
 </ul>
-<h3 id="modal">Modal <a class="header-anchor" href="#modal"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="modal" tabindex="-1">Modal <a class="header-anchor" href="#modal"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <ul>
 <li>Rewrote component with flexbox.</li>
 <li>Given move to flexbox, alignment of dismiss icons in the header is likely broken as floats are no longer used. Floated content comes first, but with flexbox that's no longer the case. Update your dismiss icons to come after modal titles to fix.</li>
 <li>The <code>remote</code> option (which could be used to automatically load and inject external content into a modal) and the corresponding <code>loaded.bs.modal</code> event were removed. We recommend instead using client-side templating or a data binding framework, or calling <a href="https://api.jquery.com/load/">jQuery.load</a> yourself.</li>
 </ul>
-<h3 id="navs">Navs <a class="header-anchor" href="#navs"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="navs" tabindex="-1">Navs <a class="header-anchor" href="#navs"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <ul>
 <li>Rewrote component with flexbox.</li>
 <li>Dropped nearly all <code>&gt;</code> selectors for simpler styling via un-nested classes.</li>
 <li>Instead of HTML-specific selectors like <code>.nav &gt; li &gt; a</code>, we use separate classes for <code>.nav</code>s, <code>.nav-item</code>s, and <code>.nav-link</code>s. This makes your HTML more flexible while bringing along increased extensibility.</li>
 </ul>
-<h3 id="navbar">Navbar <a class="header-anchor" href="#navbar"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="navbar" tabindex="-1">Navbar <a class="header-anchor" href="#navbar"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>The navbar has been entirely rewritten in flexbox with improved support for alignment, responsiveness, and customization.</p>
 <ul>
 <li>Responsive navbar behaviors are now applied to the <code>.navbar</code> class via the <code>.navbar-toggleable-{breakpoint}</code> where you choose where to collapse the navbar. Previously this was a Less variable modification and required recompiling.</li>
@@ -269,15 +268,15 @@
 <li>Navbars no longer include <code>margin-bottom</code> or <code>border-radius</code> by default. Use utilities as necessary.</li>
 <li>All examples featuring navbars have been updated to include new markup.</li>
 </ul>
-<h3 id="pagination">Pagination <a class="header-anchor" href="#pagination"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="pagination" tabindex="-1">Pagination <a class="header-anchor" href="#pagination"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <ul>
 <li>Rewrote component with flexbox.</li>
 <li>Explicit classes (<code>.page-item</code>, <code>.page-link</code>) are now required on the descendants of <code>.pagination</code>s</li>
 <li>Dropped the <code>.pager</code> component entirely as it was little more than customized outline buttons.</li>
 </ul>
-<h3 id="panels-thumbnails-and-wells">Panels, thumbnails, and wells <a class="header-anchor" href="#panels-thumbnails-and-wells"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="panels-thumbnails-and-wells" tabindex="-1">Panels, thumbnails, and wells <a class="header-anchor" href="#panels-thumbnails-and-wells"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Dropped entirely for the new <a href="/Athena-Framework/components/card">card component</a>.</p>
-<h4 id="panels">Panels <a class="header-anchor" href="#panels"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
+<h4 id="panels" tabindex="-1">Panels <a class="header-anchor" href="#panels"><span class="fa fa-link" aria-label="Anchor"></span></a></h4>
 <ul>
 <li><code>.panel</code> to <code>.card</code>, now built with flexbox.</li>
 <li><code>.panel-default</code> removed and no replacement.</li>
@@ -292,12 +291,12 @@
 <li><code>.panel-warning</code> to <code>.card-warning</code> and <code>.card-inverse</code> (or use <code>.bg-warning</code> on <code>.card-header</code>)</li>
 <li><code>.panel-danger</code> to <code>.card-danger</code> and <code>.card-inverse</code> (or use <code>.bg-danger</code> on <code>.card-header</code>)</li>
 </ul>
-<h3 id="progress">Progress <a class="header-anchor" href="#progress"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="progress" tabindex="-1">Progress <a class="header-anchor" href="#progress"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <ul>
 <li>Replaced contextual <code>.progress-bar-*</code> classes with <code>.bg-*</code> utilities. For example, <code>class=&quot;progress-bar progress-bar-danger&quot;</code> becomes <code>class=&quot;progress-bar bg-danger&quot;</code>.</li>
 <li>Replaced <code>.active</code> for animated progress bars with <code>.progress-bar-animated</code>.</li>
 </ul>
-<h3 id="tooltips-and-popovers">Tooltips and Popovers <a class="header-anchor" href="#tooltips-and-popovers"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="tooltips-and-popovers" tabindex="-1">Tooltips and Popovers <a class="header-anchor" href="#tooltips-and-popovers"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <ul>
 <li>Removed support for <code>auto</code> placement options.</li>
 </ul>
@@ -324,7 +323,7 @@
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.1.0</strong>.
+              Current version: <strong>v1.1.1</strong>.
             </p>
             <p class="mb-0">
               Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
@@ -353,7 +352,7 @@
       var SEARCH_INDEX_URL = '/Athena-Framework/search-index.json';
       var SEARCH_DATA_URL = '/Athena-Framework/search-data.json';
     </script>
-    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.0"></script>
+    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.1"></script>
 
   </body>
 </html>

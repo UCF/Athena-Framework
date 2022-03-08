@@ -17,7 +17,7 @@
     
 
     <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.0">
+    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.1">
     <link rel="canonical" href="https://ucf.github.io/Athena-Framework/getting-started/javascript/">
   </head>
 
@@ -85,8 +85,10 @@
     
         
         
+        
 
         
+            
             
         
 
@@ -193,6 +195,7 @@
     
         
         
+        
 
         
 
@@ -260,6 +263,7 @@
         </div>
 
     
+        
         
         
 
@@ -362,6 +366,7 @@
         </div>
 
     
+        
         
         
 
@@ -607,6 +612,7 @@
         </div>
 
     
+        
         
         
 
@@ -870,11 +876,11 @@
       </div>
       <div class="col-md-8 pull-md-4 pt-3 pt-md-5 afd-content">
         <p>Athena includes a handful of JavaScript code, mostly inherited from Bootstrap, to help bring some of our components to life. Learn more about how to include it, our data and programmatic API options, and more.</p>
-<h2 id="contents">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
-<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#dependencies">Dependencies </a></li><li><a href="#data-attributes">Data attributes </a></li><li><a href="#events">Events </a></li><li><a href="#programmatic-api">Programmatic API </a><ul><li><a href="#default-settings">Default settings </a></li><li><a href="#no-conflict">No conflict </a></li><li><a href="#version-numbers">Version numbers </a></li></ul></li><li><a href="#no-special-fallbacks-when-javascript-is-disabled">No special fallbacks when JavaScript is disabled </a></li><li><a href="#transitions">Transitions </a></li></ul></nav><h2 id="dependencies">Dependencies <a class="header-anchor" href="#dependencies"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="contents" tabindex="-1">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#dependencies">Dependencies </a></li><li><a href="#data-attributes">Data attributes </a></li><li><a href="#events">Events </a></li><li><a href="#programmatic-api">Programmatic API </a><ul><li><a href="#default-settings">Default settings </a></li><li><a href="#no-conflict">No conflict </a></li><li><a href="#version-numbers">Version numbers </a></li></ul></li><li><a href="#no-special-fallbacks-when-javascript-is-disabled">No special fallbacks when JavaScript is disabled </a></li><li><a href="#transitions">Transitions </a></li></ul></nav><h2 id="dependencies" tabindex="-1">Dependencies <a class="header-anchor" href="#dependencies"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Athena depends on <a href="https://jquery.com/">jQuery</a> and <a href="http://tether.io/">Tether</a>. This means jQuery and Tether must be included <strong>before</strong> Athena's JavaScript file. <a href="https://github.com/UCF/Athena-Framework/blob/master/package.json">Consult our <code>package.json</code></a> to see which versions of jQuery and Tether are supported.</p>
 <p>Note that Athena provides some additional polyfills out-of-the-box (<a href="https://github.com/wilddeer/stickyfill">Stickyfill</a>, <a href="https://github.com/constancecchen/object-fit-polyfill">objectFitPolyfill</a>) to ensure cross-browser compatibility across all components. These polyfills should not be included in your projects separately to avoid potential naming conflicts.</p>
-<h2 id="data-attributes">Data attributes <a class="header-anchor" href="#data-attributes"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="data-attributes" tabindex="-1">Data attributes <a class="header-anchor" href="#data-attributes"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Nearly all of Athena's JavaScript can be enabled and configured through HTML alone with data attributes (our preferred way of using JavaScript functionality). Be sure to <strong>only use one set of data attributes on a single element</strong> (e.g., you cannot trigger a tooltip and modal from the same button.)</p>
 <p>However, in some situations it may be desirable to disable this functionality. To disable the data attribute API for Bootstrap plugins, unbind all events on the document namespaced with <code>data-api</code> like so:</p>
 <div class="highlight"><pre><code class="language-js">
@@ -884,7 +890,7 @@ $(document).off('.data-api')
 <div class="highlight"><pre><code class="language-js">
 $(document).off('.alert.data-api')
 </code></pre></div>
-<h2 id="events">Events <a class="header-anchor" href="#events"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="events" tabindex="-1">Events <a class="header-anchor" href="#events"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Athena provides custom events for most components' unique actions. Generally, these come in an infinitive and past participle form - where the infinitive (ex. <code>show</code>) is triggered at the start of an event, and its past participle form (ex. <code>shown</code>) is triggered on the completion of an action.</p>
 <p>All infinitive events provide <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault"><code>preventDefault()</code></a> functionality. This provides the ability to stop the execution of an action before it starts.</p>
 <div class="highlight"><pre><code class="language-js">
@@ -893,7 +899,7 @@ $('#myModal').on('show.bs.modal', function (e) {
 })
 </code></pre></div>
 <p>Because most of Athena's JavaScript is copied over directly from Bootstrap, you'll still see <code>bs.</code> suffixes after these event names.</p>
-<h2 id="programmatic-api">Programmatic API <a class="header-anchor" href="#programmatic-api"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="programmatic-api" tabindex="-1">Programmatic API <a class="header-anchor" href="#programmatic-api"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>In addition to data attributes, most of Athena's JavaScript functionality is also accessible through the JavaScript API. All public APIs are single, chainable methods, and return the collection acted upon.</p>
 <div class="afd-callout afd-callout-info"><p><strong>Note: Programmatic API applies to plugins ported from Bootstrap only.</strong> Athena-specific plugins (<code>mediaBackground</code> and <code>stickyTop</code>) don't currently expose a constructor, <code>noConflict</code> method, version number or have any configurable options.</p>
 </div>
@@ -907,29 +913,29 @@ $('#myModal').modal({ keyboard: false })   // initialized with no keyboard
 $('#myModal').modal('show')                // initializes and invokes show immediately
 </code></pre></div>
 <p>Each plugin from Bootstrap also exposes its raw constructor on a <code>Constructor</code> property: <code>$.fn.popover.Constructor</code>. If you'd like to get a particular plugin instance, retrieve it directly from an element: <code>$('[rel=&quot;popover&quot;]').data('popover')</code>.</p>
-<h3 id="default-settings">Default settings <a class="header-anchor" href="#default-settings"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="default-settings" tabindex="-1">Default settings <a class="header-anchor" href="#default-settings"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>You can change the default settings for a Bootstrap plugin by modifying the plugin's <code>Constructor.DEFAULTS</code> object:</p>
 <div class="highlight"><pre><code class="language-js">
 $.fn.modal.Constructor.DEFAULT.keyboard = false // changes default for the modal plugin's `keyboard` option to false
 </code></pre></div>
-<h3 id="no-conflict">No conflict <a class="header-anchor" href="#no-conflict"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="no-conflict" tabindex="-1">No conflict <a class="header-anchor" href="#no-conflict"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Sometimes it is necessary to use Athena's JavaScript with other UI frameworks. In these circumstances, namespace collisions can occasionally occur. If this happens, you may call <code>.noConflict</code> on the Bootstrap plugin you wish to revert the value of.</p>
 <div class="highlight"><pre><code class="language-js">
 var AthenaButton = $.fn.button.noConflict() // return $.fn.button to previously assigned value
 $.fn.AthenaBtn = AthenaButton            // give $().AthenaBtn the Athena functionality
 </code></pre></div>
-<h3 id="version-numbers">Version numbers <a class="header-anchor" href="#version-numbers"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="version-numbers" tabindex="-1">Version numbers <a class="header-anchor" href="#version-numbers"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>The version of each of jQuery plugin ported from Bootstrap can be accessed via the <code>VERSION</code> property of the plugin's constructor. For example, for the tooltip plugin:</p>
 <div class="highlight"><pre><code class="language-js">
-$.fn.tooltip.Constructor.VERSION // => "1.1.0"
+$.fn.tooltip.Constructor.VERSION // => "1.1.1"
 </code></pre></div>
 <p>Note that these version numbers will correspond to the version of Bootstrap that they are ported from, <em>not</em> the current version of the Athena Framework!</p>
-<h2 id="no-special-fallbacks-when-javascript-is-disabled">No special fallbacks when JavaScript is disabled <a class="header-anchor" href="#no-special-fallbacks-when-javascript-is-disabled"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="no-special-fallbacks-when-javascript-is-disabled" tabindex="-1">No special fallbacks when JavaScript is disabled <a class="header-anchor" href="#no-special-fallbacks-when-javascript-is-disabled"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Athena's components that depend on JavaScript logic don't fall back particularly gracefully when JavaScript is disabled. If you care about the user experience in this case, use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript"><code>&lt;noscript&gt;</code></a> to explain the situation (and how to re-enable JavaScript) to your users, and/or add your own custom fallbacks.</p>
-<div class="afd-callout afd-callout-warning"><h3 id="third-party-libraries">Third-party libraries <a class="header-anchor" href="#third-party-libraries"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<div class="afd-callout afd-callout-warning"><h3 id="third-party-libraries" tabindex="-1">Third-party libraries <a class="header-anchor" href="#third-party-libraries"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p><strong>Athena does not officially support third-party JavaScript libraries</strong> like Prototype or jQuery UI. Despite <code>.noConflict</code> and namespaced events, there may be compatibility problems that you need to fix on your own.</p>
 </div>
-<h2 id="transitions">Transitions <a class="header-anchor" href="#transitions"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="transitions" tabindex="-1">Transitions <a class="header-anchor" href="#transitions"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Transition.js, a Bootstrap plugin already in Athena's JavaScript, is a basic helper for <code>transitionEnd</code> events as well as a CSS transition emulator. It's used by the other Bootstrap plugins to check for CSS transition support and to catch hanging transitions.</p>
 
       </div>
@@ -956,7 +962,7 @@ $.fn.tooltip.Constructor.VERSION // => "1.1.0"
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.1.0</strong>.
+              Current version: <strong>v1.1.1</strong>.
             </p>
             <p class="mb-0">
               Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
@@ -985,7 +991,7 @@ $.fn.tooltip.Constructor.VERSION // => "1.1.0"
       var SEARCH_INDEX_URL = '/Athena-Framework/search-index.json';
       var SEARCH_DATA_URL = '/Athena-Framework/search-data.json';
     </script>
-    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.0"></script>
+    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.1"></script>
 
   </body>
 </html>

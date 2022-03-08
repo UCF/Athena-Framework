@@ -17,7 +17,7 @@
     
 
     <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.0">
+    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.1">
     <link rel="canonical" href="https://ucf.github.io/Athena-Framework/utilities/stretched-links/">
   </head>
 
@@ -83,6 +83,7 @@
     
 
     
+        
         
         
 
@@ -187,6 +188,7 @@
     
         
         
+        
 
         
 
@@ -254,6 +256,7 @@
         </div>
 
     
+        
         
         
 
@@ -356,6 +359,7 @@
         </div>
 
     
+        
         
         
 
@@ -603,8 +607,10 @@
     
         
         
+        
 
         
+            
             
         
 
@@ -872,9 +878,9 @@
         <p>Stretched links are a screenreader-friendly alternative to wrapping entire components or chunks of content in a link for the sake of making everything clickable.</p>
 <p>Add <code>.stretched-link</code> to a link to make its <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block#Identifying_the_containing_block">containing block</a> clickable via a <code>::after</code> pseudo element. In most cases, this means that an element with <code>position: relative;</code> that contains a link with the <code>.stretched-link</code> class is clickable. Please note that given <a href="https://www.w3.org/TR/CSS21/visuren.html#propdef-position">how CSS <code>position</code> works</a>, <code>.stretched-link</code> cannot be mixed with most table elements.</p>
 <p>Multiple links and tap targets are not recommended with stretched links. However, some <code>position</code> and <code>z-index</code> styles can help should this be required.</p>
-<h2 id="contents">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
-<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#examples">Examples </a><ul><li><a href="#cards">Cards </a></li><li><a href="#with-rows-and-columns">With rows and columns </a></li></ul></li><li><a href="#identifying-the-containing-block">Identifying the containing block </a></li></ul></nav><h2 id="examples">Examples <a class="header-anchor" href="#examples"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
-<h3 id="cards">Cards <a class="header-anchor" href="#cards"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h2 id="contents" tabindex="-1">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#examples">Examples </a><ul><li><a href="#cards">Cards </a></li><li><a href="#with-rows-and-columns">With rows and columns </a></li></ul></li><li><a href="#identifying-the-containing-block">Identifying the containing block </a></li></ul></nav><h2 id="examples" tabindex="-1">Examples <a class="header-anchor" href="#examples"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h3 id="cards" tabindex="-1">Cards <a class="header-anchor" href="#cards"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Cards have <code>position: relative</code> by default in Athena, so in this case you can safely add the <code>.stretched-link</code> class to a link in the card without any other HTML changes.</p>
 <div class="afd-example">
 <div class="card" style="width: 18rem;">
@@ -899,7 +905,7 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
-<h3 id="with-rows-and-columns">With rows and columns <a class="header-anchor" href="#with-rows-and-columns"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="with-rows-and-columns" tabindex="-1">With rows and columns <a class="header-anchor" href="#with-rows-and-columns"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Note that columns have <code>position: relative</code> by default in Athena, so a stretched link included within a column will be limited to stretching within that column (assuming the link isn't additionally wrapped in another containing block).</p>
 <p>To make an entire component containing rows/columns clickable, the column(s) containing the stretched link will need their <code>position</code> to be reset to <code>static</code>, and the desired top-most element in the component should be made the containing block (e.g. by using the <a href="/Athena-Framework/utilities/position/"><code>.position-relative</code> utility class</a>.</p>
 <div class="afd-example">
@@ -931,7 +937,7 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
-<h2 id="identifying-the-containing-block">Identifying the containing block <a class="header-anchor" href="#identifying-the-containing-block"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="identifying-the-containing-block" tabindex="-1">Identifying the containing block <a class="header-anchor" href="#identifying-the-containing-block"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>If the stretched link doesn’t seem to work, the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block#Identifying_the_containing_block">containing block</a> will probably be the cause. The following CSS properties will make an element the containing block:</p>
 <ul>
     <li>A <code>position</code> value other than <code>static</code></li>
@@ -1001,7 +1007,7 @@
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.1.0</strong>.
+              Current version: <strong>v1.1.1</strong>.
             </p>
             <p class="mb-0">
               Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
@@ -1030,7 +1036,7 @@
       var SEARCH_INDEX_URL = '/Athena-Framework/search-index.json';
       var SEARCH_DATA_URL = '/Athena-Framework/search-data.json';
     </script>
-    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.0"></script>
+    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.1"></script>
 
   </body>
 </html>

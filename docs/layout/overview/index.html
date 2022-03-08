@@ -17,7 +17,7 @@
     
 
     <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.0">
+    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.1">
     <link rel="canonical" href="https://ucf.github.io/Athena-Framework/layout/overview/">
   </head>
 
@@ -83,6 +83,7 @@
     
 
     
+        
         
         
 
@@ -187,8 +188,10 @@
     
         
         
+        
 
         
+            
             
         
 
@@ -260,6 +263,7 @@
         </div>
 
     
+        
         
         
 
@@ -362,6 +366,7 @@
         </div>
 
     
+        
         
         
 
@@ -607,6 +612,7 @@
         </div>
 
     
+        
         
         
 
@@ -870,8 +876,8 @@
       </div>
       <div class="col-md-8 pull-md-4 pt-3 pt-md-5 afd-content">
         <p>Athena includes several components and options for laying out your project, including wrapping containers, a powerful flexbox grid system, a flexible media object, and responsive utility classes.</p>
-<h2 id="contents">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
-<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#containers">Containers </a></li><li><a href="#responsive-breakpoints">Responsive breakpoints </a></li><li><a href="#z-index">Z-index </a></li></ul></nav><h2 id="containers">Containers <a class="header-anchor" href="#containers"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="contents" tabindex="-1">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#containers">Containers </a></li><li><a href="#responsive-breakpoints">Responsive breakpoints </a></li><li><a href="#z-index">Z-index </a></li></ul></nav><h2 id="containers" tabindex="-1">Containers <a class="header-anchor" href="#containers"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Containers are the most basic layout element in Athena and are <strong>required when using our default grid system</strong>. Choose from a responsive, fixed-width container (meaning its <code>max-width</code> changes at each breakpoint) or fluid-width (meaning it's <code>100%</code> wide all the time).</p>
 <p>While containers <em>can</em> be nested, most layouts do not require a nested container.</p>
 <div class="afd-example">
@@ -899,7 +905,7 @@
   ...
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
-<h2 id="responsive-breakpoints">Responsive breakpoints <a class="header-anchor" href="#responsive-breakpoints"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="responsive-breakpoints" tabindex="-1">Responsive breakpoints <a class="header-anchor" href="#responsive-breakpoints"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Since Athena is developed to be mobile first, we use a handful of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">media queries</a> to create sensible breakpoints for our layouts and interfaces. These breakpoints are mostly based on minimum viewport widths and allow us to scale up elements as the viewport changes.</p>
 <p>Athena primarily uses the following media query ranges—or breakpoints—in our source Sass files for our layout, grid system, and components.</p>
 <div class="highlight"><pre><code class="language-scss">
@@ -992,7 +998,7 @@
 <div class="highlight"><pre><code class="language-scss">
 @include media-breakpoint-between(md, xl) { ... }
 </code></pre></div>
-<h2 id="z-index">Z-index <a class="header-anchor" href="#z-index"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="z-index" tabindex="-1">Z-index <a class="header-anchor" href="#z-index"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Several Athena components utilize <code>z-index</code>, the CSS property that helps control layout by providing a third axis to arrange content. We utilize a default z-index scale in Athena that's been designed to properly layer navigation, tooltips and popovers, modals, and more.</p>
 <p>We don't encourage customization of these values; should you change one, you likely need to change them all.</p>
 <div class="highlight"><pre><code class="language-scss">
@@ -1033,7 +1039,7 @@ $zindex-tooltip:            10040 !default;
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.1.0</strong>.
+              Current version: <strong>v1.1.1</strong>.
             </p>
             <p class="mb-0">
               Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
@@ -1062,7 +1068,7 @@ $zindex-tooltip:            10040 !default;
       var SEARCH_INDEX_URL = '/Athena-Framework/search-index.json';
       var SEARCH_DATA_URL = '/Athena-Framework/search-data.json';
     </script>
-    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.0"></script>
+    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.1"></script>
 
   </body>
 </html>

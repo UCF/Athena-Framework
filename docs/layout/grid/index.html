@@ -17,7 +17,7 @@
     
 
     <link href="/Athena-Framework/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.0">
+    <link rel="stylesheet" href="/Athena-Framework/static/css/docs.min.css?v=1.1.1">
     <link rel="canonical" href="https://ucf.github.io/Athena-Framework/layout/grid/">
   </head>
 
@@ -83,6 +83,7 @@
     
 
     
+        
         
         
 
@@ -187,8 +188,10 @@
     
         
         
+        
 
         
+            
             
         
 
@@ -260,6 +263,7 @@
         </div>
 
     
+        
         
         
 
@@ -362,6 +366,7 @@
         </div>
 
     
+        
         
         
 
@@ -607,6 +612,7 @@
         </div>
 
     
+        
         
         
 
@@ -870,8 +876,8 @@
       </div>
       <div class="col-md-8 pull-md-4 pt-3 pt-md-5 afd-content">
         <p>Athena includes a powerful mobile-first flexbox grid system for building layouts of all shapes and sizes. It's based on a 12 column layout and has multiple tiers, one for each <a href="/Athena-Framework/layout/overview#responsive-breakpoints">media query range</a>. You can use it with Sass mixins or our predefined classes.</p>
-<h2 id="contents">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
-<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#how-it-works">How it works </a></li><li><a href="#grid-options">Grid options </a></li><li><a href="#auto-layout-columns">Auto-layout columns </a><ul><li><a href="#equal-width">Equal-width </a></li><li><a href="#setting-one-column-width">Setting one column width </a></li><li><a href="#variable-width-content">Variable width content </a></li><li><a href="#equal-width-multi-row">Equal-width multi-row </a></li></ul></li><li><a href="#responsive-classes">Responsive classes </a><ul><li><a href="#all-breakpoints">All breakpoints </a></li><li><a href="#stacked-to-horizontal">Stacked to horizontal </a></li><li><a href="#mix-and-match">Mix and match </a></li></ul></li><li><a href="#alignment">Alignment </a><ul><li><a href="#vertical-alignment">Vertical alignment </a></li><li><a href="#horizontal-alignment">Horizontal alignment </a></li><li><a href="#no-gutters">No gutters </a></li><li><a href="#column-wrapping">Column wrapping </a></li><li><a href="#column-breaks">Column breaks </a></li></ul></li><li><a href="#reordering">Reordering </a><ul><li><a href="#flex-order">Flex order </a></li><li><a href="#offsetting-columns">Offsetting columns </a></li><li><a href="#push-and-pull">Push and pull </a></li></ul></li><li><a href="#nesting">Nesting </a></li><li><a href="#sass-mixins">Sass mixins </a><ul><li><a href="#variables">Variables </a></li><li><a href="#mixins">Mixins </a></li><li><a href="#example-usage">Example usage </a></li></ul></li><li><a href="#customizing-the-grid">Customizing the grid </a><ul><li><a href="#columns-and-gutters">Columns and gutters </a></li><li><a href="#grid-tiers">Grid tiers </a></li></ul></li></ul></nav><h2 id="how-it-works">How it works <a class="header-anchor" href="#how-it-works"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="contents" tabindex="-1">Contents <a class="header-anchor" href="#contents"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<nav class="table-of-contents"><ul><li><a href="#contents">Contents </a></li><li><a href="#how-it-works">How it works </a></li><li><a href="#grid-options">Grid options </a></li><li><a href="#auto-layout-columns">Auto-layout columns </a><ul><li><a href="#equal-width">Equal-width </a></li><li><a href="#setting-one-column-width">Setting one column width </a></li><li><a href="#variable-width-content">Variable width content </a></li><li><a href="#equal-width-multi-row">Equal-width multi-row </a></li></ul></li><li><a href="#responsive-classes">Responsive classes </a><ul><li><a href="#all-breakpoints">All breakpoints </a></li><li><a href="#stacked-to-horizontal">Stacked to horizontal </a></li><li><a href="#mix-and-match">Mix and match </a></li></ul></li><li><a href="#alignment">Alignment </a><ul><li><a href="#vertical-alignment">Vertical alignment </a></li><li><a href="#horizontal-alignment">Horizontal alignment </a></li><li><a href="#no-gutters">No gutters </a></li><li><a href="#column-wrapping">Column wrapping </a></li><li><a href="#column-breaks">Column breaks </a></li></ul></li><li><a href="#reordering">Reordering </a><ul><li><a href="#flex-order">Flex order </a></li><li><a href="#offsetting-columns">Offsetting columns </a></li><li><a href="#push-and-pull">Push and pull </a></li></ul></li><li><a href="#nesting">Nesting </a></li><li><a href="#sass-mixins">Sass mixins </a><ul><li><a href="#variables">Variables </a></li><li><a href="#mixins">Mixins </a></li><li><a href="#example-usage">Example usage </a></li></ul></li><li><a href="#customizing-the-grid">Customizing the grid </a><ul><li><a href="#columns-and-gutters">Columns and gutters </a></li><li><a href="#grid-tiers">Grid tiers </a></li></ul></li></ul></nav><h2 id="how-it-works" tabindex="-1">How it works <a class="header-anchor" href="#how-it-works"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Athena's grid system uses a series of containers, rows, and columns to layout and align content. It's built with flexbox and is fully responsive. Below is an example and an in-depth look at how the grid comes together.</p>
 <div class="afd-example afd-example-row">
 <div class="container">
@@ -904,7 +910,7 @@
 </ul>
 <p>Be aware of the limitations and <a href="https://github.com/philipwalton/flexbugs">bugs around flexbox</a>, like the <a href="https://github.com/philipwalton/flexbugs#9-some-html-elements-cant-be-flex-containers">inability to use some HTML elements as flex containers</a>.</p>
 <p>Sounds good? Great, let's move on to seeing all that in an example.</p>
-<h2 id="grid-options">Grid options <a class="header-anchor" href="#grid-options"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="grid-options" tabindex="-1">Grid options <a class="header-anchor" href="#grid-options"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>While Athena uses <code>em</code>s or <code>rem</code>s for defining most sizes, <code>px</code>s are used for grid breakpoints and container widths. This is because the viewport width is in pixels and does not change with the <a href="https://drafts.csswg.org/mediaqueries-3/#units">font size</a>.</p>
 <p>See how aspects of the Athena grid system work across multiple devices with a handy table.</p>
 <table class="table table-bordered table-striped table-responsive">
@@ -977,9 +983,9 @@
     </tr>
   </tbody>
 </table>
-<h2 id="auto-layout-columns">Auto-layout columns <a class="header-anchor" href="#auto-layout-columns"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="auto-layout-columns" tabindex="-1">Auto-layout columns <a class="header-anchor" href="#auto-layout-columns"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Utilize breakpoint-specific column classes for easy column sizing without an explicit numbered class like <code>.col-sm-6</code>.</p>
-<h3 id="equal-width">Equal-width <a class="header-anchor" href="#equal-width"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="equal-width" tabindex="-1">Equal-width <a class="header-anchor" href="#equal-width"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>For example, here are two grid layouts that apply to every device and viewport, from <code>xs</code> to <code>xl</code>. Add any number of unit-less classes for each breakpoint you need and every column will be the same width.</p>
 <div class="afd-example-row">
 <div class="afd-example">
@@ -1053,7 +1059,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
 </div>
-<h3 id="setting-one-column-width">Setting one column width <a class="header-anchor" href="#setting-one-column-width"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="setting-one-column-width" tabindex="-1">Setting one column width <a class="header-anchor" href="#setting-one-column-width"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Auto-layout for flexbox grid columns also means you can set the width of one column and have the sibling columns automatically resize around it. You may use predefined grid classes (as shown below), grid mixins, or inline widths. Note that the other columns will resize no matter the width of the center column.</p>
 <div class="afd-example-row">
 <div class="afd-example">
@@ -1108,7 +1114,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
 </div>
-<h3 id="variable-width-content">Variable width content <a class="header-anchor" href="#variable-width-content"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="variable-width-content" tabindex="-1">Variable width content <a class="header-anchor" href="#variable-width-content"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Use <code>col-{breakpoint}-auto</code> classes to size columns based on the natural width of their content. <code>col-{breakpoint}-auto</code> columns will never exceed the width of their parent container.</p>
 <div class="afd-example-row">
 <div class="afd-example">
@@ -1185,7 +1191,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
 </div>
-<h3 id="equal-width-multi-row">Equal-width multi-row <a class="header-anchor" href="#equal-width-multi-row"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="equal-width-multi-row" tabindex="-1">Equal-width multi-row <a class="header-anchor" href="#equal-width-multi-row"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Create equal-width columns that span multiple rows by inserting a <code>.w-100</code> where you want the columns to break to a new line. Make the breaks responsive by mixing the <code>.w-100</code> with some <a href="/Athena-Framework/utilities/display-property">responsive display utilities</a>.</p>
 <div class="afd-example-row">
 <div class="afd-example">
@@ -1206,9 +1212,9 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
 </div>
-<h2 id="responsive-classes">Responsive classes <a class="header-anchor" href="#responsive-classes"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="responsive-classes" tabindex="-1">Responsive classes <a class="header-anchor" href="#responsive-classes"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Athena's grid includes five tiers of predefined classes for building complex responsive layouts. Customize the size of your columns on extra small, small, medium, large, or extra large devices however you see fit.</p>
-<h3 id="all-breakpoints">All breakpoints <a class="header-anchor" href="#all-breakpoints"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="all-breakpoints" tabindex="-1">All breakpoints <a class="header-anchor" href="#all-breakpoints"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>For grids that are the same from the smallest of devices to the largest, use the <code>.col</code> and <code>.col-*</code> classes. Specify a numbered class when you need a particularly sized column; otherwise, feel free to stick to <code>.col</code>.</p>
 <div class="afd-example-row">
 <div class="afd-example">
@@ -1235,7 +1241,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
 </div>
-<h3 id="stacked-to-horizontal">Stacked to horizontal <a class="header-anchor" href="#stacked-to-horizontal"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="stacked-to-horizontal" tabindex="-1">Stacked to horizontal <a class="header-anchor" href="#stacked-to-horizontal"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Using a single set of <code>.col-sm-*</code> classes, you can create a basic grid system that starts out stacked on extra small devices before becoming horizontal at the small breakpoint (sm).</p>
 <div class="afd-example-row">
 <div class="afd-example">
@@ -1260,7 +1266,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
 </div>
-<h3 id="mix-and-match">Mix and match <a class="header-anchor" href="#mix-and-match"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="mix-and-match" tabindex="-1">Mix and match <a class="header-anchor" href="#mix-and-match"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Don't want your columns to simply stack in some grid tiers? Use a combination of different classes for each tier as needed. See the example below for a better idea of how it all works.</p>
 <div class="afd-example-row">
 <div class="afd-example">
@@ -1301,9 +1307,9 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
 </div>
-<h2 id="alignment">Alignment <a class="header-anchor" href="#alignment"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="alignment" tabindex="-1">Alignment <a class="header-anchor" href="#alignment"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Use flexbox alignment utilities to vertically and horizontally align columns.</p>
-<h3 id="vertical-alignment">Vertical alignment <a class="header-anchor" href="#vertical-alignment"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="vertical-alignment" tabindex="-1">Vertical alignment <a class="header-anchor" href="#vertical-alignment"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <div class="afd-example-row afd-example-row-flex-cols">
 <div class="afd-example">
 <div class="container">
@@ -1410,7 +1416,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
 </div>
-<h3 id="horizontal-alignment">Horizontal alignment <a class="header-anchor" href="#horizontal-alignment"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="horizontal-alignment" tabindex="-1">Horizontal alignment <a class="header-anchor" href="#horizontal-alignment"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <div class="afd-example-row">
 <div class="afd-example">
 <div class="container">
@@ -1500,7 +1506,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
 </div>
-<h3 id="no-gutters">No gutters <a class="header-anchor" href="#no-gutters"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="no-gutters" tabindex="-1">No gutters <a class="header-anchor" href="#no-gutters"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>The gutters between columns in our predefined grid classes can be removed with <code>.no-gutters</code>. This removes the negative <code>margin</code>s from <code>.row</code> and the horizontal <code>padding</code> from all immediate children columns.</p>
 <p>Here's the source code for creating these styles. Note that column overrides are scoped to only the first children columns and are targeted via <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors">attribute selector</a>. While this generates a more specific selector, column padding can still be further customized with <a href="/Athena-Framework/utilities/spacing">spacing utilities</a>.</p>
 <div class="highlight"><pre><code class="language-scss">
@@ -1529,7 +1535,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
 </div>
-<h3 id="column-wrapping">Column wrapping <a class="header-anchor" href="#column-wrapping"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="column-wrapping" tabindex="-1">Column wrapping <a class="header-anchor" href="#column-wrapping"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.</p>
 <div class="afd-example-row">
 <div class="afd-example">
@@ -1546,7 +1552,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
 </div>
-<h3 id="column-breaks">Column breaks <a class="header-anchor" href="#column-breaks"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="column-breaks" tabindex="-1">Column breaks <a class="header-anchor" href="#column-breaks"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Breaking columns to a new line in flexbox requires a small hack: add an element with <code>width: 100%</code> wherever you want to wrap your columns to a new line. Normally this is accomplished with multiple <code>.row</code>s, but not every implementation method can account for this.</p>
 <div class="afd-example-row">
 <div class="afd-example">
@@ -1595,8 +1601,8 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
 </div>
-<h2 id="reordering">Reordering <a class="header-anchor" href="#reordering"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
-<h3 id="flex-order">Flex order <a class="header-anchor" href="#flex-order"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h2 id="reordering" tabindex="-1">Reordering <a class="header-anchor" href="#reordering"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h3 id="flex-order" tabindex="-1">Flex order <a class="header-anchor" href="#flex-order"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Use flexbox utilities for controlling the <strong>visual order</strong> of your content.</p>
 <div class="afd-example-row">
 <div class="afd-example">
@@ -1629,7 +1635,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
 </div>
-<h3 id="offsetting-columns">Offsetting columns <a class="header-anchor" href="#offsetting-columns"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="offsetting-columns" tabindex="-1">Offsetting columns <a class="header-anchor" href="#offsetting-columns"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Move columns to the right using <code>.offset-md-*</code> classes. These classes increase the left margin of a column by <code>*</code> columns. For example, <code>.offset-md-4</code> moves <code>.col-md-4</code> over four columns.</p>
 <div class="afd-example-row">
 <div class="afd-example">
@@ -1658,7 +1664,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
 </div>
-<h3 id="push-and-pull">Push and pull <a class="header-anchor" href="#push-and-pull"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="push-and-pull" tabindex="-1">Push and pull <a class="header-anchor" href="#push-and-pull"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Easily change the order of our built-in grid columns with <code>.push-md-*</code> and <code>.pull-md-*</code> modifier classes.</p>
 <div class="afd-example-row">
 <div class="afd-example">
@@ -1696,7 +1702,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
 </div>
-<h2 id="nesting">Nesting <a class="header-anchor" href="#nesting"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="nesting" tabindex="-1">Nesting <a class="header-anchor" href="#nesting"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>To nest your content with the default grid, add a new <code>.row</code> and set of <code>.col-sm-*</code> columns within an existing <code>.col-sm-*</code> column. Nested rows should include a set of columns that add up to 12 or fewer (it is not required that you use all 12 available columns).</p>
 <div class="afd-example-row">
 <div class="afd-example">
@@ -1729,9 +1735,9 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre></div>
 </div>
-<h2 id="sass-mixins">Sass mixins <a class="header-anchor" href="#sass-mixins"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="sass-mixins" tabindex="-1">Sass mixins <a class="header-anchor" href="#sass-mixins"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>When using Athena's source Sass files, you have the option of using Sass variables and mixins to create custom, semantic, and responsive page layouts. Our predefined grid classes use these same variables and mixins to provide a whole suite of ready-to-use classes for fast responsive layouts.</p>
-<h3 id="variables">Variables <a class="header-anchor" href="#variables"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="variables" tabindex="-1">Variables <a class="header-anchor" href="#variables"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Variables and maps determine the number of columns, the gutter width, and the media query point at which to begin floating columns. We use these to generate the predefined grid classes documented above, as well as for the custom mixins listed below.</p>
 <div class="highlight"><pre><code class="language-scss">
 $grid-columns:      12;
@@ -1765,7 +1771,7 @@ $container-max-widths: (
   xl: 1140px
 );
 </code></pre></div>
-<h3 id="mixins">Mixins <a class="header-anchor" href="#mixins"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="mixins" tabindex="-1">Mixins <a class="header-anchor" href="#mixins"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Mixins are used in conjunction with the grid variables to generate semantic CSS for individual grid columns.</p>
 <div class="highlight"><pre><code class="language-scss">
 // Creates a wrapper for a series of columns
@@ -1780,7 +1786,7 @@ $container-max-widths: (
 @include make-col-push($size, $columns: $grid-columns);
 @include make-col-pull($size, $columns: $grid-columns);
 </code></pre></div>
-<h3 id="example-usage">Example usage <a class="header-anchor" href="#example-usage"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="example-usage" tabindex="-1">Example usage <a class="header-anchor" href="#example-usage"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>You can modify the variables to your own custom values, or just use the mixins with their default values. Here's an example of using the default settings to create a two-column layout with a gap between.</p>
 <div class="highlight"><pre><code class="language-scss">
 .example-container {
@@ -1814,9 +1820,9 @@ $container-max-widths: (
   }
 }
 </code></pre></div>
-<h2 id="customizing-the-grid">Customizing the grid <a class="header-anchor" href="#customizing-the-grid"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
+<h2 id="customizing-the-grid" tabindex="-1">Customizing the grid <a class="header-anchor" href="#customizing-the-grid"><span class="fa fa-link" aria-label="Anchor"></span></a></h2>
 <p>Using our built-in grid Sass variables and maps, it's possible to completely customize the predefined grid classes. Change the number of tiers, the media query dimensions, and the container widths—then recompile.</p>
-<h3 id="columns-and-gutters">Columns and gutters <a class="header-anchor" href="#columns-and-gutters"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="columns-and-gutters" tabindex="-1">Columns and gutters <a class="header-anchor" href="#columns-and-gutters"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>The number of grid columns and their horizontal padding (aka, gutters) can be modified via Sass variables. <code>$grid-columns</code> is used to generate the widths (in percent) of each individual column while <code>$grid-gutter-widths</code> allows breakpoint-specific widths that are divided evenly across <code>padding-left</code> and <code>padding-right</code> for the column gutters.</p>
 <div class="highlight"><pre><code class="language-scss">
 $grid-columns:               12 !default;
@@ -1829,7 +1835,7 @@ $grid-gutter-widths: (
   xl: $grid-gutter-width-base
 ) !default;
 </code></pre></div>
-<h3 id="grid-tiers">Grid tiers <a class="header-anchor" href="#grid-tiers"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
+<h3 id="grid-tiers" tabindex="-1">Grid tiers <a class="header-anchor" href="#grid-tiers"><span class="fa fa-link" aria-label="Anchor"></span></a></h3>
 <p>Moving beyond the columns themselves, you may also customize the number of grid tiers. If you wanted just four grid tiers, you'd update the <code>$grid-breakpoints</code> and <code>$container-max-widths</code> to something like this:</p>
 <div class="highlight"><pre><code class="language-scss">
 $grid-breakpoints: (
@@ -1871,7 +1877,7 @@ $container-max-widths: (
               </li>
             </ul>
             <p>
-              Current version: <strong>v1.1.0</strong>.
+              Current version: <strong>v1.1.1</strong>.
             </p>
             <p class="mb-0">
               Code licensed <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/LICENSE">MIT</a>, docs <a class="bg-inverse-link" href="https://github.com/UCF/Athena-Framework/blob/master/docs/LICENSE">CC BY 3.0</a>.
@@ -1900,7 +1906,7 @@ $container-max-widths: (
       var SEARCH_INDEX_URL = '/Athena-Framework/search-index.json';
       var SEARCH_DATA_URL = '/Athena-Framework/search-data.json';
     </script>
-    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.0"></script>
+    <script src="/Athena-Framework/static/js/docs.min.js?v=1.1.1"></script>
 
   </body>
 </html>
