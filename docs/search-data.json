@@ -500,6 +500,15 @@
     
     {
       "id": 57,
+      "title": "Forms",
+      "url": "/Athena-Framework/components/forms/"
+    }
+    ,
+    
+  
+    
+    {
+      "id": 58,
       "title": "Badges",
       "url": "/Athena-Framework/components/badge/"
     }
@@ -508,18 +517,9 @@
   
     
     {
-      "id": 58,
+      "id": 59,
       "title": "Collapse",
       "url": "/Athena-Framework/components/collapse/"
-    }
-    ,
-    
-  
-    
-    {
-      "id": 59,
-      "title": "Forms",
-      "url": "/Athena-Framework/components/forms/"
     }
     ,
     
