@@ -117,7 +117,7 @@
   margin-bottom: $navbar-toggler-margin-y;
   margin-top: $navbar-toggler-margin-y;
 
-  &:not(.collapsed):focus {
+  &:focus:not(:focus-visible) {
     outline: 0;
   }
 }

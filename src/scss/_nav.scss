@@ -73,7 +73,7 @@
 
   .nav-link.active,
   .nav-item.show .nav-link {
-    &:focus {
+    &:focus:not(:focus-visible) {
       outline: 0;
     }
   }
