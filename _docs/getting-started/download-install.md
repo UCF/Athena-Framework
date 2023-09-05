@@ -159,11 +159,6 @@ To take advantage of the [font family overrides available with Athena]({{ '/util
   * Italic
   * Bold
   * Bold Italic
-* Archer (for `.font-slab-serif` support)
-  * Book
-  * Book Italic
-  * Bold
-  * Bold Italic
 * Knockout Regular (for `.font-condensed` support)
   * Knockout 49, Lightweight
 
