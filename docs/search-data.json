@@ -291,15 +291,6 @@
     
     {
       "id": 33,
-      "title": "Resets",
-      "url": "/Athena-Framework/content/resets/"
-    }
-    ,
-    
-  
-    
-    {
-      "id": 34,
       "title": "Tables",
       "url": "/Athena-Framework/content/tables/"
     }
@@ -308,7 +299,7 @@
   
     
     {
-      "id": 35,
+      "id": 34,
       "title": "Typography",
       "url": "/Athena-Framework/content/typography/"
     }
@@ -317,7 +308,7 @@
   
     
     {
-      "id": 36,
+      "id": 35,
       "title": "Athena Framework",
       "url": "/Athena-Framework/"
     }
@@ -326,7 +317,7 @@
   
     
     {
-      "id": 37,
+      "id": 36,
       "title": "Grid system",
       "url": "/Athena-Framework/layout/grid/"
     }
@@ -335,7 +326,7 @@
   
     
     {
-      "id": 38,
+      "id": 37,
       "title": "Media object",
       "url": "/Athena-Framework/layout/media-object/"
     }
@@ -344,7 +335,7 @@
   
     
     {
-      "id": 39,
+      "id": 38,
       "title": "Overview",
       "url": "/Athena-Framework/layout/overview/"
     }
@@ -353,7 +344,7 @@
   
     
     {
-      "id": 40,
+      "id": 39,
       "title": "Utilities for layout",
       "url": "/Athena-Framework/layout/utilities-for-layout/"
     }
@@ -362,7 +353,7 @@
   
     
     {
-      "id": 41,
+      "id": 40,
       "title": "Migrating to Athena from Bootstrap 3",
       "url": "/Athena-Framework/migration/"
     }
@@ -373,7 +364,7 @@
   
     
     {
-      "id": 43,
+      "id": 42,
       "title": "Borders",
       "url": "/Athena-Framework/utilities/borders/"
     }
@@ -382,7 +373,7 @@
   
     
     {
-      "id": 44,
+      "id": 43,
       "title": "Clearfix",
       "url": "/Athena-Framework/utilities/clearfix/"
     }
@@ -391,7 +382,7 @@
   
     
     {
-      "id": 45,
+      "id": 44,
       "title": "Close icon",
       "url": "/Athena-Framework/utilities/close-icon/"
     }
@@ -400,7 +391,7 @@
   
     
     {
-      "id": 46,
+      "id": 45,
       "title": "Colors",
       "url": "/Athena-Framework/utilities/colors/"
     }
@@ -409,7 +400,7 @@
   
     
     {
-      "id": 47,
+      "id": 46,
       "title": "Display property",
       "url": "/Athena-Framework/utilities/display-property/"
     }
@@ -418,7 +409,7 @@
   
     
     {
-      "id": 48,
+      "id": 47,
       "title": "Embeds",
       "url": "/Athena-Framework/utilities/embeds/"
     }
@@ -427,7 +418,7 @@
   
     
     {
-      "id": 49,
+      "id": 48,
       "title": "Filters",
       "url": "/Athena-Framework/utilities/filters/"
     }
@@ -436,7 +427,7 @@
   
     
     {
-      "id": 50,
+      "id": 49,
       "title": "Flexbox",
       "url": "/Athena-Framework/utilities/flexbox/"
     }
@@ -445,7 +436,7 @@
   
     
     {
-      "id": 51,
+      "id": 50,
       "title": "Float",
       "url": "/Athena-Framework/utilities/float/"
     }
@@ -454,7 +445,7 @@
   
     
     {
-      "id": 52,
+      "id": 51,
       "title": "Image replacement",
       "url": "/Athena-Framework/utilities/image-replacement/"
     }
@@ -463,7 +454,7 @@
   
     
     {
-      "id": 53,
+      "id": 52,
       "title": "Media Backgrounds",
       "url": "/Athena-Framework/utilities/media-backgrounds/"
     }
@@ -472,7 +463,7 @@
   
     
     {
-      "id": 54,
+      "id": 53,
       "title": "Pointer Events",
       "url": "/Athena-Framework/utilities/pointer-events/"
     }
@@ -481,7 +472,7 @@
   
     
     {
-      "id": 55,
+      "id": 54,
       "title": "Position",
       "url": "/Athena-Framework/utilities/position/"
     }
@@ -490,7 +481,7 @@
   
     
     {
-      "id": 56,
+      "id": 55,
       "title": "Screenreaders",
       "url": "/Athena-Framework/utilities/screenreaders/"
     }
@@ -499,7 +490,7 @@
   
     
     {
-      "id": 57,
+      "id": 56,
       "title": "Sizing",
       "url": "/Athena-Framework/utilities/sizing/"
     }
@@ -508,7 +499,7 @@
   
     
     {
-      "id": 58,
+      "id": 57,
       "title": "Spacing",
       "url": "/Athena-Framework/utilities/spacing/"
     }
@@ -517,7 +508,7 @@
   
     
     {
-      "id": 59,
+      "id": 58,
       "title": "States",
       "url": "/Athena-Framework/utilities/states/"
     }
@@ -526,7 +517,7 @@
   
     
     {
-      "id": 60,
+      "id": 59,
       "title": "Stretched Links",
       "url": "/Athena-Framework/utilities/stretched-links/"
     }
@@ -535,7 +526,7 @@
   
     
     {
-      "id": 61,
+      "id": 60,
       "title": "Typography",
       "url": "/Athena-Framework/utilities/typography/"
     }
@@ -544,7 +535,7 @@
   
     
     {
-      "id": 62,
+      "id": 61,
       "title": "Vertical alignment",
       "url": "/Athena-Framework/utilities/vertical-align/"
     }
@@ -553,9 +544,18 @@
   
     
     {
-      "id": 63,
+      "id": 62,
       "title": "Visibility property",
       "url": "/Athena-Framework/utilities/visibility-property/"
+    }
+    ,
+    
+  
+    
+    {
+      "id": 63,
+      "title": "Resets",
+      "url": "/Athena-Framework/content/resets/"
     }
     
     
