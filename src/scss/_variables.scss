@@ -480,10 +480,10 @@ $grid-gutter-widths: (
 // Fonts
 //
 // Font, line-height, and color for body text, headings, and more.
-$font-family-sans-serif: 'Gotham SSm A', 'Gotham SSm B', 'UCF Sans Serif Alt', 'Helvetica Neue', Arial, sans-serif !default; // modified
-$font-family-serif:      'Chronicle Text G3 A', 'Chronicle Text G3 B', Georgia, 'Times New Roman', Times, serif !default; // modified
+$font-family-sans-serif: 'UCF Sans Serif Alt', 'Helvetica Neue', Arial, sans-serif !default; // modified
+$font-family-serif:      Georgia, 'Times New Roman', Times, serif !default; // modified
 $font-family-slab-serif: 'UCF Slab Serif Alt', serif !default; // custom
-$font-family-condensed:  'Knockout 49 A', 'Knockout 49 B', 'UCF Condensed Alt', sans-serif !default; // custom
+$font-family-condensed:  'UCF Condensed Alt', sans-serif !default; // custom
 $font-family-monospace:  Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !default;
 $font-family-base:       $font-family-sans-serif !default;
 

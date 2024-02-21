@@ -109,9 +109,7 @@ If you're upgrading from Bootstrap 3, be sure to check out the [Migration Guide]
 
 ## Webfont Configuration
 
-Athena is built to utilize premium fonts provided by the [Cloud.typography service](http://www.typography.com/cloud/welcome/) by default, with webfont fallbacks (available in the `/dist/fonts/` directory). Using premium fonts with Athena is preferred, but not required.
-
-### Included Fallback Fonts
+### Included Fonts
 
 If you're loading Athena from UCF's CDN, fallback fonts will be used without any additional steps.
 
@@ -129,43 +127,8 @@ Alternatively, you can pick a custom location for the fallback fonts directory w
 
 ### Cloud.typography Premium Font Configuration
 
-While Athena provides fallback webfonts out-of-the-box, the preferred font families for Athena are only available via the [Cloud.typography service](http://www.typography.com/cloud/welcome/). Athena Framework users are responsible for creating their own Cloud.typography accounts and maintaining their subscriptions to the service.
-
-#### Base Configuration
-
-For base support with Athena, your Cloud.typography project should be configured to include the following fonts/weights:
-
-* Gotham ScreenSmart
-  * Book
-  * Book Italic
-  * Bold
-  * Bold Italic
-
 {% callout 'danger' %}
-#### Gotham Licensing for the Web
-Any existing _print_ license for Gotham usage, whether purchased via the [UCF Computer Store](https://cstore.ucf.edu/gotham/) or separately, [does not cover usage of webfonts](https://www.typography.com/faq/question.php?faqID=15).
-
-To use Gotham on the web, _you must register for the Cloud.typography service._
+As of v1.3.0, Athena is no longer supporting the use of fonts from the [Cloud.typography service](http://www.typography.com/cloud/welcome/). Instead, the project will use the "fallback" fonts contained within the project as the primary fonts.
 
 **Do not attempt to self-host Gotham font files** that are not provided by Cloud.typography for production font projects.
-{% endcallout %}
-
-#### Font Family Extras
-
-To take advantage of the [font family overrides available with Athena]({{ '/utilities/typography' | url }}#font-family), the following fonts/weights can also be added to your Cloud.typography project *as needed&#42;*:
-
-* Chronicle Text Grade 3 (for `.font-serif` support)
-  * Roman
-  * Italic
-  * Bold
-  * Bold Italic
-* Knockout Regular (for `.font-condensed` support)
-  * Knockout 49, Lightweight
-
-Because Athena does not support older browsers, enabling Legacy Support is not necessary and is not recommended.
-
-More weights can be added as needed per-project, however, we don't recommend usage of most "thin" or "extra light" weights due to readability concerns.
-
-{% callout 'info' %}
-<strong>*Note:</strong> Avoid adding webfonts that aren't needed for your project; as the number of fonts in a project increases, the average load time for the font project increases.
 {% endcallout %}
