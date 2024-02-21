@@ -43,7 +43,7 @@ The `<html>` and `<body>` elements are updated to provide better page-wide defau
 Unlike Bootstrap 4, Athena provides an opinionated font stack and does not rely on system fonts unless no other font libraries can be loaded. Athena's base font family is its sans-serif stack:
 
 {% highlight 'scss' %}
-$font-family-sans-serif: 'Gotham SSm A', 'Gotham SSm B', 'UCF Sans Serif Alt', 'Helvetica Neue', Arial, sans-serif;
+$font-family-sans-serif: 'UCF Sans Serif Alt', 'Helvetica Neue', Arial, sans-serif;
 {% endhighlight %}
 
 This `font-family` is applied to the `<body>` and automatically inherited globally throughout Athena.
